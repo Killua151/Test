@@ -7,6 +7,8 @@
 //
 
 #import "FTLoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "FTAppDelegate.h"
 
 @interface FTLoginViewController () {
   UIView *_currentFirstResponder;
@@ -40,6 +42,20 @@
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
+  FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+  
+  if (FBSession.activeSession.state == FBSessionStateOpen ||
+      FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+    [FBSession.activeSession closeAndClearTokenInformation];
+    return;
+  }
+  
+  [FBSession
+   openActiveSessionWithReadPermissions:@[@"public_profile"]
+   allowLoginUI:YES
+   completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+     [appDelegate sessionStateChanged:session state:state error:error];
+   }];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
