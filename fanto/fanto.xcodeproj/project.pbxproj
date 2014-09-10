@@ -20,8 +20,6 @@
 		CADA42E319C088DE003AA830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CADA42E519C088DE003AA830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CADA42E619C088DE003AA830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CADA42FC19C088DE003AA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CADA42FD19C088DE003AA830 /* fantoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fantoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +46,9 @@
 			isa = PBXGroup;
 			children = (
 				CADA42E019C088DE003AA830 /* fanto */,
-				CADA42FA19C088DE003AA830 /* fantoTests */,
-				CADA42DF19C088DE003AA830 /* Products */,
-				5440CC0A83A04B99A8512819 /* Pods.xcconfig */,
 				627A724A413049EA953CEC5B /* Frameworks */,
+				5440CC0A83A04B99A8512819 /* Pods.xcconfig */,
+				CADA42DF19C088DE003AA830 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,23 +75,6 @@
 			children = (
 				CADA42E219C088DE003AA830 /* Info.plist */,
 				CADA42E319C088DE003AA830 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CADA42FA19C088DE003AA830 /* fantoTests */ = {
-			isa = PBXGroup;
-			children = (
-				CADA42FD19C088DE003AA830 /* fantoTests.m */,
-				CADA42FB19C088DE003AA830 /* Supporting Files */,
-			);
-			path = fantoTests;
-			sourceTree = "<group>";
-		};
-		CADA42FB19C088DE003AA830 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CADA42FC19C088DE003AA830 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
