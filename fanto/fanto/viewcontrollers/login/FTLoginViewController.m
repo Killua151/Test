@@ -8,7 +8,9 @@
 
 #import "FTLoginViewController.h"
 
-@interface FTLoginViewController ()
+@interface FTLoginViewController () {
+  UIView *_currentFirstResponder;
+}
 
 @end
 
@@ -17,12 +19,48 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customTitleWithText:@"ĐĂNG NHẬP"];
-  
-  DLog(@"%@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+}
+
+- (void)gestureLayerDidTap {
+  [_currentFirstResponder resignFirstResponder];
+}
+
+- (IBAction)btnLoginPressed:(UIButton *)sender {
+  if (![self validateFields])
+    return;
+}
+
+- (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnFacebookPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnGooglePressed:(UIButton *)sender {
+}
+
+#pragma mark - UITextFieldDelegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+  _currentFirstResponder = textField;
+  [self gestureLayerDidEnterEdittingMode];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if (textField == _txtUsername)
+    [_txtPassword becomeFirstResponder];
+  else if (textField == _txtPassword)
+    [self btnLoginPressed:nil];
+  
+  return YES;
+}
+
+#pragma mark - Private methods
+- (BOOL)validateFields {
+  return YES;
 }
 
 @end
