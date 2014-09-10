@@ -48,11 +48,23 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// Bolts
+#define COCOAPODS_POD_AVAILABLE_Bolts
+#define COCOAPODS_VERSION_MAJOR_Bolts 1
+#define COCOAPODS_VERSION_MINOR_Bolts 1
+#define COCOAPODS_VERSION_PATCH_Bolts 2
+
 // DCKeyValueObjectMapping
 #define COCOAPODS_POD_AVAILABLE_DCKeyValueObjectMapping
 #define COCOAPODS_VERSION_MAJOR_DCKeyValueObjectMapping 1
 #define COCOAPODS_VERSION_MINOR_DCKeyValueObjectMapping 4
 #define COCOAPODS_VERSION_PATCH_DCKeyValueObjectMapping 0
+
+// Facebook-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 17
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
@@ -77,4 +89,10 @@
 #define COCOAPODS_VERSION_MAJOR_Toast 2
 #define COCOAPODS_VERSION_MINOR_Toast 3
 #define COCOAPODS_VERSION_PATCH_Toast 0
+
+// google-plus-ios-sdk
+#define COCOAPODS_POD_AVAILABLE_google_plus_ios_sdk
+#define COCOAPODS_VERSION_MAJOR_google_plus_ios_sdk 1
+#define COCOAPODS_VERSION_MINOR_google_plus_ios_sdk 7
+#define COCOAPODS_VERSION_PATCH_google_plus_ios_sdk 0
 

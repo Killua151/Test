@@ -32,6 +32,8 @@
 - (IBAction)btnLoginPressed:(UIButton *)sender {
   if (![self validateFields])
     return;
+  
+  [self gestureLayerDidTap];
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {

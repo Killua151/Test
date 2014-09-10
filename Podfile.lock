@@ -20,7 +20,11 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Bolts (1.1.2)
   - DCKeyValueObjectMapping (1.4)
+  - Facebook-iOS-SDK (3.17.0):
+    - Bolts
+  - google-plus-ios-sdk (1.7.0)
   - GoogleAnalytics-iOS-SDK (3.0.9)
   - JSONKit-NoWarning (1.2)
   - MBProgressHUD (0.9)
@@ -29,6 +33,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.4)
   - DCKeyValueObjectMapping (~> 1.4)
+  - Facebook-iOS-SDK (~> 3.17)
+  - google-plus-ios-sdk (~> 1.7)
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - JSONKit-NoWarning (~> 1.2)
   - MBProgressHUD (~> 0.9)
@@ -36,7 +42,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
   DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
+  Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
+  google-plus-ios-sdk: f613bd712196b435ecc098eed75afb3364bca177
   GoogleAnalytics-iOS-SDK: d9e198b1f955259a72886769be7377cdfcdb2250
   JSONKit-NoWarning: fc8d6dd8ec65e303867d1bd274632fc60a4a8ab9
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
