@@ -20,6 +20,40 @@
   #import <Toast/UIView+Toast.h>
 #endif
 
+#define DLog(format, ...) \
+NSLog((@"Func: %s , Line: %d, " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+#define LoadNibNameWithSameClass() \
+[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil]
+
+#define LoadXibWithSameClass() { \
+NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil]; \
+self = nib[0]; }
+
+#define ShowAlertWithError(error) \
+if ((error) != nil) {\
+[Utils showAlertWithError:(error)];\
+return;\
+}\
+
+#define ShowToastWithError(error) \
+if (error != nil) { \
+[Utils showToastWithError:error]; \
+return; \
+}
+
+#define ShowLoadingHud() \
+if ([self respondsToSelector:@selector(navigationController)]) \
+[Utils showHUDForView:self.navigationController.view withText:nil]; \
+else if ([self respondsToSelector:@selector(view)]) \
+[Utils showHUDForView:self.view withText:nil];
+
+#define HideLoadingHud() \
+if ([self respondsToSelector:@selector(navigationController)]) \
+[Utils hideAllHUDsForView:self.navigationController.view]; \
+else if ([self respondsToSelector:@selector(view)]) \
+[Utils hideAllHUDsForView:self.view];
+
 #define UIColorFromRGB(r, g, b) [UIColor colorWithRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:1]
 
 #define ARC4RANDOM_MAX                          0x100000000

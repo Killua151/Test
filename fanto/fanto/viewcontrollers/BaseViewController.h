@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MABaseViewController : UIViewController {
+@interface BaseViewController : UIViewController {
   IBOutlet UIView *_vGestureLayer;
 }
 

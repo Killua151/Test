@@ -8,13 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface MABaseViewController ()
+@interface BaseViewController ()
 
 - (void)setupGestureLayer;
 
 @end
 
-@implementation MABaseViewController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -25,14 +25,14 @@
   [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidLayoutSubviews {
-  if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-    CGRect viewBounds = self.view.bounds;
-    CGFloat topBarOffset = self.topLayoutGuide.length;
-    viewBounds.origin.y = topBarOffset * -1;
-    self.view.bounds = viewBounds;
-  }
-}
+//- (void)viewDidLayoutSubviews {
+//  if ([self respondsToSelector:@selector(topLayoutGuide)]) {
+//    CGRect viewBounds = self.view.bounds;
+//    CGFloat topBarOffset = self.topLayoutGuide.length;
+//    viewBounds.origin.y = topBarOffset * -1;
+//    self.view.bounds = viewBounds;
+//  }
+//}
 
 - (void)gestureLayerDidEnterEdittingMode {
   _vGestureLayer.hidden = NO;
@@ -77,7 +77,7 @@
 }
 
 - (void)customBackButton {
-  if (!self.navigationController)
+  if (self.navigationController != nil)
     return;
   
   UIImage *btnBackBg = [UIImage imageNamed:@"btn-navbar-back"];
@@ -98,7 +98,7 @@
                           target:(id)target
                           action:(SEL)action
                         distance:(CGFloat)distance {
-  if (!self.navigationController)
+  if (self.navigationController != nil)
     return;
   
   UIImage *image = [UIImage imageNamed:imageName];
@@ -136,14 +136,14 @@
 }
 
 - (void)customTitleWithText:(NSString*)title {
-  if (!self.navigationController)
+  if (self.navigationController == nil)
     return;
   
   UILabel *lblTitle = [UILabel new];
   lblTitle.backgroundColor = [UIColor clearColor];
-  lblTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  lblTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
   lblTitle.text = title;
-  lblTitle.textColor = [UIColor whiteColor];
+  lblTitle.textColor = UIColorFromRGB(153, 153, 153);
   [lblTitle sizeToFit];
   CGRect frame = lblTitle.frame;
   frame.origin.y = -3;
@@ -155,7 +155,7 @@
 }
 
 - (void)customTitleLogo {
-  if (!self.navigationController)
+  if (self.navigationController == nil)
     return;
   
   UIImageView *imgLogo = [[UIImageView alloc] initWithFrame:
@@ -169,7 +169,7 @@
 }
 
 - (void)goBack {
-  if (self.navigationController)
+  if (self.navigationController != nil)
     [self.navigationController popViewControllerAnimated:YES];
 }
 
