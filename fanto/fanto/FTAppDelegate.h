@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  FTAppDelegate.h
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/10/14.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface FTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
-

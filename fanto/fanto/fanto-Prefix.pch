@@ -1,0 +1,38 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+  #import "JSONKit.h"
+  #import "DCKeyValueObjectMapping.h"
+  #import "MBProgressHUD.h"
+  #import "Utils.h"
+  #import <Toast/UIView+Toast.h>
+#endif
+
+#define UIColorFromRGB(r, g, b) [UIColor colorWithRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:1]
+
+#define ARC4RANDOM_MAX                          0x100000000
+
+#define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
+#define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
+#define kHeightStatusBar                        20
+#define kHeightNavigationBar                    44
+#define kHeightNavigationBarLandscape           32
+#define kHeightTabBar                           49
+#define kHeightKeyboard                         216
+
+#define kCrashlyticsApiKey                      @"3a98614a2e15490a60b58daa2a17294f47149708"
+
+#define kUserDefUDID                            @"udid"
+#define kUserDefSettingsLocale                  @"settings_locale"
