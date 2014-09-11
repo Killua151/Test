@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import <GooglePlus/GooglePlus.h>
 
-@interface FTLoginViewController : BaseViewController <UITextFieldDelegate> {
+@interface FTLoginViewController : BaseViewController <UITextFieldDelegate, GPPSignInDelegate> {
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;
 }

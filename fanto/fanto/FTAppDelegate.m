@@ -9,9 +9,17 @@
 #import "FTAppDelegate.h"
 #import "FTLoginViewController.h"
 
+@interface FTAppDelegate ()
+
+- (void)preSettings;
+
+@end
+
 @implementation FTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [self preSettings];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
   
@@ -52,42 +60,49 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-  return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+  BOOL facebookHandler = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+  BOOL googleHandler = [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
+  
+  return facebookHandler || googleHandler;
 }
 
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error {
-  if (!error && state == FBSessionStateOpen) {
-    // Login
-    return;
-  }
+- (BOOL)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error {
+  // Logged in
+  if (error == nil && state == FBSessionStateOpen)
+    return YES;
   
+  // Logout current user
   if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed) {
-    // Logout
   }
   
   // Handle errors
-  if (error) {
-    // If the error requires people using an app to make an action outside of the app in order to recover
-    if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
-      DLog(@"%@", [FBErrorUtility userMessageForError:error]);
-    } else {
-      // If the user cancelled login, do nothing
-      if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-        DLog(@"User cancelled login");
-      } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
-        DLog(@"Your current session is no longer valid. Please log in again.");
-      } else {
-        //Get more error information from the error
-        NSDictionary *errorInformation = error.userInfo[@"com.facebook.sdk:ParsedJSONResponseKey"][@"body"][@"error"];
-        DLog(@"%@",
-             [NSString stringWithFormat:
-              @"Please retry.\nIf the problem persists contact us and mention this error code: %@",
-              errorInformation[@"message"]]);
-      }
+  if (error != nil) {
+    NSString *message = nil;
+    
+    if ([FBErrorUtility shouldNotifyUserForError:error] == YES)
+      message = [FBErrorUtility userMessageForError:error];
+    else {
+      if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled)
+        message = nil;
+      else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession)
+        message = @"Your current session is no longer valid. Please log in again.";
+      else
+        message = [NSString stringWithFormat:
+                             @"Please retry.\nIf the problem persists contact us and mention this error code: %@",
+                             error.userInfo[@"com.facebook.sdk:ParsedJSONResponseKey"][@"body"][@"error"][@"message"]];
     }
-
-    [FBSession.activeSession closeAndClearTokenInformation];
+    
+    [Utils showAlertWithTitle:@"Error" andMessage:message];
+    [[FBSession activeSession] closeAndClearTokenInformation];
   }
+  
+  return NO;
+}
+
+#pragma mark Private methods
+- (void)preSettings {
+  [[GPPSignIn sharedInstance] signOut];
+  [[FBSession activeSession] closeAndClearTokenInformation];
 }
 
 @end

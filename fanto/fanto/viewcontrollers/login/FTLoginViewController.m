@@ -8,11 +8,14 @@
 
 #import "FTLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
 #import "FTAppDelegate.h"
 
 @interface FTLoginViewController () {
   UIView *_currentFirstResponder;
 }
+
+- (void)setupGoogleSignIn;
 
 @end
 
@@ -21,6 +24,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customTitleWithText:@"ĐĂNG NHẬP"];
+  [self setupGoogleSignIn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,15 +54,31 @@
     return;
   }
   
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
   [FBSession
    openActiveSessionWithReadPermissions:@[@"public_profile"]
    allowLoginUI:YES
    completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-     [appDelegate sessionStateChanged:session state:state error:error];
+     BOOL result = [appDelegate sessionStateChanged:session state:state error:error];
+     
+     if (!result) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       return;
+     }
+     
+     DLog(@"%@", [FBSession activeSession]);
+     
+     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       DLog(@"%@", result);
+     }];
    }];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  [[GPPSignIn sharedInstance] authenticate];
 }
 
 #pragma mark - UITextFieldDelegate methods
@@ -76,9 +96,24 @@
   return YES;
 }
 
+#pragma mark - GPPSignInDelegate methods
+- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
+  [Utils hideAllHUDsForView:self.navigationController.view];
+  DLog(@"%@ %@ %@", auth.properties, auth.userEmail, auth.userID);
+}
+
 #pragma mark - Private methods
 - (BOOL)validateFields {
   return YES;
+}
+
+- (void)setupGoogleSignIn {
+  GPPSignIn *signIn = [GPPSignIn sharedInstance];
+  
+  signIn.shouldFetchGoogleUserEmail = YES;
+  signIn.clientID = kGoogleSignInKey;
+  signIn.scopes = @[@"profile"];
+  signIn.delegate = self;
 }
 
 @end

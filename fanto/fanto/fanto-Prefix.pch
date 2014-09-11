@@ -67,6 +67,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kHeightKeyboard                         216
 
 #define kCrashlyticsApiKey                      @"3a98614a2e15490a60b58daa2a17294f47149708"
+#define kGoogleSignInKey                        @"76466559980-1que00mo7kuvfp173ru5854ut5us98bt.apps.googleusercontent.com";
 
 #define kUserDefUDID                            @"udid"
 #define kUserDefSettingsLocale                  @"settings_locale"
