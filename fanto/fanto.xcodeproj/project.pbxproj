@@ -20,6 +20,10 @@
 		CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499A719C094B700C221A9 /* FTAppDelegate.m */; };
 		CA7499CF19C0951A00C221A9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499C819C0951A00C221A9 /* Utils.m */; };
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
+		CAEBA24119C208FD0024CA71 /* FTForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */; };
+		CAEBA24219C208FD0024CA71 /* FTForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */; };
+		CAEBA24519C20A5C0024CA71 /* img-forgot_password-text_box-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */; };
+		CAEBA24619C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,11 @@
 		CA7499C819C0951A00C221A9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CA7499CC19C0951A00C221A9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CA7499CD19C0951A00C221A9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CAEBA23E19C208FD0024CA71 /* FTForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTForgotPasswordViewController.h; sourceTree = "<group>"; };
+		CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTForgotPasswordViewController.m; sourceTree = "<group>"; };
+		CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg.png"; sourceTree = "<group>"; };
+		CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg@2x.png"; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */,
+				CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */,
+				CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */,
 				CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */,
 				CA00EDF819C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png */,
 			);
@@ -171,6 +182,9 @@
 		CA7499CE19C0951A00C221A9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA23E19C208FD0024CA71 /* FTForgotPasswordViewController.h */,
+				CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */,
+				CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */,
 				CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */,
 				CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */,
 				CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */,
@@ -233,8 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEBA24619C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png in Resources */,
+				CAEBA24519C20A5C0024CA71 /* img-forgot_password-text_box-bg.png in Resources */,
 				CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
+				CAEBA24219C208FD0024CA71 /* FTForgotPasswordViewController.xib in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				CA00EDFA19C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png in Resources */,
 				CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */,
@@ -285,6 +302,7 @@
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */,
+				CAEBA24119C208FD0024CA71 /* FTForgotPasswordViewController.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

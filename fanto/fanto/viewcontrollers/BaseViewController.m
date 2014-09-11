@@ -11,6 +11,8 @@
 @interface BaseViewController ()
 
 - (void)setupGestureLayer;
+- (void)tapGestureRecognizer:(UITapGestureRecognizer *)recognizer;
+- (void)goBack;
 
 @end
 
@@ -60,12 +62,30 @@
    }];
 }
 
+- (void)beforeGoBack {
+  // Implement in child class
+}
+
+- (void)afterGoBack {
+  // Implement in child class
+}
+
 - (void)customNavigationBackgroundWithColor:(UIColor *)color {
   if (self.navigationController == nil)
     return;
   
-  [self.navigationController.navigationBar setBarTintColor:color];
-  [self.navigationController.navigationBar setTranslucent:NO];
+  if (color == [UIColor clearColor] || color == nil) {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+  } else {
+    self.navigationController.view.backgroundColor = color;
+    self.navigationController.navigationBar.translucent = NO;
+    
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
+      self.navigationController.navigationBar.barTintColor = color;
+  }
 }
 
 - (void)customNavigationBackgroundWithImage:(NSString *)imageName {
@@ -168,15 +188,6 @@
   self.navigationItem.titleView = imgLogoView;
 }
 
-- (void)goBack {
-  if (self.navigationController != nil)
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)resignCurrentFirstResponder {
-  
-}
-
 #pragma mark - Private methods
 - (void)setupGestureLayer {
   _vGestureLayer.hidden = YES;
@@ -192,6 +203,17 @@
 - (void)tapGestureRecognizer:(UITapGestureRecognizer *)recognizer {
   _vGestureLayer.hidden = YES;
   [self gestureLayerDidTap];
+}
+
+- (void)goBack {
+  [self beforeGoBack];
+  
+  if (self.navigationController != nil)
+    [self.navigationController popViewControllerAnimated:YES];
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self afterGoBack];
+  });
 }
 
 @end

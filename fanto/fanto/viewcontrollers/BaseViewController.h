@@ -16,7 +16,8 @@
 - (void)gestureLayerDidTap;
 - (void)reloadContents;
 - (void)animateSlideView:(BOOL)isSlidingUp withDistance:(CGFloat)distance;
-- (void)goBack;
+- (void)beforeGoBack;
+- (void)afterGoBack;
 
 - (void)customNavigationBackgroundWithColor:(UIColor *)color;
 - (void)customNavigationBackgroundWithImage:(NSString *)imageName;
@@ -28,6 +29,5 @@
                           target:(id)target
                           action:(SEL)action
                         distance:(CGFloat)distance;
-- (void)resignCurrentFirstResponder;
 
 @end

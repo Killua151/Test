@@ -10,9 +10,11 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import "FTAppDelegate.h"
+#import "FTForgotPasswordViewController.h"
 
 @interface FTLoginViewController () {
   UIView *_currentFirstResponder;
+  FTForgotPasswordViewController *_forgotPasswordVC;
 }
 
 - (void)setupGoogleSignIn;
@@ -23,7 +25,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customTitleWithText:@"ĐĂNG NHẬP"];
+  [self customNavigationBackgroundWithColor:nil];
+  [self customTitleWithText:@"Đăng nhập"];
   [self setupGoogleSignIn];
 }
 
@@ -43,6 +46,10 @@
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
+  if (_forgotPasswordVC == nil)
+    _forgotPasswordVC = [FTForgotPasswordViewController new];
+  
+  [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
