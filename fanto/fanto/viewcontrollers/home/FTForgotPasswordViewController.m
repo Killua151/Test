@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButton];
-  [self customTitleWithText:@"Quên mật khẩu"];
+  [self customTitleWithText:@"Quên mật khẩu" color:UIColorFromRGB(153, 153, 153)];
 }
 
 - (void)reloadContents {

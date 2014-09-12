@@ -21,8 +21,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavigationBackgroundWithColor:nil];
-  [self customTitleWithText:@""];
+  [self customNavBarBgWithColor:nil];
+  [self customTitleWithText:@"" color:[UIColor clearColor]];
 }
 
 - (void)didReceiveMemoryWarning {

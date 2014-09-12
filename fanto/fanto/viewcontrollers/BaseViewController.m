@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "UIImage+ImageHelpers.h"
 
 @interface BaseViewController ()
 
@@ -17,6 +18,12 @@
 @end
 
 @implementation BaseViewController
+
++ (UIViewController *)navigationController {
+  BaseViewController *viewController = [[self class] new];
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+  return navController;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -70,9 +77,14 @@
   // Implement in child class
 }
 
-- (void)customNavigationBackgroundWithColor:(UIColor *)color {
+- (void)customNavBarBgWithColor:(UIColor *)color {
   if (self.navigationController == nil)
     return;
+  
+  if (!DeviceSystemIsOS7()) {
+    [self customNavBarBgWithImage:[UIImage imageFromColor:color]];
+    return;
+  }
   
   if (color == [UIColor clearColor] || color == nil) {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -88,12 +100,15 @@
   }
 }
 
-- (void)customNavigationBackgroundWithImage:(NSString *)imageName {
+- (void)customNavBarBgWithImageName:(NSString *)imageName {
+  [self customNavBarBgWithImage:[UIImage imageNamed:@"img-navbar-bg.png"]];
+}
+
+- (void)customNavBarBgWithImage:(UIImage *)image {
   if (self.navigationController == nil)
     return;
   
-  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"img-navbar-bg.png"]
-                                                forBarMetrics:UIBarMetricsDefault];
+  [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)customBackButton {
@@ -118,44 +133,49 @@
                           target:(id)target
                           action:(SEL)action
                         distance:(CGFloat)distance {
-  if (self.navigationController != nil)
+  if (self.navigationController == nil)
     return;
-  
-  UIImage *image = [UIImage imageNamed:imageName];
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
   
-  if (distance > 0)
-    button.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-  else
-    button.frame = CGRectMake(-2, -1, image.size.width, image.size.height);
-  
-  [button setBackgroundImage:image forState:UIControlStateNormal];
-  button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
-  [button setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
-  [button setTitleColor:[UIColor colorWithRed:55.0/255 green:22.0/255 blue:0 alpha:1]
-               forState:UIControlStateNormal];
-  
-  if (title)
+  if (title != nil)
     [button setTitle:title forState:UIControlStateNormal];
+
+  if (imageName != nil) {
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    if (distance > 0)
+      button.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    else
+      button.frame = CGRectMake(-2, -1, image.size.width, image.size.height);
+    
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+  } else if (title != nil) {
+    CGSize size = [button.titleLabel sizeThatFits:CGSizeMake(MAXFLOAT, button.titleLabel.frame.size.height)];
+    button.frame = (CGRect){CGPointZero, size};
+  }
   
-  [button addTarget:target
-             action:action
-   forControlEvents:UIControlEventTouchUpInside];
+  button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+  [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  
+  [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:button.frame];
-  view.bounds = CGRectOffset(view.bounds, distance, 0);
+  view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : 0, 0);
   [view addSubview:button];
   
   UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:view];
   
-  if (distance > 0)
+  if (distance < 0) {
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     self.navigationItem.rightBarButtonItem = barButton;
-  else
+  } else {
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.navigationItem.leftBarButtonItem = barButton;
+  }
 }
 
-- (void)customTitleWithText:(NSString*)title {
+- (void)customTitleWithText:(NSString*)title color:(UIColor *)titleColor {
   if (self.navigationController == nil)
     return;
   
@@ -163,7 +183,7 @@
   lblTitle.backgroundColor = [UIColor clearColor];
   lblTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
   lblTitle.text = title;
-  lblTitle.textColor = UIColorFromRGB(153, 153, 153);
+  lblTitle.textColor = titleColor;
   [lblTitle sizeToFit];
   CGRect frame = lblTitle.frame;
   lblTitle.frame = frame;

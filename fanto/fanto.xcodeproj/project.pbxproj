@@ -35,6 +35,9 @@
 		CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499A719C094B700C221A9 /* FTAppDelegate.m */; };
 		CA7499CF19C0951A00C221A9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499C819C0951A00C221A9 /* Utils.m */; };
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
+		CAEBA24B19C329DD0024CA71 /* FTSkillsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */; };
+		CAEBA24C19C329DD0024CA71 /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */; };
+		CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,11 @@
 		CA7499C819C0951A00C221A9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CA7499CC19C0951A00C221A9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CA7499CD19C0951A00C221A9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CAEBA24819C329DD0024CA71 /* FTSkillsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSkillsListViewController.h; sourceTree = "<group>"; };
+		CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSkillsListViewController.m; sourceTree = "<group>"; };
+		CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSkillsListViewController.xib; sourceTree = "<group>"; };
+		CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageHelpers.h"; sourceTree = "<group>"; };
+		CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageHelpers.m"; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +215,8 @@
 				CA7499C819C0951A00C221A9 /* Utils.m */,
 				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
 				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
+				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
+				CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -235,9 +245,21 @@
 				CA7499CC19C0951A00C221A9 /* BaseViewController.h */,
 				CA7499CD19C0951A00C221A9 /* BaseViewController.m */,
 				4A74147319C2FDBE002DB2C7 /* Home */,
+				CAEBA24719C329BF0024CA71 /* Profile */,
 			);
 			name = "View Controllers";
 			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		CAEBA24719C329BF0024CA71 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA24819C329DD0024CA71 /* FTSkillsListViewController.h */,
+				CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */,
+				CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */,
+			);
+			name = Profile;
+			path = profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +330,7 @@
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
+				CAEBA24C19C329DD0024CA71 /* FTSkillsListViewController.xib in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 			);
@@ -361,6 +384,8 @@
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
+				CAEBA24B19C329DD0024CA71 /* FTSkillsListViewController.m in Sources */,
+				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

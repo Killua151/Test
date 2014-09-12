@@ -12,6 +12,8 @@
   IBOutlet UIView *_vGestureLayer;
 }
 
++ (UIViewController *)navigationController;
+
 - (void)gestureLayerDidEnterEdittingMode;
 - (void)gestureLayerDidTap;
 - (void)reloadContents;
@@ -19,10 +21,11 @@
 - (void)beforeGoBack;
 - (void)afterGoBack;
 
-- (void)customNavigationBackgroundWithColor:(UIColor *)color;
-- (void)customNavigationBackgroundWithImage:(NSString *)imageName;
+- (void)customNavBarBgWithColor:(UIColor *)color;
+- (void)customNavBarBgWithImageName:(NSString *)imageName;
+- (void)customNavBarBgWithImage:(UIImage *)image;
 - (void)customBackButton;
-- (void)customTitleWithText:(NSString*)title;
+- (void)customTitleWithText:(NSString*)title color:(UIColor *)titleColor;
 - (void)customTitleLogo;
 - (void)customBarButtonWithImage:(NSString*)imageName
                            title:(NSString*)title

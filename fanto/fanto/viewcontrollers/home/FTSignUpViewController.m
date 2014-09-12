@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButton];
-  [self customTitleWithText:@"Đăng ký"];
+  [self customTitleWithText:@"Đăng ký" color:UIColorFromRGB(153, 153, 153)];
 }
 
 - (void)didReceiveMemoryWarning {

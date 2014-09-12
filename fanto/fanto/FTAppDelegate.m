@@ -8,6 +8,7 @@
 
 #import "FTAppDelegate.h"
 #import "FTHomeViewController.h"
+#import "FTSkillsListViewController.h"
 
 @interface FTAppDelegate ()
 
@@ -22,10 +23,7 @@
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  
-  UINavigationController *navigationVC =
-  [[UINavigationController alloc] initWithRootViewController:[FTHomeViewController new]];
-  self.window.rootViewController = navigationVC;
+  self.window.rootViewController = [FTSkillsListViewController navigationController];
   [self.window makeKeyAndVisible];
   
   // Whenever a person opens the app, check for a cached session

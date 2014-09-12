@@ -60,6 +60,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
 #define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
+#define DeviceSystemIsOS7()                     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define kHeightStatusBar                        20
 #define kHeightNavigationBar                    44
 #define kHeightNavigationBarLandscape           32

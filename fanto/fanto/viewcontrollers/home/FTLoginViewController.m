@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButton];
-  [self customTitleWithText:@"Đăng nhập"];
+  [self customTitleWithText:@"Đăng nhập" color:UIColorFromRGB(153, 153, 153)];
   [self setupGoogleSignIn];
 }
 
