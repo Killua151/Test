@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavigationBackgroundWithColor:nil];
+  [self customBackButton];
   [self customTitleWithText:@"Đăng nhập"];
   [self setupGoogleSignIn];
 }

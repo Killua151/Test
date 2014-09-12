@@ -97,10 +97,10 @@
 }
 
 - (void)customBackButton {
-  if (self.navigationController != nil)
+  if (self.navigationController == nil)
     return;
   
-  UIImage *btnBackBg = [UIImage imageNamed:@"btn-navbar-back"];
+  UIImage *btnBackBg = [UIImage imageNamed:@"btn-navbar-back.png"];
   
   UIButton *btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
   btnBack.frame = CGRectMake(0, 0, 50, 44);
@@ -131,7 +131,7 @@
     button.frame = CGRectMake(-2, -1, image.size.width, image.size.height);
   
   [button setBackgroundImage:image forState:UIControlStateNormal];
-  button.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
   [button setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
   [button setTitleColor:[UIColor colorWithRed:55.0/255 green:22.0/255 blue:0 alpha:1]
                forState:UIControlStateNormal];
@@ -166,7 +166,6 @@
   lblTitle.textColor = UIColorFromRGB(153, 153, 153);
   [lblTitle sizeToFit];
   CGRect frame = lblTitle.frame;
-  frame.origin.y = -3;
   lblTitle.frame = frame;
   UIView *lblTitleView = [[UIView alloc] initWithFrame:lblTitle.frame];
   [lblTitleView addSubview:lblTitle];
@@ -178,8 +177,7 @@
   if (self.navigationController == nil)
     return;
   
-  UIImageView *imgLogo = [[UIImageView alloc] initWithFrame:
-                          CGRectMake(0, 0, 78, 29)];
+  UIImageView *imgLogo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 78, 29)];
   imgLogo.image = [UIImage imageNamed:@"img-navbar-logo_title"];
   
   UIView *imgLogoView = [[UIView alloc] initWithFrame:imgLogo.frame];

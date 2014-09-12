@@ -7,7 +7,7 @@
 //
 
 #import "FTAppDelegate.h"
-#import "FTLoginViewController.h"
+#import "FTHomeViewController.h"
 
 @interface FTAppDelegate ()
 
@@ -24,7 +24,7 @@
   self.window.backgroundColor = [UIColor whiteColor];
   
   UINavigationController *navigationVC =
-  [[UINavigationController alloc] initWithRootViewController:[FTLoginViewController new]];
+  [[UINavigationController alloc] initWithRootViewController:[FTHomeViewController new]];
   self.window.rootViewController = navigationVC;
   [self.window makeKeyAndVisible];
   

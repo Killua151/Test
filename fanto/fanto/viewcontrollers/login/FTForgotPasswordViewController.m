@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self customBackButton];
   [self customTitleWithText:@"Quên mật khẩu"];
 }
 
