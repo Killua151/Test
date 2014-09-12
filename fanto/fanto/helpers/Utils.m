@@ -9,7 +9,9 @@
 #import "Utils.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
-#import <Toast/UIView+Toast.h>
+#import "UIView+ExtendedToast.h"
+
+static UIView *_sharedToast = nil;
 
 @interface Utils ()
 
@@ -44,7 +46,14 @@
 
 + (void)showToastWithMessage:(NSString *)toastMessage {
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
-  [topWindow makeToast:toastMessage];
+  
+  if (_sharedToast != nil) {
+    [_sharedToast removeFromSuperview];
+    _sharedToast = nil;
+  }
+  
+  _sharedToast = [topWindow toastWithMessage:toastMessage];
+  [topWindow showToast:_sharedToast];
 }
 
 + (void)showToastWithError:(NSError *)error {

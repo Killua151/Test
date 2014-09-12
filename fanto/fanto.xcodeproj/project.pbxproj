@@ -15,6 +15,7 @@
 		4A74145419C2DBCF002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */; };
 		4A74145719C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */; };
 		4A74145819C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */; };
+		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
 		CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */; };
 		CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */; };
 		CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */; };
@@ -47,6 +48,8 @@
 		4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
 		4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg.png"; sourceTree = "<group>"; };
 		4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
+		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
+		4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ExtendedToast.m"; sourceTree = "<group>"; };
 		CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLoginViewController.h; sourceTree = "<group>"; };
 		CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLoginViewController.m; sourceTree = "<group>"; };
 		CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLoginViewController.xib; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 			children = (
 				CA7499C719C0951A00C221A9 /* Utils.h */,
 				CA7499C819C0951A00C221A9 /* Utils.m */,
+				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
+				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -347,6 +352,7 @@
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */,
 				CAEBA24119C208FD0024CA71 /* FTForgotPasswordViewController.m in Sources */,
+				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
