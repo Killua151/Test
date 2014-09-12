@@ -9,17 +9,23 @@
 /* Begin PBXBuildFile section */
 		4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144619C2D779002DB2C7 /* btn-navbar-back.png */; };
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
-		4A74144E19C2D8B8002DB2C7 /* FTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74144C19C2D8B8002DB2C7 /* FTHomeViewController.m */; };
-		4A74144F19C2D8B8002DB2C7 /* FTHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144D19C2D8B8002DB2C7 /* FTHomeViewController.xib */; };
-		4A74145319C2DBCF002DB2C7 /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */; };
-		4A74145419C2DBCF002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */; };
-		4A74145719C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */; };
-		4A74145819C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */; };
 		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
-		CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */; };
-		CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */; };
-		CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */; };
-		CA00EDFA19C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF819C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png */; };
+		4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146219C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png */; };
+		4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146319C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png */; };
+		4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146419C2FD7F002DB2C7 /* img-home-buttons-bg.png */; };
+		4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146519C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png */; };
+		4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146619C2FD7F002DB2C7 /* img-login-text_boxes-bg.png */; };
+		4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146719C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png */; };
+		4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146819C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png */; };
+		4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74146919C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */; };
+		4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147519C2FDBE002DB2C7 /* FTForgotPasswordViewController.m */; };
+		4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147619C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib */; };
+		4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147819C2FDBE002DB2C7 /* FTHomeViewController.m */; };
+		4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147919C2FDBE002DB2C7 /* FTHomeViewController.xib */; };
+		4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147B19C2FDBE002DB2C7 /* FTLoginViewController.m */; };
+		4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147C19C2FDBE002DB2C7 /* FTLoginViewController.xib */; };
+		4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */; };
+		4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
@@ -29,10 +35,6 @@
 		CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499A719C094B700C221A9 /* FTAppDelegate.m */; };
 		CA7499CF19C0951A00C221A9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499C819C0951A00C221A9 /* Utils.m */; };
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
-		CAEBA24119C208FD0024CA71 /* FTForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */; };
-		CAEBA24219C208FD0024CA71 /* FTForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */; };
-		CAEBA24519C20A5C0024CA71 /* img-forgot_password-text_box-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */; };
-		CAEBA24619C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -40,22 +42,29 @@
 		2049651044F2420EB5D4EB87 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A74144619C2D779002DB2C7 /* btn-navbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back.png"; path = "images/btn-navbar-back.png"; sourceTree = "<group>"; };
 		4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back@2x.png"; path = "images/btn-navbar-back@2x.png"; sourceTree = "<group>"; };
-		4A74144B19C2D8B8002DB2C7 /* FTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHomeViewController.h; sourceTree = "<group>"; };
-		4A74144C19C2D8B8002DB2C7 /* FTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHomeViewController.m; sourceTree = "<group>"; };
-		4A74144D19C2D8B8002DB2C7 /* FTHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHomeViewController.xib; sourceTree = "<group>"; };
-		4A74145019C2DBCF002DB2C7 /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
-		4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
-		4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
-		4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg.png"; sourceTree = "<group>"; };
-		4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
 		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
 		4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ExtendedToast.m"; sourceTree = "<group>"; };
-		CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLoginViewController.h; sourceTree = "<group>"; };
-		CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLoginViewController.m; sourceTree = "<group>"; };
-		CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLoginViewController.xib; sourceTree = "<group>"; };
-		CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-login-text_boxes-bg.png"; sourceTree = "<group>"; };
-		CA00EDF819C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-login-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
-		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4A74146219C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg.png"; sourceTree = "<group>"; };
+		4A74146319C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg@2x.png"; sourceTree = "<group>"; };
+		4A74146419C2FD7F002DB2C7 /* img-home-buttons-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-home-buttons-bg.png"; sourceTree = "<group>"; };
+		4A74146519C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-home-buttons-bg@2x.png"; sourceTree = "<group>"; };
+		4A74146619C2FD7F002DB2C7 /* img-login-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-login-text_boxes-bg.png"; sourceTree = "<group>"; };
+		4A74146719C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-login-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
+		4A74146819C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg.png"; sourceTree = "<group>"; };
+		4A74146919C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
+		4A74147419C2FDBE002DB2C7 /* FTForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTForgotPasswordViewController.h; sourceTree = "<group>"; };
+		4A74147519C2FDBE002DB2C7 /* FTForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTForgotPasswordViewController.m; sourceTree = "<group>"; };
+		4A74147619C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		4A74147719C2FDBE002DB2C7 /* FTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHomeViewController.h; sourceTree = "<group>"; };
+		4A74147819C2FDBE002DB2C7 /* FTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHomeViewController.m; sourceTree = "<group>"; };
+		4A74147919C2FDBE002DB2C7 /* FTHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHomeViewController.xib; sourceTree = "<group>"; };
+		4A74147A19C2FDBE002DB2C7 /* FTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLoginViewController.h; sourceTree = "<group>"; };
+		4A74147B19C2FDBE002DB2C7 /* FTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLoginViewController.m; sourceTree = "<group>"; };
+		4A74147C19C2FDBE002DB2C7 /* FTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLoginViewController.xib; sourceTree = "<group>"; };
+		4A74147D19C2FDBE002DB2C7 /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
+		4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
+		4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
+		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,11 +80,6 @@
 		CA7499C819C0951A00C221A9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CA7499CC19C0951A00C221A9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CA7499CD19C0951A00C221A9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		CAEBA23E19C208FD0024CA71 /* FTForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTForgotPasswordViewController.h; sourceTree = "<group>"; };
-		CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTForgotPasswordViewController.m; sourceTree = "<group>"; };
-		CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTForgotPasswordViewController.xib; sourceTree = "<group>"; };
-		CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg.png"; sourceTree = "<group>"; };
-		CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-forgot_password-text_box-bg@2x.png"; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,28 +98,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A74144A19C2D77D002DB2C7 /* Buttons */ = {
+		4A74146119C2FD7F002DB2C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4A74146219C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png */,
+				4A74146319C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png */,
+				4A74146419C2FD7F002DB2C7 /* img-home-buttons-bg.png */,
+				4A74146519C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png */,
+				4A74146619C2FD7F002DB2C7 /* img-login-text_boxes-bg.png */,
+				4A74146719C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png */,
+				4A74146819C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png */,
+				4A74146919C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */,
+			);
+			name = Home;
+			path = images/home;
+			sourceTree = "<group>";
+		};
+		4A74147219C2FD8D002DB2C7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				4A74144619C2D779002DB2C7 /* btn-navbar-back.png */,
 				4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */,
-			);
-			name = Buttons;
-			sourceTree = "<group>";
-		};
-		CA00EDF619C09CE300E6D9D5 /* Images */ = {
-			isa = PBXGroup;
-			children = (
 				CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */,
-				CAEBA24319C20A5C0024CA71 /* img-forgot_password-text_box-bg.png */,
-				CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */,
-				CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */,
-				CA00EDF819C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png */,
-				4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */,
-				4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */,
+				4A74146119C2FD7F002DB2C7 /* Home */,
 			);
 			name = Images;
-			path = images;
+			sourceTree = "<group>";
+		};
+		4A74147319C2FDBE002DB2C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4A74147419C2FDBE002DB2C7 /* FTForgotPasswordViewController.h */,
+				4A74147519C2FDBE002DB2C7 /* FTForgotPasswordViewController.m */,
+				4A74147619C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib */,
+				4A74147719C2FDBE002DB2C7 /* FTHomeViewController.h */,
+				4A74147819C2FDBE002DB2C7 /* FTHomeViewController.m */,
+				4A74147919C2FDBE002DB2C7 /* FTHomeViewController.xib */,
+				4A74147A19C2FDBE002DB2C7 /* FTLoginViewController.h */,
+				4A74147B19C2FDBE002DB2C7 /* FTLoginViewController.m */,
+				4A74147C19C2FDBE002DB2C7 /* FTLoginViewController.xib */,
+				4A74147D19C2FDBE002DB2C7 /* FTSignUpViewController.h */,
+				4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */,
+				4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */,
+			);
+			name = Home;
+			path = home;
 			sourceTree = "<group>";
 		};
 		CA74998B19C094B700C221A9 = {
@@ -196,8 +223,7 @@
 		CA7499CA19C0951A00C221A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4A74144A19C2D77D002DB2C7 /* Buttons */,
-				CA00EDF619C09CE300E6D9D5 /* Images */,
+				4A74147219C2FD8D002DB2C7 /* Images */,
 			);
 			name = Resources;
 			path = resources;
@@ -208,30 +234,10 @@
 			children = (
 				CA7499CC19C0951A00C221A9 /* BaseViewController.h */,
 				CA7499CD19C0951A00C221A9 /* BaseViewController.m */,
-				CA7499CE19C0951A00C221A9 /* Login */,
+				4A74147319C2FDBE002DB2C7 /* Home */,
 			);
 			name = "View Controllers";
 			path = viewcontrollers;
-			sourceTree = "<group>";
-		};
-		CA7499CE19C0951A00C221A9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				CAEBA23E19C208FD0024CA71 /* FTForgotPasswordViewController.h */,
-				CAEBA23F19C208FD0024CA71 /* FTForgotPasswordViewController.m */,
-				CAEBA24019C208FD0024CA71 /* FTForgotPasswordViewController.xib */,
-				4A74144B19C2D8B8002DB2C7 /* FTHomeViewController.h */,
-				4A74144C19C2D8B8002DB2C7 /* FTHomeViewController.m */,
-				4A74144D19C2D8B8002DB2C7 /* FTHomeViewController.xib */,
-				CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */,
-				CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */,
-				CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */,
-				4A74145019C2DBCF002DB2C7 /* FTSignUpViewController.h */,
-				4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */,
-				4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */,
-			);
-			name = Login;
-			path = login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,20 +294,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEBA24619C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png in Resources */,
-				CAEBA24519C20A5C0024CA71 /* img-forgot_password-text_box-bg.png in Resources */,
-				CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */,
+				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
+				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
-				4A74145719C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
+				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
+				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
-				4A74145819C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
-				CAEBA24219C208FD0024CA71 /* FTForgotPasswordViewController.xib in Resources */,
-				4A74144F19C2D8B8002DB2C7 /* FTHomeViewController.xib in Resources */,
+				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
+				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
+				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
-				CA00EDFA19C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png in Resources */,
+				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
+				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
+				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
+				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
-				4A74145419C2DBCF002DB2C7 /* FTSignUpViewController.xib in Resources */,
-				CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */,
+				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,13 +354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
+				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
-				4A74145319C2DBCF002DB2C7 /* FTSignUpViewController.m in Sources */,
-				4A74144E19C2D8B8002DB2C7 /* FTHomeViewController.m in Sources */,
+				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
-				CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */,
-				CAEBA24119C208FD0024CA71 /* FTForgotPasswordViewController.m in Sources */,
+				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
+				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
