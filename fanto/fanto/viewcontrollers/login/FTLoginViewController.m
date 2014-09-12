@@ -18,6 +18,7 @@
 }
 
 - (void)setupGoogleSignIn;
+- (BOOL)validateFields;
 
 @end
 
@@ -34,6 +35,11 @@
   [super didReceiveMemoryWarning];
 }
 
+- (void)reloadContents {
+  _txtUsername.text = @"";
+  _txtPassword.text = @"";
+}
+
 - (void)gestureLayerDidTap {
   [_currentFirstResponder resignFirstResponder];
 }
@@ -43,12 +49,14 @@
     return;
   
   [self gestureLayerDidTap];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
   if (_forgotPasswordVC == nil)
     _forgotPasswordVC = [FTForgotPasswordViewController new];
   
+  [_forgotPasswordVC reloadContents];
   [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
 }
 
@@ -111,6 +119,18 @@
 
 #pragma mark - Private methods
 - (BOOL)validateFields {
+  if (![Utils validateBlank:_txtUsername.text]) {
+    [_txtUsername becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your username", nil)];
+    return NO;
+  }
+  
+  if (![Utils validateAlphaNumeric:_txtUsername.text]) {
+    [_txtUsername becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Username must contain alphanumeric only", nil)];
+    return NO;
+  }
+  
   return YES;
 }
 

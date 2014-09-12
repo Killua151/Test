@@ -15,6 +15,6 @@
   IBOutlet UITextField *_txtPassword;
 }
 
-- (IBAction)btnSubmitPressed:(UIButton *)sender;
+- (IBAction)btnSignUpPressed:(UIButton *)sender;
 
 @end
