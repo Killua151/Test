@@ -11,6 +11,10 @@
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
 		4A74144E19C2D8B8002DB2C7 /* FTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74144C19C2D8B8002DB2C7 /* FTHomeViewController.m */; };
 		4A74144F19C2D8B8002DB2C7 /* FTHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144D19C2D8B8002DB2C7 /* FTHomeViewController.xib */; };
+		4A74145319C2DBCF002DB2C7 /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */; };
+		4A74145419C2DBCF002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */; };
+		4A74145719C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */; };
+		4A74145819C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */; };
 		CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */; };
 		CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */; };
 		CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */; };
@@ -38,6 +42,11 @@
 		4A74144B19C2D8B8002DB2C7 /* FTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHomeViewController.h; sourceTree = "<group>"; };
 		4A74144C19C2D8B8002DB2C7 /* FTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHomeViewController.m; sourceTree = "<group>"; };
 		4A74144D19C2D8B8002DB2C7 /* FTHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHomeViewController.xib; sourceTree = "<group>"; };
+		4A74145019C2DBCF002DB2C7 /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
+		4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
+		4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
+		4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg.png"; sourceTree = "<group>"; };
+		4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-sign_up-text_boxes-bg@2x.png"; sourceTree = "<group>"; };
 		CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLoginViewController.h; sourceTree = "<group>"; };
 		CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLoginViewController.m; sourceTree = "<group>"; };
 		CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLoginViewController.xib; sourceTree = "<group>"; };
@@ -99,6 +108,8 @@
 				CAEBA24419C20A5C0024CA71 /* img-forgot_password-text_box-bg@2x.png */,
 				CA00EDF719C09CE300E6D9D5 /* img-login-text_boxes-bg.png */,
 				CA00EDF819C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png */,
+				4A74145519C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png */,
+				4A74145619C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png */,
 			);
 			name = Images;
 			path = images;
@@ -210,6 +221,9 @@
 				CA00EDF019C098EA00E6D9D5 /* FTLoginViewController.h */,
 				CA00EDF119C098EA00E6D9D5 /* FTLoginViewController.m */,
 				CA00EDF219C098EA00E6D9D5 /* FTLoginViewController.xib */,
+				4A74145019C2DBCF002DB2C7 /* FTSignUpViewController.h */,
+				4A74145119C2DBCF002DB2C7 /* FTSignUpViewController.m */,
+				4A74145219C2DBCF002DB2C7 /* FTSignUpViewController.xib */,
 			);
 			name = Login;
 			path = login;
@@ -273,12 +287,15 @@
 				CAEBA24519C20A5C0024CA71 /* img-forgot_password-text_box-bg.png in Resources */,
 				CA00EDF419C098EA00E6D9D5 /* FTLoginViewController.xib in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
+				4A74145719C2DC71002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
+				4A74145819C2DC71002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA24219C208FD0024CA71 /* FTForgotPasswordViewController.xib in Resources */,
 				4A74144F19C2D8B8002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				CA00EDFA19C09CE300E6D9D5 /* img-login-text_boxes-bg@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
+				4A74145419C2DBCF002DB2C7 /* FTSignUpViewController.xib in Resources */,
 				CA00EDF919C09CE300E6D9D5 /* img-login-text_boxes-bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +342,7 @@
 			files = (
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
+				4A74145319C2DBCF002DB2C7 /* FTSignUpViewController.m in Sources */,
 				4A74144E19C2D8B8002DB2C7 /* FTHomeViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				CA00EDF319C098EA00E6D9D5 /* FTLoginViewController.m in Sources */,
