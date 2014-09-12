@@ -131,6 +131,18 @@
     return NO;
   }
   
+  if (![Utils validateBlank:_txtPassword.text]) {
+    [_txtPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password", nil)];
+    return NO;
+  }
+  
+  if (_txtPassword.text.length < 8) {
+    [_txtPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Password must be at least 8 characters long", nil)];
+    return NO;
+  }
+  
   return YES;
 }
 
