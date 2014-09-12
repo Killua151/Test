@@ -23,7 +23,8 @@
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  self.window.rootViewController = [FTSkillsListViewController navigationController];
+  self.window.rootViewController = [FTHomeViewController navigationController];
+//  self.window.rootViewController = [FTSkillsListViewController navigationController];
   [self.window makeKeyAndVisible];
   
   // Whenever a person opens the app, check for a cached session

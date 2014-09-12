@@ -81,17 +81,17 @@
   if (self.navigationController == nil)
     return;
   
-  if (!DeviceSystemIsOS7()) {
-    [self customNavBarBgWithImage:[UIImage imageFromColor:color]];
-    return;
-  }
-  
   if (color == [UIColor clearColor] || color == nil) {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
   } else {
+    if (!DeviceSystemIsOS7()) {
+      [self customNavBarBgWithImage:[UIImage imageFromColor:color]];
+      return;
+    }
+    
     self.navigationController.view.backgroundColor = color;
     self.navigationController.navigationBar.translucent = NO;
     
@@ -122,10 +122,11 @@
   [btnBack setImage:btnBackBg forState:UIControlStateNormal];
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
-  UIView *btnBackView = [[UIView alloc] initWithFrame:btnBack.frame];
-  btnBackView.bounds = CGRectOffset(btnBackView.bounds, 16, 0);
-  [btnBackView addSubview:btnBack];
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btnBackView];
+  UIView *view = [[UIView alloc] initWithFrame:btnBack.frame];
+  view.backgroundColor = [UIColor grayColor];
+  view.bounds = CGRectOffset(view.bounds, 8, 0);
+  [view addSubview:btnBack];
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 
 - (void)customBarButtonWithImage:(NSString *)imageName
@@ -161,6 +162,7 @@
   [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:button.frame];
+  view.backgroundColor = [UIColor grayColor];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : 0, 0);
   [view addSubview:button];
   
