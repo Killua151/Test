@@ -72,6 +72,42 @@
 
 #pragma mark - Private methods
 - (BOOL)validateFields {
+  if (![Utils validateBlank:_txtFullName.text]) {
+    [_txtFullName becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your full name", nil)];
+    return NO;
+  }
+  
+  if (![Utils validateBlank:_txtEmail.text]) {
+    [_txtEmail becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your email", nil)];
+    return NO;
+  }
+  
+  if (![Utils validateEmail:_txtEmail.text]) {
+    [_txtEmail becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Invalid email", nil)];
+    return NO;
+  }
+  
+  if (![Utils validateBlank:_txtUsername.text]) {
+    [_txtUsername becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your username", nil)];
+    return NO;
+  }
+  
+  if (![Utils validateBlank:_txtPassword.text]) {
+    [_txtPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password", nil)];
+    return NO;
+  }
+  
+  if (_txtPassword.text.length < 8) {
+    [_txtPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Password must be at least 8 characters long", nil)];
+    return NO;
+  }
+  
   return YES;
 }
 
