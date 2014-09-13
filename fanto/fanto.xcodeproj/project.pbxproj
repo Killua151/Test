@@ -51,6 +51,10 @@
 		CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27219C48D760024CA71 /* ClearSans-Bold.ttf */; };
 		CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27319C48D760024CA71 /* ClearSans-Regular.ttf */; };
 		CAEBA27819C48F610024CA71 /* MSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA27719C48F610024CA71 /* MSkill.m */; };
+		CAEBA27C19C4A3D30024CA71 /* img-checkpoint_test-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */; };
+		CAEBA27D19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */; };
+		CAEBA28119C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */; };
+		CAEBA28219C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +124,11 @@
 		CAEBA27619C48F610024CA71 /* MSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSkill.h; sourceTree = "<group>"; };
 		CAEBA27719C48F610024CA71 /* MSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSkill.m; sourceTree = "<group>"; };
 		CAEBA27919C4924B0024CA71 /* FTSharedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTSharedHeader.h; sourceTree = "<group>"; };
+		CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-checkpoint_test-bg.png"; sourceTree = "<group>"; };
+		CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-checkpoint_test-bg@2x.png"; sourceTree = "<group>"; };
+		CAEBA27E19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonCheckpointTestCell.h; sourceTree = "<group>"; };
+		CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonCheckpointTestCell.m; sourceTree = "<group>"; };
+		CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonCheckpointTestCell.xib; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +313,9 @@
 		CAEBA25019C487940024CA71 /* Skills List */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA27E19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.h */,
+				CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */,
+				CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */,
 				CAEBA25C19C489E80024CA71 /* FTHexagonSkillCell.h */,
 				CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */,
 				CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */,
@@ -330,6 +342,8 @@
 		CAEBA26719C48C490024CA71 /* Skills List */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */,
+				CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */,
 				CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */,
 				CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */,
 				CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */,
@@ -412,12 +426,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEBA28219C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
+				CAEBA27C19C4A3D30024CA71 /* img-checkpoint_test-bg.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
@@ -433,6 +449,7 @@
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
 				CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */,
+				CAEBA27D19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
 				CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
@@ -496,6 +513,7 @@
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
+				CAEBA28119C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

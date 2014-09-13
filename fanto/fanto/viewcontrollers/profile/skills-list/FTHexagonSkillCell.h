@@ -8,7 +8,9 @@
 
 #import "BaseTableViewCell.h"
 
-@interface FTHexagonSkillCell : BaseTableViewCell <FTSkillViewDelegate>
+@interface FTHexagonSkillCell : BaseTableViewCell
+
+@property (nonatomic, assign) id<FTSkillViewDelegate> delegate;
 
 + (NSString *)reuseIdentifierForSkills:(NSArray *)skills;
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;

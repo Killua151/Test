@@ -13,7 +13,6 @@
 @interface FTHexagonSkillCell ()
 
 - (CGFloat)xCenterForSkillAtIndex:(NSInteger)index amongTotal:(NSInteger)total;
-- (void)updateSkillViewsWithSkills:(NSArray *)skills;
 
 @end
 
@@ -48,7 +47,7 @@
       if (skill == nil || ![skill isKindOfClass:[MSkill class]])
         return;
       
-      FTHexagonSkillView *skillView = [[FTHexagonSkillView alloc] initWithSkill:skill andTarget:self];
+      FTHexagonSkillView *skillView = [[FTHexagonSkillView alloc] initWithSkill:skill andTarget:_delegate];
       
       CGFloat xPos = [self xCenterForSkillAtIndex:index amongTotal:totalSkills] - skillView.frame.size.width/2;
       skillView.frame = (CGRect){CGPointMake(xPos, 8), skillView.frame.size};
@@ -62,11 +61,6 @@
     
     [skillView populateData];
   }
-}
-
-#pragma mark - FTSkillViewDelegate methods
-- (void)skillViewDidSelectSkill:(MSkill *)skill {
-  
 }
 
 #pragma mark - Private methods

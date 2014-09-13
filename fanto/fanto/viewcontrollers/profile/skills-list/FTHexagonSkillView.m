@@ -22,6 +22,10 @@
 - (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
+    
+    _lblSkillName.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+    _lblLessonsProgress.font = [UIFont fontWithName:@"ClearSans" size:14];
+    
     _skillData = skill;
     _delegate = target;
   }
@@ -30,7 +34,7 @@
 }
 
 - (void)populateData {
-  DLog(@"populateData");
+//  DLog(@"populateData");
 }
 
 - (IBAction)btnSkillPressed:(UIButton *)sender {
