@@ -17,7 +17,8 @@
   #import "DCKeyValueObjectMapping.h"
   #import "MBProgressHUD.h"
   #import "Utils.h"
-  #import <Toast/UIView+Toast.h>
+  #import "UIView+ExtendedToast.h"
+  #import "FTSharedHeader.h"
 #endif
 
 #define DLog(format, ...) \

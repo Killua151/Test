@@ -35,9 +35,22 @@
 		CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499A719C094B700C221A9 /* FTAppDelegate.m */; };
 		CA7499CF19C0951A00C221A9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499C819C0951A00C221A9 /* Utils.m */; };
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
-		CAEBA24B19C329DD0024CA71 /* FTSkillsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */; };
-		CAEBA24C19C329DD0024CA71 /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */; };
 		CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */; };
+		CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25219C487B20024CA71 /* FTSkillsListViewController.m */; };
+		CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */; };
+		CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */; };
+		CAEBA25B19C488460024CA71 /* MBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25A19C488460024CA71 /* MBase.m */; };
+		CAEBA25F19C489E80024CA71 /* FTHexagonSkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */; };
+		CAEBA26019C489E80024CA71 /* FTHexagonSkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */; };
+		CAEBA26319C48AFA0024CA71 /* FTHexagonSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */; };
+		CAEBA26519C48B0D0024CA71 /* FTHexagonSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */; };
+		CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */; };
+		CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */; };
+		CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */; };
+		CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26B19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png */; };
+		CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27219C48D760024CA71 /* ClearSans-Bold.ttf */; };
+		CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27319C48D760024CA71 /* ClearSans-Regular.ttf */; };
+		CAEBA27819C48F610024CA71 /* MSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA27719C48F610024CA71 /* MSkill.m */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,11 +96,30 @@
 		CA7499C819C0951A00C221A9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CA7499CC19C0951A00C221A9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CA7499CD19C0951A00C221A9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		CAEBA24819C329DD0024CA71 /* FTSkillsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSkillsListViewController.h; sourceTree = "<group>"; };
-		CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSkillsListViewController.m; sourceTree = "<group>"; };
-		CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSkillsListViewController.xib; sourceTree = "<group>"; };
 		CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageHelpers.h"; sourceTree = "<group>"; };
 		CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageHelpers.m"; sourceTree = "<group>"; };
+		CAEBA25119C487B20024CA71 /* FTSkillsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSkillsListViewController.h; sourceTree = "<group>"; };
+		CAEBA25219C487B20024CA71 /* FTSkillsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSkillsListViewController.m; sourceTree = "<group>"; };
+		CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSkillsListViewController.xib; sourceTree = "<group>"; };
+		CAEBA25619C487F30024CA71 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		CAEBA25919C488460024CA71 /* MBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBase.h; sourceTree = "<group>"; };
+		CAEBA25A19C488460024CA71 /* MBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBase.m; sourceTree = "<group>"; };
+		CAEBA25C19C489E80024CA71 /* FTHexagonSkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillCell.h; sourceTree = "<group>"; };
+		CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillCell.m; sourceTree = "<group>"; };
+		CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillCell.xib; sourceTree = "<group>"; };
+		CAEBA26119C48AFA0024CA71 /* FTHexagonSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillView.h; sourceTree = "<group>"; };
+		CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillView.m; sourceTree = "<group>"; };
+		CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillView.xib; sourceTree = "<group>"; };
+		CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-locked.png"; sourceTree = "<group>"; };
+		CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-locked@2x.png"; sourceTree = "<group>"; };
+		CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-unlocked.png"; sourceTree = "<group>"; };
+		CAEBA26B19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-unlocked@2x.png"; sourceTree = "<group>"; };
+		CAEBA27219C48D760024CA71 /* ClearSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClearSans-Bold.ttf"; sourceTree = "<group>"; };
+		CAEBA27319C48D760024CA71 /* ClearSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClearSans-Regular.ttf"; sourceTree = "<group>"; };
+		CAEBA27619C48F610024CA71 /* MSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSkill.h; sourceTree = "<group>"; };
+		CAEBA27719C48F610024CA71 /* MSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSkill.m; sourceTree = "<group>"; };
+		CAEBA27919C4924B0024CA71 /* FTSharedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTSharedHeader.h; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +161,7 @@
 				4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */,
 				CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */,
 				4A74146119C2FD7F002DB2C7 /* Home */,
+				CAEBA26619C48C490024CA71 /* Profile */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -188,6 +221,7 @@
 			children = (
 				CA7499A619C094B700C221A9 /* FTAppDelegate.h */,
 				CA7499A719C094B700C221A9 /* FTAppDelegate.m */,
+				CAEBA27919C4924B0024CA71 /* FTSharedHeader.h */,
 				CA7499C619C0951A00C221A9 /* Helpers */,
 				CA7499C919C0951A00C221A9 /* Models */,
 				CA7499CA19C0951A00C221A9 /* Resources */,
@@ -225,6 +259,10 @@
 		CA7499C919C0951A00C221A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA25919C488460024CA71 /* MBase.h */,
+				CAEBA25A19C488460024CA71 /* MBase.m */,
+				CAEBA27619C48F610024CA71 /* MSkill.h */,
+				CAEBA27719C48F610024CA71 /* MSkill.m */,
 			);
 			name = Models;
 			path = models;
@@ -233,6 +271,7 @@
 		CA7499CA19C0951A00C221A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA27019C48D760024CA71 /* Fonts */,
 				4A74147219C2FD8D002DB2C7 /* Images */,
 			);
 			name = Resources;
@@ -242,6 +281,8 @@
 		CA7499CB19C0951A00C221A9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA25619C487F30024CA71 /* BaseTableViewCell.h */,
+				CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */,
 				CA7499CC19C0951A00C221A9 /* BaseViewController.h */,
 				CA7499CD19C0951A00C221A9 /* BaseViewController.m */,
 				4A74147319C2FDBE002DB2C7 /* Home */,
@@ -254,12 +295,67 @@
 		CAEBA24719C329BF0024CA71 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CAEBA24819C329DD0024CA71 /* FTSkillsListViewController.h */,
-				CAEBA24919C329DD0024CA71 /* FTSkillsListViewController.m */,
-				CAEBA24A19C329DD0024CA71 /* FTSkillsListViewController.xib */,
+				CAEBA25019C487940024CA71 /* Skills List */,
 			);
 			name = Profile;
 			path = profile;
+			sourceTree = "<group>";
+		};
+		CAEBA25019C487940024CA71 /* Skills List */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA25C19C489E80024CA71 /* FTHexagonSkillCell.h */,
+				CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */,
+				CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */,
+				CAEBA26119C48AFA0024CA71 /* FTHexagonSkillView.h */,
+				CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */,
+				CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */,
+				CAEBA25119C487B20024CA71 /* FTSkillsListViewController.h */,
+				CAEBA25219C487B20024CA71 /* FTSkillsListViewController.m */,
+				CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */,
+			);
+			name = "Skills List";
+			path = "skills-list";
+			sourceTree = "<group>";
+		};
+		CAEBA26619C48C490024CA71 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA26719C48C490024CA71 /* Skills List */,
+			);
+			name = Profile;
+			path = images/profile;
+			sourceTree = "<group>";
+		};
+		CAEBA26719C48C490024CA71 /* Skills List */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */,
+				CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */,
+				CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */,
+				CAEBA26B19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png */,
+			);
+			name = "Skills List";
+			path = "skills-list";
+			sourceTree = "<group>";
+		};
+		CAEBA27019C48D760024CA71 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA27119C48D760024CA71 /* ClearSans */,
+			);
+			name = Fonts;
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		CAEBA27119C48D760024CA71 /* ClearSans */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA27219C48D760024CA71 /* ClearSans-Bold.ttf */,
+				CAEBA27319C48D760024CA71 /* ClearSans-Regular.ttf */,
+			);
+			name = ClearSans;
+			path = "clear-sans";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
@@ -325,13 +422,20 @@
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
+				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
+				CAEBA26519C48B0D0024CA71 /* FTHexagonSkillView.xib in Resources */,
+				CAEBA26019C489E80024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
+				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
-				CAEBA24C19C329DD0024CA71 /* FTSkillsListViewController.xib in Resources */,
+				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
+				CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
+				CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */,
+				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,17 +480,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
+				CAEBA26319C48AFA0024CA71 /* FTHexagonSkillView.m in Sources */,
+				CAEBA25F19C489E80024CA71 /* FTHexagonSkillCell.m in Sources */,
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
+				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
+				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
-				CAEBA24B19C329DD0024CA71 /* FTSkillsListViewController.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
+				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

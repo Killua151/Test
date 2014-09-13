@@ -52,5 +52,10 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackTranslucent</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ClearSans-Bold.ttf</string>
+		<string>ClearSans-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

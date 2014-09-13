@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface FTSkillsListViewController : BaseViewController
+@interface FTSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
+  IBOutlet UITableView *_tblSkills;
+}
 
 @end

@@ -123,7 +123,6 @@
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:btnBack.frame];
-  view.backgroundColor = [UIColor grayColor];
   view.bounds = CGRectOffset(view.bounds, 8, 0);
   [view addSubview:btnBack];
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
@@ -162,7 +161,6 @@
   [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:button.frame];
-  view.backgroundColor = [UIColor grayColor];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : 0, 0);
   [view addSubview:button];
   
