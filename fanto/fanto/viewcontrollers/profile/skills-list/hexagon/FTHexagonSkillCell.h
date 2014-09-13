@@ -6,14 +6,8 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseTableViewCell.h"
+#import "FTSkillCell.h"
 
-@interface FTHexagonSkillCell : BaseTableViewCell
-
-@property (nonatomic, assign) id<FTSkillViewDelegate> delegate;
-
-+ (NSString *)reuseIdentifierForSkills:(NSArray *)skills;
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-- (void)updateCellWithSkills:(NSArray *)skills;
+@interface FTHexagonSkillCell : FTSkillCell
 
 @end

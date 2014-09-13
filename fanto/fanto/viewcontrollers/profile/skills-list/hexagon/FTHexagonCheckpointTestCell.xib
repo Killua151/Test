@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-checkpoint_test-bg.png" id="nsq-vk-I6m">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon-checkpoint_test-bg.png" id="nsq-vk-I6m">
                         <rect key="frame" x="15" y="36" width="290" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     </imageView>
@@ -34,6 +34,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img-checkpoint_test-bg.png" width="290" height="44"/>
+        <image name="img-hexagon-checkpoint_test-bg.png" width="290" height="44"/>
     </resources>
 </document>

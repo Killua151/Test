@@ -18,27 +18,6 @@
 
 @implementation FTHexagonSkillCell
 
-+ (NSString *)reuseIdentifierForSkills:(NSArray *)skills {
-  if ([skills count] == 0)
-    return NSStringFromClass([self class]);
-  
-  NSMutableString *reuseId = [NSMutableString string];
-  
-  for (NSObject *skill in skills)
-    [reuseId appendString:NSStringFromClass([skill class])];
-  
-  return reuseId;
-}
-
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-  if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-    LoadXibWithSameClass();
-    [self setValue:reuseIdentifier forKey:@"reuseIdentifier"];
-  }
-  
-  return self;
-}
-
 - (void)updateCellWithSkills:(NSArray *)skills {
   if ([self.contentView.subviews count] == 0) {
     NSInteger totalSkills = [skills count];
@@ -47,7 +26,7 @@
       if (skill == nil || ![skill isKindOfClass:[MSkill class]])
         return;
       
-      FTHexagonSkillView *skillView = [[FTHexagonSkillView alloc] initWithSkill:skill andTarget:_delegate];
+      FTHexagonSkillView *skillView = [[FTHexagonSkillView alloc] initWithSkill:skill andTarget:self.delegate];
       
       CGFloat xPos = [self xCenterForSkillAtIndex:index amongTotal:totalSkills] - skillView.frame.size.width/2;
       skillView.frame = (CGRect){CGPointMake(xPos, 8), skillView.frame.size};
