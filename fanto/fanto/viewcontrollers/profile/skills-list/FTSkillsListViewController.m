@@ -17,6 +17,7 @@
 
 - (void)gotoProfile;
 - (void)gotoShop;
+- (void)animateSlideStrengthenButton:(BOOL)show;
 
 @end
 
@@ -30,7 +31,8 @@
   [self customBarButtonWithImage:nil title:@"Cửa hàng" target:self action:@selector(gotoShop) distance:-8];
   
   _tblSkills.tableFooterView =
-  [[UIView alloc] initWithFrame:(CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, 50}}];
+  [[UIView alloc] initWithFrame:
+   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _btnStrengthen.frame.size.height + 52}}];
   
   _skillsData = @[
   @[[MSkill new]],
@@ -59,6 +61,9 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+}
+
+- (IBAction)btnStrengthenPressed:(UIButton *)sender {
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -112,6 +117,21 @@
   DLog(@"%@", indexPath);
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+  [self animateSlideStrengthenButton:NO];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  [self animateSlideStrengthenButton:YES];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+  if (decelerate)
+    return;
+  
+  [self animateSlideStrengthenButton:YES];
+}
+
 #pragma mark - FTSkillViewDelegate methods
 - (void)skillViewDidSelectSkill:(MSkill *)skill {
   DLog(@"%@", skill);
@@ -122,6 +142,39 @@
 }
 
 - (void)gotoShop {
+}
+
+- (void)animateSlideStrengthenButton:(BOOL)show {
+  if (show) {
+    [UIView
+     animateWithDuration:0.5
+     delay:0
+     options:UIViewAnimationOptionCurveEaseInOut
+     animations:^{
+       CGRect frame = _btnStrengthen.frame;
+       frame.origin.y = self.view.frame.size.height - _btnStrengthen.frame.size.height - 15;
+       _btnStrengthen.frame = frame;
+     }
+     completion:^(BOOL finished) {
+       _btnStrengthen.enabled = YES;
+     }];
+
+    return;
+  }
+  
+  _btnStrengthen.enabled = NO;
+  
+  [UIView
+   animateWithDuration:0.5
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     CGRect frame = _btnStrengthen.frame;
+     frame.origin.y = self.view.frame.size.height + 15;
+     _btnStrengthen.frame = frame;
+   }
+   completion:^(BOOL finished) {
+   }];
 }
 
 @end

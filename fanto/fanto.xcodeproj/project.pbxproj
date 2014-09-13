@@ -40,10 +40,6 @@
 		CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */; };
 		CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */; };
 		CAEBA25B19C488460024CA71 /* MBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25A19C488460024CA71 /* MBase.m */; };
-		CAEBA25F19C489E80024CA71 /* FTHexagonSkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */; };
-		CAEBA26019C489E80024CA71 /* FTHexagonSkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */; };
-		CAEBA26319C48AFA0024CA71 /* FTHexagonSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */; };
-		CAEBA26519C48B0D0024CA71 /* FTHexagonSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */; };
 		CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */; };
 		CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */; };
 		CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */; };
@@ -53,8 +49,14 @@
 		CAEBA27819C48F610024CA71 /* MSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA27719C48F610024CA71 /* MSkill.m */; };
 		CAEBA27C19C4A3D30024CA71 /* img-checkpoint_test-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */; };
 		CAEBA27D19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */; };
-		CAEBA28119C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */; };
-		CAEBA28219C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */; };
+		CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28319C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png */; };
+		CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28419C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png */; };
+		CAEBA29119C4AA710024CA71 /* FTHexagonCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA28919C4AA710024CA71 /* FTHexagonCheckpointTestCell.m */; };
+		CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28A19C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib */; };
+		CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA28C19C4AA710024CA71 /* FTHexagonSkillCell.m */; };
+		CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA28D19C4AA710024CA71 /* FTHexagonSkillCell.xib */; };
+		CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA28F19C4AA710024CA71 /* FTHexagonSkillView.m */; };
+		CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA29019C4AA710024CA71 /* FTHexagonSkillView.xib */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -109,12 +111,6 @@
 		CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		CAEBA25919C488460024CA71 /* MBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBase.h; sourceTree = "<group>"; };
 		CAEBA25A19C488460024CA71 /* MBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBase.m; sourceTree = "<group>"; };
-		CAEBA25C19C489E80024CA71 /* FTHexagonSkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillCell.h; sourceTree = "<group>"; };
-		CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillCell.m; sourceTree = "<group>"; };
-		CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillCell.xib; sourceTree = "<group>"; };
-		CAEBA26119C48AFA0024CA71 /* FTHexagonSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillView.h; sourceTree = "<group>"; };
-		CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillView.m; sourceTree = "<group>"; };
-		CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillView.xib; sourceTree = "<group>"; };
 		CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-locked.png"; sourceTree = "<group>"; };
 		CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-locked@2x.png"; sourceTree = "<group>"; };
 		CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg-unlocked.png"; sourceTree = "<group>"; };
@@ -126,9 +122,17 @@
 		CAEBA27919C4924B0024CA71 /* FTSharedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTSharedHeader.h; sourceTree = "<group>"; };
 		CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-checkpoint_test-bg.png"; sourceTree = "<group>"; };
 		CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-checkpoint_test-bg@2x.png"; sourceTree = "<group>"; };
-		CAEBA27E19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonCheckpointTestCell.h; sourceTree = "<group>"; };
-		CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonCheckpointTestCell.m; sourceTree = "<group>"; };
-		CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonCheckpointTestCell.xib; sourceTree = "<group>"; };
+		CAEBA28319C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hexagon-strengthen-bg.png"; sourceTree = "<group>"; };
+		CAEBA28419C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hexagon-strengthen-bg@2x.png"; sourceTree = "<group>"; };
+		CAEBA28819C4AA710024CA71 /* FTHexagonCheckpointTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonCheckpointTestCell.h; sourceTree = "<group>"; };
+		CAEBA28919C4AA710024CA71 /* FTHexagonCheckpointTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonCheckpointTestCell.m; sourceTree = "<group>"; };
+		CAEBA28A19C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonCheckpointTestCell.xib; sourceTree = "<group>"; };
+		CAEBA28B19C4AA710024CA71 /* FTHexagonSkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillCell.h; sourceTree = "<group>"; };
+		CAEBA28C19C4AA710024CA71 /* FTHexagonSkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillCell.m; sourceTree = "<group>"; };
+		CAEBA28D19C4AA710024CA71 /* FTHexagonSkillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillCell.xib; sourceTree = "<group>"; };
+		CAEBA28E19C4AA710024CA71 /* FTHexagonSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonSkillView.h; sourceTree = "<group>"; };
+		CAEBA28F19C4AA710024CA71 /* FTHexagonSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonSkillView.m; sourceTree = "<group>"; };
+		CAEBA29019C4AA710024CA71 /* FTHexagonSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonSkillView.xib; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,18 +317,10 @@
 		CAEBA25019C487940024CA71 /* Skills List */ = {
 			isa = PBXGroup;
 			children = (
-				CAEBA27E19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.h */,
-				CAEBA27F19C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m */,
-				CAEBA28019C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib */,
-				CAEBA25C19C489E80024CA71 /* FTHexagonSkillCell.h */,
-				CAEBA25D19C489E80024CA71 /* FTHexagonSkillCell.m */,
-				CAEBA25E19C489E80024CA71 /* FTHexagonSkillCell.xib */,
-				CAEBA26119C48AFA0024CA71 /* FTHexagonSkillView.h */,
-				CAEBA26219C48AFA0024CA71 /* FTHexagonSkillView.m */,
-				CAEBA26419C48B0D0024CA71 /* FTHexagonSkillView.xib */,
 				CAEBA25119C487B20024CA71 /* FTSkillsListViewController.h */,
 				CAEBA25219C487B20024CA71 /* FTSkillsListViewController.m */,
 				CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */,
+				CAEBA28719C4AA710024CA71 /* Hexagon */,
 			);
 			name = "Skills List";
 			path = "skills-list";
@@ -342,6 +338,8 @@
 		CAEBA26719C48C490024CA71 /* Skills List */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBA28319C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png */,
+				CAEBA28419C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png */,
 				CAEBA27A19C4A3D30024CA71 /* img-checkpoint_test-bg.png */,
 				CAEBA27B19C4A3D30024CA71 /* img-checkpoint_test-bg@2x.png */,
 				CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */,
@@ -370,6 +368,23 @@
 			);
 			name = ClearSans;
 			path = "clear-sans";
+			sourceTree = "<group>";
+		};
+		CAEBA28719C4AA710024CA71 /* Hexagon */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBA28819C4AA710024CA71 /* FTHexagonCheckpointTestCell.h */,
+				CAEBA28919C4AA710024CA71 /* FTHexagonCheckpointTestCell.m */,
+				CAEBA28A19C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib */,
+				CAEBA28B19C4AA710024CA71 /* FTHexagonSkillCell.h */,
+				CAEBA28C19C4AA710024CA71 /* FTHexagonSkillCell.m */,
+				CAEBA28D19C4AA710024CA71 /* FTHexagonSkillCell.xib */,
+				CAEBA28E19C4AA710024CA71 /* FTHexagonSkillView.h */,
+				CAEBA28F19C4AA710024CA71 /* FTHexagonSkillView.m */,
+				CAEBA29019C4AA710024CA71 /* FTHexagonSkillView.xib */,
+			);
+			name = Hexagon;
+			path = hexagon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,13 +441,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEBA28219C4A3F10024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
+				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
+				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
+				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
+				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				CAEBA27C19C4A3D30024CA71 /* img-checkpoint_test-bg.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
@@ -440,8 +458,6 @@
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
-				CAEBA26519C48B0D0024CA71 /* FTHexagonSkillView.xib in Resources */,
-				CAEBA26019C489E80024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
@@ -453,6 +469,7 @@
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
 				CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
+				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,21 +516,21 @@
 			files = (
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
-				CAEBA26319C48AFA0024CA71 /* FTHexagonSkillView.m in Sources */,
-				CAEBA25F19C489E80024CA71 /* FTHexagonSkillCell.m in Sources */,
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
+				CAEBA29119C4AA710024CA71 /* FTHexagonCheckpointTestCell.m in Sources */,
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
+				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
+				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
-				CAEBA28119C4A3F10024CA71 /* FTHexagonCheckpointTestCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTSkillsListViewController">
             <connections>
+                <outlet property="_btnStrengthen" destination="Uo9-ia-1NQ" id="6a0-Q0-Rcf"/>
                 <outlet property="_tblSkills" destination="zjn-W4-tCL" id="e3k-Ng-hAu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,10 +27,24 @@
                         <outlet property="delegate" destination="-1" id="uQr-uf-mkc"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uo9-ia-1NQ">
+                    <rect key="frame" x="15" y="509" width="290" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <state key="normal" title="Luyện tập kỹ năng" backgroundImage="btn-hexagon-strengthen-bg.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnStrengthenPressed:" destination="-1" eventType="touchUpInside" id="Yu7-gN-aRW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="btn-hexagon-strengthen-bg.png" width="290" height="44"/>
+    </resources>
 </document>
