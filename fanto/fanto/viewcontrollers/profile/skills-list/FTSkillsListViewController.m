@@ -10,12 +10,12 @@
 #import "FTHexagonSkillCell.h"
 #import "FTHexagonCheckpointTestCell.h"
 #import "FTShieldSkillCell.h"
-#import "FTHexagonLessonsListViewController.h"
+#import "FTLessonsListViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
-  FTHexagonLessonsListViewController *_lessonsListVC;
+  FTLessonsListViewController *_lessonsListVC;
   UIButton *_currentStrengthenButton;
 }
 
@@ -120,7 +120,7 @@
 #pragma mark - FTSkillViewDelegate methods
 - (void)skillViewDidSelectSkill:(MSkill *)skill {
   if (_lessonsListVC == nil)
-    _lessonsListVC = [FTHexagonLessonsListViewController new];
+    _lessonsListVC = [[FTLessonsListViewController currentLessonsListClass] new];
   
   _lessonsListVC.skillData = skill;
   [self.navigationController pushViewController:_lessonsListVC animated:YES];

@@ -26,15 +26,11 @@
 		4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147C19C2FDBE002DB2C7 /* FTLoginViewController.xib */; };
 		4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */; };
 		4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */; };
-		4A85F39319C68D7900642C5F /* FTHexagonLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F39119C68D7900642C5F /* FTHexagonLessonsListViewController.m */; };
-		4A85F39419C68D7900642C5F /* FTHexagonLessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F39219C68D7900642C5F /* FTHexagonLessonsListViewController.xib */; };
 		4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F39619C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png */; };
 		4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F39719C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png */; };
 		4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F39819C68EF400642C5F /* img-hexagon_lessons-bg-top.png */; };
 		4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F39919C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png */; };
 		4A85F3A019C6976400642C5F /* MLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F39F19C6976400642C5F /* MLesson.m */; };
-		4A85F3A319C6C38000642C5F /* FTHexagonLessonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F3A219C6C38000642C5F /* FTHexagonLessonView.m */; };
-		4A85F3A519C6C38A00642C5F /* FTHexagonLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A419C6C38A00642C5F /* FTHexagonLessonView.xib */; };
 		4A85F3A819C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A619C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png */; };
 		4A85F3A919C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A719C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png */; };
 		4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */; };
@@ -68,6 +64,15 @@
 		4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */; };
 		4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
+		CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */; };
+		CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454B119C71E8C0052111C /* FTHexagonLessonsListViewController.xib */; };
+		CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454B319C71E8C0052111C /* FTHexagonLessonView.m */; };
+		CA5454B819C71E8C0052111C /* FTHexagonLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454B419C71E8C0052111C /* FTHexagonLessonView.xib */; };
+		CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454BB19C71EC10052111C /* FTShieldLessonsListViewController.m */; };
+		CA5454BE19C71EC10052111C /* FTShieldLessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454BC19C71EC10052111C /* FTShieldLessonsListViewController.xib */; };
+		CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454C019C71F5F0052111C /* FTShieldLessonCell.m */; };
+		CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454C119C71F5F0052111C /* FTShieldLessonCell.xib */; };
+		CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454C519C720370052111C /* FTLessonsListViewController.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -128,18 +133,12 @@
 		4A74147D19C2FDBE002DB2C7 /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
 		4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
 		4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
-		4A85F39019C68D7900642C5F /* FTHexagonLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonsListViewController.h; sourceTree = "<group>"; };
-		4A85F39119C68D7900642C5F /* FTHexagonLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonsListViewController.m; sourceTree = "<group>"; };
-		4A85F39219C68D7900642C5F /* FTHexagonLessonsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonLessonsListViewController.xib; sourceTree = "<group>"; };
 		4A85F39619C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lessons-bg-bottom.png"; sourceTree = "<group>"; };
 		4A85F39719C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lessons-bg-bottom@2x.png"; sourceTree = "<group>"; };
 		4A85F39819C68EF400642C5F /* img-hexagon_lessons-bg-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lessons-bg-top.png"; sourceTree = "<group>"; };
 		4A85F39919C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lessons-bg-top@2x.png"; sourceTree = "<group>"; };
 		4A85F39E19C6976400642C5F /* MLesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLesson.h; sourceTree = "<group>"; };
 		4A85F39F19C6976400642C5F /* MLesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLesson.m; sourceTree = "<group>"; };
-		4A85F3A119C6C38000642C5F /* FTHexagonLessonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonView.h; sourceTree = "<group>"; };
-		4A85F3A219C6C38000642C5F /* FTHexagonLessonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonView.m; sourceTree = "<group>"; };
-		4A85F3A419C6C38A00642C5F /* FTHexagonLessonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonLessonView.xib; sourceTree = "<group>"; };
 		4A85F3A619C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lesson-passed_checkmark.png"; sourceTree = "<group>"; };
 		4A85F3A719C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lesson-passed_checkmark@2x.png"; sourceTree = "<group>"; };
 		4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hexagon_lesson-retake.png"; sourceTree = "<group>"; };
@@ -178,6 +177,20 @@
 		4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg.png"; sourceTree = "<group>"; };
 		4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg@2x.png"; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		CA5454AF19C71E8C0052111C /* FTHexagonLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonsListViewController.h; sourceTree = "<group>"; };
+		CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonsListViewController.m; sourceTree = "<group>"; };
+		CA5454B119C71E8C0052111C /* FTHexagonLessonsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonLessonsListViewController.xib; sourceTree = "<group>"; };
+		CA5454B219C71E8C0052111C /* FTHexagonLessonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonView.h; sourceTree = "<group>"; };
+		CA5454B319C71E8C0052111C /* FTHexagonLessonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonView.m; sourceTree = "<group>"; };
+		CA5454B419C71E8C0052111C /* FTHexagonLessonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonLessonView.xib; sourceTree = "<group>"; };
+		CA5454BA19C71EC10052111C /* FTShieldLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShieldLessonsListViewController.h; sourceTree = "<group>"; };
+		CA5454BB19C71EC10052111C /* FTShieldLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShieldLessonsListViewController.m; sourceTree = "<group>"; };
+		CA5454BC19C71EC10052111C /* FTShieldLessonsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShieldLessonsListViewController.xib; sourceTree = "<group>"; };
+		CA5454BF19C71F5F0052111C /* FTShieldLessonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShieldLessonCell.h; sourceTree = "<group>"; };
+		CA5454C019C71F5F0052111C /* FTShieldLessonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShieldLessonCell.m; sourceTree = "<group>"; };
+		CA5454C119C71F5F0052111C /* FTShieldLessonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShieldLessonCell.xib; sourceTree = "<group>"; };
+		CA5454C419C720370052111C /* FTLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLessonsListViewController.h; sourceTree = "<group>"; };
+		CA5454C519C720370052111C /* FTLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLessonsListViewController.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -295,12 +308,10 @@
 		4A85F38F19C68D4600642C5F /* Lessons List */ = {
 			isa = PBXGroup;
 			children = (
-				4A85F39019C68D7900642C5F /* FTHexagonLessonsListViewController.h */,
-				4A85F39119C68D7900642C5F /* FTHexagonLessonsListViewController.m */,
-				4A85F39219C68D7900642C5F /* FTHexagonLessonsListViewController.xib */,
-				4A85F3A119C6C38000642C5F /* FTHexagonLessonView.h */,
-				4A85F3A219C6C38000642C5F /* FTHexagonLessonView.m */,
-				4A85F3A419C6C38A00642C5F /* FTHexagonLessonView.xib */,
+				CA5454C419C720370052111C /* FTLessonsListViewController.h */,
+				CA5454C519C720370052111C /* FTLessonsListViewController.m */,
+				CA5454AE19C71E8C0052111C /* Hexagon */,
+				CA5454B919C71E990052111C /* Shield */,
 			);
 			name = "Lessons List";
 			path = "lessons-list";
@@ -334,6 +345,34 @@
 				4A85F3D719C6E08100642C5F /* FTShieldSkillView.h */,
 				4A85F3D819C6E08100642C5F /* FTShieldSkillView.m */,
 				4A85F3DA19C6E08B00642C5F /* FTShieldSkillView.xib */,
+			);
+			name = Shield;
+			path = shield;
+			sourceTree = "<group>";
+		};
+		CA5454AE19C71E8C0052111C /* Hexagon */ = {
+			isa = PBXGroup;
+			children = (
+				CA5454AF19C71E8C0052111C /* FTHexagonLessonsListViewController.h */,
+				CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */,
+				CA5454B119C71E8C0052111C /* FTHexagonLessonsListViewController.xib */,
+				CA5454B219C71E8C0052111C /* FTHexagonLessonView.h */,
+				CA5454B319C71E8C0052111C /* FTHexagonLessonView.m */,
+				CA5454B419C71E8C0052111C /* FTHexagonLessonView.xib */,
+			);
+			name = Hexagon;
+			path = hexagon;
+			sourceTree = "<group>";
+		};
+		CA5454B919C71E990052111C /* Shield */ = {
+			isa = PBXGroup;
+			children = (
+				CA5454BA19C71EC10052111C /* FTShieldLessonsListViewController.h */,
+				CA5454BB19C71EC10052111C /* FTShieldLessonsListViewController.m */,
+				CA5454BC19C71EC10052111C /* FTShieldLessonsListViewController.xib */,
+				CA5454BF19C71F5F0052111C /* FTShieldLessonCell.h */,
+				CA5454C019C71F5F0052111C /* FTShieldLessonCell.m */,
+				CA5454C119C71F5F0052111C /* FTShieldLessonCell.xib */,
 			);
 			name = Shield;
 			path = shield;
@@ -618,7 +657,6 @@
 				4A85F3EC19C6E2BF00642C5F /* img-hexagon_skill-strength-3.png in Resources */,
 				4A85F3EF19C6E2BF00642C5F /* img-hexagon_skill-strength-4@2x.png in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
-				4A85F39419C68D7900642C5F /* FTHexagonLessonsListViewController.xib in Resources */,
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
@@ -643,8 +681,10 @@
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */,
 				4A85F3EE19C6E2BF00642C5F /* img-hexagon_skill-strength-4.png in Resources */,
+				CA5454B819C71E8C0052111C /* FTHexagonLessonView.xib in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
 				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
+				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
@@ -655,8 +695,8 @@
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
+				CA5454BE19C71EC10052111C /* FTShieldLessonsListViewController.xib in Resources */,
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
-				4A85F3A519C6C38A00642C5F /* FTHexagonLessonView.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
@@ -673,6 +713,7 @@
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
 				4A85F3F919C6E32100642C5F /* img-shield_skill-strength-1@2x.png in Resources */,
 				4A85F3F819C6E32100642C5F /* img-shield_skill-strength-1.png in Resources */,
+				CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */,
 				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 			);
@@ -725,13 +766,15 @@
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
 				4A85F40219C6F18900642C5F /* FTSkillView.m in Sources */,
 				CAEBA29119C4AA710024CA71 /* FTHexagonCheckpointTestCell.m in Sources */,
+				CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */,
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
-				4A85F3A319C6C38000642C5F /* FTHexagonLessonView.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				4A85F3D519C6DFA600642C5F /* FTShieldSkillCell.m in Sources */,
+				CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */,
 				4A85F3A019C6976400642C5F /* MLesson.m in Sources */,
+				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
@@ -739,11 +782,12 @@
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
+				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
-				4A85F39319C68D7900642C5F /* FTHexagonLessonsListViewController.m in Sources */,
+				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

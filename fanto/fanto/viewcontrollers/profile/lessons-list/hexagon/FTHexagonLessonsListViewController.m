@@ -16,7 +16,6 @@
 #define kFocusedLessonHeight      181.f
 
 @interface FTHexagonLessonsListViewController () {
-  BOOL _didReloadContent;
   NSArray *_lessonsData;
   NSInteger _currentFocusedLessonIndex;
 }
@@ -26,7 +25,6 @@
 - (void)focusLesson:(FTHexagonLessonView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused;
 - (FTHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex;
 - (void)scaleLessonView:(FTHexagonLessonView *)lessonView withRatio:(CGFloat)scaleRatio;
-- (void)testOut;
 
 @end
 
@@ -34,11 +32,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customTitleWithText:@"Ngày và giờ" color:[UIColor whiteColor]];
-  [self customBackButton];
-  [self customBarButtonWithImage:nil title:@"Kiểm tra" color:[UIColor whiteColor] target:self action:@selector(testOut) distance:-8];
-  
-  [self reloadContents];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,18 +39,22 @@
   [self customNavBarBgWithColor:nil];
 }
 
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+}
+
 - (void)reloadContents {
-  _didReloadContent = YES;
+  [super reloadContents];
   
-  if (_skillData == nil || CGRectEqualToRect(_vLessonsScrollView.frame, CGRectZero))
+  if (self.skillData == nil || CGRectEqualToRect(_vLessonsScrollView.frame, CGRectZero))
     return;
   
   _lessonsData = @[[MLesson new], [MLesson new], [MLesson new], [MLesson new]];
   [self setupLessonsScrollView];
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+- (UIColor *)navigationTextColor {
+  return [UIColor whiteColor];
 }
 
 #pragma mark - UIScrollViewDelegate methods
@@ -93,9 +90,6 @@
 }
 
 #pragma mark - Private methods
-- (void)testOut {
-}
-
 - (void)setupLessonsScrollView {
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];

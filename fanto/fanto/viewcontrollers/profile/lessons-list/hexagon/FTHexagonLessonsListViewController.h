@@ -6,15 +6,13 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "FTLessonsListViewController.h"
 
 @class MSkill;
 
-@interface FTHexagonLessonsListViewController : BaseViewController <UIScrollViewDelegate, FTLessonViewDelegate> {
+@interface FTHexagonLessonsListViewController : FTLessonsListViewController <UIScrollViewDelegate, FTLessonViewDelegate> {
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UIScrollView *_vLessonsScrollView;
 }
-
-@property (nonatomic, strong) MSkill *skillData;
 
 @end
