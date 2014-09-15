@@ -10,10 +10,11 @@
 
 @interface FTSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, FTSkillViewDelegate> {
   IBOutlet UITableView *_tblSkills;
-  IBOutlet UIButton *_btnStrengthen;
+  IBOutlet UIView *_vStrengthenButton;
+  IBOutlet UIButton *_btnHexagonStrengthen;
+  IBOutlet UIButton *_btnShieldStrengthen;
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender;
-
 
 @end

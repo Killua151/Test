@@ -93,6 +93,9 @@
 }
 
 #pragma mark - Private methods
+- (void)testOut {
+}
+
 - (void)setupLessonsScrollView {
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];
@@ -162,9 +165,6 @@
   frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.index + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
   frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
   lessonView.frame = frame;
-}
-
-- (void)testOut {
 }
 
 @end

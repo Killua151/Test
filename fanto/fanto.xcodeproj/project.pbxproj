@@ -65,6 +65,8 @@
 		4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F40419C6F3D800642C5F /* FTShieldCheckpointTestCell.m */; };
 		4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40519C6F3D800642C5F /* FTShieldCheckpointTestCell.xib */; };
 		4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F40919C6F45400642C5F /* FTCheckpointTestCell.m */; };
+		4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */; };
+		4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
@@ -173,6 +175,8 @@
 		4A85F40519C6F3D800642C5F /* FTShieldCheckpointTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShieldCheckpointTestCell.xib; sourceTree = "<group>"; };
 		4A85F40819C6F45400642C5F /* FTCheckpointTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCheckpointTestCell.h; sourceTree = "<group>"; };
 		4A85F40919C6F45400642C5F /* FTCheckpointTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCheckpointTestCell.m; sourceTree = "<group>"; };
+		4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg.png"; sourceTree = "<group>"; };
+		4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg@2x.png"; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -487,6 +491,8 @@
 			children = (
 				CAEBA28319C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png */,
 				CAEBA28419C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png */,
+				4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */,
+				4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */,
 				CAEBA29A19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png */,
 				CAEBA29B19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png */,
 				CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */,
@@ -648,6 +654,7 @@
 				4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */,
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
+				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
 				4A85F3A519C6C38A00642C5F /* FTHexagonLessonView.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
@@ -662,6 +669,7 @@
 				4A85F3E819C6E2BF00642C5F /* img-hexagon_skill-strength-1.png in Resources */,
 				CAEBA29C19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
+				4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */,
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
 				4A85F3F919C6E32100642C5F /* img-shield_skill-strength-1@2x.png in Resources */,
 				4A85F3F819C6E32100642C5F /* img-shield_skill-strength-1.png in Resources */,

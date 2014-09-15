@@ -16,10 +16,12 @@
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
   FTHexagonLessonsListViewController *_lessonsListVC;
+  UIButton *_currentStrengthenButton;
 }
 
 - (void)gotoProfile;
 - (void)gotoShop;
+- (void)setupViews;
 - (void)animateSlideStrengthenButton:(BOOL)show;
 
 @end
@@ -33,33 +35,7 @@
   [self customBarButtonWithImage:nil title:@"Thông tin" color:[UIColor blackColor] target:self action:@selector(gotoProfile) distance:8];
   [self customBarButtonWithImage:nil title:@"Cửa hàng" color:[UIColor blackColor] target:self action:@selector(gotoShop) distance:-8];
   
-  _tblSkills.tableFooterView =
-  [[UIView alloc] initWithFrame:
-   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _btnStrengthen.frame.size.height + 52}}];
-  
-  _skillsData = @[
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new]]
-  ];
+  [self setupViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -158,6 +134,40 @@
 - (void)gotoShop {
 }
 
+- (void)setupViews {
+  _btnHexagonStrengthen.hidden = _btnShieldStrengthen.hidden = YES;
+  _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
+  _currentStrengthenButton.hidden = NO;
+  
+  _tblSkills.tableFooterView =
+  [[UIView alloc] initWithFrame:
+   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _btnHexagonStrengthen.frame.size.height + 52}}];
+  
+  _skillsData = @[
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new]]
+                  ];
+}
+
 - (void)animateSlideStrengthenButton:(BOOL)show {
   if (show) {
     [UIView
@@ -165,27 +175,27 @@
      delay:0
      options:UIViewAnimationOptionCurveEaseInOut
      animations:^{
-       CGRect frame = _btnStrengthen.frame;
-       frame.origin.y = self.view.frame.size.height - _btnStrengthen.frame.size.height - 15;
-       _btnStrengthen.frame = frame;
+       CGRect frame = _vStrengthenButton.frame;
+       frame.origin.y = self.view.frame.size.height - _vStrengthenButton.frame.size.height - 15;
+       _vStrengthenButton.frame = frame;
      }
      completion:^(BOOL finished) {
-       _btnStrengthen.enabled = YES;
+       _currentStrengthenButton.enabled = YES;
      }];
 
     return;
   }
   
-  _btnStrengthen.enabled = NO;
+  _currentStrengthenButton.enabled = NO;
   
   [UIView
    animateWithDuration:0.5
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     CGRect frame = _btnStrengthen.frame;
+     CGRect frame = _vStrengthenButton.frame;
      frame.origin.y = self.view.frame.size.height + 15;
-     _btnStrengthen.frame = frame;
+     _vStrengthenButton.frame = frame;
    }
    completion:^(BOOL finished) {
    }];
