@@ -23,7 +23,10 @@
   _vLesson.frame = frame;
   
   NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:_lblLessonTitle.text];
-  [attributedText addAttributes:@{NSFontAttributeName : @"HelveticaNeue-Light"} range:NSMakeRange(0, 3)];
+  [attributedText addAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:17]}
+                          range:NSMakeRange(0, 3)];
+
+  _lblLessonTitle.attributedText = attributedText;
 }
 
 - (IBAction)btnRetakePressed:(UIButton *)sender {
