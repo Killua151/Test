@@ -10,16 +10,24 @@
 
 @implementation FTShieldLessonCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
+- (id)init {
+  if (self = [super init]) {
+  }
+  
+  return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+- (void)updateCellWithData:(MLesson *)data {
+  CGRect frame = _vLesson.frame;
+  frame.origin.y = DeviceScreenIsRetina4Inch() ? -54 : -10;
+  _vLesson.frame = frame;
+  
+  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:_lblLessonTitle.text];
+  [attributedText addAttributes:@{NSFontAttributeName : @"HelveticaNeue-Light"} range:NSMakeRange(0, 3)];
+}
 
-    // Configure the view for the selected state
+- (IBAction)btnRetakePressed:(UIButton *)sender {
+  DLog(@"invoke");
 }
 
 @end

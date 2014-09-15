@@ -8,6 +8,14 @@
 
 #import "BaseTableViewCell.h"
 
-@interface FTShieldLessonCell : BaseTableViewCell
+@interface FTShieldLessonCell : BaseTableViewCell {
+  IBOutlet UIView *_vLesson;
+  IBOutlet UIImageView *_imgPassCheckmark;
+  IBOutlet UILabel *_lblLessonTitle;
+  IBOutlet UILabel *_lblObjectives;
+  IBOutlet UIButton *_btnRetake;
+}
+
+- (IBAction)btnRetakePressed:(UIButton *)sender;
 
 @end

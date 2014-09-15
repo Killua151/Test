@@ -20,7 +20,7 @@
             <subviews>
                 <view contentMode="scaleToFill" id="szG-VE-We2">
                     <rect key="frame" x="0.0" y="160" width="320" height="244"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="87q-kj-wGM">
@@ -34,7 +34,7 @@
                 </tableView>
                 <view contentMode="scaleToFill" id="BW7-cr-rCO">
                     <rect key="frame" x="15" y="96" width="80" height="94"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-shield_skill-bg-unlocked.png" id="0HG-lg-0dU">
                             <rect key="frame" x="0.0" y="0.0" width="80" height="94"/>

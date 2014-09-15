@@ -8,8 +8,11 @@
 
 #import "FTShieldLessonsListViewController.h"
 #import "FTShieldLessonCell.h"
+#import "MLesson.h"
 
-@interface FTShieldLessonsListViewController ()
+@interface FTShieldLessonsListViewController () {
+  NSArray *_lessonsData;
+}
 
 - (void)setupViews;
 
@@ -28,6 +31,12 @@
 
 - (void)reloadContents {
   [super reloadContents];
+  
+  if (self.skillData == nil)
+    return;
+  
+  _lessonsData = @[[MLesson new], [MLesson new], [MLesson new], [MLesson new], [MLesson new]];
+  [_tblLessons reloadData];
 }
 
 - (UIColor *)navigationTextColor {
@@ -47,6 +56,8 @@
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
   }
   
+  [cell updateCellWithData:_lessonsData[indexPath.row]];
+  
   return cell;
 }
 
@@ -64,11 +75,13 @@
   frame.origin = CGPointZero;
   _tblLessons.frame = frame;
   
-  if (!DeviceScreenIsRetina4Inch()) {
-    frame = _vSkillStatus.frame;
-    frame.origin.y -= 30;
-    _vSkillStatus.frame = frame;
-  }
+  _vLessonsBg.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2,
+                                   ([UIScreen mainScreen].bounds.size.height - kHeightNavigationBar - kHeightStatusBar)/2);
+  frame = _vSkillStatus.frame;
+  frame.origin.y = _vLessonsBg.frame.origin.y - 44;
+  _vSkillStatus.frame = frame;
+  
+  [_tblLessons reloadData];
 }
 
 @end
