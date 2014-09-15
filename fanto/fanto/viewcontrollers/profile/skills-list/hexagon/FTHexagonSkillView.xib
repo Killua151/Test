@@ -33,7 +33,7 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon-skill-strength-4.png" id="Yp1-EM-so6">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_skill-strength-4.png" id="Yp1-EM-so6">
                     <rect key="frame" x="13" y="98" width="65" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -59,8 +59,8 @@
         </view>
     </objects>
     <resources>
-        <image name="img-hexagon-skill-strength-4.png" width="65" height="22"/>
         <image name="img-hexagon_skill-bg-locked.png" width="90" height="130"/>
         <image name="img-hexagon_skill-bg-unlocked.png" width="90" height="130"/>
+        <image name="img-hexagon_skill-strength-4.png" width="65" height="22"/>
     </resources>
 </document>
