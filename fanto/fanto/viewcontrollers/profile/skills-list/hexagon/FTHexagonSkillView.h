@@ -15,6 +15,7 @@
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UILabel *_lblSkillName;
   IBOutlet UILabel *_lblLessonsProgress;
+  IBOutlet UIImageView *_imgSkillStrength;
 }
 
 @property (nonatomic, assign) id<FTSkillViewDelegate> delegate;

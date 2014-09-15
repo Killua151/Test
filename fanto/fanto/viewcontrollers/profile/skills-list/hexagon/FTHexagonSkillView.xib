@@ -52,6 +52,7 @@
             <connections>
                 <outlet property="_imgSkillBg" destination="KJm-BT-8bk" id="4Mr-0S-cY5"/>
                 <outlet property="_imgSkillIcon" destination="c75-or-rQn" id="p8I-Pa-bND"/>
+                <outlet property="_imgSkillStrength" destination="Yp1-EM-so6" id="cyJ-7j-ENd"/>
                 <outlet property="_lblLessonsProgress" destination="3PV-if-vEg" id="O3Y-mu-7dd"/>
                 <outlet property="_lblSkillName" destination="6k8-mt-pcm" id="3lC-sj-5q1"/>
             </connections>

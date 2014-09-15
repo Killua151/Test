@@ -87,13 +87,14 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
   } else {
+    self.navigationController.navigationBar.translucent = NO;
+    
     if (!DeviceSystemIsOS7()) {
       [self customNavBarBgWithImage:[UIImage imageFromColor:color]];
       return;
     }
     
     self.navigationController.view.backgroundColor = color;
-    self.navigationController.navigationBar.translucent = NO;
     
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
       self.navigationController.navigationBar.barTintColor = color;
@@ -123,13 +124,14 @@
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:btnBack.frame];
-  view.bounds = CGRectOffset(view.bounds, 8, 0);
+  view.bounds = CGRectOffset(view.bounds, 16, 0);
   [view addSubview:btnBack];
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 
 - (void)customBarButtonWithImage:(NSString *)imageName
                            title:(NSString *)title
+                           color:(UIColor *)titleColor
                           target:(id)target
                           action:(SEL)action
                         distance:(CGFloat)distance {
@@ -156,7 +158,7 @@
   }
   
   button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
-  [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [button setTitleColor:titleColor forState:UIControlStateNormal];
   
   [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   

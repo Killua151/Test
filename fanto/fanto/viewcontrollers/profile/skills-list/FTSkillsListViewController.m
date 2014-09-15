@@ -9,10 +9,12 @@
 #import "FTSkillsListViewController.h"
 #import "FTHexagonSkillCell.h"
 #import "FTHexagonCheckpointTestCell.h"
+#import "FTHexagonLessonsListViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
+  FTHexagonLessonsListViewController *_lessonsListVC;
 }
 
 - (void)gotoProfile;
@@ -25,10 +27,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
+  [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"Tiếng Anh" color:[UIColor blackColor]];
-  [self customBarButtonWithImage:nil title:@"Thông tin" target:self action:@selector(gotoProfile) distance:8];
-  [self customBarButtonWithImage:nil title:@"Cửa hàng" target:self action:@selector(gotoShop) distance:-8];
+  [self customBarButtonWithImage:nil title:@"Thông tin" color:[UIColor blackColor] target:self action:@selector(gotoProfile) distance:8];
+  [self customBarButtonWithImage:nil title:@"Cửa hàng" color:[UIColor blackColor] target:self action:@selector(gotoShop) distance:-8];
   
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
@@ -59,8 +61,14 @@
   ];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
+}
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+  _lessonsListVC = nil;
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -134,7 +142,10 @@
 
 #pragma mark - FTSkillViewDelegate methods
 - (void)skillViewDidSelectSkill:(MSkill *)skill {
-  DLog(@"%@", skill);
+  if (_lessonsListVC == nil)
+    _lessonsListVC = [FTHexagonLessonsListViewController new];
+  
+  [self.navigationController pushViewController:_lessonsListVC animated:YES];
 }
 
 #pragma mark - Private methods
