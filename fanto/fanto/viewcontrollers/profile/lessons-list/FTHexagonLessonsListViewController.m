@@ -9,14 +9,15 @@
 #import "FTHexagonLessonsListViewController.h"
 #import "MLesson.h"
 
-#define kNormalLessonWidth        230
-#define kNormalLessonHeight       160
-#define kFocusedLessonWidth       260
-#define kFocusedLessonHeight      181
+#define kNormalLessonWidth        230.f
+#define kNormalLessonHeight       160.f
+#define kFocusedLessonWidth       260.f
+#define kFocusedLessonHeight      181.f
 
 @interface FTHexagonLessonsListViewController () {
   BOOL _didReloadContent;
   NSArray *_lessonsData;
+  NSInteger _currentFocusedLessonIndex;
 }
 
 - (void)setupLessonsScrollView;
@@ -57,6 +58,10 @@
 }
 
 #pragma mark - UIScrollViewDelegate methods
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+  _currentFocusedLessonIndex = _vLessonsScrollView.contentOffset.x / _vLessonsScrollView.frame.size.width;
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
   [self updateFocusedLesson];
 }
@@ -66,6 +71,29 @@
     return;
   
   [self updateFocusedLesson];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  UIView *lessonView = nil;
+  
+  for (UIView *subview in _vLessonsScrollView.subviews)
+    if (subview.tag == _currentFocusedLessonIndex) {
+      lessonView = subview;
+      break;
+    }
+  
+  if (lessonView == nil)
+    return;
+  
+  CGFloat delta = ABS(_vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width);
+  CGFloat scaleRatio = delta / kFocusedLessonWidth;
+  
+  CGRect frame = lessonView.frame;
+  frame.size.width = kFocusedLessonWidth - (kFocusedLessonWidth - kNormalLessonWidth) * scaleRatio;
+  frame.size.height = kFocusedLessonHeight - (kFocusedLessonHeight - kNormalLessonHeight) * scaleRatio;
+  frame.origin.x = _vLessonsScrollView.frame.size.width * _currentFocusedLessonIndex + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
+  frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
+  lessonView.frame = frame;
 }
 
 #pragma mark - Private methods
@@ -102,7 +130,7 @@
   
   if (focused) {
     frame.size = CGSizeMake(kFocusedLessonWidth, kFocusedLessonHeight);
-    frame.origin.x = _vLessonsScrollView.frame.size.width * index - 15;
+    frame.origin.x = _vLessonsScrollView.frame.size.width * index + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
     frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
     lessonView.backgroundColor = [UIColor whiteColor];
     [_vLessonsScrollView bringSubviewToFront:lessonView];
