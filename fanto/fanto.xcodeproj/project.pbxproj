@@ -26,6 +26,14 @@
 		4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147C19C2FDBE002DB2C7 /* FTLoginViewController.xib */; };
 		4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */; };
 		4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */; };
+		4A85F38319C6762D00642C5F /* img-hexagon-skill-strength-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F37B19C6762D00642C5F /* img-hexagon-skill-strength-1.png */; };
+		4A85F38419C6762D00642C5F /* img-hexagon-skill-strength-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F37C19C6762D00642C5F /* img-hexagon-skill-strength-1@2x.png */; };
+		4A85F38519C6762D00642C5F /* img-hexagon-skill-strength-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F37D19C6762D00642C5F /* img-hexagon-skill-strength-2.png */; };
+		4A85F38619C6762D00642C5F /* img-hexagon-skill-strength-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F37E19C6762D00642C5F /* img-hexagon-skill-strength-2@2x.png */; };
+		4A85F38719C6762D00642C5F /* img-hexagon-skill-strength-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F37F19C6762D00642C5F /* img-hexagon-skill-strength-3.png */; };
+		4A85F38819C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F38019C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png */; };
+		4A85F38919C6762D00642C5F /* img-hexagon-skill-strength-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F38119C6762D00642C5F /* img-hexagon-skill-strength-4.png */; };
+		4A85F38A19C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F38219C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
@@ -87,6 +95,14 @@
 		4A74147D19C2FDBE002DB2C7 /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
 		4A74147E19C2FDBE002DB2C7 /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
 		4A74147F19C2FDBE002DB2C7 /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
+		4A85F37B19C6762D00642C5F /* img-hexagon-skill-strength-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-1.png"; sourceTree = "<group>"; };
+		4A85F37C19C6762D00642C5F /* img-hexagon-skill-strength-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-1@2x.png"; sourceTree = "<group>"; };
+		4A85F37D19C6762D00642C5F /* img-hexagon-skill-strength-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-2.png"; sourceTree = "<group>"; };
+		4A85F37E19C6762D00642C5F /* img-hexagon-skill-strength-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-2@2x.png"; sourceTree = "<group>"; };
+		4A85F37F19C6762D00642C5F /* img-hexagon-skill-strength-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-3.png"; sourceTree = "<group>"; };
+		4A85F38019C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-3@2x.png"; sourceTree = "<group>"; };
+		4A85F38119C6762D00642C5F /* img-hexagon-skill-strength-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-4.png"; sourceTree = "<group>"; };
+		4A85F38219C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-skill-strength-4@2x.png"; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -347,6 +363,14 @@
 				CAEBA28419C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png */,
 				CAEBA29A19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png */,
 				CAEBA29B19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png */,
+				4A85F37B19C6762D00642C5F /* img-hexagon-skill-strength-1.png */,
+				4A85F37C19C6762D00642C5F /* img-hexagon-skill-strength-1@2x.png */,
+				4A85F37D19C6762D00642C5F /* img-hexagon-skill-strength-2.png */,
+				4A85F37E19C6762D00642C5F /* img-hexagon-skill-strength-2@2x.png */,
+				4A85F37F19C6762D00642C5F /* img-hexagon-skill-strength-3.png */,
+				4A85F38019C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png */,
+				4A85F38119C6762D00642C5F /* img-hexagon-skill-strength-4.png */,
+				4A85F38219C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png */,
 				CAEBA26819C48C490024CA71 /* img-hexagon_skill-bg-locked.png */,
 				CAEBA26919C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png */,
 				CAEBA26A19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png */,
@@ -450,13 +474,19 @@
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
+				4A85F38919C6762D00642C5F /* img-hexagon-skill-strength-4.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
+				4A85F38619C6762D00642C5F /* img-hexagon-skill-strength-2@2x.png in Resources */,
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
+				4A85F38419C6762D00642C5F /* img-hexagon-skill-strength-1@2x.png in Resources */,
+				4A85F38819C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
+				4A85F38319C6762D00642C5F /* img-hexagon-skill-strength-1.png in Resources */,
+				4A85F38519C6762D00642C5F /* img-hexagon-skill-strength-2.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
@@ -465,9 +495,11 @@
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
+				4A85F38719C6762D00642C5F /* img-hexagon-skill-strength-3.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
+				4A85F38A19C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
 				CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
