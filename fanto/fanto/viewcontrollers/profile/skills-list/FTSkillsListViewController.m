@@ -139,9 +139,10 @@
   _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
   _currentStrengthenButton.hidden = NO;
   
+  CGFloat footerViewDelta = kHexagonThemeTestMode ? 52 : 22;
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
-   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _btnHexagonStrengthen.frame.size.height + 52}}];
+   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
   _skillsData = @[
                   @[[MSkill new]],
