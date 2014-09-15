@@ -145,7 +145,9 @@
   if (_lessonsListVC == nil)
     _lessonsListVC = [FTHexagonLessonsListViewController new];
   
+  _lessonsListVC.skillData = skill;
   [self.navigationController pushViewController:_lessonsListVC animated:YES];
+  [_lessonsListVC reloadContents];
 }
 
 #pragma mark - Private methods

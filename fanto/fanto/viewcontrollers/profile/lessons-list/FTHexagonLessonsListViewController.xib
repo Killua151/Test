@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTHexagonLessonsListViewController">
             <connections>
+                <outlet property="_imgSkillIcon" destination="qEP-bV-Gz9" id="3TO-9r-LhJ"/>
+                <outlet property="_vLessonsScrollView" destination="zuz-Kb-SNj" id="1Ni-pv-BwS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,12 +25,20 @@
                             <rect key="frame" x="0.0" y="0.0" width="260" height="181"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_skill-bg-unlocked.png" id="qEP-bV-Gz9">
+                            <rect key="frame" x="85" y="60" width="90" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" id="zuz-Kb-SNj">
-                    <rect key="frame" x="30" y="285" width="260" height="181"/>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="zuz-Kb-SNj">
+                    <rect key="frame" x="45" y="306" width="230" height="160"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0QO-t7-S2Y"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,5 +48,6 @@
     </objects>
     <resources>
         <image name="img-hexagon_lessons-bg-top.png" width="260" height="184"/>
+        <image name="img-hexagon_skill-bg-unlocked.png" width="90" height="130"/>
     </resources>
 </document>

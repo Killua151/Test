@@ -36,16 +36,16 @@
   if (_loginVC == nil)
     _loginVC = [FTLoginViewController new];
   
-  [_loginVC reloadContents];
   [self.navigationController pushViewController:_loginVC animated:YES];
+  [_loginVC reloadContents];
 }
 
 - (IBAction)btnSignUpPressed:(UIButton *)sender {
   if (_signUpVC == nil)
     _signUpVC = [FTSignUpViewController new];
 
-  [_signUpVC reloadContents];
   [self.navigationController pushViewController:_signUpVC animated:YES];
+  [_signUpVC reloadContents];
 }
 
 @end

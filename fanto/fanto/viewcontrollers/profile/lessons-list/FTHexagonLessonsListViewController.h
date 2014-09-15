@@ -8,6 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface FTHexagonLessonsListViewController : BaseViewController
+@class MSkill;
+
+@interface FTHexagonLessonsListViewController : BaseViewController <UIScrollViewDelegate> {
+  IBOutlet UIImageView *_imgSkillIcon;
+  IBOutlet UIScrollView *_vLessonsScrollView;
+}
+
+@property (nonatomic, strong) MSkill *skillData;
 
 @end
