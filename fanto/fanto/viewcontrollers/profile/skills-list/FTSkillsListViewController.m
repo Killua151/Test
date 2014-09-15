@@ -13,8 +13,6 @@
 #import "FTHexagonLessonsListViewController.h"
 #import "MSkill.h"
 
-#define kHexagonThemeTestMode        false
-
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
   FTHexagonLessonsListViewController *_lessonsListVC;
@@ -100,12 +98,7 @@
   FTSkillCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
   
   if (cell == nil) {
-#if kHexagonThemeTestMode
-    cell = [[FTHexagonSkillCell alloc] initWithReuseIdentifier:reuseIdentifier];
-#else
-    cell = [[FTShieldSkillCell alloc] initWithReuseIdentifier:reuseIdentifier];
-#endif
-    
+    cell = [[[FTSkillCell currentSkillCellClass] alloc] initWithReuseIdentifier:reuseIdentifier];
     cell.delegate = self;
   }
   
@@ -119,13 +112,9 @@
   NSArray *skills = _skillsData[indexPath.row];
   
   if (![skills isKindOfClass:[NSArray class]])
-    return [FTHexagonCheckpointTestCell heightToFitWithData:nil];
+    return [[FTCheckpointTestCell currentCheckpointTestCellClass] heightToFitWithData:nil];
   
-#if kHexagonThemeTestMode
-  return [FTHexagonSkillCell heightToFitWithData:nil];
-#else
-  return [FTShieldSkillCell heightToFitWithData:nil];
-#endif
+  return [[FTSkillCell currentSkillCellClass] heightToFitWithData:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -9,39 +9,19 @@
 #import "FTHexagonSkillView.h"
 #import "MSkill.h"
 
-@interface FTHexagonSkillView () {
-  MSkill *_skillData;
-}
-
-- (void)populateData;
+@interface FTHexagonSkillView ()
 
 @end
 
 @implementation FTHexagonSkillView
 
 - (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target {
-  if (self = [super init]) {
-    LoadXibWithSameClass();
-    
+  if (self = [super initWithSkill:skill andTarget:target]) {
     _lblSkillName.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
     _lblLessonsProgress.font = [UIFont fontWithName:@"ClearSans" size:14];
-    
-    _skillData = skill;
-    _delegate = target;
   }
   
   return self;
 }
-
-- (void)populateData {
-//  DLog(@"populateData");
-}
-
-- (IBAction)btnSkillPressed:(UIButton *)sender {
-  if ([_delegate respondsToSelector:@selector(skillViewDidSelectSkill:)])
-    [_delegate skillViewDidSelectSkill:_skillData];
-}
-
-#pragma mark - Private methods
 
 @end

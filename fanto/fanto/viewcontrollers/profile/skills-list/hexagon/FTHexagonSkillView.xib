@@ -44,7 +44,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="btnSkillPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bdd-ac-gpq"/>
+                        <action selector="btnSkillPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qr7-Hl-Qt8"/>
                     </connections>
                 </button>
             </subviews>
