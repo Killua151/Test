@@ -23,6 +23,8 @@
 - (void)setupLessonsScrollView;
 - (void)updateFocusedLesson;
 - (void)focusLesson:(UIView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused;
+- (UIView *)lessonViewAtIndex:(NSInteger)lessonIndex;
+- (void)scaleLessonView:(UIView *)lessonView withRatio:(CGFloat)scaleRatio;
 - (void)testOut;
 
 @end
@@ -74,26 +76,19 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  UIView *lessonView = nil;
+  CGFloat delta = _vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width;
+  CGFloat scaleRatio = ABS(delta) / kFocusedLessonWidth;
   
-  for (UIView *subview in _vLessonsScrollView.subviews)
-    if (subview.tag == _currentFocusedLessonIndex) {
-      lessonView = subview;
-      break;
-    }
+  UIView *lessonView = [self lessonViewAtIndex:_currentFocusedLessonIndex];
+  [self scaleLessonView:lessonView withRatio:-scaleRatio];
   
-  if (lessonView == nil)
-    return;
+  // Calculate which lesson view is scaled up: 1 = right; -1 = left
+  NSInteger scaleUpSide = delta > 0 ? 1 : (delta < 0 ? -1 : 0);
   
-  CGFloat delta = ABS(_vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width);
-  CGFloat scaleRatio = delta / kFocusedLessonWidth;
-  
-  CGRect frame = lessonView.frame;
-  frame.size.width = kFocusedLessonWidth - (kFocusedLessonWidth - kNormalLessonWidth) * scaleRatio;
-  frame.size.height = kFocusedLessonHeight - (kFocusedLessonHeight - kNormalLessonHeight) * scaleRatio;
-  frame.origin.x = _vLessonsScrollView.frame.size.width * _currentFocusedLessonIndex + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
-  frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
-  lessonView.frame = frame;
+  if (scaleUpSide != 0) {
+    lessonView = [self lessonViewAtIndex:_currentFocusedLessonIndex+scaleUpSide];
+    [self scaleLessonView:lessonView withRatio:scaleRatio];
+  }
 }
 
 #pragma mark - Private methods
@@ -116,6 +111,9 @@
   
   _vLessonsScrollView.contentSize = CGSizeMake([_lessonsData count] * _vLessonsScrollView.frame.size.width,
                                                _vLessonsScrollView.frame.size.height);
+  
+  UIView *lessonView = [_vLessonsScrollView.subviews firstObject];
+  [self focusLesson:lessonView atIndex:lessonView.tag focused:YES];
 }
 
 - (void)updateFocusedLesson {
@@ -130,7 +128,8 @@
   
   if (focused) {
     frame.size = CGSizeMake(kFocusedLessonWidth, kFocusedLessonHeight);
-    frame.origin.x = _vLessonsScrollView.frame.size.width * index + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
+    frame.origin.x = _vLessonsScrollView.frame.size.width * index +
+    (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
     frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
     lessonView.backgroundColor = [UIColor whiteColor];
     [_vLessonsScrollView bringSubviewToFront:lessonView];
@@ -140,6 +139,33 @@
     lessonView.backgroundColor = [UIColor blackColor];
   }
   
+  lessonView.frame = frame;
+}
+
+- (UIView *)lessonViewAtIndex:(NSInteger)lessonIndex {
+  for (UIView *subview in _vLessonsScrollView.subviews)
+    if (subview.tag == lessonIndex)
+      return subview;
+  
+  return nil;
+}
+
+- (void)scaleLessonView:(UIView *)lessonView withRatio:(CGFloat)scaleRatio {
+  if (lessonView == nil)
+    return;
+  
+  CGRect frame = lessonView.frame;
+  
+  if (scaleRatio > 0) {
+    frame.size.width = kNormalLessonWidth + (kFocusedLessonWidth - kNormalLessonWidth) * ABS(scaleRatio);
+    frame.size.height = kNormalLessonHeight + (kFocusedLessonHeight - kNormalLessonHeight) * ABS(scaleRatio);
+  } else {
+    frame.size.width = kFocusedLessonWidth - (kFocusedLessonWidth - kNormalLessonWidth) * ABS(scaleRatio);
+    frame.size.height = kFocusedLessonHeight - (kFocusedLessonHeight - kNormalLessonHeight) * ABS(scaleRatio);
+  }
+  
+  frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.tag + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
+  frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
   lessonView.frame = frame;
 }
 
