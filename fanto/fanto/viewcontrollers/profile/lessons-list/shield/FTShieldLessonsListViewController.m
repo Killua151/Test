@@ -63,6 +63,12 @@
   frame.size.height = [UIScreen mainScreen].bounds.size.height - kHeightStatusBar - kHeightNavigationBar;
   frame.origin = CGPointZero;
   _tblLessons.frame = frame;
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    frame = _vSkillStatus.frame;
+    frame.origin.y -= 30;
+    _vSkillStatus.frame = frame;
+  }
 }
 
 @end

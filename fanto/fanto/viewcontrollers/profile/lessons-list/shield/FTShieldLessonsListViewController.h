@@ -10,6 +10,8 @@
 
 @interface FTShieldLessonsListViewController : FTLessonsListViewController <UITableViewDataSource, UITableViewDelegate> {
   IBOutlet UITableView *_tblLessons;
+  IBOutlet UIView *_vLessonsBg;
+  IBOutlet UIView *_vSkillStatus;
 }
 
 @end
