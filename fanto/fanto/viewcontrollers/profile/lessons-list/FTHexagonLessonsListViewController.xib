@@ -17,29 +17,36 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="UMK-hr-csI">
-                    <rect key="frame" x="17" y="85" width="286" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" id="JlT-nQ-TRR">
+                    <rect key="frame" x="17" y="93" width="286" height="381"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_lessons-bg-top.png" id="zQL-Er-Yjq">
+                        <view contentMode="scaleToFill" id="UMK-hr-csI">
                             <rect key="frame" x="0.0" y="0.0" width="286" height="200"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_skill-bg-unlocked.png" id="qEP-bV-Gz9">
-                            <rect key="frame" x="98" y="75" width="90" height="90"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_lessons-bg-top.png" id="zQL-Er-Yjq">
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_skill-bg-unlocked.png" id="qEP-bV-Gz9">
+                                    <rect key="frame" x="98" y="75" width="90" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <scrollView multipleTouchEnabled="YES" tag="-1" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="zuz-Kb-SNj">
+                            <rect key="frame" x="28" y="221" width="230" height="160"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="0QO-t7-S2Y"/>
+                            </connections>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <scrollView multipleTouchEnabled="YES" tag="-1" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="zuz-Kb-SNj">
-                    <rect key="frame" x="45" y="306" width="230" height="160"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="0QO-t7-S2Y"/>
-                    </connections>
-                </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
