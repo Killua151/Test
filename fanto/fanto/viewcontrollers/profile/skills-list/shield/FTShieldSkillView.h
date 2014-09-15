@@ -1,21 +1,19 @@
 //
-//  FTHexagonSkillView.h
+//  FTShieldSkillView.h
 //  fanto
 //
-//  Created by Ethan Nguyen on 9/13/14.
+//  Created by Ethan on 9/15/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
 #import "FTSkillView.h"
 
-@class MSkill;
-
-@interface FTHexagonSkillView : FTSkillView {
+@interface FTShieldSkillView : FTSkillView {
   IBOutlet UIImageView *_imgSkillBg;
   IBOutlet UIImageView *_imgSkillIcon;
-  IBOutlet UILabel *_lblSkillName;
-  IBOutlet UILabel *_lblLessonsProgress;
+  IBOutlet UILabel *_lblLessonsProgressed;
   IBOutlet UIImageView *_imgSkillStrength;
+  IBOutlet UILabel *_lblSkillName;
 }
 
 @end

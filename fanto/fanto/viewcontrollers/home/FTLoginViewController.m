@@ -56,8 +56,8 @@
   if (_forgotPasswordVC == nil)
     _forgotPasswordVC = [FTForgotPasswordViewController new];
   
-  [_forgotPasswordVC reloadContents];
   [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
+  [_forgotPasswordVC reloadContents];
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {

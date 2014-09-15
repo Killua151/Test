@@ -9,14 +9,19 @@
 #import "FTSkillsListViewController.h"
 #import "FTHexagonSkillCell.h"
 #import "FTHexagonCheckpointTestCell.h"
+#import "FTShieldSkillCell.h"
+#import "FTHexagonLessonsListViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
+  FTHexagonLessonsListViewController *_lessonsListVC;
+  UIButton *_currentStrengthenButton;
 }
 
 - (void)gotoProfile;
 - (void)gotoShop;
+- (void)setupViews;
 - (void)animateSlideStrengthenButton:(BOOL)show;
 
 @end
@@ -25,42 +30,22 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
+  [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"Tiếng Anh" color:[UIColor blackColor]];
-  [self customBarButtonWithImage:nil title:@"Thông tin" target:self action:@selector(gotoProfile) distance:8];
-  [self customBarButtonWithImage:nil title:@"Cửa hàng" target:self action:@selector(gotoShop) distance:-8];
+  [self customBarButtonWithImage:nil title:@"Thông tin" color:[UIColor blackColor] target:self action:@selector(gotoProfile) distance:8];
+  [self customBarButtonWithImage:nil title:@"Cửa hàng" color:[UIColor blackColor] target:self action:@selector(gotoShop) distance:-8];
   
-  _tblSkills.tableFooterView =
-  [[UIView alloc] initWithFrame:
-   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _btnStrengthen.frame.size.height + 52}}];
-  
-  _skillsData = @[
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new]],
-  @[[MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new], [NSNull null]],
-  @[[MSkill new], [MSkill new]],
-  [NSNull null],
-  @[[NSNull null], [MSkill new], [MSkill new]],
-  @[[MSkill new], [MSkill new]]
-  ];
+  [self setupViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+  _lessonsListVC = nil;
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -84,12 +69,12 @@
     return cell;
   }
   
-  NSString *reuseIdentifier = [FTHexagonSkillCell reuseIdentifierForSkills:skills];
+  NSString *reuseIdentifier = [FTSkillCell reuseIdentifierForSkills:skills];
   
-  FTHexagonSkillCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+  FTSkillCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
   
   if (cell == nil) {
-    cell = [[FTHexagonSkillCell alloc] initWithReuseIdentifier:reuseIdentifier];
+    cell = [[[FTSkillCell currentSkillCellClass] alloc] initWithReuseIdentifier:reuseIdentifier];
     cell.delegate = self;
   }
   
@@ -103,9 +88,9 @@
   NSArray *skills = _skillsData[indexPath.row];
   
   if (![skills isKindOfClass:[NSArray class]])
-    return [FTHexagonCheckpointTestCell heightToFitWithData:nil];
+    return [[FTCheckpointTestCell currentCheckpointTestCellClass] heightToFitWithData:nil];
   
-  return [FTHexagonSkillCell heightToFitWithData:nil];
+  return [[FTSkillCell currentSkillCellClass] heightToFitWithData:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -134,7 +119,12 @@
 
 #pragma mark - FTSkillViewDelegate methods
 - (void)skillViewDidSelectSkill:(MSkill *)skill {
-  DLog(@"%@", skill);
+  if (_lessonsListVC == nil)
+    _lessonsListVC = [FTHexagonLessonsListViewController new];
+  
+  _lessonsListVC.skillData = skill;
+  [self.navigationController pushViewController:_lessonsListVC animated:YES];
+  [_lessonsListVC reloadContents];
 }
 
 #pragma mark - Private methods
@@ -144,6 +134,41 @@
 - (void)gotoShop {
 }
 
+- (void)setupViews {
+  _btnHexagonStrengthen.hidden = _btnShieldStrengthen.hidden = YES;
+  _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
+  _currentStrengthenButton.hidden = NO;
+  
+  CGFloat footerViewDelta = kHexagonThemeTestMode ? 52 : 22;
+  _tblSkills.tableFooterView =
+  [[UIView alloc] initWithFrame:
+   (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
+  
+  _skillsData = @[
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new]]
+                  ];
+}
+
 - (void)animateSlideStrengthenButton:(BOOL)show {
   if (show) {
     [UIView
@@ -151,27 +176,27 @@
      delay:0
      options:UIViewAnimationOptionCurveEaseInOut
      animations:^{
-       CGRect frame = _btnStrengthen.frame;
-       frame.origin.y = self.view.frame.size.height - _btnStrengthen.frame.size.height - 15;
-       _btnStrengthen.frame = frame;
+       CGRect frame = _vStrengthenButton.frame;
+       frame.origin.y = self.view.frame.size.height - _vStrengthenButton.frame.size.height - 15;
+       _vStrengthenButton.frame = frame;
      }
      completion:^(BOOL finished) {
-       _btnStrengthen.enabled = YES;
+       _currentStrengthenButton.enabled = YES;
      }];
 
     return;
   }
   
-  _btnStrengthen.enabled = NO;
+  _currentStrengthenButton.enabled = NO;
   
   [UIView
    animateWithDuration:0.5
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     CGRect frame = _btnStrengthen.frame;
+     CGRect frame = _vStrengthenButton.frame;
      frame.origin.y = self.view.frame.size.height + 15;
-     _btnStrengthen.frame = frame;
+     _vStrengthenButton.frame = frame;
    }
    completion:^(BOOL finished) {
    }];

@@ -29,6 +29,7 @@
 - (void)customTitleLogo;
 - (void)customBarButtonWithImage:(NSString*)imageName
                            title:(NSString*)title
+                           color:(UIColor *)titleColor
                           target:(id)target
                           action:(SEL)action
                         distance:(CGFloat)distance;

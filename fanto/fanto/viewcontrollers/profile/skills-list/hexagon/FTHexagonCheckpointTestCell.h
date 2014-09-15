@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseTableViewCell.h"
+#import "FTCheckpointTestCell.h"
 
-@interface FTHexagonCheckpointTestCell : BaseTableViewCell {
-  IBOutlet UILabel *_lblCheckpointTestTitle;
+@interface FTHexagonCheckpointTestCell : FTCheckpointTestCell {
 }
 
 @end
