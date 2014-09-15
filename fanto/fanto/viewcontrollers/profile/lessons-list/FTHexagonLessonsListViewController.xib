@@ -18,16 +18,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="UMK-hr-csI">
-                    <rect key="frame" x="30" y="102" width="260" height="181"/>
+                    <rect key="frame" x="17" y="85" width="286" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_lessons-bg-top.png" id="zQL-Er-Yjq">
-                            <rect key="frame" x="0.0" y="0.0" width="260" height="181"/>
+                            <rect key="frame" x="0.0" y="0.0" width="286" height="200"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-hexagon_skill-bg-unlocked.png" id="qEP-bV-Gz9">
-                            <rect key="frame" x="85" y="60" width="90" height="90"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="98" y="75" width="90" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
         </view>
     </objects>
     <resources>
-        <image name="img-hexagon_lessons-bg-top.png" width="260" height="184"/>
+        <image name="img-hexagon_lessons-bg-top.png" width="290" height="200"/>
         <image name="img-hexagon_skill-bg-unlocked.png" width="90" height="130"/>
     </resources>
 </document>

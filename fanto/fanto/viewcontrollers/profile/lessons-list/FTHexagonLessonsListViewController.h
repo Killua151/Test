@@ -10,7 +10,7 @@
 
 @class MSkill;
 
-@interface FTHexagonLessonsListViewController : BaseViewController <UIScrollViewDelegate> {
+@interface FTHexagonLessonsListViewController : BaseViewController <UIScrollViewDelegate, FTLessonViewDelegate> {
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UIScrollView *_vLessonsScrollView;
 }

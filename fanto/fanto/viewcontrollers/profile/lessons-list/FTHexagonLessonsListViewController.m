@@ -7,6 +7,7 @@
 //
 
 #import "FTHexagonLessonsListViewController.h"
+#import "FTHexagonLessonView.h"
 #import "MLesson.h"
 
 #define kNormalLessonWidth        230.f
@@ -22,9 +23,9 @@
 
 - (void)setupLessonsScrollView;
 - (void)updateFocusedLesson;
-- (void)focusLesson:(UIView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused;
-- (UIView *)lessonViewAtIndex:(NSInteger)lessonIndex;
-- (void)scaleLessonView:(UIView *)lessonView withRatio:(CGFloat)scaleRatio;
+- (void)focusLesson:(FTHexagonLessonView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused;
+- (FTHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex;
+- (void)scaleLessonView:(FTHexagonLessonView *)lessonView withRatio:(CGFloat)scaleRatio;
 - (void)testOut;
 
 @end
@@ -79,7 +80,7 @@
   CGFloat delta = _vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width;
   CGFloat scaleRatio = ABS(delta) / kFocusedLessonWidth;
   
-  UIView *lessonView = [self lessonViewAtIndex:_currentFocusedLessonIndex];
+  FTHexagonLessonView *lessonView = [self lessonViewAtIndex:_currentFocusedLessonIndex];
   [self scaleLessonView:lessonView withRatio:-scaleRatio];
   
   // Calculate which lesson view is scaled up: 1 = right; -1 = left
@@ -97,33 +98,28 @@
     [subview removeFromSuperview];
   
   [_lessonsData enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
-    CGRect frame = _vLessonsScrollView.frame;
+    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLesson:lesson atIndex:index forTarget:self];
+    CGRect frame = lessonView.frame;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
-    UIView *lessonView = [[UIView alloc] initWithFrame:frame];
-    lessonView.backgroundColor = [UIColor whiteColor];
-    lessonView.tag = index;
-    UILabel *label = [[UILabel alloc] initWithFrame:(CGRect){CGPointZero, lessonView.frame.size}];
-    label.text = [NSString stringWithFormat:@"%d", index];
-    label.textAlignment = NSTextAlignmentCenter;
-    [lessonView addSubview:label];
+    lessonView.frame = frame;
     [_vLessonsScrollView addSubview:lessonView];
   }];
   
   _vLessonsScrollView.contentSize = CGSizeMake([_lessonsData count] * _vLessonsScrollView.frame.size.width,
                                                _vLessonsScrollView.frame.size.height);
   
-  UIView *lessonView = [_vLessonsScrollView.subviews firstObject];
-  [self focusLesson:lessonView atIndex:lessonView.tag focused:YES];
+  FTHexagonLessonView *lessonView = [_vLessonsScrollView.subviews firstObject];
+  [self focusLesson:lessonView atIndex:lessonView.index focused:YES];
 }
 
 - (void)updateFocusedLesson {
   NSInteger index = _vLessonsScrollView.contentOffset.x / _vLessonsScrollView.frame.size.width;
   
-  for (UIView *lessonView in _vLessonsScrollView.subviews)
-    [self focusLesson:lessonView atIndex:lessonView.tag focused:lessonView.tag == index];
+  for (FTHexagonLessonView *lessonView in _vLessonsScrollView.subviews)
+    [self focusLesson:lessonView atIndex:lessonView.index focused:lessonView.index == index];
 }
 
-- (void)focusLesson:(UIView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused {
+- (void)focusLesson:(FTHexagonLessonView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused {
   CGRect frame = lessonView.frame;
   
   if (focused) {
@@ -131,26 +127,24 @@
     frame.origin.x = _vLessonsScrollView.frame.size.width * index +
     (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
     frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
-    lessonView.backgroundColor = [UIColor whiteColor];
     [_vLessonsScrollView bringSubviewToFront:lessonView];
   } else {
     frame.size = _vLessonsScrollView.frame.size;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
-    lessonView.backgroundColor = [UIColor blackColor];
   }
   
   lessonView.frame = frame;
 }
 
-- (UIView *)lessonViewAtIndex:(NSInteger)lessonIndex {
-  for (UIView *subview in _vLessonsScrollView.subviews)
-    if (subview.tag == lessonIndex)
-      return subview;
+- (FTHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex {
+  for (FTHexagonLessonView *lessonView in _vLessonsScrollView.subviews)
+    if (lessonView.index == lessonIndex)
+      return lessonView;
   
   return nil;
 }
 
-- (void)scaleLessonView:(UIView *)lessonView withRatio:(CGFloat)scaleRatio {
+- (void)scaleLessonView:(FTHexagonLessonView *)lessonView withRatio:(CGFloat)scaleRatio {
   if (lessonView == nil)
     return;
   
@@ -164,7 +158,7 @@
     frame.size.height = kFocusedLessonHeight - (kFocusedLessonHeight - kNormalLessonHeight) * ABS(scaleRatio);
   }
   
-  frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.tag + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
+  frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.index + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
   frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
   lessonView.frame = frame;
 }

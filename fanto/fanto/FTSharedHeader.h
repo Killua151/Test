@@ -9,11 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class MSkill;
+@class MSkill, MLesson;
 
 @protocol FTSkillViewDelegate <NSObject>
 
 @optional
 - (void)skillViewDidSelectSkill:(MSkill *)skill;
+
+@end
+
+@protocol FTLessonViewDelegate <NSObject>
+
+@optional
+- (void)lessonViewDidSelectLesson:(MLesson *)lesson;
 
 @end
