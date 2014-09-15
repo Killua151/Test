@@ -43,6 +43,10 @@
 		4A85F3A019C6976400642C5F /* MLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F39F19C6976400642C5F /* MLesson.m */; };
 		4A85F3A319C6C38000642C5F /* FTHexagonLessonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F3A219C6C38000642C5F /* FTHexagonLessonView.m */; };
 		4A85F3A519C6C38A00642C5F /* FTHexagonLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A419C6C38A00642C5F /* FTHexagonLessonView.xib */; };
+		4A85F3A819C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A619C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png */; };
+		4A85F3A919C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3A719C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png */; };
+		4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */; };
+		4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F3AB19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
@@ -124,6 +128,10 @@
 		4A85F3A119C6C38000642C5F /* FTHexagonLessonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonView.h; sourceTree = "<group>"; };
 		4A85F3A219C6C38000642C5F /* FTHexagonLessonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonView.m; sourceTree = "<group>"; };
 		4A85F3A419C6C38A00642C5F /* FTHexagonLessonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHexagonLessonView.xib; sourceTree = "<group>"; };
+		4A85F3A619C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lesson-passed_checkmark.png"; sourceTree = "<group>"; };
+		4A85F3A719C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_lesson-passed_checkmark@2x.png"; sourceTree = "<group>"; };
+		4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hexagon_lesson-retake.png"; sourceTree = "<group>"; };
+		4A85F3AB19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hexagon_lesson-retake@2x.png"; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -256,6 +264,10 @@
 		4A85F39519C68EF400642C5F /* Lessons List */ = {
 			isa = PBXGroup;
 			children = (
+				4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */,
+				4A85F3AB19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png */,
+				4A85F3A619C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png */,
+				4A85F3A719C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png */,
 				4A85F39619C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png */,
 				4A85F39719C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png */,
 				4A85F39819C68EF400642C5F /* img-hexagon_lessons-bg-top.png */,
@@ -526,6 +538,7 @@
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
+				4A85F3A919C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark@2x.png in Resources */,
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
 				4A85F38919C6762D00642C5F /* img-hexagon-skill-strength-4.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
@@ -539,10 +552,12 @@
 				4A85F38819C6762D00642C5F /* img-hexagon-skill-strength-3@2x.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A85F38319C6762D00642C5F /* img-hexagon-skill-strength-1.png in Resources */,
+				4A85F3A819C6CC6D00642C5F /* img-hexagon_lesson-passed_checkmark.png in Resources */,
 				4A85F38519C6762D00642C5F /* img-hexagon-skill-strength-2.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
+				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
@@ -554,6 +569,7 @@
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A85F3A519C6C38A00642C5F /* FTHexagonLessonView.xib in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
+				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
 				4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */,
 				4A85F38A19C6762D00642C5F /* img-hexagon-skill-strength-4@2x.png in Resources */,

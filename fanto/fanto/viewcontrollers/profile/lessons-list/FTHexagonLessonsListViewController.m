@@ -78,7 +78,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   CGFloat delta = _vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width;
-  CGFloat scaleRatio = ABS(delta) / kFocusedLessonWidth;
+  CGFloat scaleRatio = ABS(delta) / kNormalLessonWidth;
   
   FTHexagonLessonView *lessonView = [self lessonViewAtIndex:_currentFocusedLessonIndex];
   [self scaleLessonView:lessonView withRatio:-scaleRatio];
@@ -134,6 +134,7 @@
   }
   
   lessonView.frame = frame;
+  [lessonView refreshView];
 }
 
 - (FTHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex {
