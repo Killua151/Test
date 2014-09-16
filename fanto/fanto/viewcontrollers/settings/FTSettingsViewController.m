@@ -30,7 +30,7 @@
   [self customTitleWithText:@"Cài đặt" color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil title:@"Đóng" color:[UIColor blackColor] target:self action:@selector(dismiss) distance:-10];
   
-  _sectionsData = @[@"Thông tin của bạn", @"Kết nối", @"Thông báo"];
+  _sectionsData = @[@"Thông tin của bạn", [NSNull null], [NSNull null], @"Kết nối", @"Thông báo"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +74,9 @@
 
 #pragma mark - UITableViewDelegate methods
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  if ([_sectionsData[section] isKindOfClass:[NSNull class]])
+    return nil;
+  
   FTSettingsHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:
                                 NSStringFromClass([FTSettingsHeaderView class])];
   
@@ -109,6 +112,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  if ([_sectionsData[section] isKindOfClass:[NSNull class]])
+    return 0;
+  
   return [FTSettingsHeaderView heightToFithWithData:_sectionsData[section]];
 }
 
