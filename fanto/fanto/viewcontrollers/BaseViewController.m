@@ -159,7 +159,6 @@
   
   button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
   [button setTitleColor:titleColor forState:UIControlStateNormal];
-  
   [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:button.frame];
@@ -168,13 +167,10 @@
   
   UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:view];
   
-  if (distance < 0) {
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+  if (distance < 0)
     self.navigationItem.rightBarButtonItem = barButton;
-  } else {
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+  else
     self.navigationItem.leftBarButtonItem = barButton;
-  }
 }
 
 - (void)customTitleWithText:(NSString*)title color:(UIColor *)titleColor {

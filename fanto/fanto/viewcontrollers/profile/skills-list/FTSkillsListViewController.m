@@ -7,15 +7,16 @@
 //
 
 #import "FTSkillsListViewController.h"
-#import "FTHexagonSkillCell.h"
-#import "FTHexagonCheckpointTestCell.h"
-#import "FTShieldSkillCell.h"
+#import "FTCheckpointTestCell.h"
+#import "FTSkillCell.h"
 #import "FTLessonsListViewController.h"
+#import "FTShopViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
   FTLessonsListViewController *_lessonsListVC;
+  FTShopViewController *_shopVC;
   UIButton *_currentStrengthenButton;
 }
 
@@ -60,11 +61,11 @@
   NSArray *skills = _skillsData[indexPath.row];
   
   if (![skills isKindOfClass:[NSArray class]]) {
-    FTHexagonCheckpointTestCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FTHexagonCheckpointTestCell class])];
+    FTCheckpointTestCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                                  NSStringFromClass([FTCheckpointTestCell currentCheckpointTestCellClass])];
     
     if (cell == nil)
-      cell = [FTHexagonCheckpointTestCell new];
+      cell = [[FTCheckpointTestCell currentCheckpointTestCellClass] new];
     
     return cell;
   }
@@ -132,6 +133,11 @@
 }
 
 - (void)gotoShop {
+  if (_shopVC == nil)
+    _shopVC = [FTShopViewController new];
+  
+  [self.navigationController pushViewController:_shopVC animated:YES];
+  [_shopVC reloadContents];
 }
 
 - (void)setupViews {
