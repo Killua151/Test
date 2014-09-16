@@ -6,13 +6,10 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableSectionView.h"
 
-@interface FTShopSectionView : UIView {
+@interface FTShopSectionView : BaseTableSectionView {
   IBOutlet UILabel *_lblSectionName;
 }
-
-+ (CGFloat)heightToFithWithData:(NSString *)data;
-- (void)updateViewWithData:(NSString *)data;
 
 @end

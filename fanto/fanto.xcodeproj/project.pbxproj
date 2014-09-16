@@ -115,6 +115,7 @@
 		CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA29B19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png */; };
 		CAEF54AB19C886EA00729934 /* FTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEF54A919C886EA00729934 /* FTSettingsViewController.m */; };
 		CAEF54AC19C886EA00729934 /* FTSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54AA19C886EA00729934 /* FTSettingsViewController.xib */; };
+		CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEF54AE19C8882A00729934 /* BaseTableSectionView.m */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -266,6 +267,8 @@
 		CAEF54A819C886EA00729934 /* FTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSettingsViewController.h; sourceTree = "<group>"; };
 		CAEF54A919C886EA00729934 /* FTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSettingsViewController.m; sourceTree = "<group>"; };
 		CAEF54AA19C886EA00729934 /* FTSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSettingsViewController.xib; sourceTree = "<group>"; };
+		CAEF54AD19C8882A00729934 /* BaseTableSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableSectionView.h; sourceTree = "<group>"; };
+		CAEF54AE19C8882A00729934 /* BaseTableSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableSectionView.m; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -531,6 +534,8 @@
 		CA7499CB19C0951A00C221A9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CAEF54AD19C8882A00729934 /* BaseTableSectionView.h */,
+				CAEF54AE19C8882A00729934 /* BaseTableSectionView.m */,
 				CAEBA25619C487F30024CA71 /* BaseTableViewCell.h */,
 				CAEBA25719C487F30024CA71 /* BaseTableViewCell.m */,
 				CA7499CC19C0951A00C221A9 /* BaseViewController.h */,
@@ -853,6 +858,7 @@
 				CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */,
 				4A85F3A019C6976400642C5F /* MLesson.m in Sources */,
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
+				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,

@@ -14,7 +14,6 @@
 
 @property (nonatomic, assign) NSInteger cellIndex;
 
-+ (CGFloat)fixedCellHeight;
 + (CGFloat)heightToFitWithData:(MBase *)data;
 - (void)updateCellWithData:(MBase *)data;
 - (void)updateCellWithData:(MBase *)data atIndex:(NSInteger)cellIndex;

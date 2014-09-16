@@ -24,27 +24,6 @@
   return self;
 }
 
-+ (instancetype)sharedCell {
-  static NSMutableDictionary *_sharedCell = nil;
-  
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    _sharedCell = [NSMutableDictionary new];
-  });
-  
-  NSString *klass = NSStringFromClass([self class]);
-  
-  if (_sharedCell[klass] == nil)
-    _sharedCell[klass] = [[self class] new];
-  
-  return _sharedCell[NSStringFromClass([self class])];
-}
-
-+ (CGFloat)fixedCellHeight {
-  // Implement in child class
-  return 0;
-}
-
 + (CGFloat)heightToFitWithData:(MBase *)data {
   [[[self class] sharedCell] updateCellWithData:data];
   return [[[self class] sharedCell] heightToFit];
@@ -63,7 +42,24 @@
   // Implement in child class
 }
 
++ (instancetype)sharedCell {
+  static NSMutableDictionary *_sharedCells = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedCells = [NSMutableDictionary new];
+  });
+  
+  NSString *klass = NSStringFromClass([self class]);
+  
+  if (_sharedCells[klass] == nil)
+    _sharedCells[klass] = [[self class] new];
+  
+  return _sharedCells[NSStringFromClass([self class])];
+}
+
 - (CGFloat)heightToFit {
+  // Override in child class
   NSArray *nib = LoadNibNameWithSameClass();
   UIView *view = nib[0];
   
