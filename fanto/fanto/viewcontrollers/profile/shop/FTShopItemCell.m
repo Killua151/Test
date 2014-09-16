@@ -12,6 +12,16 @@
 @implementation FTShopItemCell
 
 - (void)updateCellWithData:(MItem *)data {
+  NSString *plainTitle = [_btnPrice titleForState:UIControlStateNormal];
+  NSRange unitRange = NSMakeRange(plainTitle.length - 6, 6);
+  NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:plainTitle];
+  [attributedTitle addAttribute:NSFontAttributeName
+                          value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]
+                          range:unitRange];
+  [attributedTitle addAttribute:NSForegroundColorAttributeName
+                          value:[UIColor whiteColor]
+                          range:NSMakeRange(0, plainTitle.length)];
+  [_btnPrice setAttributedTitle:attributedTitle forState:UIControlStateNormal];
 }
 
 - (IBAction)btnPricePressed:(UIButton *)sender {

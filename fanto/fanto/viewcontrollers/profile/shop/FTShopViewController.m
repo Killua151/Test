@@ -7,8 +7,12 @@
 //
 
 #import "FTShopViewController.h"
+#import "FTShopItemCell.h"
+#import "MItem.h"
 
-@interface FTShopViewController ()
+@interface FTShopViewController () {
+  NSMutableArray *_itemsData;
+}
 
 @end
 
@@ -20,31 +24,44 @@
   [self customBarButtonWithImage:nil title:@"Quay lại" color:[UIColor blackColor] target:self action:@selector(goBack) distance:-10];
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self customBarButtonWithImage:@"img-money-icon" title:@"80" color:[UIColor blackColor] target:nil action:nil distance:10];
 }
 
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+  _itemsData = nil;
+}
+
+- (void)reloadContents {
+  [_itemsData removeAllObjects];
+  [_itemsData addObjectsFromArray:@[[MItem new], [MItem new], [MItem new]]];
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 0;
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 0;
+  return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return nil;
+  FTShopItemCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FTShopItemCell class])];
+  
+  if (cell == nil)
+    cell = [FTShopItemCell new];
+  
+  [cell updateCellWithData:_itemsData[indexPath.row]];
+  
+  return cell;
 }
 
 #pragma mark - UITableViewDelegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 0;
+  return [FTShopItemCell heightToFitWithData:_itemsData[indexPath.row]];
 }
 
 @end
