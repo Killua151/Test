@@ -8,6 +8,7 @@
 
 #import "FTShopViewController.h"
 #import "FTShopItemCell.h"
+#import "FTShopSectionView.h"
 #import "MItem.h"
 
 @interface FTShopViewController () {
@@ -37,17 +38,34 @@
 }
 
 - (void)reloadContents {
+  if (_itemsData == nil)
+    _itemsData = [NSMutableArray new];
+  
   [_itemsData removeAllObjects];
-  [_itemsData addObjectsFromArray:@[[MItem new], [MItem new], [MItem new]]];
+  [_itemsData addObjectsFromArray:@[
+                                    @{
+                                      @"title" : [@"Lorem ipsum dolor sit amet, consectetur adipiscing elit" uppercaseString],
+                                      @"items" : @[[MItem new], [MItem new], [MItem new]]
+                                      },
+                                    @{
+                                      @"title" : @"PRACTICE",
+                                      @"items" : @[[MItem new], [MItem new], [MItem new], [MItem new]]
+                                      },
+                                    @{
+                                      @"title" : @"TEST",
+                                      @"items" : @[[MItem new]]
+                                      }]];
+  
+  [_tblItems reloadData];
 }
 
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+  return [_itemsData count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 3;
+  return [_itemsData[section][@"items"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,14 +74,29 @@
   if (cell == nil)
     cell = [FTShopItemCell new];
   
-  [cell updateCellWithData:_itemsData[indexPath.row]];
+  [cell updateCellWithData:_itemsData[indexPath.section][@"items"][indexPath.row]];
   
   return cell;
 }
 
 #pragma mark - UITableViewDelegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [FTShopItemCell heightToFitWithData:_itemsData[indexPath.row]];
+  return [FTShopItemCell heightToFitWithData:_itemsData[indexPath.section][@"items"][indexPath.row]];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  FTShopSectionView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([FTShopSectionView class])];
+  
+  if (view == nil)
+    view = [FTShopSectionView new];
+  
+  [view updateViewWithData:_itemsData[section][@"title"]];
+  
+  return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  return [FTShopSectionView heightToFithWithData:_itemsData[section][@"title"]];
 }
 
 @end

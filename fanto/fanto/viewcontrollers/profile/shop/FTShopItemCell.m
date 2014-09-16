@@ -34,6 +34,10 @@
 #pragma mark - Private methods
 - (void)applyEffectToPriceButton {
   NSString *plainTitle = [_btnPrice titleForState:UIControlStateNormal];
+  
+  if (plainTitle == nil)
+    return;
+  
   NSRange unitRange = NSMakeRange(plainTitle.length - 6, 6);
   NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:plainTitle];
   [attributedTitle addAttribute:NSFontAttributeName

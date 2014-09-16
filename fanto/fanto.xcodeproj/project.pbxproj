@@ -66,6 +66,8 @@
 		4ACFE59419C810AD00AAC524 /* MItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACFE59319C810AD00AAC524 /* MItem.m */; };
 		4ACFE59819C811A500AAC524 /* img-money-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACFE59619C811A500AAC524 /* img-money-icon.png */; };
 		4ACFE59919C811A500AAC524 /* img-money-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACFE59719C811A500AAC524 /* img-money-icon@2x.png */; };
+		4ACFE59C19C81A9000AAC524 /* FTShopSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACFE59B19C81A9000AAC524 /* FTShopSectionView.m */; };
+		4ACFE59E19C81A9C00AAC524 /* FTShopSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACFE59D19C81A9C00AAC524 /* FTShopSectionView.xib */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */; };
 		CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454B119C71E8C0052111C /* FTHexagonLessonsListViewController.xib */; };
@@ -187,6 +189,9 @@
 		4ACFE59319C810AD00AAC524 /* MItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItem.m; sourceTree = "<group>"; };
 		4ACFE59619C811A500AAC524 /* img-money-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon.png"; sourceTree = "<group>"; };
 		4ACFE59719C811A500AAC524 /* img-money-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon@2x.png"; sourceTree = "<group>"; };
+		4ACFE59A19C81A9000AAC524 /* FTShopSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopSectionView.h; sourceTree = "<group>"; };
+		4ACFE59B19C81A9000AAC524 /* FTShopSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopSectionView.m; sourceTree = "<group>"; };
+		4ACFE59D19C81A9C00AAC524 /* FTShopSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopSectionView.xib; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA5454AF19C71E8C0052111C /* FTHexagonLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonsListViewController.h; sourceTree = "<group>"; };
 		CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonsListViewController.m; sourceTree = "<group>"; };
@@ -411,6 +416,9 @@
 				CA5454CD19C743F50052111C /* FTShopItemCell.h */,
 				CA5454CE19C743F50052111C /* FTShopItemCell.m */,
 				CA5454CF19C743F50052111C /* FTShopItemCell.xib */,
+				4ACFE59A19C81A9000AAC524 /* FTShopSectionView.h */,
+				4ACFE59B19C81A9000AAC524 /* FTShopSectionView.m */,
+				4ACFE59D19C81A9C00AAC524 /* FTShopSectionView.xib */,
 				CA5454C819C741A20052111C /* FTShopViewController.h */,
 				CA5454C919C741A20052111C /* FTShopViewController.m */,
 				CA5454CA19C741A20052111C /* FTShopViewController.xib */,
@@ -736,6 +744,7 @@
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
+				4ACFE59E19C81A9C00AAC524 /* FTShopSectionView.xib in Resources */,
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
 				4ACFE59919C811A500AAC524 /* img-money-icon@2x.png in Resources */,
 				4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */,
@@ -830,6 +839,7 @@
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
+				4ACFE59C19C81A9000AAC524 /* FTShopSectionView.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
