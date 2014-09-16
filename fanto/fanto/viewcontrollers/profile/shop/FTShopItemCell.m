@@ -7,19 +7,14 @@
 //
 
 #import "FTShopItemCell.h"
+#import "MItem.h"
 
 @implementation FTShopItemCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
+- (void)updateCellWithData:(MItem *)data {
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (IBAction)btnPricePressed:(UIButton *)sender {
 }
 
 @end

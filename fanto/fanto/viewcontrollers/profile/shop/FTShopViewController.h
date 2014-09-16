@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface FTShopViewController : BaseViewController
+@interface FTShopViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
+  IBOutlet UITableView *_tblItems;
+}
 
 @end

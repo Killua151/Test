@@ -129,40 +129,49 @@
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 
-- (void)customBarButtonWithImage:(NSString *)imageName
-                           title:(NSString *)title
-                           color:(UIColor *)titleColor
-                          target:(id)target
-                          action:(SEL)action
-                        distance:(CGFloat)distance {
-  if (self.navigationController == nil)
-    return;
+- (UIBarButtonItem *)customBarButtonWithImage:(NSString *)imageName
+                                        title:(NSString *)title
+                                        color:(UIColor *)titleColor
+                                       target:(id)target
+                                       action:(SEL)action
+                                     distance:(CGFloat)distance {
+  if (self.navigationController == nil || (imageName == nil && title == nil))
+    return nil;
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
   
-  if (title != nil)
-    [button setTitle:title forState:UIControlStateNormal];
-
+  CGSize buttonSize = CGSizeMake(0, self.navigationController.navigationBar.frame.size.height);
+  
   if (imageName != nil) {
     UIImage *image = [UIImage imageNamed:imageName];
-    
-    if (distance > 0)
-      button.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    else
-      button.frame = CGRectMake(-2, -1, image.size.width, image.size.height);
-    
-    [button setBackgroundImage:image forState:UIControlStateNormal];
-  } else if (title != nil) {
-    CGSize size = [button.titleLabel sizeThatFits:CGSizeMake(MAXFLOAT, button.titleLabel.frame.size.height)];
-    button.frame = (CGRect){CGPointZero, size};
+    [button setImage:image forState:UIControlStateNormal];
+    buttonSize.width += image.size.width;
   }
   
-  button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
-  [button setTitleColor:titleColor forState:UIControlStateNormal];
-  [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+  if (title != nil) {
+    [button setTitle:title forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    
+    CGSize titleSize = [button.titleLabel sizeThatFits:CGSizeMake(MAXFLOAT, button.titleLabel.frame.size.height)];
+    buttonSize.width += titleSize.width;
+  }
+  
+  // In case of both image name & title given, stretch the button to make room betwen 2
+  if (imageName != nil && title != nil) {
+    buttonSize.width += 7;
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -7);
+  }
+  
+  button.frame = (CGRect){CGPointZero, buttonSize};
+  
+  if (target != nil && action != nil)
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+  else
+    button.userInteractionEnabled = NO;
   
   UIView *view = [[UIView alloc] initWithFrame:button.frame];
-  view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : 0, 0);
+  view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : -distance, 0);
   [view addSubview:button];
   
   UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:view];
@@ -171,6 +180,8 @@
     self.navigationItem.rightBarButtonItem = barButton;
   else
     self.navigationItem.leftBarButtonItem = barButton;
+  
+  return barButton;
 }
 
 - (void)customTitleWithText:(NSString*)title color:(UIColor *)titleColor {

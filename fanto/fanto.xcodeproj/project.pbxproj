@@ -63,6 +63,9 @@
 		4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F40919C6F45400642C5F /* FTCheckpointTestCell.m */; };
 		4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */; };
 		4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */; };
+		4ACFE59419C810AD00AAC524 /* MItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACFE59319C810AD00AAC524 /* MItem.m */; };
+		4ACFE59819C811A500AAC524 /* img-money-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACFE59619C811A500AAC524 /* img-money-icon.png */; };
+		4ACFE59919C811A500AAC524 /* img-money-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACFE59719C811A500AAC524 /* img-money-icon@2x.png */; };
 		CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */; };
 		CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */; };
 		CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454B119C71E8C0052111C /* FTHexagonLessonsListViewController.xib */; };
@@ -180,6 +183,10 @@
 		4A85F40919C6F45400642C5F /* FTCheckpointTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCheckpointTestCell.m; sourceTree = "<group>"; };
 		4A85F40B19C6F8FE00642C5F /* btn-shield-strengthen-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg.png"; sourceTree = "<group>"; };
 		4A85F40C19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-shield-strengthen-bg@2x.png"; sourceTree = "<group>"; };
+		4ACFE59219C810AD00AAC524 /* MItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItem.h; sourceTree = "<group>"; };
+		4ACFE59319C810AD00AAC524 /* MItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItem.m; sourceTree = "<group>"; };
+		4ACFE59619C811A500AAC524 /* img-money-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon.png"; sourceTree = "<group>"; };
+		4ACFE59719C811A500AAC524 /* img-money-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon@2x.png"; sourceTree = "<group>"; };
 		CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA5454AF19C71E8C0052111C /* FTHexagonLessonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHexagonLessonsListViewController.h; sourceTree = "<group>"; };
 		CA5454B019C71E8C0052111C /* FTHexagonLessonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHexagonLessonsListViewController.m; sourceTree = "<group>"; };
@@ -360,6 +367,16 @@
 			path = shield;
 			sourceTree = "<group>";
 		};
+		4ACFE59519C811A500AAC524 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				4ACFE59619C811A500AAC524 /* img-money-icon.png */,
+				4ACFE59719C811A500AAC524 /* img-money-icon@2x.png */,
+			);
+			name = Shop;
+			path = shop;
+			sourceTree = "<group>";
+		};
 		CA5454AE19C71E8C0052111C /* Hexagon */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,10 +494,12 @@
 			children = (
 				CAEBA25919C488460024CA71 /* MBase.h */,
 				CAEBA25A19C488460024CA71 /* MBase.m */,
-				CAEBA27619C48F610024CA71 /* MSkill.h */,
-				CAEBA27719C48F610024CA71 /* MSkill.m */,
+				4ACFE59219C810AD00AAC524 /* MItem.h */,
+				4ACFE59319C810AD00AAC524 /* MItem.m */,
 				4A85F39E19C6976400642C5F /* MLesson.h */,
 				4A85F39F19C6976400642C5F /* MLesson.m */,
+				CAEBA27619C48F610024CA71 /* MSkill.h */,
+				CAEBA27719C48F610024CA71 /* MSkill.m */,
 			);
 			name = Models;
 			path = models;
@@ -544,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				4A85F39519C68EF400642C5F /* Lessons List */,
+				4ACFE59519C811A500AAC524 /* Shop */,
 				CAEBA26719C48C490024CA71 /* Skills List */,
 			);
 			name = Profile;
@@ -717,6 +737,7 @@
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
+				4ACFE59919C811A500AAC524 /* img-money-icon@2x.png in Resources */,
 				4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */,
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
@@ -729,6 +750,7 @@
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
 				4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */,
+				4ACFE59819C811A500AAC524 /* img-money-icon.png in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
 				CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
@@ -816,6 +838,7 @@
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
+				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

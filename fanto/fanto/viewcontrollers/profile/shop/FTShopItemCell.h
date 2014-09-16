@@ -6,8 +6,15 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 
-@interface FTShopItemCell : UITableViewCell
+@interface FTShopItemCell : BaseTableViewCell {
+  IBOutlet UIImageView *_imgItemIcon;
+  IBOutlet UILabel *_lblItemName;
+  IBOutlet UILabel *_lblItemDescription;
+  IBOutlet UIButton *_btnPrice;
+}
+
+- (IBAction)btnPricePressed:(UIButton *)sender;
 
 @end
