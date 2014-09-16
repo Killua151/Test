@@ -7,19 +7,46 @@
 //
 
 #import "FTShopItemCell.h"
+#import "MItem.h"
+
+@interface FTShopItemCell ()
+
+- (void)applyEffectToPriceButton;
+
+@end
 
 @implementation FTShopItemCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
+- (void)updateCellWithData:(MItem *)data {
+  [Utils adjustLabelToFitHeight:_lblItemName];
+  [Utils adjustLabelToFitHeight:_lblItemDescription relatedTo:_lblItemName withDistance:10];
+  
+  [self applyEffectToPriceButton];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+- (CGFloat)heightToFit {
+  return _lblItemDescription.frame.origin.y + _lblItemDescription.frame.size.height + 42;
+}
 
-    // Configure the view for the selected state
+- (IBAction)btnPricePressed:(UIButton *)sender {
+}
+
+#pragma mark - Private methods
+- (void)applyEffectToPriceButton {
+  NSString *plainTitle = [_btnPrice titleForState:UIControlStateNormal];
+  
+  if (plainTitle == nil)
+    return;
+  
+  NSRange unitRange = NSMakeRange(plainTitle.length - 6, 6);
+  NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:plainTitle];
+  [attributedTitle addAttribute:NSFontAttributeName
+                          value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]
+                          range:unitRange];
+  [attributedTitle addAttribute:NSForegroundColorAttributeName
+                          value:[UIColor whiteColor]
+                          range:NSMakeRange(0, plainTitle.length)];
+  [_btnPrice setAttributedTitle:attributedTitle forState:UIControlStateNormal];
 }
 
 @end
