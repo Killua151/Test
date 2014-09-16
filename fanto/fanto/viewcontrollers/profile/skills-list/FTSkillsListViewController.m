@@ -11,6 +11,7 @@
 #import "FTSkillCell.h"
 #import "FTLessonsListViewController.h"
 #import "FTShopViewController.h"
+#import "FTSettingsViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
@@ -130,6 +131,9 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
+  [self.navigationController presentViewController:[FTSettingsViewController navigationController]
+                                          animated:YES
+                                        completion:NULL];
 }
 
 - (void)gotoShop {

@@ -12,12 +12,12 @@
   IBOutlet UIView *_vGestureLayer;
 }
 
-+ (UIViewController *)navigationController;
++ (UINavigationController *)navigationController;
 
 - (void)gestureLayerDidEnterEdittingMode;
 - (void)gestureLayerDidTap;
 - (void)reloadContents;
-- (void)animateSlideView:(BOOL)isSlidingUp withDistance:(CGFloat)distance;
+- (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance;
 - (void)beforeGoBack;
 - (void)afterGoBack;
 

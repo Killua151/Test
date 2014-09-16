@@ -8,7 +8,7 @@
 
 #import "FTShopViewController.h"
 #import "FTShopItemCell.h"
-#import "FTShopSectionView.h"
+#import "FTShopItemHeaderView.h"
 #import "MItem.h"
 
 @interface FTShopViewController () {
@@ -85,10 +85,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  FTShopSectionView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([FTShopSectionView class])];
+  FTShopItemHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([FTShopItemHeaderView class])];
   
   if (view == nil)
-    view = [FTShopSectionView new];
+    view = [FTShopItemHeaderView new];
   
   [view updateViewWithData:_itemsData[section][@"title"]];
   
@@ -96,7 +96,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-  return [FTShopSectionView heightToFithWithData:_itemsData[section][@"title"]];
+  return [FTShopItemHeaderView heightToFithWithData:_itemsData[section][@"title"]];
 }
 
 @end

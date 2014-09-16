@@ -8,6 +8,15 @@
 
 #import "BaseViewController.h"
 
-@interface FTSettingsViewController : BaseViewController
+@interface FTSettingsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
+  IBOutlet UITableView *_tblSettings;
+  IBOutlet UITableViewCell *_celAvatar;
+  IBOutlet UITableViewCell *_celUsername;
+  IBOutlet UITextField *_txtUsername;
+  IBOutlet UITableViewCell *_celPassword;
+  IBOutlet UITextField *_txtPassword;
+  IBOutlet UITableViewCell *_celEmail;
+  IBOutlet UITextField *_txtEmail;
+}
 
 @end

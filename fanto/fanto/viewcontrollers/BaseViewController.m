@@ -19,7 +19,7 @@
 
 @implementation BaseViewController
 
-+ (UIViewController *)navigationController {
++ (UINavigationController *)navigationController {
   BaseViewController *viewController = [[self class] new];
   UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
   return navController;
@@ -55,7 +55,7 @@
   // Implement in child class
 }
 
-- (void)animateSlideView:(BOOL)isSlidingUp withDistance:(CGFloat)distance {
+- (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance {
   [UIView
    animateWithDuration:0.25
    delay:0

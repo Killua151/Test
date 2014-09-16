@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTShopSectionView.h"
+#import "FTShopItemHeaderView.h"
 
-@interface FTShopSectionView ()
+@interface FTShopItemHeaderView ()
 
 @end
 
-@implementation FTShopSectionView
+@implementation FTShopItemHeaderView
 
 - (void)updateViewWithData:(NSString *)data {
   _lblSectionName.text = data;

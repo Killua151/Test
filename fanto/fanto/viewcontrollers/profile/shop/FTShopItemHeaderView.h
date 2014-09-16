@@ -8,7 +8,7 @@
 
 #import "BaseTableSectionView.h"
 
-@interface FTShopSectionView : BaseTableSectionView {
+@interface FTShopItemHeaderView : BaseTableSectionView {
   IBOutlet UILabel *_lblSectionName;
 }
 
