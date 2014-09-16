@@ -22,6 +22,8 @@
   [super viewDidLoad];
   [self customTitleWithText:@"Cửa hàng" color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil title:@"Quay lại" color:[UIColor blackColor] target:self action:@selector(goBack) distance:-10];
+  
+  _tblItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
