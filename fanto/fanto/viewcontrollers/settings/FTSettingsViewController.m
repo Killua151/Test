@@ -60,6 +60,12 @@
 - (IBAction)swtListeningLessonsChanged:(UISwitch *)sender {
 }
 
+- (IBAction)swtFacebookChanged:(UISwitch *)sender {
+}
+
+- (IBAction)swtGooglePlusChanged:(UISwitch *)sender {
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return [_sectionsData count];
@@ -72,8 +78,11 @@
   if (section == 1)
     return 1;
   
-  if (section == 2)
+  if (section == 2 || section == 3)
     return 2;
+  
+  if (section == 4)
+    return 3;
   
   return 0;
 }
@@ -105,7 +114,24 @@
     if (indexPath.row == 0)
       return _celSoundEffects;
     
-    return _celListeningLessons;
+    return _celListensingLessons;
+  }
+  
+  if (indexPath.section == 3) {
+    if (indexPath.row == 0)
+      return _celFacebook;
+    
+    return _celGooglePlus;
+  }
+  
+  if (indexPath.section == 4) {
+    if (indexPath.row == 0)
+      return _celPracticeReminder;
+    
+    if (indexPath.row == 1)
+      return _celFriendAdded;
+    
+    return _celFriendPassed;
   }
   
   return nil;
@@ -154,7 +180,24 @@
     if (indexPath.row == 0)
       return _celSoundEffects.frame.size.height;
     
-    return _celListeningLessons.frame.size.height;
+    return _celListensingLessons.frame.size.height;
+  }
+  
+  if (indexPath.section == 3) {
+    if (indexPath.row == 0)
+      return _celFacebook.frame.size.height;
+    
+    return _celGooglePlus.frame.size.height;
+  }
+  
+  if (indexPath.section == 4) {
+    if (indexPath.row == 0)
+      return _celPracticeReminder.frame.size.height;
+    
+    if (indexPath.row == 1)
+      return _celFriendAdded.frame.size.height;
+    
+    return _celFriendPassed.frame.size.height;
   }
   
   return 0;

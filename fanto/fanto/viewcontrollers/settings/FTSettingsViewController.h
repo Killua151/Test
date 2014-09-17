@@ -20,13 +20,28 @@
   IBOutlet UITableViewCell *_celFeedbackLogOut;
   IBOutlet UITableViewCell *_celSoundEffects;
   IBOutlet UISwitch *_swtSoundEffects;
-  IBOutlet UITableViewCell *_celListeningLessons;
+  IBOutlet UITableViewCell *_celListensingLessons;
   IBOutlet UISwitch *_swtListeningLessons;
+  IBOutlet UITableViewCell *_celFacebook;
+  IBOutlet UISwitch *_swtFacebook;
+  IBOutlet UITableViewCell *_celGooglePlus;
+  IBOutlet UISwitch *_swtGooglePlus;
+  IBOutlet UITableViewCell *_celPracticeReminder;
+  IBOutlet UIButton *_btnPracticeReminderPhone;
+  IBOutlet UIButton *_btnPracticeReminderEmail;
+  IBOutlet UITableViewCell *_celFriendAdded;
+  IBOutlet UIButton *_btnFriendAddedPhone;
+  IBOutlet UIButton *_btnFriendAddedEmail;
+  IBOutlet UITableViewCell *_celFriendPassed;
+  IBOutlet UIButton *_btnFriendPassedPhone;
+  IBOutlet UIButton *_btnFriendPassedEmail;
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender;
 - (IBAction)btnLogoutPressed:(UIButton *)sender;
 - (IBAction)swtSoundEffectsChanged:(UISwitch *)sender;
 - (IBAction)swtListeningLessonsChanged:(UISwitch *)sender;
+- (IBAction)swtFacebookChanged:(UISwitch *)sender;
+- (IBAction)swtGooglePlusChanged:(UISwitch *)sender;
 
 @end
