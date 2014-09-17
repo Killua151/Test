@@ -8,6 +8,8 @@
 
 #import "FTSettingsViewController.h"
 #import "FTSettingsHeaderView.h"
+#import "FTHomeViewController.h"
+#import "FTAppDelegate.h"
 
 #define kTextFieldTypes           @[@"username", @"password", @"email"]
 
@@ -42,6 +44,13 @@
 }
 
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
+  UINavigationController *homeNavigation = [FTHomeViewController navigationController];
+  homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  
+  [self.navigationController presentViewController:homeNavigation animated:YES completion:^{
+    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = homeNavigation;
+  }];
 }
 
 - (IBAction)swtSoundEffectsChanged:(UISwitch *)sender {
@@ -159,16 +168,24 @@
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  _currentFirstResponder = textField;
-  
-  if (textField == _txtUsername || textField == _txtPassword || textField == _txtEmail)
+  if (textField == _txtUsername || textField == _txtPassword || textField == _txtEmail) {
+    _currentFirstResponder = textField;
     [self animateSlideViewUp:YES withDistance:50];
+  }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [_currentFirstResponder resignFirstResponder];
+  _currentFirstResponder = nil;
+  
   [self animateSlideViewUp:NO withDistance:0];
   [self confirmTextField:textField withType:kTextFieldTypes[textField.tag]];
+  return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+  // Prevent user from switching between text fields
+  DLog(@"%p", _currentFirstResponder);
   
   return YES;
 }

@@ -11,6 +11,7 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import "FTAppDelegate.h"
 #import "FTForgotPasswordViewController.h"
+#import "FTSkillsListViewController.h"
 
 @interface FTLoginViewController () {
   UIView *_currentFirstResponder;
@@ -49,7 +50,14 @@
     return;
   
   [self gestureLayerDidTap];
-  [self.navigationController popViewControllerAnimated:YES];
+  
+  UINavigationController *skillsListNavigation = [FTSkillsListViewController navigationController];
+  skillsListNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  
+  [self.navigationController presentViewController:skillsListNavigation animated:YES completion:^{
+    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = skillsListNavigation;
+  }];
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {

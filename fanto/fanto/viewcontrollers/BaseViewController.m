@@ -56,13 +56,15 @@
 }
 
 - (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance {
+  CGFloat topEdgeDelta = DeviceSystemIsOS7() ? 64 : 0;
+  
   [UIView
    animateWithDuration:0.25
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
      CGRect frame = self.view.frame;
-     frame.origin.y = isSlidingUp ? -distance+64 : 64;
+     frame.origin.y = isSlidingUp ? -distance+topEdgeDelta : topEdgeDelta;
      self.view.frame = frame;
    }
    completion:^(BOOL finished) {

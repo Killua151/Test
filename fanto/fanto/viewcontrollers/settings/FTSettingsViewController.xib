@@ -64,7 +64,9 @@
                         </state>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Q9g-bF-F06" userLabel="Username">
             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -89,7 +91,9 @@
                         </connections>
                     </textField>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Yf4-a0-fe4" userLabel="Password">
             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -114,7 +118,9 @@
                         </connections>
                     </textField>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="T8r-rE-TZf" userLabel="Email">
             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -139,7 +145,9 @@
                         </connections>
                     </textField>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="eDl-7e-W1J" userLabel="Feedback / Logout">
             <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
@@ -191,13 +199,15 @@
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="M0N-6x-TeO">
                         <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <connections>
                             <action selector="swtSoundEffectsChanged:" destination="-1" eventType="valueChanged" id="n8J-p1-2dO"/>
                         </connections>
                     </switch>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="h7v-zd-5Hf" userLabel="Listening lessons">
             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -214,13 +224,15 @@
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="EOz-47-gtI">
                         <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <connections>
                             <action selector="swtListeningLessonsChanged:" destination="-1" eventType="valueChanged" id="wLI-sN-BMv"/>
                         </connections>
                     </switch>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
     </objects>
 </document>
