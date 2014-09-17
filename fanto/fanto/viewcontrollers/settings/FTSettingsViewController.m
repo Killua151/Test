@@ -9,15 +9,16 @@
 #import "FTSettingsViewController.h"
 #import "FTSettingsHeaderView.h"
 
+#define kTextFieldTypes           @[@"username", @"password", @"email"]
+
 @interface FTSettingsViewController () {
   NSArray *_sectionsData;
   UIView *_currentFirstResponder;
 }
 
 - (void)dismiss;
-- (void)submitUsernameChange;
-- (void)submitPasswordChange;
-- (void)submitEmailChange;
+- (void)submitChanges;
+- (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 
 @end
 
@@ -37,6 +38,18 @@
   [super didReceiveMemoryWarning];
 }
 
+- (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnLogoutPressed:(UIButton *)sender {
+}
+
+- (IBAction)swtSoundEffectsChanged:(UISwitch *)sender {
+}
+
+- (IBAction)swtListeningLessonsChanged:(UISwitch *)sender {
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return [_sectionsData count];
@@ -45,6 +58,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (section == 0)
     return 4;
+  
+  if (section == 1)
+    return 1;
+  
+  if (section == 2)
+    return 2;
   
   return 0;
 }
@@ -67,6 +86,16 @@
       default:
         break;
     }
+  }
+  
+  if (indexPath.section == 1)
+    return _celFeedbackLogOut;
+  
+  if (indexPath.section == 2) {
+    if (indexPath.row == 0)
+      return _celSoundEffects;
+    
+    return _celListeningLessons;
   }
   
   return nil;
@@ -108,6 +137,16 @@
     }
   }
   
+  if (indexPath.section == 1)
+    return _celFeedbackLogOut.frame.size.height;
+  
+  if (indexPath.section == 2) {
+    if (indexPath.row == 0)
+      return _celSoundEffects.frame.size.height;
+    
+    return _celListeningLessons.frame.size.height;
+  }
+  
   return 0;
 }
 
@@ -129,15 +168,32 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [_currentFirstResponder resignFirstResponder];
   [self animateSlideViewUp:NO withDistance:0];
-  
-  if (textField == _txtUsername)
-    [self submitUsernameChange];
-  else if (textField == _txtPassword)
-    [self submitPasswordChange];
-  else if (textField == _txtEmail)
-    [self submitEmailChange];
+  [self confirmTextField:textField withType:kTextFieldTypes[textField.tag]];
   
   return YES;
+}
+
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 0)
+    return;
+  
+  if (alertView.tag >= 1 && alertView.tag <= [kTextFieldTypes count]) {
+    UITextField *originalTextField = @[_txtUsername, _txtPassword, _txtEmail][alertView.tag-1];
+    UITextField *alertTextField = [alertView textFieldAtIndex:0];
+    
+    if ([originalTextField.text isEqualToString:alertTextField.text])
+      return;
+    
+    [self confirmTextField:originalTextField withType:kTextFieldTypes[alertView.tag-1]];
+  }
+}
+
+- (void)didPresentAlertView:(UIAlertView *)alertView {
+  if (alertView.tag >= 1 && alertView.tag <= [kTextFieldTypes count]) {
+    UITextField *alertTextField = [alertView textFieldAtIndex:0];
+    [alertTextField becomeFirstResponder];
+  }
 }
 
 #pragma mark - Private methods
@@ -145,13 +201,26 @@
   [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void)submitUsernameChange {
+- (void)submitChanges {
 }
 
-- (void)submitPasswordChange {
-}
-
-- (void)submitEmailChange {
+- (void)confirmTextField:(UITextField *)textField withType:(NSString *)type {
+  NSString *alertTitle = [NSString stringWithFormat:@"Confirm %@", type];
+  NSString *alertMessage = [NSString stringWithFormat:@"Please confirm your %@", type];
+  
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(alertTitle, nil)
+                                                      message:NSLocalizedString(alertMessage, nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                            otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+  
+  if ([type isEqualToString:@"password"])
+    alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
+  else
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+  
+  alertView.tag = textField.tag+1;
+  [alertView show];
 }
 
 @end
