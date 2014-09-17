@@ -16,6 +16,7 @@
 @interface FTSettingsViewController () {
   NSArray *_sectionsData;
   UIView *_currentFirstResponder;
+  BOOL _textFieldsShouldEndEditting;
 }
 
 - (void)dismiss;
@@ -170,11 +171,13 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   if (textField == _txtUsername || textField == _txtPassword || textField == _txtEmail) {
     _currentFirstResponder = textField;
+    _textFieldsShouldEndEditting = NO;
     [self animateSlideViewUp:YES withDistance:50];
   }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  _textFieldsShouldEndEditting = YES;
   [_currentFirstResponder resignFirstResponder];
   _currentFirstResponder = nil;
   
@@ -185,9 +188,7 @@
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
   // Prevent user from switching between text fields
-  DLog(@"%p", _currentFirstResponder);
-  
-  return YES;
+  return _textFieldsShouldEndEditting;
 }
 
 #pragma mark - UIAlertViewDelegate methods
