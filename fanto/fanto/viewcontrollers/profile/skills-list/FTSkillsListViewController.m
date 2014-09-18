@@ -11,7 +11,7 @@
 #import "FTSkillCell.h"
 #import "FTLessonsListViewController.h"
 #import "FTShopViewController.h"
-#import "FTSettingsViewController.h"
+#import "FTProfileViewController.h"
 #import "MSkill.h"
 
 @interface FTSkillsListViewController () {
@@ -34,8 +34,19 @@
   [super viewDidLoad];
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"Tiếng Anh" color:[UIColor blackColor]];
-  [self customBarButtonWithImage:nil title:@"Thông tin" color:[UIColor blackColor] target:self action:@selector(gotoProfile) distance:8];
-  [self customBarButtonWithImage:nil title:@"Cửa hàng" color:[UIColor blackColor] target:self action:@selector(gotoShop) distance:-8];
+  [self customBarButtonWithImage:nil
+                           title:NSLocalizedString(@"Profile", nil)
+                           color:[UIColor blackColor]
+                          target:self
+                          action:@selector(gotoProfile)
+                        distance:8];
+  
+  [self customBarButtonWithImage:nil
+                           title:NSLocalizedString(@"Shop", nil)
+                           color:[UIColor blackColor]
+                          target:self
+                          action:@selector(gotoShop)
+                        distance:-8];
   
   [self setupViews];
 }
@@ -131,7 +142,7 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTSettingsViewController navigationController]
+  [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES
                                         completion:NULL];
 }

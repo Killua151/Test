@@ -30,7 +30,7 @@
   [super viewDidLoad];
   [self customBackButton];
   [self customBarButtonWithImage:nil
-                           title:@"Kiểm tra"
+                           title:NSLocalizedString(@"Test Out", nil)
                            color:[self navigationTextColor]
                           target:self
                           action:@selector(testOut)

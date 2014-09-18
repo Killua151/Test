@@ -21,15 +21,25 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customTitleWithText:@"Cửa hàng" color:[UIColor blackColor]];
-  [self customBarButtonWithImage:nil title:@"Quay lại" color:[UIColor blackColor] target:self action:@selector(goBack) distance:-10];
+  [self customTitleWithText:NSLocalizedString(@"Shop", nil) color:[UIColor blackColor]];
+  [self customBarButtonWithImage:nil
+                           title:NSLocalizedString(@"Back", nil)
+                           color:[UIColor blackColor]
+                          target:self
+                          action:@selector(goBack)
+                        distance:-8];
   
   _tblItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [self customBarButtonWithImage:@"img-money-icon" title:@"80" color:[UIColor blackColor] target:nil action:nil distance:10];
+  [self customBarButtonWithImage:@"img-money-icon"
+                           title:@"80"
+                           color:[UIColor blackColor]
+                          target:nil
+                          action:nil
+                        distance:8];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,7 +20,6 @@
   BOOL _textFieldsShouldEndEditting;
 }
 
-- (void)dismiss;
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 
@@ -32,8 +31,16 @@
   [super viewDidLoad];
   
   [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
-  [self customTitleWithText:@"Cài đặt" color:[UIColor blackColor]];
-  [self customBarButtonWithImage:nil title:@"Đóng" color:[UIColor blackColor] target:self action:@selector(dismiss) distance:-10];
+  [self customTitleWithText:NSLocalizedString(@"Settings", nil) color:[UIColor blackColor]];
+  
+  [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
+  
+  [self customBarButtonWithImage:nil
+                           title:NSLocalizedString(@"Close", nil)
+                           color:[UIColor blackColor]
+                          target:self
+                          action:@selector(goBack)
+                        distance:-8];
   
   _sectionsData = @[@"Thông tin của bạn", [NSNull null], [NSNull null], @"Kết nối", @"Thông báo"];
   _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
@@ -266,10 +273,6 @@
 }
 
 #pragma mark - Private methods
-- (void)dismiss {
-  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
-}
-
 - (void)submitChanges {
 }
 
