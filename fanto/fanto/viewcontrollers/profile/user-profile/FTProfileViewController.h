@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
-@interface FTProfileViewController : BaseViewController
+@interface FTProfileViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
+  IBOutlet UITableView *_tblProfileInfo;
+  IBOutlet UITableViewCell *_celAvatarNameLevel;
+  IBOutlet UIImageView *_imgAvatar;
+  IBOutlet UILabel *_lblUsername;
+  IBOutlet UILabel *_lblLevel;
+}
 
 @end
