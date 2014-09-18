@@ -10,6 +10,7 @@
 #import "FTSettingsHeaderView.h"
 #import "FTHomeViewController.h"
 #import "FTAppDelegate.h"
+#import "MUser.h"
 
 #define kTextFieldTypes           @[@"username", @"password", @"email"]
 
@@ -35,6 +36,7 @@
   [self customBarButtonWithImage:nil title:@"Đóng" color:[UIColor blackColor] target:self action:@selector(dismiss) distance:-10];
   
   _sectionsData = @[@"Thông tin của bạn", [NSNull null], [NSNull null], @"Kết nối", @"Thông báo"];
+  _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +47,8 @@
 }
 
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
+  [MUser logOutCurrentUser];
+  
   UINavigationController *homeNavigation = [FTHomeViewController navigationController];
   homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   

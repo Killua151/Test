@@ -50,7 +50,8 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 //+ (void)logAnalyticsForScreen:(NSString *)screenName;
 //+ (void)logAnalyticsForSearchText:(NSString *)searchText;
 
-#pragma mark - Social login methods
+#pragma mark - User utils methods
++ (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes;
 + (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback;
 + (void)logOutFacebookWithCompletion:(SocialLogOutCallback)callback;
 + (void)logInGoogleFromView:(UIView *)view completion:(SocialLogInCallback)callback;

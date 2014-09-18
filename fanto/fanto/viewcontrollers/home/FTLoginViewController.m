@@ -17,6 +17,7 @@
 }
 
 - (BOOL)validateFields;
+- (void)goToSkillsList;
 
 @end
 
@@ -47,13 +48,11 @@
   
   [self gestureLayerDidTap];
   
-  UINavigationController *skillsListNavigation = [FTSkillsListViewController navigationController];
-  skillsListNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  
-  [self.navigationController presentViewController:skillsListNavigation animated:YES completion:^{
-    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = skillsListNavigation;
-  }];
+  [Utils updateSavedUserWithAttributes:@{
+                                         kParamUsername : [Utils normalizeString:_txtUsername.text],
+                                         kParamAuthToken : [Utils normalizeString:_txtPassword.text]
+                                         }];
+  [self goToSkillsList];
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
@@ -66,13 +65,15 @@
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
-    DLog(@"%@ %@", userData, error);
+    ShowAlertWithError(error);
+    [self goToSkillsList];
   }];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
-    DLog(@"%@ %@", userData, error);
+    ShowAlertWithError(error);
+    [self goToSkillsList];
   }];
 }
 
@@ -112,6 +113,16 @@
   }
   
   return YES;
+}
+
+- (void)goToSkillsList {
+  UINavigationController *skillsListNavigation = [FTSkillsListViewController navigationController];
+  skillsListNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  
+  [self.navigationController presentViewController:skillsListNavigation animated:YES completion:^{
+    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = skillsListNavigation;
+  }];
 }
 
 @end

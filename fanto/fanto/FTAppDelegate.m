@@ -108,8 +108,7 @@
 #pragma mark Private methods
 - (void)preSettings {
 #if kTestLogin
-  [[GPPSignIn sharedInstance] signOut];
-  [[FBSession activeSession] closeAndClearTokenInformation];
+  [MUser logOutCurrentUser];
 #endif
   
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];

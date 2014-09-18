@@ -255,6 +255,20 @@ static UIView *_sharedToast = nil;
 //                                                         value:nil] build]];
 //}
 
+#pragma mark - User utils methods
++ (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
+                                    [userDefaults dictionaryForKey:kUserDefSavedUser]];
+  
+  [savedUser addEntriesFromDictionary:attributes];
+  
+  [userDefaults setObject:[NSDictionary dictionaryWithDictionary:savedUser] forKey:kUserDefSavedUser];
+  [userDefaults synchronize];
+  
+  return savedUser;
+}
+
 + (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback {
   FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
   
@@ -282,15 +296,13 @@ static UIView *_sharedToast = nil;
        }
        
        [Utils hideAllHUDsForView:view];
-       
-       NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
-                                         [[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
-       
-       savedUser[kParamFbId] = result[kParamId];
-       savedUser[kParamFbAccessToken] = [[FBSession activeSession] accessTokenData].accessToken;
-       
-       [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:savedUser]
-                                                 forKey:kUserDefSavedUser];
+
+       NSDictionary *savedUser =
+       [Utils updateSavedUserWithAttributes:@{
+                                              kParamFbId : [Utils normalizeString:result[kParamId]],
+                                              kParamFbAccessToken : [Utils normalizeString:
+                                                                     [[FBSession activeSession] accessTokenData].accessToken]
+                                              }];
        
        if (callback != NULL)
          callback(savedUser, error);
@@ -329,14 +341,10 @@ static UIView *_sharedToast = nil;
   if (_googleLogInCallback == NULL)
     return;
   
-  NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
-                                    [[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
-  
-  savedUser[kParamGgEmail] = [Utils normalizeString:auth.userEmail];
-  savedUser[kParamGgAccessToken] = [Utils normalizeString:auth.accessToken];
-  
-  [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:savedUser]
-                                            forKey:kUserDefSavedUser];
+  NSDictionary *savedUser = [Utils updateSavedUserWithAttributes:@{
+                                                                   kParamGgEmail : [Utils normalizeString:auth.userEmail],
+                                                                   kParamGgAccessToken : [Utils normalizeString:auth.accessToken]
+                                                                   }];
   
   _googleLogInCallback(savedUser, error);
 }

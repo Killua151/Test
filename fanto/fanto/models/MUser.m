@@ -7,6 +7,8 @@
 //
 
 #import "MUser.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <GooglePlus/GooglePlus.h>
 
 @interface MUser ()
 
@@ -23,6 +25,15 @@ static MUser *_currentUser = nil;
     return;
   
   _currentUser = [MUser modelFromDict:savedUser];
+}
+
++ (void)logOutCurrentUser {
+  _currentUser = nil;
+  [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefSavedUser];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
+  [[GPPSignIn sharedInstance] disconnect];
+  [[FBSession activeSession] closeAndClearTokenInformation];
 }
 
 + (instancetype)currentUser {
