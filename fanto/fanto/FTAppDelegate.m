@@ -8,6 +8,10 @@
 
 #import "FTAppDelegate.h"
 #import "FTHomeViewController.h"
+#import "FTSkillsListViewController.h"
+#import <Crashlytics/Crashlytics.h>
+#import <GooglePlus/GooglePlus.h>
+#import "MUser.h"
 
 @interface FTAppDelegate ()
 
@@ -22,7 +26,12 @@
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  self.window.rootViewController = [FTHomeViewController navigationController];
+  
+  if ([MUser currentUser] == nil)
+    self.window.rootViewController = [FTHomeViewController navigationController];
+  else
+    self.window.rootViewController = [FTSkillsListViewController navigationController];
+  
   [self.window makeKeyAndVisible];
   
   // Whenever a person opens the app, check for a cached session
@@ -98,8 +107,13 @@
 
 #pragma mark Private methods
 - (void)preSettings {
+#if kTestLogin
   [[GPPSignIn sharedInstance] signOut];
   [[FBSession activeSession] closeAndClearTokenInformation];
+#endif
+  
+  [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
+  [MUser loadCurrentUserFromUserDef];
 }
 
 @end

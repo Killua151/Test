@@ -7,8 +7,6 @@
 //
 
 #import "FTLoginViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import <GoogleOpenSource/GoogleOpenSource.h>
 #import "FTAppDelegate.h"
 #import "FTForgotPasswordViewController.h"
 #import "FTSkillsListViewController.h"
@@ -18,7 +16,6 @@
   FTForgotPasswordViewController *_forgotPasswordVC;
 }
 
-- (void)setupGoogleSignIn;
 - (BOOL)validateFields;
 
 @end
@@ -29,7 +26,6 @@
   [super viewDidLoad];
   [self customBackButton];
   [self customTitleWithText:@"Đăng nhập" color:UIColorFromRGB(153, 153, 153)];
-  [self setupGoogleSignIn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,39 +65,15 @@
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
-  FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-  
-  if (FBSession.activeSession.state == FBSessionStateOpen ||
-      FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-    [FBSession.activeSession closeAndClearTokenInformation];
-    return;
-  }
-  
-  [Utils showHUDForView:self.navigationController.view withText:nil];
-  
-  [FBSession
-   openActiveSessionWithReadPermissions:@[@"public_profile"]
-   allowLoginUI:YES
-   completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-     BOOL result = [appDelegate sessionStateChanged:session state:state error:error];
-     
-     if (!result) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
-       return;
-     }
-     
-     DLog(@"%@", [FBSession activeSession]);
-     
-     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
-       DLog(@"%@", result);
-     }];
-   }];
+  [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    DLog(@"%@ %@", userData, error);
+  }];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
-  [Utils showHUDForView:self.navigationController.view withText:nil];
-  [[GPPSignIn sharedInstance] authenticate];
+  [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    DLog(@"%@ %@", userData, error);
+  }];
 }
 
 #pragma mark - UITextFieldDelegate methods
@@ -117,12 +89,6 @@
     [self btnLoginPressed:nil];
   
   return YES;
-}
-
-#pragma mark - GPPSignInDelegate methods
-- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
-  [Utils hideAllHUDsForView:self.navigationController.view];
-  DLog(@"%@ %@ %@", auth.properties, auth.userEmail, auth.userID);
 }
 
 #pragma mark - Private methods
@@ -146,15 +112,6 @@
   }
   
   return YES;
-}
-
-- (void)setupGoogleSignIn {
-  GPPSignIn *signIn = [GPPSignIn sharedInstance];
-  
-  signIn.shouldFetchGoogleUserEmail = YES;
-  signIn.clientID = kGoogleSignInKey;
-  signIn.scopes = @[@"profile"];
-  signIn.delegate = self;
 }
 
 @end

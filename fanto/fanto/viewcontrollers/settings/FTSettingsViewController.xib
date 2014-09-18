@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -319,6 +319,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-phone_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="dl0-BA-XEF"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kFQ-T0-Ljx">
                         <rect key="frame" x="279" y="0.0" width="31" height="48"/>
@@ -327,6 +330,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-email_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="7hJ-bD-dUL"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -353,6 +359,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-phone_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="X9d-qD-eXd"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gNo-pb-Tth">
                         <rect key="frame" x="279" y="0.0" width="31" height="48"/>
@@ -361,6 +370,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-email_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="qkF-i1-yZH"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -387,6 +399,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-phone_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="rDB-gt-tS6"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eVf-3J-aPf">
                         <rect key="frame" x="279" y="0.0" width="31" height="48"/>
@@ -395,6 +410,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" image="img-settings-email_icon-enabled.png"/>
+                        <connections>
+                            <action selector="btnNotificationModesPressed:" destination="-1" eventType="touchUpInside" id="gGW-1M-u9D"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

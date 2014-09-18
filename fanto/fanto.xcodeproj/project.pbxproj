@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1954F519CA8C190004834D /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1954F419CA8C190004834D /* MUser.m */; };
+		4A1954F819CA8FB90004834D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1954F719CA8FB90004834D /* Crashlytics.framework */; };
 		4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144619C2D779002DB2C7 /* btn-navbar-back.png */; };
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
 		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
@@ -131,6 +133,9 @@
 
 /* Begin PBXFileReference section */
 		2049651044F2420EB5D4EB87 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1954F319CA8C190004834D /* MUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUser.h; sourceTree = "<group>"; };
+		4A1954F419CA8C190004834D /* MUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUser.m; sourceTree = "<group>"; };
+		4A1954F719CA8FB90004834D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4A74144619C2D779002DB2C7 /* btn-navbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back.png"; path = "images/btn-navbar-back.png"; sourceTree = "<group>"; };
 		4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back@2x.png"; path = "images/btn-navbar-back@2x.png"; sourceTree = "<group>"; };
 		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
@@ -299,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */,
+				4A1954F819CA8FB90004834D /* Crashlytics.framework in Frameworks */,
 				CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */,
 				CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */,
 				E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */,
@@ -477,11 +483,12 @@
 		CA74999619C094B700C221A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CA74999719C094B700C221A9 /* Foundation.framework */,
 				CA74999919C094B700C221A9 /* CoreGraphics.framework */,
+				4A1954F719CA8FB90004834D /* Crashlytics.framework */,
+				CA74999719C094B700C221A9 /* Foundation.framework */,
+				2049651044F2420EB5D4EB87 /* libPods.a */,
 				CA74999B19C094B700C221A9 /* UIKit.framework */,
 				CA7499B019C094B700C221A9 /* XCTest.framework */,
-				2049651044F2420EB5D4EB87 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -537,6 +544,8 @@
 				4A85F39F19C6976400642C5F /* MLesson.m */,
 				CAEBA27619C48F610024CA71 /* MSkill.h */,
 				CAEBA27719C48F610024CA71 /* MSkill.m */,
+				4A1954F319CA8C190004834D /* MUser.h */,
+				4A1954F419CA8C190004834D /* MUser.m */,
 			);
 			name = Models;
 			path = models;
@@ -725,6 +734,7 @@
 				CA74999119C094B700C221A9 /* Frameworks */,
 				CA74999219C094B700C221A9 /* Resources */,
 				E8BA89E834A0458595429367 /* Copy Pods Resources */,
+				4A1954F619CA8FA40004834D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -853,6 +863,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A1954F619CA8FA40004834D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 3a98614a2e15490a60b58daa2a17294f47149708 d747f7056b06f62f554704736800e7921f3cdaf47ff922d707757311575be210";
+		};
 		AB7B926EF7DB4AE496F94A16 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -895,6 +918,7 @@
 				CA5454D019C743F50052111C /* FTShopItemCell.m in Sources */,
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
+				4A1954F519CA8C190004834D /* MUser.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
 				4A85F40219C6F18900642C5F /* FTSkillView.m in Sources */,
@@ -1018,6 +1042,10 @@
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
@@ -1031,6 +1059,10 @@
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";

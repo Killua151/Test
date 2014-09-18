@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import <GooglePlus/GooglePlus.h>
 
 @interface FTAppDelegate : UIResponder <UIApplicationDelegate>
 

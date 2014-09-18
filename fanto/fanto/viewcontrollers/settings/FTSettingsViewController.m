@@ -66,6 +66,10 @@
 - (IBAction)swtGooglePlusChanged:(UISwitch *)sender {
 }
 
+- (IBAction)btnNotificationModesPressed:(UIButton *)sender {
+  sender.selected = !sender.selected;
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return [_sectionsData count];

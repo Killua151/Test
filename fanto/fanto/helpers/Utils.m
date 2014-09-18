@@ -10,11 +10,21 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #import "UIView+ExtendedToast.h"
+#import "MBProgressHUD.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
+#import "FTAppDelegate.h"
 
 static UIView *_sharedToast = nil;
 
-@interface Utils ()
+@interface Utils () <GPPSignInDelegate> {
+}
 
+@property (nonatomic, strong) SocialLogInCallback googleLogInCallback;
+@property (nonatomic, strong) SocialLogOutCallback googleLogOutCallback;
+
++ (instancetype)sharedUtils;
 + (NSString *)suffixForDayInDate:(NSDate *)date;
 
 @end
@@ -245,7 +255,111 @@ static UIView *_sharedToast = nil;
 //                                                         value:nil] build]];
 //}
 
++ (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback {
+  FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+  
+  if (FBSession.activeSession.state == FBSessionStateOpen ||
+      FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+    [FBSession.activeSession closeAndClearTokenInformation];
+    return;
+  }
+  
+  [FBSession
+   openActiveSessionWithReadPermissions:@[@"public_profile"]
+   allowLoginUI:YES
+   completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+     BOOL sectionStateChangedResult = [appDelegate sessionStateChanged:session state:state error:error];
+     
+     if (!sectionStateChangedResult)
+       return;
+     
+     [Utils showHUDForView:view withText:nil];
+     
+     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+       if (error != nil) {
+         [Utils hideAllHUDsForView:view];
+         return;
+       }
+       
+       [Utils hideAllHUDsForView:view];
+       
+       NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
+                                         [[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+       
+       savedUser[kParamFbId] = result[kParamId];
+       savedUser[kParamFbAccessToken] = [[FBSession activeSession] accessTokenData].accessToken;
+       
+       [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:savedUser]
+                                                 forKey:kUserDefSavedUser];
+       
+       if (callback != NULL)
+         callback(savedUser, error);
+     }];
+   }];
+}
+
++ (void)logOutFacebookWithCompletion:(SocialLogOutCallback)callback {
+  [[FBSession activeSession] closeAndClearTokenInformation];
+  
+  if (callback != NULL)
+    callback(nil);
+}
+
++ (void)logInGoogleFromView:(UIView *)view completion:(SocialLogInCallback)callback {
+  Utils *utils = [Utils sharedUtils];
+  utils.googleLogInCallback = callback;
+  
+  GPPSignIn *signIn = [GPPSignIn sharedInstance];
+  
+  signIn.shouldFetchGoogleUserEmail = YES;
+  signIn.clientID = kGoogleSignInKey;
+  signIn.scopes = @[@"profile"];
+  signIn.delegate = utils;
+  
+  [signIn authenticate];
+}
+
++ (void)logOutGoogleWithCompletion:(void (^)(NSError *))callback {
+  [[Utils sharedUtils] setGoogleLogOutCallback:callback];
+  [[GPPSignIn sharedInstance] disconnect];
+}
+
+#pragma mark - GPPSignInDelegate methods
+- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
+  if (_googleLogInCallback == NULL)
+    return;
+  
+  NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
+                                    [[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+  
+  savedUser[kParamGgEmail] = [Utils normalizeString:auth.userEmail];
+  savedUser[kParamGgAccessToken] = [Utils normalizeString:auth.accessToken];
+  
+  [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:savedUser]
+                                            forKey:kUserDefSavedUser];
+  
+  _googleLogInCallback(savedUser, error);
+}
+
+- (void)didDisconnectWithError:(NSError *)error {
+  if (_googleLogOutCallback == NULL)
+    return;
+  
+  _googleLogOutCallback(error);
+}
+
 #pragma mark - Private methods
++ (instancetype)sharedUtils {
+  static Utils *_sharedUtils = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedUtils = [Utils new];
+  });
+  
+  return _sharedUtils;
+}
+
 + (NSString *)suffixForDayInDate:(NSDate *)date {
   NSInteger day = [[[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]
                     components:NSDayCalendarUnit fromDate:date] day];

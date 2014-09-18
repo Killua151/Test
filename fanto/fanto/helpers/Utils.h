@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MBProgressHUD.h"
 
-@class MMedicine;
+@class MBProgressHUD, GTMOAuth2Authentication;
 
 @interface Utils : NSObject
+
+typedef void(^SocialLogInCallback)(NSDictionary *userData, NSError *error);
+typedef void(^SocialLogOutCallback)(NSError *error);
 
 + (UIAlertView *)showAlertWithError:(NSError *)error;
 + (UIAlertView *)showAlertWithError:(NSError *)error delegate:(id)delegate;
@@ -47,6 +49,12 @@
 //+ (BOOL)isDeviceCapableForRealTimeSearch;
 //+ (void)logAnalyticsForScreen:(NSString *)screenName;
 //+ (void)logAnalyticsForSearchText:(NSString *)searchText;
+
+#pragma mark - Social login methods
++ (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback;
++ (void)logOutFacebookWithCompletion:(SocialLogOutCallback)callback;
++ (void)logInGoogleFromView:(UIView *)view completion:(SocialLogInCallback)callback;
++ (void)logOutGoogleWithCompletion:(SocialLogOutCallback)callback;
 
 @end
 

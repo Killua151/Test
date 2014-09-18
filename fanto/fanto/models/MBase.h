@@ -10,4 +10,7 @@
 
 @interface MBase : NSObject
 
++ (instancetype)modelFromDict:(NSDictionary *)modelDict;
++ (NSArray *)modelsFromArr:(NSArray *)modelsArr;
+
 @end

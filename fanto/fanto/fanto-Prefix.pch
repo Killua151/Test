@@ -69,9 +69,18 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kHeightKeyboard                         216
 
 #define kHexagonThemeTestMode                   false
+#define kTestLogin                              true
 
 #define kCrashlyticsApiKey                      @"3a98614a2e15490a60b58daa2a17294f47149708"
 #define kGoogleSignInKey                        @"76466559980-1que00mo7kuvfp173ru5854ut5us98bt.apps.googleusercontent.com";
 
 #define kUserDefUDID                            @"udid"
 #define kUserDefSettingsLocale                  @"settings_locale"
+#define kUserDefSavedUser                       @"saved_user"
+
+#define kParamId                                @"id"
+#define kParamDatabaseId                        @"_id"
+#define kParamFbId                              @"fb_id"
+#define kParamFbAccessToken                     @"fb_access_token"
+#define kParamGgEmail                           @"gg_email"
+#define kParamGgAccessToken                     @"gg_access_token"

@@ -43,5 +43,6 @@
 - (IBAction)swtListeningLessonsChanged:(UISwitch *)sender;
 - (IBAction)swtFacebookChanged:(UISwitch *)sender;
 - (IBAction)swtGooglePlusChanged:(UISwitch *)sender;
+- (IBAction)btnNotificationModesPressed:(UIButton *)sender;
 
 @end
