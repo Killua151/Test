@@ -194,8 +194,11 @@
 
 - (void)setupViews {
   _btnHexagonStrengthen.hidden = _btnShieldStrengthen.hidden = YES;
+  
   _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
   _currentStrengthenButton.hidden = NO;
+  _currentStrengthenButton.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+  [_currentStrengthenButton setTitle:NSLocalizedString(@"Strengthen skills", nil) forState:UIControlStateNormal];
   
   _lblBeginnerTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblBeginnerTitle.text = NSLocalizedString(@"Are you a beginner?", nil);

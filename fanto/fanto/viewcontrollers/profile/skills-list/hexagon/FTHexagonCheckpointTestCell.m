@@ -10,4 +10,12 @@
 
 @implementation FTHexagonCheckpointTestCell
 
+- (id)init {
+  if (self = [super init]) {
+    _lblCheckpointTestTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+  }
+  
+  return self;
+}
+
 @end
