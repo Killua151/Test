@@ -8,9 +8,11 @@
 
 #import "FTProfileViewController.h"
 #import "FTSettingsViewController.h"
+#import "FTProfileLeaderboardCell.h"
 
 @interface FTProfileViewController () {
   FTSettingsViewController *_settingsVC;
+  NSArray *_leaderboardsData;
 }
 
 - (void)setupViews;
@@ -54,6 +56,7 @@
 }
 
 - (void)reloadContents {
+  _leaderboardsData = @[@"Test", @"abc", @"z_lorem_ipsum", @"abc__def__gasd"];
 }
 
 - (IBAction)btnAddFriendPressed:(UIButton *)sender {
@@ -71,7 +74,7 @@
   if (section == 1)
     return 0;
   
-  return 0;
+  return [_leaderboardsData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +88,18 @@
     return _celStreakMoney;
   }
   
-  return nil;
+  if (indexPath.section == 1)
+    return nil;
+  
+  FTProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
+                                    NSStringFromClass([FTProfileLeaderboardCell class])];
+  
+  if (cell == nil)
+    cell = [FTProfileLeaderboardCell new];
+  
+  [cell updateCellWithData:_leaderboardsData[indexPath.row]];
+  
+  return cell;
 }
 
 #pragma mark - UITableViewDelegate methods
@@ -111,7 +125,10 @@
     return _celStreakMoney.frame.size.height;
   }
   
-  return 0;
+  if (indexPath.section == 1)
+    return 0;
+  
+  return [FTProfileLeaderboardCell heightToFitWithData:_leaderboardsData[indexPath.row]];
 }
 
 #pragma mark - Private methods

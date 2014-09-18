@@ -21,6 +21,8 @@
 		4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */; };
 		4A4DE15819CAE73400933C76 /* img-streak-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15619CAE73400933C76 /* img-streak-icon.png */; };
 		4A4DE15919CAE73400933C76 /* img-streak-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15719CAE73400933C76 /* img-streak-icon@2x.png */; };
+		4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DE15B19CAEE3B00933C76 /* FTProfileLeaderboardCell.m */; };
+		4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15C19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib */; };
 		4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144619C2D779002DB2C7 /* btn-navbar-back.png */; };
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
 		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
@@ -159,6 +161,9 @@
 		4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-profile-level-bg@2x.png"; sourceTree = "<group>"; };
 		4A4DE15619CAE73400933C76 /* img-streak-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-streak-icon.png"; sourceTree = "<group>"; };
 		4A4DE15719CAE73400933C76 /* img-streak-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-streak-icon@2x.png"; sourceTree = "<group>"; };
+		4A4DE15A19CAEE3B00933C76 /* FTProfileLeaderboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTProfileLeaderboardCell.h; sourceTree = "<group>"; };
+		4A4DE15B19CAEE3B00933C76 /* FTProfileLeaderboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTProfileLeaderboardCell.m; sourceTree = "<group>"; };
+		4A4DE15C19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTProfileLeaderboardCell.xib; sourceTree = "<group>"; };
 		4A74144619C2D779002DB2C7 /* btn-navbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back.png"; path = "images/btn-navbar-back.png"; sourceTree = "<group>"; };
 		4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back@2x.png"; path = "images/btn-navbar-back@2x.png"; sourceTree = "<group>"; };
 		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
@@ -348,6 +353,9 @@
 		4A4DE14719CAD53C00933C76 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4A4DE15A19CAEE3B00933C76 /* FTProfileLeaderboardCell.h */,
+				4A4DE15B19CAEE3B00933C76 /* FTProfileLeaderboardCell.m */,
+				4A4DE15C19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib */,
 				4A4DE14819CAD55100933C76 /* FTProfileViewController.h */,
 				4A4DE14919CAD55100933C76 /* FTProfileViewController.m */,
 				4A4DE14A19CAD55100933C76 /* FTProfileViewController.xib */,
@@ -850,6 +858,7 @@
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
+				4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */,
 				CAEF54C019C9E4C900729934 /* img-settings-email_icon-enabled.png in Resources */,
 				4A4DE14C19CAD55100933C76 /* FTProfileViewController.xib in Resources */,
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
@@ -988,6 +997,7 @@
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
 				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
+				4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
