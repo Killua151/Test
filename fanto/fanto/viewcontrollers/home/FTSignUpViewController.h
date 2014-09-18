@@ -9,10 +9,12 @@
 #import "BaseViewController.h"
 
 @interface FTSignUpViewController : BaseViewController <UITextFieldDelegate> {
+  IBOutlet UIView *_vTextFields;
   IBOutlet UITextField *_txtFullName;
   IBOutlet UITextField *_txtEmail;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;
+  IBOutlet UIButton *_btnSignUp;
 }
 
 - (IBAction)btnSignUpPressed:(UIButton *)sender;

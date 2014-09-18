@@ -12,6 +12,7 @@
   UIView *_currentFirstResponder;
 }
 
+- (void)setupViews;
 - (BOOL)validateFields;
 
 @end
@@ -21,7 +22,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButton];
-  [self customTitleWithText:@"Đăng ký" color:UIColorFromRGB(153, 153, 153)];
+  [self customTitleWithText:NSLocalizedString(@"Sign up", nil) color:UIColorFromRGB(51, 51, 51)];
+  [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +73,28 @@
 }
 
 #pragma mark - Private methods
+- (void)setupViews {
+  _vTextFields.layer.cornerRadius = 4;
+  _vTextFields.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _vTextFields.layer.borderWidth = 1;
+  
+  _txtFullName.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtFullName.placeholder = NSLocalizedString(@"Full name", nil);
+  
+  _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtEmail.placeholder = NSLocalizedString(@"Email", nil);
+  
+  _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtUsername.placeholder = NSLocalizedString(@"Username", nil);
+  
+  _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtPassword.placeholder = NSLocalizedString(@"Email", nil);
+  
+  _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSignUp.layer.cornerRadius = 2;
+  [_btnSignUp setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
+}
+
 - (BOOL)validateFields {
   if (![Utils validateBlank:_txtFullName.text]) {
     [_txtFullName becomeFirstResponder];
