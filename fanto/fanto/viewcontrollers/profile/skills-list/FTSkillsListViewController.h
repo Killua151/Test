@@ -11,11 +11,18 @@
 @interface FTSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, FTSkillViewDelegate> {
   IBOutlet UITableView *_tblSkills;
   IBOutlet UIView *_vBeginningOptions;
+  IBOutlet UILabel *_lblBeginnerTitle;
+  IBOutlet UILabel *_lblBeginnerSubTitle;
+  IBOutlet UILabel *_lblPlacementTestTitle;
+  IBOutlet UILabel *_lblPlacementTestSubTitle;
+  
   IBOutlet UIView *_vStrengthenButton;
   IBOutlet UIButton *_btnHexagonStrengthen;
   IBOutlet UIButton *_btnShieldStrengthen;
 }
 
+- (IBAction)btnBeginnerPressed:(UIButton *)sender;
+- (IBAction)btnPlacementTestPressed:(UIButton *)sender;
 - (IBAction)btnStrengthenPressed:(UIButton *)sender;
 
 @end

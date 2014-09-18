@@ -106,8 +106,12 @@
 		CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75E819CB282800D175DF /* FTCourseSelectionCell.xib */; };
 		CA6C75EE19CB2E3D00D175DF /* img-ant-begin.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75EC19CB2E3D00D175DF /* img-ant-begin.png */; };
 		CA6C75EF19CB2E3D00D175DF /* img-ant-begin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75ED19CB2E3D00D175DF /* img-ant-begin@2x.png */; };
-		CA6C75F219CB2F4B00D175DF /* img-beginning_options-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F019CB2F4B00D175DF /* img-beginning_options-bg.png */; };
-		CA6C75F319CB2F4B00D175DF /* img-beginning_options-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F119CB2F4B00D175DF /* img-beginning_options-bg@2x.png */; };
+		CA6C75FB19CB32FE00D175DF /* img-beginner-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F519CB32FE00D175DF /* img-beginner-icon.png */; };
+		CA6C75FC19CB32FE00D175DF /* img-beginner-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F619CB32FE00D175DF /* img-beginner-icon@2x.png */; };
+		CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F719CB32FE00D175DF /* img-beginning_options-bg.png */; };
+		CA6C75FE19CB32FE00D175DF /* img-beginning_options-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F819CB32FE00D175DF /* img-beginning_options-bg@2x.png */; };
+		CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F919CB32FE00D175DF /* img-placement_test-icon.png */; };
+		CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -281,8 +285,12 @@
 		CA6C75E819CB282800D175DF /* FTCourseSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCourseSelectionCell.xib; sourceTree = "<group>"; };
 		CA6C75EC19CB2E3D00D175DF /* img-ant-begin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-begin.png"; sourceTree = "<group>"; };
 		CA6C75ED19CB2E3D00D175DF /* img-ant-begin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-begin@2x.png"; sourceTree = "<group>"; };
-		CA6C75F019CB2F4B00D175DF /* img-beginning_options-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginning_options-bg.png"; sourceTree = "<group>"; };
-		CA6C75F119CB2F4B00D175DF /* img-beginning_options-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginning_options-bg@2x.png"; sourceTree = "<group>"; };
+		CA6C75F519CB32FE00D175DF /* img-beginner-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginner-icon.png"; sourceTree = "<group>"; };
+		CA6C75F619CB32FE00D175DF /* img-beginner-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginner-icon@2x.png"; sourceTree = "<group>"; };
+		CA6C75F719CB32FE00D175DF /* img-beginning_options-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginning_options-bg.png"; sourceTree = "<group>"; };
+		CA6C75F819CB32FE00D175DF /* img-beginning_options-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginning_options-bg@2x.png"; sourceTree = "<group>"; };
+		CA6C75F919CB32FE00D175DF /* img-placement_test-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-placement_test-icon.png"; sourceTree = "<group>"; };
+		CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-placement_test-icon@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -573,6 +581,20 @@
 			path = images/ants;
 			sourceTree = "<group>";
 		};
+		CA6C75F419CB32FE00D175DF /* Beginning Options */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C75F519CB32FE00D175DF /* img-beginner-icon.png */,
+				CA6C75F619CB32FE00D175DF /* img-beginner-icon@2x.png */,
+				CA6C75F719CB32FE00D175DF /* img-beginning_options-bg.png */,
+				CA6C75F819CB32FE00D175DF /* img-beginning_options-bg@2x.png */,
+				CA6C75F919CB32FE00D175DF /* img-placement_test-icon.png */,
+				CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */,
+			);
+			name = "Beginning Options";
+			path = "../home/beginning-options";
+			sourceTree = "<group>";
+		};
 		CA74998B19C094B700C221A9 = {
 			isa = PBXGroup;
 			children = (
@@ -723,8 +745,7 @@
 		CAEBA26619C48C490024CA71 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CA6C75F019CB2F4B00D175DF /* img-beginning_options-bg.png */,
-				CA6C75F119CB2F4B00D175DF /* img-beginning_options-bg@2x.png */,
+				CA6C75F419CB32FE00D175DF /* Beginning Options */,
 				4A85F39519C68EF400642C5F /* Lessons List */,
 				CAEF54B519C9E4C900729934 /* Settings */,
 				4ACFE59519C811A500AAC524 /* Shop */,
@@ -885,14 +906,17 @@
 				4A85F3EF19C6E2BF00642C5F /* img-hexagon_skill-strength-4@2x.png in Resources */,
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
+				CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				4A4DE15919CAE73400933C76 /* img-streak-icon@2x.png in Resources */,
+				CA6C75FC19CB32FE00D175DF /* img-beginner-icon@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
 				4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CAEF54C919CB17F600729934 /* Default@2x.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
+				CA6C75FE19CB32FE00D175DF /* img-beginning_options-bg@2x.png in Resources */,
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CA6C75EF19CB2E3D00D175DF /* img-ant-begin@2x.png in Resources */,
 				4A85F3FB19C6E32100642C5F /* img-shield_skill-strength-2@x.png in Resources */,
@@ -902,13 +926,13 @@
 				4A85F3DB19C6E08B00642C5F /* FTShieldSkillView.xib in Resources */,
 				4A85F3A919C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png in Resources */,
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
+				CA6C75FB19CB32FE00D175DF /* img-beginner-icon.png in Resources */,
 				4A85F3DE19C6E13100642C5F /* img-shield_skill-bg-unlocked.png in Resources */,
 				CAEF54BF19C9E4C900729934 /* img-settings-email_icon-disabled@2x.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
-				CA6C75F219CB2F4B00D175DF /* img-beginning_options-bg.png in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
@@ -917,6 +941,7 @@
 				CAEF54C019C9E4C900729934 /* img-settings-email_icon-enabled.png in Resources */,
 				4A4DE14C19CAD55100933C76 /* FTProfileViewController.xib in Resources */,
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
+				CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */,
 				4A85F3FD19C6E32100642C5F /* img-shield_skill-strength-3@2x.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
@@ -931,6 +956,7 @@
 				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
 				CAEF54BE19C9E4C900729934 /* img-settings-email_icon-disabled.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
+				CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */,
 				CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
@@ -950,7 +976,6 @@
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
-				CA6C75F319CB2F4B00D175DF /* img-beginning_options-bg@2x.png in Resources */,
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */,
 				4A4DE15819CAE73400933C76 /* img-streak-icon.png in Resources */,

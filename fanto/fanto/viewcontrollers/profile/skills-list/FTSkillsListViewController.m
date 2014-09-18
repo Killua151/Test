@@ -25,6 +25,7 @@
 - (void)gotoShop;
 - (void)setupViews;
 - (void)animateSlideStrengthenButton:(BOOL)show;
+- (void)fadeOutBeginningOptions:(void(^)())completion;
 
 @end
 
@@ -88,6 +89,15 @@
                   ];
   
   [_tblSkills reloadData];
+}
+
+- (IBAction)btnBeginnerPressed:(UIButton *)sender {
+  [self fadeOutBeginningOptions:NULL];
+}
+
+- (IBAction)btnPlacementTestPressed:(UIButton *)sender {
+  [self fadeOutBeginningOptions:^{
+  }];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -187,6 +197,18 @@
   _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
   _currentStrengthenButton.hidden = NO;
   
+  _lblBeginnerTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblBeginnerTitle.text = NSLocalizedString(@"Are you a beginner?", nil);
+  
+  _lblBeginnerSubTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblBeginnerSubTitle.text = NSLocalizedString(@"Start here with the Basics", nil);
+  
+  _lblPlacementTestTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblPlacementTestTitle.text = NSLocalizedString(@"Not a beginner?", nil);
+  
+  _lblPlacementTestSubTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblPlacementTestSubTitle.text = NSLocalizedString(@"Try this Placement Test", nil);
+  
   CGFloat footerViewDelta = kHexagonThemeTestMode ? 52 : 22;
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
@@ -225,6 +247,24 @@
      _vStrengthenButton.frame = frame;
    }
    completion:^(BOOL finished) {
+   }];
+}
+
+- (void)fadeOutBeginningOptions:(void (^)())completion {
+  [self animateSlideStrengthenButton:YES];
+  
+  [UIView
+   animateWithDuration:0.5
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vBeginningOptions.alpha = 0;
+   }
+   completion:^(BOOL finished) {
+     [_vBeginningOptions removeFromSuperview];
+     
+     if (completion != NULL)
+       completion();
    }];
 }
 
