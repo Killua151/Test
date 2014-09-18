@@ -15,6 +15,10 @@
 		4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE14219CAD50700933C76 /* FTSettingsViewController.xib */; };
 		4A4DE14B19CAD55100933C76 /* FTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DE14919CAD55100933C76 /* FTProfileViewController.m */; };
 		4A4DE14C19CAD55100933C76 /* FTProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE14A19CAD55100933C76 /* FTProfileViewController.xib */; };
+		4A4DE15219CADA0000933C76 /* btn-profile-edit_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE14E19CADA0000933C76 /* btn-profile-edit_avatar.png */; };
+		4A4DE15319CADA0000933C76 /* btn-profile-edit_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE14F19CADA0000933C76 /* btn-profile-edit_avatar@2x.png */; };
+		4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15019CADA0000933C76 /* img-profile-level-bg.png */; };
+		4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */; };
 		4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144619C2D779002DB2C7 /* btn-navbar-back.png */; };
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
 		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
@@ -147,6 +151,10 @@
 		4A4DE14819CAD55100933C76 /* FTProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTProfileViewController.h; sourceTree = "<group>"; };
 		4A4DE14919CAD55100933C76 /* FTProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTProfileViewController.m; sourceTree = "<group>"; };
 		4A4DE14A19CAD55100933C76 /* FTProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTProfileViewController.xib; sourceTree = "<group>"; };
+		4A4DE14E19CADA0000933C76 /* btn-profile-edit_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-profile-edit_avatar.png"; sourceTree = "<group>"; };
+		4A4DE14F19CADA0000933C76 /* btn-profile-edit_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-profile-edit_avatar@2x.png"; sourceTree = "<group>"; };
+		4A4DE15019CADA0000933C76 /* img-profile-level-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-profile-level-bg.png"; sourceTree = "<group>"; };
+		4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-profile-level-bg@2x.png"; sourceTree = "<group>"; };
 		4A74144619C2D779002DB2C7 /* btn-navbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back.png"; path = "images/btn-navbar-back.png"; sourceTree = "<group>"; };
 		4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back@2x.png"; path = "images/btn-navbar-back@2x.png"; sourceTree = "<group>"; };
 		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
@@ -339,6 +347,18 @@
 				4A4DE14819CAD55100933C76 /* FTProfileViewController.h */,
 				4A4DE14919CAD55100933C76 /* FTProfileViewController.m */,
 				4A4DE14A19CAD55100933C76 /* FTProfileViewController.xib */,
+			);
+			name = "User Profile";
+			path = "user-profile";
+			sourceTree = "<group>";
+		};
+		4A4DE14D19CADA0000933C76 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4A4DE14E19CADA0000933C76 /* btn-profile-edit_avatar.png */,
+				4A4DE14F19CADA0000933C76 /* btn-profile-edit_avatar@2x.png */,
+				4A4DE15019CADA0000933C76 /* img-profile-level-bg.png */,
+				4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */,
 			);
 			name = "User Profile";
 			path = "user-profile";
@@ -646,6 +666,7 @@
 				CAEF54B519C9E4C900729934 /* Settings */,
 				4ACFE59519C811A500AAC524 /* Shop */,
 				CAEBA26719C48C490024CA71 /* Skills List */,
+				4A4DE14D19CADA0000933C76 /* User Profile */,
 			);
 			name = Profile;
 			path = images/profile;
@@ -803,6 +824,7 @@
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
+				4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
@@ -832,6 +854,7 @@
 				4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */,
 				4A85F3EE19C6E2BF00642C5F /* img-hexagon_skill-strength-4.png in Resources */,
 				CA5454B819C71E8C0052111C /* FTHexagonLessonView.xib in Resources */,
+				4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
 				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
 				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
@@ -848,6 +871,7 @@
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
+				4A4DE15319CADA0000933C76 /* btn-profile-edit_avatar@2x.png in Resources */,
 				CA5454CC19C741A20052111C /* FTShopViewController.xib in Resources */,
 				CA5454BE19C71EC10052111C /* FTShieldLessonsListViewController.xib in Resources */,
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
@@ -871,6 +895,7 @@
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
 				4A85F3F919C6E32100642C5F /* img-shield_skill-strength-1@2x.png in Resources */,
 				4A85F3F819C6E32100642C5F /* img-shield_skill-strength-1.png in Resources */,
+				4A4DE15219CADA0000933C76 /* btn-profile-edit_avatar.png in Resources */,
 				CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */,
 				CAEF54C319C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png in Resources */,
 				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
