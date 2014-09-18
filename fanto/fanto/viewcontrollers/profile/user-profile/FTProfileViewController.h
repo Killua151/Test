@@ -17,6 +17,10 @@
   IBOutlet UITableViewCell *_celStreakMoney;
   IBOutlet UIButton *_btnStreak;
   IBOutlet UIButton *_btnMoney;
+  IBOutlet UIView *_vLeaderboardsHeader;
+  IBOutlet UIButton *_btnAddFriend;
 }
+
+- (IBAction)btnAddFriendPressed:(UIButton *)sender;
 
 @end

@@ -56,18 +56,31 @@
 - (void)reloadContents {
 }
 
+- (IBAction)btnAddFriendPressed:(UIButton *)sender {
+}
+
 #pragma mark - UITableViewDataSource methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 3;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 2;
+  if (section == 0)
+    return 2;
+  
+  if (section == 1)
+    return 0;
+  
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row == 0) {
-    [self adjustUsernameAndLevelLabels];
-    return _celAvatarNameLevel;
-  }
-  
-  if (indexPath.row == 1) {
+  if (indexPath.section == 0) {
+    if (indexPath.row == 0) {
+      [self adjustUsernameAndLevelLabels];
+      return _celAvatarNameLevel;
+    }
+    
     [self adjustStreakAndMoneyLabels];
     return _celStreakMoney;
   }
@@ -76,12 +89,27 @@
 }
 
 #pragma mark - UITableViewDelegate methods
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row == 0)
-    return _celAvatarNameLevel.frame.size.height;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  if (section == 0 || section == 1)
+    return nil;
   
-  if (indexPath.row == 1)
+  return _vLeaderboardsHeader;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  if (section == 0 || section == 1)
+    return 0;
+  
+  return _vLeaderboardsHeader.frame.size.height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == 0) {
+    if (indexPath.row == 0)
+      return _celAvatarNameLevel.frame.size.height;
+
     return _celStreakMoney.frame.size.height;
+  }
   
   return 0;
 }
@@ -91,6 +119,10 @@
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
   _btnStreak.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
+  
+  _btnAddFriend.layer.borderColor = [UIColorFromRGB(209, 209, 209) CGColor];
+  _btnAddFriend.layer.borderWidth = 1;
+  _btnAddFriend.layer.cornerRadius = 4;
 }
 
 - (void)gotoSettings {
