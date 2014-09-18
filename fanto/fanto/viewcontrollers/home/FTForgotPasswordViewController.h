@@ -9,7 +9,10 @@
 #import "BaseViewController.h"
 
 @interface FTForgotPasswordViewController : BaseViewController <UITextFieldDelegate> {  
+  IBOutlet UILabel *_lblInstructions;
+  IBOutlet UIView *_vTextField;
   IBOutlet UITextField *_txtEmail;
+  IBOutlet UIButton *_btnSubmit;
 }
 
 - (IBAction)btnSubmitPressed:(UIButton *)sender;

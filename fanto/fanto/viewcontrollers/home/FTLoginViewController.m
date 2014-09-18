@@ -107,7 +107,7 @@
   _txtPassword.placeholder = NSLocalizedString(@"Password", nil);
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnLogIn.layer.cornerRadius = 2;
+  _btnLogIn.layer.cornerRadius = 4;
   [_btnLogIn setTitle:NSLocalizedString(@"Log in", nil) forState:UIControlStateNormal];
   
   _btnForgotPassword.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
