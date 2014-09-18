@@ -11,10 +11,10 @@
 @interface FTHomeViewController : BaseViewController {
   IBOutlet UIImageView *_imgBg;
   IBOutlet UIButton *_btnLogIn;
-  IBOutlet UIButton *_btnSignUp;
+  IBOutlet UIButton *_btnNewUser;
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender;
-- (IBAction)btnSignUpPressed:(UIButton *)sender;
+- (IBAction)btnNewUserPressed:(UIButton *)sender;
 
 @end

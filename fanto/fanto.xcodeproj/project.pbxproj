@@ -100,6 +100,10 @@
 		CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CF19C743F50052111C /* FTShopItemCell.xib */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
+		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
+		CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75E319CB261C00D175DF /* FTCoursesListViewController.xib */; };
+		CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E719CB282800D175DF /* FTCourseSelectionCell.m */; };
+		CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75E819CB282800D175DF /* FTCourseSelectionCell.xib */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -265,6 +269,12 @@
 		CA5454CF19C743F50052111C /* FTShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemCell.xib; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
+		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
+		CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoursesListViewController.m; sourceTree = "<group>"; };
+		CA6C75E319CB261C00D175DF /* FTCoursesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCoursesListViewController.xib; sourceTree = "<group>"; };
+		CA6C75E619CB282800D175DF /* FTCourseSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCourseSelectionCell.h; sourceTree = "<group>"; };
+		CA6C75E719CB282800D175DF /* FTCourseSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCourseSelectionCell.m; sourceTree = "<group>"; };
+		CA6C75E819CB282800D175DF /* FTCourseSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCourseSelectionCell.xib; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -421,6 +431,12 @@
 		4A74147319C2FDBE002DB2C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CA6C75E619CB282800D175DF /* FTCourseSelectionCell.h */,
+				CA6C75E719CB282800D175DF /* FTCourseSelectionCell.m */,
+				CA6C75E819CB282800D175DF /* FTCourseSelectionCell.xib */,
+				CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */,
+				CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */,
+				CA6C75E319CB261C00D175DF /* FTCoursesListViewController.xib */,
 				4A74147419C2FDBE002DB2C7 /* FTForgotPasswordViewController.h */,
 				4A74147519C2FDBE002DB2C7 /* FTForgotPasswordViewController.m */,
 				4A74147619C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib */,
@@ -847,6 +863,7 @@
 				4A85F3EC19C6E2BF00642C5F /* img-hexagon_skill-strength-3.png in Resources */,
 				4A85F3EF19C6E2BF00642C5F /* img-hexagon_skill-strength-4@2x.png in Resources */,
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
+				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				4A4DE15919CAE73400933C76 /* img-streak-icon@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
@@ -891,6 +908,7 @@
 				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
 				CAEF54BE19C9E4C900729934 /* img-settings-email_icon-disabled.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
+				CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
@@ -1014,6 +1032,7 @@
 				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
 				4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */,
+				CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
@@ -1022,6 +1041,7 @@
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
+				CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */,
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,

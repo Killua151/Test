@@ -9,10 +9,12 @@
 #import "FTHomeViewController.h"
 #import "FTLoginViewController.h"
 #import "FTSignUpViewController.h"
+#import "FTCoursesListViewController.h"
 
 @interface FTHomeViewController () {
   FTLoginViewController *_loginVC;
   FTSignUpViewController *_signUpVC;
+  FTCoursesListViewController *_coursesListVC;
 }
 
 - (void)setupViews;
@@ -44,12 +46,18 @@
   [_loginVC reloadContents];
 }
 
-- (IBAction)btnSignUpPressed:(UIButton *)sender {
-  if (_signUpVC == nil)
-    _signUpVC = [FTSignUpViewController new];
-
-  [self.navigationController pushViewController:_signUpVC animated:YES];
-  [_signUpVC reloadContents];
+- (IBAction)btnNewUserPressed:(UIButton *)sender {
+//  if (_signUpVC == nil)
+//    _signUpVC = [FTSignUpViewController new];
+//
+//  [self.navigationController pushViewController:_signUpVC animated:YES];
+//  [_signUpVC reloadContents];
+  
+  if (_coursesListVC == nil)
+    _coursesListVC = [FTCoursesListViewController new];
+  
+  [self.navigationController pushViewController:_coursesListVC animated:YES];
+  [_coursesListVC reloadContents];
 }
 
 #pragma mark - Private methods
@@ -61,9 +69,9 @@
   _btnLogIn.layer.cornerRadius = 4;
   [_btnLogIn setTitle:NSLocalizedString(@"Log in", nil) forState:UIControlStateNormal];
   
-  _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnSignUp.layer.cornerRadius = 4;
-  [_btnSignUp setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
+  _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnNewUser.layer.cornerRadius = 4;
+  [_btnNewUser setTitle:NSLocalizedString(@"New user", nil) forState:UIControlStateNormal];
 }
 
 @end
