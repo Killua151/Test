@@ -98,6 +98,8 @@
 		CA5454CC19C741A20052111C /* FTShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CA19C741A20052111C /* FTShopViewController.xib */; };
 		CA5454D019C743F50052111C /* FTShopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454CE19C743F50052111C /* FTShopItemCell.m */; };
 		CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CF19C743F50052111C /* FTShopItemCell.xib */; };
+		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
+		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -138,6 +140,8 @@
 		CAEF54C319C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54BB19C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png */; };
 		CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54BC19C9E4C900729934 /* img-settings-phone_icon-enabled.png */; };
 		CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54BD19C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png */; };
+		CAEF54C819CB17F600729934 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54C619CB17F600729934 /* Default.png */; };
+		CAEF54C919CB17F600729934 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF54C719CB17F600729934 /* Default@2x.png */; };
 		E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2049651044F2420EB5D4EB87 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +263,8 @@
 		CA5454CD19C743F50052111C /* FTShopItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopItemCell.h; sourceTree = "<group>"; };
 		CA5454CE19C743F50052111C /* FTShopItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopItemCell.m; sourceTree = "<group>"; };
 		CA5454CF19C743F50052111C /* FTShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemCell.xib; sourceTree = "<group>"; };
+		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
+		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -317,6 +323,8 @@
 		CAEF54BB19C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-settings-phone_icon-disabled@2x.png"; sourceTree = "<group>"; };
 		CAEF54BC19C9E4C900729934 /* img-settings-phone_icon-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-settings-phone_icon-enabled.png"; sourceTree = "<group>"; };
 		CAEF54BD19C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-settings-phone_icon-enabled@2x.png"; sourceTree = "<group>"; };
+		CAEF54C619CB17F600729934 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
+		CAEF54C719CB17F600729934 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "images/Default@2x.png"; sourceTree = "<group>"; };
 		F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -381,6 +389,8 @@
 		4A74146119C2FD7F002DB2C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */,
+				CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */,
 				4A74146219C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png */,
 				4A74146319C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png */,
 				4A74146419C2FD7F002DB2C7 /* img-home-buttons-bg.png */,
@@ -400,6 +410,8 @@
 				4A74144619C2D779002DB2C7 /* btn-navbar-back.png */,
 				4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */,
 				CA00EDFB19C0A21600E6D9D5 /* Default-568h@2x.png */,
+				CAEF54C619CB17F600729934 /* Default.png */,
+				CAEF54C719CB17F600729934 /* Default@2x.png */,
 				4A74146119C2FD7F002DB2C7 /* Home */,
 				CAEBA26619C48C490024CA71 /* Profile */,
 			);
@@ -841,10 +853,12 @@
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
 				4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
+				CAEF54C919CB17F600729934 /* Default@2x.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				4A85F3FB19C6E32100642C5F /* img-shield_skill-strength-2@x.png in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
+				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				4A85F3DB19C6E08B00642C5F /* FTShieldSkillView.xib in Resources */,
 				4A85F3A919C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png in Resources */,
@@ -852,6 +866,7 @@
 				4A85F3DE19C6E13100642C5F /* img-shield_skill-bg-unlocked.png in Resources */,
 				CAEF54BF19C9E4C900729934 /* img-settings-email_icon-disabled@2x.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
+				CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
@@ -897,6 +912,7 @@
 				4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */,
 				4A4DE15819CAE73400933C76 /* img-streak-icon.png in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
+				CAEF54C819CB17F600729934 /* Default.png in Resources */,
 				4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */,
 				4ACFE59819C811A500AAC524 /* img-money-icon.png in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,

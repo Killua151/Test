@@ -15,6 +15,8 @@
   FTSignUpViewController *_signUpVC;
 }
 
+- (void)setupViews;
+
 @end
 
 @implementation FTHomeViewController
@@ -23,6 +25,8 @@
   [super viewDidLoad];
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"" color:[UIColor clearColor]];
+  
+  [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +50,15 @@
 
   [self.navigationController pushViewController:_signUpVC animated:YES];
   [_signUpVC reloadContents];
+}
+
+#pragma mark - Private methods
+- (void)setupViews {
+  if (DeviceScreenIsRetina4Inch())
+    _imgBg.image = [UIImage imageNamed:@"Default-568h"];
+  
+  _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
 }
 
 @end

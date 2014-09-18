@@ -8,7 +8,11 @@
 
 #import "BaseViewController.h"
 
-@interface FTHomeViewController : BaseViewController
+@interface FTHomeViewController : BaseViewController {
+  IBOutlet UIImageView *_imgBg;
+  IBOutlet UIButton *_btnLogIn;
+  IBOutlet UIButton *_btnSignUp;
+}
 
 - (IBAction)btnLoginPressed:(UIButton *)sender;
 - (IBAction)btnSignUpPressed:(UIButton *)sender;
