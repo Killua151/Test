@@ -152,7 +152,7 @@
   
   if (title != nil) {
     [button setTitle:title forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+    button.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     
     CGSize titleSize = [button.titleLabel sizeThatFits:CGSizeMake(MAXFLOAT, button.titleLabel.frame.size.height)];

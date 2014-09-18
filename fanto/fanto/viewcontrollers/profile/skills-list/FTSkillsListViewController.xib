@@ -10,17 +10,18 @@
                 <outlet property="_btnHexagonStrengthen" destination="Uo9-ia-1NQ" id="bvC-zC-RPb"/>
                 <outlet property="_btnShieldStrengthen" destination="i36-ig-4GK" id="sTI-dY-Jyk"/>
                 <outlet property="_tblSkills" destination="zjn-W4-tCL" id="e3k-Ng-hAu"/>
+                <outlet property="_vBeginningOptions" destination="ySD-8M-8xh" id="BBj-NH-F4l"/>
                 <outlet property="_vStrengthenButton" destination="Jyp-qc-wTD" id="hsM-Dl-rGs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="44" width="320" height="524"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="zjn-W4-tCL">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -29,8 +30,31 @@
                         <outlet property="delegate" destination="-1" id="uQr-uf-mkc"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" id="ySD-8M-8xh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-ant-begin.png" id="RnT-6H-QPn">
+                            <rect key="frame" x="85" y="22" width="151" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="lJ6-8q-pSw">
+                            <rect key="frame" x="15" y="187" width="290" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-beginning_options-bg.png" id="ZZn-Yl-O06">
+                                    <rect key="frame" x="-15" y="-15" width="320" height="230"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </view>
                 <view contentMode="scaleToFill" id="Jyp-qc-wTD">
-                    <rect key="frame" x="15" y="509" width="290" height="44"/>
+                    <rect key="frame" x="15" y="465" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uo9-ia-1NQ">
@@ -61,11 +85,13 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
         <image name="btn-hexagon-strengthen-bg.png" width="290" height="44"/>
+        <image name="img-ant-begin.png" width="151" height="182"/>
+        <image name="img-beginning_options-bg.png" width="320" height="230"/>
     </resources>
 </document>

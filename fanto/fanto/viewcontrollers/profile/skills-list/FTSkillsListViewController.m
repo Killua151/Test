@@ -32,23 +32,24 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavBarBgWithColor:nil];
+  [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
   [self customTitleWithText:@"Tiếng Anh" color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Profile", nil)
-                           color:[UIColor blackColor]
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoProfile)
                         distance:8];
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Shop", nil)
-                           color:[UIColor blackColor]
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoShop)
                         distance:-8];
   
   [self setupViews];
+  [self reloadContents];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,6 +60,34 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   _lessonsListVC = nil;
+}
+
+- (void)reloadContents {
+  _skillsData = @[
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new]]
+                  ];
+  
+  [_tblSkills reloadData];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -111,8 +140,6 @@
   
   if ([skills isKindOfClass:[NSArray class]])
     return;
-  
-  DLog(@"%@", indexPath);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -165,29 +192,7 @@
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
-  _skillsData = @[
-                  @[[MSkill new]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new]]
-                  ];
+  [self animateSlideStrengthenButton:NO];
 }
 
 - (void)animateSlideStrengthenButton:(BOOL)show {
