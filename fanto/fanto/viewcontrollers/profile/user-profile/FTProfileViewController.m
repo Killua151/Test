@@ -16,7 +16,8 @@
 - (void)setupViews;
 - (void)gotoSettings;
 - (void)dismissViewController;
-- (void)adjustUsernameAndLevel;
+- (void)adjustUsernameAndLevelLabels;
+- (void)adjustStreakAndMoneyLabels;
 
 @end
 
@@ -57,13 +58,18 @@
 
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row == 0) {
-    [self adjustUsernameAndLevel];
+    [self adjustUsernameAndLevelLabels];
     return _celAvatarNameLevel;
+  }
+  
+  if (indexPath.row == 1) {
+    [self adjustStreakAndMoneyLabels];
+    return _celStreakMoney;
   }
   
   return nil;
@@ -74,12 +80,17 @@
   if (indexPath.row == 0)
     return _celAvatarNameLevel.frame.size.height;
   
+  if (indexPath.row == 1)
+    return _celStreakMoney.frame.size.height;
+  
   return 0;
 }
 
 #pragma mark - Private methods
 - (void)setupViews {
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
+  _btnStreak.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
+  _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
 }
 
 - (void)gotoSettings {
@@ -94,7 +105,7 @@
   [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void)adjustUsernameAndLevel {
+- (void)adjustUsernameAndLevelLabels {
   CGSize sizeThatFits = [_lblUsername sizeThatFits:CGSizeMake(_celAvatarNameLevel.frame.size.width * 0.5,
                                                               _lblUsername.frame.size.height)];
   CGRect frame = _lblUsername.frame;
@@ -105,6 +116,18 @@
   frame = _lblLevel.superview.frame;
   frame.origin.x = _lblUsername.frame.origin.x + _lblUsername.frame.size.width + 5;
   _lblLevel.superview.frame = frame;
+}
+
+- (void)adjustStreakAndMoneyLabels {
+  [_btnStreak sizeToFit];
+  CGRect frame = _btnStreak.frame;
+  frame.origin = CGPointMake(15, 22);
+  _btnStreak.frame = frame;
+  
+  [_btnMoney sizeToFit];
+  frame = _btnMoney.frame;
+  frame.origin = CGPointMake(_celStreakMoney.frame.size.width - 15 - frame.size.width, 22);
+  _btnMoney.frame = frame;
 }
 
 @end

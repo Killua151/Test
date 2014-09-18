@@ -14,6 +14,9 @@
   IBOutlet UIImageView *_imgAvatar;
   IBOutlet UILabel *_lblUsername;
   IBOutlet UILabel *_lblLevel;
+  IBOutlet UITableViewCell *_celStreakMoney;
+  IBOutlet UIButton *_btnStreak;
+  IBOutlet UIButton *_btnMoney;
 }
 
 @end

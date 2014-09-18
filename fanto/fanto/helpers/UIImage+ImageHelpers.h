@@ -11,5 +11,6 @@
 @interface UIImage (ImageHelpers)
 
 + (UIImage *)imageFromColor:(UIColor *)color;
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

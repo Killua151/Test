@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTProfileViewController">
             <connections>
+                <outlet property="_btnMoney" destination="zRT-Ag-pRz" id="70X-FM-x8T"/>
+                <outlet property="_btnStreak" destination="JZt-KD-hZ1" id="Zbf-tN-ttO"/>
                 <outlet property="_celAvatarNameLevel" destination="Q6U-c5-FVt" id="FAZ-6k-NLW"/>
+                <outlet property="_celStreakMoney" destination="bcW-KD-7Pi" id="QYl-kC-x11"/>
                 <outlet property="_imgAvatar" destination="uTi-vK-IbM" id="Dkk-67-HIT"/>
                 <outlet property="_lblLevel" destination="Y1r-Hp-7lp" id="JH1-Z1-ucC"/>
                 <outlet property="_lblUsername" destination="nyq-Ti-dnq" id="ITE-Wr-LPP"/>
@@ -35,10 +38,10 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Q6U-c5-FVt" userLabel="Avatar - name - level">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q6U-c5-FVt" id="pcP-1s-XhJ">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" id="Xni-wo-g35">
@@ -60,15 +63,15 @@
                         </state>
                     </button>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ljnkshady" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nyq-Ti-dnq">
-                        <rect key="frame" x="121" y="143" width="78" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="121" y="142" width="78" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="NgJ-ys-5Su">
-                        <rect key="frame" x="204" y="143" width="27" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="204" y="142" width="27" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-profile-level-bg.png" id="PUj-08-fZ0">
                                 <rect key="frame" x="0.0" y="0.0" width="27" height="35"/>
@@ -87,10 +90,48 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="bcW-KD-7Pi" userLabel="Streak &amp; money">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bcW-KD-7Pi" id="ppo-fX-Loz">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JZt-KD-hZ1">
+                        <rect key="frame" x="14" y="22" width="132" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="-5" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="3 ngày Streak" image="img-streak-icon.png">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zRT-Ag-pRz">
+                        <rect key="frame" x="185" y="22" width="120" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <inset key="imageEdgeInsets" minX="-8" minY="2" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="108 Fantos" image="img-money-icon.png">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" id="rZo-1X-T30">
+                        <rect key="frame" x="15" y="68" width="290" height="1"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="btn-profile-edit_avatar.png" width="32" height="32"/>
+        <image name="img-money-icon.png" width="29" height="23"/>
         <image name="img-profile-level-bg.png" width="27" height="35"/>
+        <image name="img-streak-icon.png" width="21" height="31"/>
     </resources>
 </document>
