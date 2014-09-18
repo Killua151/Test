@@ -192,7 +192,7 @@
   
   UILabel *lblTitle = [UILabel new];
   lblTitle.backgroundColor = [UIColor clearColor];
-  lblTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
+  lblTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   lblTitle.text = title;
   lblTitle.textColor = titleColor;
   [lblTitle sizeToFit];

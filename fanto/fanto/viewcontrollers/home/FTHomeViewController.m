@@ -58,7 +58,12 @@
     _imgBg.image = [UIImage imageNamed:@"Default-568h"];
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnLogIn.layer.cornerRadius = 2;
+  [_btnLogIn setTitle:NSLocalizedString(@"Log in", nil) forState:UIControlStateNormal];
+  
   _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSignUp.layer.cornerRadius = 2;
+  [_btnSignUp setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
 }
 
 @end

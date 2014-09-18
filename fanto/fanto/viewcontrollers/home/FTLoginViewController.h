@@ -9,8 +9,13 @@
 #import "BaseViewController.h"
 
 @interface FTLoginViewController : BaseViewController <UITextFieldDelegate> {
+  IBOutlet UIView *_vTextFields;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;
+  IBOutlet UIButton *_btnLogIn;
+  IBOutlet UIButton *_btnForgotPassword;
+  IBOutlet UIButton *_btnFacebook;
+  IBOutlet UIButton *_btnGoogle;
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender;

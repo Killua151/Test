@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -7,9 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTLoginViewController">
             <connections>
+                <outlet property="_btnFacebook" destination="yds-rg-3RB" id="enh-hN-h9Y"/>
+                <outlet property="_btnForgotPassword" destination="xIS-d9-Txw" id="96W-uZ-SVS"/>
+                <outlet property="_btnGoogle" destination="sPf-tC-SJF" id="Z1N-J6-26i"/>
+                <outlet property="_btnLogIn" destination="lMO-Wz-0HQ" id="rXA-jE-D75"/>
                 <outlet property="_txtPassword" destination="8BO-6O-bqY" id="faD-jJ-RfR"/>
                 <outlet property="_txtUsername" destination="wij-RL-EZl" id="rqi-hX-027"/>
                 <outlet property="_vGestureLayer" destination="IlY-c4-Uhz" id="Yz2-OR-odQ"/>
+                <outlet property="_vTextFields" destination="4UZ-sF-aTd" id="XyO-D8-tOM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xIS-d9-Txw">
-                    <rect key="frame" x="15" y="221" width="290" height="44"/>
+                    <rect key="frame" x="15" y="229" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Quên mật khẩu">
@@ -33,8 +38,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yds-rg-3RB">
                     <rect key="frame" x="15" y="502" width="138" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="facebook">
+                    <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Facebook">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -45,8 +50,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sPf-tC-SJF">
                     <rect key="frame" x="167" y="502" width="138" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="google+">
+                    <color key="backgroundColor" red="0.82745098039215681" green="0.28235294117647058" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Google+">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -60,13 +65,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="4UZ-sF-aTd">
-                    <rect key="frame" x="15" y="66" width="290" height="89"/>
+                    <rect key="frame" x="15" y="74" width="290" height="89"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-login-text_boxes-bg.png" id="M1i-bc-zWh">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="89"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên đăng nhập" minimumFontSize="17" clearButtonMode="whileEditing" id="wij-RL-EZl">
                             <rect key="frame" x="14" y="0.0" width="262" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,6 +77,11 @@
                                 <outlet property="delegate" destination="-1" id="VBf-OY-6iB"/>
                             </connections>
                         </textField>
+                        <view contentMode="scaleToFill" id="pN1-bI-Lpy">
+                            <rect key="frame" x="0.0" y="44" width="290" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mật khẩu" minimumFontSize="17" clearButtonMode="whileEditing" id="8BO-6O-bqY">
                             <rect key="frame" x="14" y="44" width="262" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,12 +92,12 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lMO-Wz-0HQ">
-                    <rect key="frame" x="15" y="177" width="290" height="44"/>
+                    <rect key="frame" x="15" y="185" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.50588235294117645" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Đăng nhập">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,7 +112,4 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
-    <resources>
-        <image name="img-login-text_boxes-bg.png" width="290" height="89"/>
-    </resources>
 </document>

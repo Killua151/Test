@@ -16,6 +16,7 @@
   FTForgotPasswordViewController *_forgotPasswordVC;
 }
 
+- (void)setupViews;
 - (BOOL)validateFields;
 - (void)goToSkillsList;
 
@@ -26,7 +27,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButton];
-  [self customTitleWithText:@"Đăng nhập" color:UIColorFromRGB(153, 153, 153)];
+  [self customTitleWithText:NSLocalizedString(@"Log in", nil) color:UIColorFromRGB(51, 51, 51)];
+  [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +95,31 @@
 }
 
 #pragma mark - Private methods
+- (void)setupViews {
+  _vTextFields.layer.cornerRadius = 4;
+  _vTextFields.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _vTextFields.layer.borderWidth = 1;
+  
+  _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtUsername.placeholder = NSLocalizedString(@"Username", nil);
+  
+  _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtPassword.placeholder = NSLocalizedString(@"Password", nil);
+  
+  _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnLogIn.layer.cornerRadius = 2;
+  [_btnLogIn setTitle:NSLocalizedString(@"Log in", nil) forState:UIControlStateNormal];
+  
+  _btnForgotPassword.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  [_btnForgotPassword setTitle:NSLocalizedString(@"Forgot password", nil) forState:UIControlStateNormal];
+  
+  _btnFacebook.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnFacebook.layer.cornerRadius = 4;
+  
+  _btnGoogle.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnGoogle.layer.cornerRadius = 4;
+}
+
 - (BOOL)validateFields {
   if (![Utils validateBlank:_txtUsername.text]) {
     [_txtUsername becomeFirstResponder];
