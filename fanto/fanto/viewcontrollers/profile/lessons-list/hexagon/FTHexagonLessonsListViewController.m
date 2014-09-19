@@ -58,7 +58,7 @@
   if (self.skillData == nil || CGRectEqualToRect(_vLessonsScrollView.frame, CGRectZero))
     return;
   
-  self.view.backgroundColor = UIColorFromRGB(255, 68, 68);
+  self.view.backgroundColor = UIColorFromRGB(255, 187, 51);
   _lessonsData = @[[MLesson new], [MLesson new], [MLesson new], [MLesson new]];
   [self setupLessonsScrollView];
 }
@@ -107,7 +107,7 @@
   [_lessonsData enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
     FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLesson:lesson
                                                                           atIndex:index
-                                                                   withThemeColor:UIColorFromRGB(255, 68, 68)
+                                                                   withThemeColor:UIColorFromRGB(255, 187, 51)
                                                                         forTarget:self];
     CGRect frame = lessonView.frame;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);

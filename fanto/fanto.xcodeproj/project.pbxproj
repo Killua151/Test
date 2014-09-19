@@ -116,6 +116,8 @@
 		CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C760919CC782F00D175DF /* FTLineChartData.m */; };
 		CA6C760D19CC7B6800D175DF /* btn-navbar-back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C760B19CC7B6800D175DF /* btn-navbar-back_white.png */; };
 		CA6C760E19CC7B6800D175DF /* btn-navbar-back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C760C19CC7B6800D175DF /* btn-navbar-back_white@2x.png */; };
+		CA6C761119CC84F500D175DF /* img-skills_list-laurea.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */; };
+		CA6C761219CC84F500D175DF /* img-skills_list-laurea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -301,6 +303,8 @@
 		CA6C760919CC782F00D175DF /* FTLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLineChartData.m; sourceTree = "<group>"; };
 		CA6C760B19CC7B6800D175DF /* btn-navbar-back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back_white.png"; path = "images/ants/btn-navbar-back_white.png"; sourceTree = "<group>"; };
 		CA6C760C19CC7B6800D175DF /* btn-navbar-back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back_white@2x.png"; path = "images/ants/btn-navbar-back_white@2x.png"; sourceTree = "<group>"; };
+		CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea.png"; sourceTree = "<group>"; };
+		CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -811,6 +815,8 @@
 				4A85F3F519C6E32100642C5F /* img-shield_skill-strength-3@2x.png */,
 				4A85F3F619C6E32100642C5F /* img-shield_skill-strength-4.png */,
 				4A85F3F719C6E32100642C5F /* img-shield_skill-strength-4@2x.png */,
+				CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */,
+				CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */,
 			);
 			name = "Skills List";
 			path = "skills-list";
@@ -947,6 +953,7 @@
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
+				CA6C761219CC84F500D175DF /* img-skills_list-laurea@2x.png in Resources */,
 				4A85F3DB19C6E08B00642C5F /* FTShieldSkillView.xib in Resources */,
 				4A85F3A919C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png in Resources */,
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
@@ -992,6 +999,7 @@
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
 				4ACFE59919C811A500AAC524 /* img-money-icon@2x.png in Resources */,
 				4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */,
+				CA6C761119CC84F500D175DF /* img-skills_list-laurea.png in Resources */,
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				CA6C75EE19CB2E3D00D175DF /* img-ant-begin.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
