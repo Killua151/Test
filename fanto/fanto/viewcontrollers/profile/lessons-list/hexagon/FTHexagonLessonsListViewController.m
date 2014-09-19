@@ -38,6 +38,14 @@
   [super viewWillAppear:animated];
   [self customBackButtonWithSuffix:@"white"];
   [self customNavBarBgWithColor:nil];
+  
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +58,7 @@
   if (self.skillData == nil || CGRectEqualToRect(_vLessonsScrollView.frame, CGRectZero))
     return;
   
+  self.view.backgroundColor = UIColorFromRGB(255, 68, 68);
   _lessonsData = @[[MLesson new], [MLesson new], [MLesson new], [MLesson new]];
   [self setupLessonsScrollView];
 }
@@ -96,7 +105,10 @@
     [subview removeFromSuperview];
   
   [_lessonsData enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
-    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLesson:lesson atIndex:index forTarget:self];
+    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLesson:lesson
+                                                                          atIndex:index
+                                                                   withThemeColor:UIColorFromRGB(255, 68, 68)
+                                                                        forTarget:self];
     CGRect frame = lessonView.frame;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
     lessonView.frame = frame;

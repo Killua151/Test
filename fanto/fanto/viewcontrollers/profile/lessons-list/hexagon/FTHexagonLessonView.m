@@ -17,7 +17,7 @@
 
 @implementation FTHexagonLessonView
 
-- (id)initWithLesson:(MLesson *)lesson atIndex:(NSInteger)index forTarget:(id)target {
+- (id)initWithLesson:(MLesson *)lesson atIndex:(NSInteger)index withThemeColor:(UIColor *)themeColor forTarget:(id)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
     _lessonData = lesson;
@@ -27,6 +27,14 @@
     _lblLessonTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
     _lblObjectives.font = [UIFont fontWithName:@"ClearSans" size:14];
     _btnRetake.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+    
+    UIImage *maskingImage = [UIImage imageNamed:@"btn-hexagon_lesson-retake.png"];
+    CALayer *maskingLayer = [CALayer layer];
+    maskingLayer.frame = _btnRetake.bounds;
+    [maskingLayer setContents:(id)[maskingImage CGImage]];
+    [_btnRetake.layer setMask:maskingLayer];
+    
+    [_btnRetake setBackgroundColor:themeColor];
   }
   
   return self;
