@@ -29,7 +29,7 @@
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
   [self setupViews];
-  [self testLineChart];
+//  [self testLineChart];
 }
 
 - (void)didReceiveMemoryWarning {
