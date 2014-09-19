@@ -112,6 +112,8 @@
 		CA6C75FE19CB32FE00D175DF /* img-beginning_options-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F819CB32FE00D175DF /* img-beginning_options-bg@2x.png */; };
 		CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75F919CB32FE00D175DF /* img-placement_test-icon.png */; };
 		CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */; };
+		CA6C760719CC774600D175DF /* FTLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C760619CC774600D175DF /* FTLineChart.m */; };
+		CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C760919CC782F00D175DF /* FTLineChartData.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -291,6 +293,10 @@
 		CA6C75F819CB32FE00D175DF /* img-beginning_options-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-beginning_options-bg@2x.png"; sourceTree = "<group>"; };
 		CA6C75F919CB32FE00D175DF /* img-placement_test-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-placement_test-icon.png"; sourceTree = "<group>"; };
 		CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-placement_test-icon@2x.png"; sourceTree = "<group>"; };
+		CA6C760519CC774600D175DF /* FTLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLineChart.h; sourceTree = "<group>"; };
+		CA6C760619CC774600D175DF /* FTLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLineChart.m; sourceTree = "<group>"; };
+		CA6C760819CC782F00D175DF /* FTLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLineChartData.h; sourceTree = "<group>"; };
+		CA6C760919CC782F00D175DF /* FTLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLineChartData.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -595,6 +601,17 @@
 			path = "../home/beginning-options";
 			sourceTree = "<group>";
 		};
+		CA6C760419CC774600D175DF /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C760519CC774600D175DF /* FTLineChart.h */,
+				CA6C760619CC774600D175DF /* FTLineChart.m */,
+				CA6C760819CC782F00D175DF /* FTLineChartData.h */,
+				CA6C760919CC782F00D175DF /* FTLineChartData.m */,
+			);
+			path = LineChart;
+			sourceTree = "<group>";
+		};
 		CA74998B19C094B700C221A9 = {
 			isa = PBXGroup;
 			children = (
@@ -655,12 +672,13 @@
 		CA7499C619C0951A00C221A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CA7499C719C0951A00C221A9 /* Utils.h */,
-				CA7499C819C0951A00C221A9 /* Utils.m */,
-				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
-				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
+				CA6C760419CC774600D175DF /* LineChart */,
 				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
 				CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */,
+				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
+				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
+				CA7499C719C0951A00C221A9 /* Utils.h */,
+				CA7499C819C0951A00C221A9 /* Utils.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -1061,6 +1079,7 @@
 				CA5454CB19C741A20052111C /* FTShopViewController.m in Sources */,
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
 				CA5454D019C743F50052111C /* FTShopItemCell.m in Sources */,
+				CA6C760719CC774600D175DF /* FTLineChart.m in Sources */,
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				4A1954F519CA8C190004834D /* MUser.m in Sources */,
@@ -1091,6 +1110,7 @@
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
+				CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */,
 				CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */,
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,

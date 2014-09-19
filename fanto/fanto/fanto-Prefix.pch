@@ -18,6 +18,8 @@
   #import "MBProgressHUD.h"
   #import "Utils.h"
   #import "UIView+ExtendedToast.h"
+  #import "FTLineChart.h"
+  #import "FTLineChartData.h"
   #import "FTSharedHeader.h"
 #endif
 
