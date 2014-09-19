@@ -114,11 +114,16 @@
   [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)customBackButton {
+- (void)customBackButtonWithSuffix:(NSString *)suffix {
   if (self.navigationController == nil)
     return;
   
-  UIImage *btnBackBg = [UIImage imageNamed:@"btn-navbar-back.png"];
+  NSString *imageName = @"btn-navbar-back.png";
+  
+  if (suffix != nil && [suffix isKindOfClass:[NSString class]])
+    imageName = [NSString stringWithFormat:@"btn-navbar-back_%@.png", suffix];
+  
+  UIImage *btnBackBg = [UIImage imageNamed:imageName];
   
   UIButton *btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
   btnBack.frame = CGRectMake(0, 0, 50, 44);
@@ -126,8 +131,9 @@
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
   UIView *view = [[UIView alloc] initWithFrame:btnBack.frame];
-  view.bounds = CGRectOffset(view.bounds, 16, 0);
+  view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? 16 : 10, 0);
   [view addSubview:btnBack];
+  
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 

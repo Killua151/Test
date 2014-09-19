@@ -24,7 +24,7 @@
 - (void)customNavBarBgWithColor:(UIColor *)color;
 - (void)customNavBarBgWithImageName:(NSString *)imageName;
 - (void)customNavBarBgWithImage:(UIImage *)image;
-- (void)customBackButton;
+- (void)customBackButtonWithSuffix:(NSString *)suffix;
 - (void)customTitleWithText:(NSString*)title color:(UIColor *)titleColor;
 - (void)customTitleLogo;
 - (UIBarButtonItem *)customBarButtonWithImage:(NSString*)imageName

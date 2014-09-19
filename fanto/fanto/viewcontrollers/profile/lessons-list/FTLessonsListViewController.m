@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customBackButton];
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Test Out", nil)
                            color:[self navigationTextColor]

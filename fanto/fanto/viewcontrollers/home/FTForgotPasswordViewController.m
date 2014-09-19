@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customBackButton];
+  [self customBackButtonWithSuffix:nil];
   [self customTitleWithText:NSLocalizedString(@"Forgot password", nil) color:UIColorFromRGB(51, 51, 51)];
   [self setupViews];
 }

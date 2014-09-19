@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customBackButton];
+  [self customBackButtonWithSuffix:nil];
   [self customTitleWithText:NSLocalizedString(@"Select course", nil) color:UIColorFromRGB(51, 51, 51)];
   
   [self setupViews];
