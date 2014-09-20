@@ -8,6 +8,8 @@
 
 #import "MBase.h"
 
+@class FTLineChart;
+
 @interface MUser : MBase
 
 @property (nonatomic, strong) NSString *username;
@@ -19,5 +21,6 @@
 + (void)loadCurrentUserFromUserDef;
 + (void)logOutCurrentUser;
 + (instancetype)currentUser;
+- (FTLineChart *)graphLineChartInFrame:(CGRect)frame;
 
 @end

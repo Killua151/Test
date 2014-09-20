@@ -13,6 +13,8 @@
 - (id)init {
   if (self = [super init]) {
     _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
+    _lblUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
+    _lblUserXp.font = [UIFont fontWithName:@"ClearSans" size:17];
   }
   
   return self;

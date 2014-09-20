@@ -10,28 +10,18 @@
 
 @interface FTMoneyBonusViewController ()
 
-- (void)setupViews;
-
 @end
 
 @implementation FTMoneyBonusViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavBarBgWithColor:nil];
-  [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
-  [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
 
-- (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
-}
-
-#pragma mark - Private methods
 - (void)setupViews {
   NSString *styledString = @"2 Memos";
   NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã được thưởng %@", nil), styledString];
@@ -51,6 +41,10 @@
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+}
+
+- (IBAction)btnNextPressed:(UIButton *)sender {
+  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

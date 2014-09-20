@@ -1,5 +1,5 @@
 //
-//  FTFinishSkillViewController.h
+//  FTFinishLessonViewController.h
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/20/14.
@@ -8,11 +8,9 @@
 
 #import "FTEndLearningViewController.h"
 
-@interface FTFinishSkillViewController : FTEndLearningViewController {
-  IBOutlet UILabel *_lblSkillName;
-  IBOutlet UIImageView *_imgSkillStrength;
-  IBOutlet UILabel *_lblMessage;
-  IBOutlet UILabel *_lblSubMessage;
+@interface FTFinishLessonViewController : FTEndLearningViewController {
+  IBOutlet UILabel *_lblFinishLessonMessage;
+  IBOutlet UILabel *_lblHeartBonusMessage;
   IBOutlet UIButton *_btnShare;
   IBOutlet UIButton *_btnNext;
 }

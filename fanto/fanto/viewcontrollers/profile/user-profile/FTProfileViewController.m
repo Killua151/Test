@@ -9,6 +9,7 @@
 #import "FTProfileViewController.h"
 #import "FTSettingsViewController.h"
 #import "FTProfileLeaderboardCell.h"
+#import "MUser.h"
 
 @interface FTProfileViewController () {
   FTSettingsViewController *_settingsVC;
@@ -38,14 +39,14 @@
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoSettings)
-                        distance:8];
+                        distance:10];
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Close", nil)
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(dismissViewController)
-                        distance:-8];
+                        distance:-10];
   
   [self setupViews];
   [self reloadContents];
@@ -189,28 +190,12 @@
 }
 
 - (void)addGraphChart {
-  [_lineChart removeFromSuperview];
-  _lineChart = nil;
+  if (_lineChart != nil) {
+    [_lineChart removeFromSuperview];
+    _lineChart = nil;    
+  }
   
-  _lineChart = [[FTLineChart alloc] initWithFrame:CGRectMake(0, 41, 320, 215)];
-  UIEdgeInsets margin = _lineChart.chartMargin;
-  margin.left += 20;
-  _lineChart.chartMargin = margin;
-  _lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:17];
-  _lineChart.labelTextColor = UIColorFromRGB(102, 102, 102);
-  _lineChart.yLabelSuffix = @"XP";
-  _lineChart.yLabelCount = 5;
-  
-  FTLineChartData *chartData = [FTLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5]
-                                                         color:[UIColor blackColor]
-                                                    pointStyle:SPLineChartPointStyleCycle];
-  chartData.pointColor = [UIColor redColor];
-  chartData.pointWidth = 12;
-  chartData.lineWidth = 1;
-  
-  [_lineChart setDatas:@[chartData] forXValues:@[@"T2", @"T3", @"T4", @"T5", @"T6", @"T7"]];
-  _lineChart.emptyChartText = NSLocalizedString(@"The chart is empty.", nil);
-
+  _lineChart = [[MUser currentUser] graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
 }

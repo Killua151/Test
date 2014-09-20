@@ -13,7 +13,6 @@
 
 - (void)setupGestureLayer;
 - (void)tapGestureRecognizer:(UITapGestureRecognizer *)recognizer;
-- (void)goBack;
 
 @end
 
@@ -249,6 +248,13 @@
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     [self afterGoBack];
   });
+}
+
+- (void)dismissViewController {
+  if (self.navigationController == nil)
+    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+  else
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

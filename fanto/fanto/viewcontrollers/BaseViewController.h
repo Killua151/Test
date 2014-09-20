@@ -18,6 +18,9 @@
 - (void)gestureLayerDidTap;
 - (void)reloadContents;
 - (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance;
+
+- (void)goBack;
+- (void)dismissViewController;
 - (void)beforeGoBack;
 - (void)afterGoBack;
 

@@ -24,13 +24,15 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
   [self customTitleWithText:NSLocalizedString(@"Shop", nil) color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Close", nil)
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
-                          action:@selector(goBack)
+                          action:@selector(dismissViewController)
                         distance:-8];
   
   [self setupViews];

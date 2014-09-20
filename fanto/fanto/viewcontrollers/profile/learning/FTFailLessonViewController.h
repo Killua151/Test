@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "FTEndLearningViewController.h"
 
-@interface FTFailLessonViewController : BaseViewController {
+@interface FTFailLessonViewController : FTEndLearningViewController {
   IBOutlet UILabel *_lblMessage;
   IBOutlet UIImageView *_imgAnt;
   IBOutlet UIButton *_btnRetry;

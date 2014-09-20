@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "FTEndLearningViewController.h"
 
-@interface FTMoneyBonusViewController : BaseViewController {
+@interface FTMoneyBonusViewController : FTEndLearningViewController {
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;
   IBOutlet UIView *_vCountBadge;

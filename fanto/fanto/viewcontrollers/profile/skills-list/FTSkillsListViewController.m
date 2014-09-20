@@ -14,12 +14,12 @@
 #import "FTProfileViewController.h"
 #import "MSkill.h"
 
+#import "FTFinishLessonViewController.h"
 #import "FTFailLessonViewController.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
   FTLessonsListViewController *_lessonsListVC;
-  FTShopViewController *_shopVC;
   UIButton *_currentStrengthenButton;
 }
 
@@ -181,7 +181,7 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTFailLessonViewController navigationController]
+  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
                                           animated:YES
                                         completion:NULL];
   return;
@@ -192,11 +192,20 @@
 }
 
 - (void)gotoShop {
-  if (_shopVC == nil)
-    _shopVC = [FTShopViewController new];
+//  if (_shopVC == nil)
+//    _shopVC = [FTShopViewController new];
+//  
+//  [self.navigationController pushViewController:_shopVC animated:YES];
+//  [_shopVC reloadContents];
   
-  [self.navigationController pushViewController:_shopVC animated:YES];
-  [_shopVC reloadContents];
+  [self.navigationController presentViewController:[FTFailLessonViewController navigationController]
+                                          animated:YES
+                                        completion:NULL];
+  return;
+  
+  [self.navigationController presentViewController:[FTShopViewController navigationController]
+                                          animated:YES
+                                        completion:NULL];
 }
 
 - (void)setupViews {

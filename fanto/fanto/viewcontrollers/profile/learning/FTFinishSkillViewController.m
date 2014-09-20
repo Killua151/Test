@@ -11,32 +11,34 @@
 
 @interface FTFinishSkillViewController ()
 
-- (void)setupViews;
-
 @end
 
 @implementation FTFinishSkillViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customNavBarBgWithColor:nil];
-  [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
-  [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
 
-- (IBAction)btnSharePressed:(UIButton *)sender {
-}
-
-- (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[FTMoneyBonusViewController new] animated:YES];
-}
-
-#pragma mark Private methods
 - (void)setupViews {
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _lblMessage.frame;
+    frame.origin.y = DeviceSystemIsOS7() ? 30 : 20;
+    _lblMessage.frame = frame;
+
+    frame = _lblSkillName.superview.frame;
+    frame.origin.y = _lblMessage.frame.origin.y + _lblMessage.frame.size.height + (DeviceSystemIsOS7() ? 15 : 10);
+    _lblSkillName.superview.frame = frame;
+    
+    frame = _lblSubMessage.frame;
+    frame.origin.y = _lblSkillName.superview.frame.origin.y + _lblSkillName.superview.frame.size.height +
+    (DeviceSystemIsOS7() ? 15 : 10);
+    _lblSubMessage.frame = frame;
+  }
+  
   _lblSkillName.text = @"Cơ bản 1";
   
   NSString *styledString = _lblSkillName.text;
@@ -69,6 +71,13 @@
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+}
+
+- (IBAction)btnSharePressed:(UIButton *)sender {
+}
+
+- (IBAction)btnNextPressed:(UIButton *)sender {
+  [self.navigationController pushViewController:[FTMoneyBonusViewController new] animated:YES];
 }
 
 @end
