@@ -12,9 +12,12 @@
 
 @interface FTFinishLessonViewController () {
   FTLineChart *_lineChart;
+  CGFloat _innerPanGestureYPos;
 }
 
 - (void)addLineChart;
+- (void)setupSetGoalView;
+- (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
 
 @end
 
@@ -27,6 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:YES];
   [self addLineChart];
+  [self setupSetGoalView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +74,12 @@
   [self.navigationController pushViewController:[FTFinishSkillViewController new] animated:YES];
 }
 
+#pragma mark - UIGestureRecognizerDelegate methods
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+  _innerPanGestureYPos = [gestureRecognizer locationInView:gestureRecognizer.view].y;
+  return YES;
+}
+
 #pragma mark - Private methods
 - (void)addLineChart {
   if (_lineChart != nil) {
@@ -83,6 +93,36 @@
                            (DeviceScreenIsRetina4Inch() ? 130 : 0))];
   [self.view addSubview:_lineChart];
   [_lineChart drawChart];
+}
+
+- (void)setupSetGoalView {
+  [self.view bringSubviewToFront:_vSetGoal];
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _vSetGoal.frame;
+    frame.origin.y = _btnShare.frame.origin.y - frame.size.height - 10;
+    _vSetGoal.frame = frame;
+  }
+  
+  UIPanGestureRecognizer *panGesture =
+  [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+  panGesture.minimumNumberOfTouches = 1;
+  panGesture.maximumNumberOfTouches = 1;
+  panGesture.delegate = self;
+  
+  [_vSetGoal addGestureRecognizer:panGesture];
+}
+
+- (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {
+  CGPoint outterLocation = [panGesture locationInView:panGesture.view.superview];
+  
+  CGFloat viewHeight = panGesture.view.frame.size.height;
+  CGFloat superviewHeight = panGesture.view.superview.frame.size.height;
+  
+  CGRect frame = panGesture.view.frame;
+  frame.origin.y = outterLocation.y - _innerPanGestureYPos;
+  frame.origin.y = MAX(44, MIN(superviewHeight - viewHeight, frame.origin.y));
+  panGesture.view.frame = frame;
 }
 
 @end
