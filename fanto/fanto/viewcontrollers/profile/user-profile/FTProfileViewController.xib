@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -9,10 +9,15 @@
             <connections>
                 <outlet property="_btnAddFriend" destination="xo2-YN-NxR" id="H69-fk-zFe"/>
                 <outlet property="_btnMoney" destination="zRT-Ag-pRz" id="70X-FM-x8T"/>
+                <outlet property="_btnSetGoal" destination="lCM-al-CvJ" id="xpG-ik-6fx"/>
                 <outlet property="_btnStreak" destination="JZt-KD-hZ1" id="Zbf-tN-ttO"/>
+                <outlet property="_btnSwitchCourse" destination="Fv9-Kt-nBy" id="m7z-4T-sco"/>
                 <outlet property="_celAvatarNameLevel" destination="Q6U-c5-FVt" id="FAZ-6k-NLW"/>
+                <outlet property="_celGraphChart" destination="zVO-UA-6PU" id="bgy-w6-Lqa"/>
                 <outlet property="_celStreakMoney" destination="bcW-KD-7Pi" id="QYl-kC-x11"/>
                 <outlet property="_imgAvatar" destination="uTi-vK-IbM" id="Dkk-67-HIT"/>
+                <outlet property="_lblCourseName" destination="zZM-VC-C13" id="Wce-g8-ObT"/>
+                <outlet property="_lblLeaderboardsHeader" destination="18b-QM-M78" id="kpc-6x-oQt"/>
                 <outlet property="_lblLevel" destination="Y1r-Hp-7lp" id="JH1-Z1-ucC"/>
                 <outlet property="_lblUsername" destination="nyq-Ti-dnq" id="ITE-Wr-LPP"/>
                 <outlet property="_tblProfileInfo" destination="SJU-HQ-Ais" id="vUe-Uj-zxX"/>
@@ -50,12 +55,12 @@
                         <rect key="frame" x="110" y="22" width="100" height="100"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uTi-vK-IbM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-profile-avatar_placeholder.png" id="uTi-vK-IbM">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="viQ-c9-sNi">
                         <rect key="frame" x="185" y="48" width="50" height="50"/>
@@ -68,27 +73,9 @@
                         <rect key="frame" x="121" y="142" width="78" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" id="NgJ-ys-5Su">
-                        <rect key="frame" x="204" y="142" width="27" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-profile-level-bg.png" id="PUj-08-fZ0">
-                                <rect key="frame" x="0.0" y="0.0" width="27" height="35"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1r-Hp-7lp">
-                                <rect key="frame" x="0.0" y="0.0" width="27" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
@@ -105,7 +92,6 @@
                         <rect key="frame" x="14" y="22" width="132" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="-5" maxX="0.0" maxY="0.0"/>
                         <state key="normal" title="3 ngày Streak" image="img-streak-icon.png">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +100,7 @@
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zRT-Ag-pRz">
                         <rect key="frame" x="185" y="22" width="120" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <inset key="imageEdgeInsets" minX="-8" minY="2" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-8" minY="-1" maxX="0.0" maxY="0.0"/>
                         <state key="normal" title="108 Fantos" image="img-money-icon.png">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,6 +111,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="zVO-UA-6PU" userLabel="Graph chart">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVO-UA-6PU" id="7kO-e6-zWS">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="NgJ-ys-5Su">
+                        <rect key="frame" x="15" y="15" width="23" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-profile-level-bg.png" id="PUj-08-fZ0">
+                                <rect key="frame" x="0.0" y="0.0" width="23" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1r-Hp-7lp">
+                                <rect key="frame" x="0.0" y="0.0" width="23" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiếng Anh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zZM-VC-C13">
+                        <rect key="frame" x="44" y="18" width="82" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fv9-Kt-nBy">
+                        <rect key="frame" x="202" y="12" width="103" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <state key="normal" title="Đổi khóa học">
+                            <color key="titleColor" red="0.50588235290000005" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnAddFriendPressed:" destination="-1" eventType="touchUpInside" id="kS7-K9-oba"/>
+                            <action selector="btnSwitchCoursePressed:" destination="-1" eventType="touchUpInside" id="lbD-Kl-r13"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lCM-al-CvJ">
+                        <rect key="frame" x="202" y="248" width="103" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <state key="normal" title="Đặt mục tiêu">
+                            <color key="titleColor" red="0.50588235290000005" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="btnAddFriendPressed:" destination="-1" eventType="touchUpInside" id="mgb-Ej-E6V"/>
+                            <action selector="btnSetGoalPressed:" destination="-1" eventType="touchUpInside" id="lQv-kX-ADL"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,13 +195,13 @@
                     <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xo2-YN-NxR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xo2-YN-NxR">
                     <rect key="frame" x="205" y="15" width="100" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <state key="normal" title="Thêm bạn">
-                        <color key="titleColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.50588235294117645" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -164,8 +214,9 @@
     </objects>
     <resources>
         <image name="btn-profile-edit_avatar.png" width="32" height="32"/>
-        <image name="img-money-icon.png" width="29" height="23"/>
-        <image name="img-profile-level-bg.png" width="27" height="35"/>
-        <image name="img-streak-icon.png" width="21" height="31"/>
+        <image name="img-money-icon.png" width="23" height="27"/>
+        <image name="img-profile-avatar_placeholder.png" width="100" height="100"/>
+        <image name="img-profile-level-bg.png" width="23" height="27"/>
+        <image name="img-streak-icon.png" width="23" height="23"/>
     </resources>
 </document>

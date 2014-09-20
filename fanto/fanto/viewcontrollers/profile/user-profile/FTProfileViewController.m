@@ -12,14 +12,16 @@
 
 @interface FTProfileViewController () {
   FTSettingsViewController *_settingsVC;
+  FTLineChart *_lineChart;
   NSArray *_leaderboardsData;
 }
 
 - (void)setupViews;
 - (void)gotoSettings;
 - (void)dismissViewController;
-- (void)adjustUsernameAndLevelLabels;
+- (void)adjustUsername;
 - (void)adjustStreakAndMoneyLabels;
+- (void)addGraphChart;
 
 @end
 
@@ -33,14 +35,14 @@
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Settings", nil)
-                           color:[UIColor blackColor]
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoSettings)
                         distance:8];
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Close", nil)
-                           color:[UIColor blackColor]
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(dismissViewController)
                         distance:-8];
@@ -51,12 +53,18 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
-  
   _settingsVC = nil;
 }
 
 - (void)reloadContents {
   _leaderboardsData = @[@"Test", @"abc", @"z_lorem_ipsum", @"abc__def__gasd"];
+  [self addGraphChart];
+}
+
+- (IBAction)btnSwitchCoursePressed:(UIButton *)sender {
+}
+
+- (IBAction)btnSetGoalPressed:(UIButton *)sender {
 }
 
 - (IBAction)btnAddFriendPressed:(UIButton *)sender {
@@ -72,7 +80,7 @@
     return 2;
   
   if (section == 1)
-    return 0;
+    return 1;
   
   return [_leaderboardsData count];
 }
@@ -80,7 +88,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0) {
     if (indexPath.row == 0) {
-      [self adjustUsernameAndLevelLabels];
+      [self adjustUsername];
       return _celAvatarNameLevel;
     }
     
@@ -89,7 +97,7 @@
   }
   
   if (indexPath.section == 1)
-    return nil;
+    return _celGraphChart;
   
   FTProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
                                     NSStringFromClass([FTProfileLeaderboardCell class])];
@@ -126,7 +134,7 @@
   }
   
   if (indexPath.section == 1)
-    return 0;
+    return _celGraphChart.frame.size.height;
   
   return [FTProfileLeaderboardCell heightToFitWithData:_leaderboardsData[indexPath.row]];
 }
@@ -134,12 +142,17 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
+  _lblUsername.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  
   _btnStreak.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   
-  _btnAddFriend.layer.borderColor = [UIColorFromRGB(209, 209, 209) CGColor];
-  _btnAddFriend.layer.borderWidth = 1;
-  _btnAddFriend.layer.cornerRadius = 4;
+  _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
+  _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  
+  _lblLeaderboardsHeader.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnAddFriend.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
 }
 
 - (void)gotoSettings {
@@ -154,17 +167,13 @@
   [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void)adjustUsernameAndLevelLabels {
+- (void)adjustUsername {
   CGSize sizeThatFits = [_lblUsername sizeThatFits:CGSizeMake(_celAvatarNameLevel.frame.size.width * 0.5,
                                                               _lblUsername.frame.size.height)];
   CGRect frame = _lblUsername.frame;
   frame.size.width = sizeThatFits.width;
   frame.origin.x = (_celAvatarNameLevel.frame.size.width - frame.size.width)/2;
   _lblUsername.frame = frame;
-  
-  frame = _lblLevel.superview.frame;
-  frame.origin.x = _lblUsername.frame.origin.x + _lblUsername.frame.size.width + 5;
-  _lblLevel.superview.frame = frame;
 }
 
 - (void)adjustStreakAndMoneyLabels {
@@ -177,6 +186,33 @@
   frame = _btnMoney.frame;
   frame.origin = CGPointMake(_celStreakMoney.frame.size.width - 15 - frame.size.width, 22);
   _btnMoney.frame = frame;
+}
+
+- (void)addGraphChart {
+  [_lineChart removeFromSuperview];
+  _lineChart = nil;
+  
+  _lineChart = [[FTLineChart alloc] initWithFrame:CGRectMake(0, 41, 320, 215)];
+  UIEdgeInsets margin = _lineChart.chartMargin;
+  margin.left += 20;
+  _lineChart.chartMargin = margin;
+  _lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:17];
+  _lineChart.labelTextColor = UIColorFromRGB(102, 102, 102);
+  _lineChart.yLabelSuffix = @"XP";
+  _lineChart.yLabelCount = 5;
+  
+  FTLineChartData *chartData = [FTLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5]
+                                                         color:[UIColor blackColor]
+                                                    pointStyle:SPLineChartPointStyleCycle];
+  chartData.pointColor = [UIColor redColor];
+  chartData.pointWidth = 12;
+  chartData.lineWidth = 1;
+  
+  [_lineChart setDatas:@[chartData] forXValues:@[@"T2", @"T3", @"T4", @"T5", @"T6", @"T7"]];
+  _lineChart.emptyChartText = NSLocalizedString(@"The chart is empty.", nil);
+
+  [_celGraphChart.contentView addSubview:_lineChart];
+  [_lineChart drawChart];
 }
 
 @end

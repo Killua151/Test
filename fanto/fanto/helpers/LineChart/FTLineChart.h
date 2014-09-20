@@ -10,4 +10,6 @@
 
 @interface FTLineChart : SPLineChart
 
+@property (nonatomic, strong) NSString * yLabelSuffix;
+
 @end

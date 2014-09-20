@@ -29,7 +29,6 @@
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
   [self setupViews];
-//  [self testLineChart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,35 +72,6 @@
   _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNewUser.layer.cornerRadius = 4;
   [_btnNewUser setTitle:NSLocalizedString(@"New user", nil) forState:UIControlStateNormal];
-}
-
-- (void)testLineChart {
-  FTLineChart * chart = [[FTLineChart alloc] initWithFrame:CGRectMake(0, 64, 320, CGRectGetHeight(self.view.bounds)-64)];
-  
-  FTLineChartData *data = [FTLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5] color:[UIColor blackColor] pointStyle:SPLineChartPointStyleCycle];
-  data.pointColor = [UIColor redColor];
-  data.pointWidth = 12;
-  data.lineWidth = 1;
-  
-  [chart setDatas:@[
-                    data
-                    ]
-       forXValues:@[
-                    @"GEN",
-                    @"FEB",
-                    @"MAR",
-                    @"APR",
-                    @"MAY",
-                    @"JUN"
-                    ]];
-  
-  
-  // Show empty message, if the chart is empty
-  chart.emptyChartText = @"The chart is empty.";
-  
-  [self.view addSubview:chart];
-  
-  [chart drawChart];
 }
 
 @end

@@ -99,7 +99,6 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   self.labelFont = [UIFont systemFontOfSize:11.0f];
   self.yLabelCount = 4;
   
-  
   // Section lines
   self.sectionLinesColor = [UIColor lightGrayColor];
   self.showSectionLines = NO;
@@ -270,7 +269,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
       last_y = y;
     }
     // Square style point
-    else if (chartData.pointStyle == SPLineChartPointStyleCycle) {
+    else if (chartData.pointStyle == SPLineChartPointStyleSquare) {
       
       CGRect squareRect = CGRectMake(x-inflexionWidth/2, y-inflexionWidth/2, inflexionWidth,inflexionWidth);
       CGPoint squareCenter = CGPointMake(squareRect.origin.x + (squareRect.size.width / 2), squareRect.origin.y + (squareRect.size.height / 2));
@@ -334,7 +333,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   [lineLayer addAnimation:animation forKey:@"strokeEndAnimation"];
   lineLayer.strokeEnd = 1.0;
   
-  if (chartData.pointStyle != SPLineChartPointStyleCycle) {
+  if (chartData.pointStyle != SPLineChartPointStyleNone) {
     [pointLayer addAnimation:animation forKey:@"strokeEndAnimation"];
     
     if (chartData.pointColor != nil) {
@@ -380,7 +379,6 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
 - (void)_strokeXLabels
 {
   [self.xValues enumerateObjectsUsingBlock:^(NSString * xValue, NSUInteger i, BOOL *stop) {
-    
     CGFloat centerX = self.chartMargin.left + (i * _xLabelWidth) + _xLabelWidth/2;
     CGFloat centerY = self.frame.size.height - self.chartMargin.bottom/2;
     
@@ -405,25 +403,27 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   CGFloat yLabelHeight = ceilf([SPChartUtil heightOfLabelWithFont:self.labelFont]);
   
   for (int index = 0; index < self.yLabelCount; index++) {
-    
     NSString * labelText = self.yLabelFormatter(ceilf((float)self.yMaxValue * (float)((self.yLabelCount - index) / (float)self.yLabelCount )));
     
+    if (_yLabelSuffix != nil)
+      labelText = [NSString stringWithFormat:@"%@ %@", labelText, _yLabelSuffix];
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(
-                                                                FTLineChartYLabelMargin,
-                                                                yLabelSectionHeight * index + self.chartMargin.top - yLabelHeight/2.0,
-                                                                self.chartMargin.left - FTLineChartYLabelMargin*2,
-                                                                yLabelHeight
-                                                                )];
+    UILabel *label = [UILabel new];
     label.font = _labelFont;
     label.textColor = _labelTextColor;
     [label setTextAlignment:NSTextAlignmentRight];
     [label setBackgroundColor:[UIColor clearColor]];
     label.text = labelText;
+    CGSize sizeThatFits = [label sizeThatFits:CGSizeMake(MAXFLOAT, yLabelHeight)];
+    
+    CGRect frame = label.frame;
+    frame.origin = CGPointMake(self.chartMargin.left - sizeThatFits.width - 5,
+                               yLabelSectionHeight * index + self.chartMargin.top - yLabelHeight/2.0);
+    frame.size = sizeThatFits;
+    label.frame = frame;
     
     [self.labels addObject:label];
     [self addSubview:label];
-    
   }
 }
 
