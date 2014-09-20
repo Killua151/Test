@@ -8,12 +8,15 @@
 
 #import "FTShopViewController.h"
 #import "FTShopItemCell.h"
-#import "FTShopItemHeaderView.h"
+#import "FTShopItemsGroupHeaderCell.h"
 #import "MItem.h"
 
 @interface FTShopViewController () {
   NSMutableArray *_itemsData;
 }
+
+- (void)setupViews;
+- (void)styleMoneyBalanceLabel;
 
 @end
 
@@ -22,24 +25,16 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customTitleWithText:NSLocalizedString(@"Shop", nil) color:[UIColor blackColor]];
+  [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Back", nil)
-                           color:[UIColor blackColor]
+                           title:NSLocalizedString(@"Close", nil)
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(goBack)
                         distance:-8];
   
-  _tblItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  [self customBarButtonWithImage:@"img-money-icon"
-                           title:@"80"
-                           color:[UIColor blackColor]
-                          target:nil
-                          action:nil
-                        distance:8];
+  [self setupViews];
+  [self reloadContents];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,61 +47,82 @@
     _itemsData = [NSMutableArray new];
   
   [_itemsData removeAllObjects];
-  [_itemsData addObjectsFromArray:@[
-                                    @{
-                                      @"title" : [@"Lorem ipsum dolor sit amet, consectetur adipiscing elit" uppercaseString],
-                                      @"items" : @[[MItem new], [MItem new], [MItem new]]
-                                      },
-                                    @{
-                                      @"title" : @"PRACTICE",
-                                      @"items" : @[[MItem new], [MItem new], [MItem new], [MItem new]]
-                                      },
-                                    @{
-                                      @"title" : @"TEST",
-                                      @"items" : @[[MItem new]]
-                                      }]];
+  [_itemsData addObjectsFromArray:
+   @[
+     [@"Lorem ipsum dolor sit amet, consectetur adipiscing elit" uppercaseString],
+     [MItem new], [MItem new], [MItem new],
+     @"PRACTICE",
+     [MItem new], [MItem new], [MItem new], [MItem new],
+     @"TEST",
+     [MItem new]]];
   
+  [self styleMoneyBalanceLabel];
   [_tblItems reloadData];
 }
 
 #pragma mark - UITableViewDataSource methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [_itemsData count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [_itemsData[section][@"items"] count];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  FTShopItemCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FTShopItemCell class])];
+  id data = _itemsData[indexPath.row];
+  Class cellKlass = nil;
+  
+  if ([data isKindOfClass:[NSString class]])
+    cellKlass = [FTShopItemsGroupHeaderCell class];
+  else
+    cellKlass = [FTShopItemCell class];
+  
+  BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellKlass)];
   
   if (cell == nil)
-    cell = [FTShopItemCell new];
+    cell = [cellKlass new];
   
-  [cell updateCellWithData:_itemsData[indexPath.section][@"items"][indexPath.row]];
+  [cell updateCellWithData:data];
   
   return cell;
 }
 
 #pragma mark - UITableViewDelegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [FTShopItemCell heightToFitWithData:_itemsData[indexPath.section][@"items"][indexPath.row]];
+  id data = _itemsData[indexPath.row];
+  
+  if ([data isKindOfClass:[NSString class]])
+    return [FTShopItemsGroupHeaderCell heightToFitWithData:data];
+  
+  return [FTShopItemCell heightToFitWithData:data];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  FTShopItemHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([FTShopItemHeaderView class])];
-  
-  if (view == nil)
-    view = [FTShopItemHeaderView new];
-  
-  [view updateViewWithData:_itemsData[section][@"title"]];
-  
-  return view;
+  return _vHeader;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-  return [FTShopItemHeaderView heightToFithWithData:_itemsData[section][@"title"]];
+  return _vHeader.frame.size.height;
+}
+
+#pragma mark - Private methods
+- (void)setupViews {
+  _tblItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+  _lblMoneyBalanceInfo.font = [UIFont fontWithName:@"ClearSans" size:17];
+}
+
+- (void)styleMoneyBalanceLabel {
+  if (_lblMoneyBalanceInfo.text == nil)
+    return;
+  
+  NSRange moneyBalanceRange = [_lblMoneyBalanceInfo.text rangeOfString:@"25"];
+  
+  if (moneyBalanceRange.location == NSNotFound)
+    return;
+  
+  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:_lblMoneyBalanceInfo.text];
+  [attributedText addAttribute:NSFontAttributeName
+                         value:[UIFont fontWithName:@"ClearSans-Bold" size:17]
+                         range:moneyBalanceRange];
+  
+  _lblMoneyBalanceInfo.attributedText = attributedText;
 }
 
 @end

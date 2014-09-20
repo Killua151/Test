@@ -10,6 +10,8 @@
 
 @interface FTShopViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
   IBOutlet UITableView *_tblItems;
+  IBOutlet UIView *_vHeader;
+  IBOutlet UILabel *_lblMoneyBalanceInfo;
 }
 
 @end

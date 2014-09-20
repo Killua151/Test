@@ -17,6 +17,17 @@
 
 @implementation FTShopItemCell
 
+- (id)init {
+  if (self = [super init]) {
+    _lblItemName.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+    _lblItemDescription.font = [UIFont fontWithName:@"ClearSans" size:14];
+    _btnPrice.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:14];
+    _btnPrice.layer.cornerRadius = 4;
+  }
+  
+  return self;
+}
+
 - (void)updateCellWithData:(MItem *)data {
   [Utils adjustLabelToFitHeight:_lblItemName];
   [Utils adjustLabelToFitHeight:_lblItemDescription relatedTo:_lblItemName withDistance:10];
