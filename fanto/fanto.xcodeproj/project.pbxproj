@@ -130,6 +130,10 @@
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
 		CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */; };
 		CABADE5819CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */; };
+		CABADE5D19CD3FB6000187AF /* FTFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */; };
+		CABADE5E19CD3FB6000187AF /* FTFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */; };
+		CABADE6119CD405A000187AF /* img-ant-fail.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5F19CD405A000187AF /* img-ant-fail.png */; };
+		CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6019CD405A000187AF /* img-ant-fail@2x.png */; };
 		CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */; };
 		CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA25219C487B20024CA71 /* FTSkillsListViewController.m */; };
 		CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEBA25319C487B20024CA71 /* FTSkillsListViewController.xib */; };
@@ -329,6 +333,11 @@
 		CABADE5419CD35CE000187AF /* FTShopItemsGroupHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopItemsGroupHeaderCell.h; sourceTree = "<group>"; };
 		CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopItemsGroupHeaderCell.m; sourceTree = "<group>"; };
 		CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemsGroupHeaderCell.xib; sourceTree = "<group>"; };
+		CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFailLessonViewController.h; sourceTree = "<group>"; };
+		CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFailLessonViewController.m; sourceTree = "<group>"; };
+		CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFailLessonViewController.xib; sourceTree = "<group>"; };
+		CABADE5F19CD405A000187AF /* img-ant-fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-fail.png"; sourceTree = "<group>"; };
+		CABADE6019CD405A000187AF /* img-ant-fail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-fail@2x.png"; sourceTree = "<group>"; };
 		CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageHelpers.h"; sourceTree = "<group>"; };
 		CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageHelpers.m"; sourceTree = "<group>"; };
 		CAEBA25119C487B20024CA71 /* FTSkillsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSkillsListViewController.h; sourceTree = "<group>"; };
@@ -602,6 +611,8 @@
 			children = (
 				CA6C75EC19CB2E3D00D175DF /* img-ant-begin.png */,
 				CA6C75ED19CB2E3D00D175DF /* img-ant-begin@2x.png */,
+				CABADE5F19CD405A000187AF /* img-ant-fail.png */,
+				CABADE6019CD405A000187AF /* img-ant-fail@2x.png */,
 			);
 			name = Ants;
 			path = images/ants;
@@ -760,9 +771,21 @@
 			path = viewcontrollers;
 			sourceTree = "<group>";
 		};
+		CABADE5919CD3F8A000187AF /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */,
+				CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */,
+				CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */,
+			);
+			name = Learning;
+			path = learning;
+			sourceTree = "<group>";
+		};
 		CAEBA24719C329BF0024CA71 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CABADE5919CD3F8A000187AF /* Learning */,
 				4A85F38F19C68D4600642C5F /* Lessons List */,
 				4A4DE13C19CAD50700933C76 /* Settings */,
 				CA5454C719C741890052111C /* Shop */,
@@ -960,6 +983,7 @@
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
 				CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */,
+				CABADE5E19CD3FB6000187AF /* FTFailLessonViewController.xib in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				CA6C761E19CD1EBA00D175DF /* img-streak-icon.png in Resources */,
 				CA6C761F19CD1EBA00D175DF /* img-streak-icon@2x.png in Resources */,
@@ -979,6 +1003,7 @@
 				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
 				CA6C761219CC84F500D175DF /* img-skills_list-laurea@2x.png in Resources */,
+				CABADE6119CD405A000187AF /* img-ant-fail.png in Resources */,
 				4A85F3DB19C6E08B00642C5F /* FTShieldSkillView.xib in Resources */,
 				4A85F3A919C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png in Resources */,
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
@@ -988,6 +1013,7 @@
 				CA6C761619CD1D4100D175DF /* img-profile-avatar_placeholder@2x.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
 				CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */,
+				CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
@@ -1142,6 +1168,7 @@
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
 				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
+				CABADE5D19CD3FB6000187AF /* FTFailLessonViewController.m in Sources */,
 				4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */,
 				CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
