@@ -15,4 +15,7 @@
   IBOutlet UIButton *_btnQuit;
 }
 
+- (IBAction)btnRetryPressed:(UIButton *)sender;
+- (IBAction)btnQuitPressed:(UIButton *)sender;
+
 @end

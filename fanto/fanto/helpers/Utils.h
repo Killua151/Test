@@ -39,6 +39,10 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 
 + (void)adjustLabelToFitHeight:(UILabel *)label;
 + (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
++ (void)applyAttributedTextForLabel:(UILabel *)label
+                           withText:(NSString *)fullText
+                           onString:(NSString *)styledString
+                     withAttributes:(NSDictionary *)attributes;
 
 #pragma mark - String number methods
 + (BOOL)floatValueIsInteger:(CGFloat)value;

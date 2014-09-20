@@ -179,6 +179,23 @@ static UIView *_sharedToast = nil;
   label.frame = frame;
 }
 
++ (void)applyAttributedTextForLabel:(UILabel *)label
+                           withText:(NSString *)fullText
+                           onString:(NSString *)styledString
+                     withAttributes:(NSDictionary *)attributes {
+  NSRange styledRange = [fullText rangeOfString:styledString];
+  
+  if (styledRange.location == NSNotFound) {
+    label.text = fullText;
+    return;
+  }
+  
+  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
+  [attributedText addAttributes:attributes range:styledRange];
+  
+  label.attributedText = attributedText;
+}
+
 + (BOOL)floatValueIsInteger:(CGFloat)value {
   NSString *valueString = [NSString stringWithFormat:@"%.2f", value];
   
