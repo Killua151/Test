@@ -181,10 +181,10 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
-  return;
+//  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
+//                                          animated:YES
+//                                        completion:NULL];
+//  return;
   
   [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES
@@ -192,16 +192,10 @@
 }
 
 - (void)gotoShop {
-//  if (_shopVC == nil)
-//    _shopVC = [FTShopViewController new];
-//  
-//  [self.navigationController pushViewController:_shopVC animated:YES];
-//  [_shopVC reloadContents];
-  
-  [self.navigationController presentViewController:[FTFailLessonViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
-  return;
+//  [self.navigationController presentViewController:[FTFailLessonViewController navigationController]
+//                                          animated:YES
+//                                        completion:NULL];
+//  return;
   
   [self.navigationController presentViewController:[FTShopViewController navigationController]
                                           animated:YES

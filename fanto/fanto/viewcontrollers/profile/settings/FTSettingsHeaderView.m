@@ -10,6 +10,14 @@
 
 @implementation FTSettingsHeaderView
 
+- (id)init {
+  if (self = [super init]) {
+    _lblSectionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  }
+  
+  return self;
+}
+
 - (void)updateViewWithData:(NSString *)data {
   _lblSectionTitle.text = data;
   [Utils adjustLabelToFitHeight:_lblSectionTitle];

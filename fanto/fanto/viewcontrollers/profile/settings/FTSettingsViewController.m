@@ -20,6 +20,7 @@
   BOOL _textFieldsShouldEndEditting;
 }
 
+- (void)setupViews;
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 
@@ -37,13 +38,13 @@
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Close", nil)
-                           color:[UIColor blackColor]
+                           color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(goBack)
                         distance:-8];
   
+  [self setupViews];
   _sectionsData = @[@"Thông tin của bạn", [NSNull null], [NSNull null], @"Kết nối", @"Thông báo"];
-  _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -273,6 +274,35 @@
 }
 
 #pragma mark - Private methods
+- (void)setupViews {
+  _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
+  
+  for (UILabel *titleLabel in _lblTitles) {
+    titleLabel.font = [UIFont fontWithName:@"ClearSans" size:14];
+    titleLabel.textColor = UIColorFromRGB(102, 102, 102);
+  }
+  
+  _btnAvatar.layer.cornerRadius = _btnAvatar.frame.size.width/2;
+  
+  _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:14];
+  
+  _txtUsername.text = @"ljnkshady";
+  _txtPassword.text = @"ljnkshady";
+  _txtEmail.text = @"linhlt3@topica.edu.vn";
+  
+  _btnFeedback.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnFeedback.layer.cornerRadius = 4;
+  [_btnFeedback setTitle:NSLocalizedString(@"Send feedback", nil) forState:UIControlStateNormal];
+  
+  _btnLogOut.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnLogOut.layer.cornerRadius = 4;
+  _btnLogOut.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _btnLogOut.layer.borderWidth = 2;
+  [_btnLogOut setTitle:NSLocalizedString(@"Log out", nil) forState:UIControlStateNormal];
+}
+
 - (void)submitChanges {
 }
 

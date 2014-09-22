@@ -10,31 +10,46 @@
 
 @interface FTSettingsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
   IBOutlet UITableView *_tblSettings;
+  
   IBOutlet UITableViewCell *_celAvatar;
+  IBOutlet UIButton *_btnAvatar;
+  
   IBOutlet UITableViewCell *_celUsername;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITableViewCell *_celPassword;
   IBOutlet UITextField *_txtPassword;
   IBOutlet UITableViewCell *_celEmail;
   IBOutlet UITextField *_txtEmail;
+  
   IBOutlet UITableViewCell *_celFeedbackLogOut;
+  IBOutlet UIButton *_btnFeedback;
+  IBOutlet UIButton *_btnLogOut;
+  
   IBOutlet UITableViewCell *_celSoundEffects;
   IBOutlet UISwitch *_swtSoundEffects;
+  
   IBOutlet UITableViewCell *_celListensingLessons;
   IBOutlet UISwitch *_swtListeningLessons;
+  
   IBOutlet UITableViewCell *_celFacebook;
   IBOutlet UISwitch *_swtFacebook;
+  
   IBOutlet UITableViewCell *_celGooglePlus;
   IBOutlet UISwitch *_swtGooglePlus;
+  
   IBOutlet UITableViewCell *_celPracticeReminder;
   IBOutlet UIButton *_btnPracticeReminderPhone;
   IBOutlet UIButton *_btnPracticeReminderEmail;
+  
   IBOutlet UITableViewCell *_celFriendAdded;
   IBOutlet UIButton *_btnFriendAddedPhone;
   IBOutlet UIButton *_btnFriendAddedEmail;
+  
   IBOutlet UITableViewCell *_celFriendPassed;
   IBOutlet UIButton *_btnFriendPassedPhone;
   IBOutlet UIButton *_btnFriendPassedEmail;
+  
+  IBOutletCollection(UILabel) NSArray *_lblTitles;
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender;
