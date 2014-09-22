@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTSetGoalViewController.h"
+#import "FTSuggestGoalViewController.h"
 
-@interface FTSetGoalViewController ()
+@interface FTSuggestGoalViewController ()
 
 - (void)setupViews;
 
 @end
 
-@implementation FTSetGoalViewController
+@implementation FTSuggestGoalViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

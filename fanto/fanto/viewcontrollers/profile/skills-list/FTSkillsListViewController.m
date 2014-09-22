@@ -16,7 +16,7 @@
 
 #import "FTFinishLessonViewController.h"
 #import "FTFailLessonViewController.h"
-#import "FTSetGoalViewController.h"
+#import "FTSuggestGoalViewController.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;

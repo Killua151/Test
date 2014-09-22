@@ -8,7 +8,7 @@
 
 #import "FTEndLearningViewController.h"
 
-@interface FTSetGoalViewController : FTEndLearningViewController {
+@interface FTSuggestGoalViewController : FTEndLearningViewController {
   IBOutlet UILabel *_lblMessage;
   IBOutlet UIImageView *_imgAnt;
   IBOutlet UILabel *_lblSubMessage;

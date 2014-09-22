@@ -88,7 +88,9 @@
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[FTSetGoalViewController new] animated:YES];
+  [self.navigationController presentViewController:[FTSetGoalViewController navigationController]
+                                          animated:YES
+                                        completion:NULL];
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
