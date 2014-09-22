@@ -99,7 +99,7 @@
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
-  [self.navigationController presentViewController:[FTBeginPlacementTestViewController new]
+  [self.navigationController presentViewController:[FTBeginPlacementTestViewController navigationController]
                                           animated:YES
                                         completion:NULL];
 //  [self fadeOutBeginningOptions:^{

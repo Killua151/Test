@@ -118,6 +118,10 @@
 		CA5DAF1A19D07048003DAB26 /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */; };
 		CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */; };
 		CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */; };
+		CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1F19D073A8003DAB26 /* img-ant-congrats.png */; };
+		CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */; };
+		CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */; };
+		CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -359,6 +363,11 @@
 		CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
 		CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test.png"; sourceTree = "<group>"; };
 		CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test@2x.png"; sourceTree = "<group>"; };
+		CA5DAF1F19D073A8003DAB26 /* img-ant-congrats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-congrats.png"; sourceTree = "<group>"; };
+		CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-congrats@2x.png"; sourceTree = "<group>"; };
+		CA5DAF2319D073C0003DAB26 /* FTCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCongratsViewController.h; sourceTree = "<group>"; };
+		CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCongratsViewController.m; sourceTree = "<group>"; };
+		CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -738,6 +747,8 @@
 			children = (
 				CA6C75EC19CB2E3D00D175DF /* img-ant-begin.png */,
 				CA6C75ED19CB2E3D00D175DF /* img-ant-begin@2x.png */,
+				CA5DAF1F19D073A8003DAB26 /* img-ant-congrats.png */,
+				CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */,
 				CABADE5F19CD405A000187AF /* img-ant-fail.png */,
 				CABADE6019CD405A000187AF /* img-ant-fail@2x.png */,
 				CABADE9119CD6EA8000187AF /* img-ant-finish_lesson.png */,
@@ -916,6 +927,9 @@
 				CA5DAF1619D07048003DAB26 /* FTBeginPlacementTestViewController.h */,
 				CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */,
 				CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */,
+				CA5DAF2319D073C0003DAB26 /* FTCongratsViewController.h */,
+				CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */,
+				CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */,
 				CABADE8E19CD6C19000187AF /* FTEndLearningViewController.h */,
 				CABADE8F19CD6C19000187AF /* FTEndLearningViewController.m */,
 				CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */,
@@ -1170,6 +1184,7 @@
 				CAEF54C919CB17F600729934 /* Default@2x.png in Resources */,
 				CABADE6B19CD56CF000187AF /* img-count_badge-bg@2x.png in Resources */,
 				CABADE7719CD6251000187AF /* img-hexagon_skill-bg_big.png in Resources */,
+				CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CABADE8119CD63C3000187AF /* img-hexagon_skill-strength-1_big.png in Resources */,
 				CA6C75FE19CB32FE00D175DF /* img-beginning_options-bg@2x.png in Resources */,
@@ -1237,6 +1252,7 @@
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CA5DAF0919D0692F003DAB26 /* img-set_goal-radio-normal.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
+				CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				CABADE7819CD6251000187AF /* img-hexagon_skill-bg_big@2x.png in Resources */,
 				CA6C761A19CD1D6200D175DF /* img-money-icon.png in Resources */,
@@ -1260,6 +1276,7 @@
 				CA5DAF0B19D0692F003DAB26 /* img-set_goal-radio-selected.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				CABADE8319CD63C3000187AF /* img-hexagon_skill-strength-2_big.png in Resources */,
+				CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */,
 				CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */,
 				CA5DAEFF19D06588003DAB26 /* FTSetGoalViewController.xib in Resources */,
 				CA5DAF0A19D0692F003DAB26 /* img-set_goal-radio-normal@2x.png in Resources */,
@@ -1404,6 +1421,7 @@
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
 				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
+				CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
