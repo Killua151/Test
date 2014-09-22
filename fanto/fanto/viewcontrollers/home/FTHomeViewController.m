@@ -52,6 +52,7 @@
 //
 //  [self.navigationController pushViewController:_signUpVC animated:YES];
 //  [_signUpVC reloadContents];
+//  return;
   
   if (_coursesListVC == nil)
     _coursesListVC = [FTCoursesListViewController new];

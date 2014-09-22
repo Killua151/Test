@@ -39,6 +39,7 @@
 
 - (void)gestureLayerDidTap {
   [_currentFirstResponder resignFirstResponder];
+  [self animateSlideViewUp:NO withDistance:0];
 }
 
 - (void)beforeGoBack {
@@ -57,6 +58,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   _currentFirstResponder = textField;
   [self gestureLayerDidEnterEdittingMode];
+  [self animateSlideViewUp:YES withDistance:20];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -66,6 +68,8 @@
     [_txtUsername becomeFirstResponder];
   else if (textField == _txtUsername)
     [_txtPassword becomeFirstResponder];
+  else if (textField == _txtPassword)
+    [_txtConfirmPassword becomeFirstResponder];
   else
     [self btnSignUpPressed:nil];
   
@@ -88,7 +92,10 @@
   _txtUsername.placeholder = NSLocalizedString(@"Username", nil);
   
   _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtPassword.placeholder = NSLocalizedString(@"Email", nil);
+  _txtPassword.placeholder = NSLocalizedString(@"Password", nil);
+  
+  _txtConfirmPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtConfirmPassword.placeholder = NSLocalizedString(@"Confirm password", nil);
   
   _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSignUp.layer.cornerRadius = 4;
@@ -126,9 +133,23 @@
     return NO;
   }
   
+  if (![Utils validateBlank:_txtConfirmPassword.text]) {
+    [_txtConfirmPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password again", nil)];
+    return NO;
+  }
+  
   if (_txtPassword.text.length < 8) {
     [_txtPassword becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Password must be at least 8 characters long", nil)];
+    return NO;
+  }
+  
+  if (![_txtPassword.text isEqualToString:_txtConfirmPassword.text]) {
+    _txtPassword.text = @"";
+    _txtConfirmPassword.text = @"";
+    [_txtPassword becomeFirstResponder];
+    [Utils showToastWithMessage:NSLocalizedString(@"Passwords not match", nil)];
     return NO;
   }
   

@@ -14,6 +14,7 @@
   IBOutlet UITextField *_txtEmail;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;
+  IBOutlet UITextField *_txtConfirmPassword;
   IBOutlet UIButton *_btnSignUp;
 }
 

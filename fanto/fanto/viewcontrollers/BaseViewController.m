@@ -55,7 +55,8 @@
 }
 
 - (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance {
-  CGFloat topEdgeDelta = DeviceSystemIsOS7() ? 64 : 0;
+  CGFloat iOS7TopEdge = self.navigationController ? 0 : self.navigationController.navigationBar.translucent ? 0 : 64;
+  CGFloat topEdgeDelta = DeviceSystemIsOS7() ? iOS7TopEdge : 0;
   
   [UIView
    animateWithDuration:0.25

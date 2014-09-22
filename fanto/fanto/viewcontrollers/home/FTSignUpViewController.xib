@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTSignUpViewController">
             <connections>
                 <outlet property="_btnSignUp" destination="kj3-wK-HT7" id="gNi-mY-GkN"/>
+                <outlet property="_txtConfirmPassword" destination="pFS-Xf-TrH" id="pLQ-YM-ctc"/>
                 <outlet property="_txtEmail" destination="usE-xT-s0z" id="qTS-Oq-8JH"/>
                 <outlet property="_txtFullName" destination="lDu-5S-V4M" id="I0Q-ur-6aa"/>
                 <outlet property="_txtPassword" destination="BE5-py-LE2" id="V76-eZ-8OA"/>
@@ -28,7 +29,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="RdP-dh-Ag0">
-                    <rect key="frame" x="15" y="74" width="290" height="175"/>
+                    <rect key="frame" x="15" y="74" width="290" height="219"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên đầy đủ" minimumFontSize="17" clearButtonMode="whileEditing" id="lDu-5S-V4M">
@@ -82,11 +83,25 @@
                                 <outlet property="delegate" destination="-1" id="yxk-Dg-nnt"/>
                             </connections>
                         </textField>
+                        <view contentMode="scaleToFill" id="S33-Fk-WYS">
+                            <rect key="frame" x="0.0" y="176" width="290" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập lại mật khẩu" minimumFontSize="17" clearButtonMode="whileEditing" id="pFS-Xf-TrH">
+                            <rect key="frame" x="14" y="176" width="262" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="FUm-6W-aDb"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kj3-wK-HT7">
-                    <rect key="frame" x="15" y="271" width="290" height="44"/>
+                    <rect key="frame" x="15" y="315" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.50588235294117645" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Tạo tài khoản">
