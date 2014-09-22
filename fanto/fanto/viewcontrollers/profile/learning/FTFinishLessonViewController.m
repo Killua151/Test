@@ -8,6 +8,7 @@
 
 #import "FTFinishLessonViewController.h"
 #import "FTFinishSkillViewController.h"
+#import "FTSetGoalViewController.h"
 #import "MUser.h"
 
 @interface FTFinishLessonViewController () {
@@ -87,6 +88,7 @@
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
+  [self.navigationController pushViewController:[FTSetGoalViewController new] animated:YES];
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -112,7 +114,6 @@
 }
 
 - (void)setupSetGoalView {
-  _vSetGoal.hidden = YES;
   [self.view bringSubviewToFront:_vSetGoal];
   
   if (!DeviceScreenIsRetina4Inch()) {
