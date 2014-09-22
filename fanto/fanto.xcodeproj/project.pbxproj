@@ -114,6 +114,10 @@
 		CA5DAF1119D06D3A003DAB26 /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */; };
 		CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */; };
 		CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */; };
+		CA5DAF1919D07048003DAB26 /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */; };
+		CA5DAF1A19D07048003DAB26 /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */; };
+		CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */; };
+		CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -350,6 +354,11 @@
 		CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSaveProgressViewController.xib; sourceTree = "<group>"; };
 		CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save.png"; sourceTree = "<group>"; };
 		CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save@2x.png"; sourceTree = "<group>"; };
+		CA5DAF1619D07048003DAB26 /* FTBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBeginPlacementTestViewController.h; sourceTree = "<group>"; };
+		CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBeginPlacementTestViewController.m; sourceTree = "<group>"; };
+		CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
+		CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test.png"; sourceTree = "<group>"; };
+		CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -733,6 +742,8 @@
 				CABADE6019CD405A000187AF /* img-ant-fail@2x.png */,
 				CABADE9119CD6EA8000187AF /* img-ant-finish_lesson.png */,
 				CABADE9219CD6EA8000187AF /* img-ant-finish_lesson@2x.png */,
+				CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */,
+				CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */,
 				CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */,
 				CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */,
 				CA5DAEED19D06074003DAB26 /* img-ant-set_goal.png */,
@@ -902,6 +913,9 @@
 		CABADE5919CD3F8A000187AF /* Learning */ = {
 			isa = PBXGroup;
 			children = (
+				CA5DAF1619D07048003DAB26 /* FTBeginPlacementTestViewController.h */,
+				CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */,
+				CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */,
 				CABADE8E19CD6C19000187AF /* FTEndLearningViewController.h */,
 				CABADE8F19CD6C19000187AF /* FTEndLearningViewController.m */,
 				CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */,
@@ -1184,6 +1198,7 @@
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
+				CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */,
 				CABADE6F19CD56F3000187AF /* img-money-icon_big@2x.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
 				4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */,
@@ -1208,6 +1223,7 @@
 				4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
 				CABADE7419CD5CA3000187AF /* FTFinishSkillViewController.xib in Resources */,
+				CA5DAF1A19D07048003DAB26 /* FTBeginPlacementTestViewController.xib in Resources */,
 				CA5DAEEF19D06074003DAB26 /* img-ant-set_goal.png in Resources */,
 				CABADE6719CD550C000187AF /* FTMoneyBonusViewController.xib in Resources */,
 				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
@@ -1216,6 +1232,7 @@
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */,
 				CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */,
+				CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */,
 				CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CA5DAF0919D0692F003DAB26 /* img-set_goal-radio-normal.png in Resources */,
@@ -1351,6 +1368,7 @@
 				CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */,
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
 				4A4DE14B19CAD55100933C76 /* FTProfileViewController.m in Sources */,
+				CA5DAF1919D07048003DAB26 /* FTBeginPlacementTestViewController.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */,
 				CA5DAF0319D067B4003DAB26 /* FTSetGoalCell.m in Sources */,

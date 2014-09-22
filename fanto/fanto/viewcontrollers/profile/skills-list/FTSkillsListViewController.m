@@ -16,7 +16,7 @@
 
 #import "FTFinishLessonViewController.h"
 #import "FTFailLessonViewController.h"
-#import "FTSaveProgressViewController.h"
+#import "FTBeginPlacementTestViewController.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
@@ -99,8 +99,11 @@
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
-  [self fadeOutBeginningOptions:^{
-  }];
+  [self.navigationController presentViewController:[FTBeginPlacementTestViewController new]
+                                          animated:YES
+                                        completion:NULL];
+//  [self fadeOutBeginningOptions:^{
+//  }];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -182,7 +185,7 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTSaveProgressViewController navigationController]
+  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
                                           animated:YES
                                         completion:NULL];
   return;

@@ -253,9 +253,9 @@
 
 - (void)dismissViewController {
   if (self.navigationController == nil)
-    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
-  else
     [self dismissViewControllerAnimated:YES completion:NULL];
+  else
+    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
