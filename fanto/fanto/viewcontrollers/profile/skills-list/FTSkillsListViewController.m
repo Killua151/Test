@@ -102,8 +102,6 @@
   [self.navigationController presentViewController:[FTBeginPlacementTestViewController navigationController]
                                           animated:YES
                                         completion:NULL];
-//  [self fadeOutBeginningOptions:^{
-//  }];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -185,10 +183,10 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
-  return;
+//  [self.navigationController presentViewController:[FTFinishLessonViewController navigationController]
+//                                          animated:YES
+//                                        completion:NULL];
+//  return;
   
   [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES
