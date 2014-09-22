@@ -94,6 +94,8 @@
 		CA5454CC19C741A20052111C /* FTShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CA19C741A20052111C /* FTShopViewController.xib */; };
 		CA5454D019C743F50052111C /* FTShopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5454CE19C743F50052111C /* FTShopItemCell.m */; };
 		CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CF19C743F50052111C /* FTShopItemCell.xib */; };
+		CA5DAEE619D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEE419D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png */; };
+		CA5DAEE719D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEE519D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -308,6 +310,8 @@
 		CA5454CD19C743F50052111C /* FTShopItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopItemCell.h; sourceTree = "<group>"; };
 		CA5454CE19C743F50052111C /* FTShopItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopItemCell.m; sourceTree = "<group>"; };
 		CA5454CF19C743F50052111C /* FTShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemCell.xib; sourceTree = "<group>"; };
+		CA5DAEE419D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-finish_lesson-set_goal-bg.png"; sourceTree = "<group>"; };
+		CA5DAEE519D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-finish_lesson-set_goal-bg@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -656,6 +660,16 @@
 			path = shop;
 			sourceTree = "<group>";
 		};
+		CA5DAEE319D052EC003DAB26 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAEE419D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png */,
+				CA5DAEE519D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png */,
+			);
+			name = Learning;
+			path = learning;
+			sourceTree = "<group>";
+		};
 		CA6C75EB19CB2E3D00D175DF /* Ants */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +900,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6C75F419CB32FE00D175DF /* Beginning Options */,
+				CA5DAEE319D052EC003DAB26 /* Learning */,
 				4A85F39519C68EF400642C5F /* Lessons List */,
 				CAEF54B519C9E4C900729934 /* Settings */,
 				CA6C761719CD1D6200D175DF /* Shared */,
@@ -1111,8 +1126,10 @@
 				CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */,
 				4A85F3FD19C6E32100642C5F /* img-shield_skill-strength-3@2x.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
+				CA5DAEE719D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
+				CA5DAEE619D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png in Resources */,
 				CABADE8219CD63C3000187AF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */,

@@ -14,9 +14,12 @@
   IBOutlet UIButton *_btnShare;
   IBOutlet UIButton *_btnNext;
   IBOutlet UIView *_vSetGoal;
+  IBOutlet UILabel *_lblStreaksCount;
+  IBOutlet UIButton *_btnSetGoal;
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender;
 - (IBAction)btnNextPressed:(UIButton *)sender;
+- (IBAction)btnSetGoalPressed:(UIButton *)sender;
 
 @end

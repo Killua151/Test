@@ -65,6 +65,18 @@
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  
+  styledString = @"3 ngày streak";
+  message = [NSString stringWithFormat:NSLocalizedString(@"Bạn có %@!", nil), styledString];
+  _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  [Utils applyAttributedTextForLabel:_lblStreaksCount
+                            withText:message
+                            onString:styledString
+                      withAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(255, 187, 51)}];
+  
+  _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSetGoal.layer.cornerRadius = 4;
+  [_btnSetGoal setTitle:NSLocalizedString(@"Set goal", nil) forState:UIControlStateNormal];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
@@ -72,6 +84,9 @@
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
   [self.navigationController pushViewController:[FTFinishSkillViewController new] animated:YES];
+}
+
+- (IBAction)btnSetGoalPressed:(UIButton *)sender {
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -87,22 +102,25 @@
     _lineChart = nil;
   }
   
+  CGFloat delta = DeviceScreenIsRetina4Inch() ? 130 : 0;
+  
   _lineChart = [[MUser currentUser] graphLineChartInFrame:
                 CGRectMake(0, _lblHeartBonusMessage.frame.origin.y + 10, 320,
-                           self.view.frame.size.height - _lblHeartBonusMessage.frame.origin.y - 135 -
-                           (DeviceScreenIsRetina4Inch() ? 130 : 0))];
+                           self.view.frame.size.height - _lblHeartBonusMessage.frame.origin.y - 135 - delta)];
   [self.view addSubview:_lineChart];
   [_lineChart drawChart];
 }
 
 - (void)setupSetGoalView {
+  _vSetGoal.hidden = YES;
   [self.view bringSubviewToFront:_vSetGoal];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _vSetGoal.frame;
     frame.origin.y = _btnShare.frame.origin.y - frame.size.height - 10;
     _vSetGoal.frame = frame;
-  }
+  } else
+    return;
   
   UIPanGestureRecognizer *panGesture =
   [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
