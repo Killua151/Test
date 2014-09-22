@@ -110,6 +110,10 @@
 		CA5DAF0A19D0692F003DAB26 /* img-set_goal-radio-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0619D0692F003DAB26 /* img-set_goal-radio-normal@2x.png */; };
 		CA5DAF0B19D0692F003DAB26 /* img-set_goal-radio-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0719D0692F003DAB26 /* img-set_goal-radio-selected.png */; };
 		CA5DAF0C19D0692F003DAB26 /* img-set_goal-radio-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0819D0692F003DAB26 /* img-set_goal-radio-selected@2x.png */; };
+		CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */; };
+		CA5DAF1119D06D3A003DAB26 /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */; };
+		CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */; };
+		CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -341,6 +345,11 @@
 		CA5DAF0619D0692F003DAB26 /* img-set_goal-radio-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-normal@2x.png"; sourceTree = "<group>"; };
 		CA5DAF0719D0692F003DAB26 /* img-set_goal-radio-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-selected.png"; sourceTree = "<group>"; };
 		CA5DAF0819D0692F003DAB26 /* img-set_goal-radio-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-selected@2x.png"; sourceTree = "<group>"; };
+		CA5DAF0D19D06D3A003DAB26 /* FTSaveProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSaveProgressViewController.h; sourceTree = "<group>"; };
+		CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSaveProgressViewController.m; sourceTree = "<group>"; };
+		CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSaveProgressViewController.xib; sourceTree = "<group>"; };
+		CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save.png"; sourceTree = "<group>"; };
+		CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -724,6 +733,8 @@
 				CABADE6019CD405A000187AF /* img-ant-fail@2x.png */,
 				CABADE9119CD6EA8000187AF /* img-ant-finish_lesson.png */,
 				CABADE9219CD6EA8000187AF /* img-ant-finish_lesson@2x.png */,
+				CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */,
+				CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */,
 				CA5DAEED19D06074003DAB26 /* img-ant-set_goal.png */,
 				CA5DAEEE19D06074003DAB26 /* img-ant-set_goal@2x.png */,
 			);
@@ -905,6 +916,9 @@
 				CABADE6319CD550B000187AF /* FTMoneyBonusViewController.h */,
 				CABADE6419CD550B000187AF /* FTMoneyBonusViewController.m */,
 				CABADE6519CD550B000187AF /* FTMoneyBonusViewController.xib */,
+				CA5DAF0D19D06D3A003DAB26 /* FTSaveProgressViewController.h */,
+				CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */,
+				CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */,
 				CA5DAEE819D05FCF003DAB26 /* FTSuggestGoalViewController.h */,
 				CA5DAEE919D05FCF003DAB26 /* FTSuggestGoalViewController.m */,
 				CA5DAEEA19D05FCF003DAB26 /* FTSuggestGoalViewController.xib */,
@@ -1166,6 +1180,7 @@
 				CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
+				CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
@@ -1178,6 +1193,7 @@
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
 				CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */,
 				4A85F3FD19C6E32100642C5F /* img-shield_skill-strength-3@2x.png in Resources */,
+				CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				CA5DAEE719D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
@@ -1230,6 +1246,7 @@
 				CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */,
 				CA5DAEFF19D06588003DAB26 /* FTSetGoalViewController.xib in Resources */,
 				CA5DAF0A19D0692F003DAB26 /* img-set_goal-radio-normal@2x.png in Resources */,
+				CA5DAF1119D06D3A003DAB26 /* FTSaveProgressViewController.xib in Resources */,
 				CABADE8819CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png in Resources */,
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */,
@@ -1335,6 +1352,7 @@
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
 				4A4DE14B19CAD55100933C76 /* FTProfileViewController.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
+				CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */,
 				CA5DAF0319D067B4003DAB26 /* FTSetGoalCell.m in Sources */,
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
