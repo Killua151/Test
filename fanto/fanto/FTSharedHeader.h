@@ -24,3 +24,10 @@
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson;
 
 @end
+
+@protocol FTActionSheetDelegate <NSObject>
+
+@optional
+- (void)actionSheetDidSelectAtIndex:(NSInteger)index;
+
+@end

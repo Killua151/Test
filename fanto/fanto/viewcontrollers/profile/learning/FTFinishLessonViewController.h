@@ -8,7 +8,7 @@
 
 #import "FTEndLearningViewController.h"
 
-@interface FTFinishLessonViewController : FTEndLearningViewController <UIGestureRecognizerDelegate> {
+@interface FTFinishLessonViewController : FTEndLearningViewController <UIGestureRecognizerDelegate, FTActionSheetDelegate> {
   IBOutlet UILabel *_lblFinishLessonMessage;
   IBOutlet UILabel *_lblHeartBonusMessage;
   IBOutlet UIButton *_btnShare;

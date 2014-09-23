@@ -123,6 +123,10 @@
 		CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */; };
 		CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */; };
 		CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */; };
+		CA5DAF3019D18F5A003DAB26 /* img-popup-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2E19D18F5A003DAB26 /* img-popup-bg.png */; };
+		CA5DAF3119D18F5A003DAB26 /* img-popup-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2F19D18F5A003DAB26 /* img-popup-bg@2x.png */; };
+		CA5DAF3519D19085003DAB26 /* FTShareActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF3419D19085003DAB26 /* FTShareActionSheet.m */; };
+		CA5DAF3719D19BDB003DAB26 /* FTShareActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF3619D19BDB003DAB26 /* FTShareActionSheet.xib */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -371,6 +375,11 @@
 		CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
 		CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAllowsTouchOutsideView.h; sourceTree = "<group>"; };
 		CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAllowsTouchOutsideView.m; sourceTree = "<group>"; };
+		CA5DAF2E19D18F5A003DAB26 /* img-popup-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-popup-bg.png"; sourceTree = "<group>"; };
+		CA5DAF2F19D18F5A003DAB26 /* img-popup-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-popup-bg@2x.png"; sourceTree = "<group>"; };
+		CA5DAF3319D19085003DAB26 /* FTShareActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShareActionSheet.h; sourceTree = "<group>"; };
+		CA5DAF3419D19085003DAB26 /* FTShareActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShareActionSheet.m; sourceTree = "<group>"; };
+		CA5DAF3619D19BDB003DAB26 /* FTShareActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShareActionSheet.xib; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -745,6 +754,17 @@
 			path = "set-goal";
 			sourceTree = "<group>";
 		};
+		CA5DAF3219D19071003DAB26 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF3319D19085003DAB26 /* FTShareActionSheet.h */,
+				CA5DAF3419D19085003DAB26 /* FTShareActionSheet.m */,
+				CA5DAF3619D19BDB003DAB26 /* FTShareActionSheet.xib */,
+			);
+			name = Shared;
+			path = shared;
+			sourceTree = "<group>";
+		};
 		CA6C75EB19CB2E3D00D175DF /* Ants */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,6 +821,8 @@
 				CA6C761919CD1D6200D175DF /* img-money-icon@2x.png */,
 				CABADE6C19CD56F3000187AF /* img-money-icon_big.png */,
 				CABADE6D19CD56F3000187AF /* img-money-icon_big@2x.png */,
+				CA5DAF2E19D18F5A003DAB26 /* img-popup-bg.png */,
+				CA5DAF2F19D18F5A003DAB26 /* img-popup-bg@2x.png */,
 				CA6C761C19CD1EBA00D175DF /* img-streak-icon.png */,
 				CA6C761D19CD1EBA00D175DF /* img-streak-icon@2x.png */,
 			);
@@ -921,6 +943,7 @@
 				CA7499CD19C0951A00C221A9 /* BaseViewController.m */,
 				4A74147319C2FDBE002DB2C7 /* Home */,
 				CAEBA24719C329BF0024CA71 /* Profile */,
+				CA5DAF3219D19071003DAB26 /* Shared */,
 			);
 			name = "View Controllers";
 			path = viewcontrollers;
@@ -1179,6 +1202,7 @@
 				CABADE9319CD6EA8000187AF /* img-ant-finish_lesson.png in Resources */,
 				CA5DAEF419D06086003DAB26 /* btn-navbar-back_white@2x.png in Resources */,
 				CA6C761E19CD1EBA00D175DF /* img-streak-icon.png in Resources */,
+				CA5DAF3119D18F5A003DAB26 /* img-popup-bg@2x.png in Resources */,
 				CA6C761F19CD1EBA00D175DF /* img-streak-icon@2x.png in Resources */,
 				CA6C75FC19CB32FE00D175DF /* img-beginner-icon@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
@@ -1252,6 +1276,7 @@
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */,
 				CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */,
+				CA5DAF3019D18F5A003DAB26 /* img-popup-bg.png in Resources */,
 				CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */,
 				CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
@@ -1300,6 +1325,7 @@
 				CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */,
 				4A85F3E819C6E2BF00642C5F /* img-hexagon_skill-strength-1.png in Resources */,
 				CAEF54C219C9E4C900729934 /* img-settings-phone_icon-disabled.png in Resources */,
+				CA5DAF3719D19BDB003DAB26 /* FTShareActionSheet.xib in Resources */,
 				CABADE8419CD63C3000187AF /* img-hexagon_skill-strength-2_big@2x.png in Resources */,
 				CAEBA29C19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CABADE6A19CD56CF000187AF /* img-count_badge-bg.png in Resources */,
@@ -1372,6 +1398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5DAF3519D19085003DAB26 /* FTShareActionSheet.m in Sources */,
 				4A4DE14519CAD50700933C76 /* FTSettingsViewController.m in Sources */,
 				CA5454CB19C741A20052111C /* FTShopViewController.m in Sources */,
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,

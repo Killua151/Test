@@ -9,10 +9,12 @@
 #import "FTFinishLessonViewController.h"
 #import "FTFinishSkillViewController.h"
 #import "FTSetGoalViewController.h"
+#import "FTShareActionSheet.h"
 #import "MUser.h"
 
 @interface FTFinishLessonViewController () {
   FTLineChart *_lineChart;
+  FTShareActionSheet *_vShare;
   CGFloat _innerPanGestureYPos;
 }
 
@@ -81,6 +83,8 @@
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
+  DLog(@"invoke");
+  [_vShare show];
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
@@ -97,6 +101,11 @@
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
   _innerPanGestureYPos = [gestureRecognizer locationInView:gestureRecognizer.view].y;
   return YES;
+}
+
+#pragma mark - FTActionSheetDelegate methods
+- (void)actionSheetDidSelectAtIndex:(NSInteger)index {
+  DLog(@"%d", index);
 }
 
 #pragma mark - Private methods
@@ -117,6 +126,9 @@
 
 - (void)setupSetGoalView {
   [self.view bringSubviewToFront:_vSetGoal];
+  
+  _vShare = [[FTShareActionSheet alloc] initInViewController:self];
+  [self.view bringSubviewToFront:_vShare];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _vSetGoal.frame;

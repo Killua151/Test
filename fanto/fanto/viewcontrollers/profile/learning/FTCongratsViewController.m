@@ -7,8 +7,11 @@
 //
 
 #import "FTCongratsViewController.h"
+#import "FTShareActionSheet.h"
 
-@interface FTCongratsViewController ()
+@interface FTCongratsViewController () {
+  FTShareActionSheet *_vShare;
+}
 
 @end
 
@@ -51,12 +54,20 @@
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  
+  _vShare = [[FTShareActionSheet alloc] initInViewController:self];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
+  [_vShare show];
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
+}
+
+#pragma mark - FTActionSheetDelegate methods
+- (void)actionSheetDidSelectAtIndex:(NSInteger)index {
+  DLog(@"%d", index);
 }
 
 @end

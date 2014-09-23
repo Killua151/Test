@@ -8,7 +8,7 @@
 
 #import "FTEndLearningViewController.h"
 
-@interface FTCongratsViewController : FTEndLearningViewController {
+@interface FTCongratsViewController : FTEndLearningViewController <FTActionSheetDelegate> {
   IBOutlet UIImageView *_imgAnt;
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;
