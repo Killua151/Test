@@ -55,7 +55,7 @@
 }
 
 - (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance {
-  CGFloat iOS7TopEdge = self.navigationController ? 0 : self.navigationController.navigationBar.translucent ? 0 : 64;
+  CGFloat iOS7TopEdge = self.navigationController ? (self.navigationController.navigationBar.translucent ? 0 : 64) : 0;
   CGFloat topEdgeDelta = DeviceSystemIsOS7() ? iOS7TopEdge : 0;
   
   [UIView
@@ -130,7 +130,7 @@
   [btnBack setImage:btnBackBg forState:UIControlStateNormal];
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
-  UIView *view = [[UIView alloc] initWithFrame:btnBack.frame];
+  FTAllowsTouchOutsideView *view = [[FTAllowsTouchOutsideView alloc] initWithFrame:btnBack.frame];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? 16 : 10, 0);
   [view addSubview:btnBack];
   
@@ -178,7 +178,12 @@
   else
     button.userInteractionEnabled = NO;
   
-  UIView *view = [[UIView alloc] initWithFrame:button.frame];
+  if (distance < 0)
+    distance = -5;
+  else
+    distance = 5;
+  
+  FTAllowsTouchOutsideView *view = [[FTAllowsTouchOutsideView alloc] initWithFrame:button.frame];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : -distance, 0);
   [view addSubview:button];
   

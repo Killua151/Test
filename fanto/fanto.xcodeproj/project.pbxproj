@@ -122,6 +122,7 @@
 		CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */; };
 		CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */; };
 		CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */; };
+		CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -368,6 +369,8 @@
 		CA5DAF2319D073C0003DAB26 /* FTCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCongratsViewController.h; sourceTree = "<group>"; };
 		CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCongratsViewController.m; sourceTree = "<group>"; };
 		CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
+		CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAllowsTouchOutsideView.h; sourceTree = "<group>"; };
+		CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAllowsTouchOutsideView.m; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -865,6 +868,8 @@
 		CA7499C619C0951A00C221A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */,
+				CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */,
 				CA6C760419CC774600D175DF /* LineChart */,
 				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
 				CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */,
@@ -1388,6 +1393,7 @@
 				CA5DAF1919D07048003DAB26 /* FTBeginPlacementTestViewController.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */,
+				CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */,
 				CA5DAF0319D067B4003DAB26 /* FTSetGoalCell.m in Sources */,
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
