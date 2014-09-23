@@ -23,15 +23,11 @@
                 <outlet property="_celFriendAdded" destination="wfG-Vq-cpI" id="ZDG-uU-0SA"/>
                 <outlet property="_celFriendPassed" destination="Kd2-h0-aza" id="FhW-oj-aE3"/>
                 <outlet property="_celGooglePlus" destination="1fw-EA-nQ0" id="DqT-Bd-kj6"/>
-                <outlet property="_celListensingLessons" destination="h7v-zd-5Hf" id="zgg-jK-b4I"/>
+                <outlet property="_celListeningLessons" destination="h7v-zd-5Hf" id="8bf-OO-n72"/>
                 <outlet property="_celPassword" destination="Yf4-a0-fe4" id="mLU-dN-Sjg"/>
                 <outlet property="_celPracticeReminder" destination="dJW-jc-Q90" id="wFo-j6-bv5"/>
                 <outlet property="_celSoundEffects" destination="VSR-W6-otp" id="eC4-Og-vHU"/>
                 <outlet property="_celUsername" destination="Q9g-bF-F06" id="e86-tO-2zQ"/>
-                <outlet property="_swtFacebook" destination="bsg-XE-mkJ" id="haO-FF-0Ql"/>
-                <outlet property="_swtGooglePlus" destination="hpy-BG-dgl" id="1qo-h1-U0d"/>
-                <outlet property="_swtListeningLessons" destination="EOz-47-gtI" id="zvj-K3-86V"/>
-                <outlet property="_swtSoundEffects" destination="M0N-6x-TeO" id="Q6a-Fr-UNc"/>
                 <outlet property="_tblSettings" destination="cGc-Ne-FwZ" id="Z4k-mY-MBk"/>
                 <outlet property="_txtEmail" destination="c9Y-9S-JTx" id="h54-dY-YIY"/>
                 <outlet property="_txtPassword" destination="Joc-g1-cfN" id="hPN-dO-RPW"/>
@@ -229,19 +225,12 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="M0N-6x-TeO">
-                        <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="swtSoundEffectsChanged:" destination="-1" eventType="valueChanged" id="n8J-p1-2dO"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="h7v-zd-5Hf" userLabel="Listening lessons">
+        <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="h7v-zd-5Hf" userLabel="Listening lessons">
             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7v-zd-5Hf" id="4b6-er-FjT">
@@ -254,19 +243,12 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="EOz-47-gtI">
-                        <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="swtListeningLessonsChanged:" destination="-1" eventType="valueChanged" id="wLI-sN-BMv"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="uNF-GS-4J1" userLabel="Facebook">
+        <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="uNF-GS-4J1" userLabel="Facebook">
             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNF-GS-4J1" id="C9Z-tQ-QRg">
@@ -279,20 +261,12 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="bsg-XE-mkJ">
-                        <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="swtFacebookChanged:" destination="-1" eventType="valueChanged" id="QH6-k0-pSD"/>
-                            <action selector="swtSoundEffectsChanged:" destination="-1" eventType="valueChanged" id="OA7-d4-vKf"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="1fw-EA-nQ0" userLabel="Google+">
+        <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="1fw-EA-nQ0" userLabel="Google+">
             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1fw-EA-nQ0" id="N5r-r1-ewZ">
@@ -305,14 +279,6 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hpy-BG-dgl">
-                        <rect key="frame" x="254" y="9" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="swtGooglePlusChanged:" destination="-1" eventType="valueChanged" id="ePx-tf-IVx"/>
-                            <action selector="swtListeningLessonsChanged:" destination="-1" eventType="valueChanged" id="dUT-83-khv"/>
-                        </connections>
-                    </switch>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>

@@ -22,6 +22,7 @@
   #import "FTLineChartData.h"
   #import "FTSharedHeader.h"
   #import "FTAllowsTouchOutsideView.h"
+  #import "KLSwitch.h"
 #endif
 
 #define DLog(format, ...) \

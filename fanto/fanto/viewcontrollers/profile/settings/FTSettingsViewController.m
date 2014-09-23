@@ -13,6 +13,7 @@
 #import "MUser.h"
 
 #define kTextFieldTypes           @[@"username", @"password", @"email"]
+#define kSwitchFrame              CGRectMake(254, 9, 51, 31)
 
 @interface FTSettingsViewController () {
   NSArray *_sectionsData;
@@ -23,6 +24,7 @@
 - (void)setupViews;
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
+- (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index;
 
 @end
 
@@ -64,18 +66,6 @@
     FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = homeNavigation;
   }];
-}
-
-- (IBAction)swtSoundEffectsChanged:(UISwitch *)sender {
-}
-
-- (IBAction)swtListeningLessonsChanged:(UISwitch *)sender {
-}
-
-- (IBAction)swtFacebookChanged:(UISwitch *)sender {
-}
-
-- (IBAction)swtGooglePlusChanged:(UISwitch *)sender {
 }
 
 - (IBAction)btnNotificationModesPressed:(UIButton *)sender {
@@ -130,7 +120,7 @@
     if (indexPath.row == 0)
       return _celSoundEffects;
     
-    return _celListensingLessons;
+    return _celListeningLessons;
   }
   
   if (indexPath.section == 3) {
@@ -196,7 +186,7 @@
     if (indexPath.row == 0)
       return _celSoundEffects.frame.size.height;
     
-    return _celListensingLessons.frame.size.height;
+    return _celListeningLessons.frame.size.height;
   }
   
   if (indexPath.section == 3) {
@@ -301,6 +291,39 @@
   _btnLogOut.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnLogOut.layer.borderWidth = 2;
   [_btnLogOut setTitle:NSLocalizedString(@"Log out", nil) forState:UIControlStateNormal];
+  
+  _swtSoundEffects = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtListeningLessons = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtFacebook = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtGooglePlus = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
+  
+  [@[
+     @{
+       @"cell" : _celSoundEffects,
+       @"switch" : _swtSoundEffects,
+       },
+     @{
+       @"cell" : _celListeningLessons,
+       @"switch" : _swtListeningLessons,
+       },
+     @{
+       @"cell" : _celFacebook,
+       @"switch" : _swtFacebook,
+       },
+     @{
+       @"cell" : _celGooglePlus,
+       @"switch" : _swtGooglePlus,
+       }
+     ] enumerateObjectsUsingBlock:^(NSDictionary *data, NSUInteger index, BOOL *stop) {
+       UITableViewCell *cell = data[@"cell"];
+       KLSwitch *swt = data[@"switch"];
+       
+       swt.onTintColor = UIColorFromRGB(129, 12, 21);
+       swt.didChangeHandler = ^(BOOL isOn) {
+         [self switchDidChanged:isOn atIndex:index];
+       };
+       [cell.contentView addSubview:swt];
+     }];
 }
 
 - (void)submitChanges {
@@ -323,6 +346,10 @@
   
   alertView.tag = textField.tag+1;
   [alertView show];
+}
+
+- (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index {
+  
 }
 
 @end
