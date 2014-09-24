@@ -143,6 +143,7 @@
 		CA5DAF5219D1A730003DAB26 /* img-share-twitter_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4619D1A730003DAB26 /* img-share-twitter_selected@2x.png */; };
 		CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4719D1A730003DAB26 /* img-share-twitter.png */; };
 		CA5DAF5419D1A730003DAB26 /* img-share-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */; };
+		CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -415,6 +416,8 @@
 		CA5DAF4619D1A730003DAB26 /* img-share-twitter_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-share-twitter_selected@2x.png"; sourceTree = "<group>"; };
 		CA5DAF4719D1A730003DAB26 /* img-share-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-share-twitter.png"; sourceTree = "<group>"; };
 		CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-share-twitter@2x.png"; sourceTree = "<group>"; };
+		CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTServerHelper.h; sourceTree = "<group>"; };
+		CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTServerHelper.m; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -961,6 +964,8 @@
 			children = (
 				CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */,
 				CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */,
+				CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */,
+				CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */,
 				CA6C760419CC774600D175DF /* LineChart */,
 				4A56E41019D2BDC2003FA91C /* NSString+CompactTranslation.h */,
 				4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */,
@@ -1534,6 +1539,7 @@
 				CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */,
 				CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */,
 				CA5DAEEB19D05FCF003DAB26 /* FTSuggestGoalViewController.m in Sources */,
+				CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */,
 				CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */,
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,

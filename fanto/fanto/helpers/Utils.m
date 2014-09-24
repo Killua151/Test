@@ -358,10 +358,11 @@ static UIView *_sharedToast = nil;
   if (_googleLogInCallback == NULL)
     return;
   
-  NSDictionary *savedUser = [Utils updateSavedUserWithAttributes:@{
-                                                                   kParamGgEmail : [Utils normalizeString:auth.userEmail],
-                                                                   kParamGgAccessToken : [Utils normalizeString:auth.accessToken]
-                                                                   }];
+  NSDictionary *savedUser = [Utils updateSavedUserWithAttributes:
+  @{
+    kParamGmail : [Utils normalizeString:auth.userEmail],
+    kParamGAccessToken : [Utils normalizeString:auth.accessToken]
+    }];
   
   _googleLogInCallback(savedUser, error);
 }

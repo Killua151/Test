@@ -24,6 +24,7 @@
   #import "FTAllowsTouchOutsideView.h"
   #import "KLSwitch.h"
   #import "NSString+CompactTranslation.h"
+  #import "FTServerHelper.h"
 #endif
 
 #define DLog(format, ...) \
@@ -64,6 +65,9 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
+#define kServerApiUrl                           @"http://fanto-backend.volcano.vn/api"
+#define kServerApiVersion                       @"v1"
+
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
 #define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
 #define DeviceSystemIsOS7()                     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
@@ -88,8 +92,9 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamAuthToken                         @"auth_token"
 #define kParamFbId                              @"fb_id"
 #define kParamFbAccessToken                     @"fb_access_token"
-#define kParamGgEmail                           @"gg_email"
-#define kParamGgAccessToken                     @"gg_access_token"
+#define kParamGmail                             @"gmail"
+#define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
+#define kParamPassword                          @"password"
 #define kParamUsername                          @"username"

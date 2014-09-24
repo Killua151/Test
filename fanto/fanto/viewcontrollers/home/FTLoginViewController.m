@@ -50,6 +50,18 @@
   
   [self gestureLayerDidTap];
   
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[FTServerHelper sharedHelper]
+   logInWithUsername:_txtUsername.text
+   password:_txtPassword.text
+   completion:^(NSDictionary *userData, NSError *error) {
+     [Utils hideAllHUDsForView:self.navigationController.view];
+     DLog(@"%@ %@", userData, error);
+   }];
+  
+  return;
+  
   [Utils updateSavedUserWithAttributes:@{
                                          kParamUsername : [Utils normalizeString:_txtUsername.text],
                                          kParamAuthToken : [Utils normalizeString:_txtPassword.text]
