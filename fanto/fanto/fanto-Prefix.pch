@@ -75,8 +75,9 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define kHexagonThemeTestMode                   true
 #define kTestLogin                              false
+#define kTestCompactTranslation                 false
 
-#define kCrashlyticsApiKey                      @"3a98614a2e15490a60b58daa2a17294f47149708"
+#define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 #define kGoogleSignInKey                        @"76466559980-1que00mo7kuvfp173ru5854ut5us98bt.apps.googleusercontent.com";
 
 #define kUserDefUDID                            @"udid"

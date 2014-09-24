@@ -110,8 +110,10 @@
 #if kTestLogin
   [MUser logOutCurrentUser];
 #endif
-  
+
+#if kTestCompactTranslation
   [NSString testCompactTranslations];
+#endif
   
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
