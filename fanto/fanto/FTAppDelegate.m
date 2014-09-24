@@ -111,6 +111,8 @@
   [MUser logOutCurrentUser];
 #endif
   
+  [NSString testCompactTranslations];
+  
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
 }

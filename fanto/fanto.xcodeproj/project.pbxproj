@@ -21,6 +21,8 @@
 		4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15119CADA0000933C76 /* img-profile-level-bg@2x.png */; };
 		4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DE15B19CAEE3B00933C76 /* FTProfileLeaderboardCell.m */; };
 		4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE15C19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib */; };
+		4A56E40F19D2B4BB003FA91C /* RegExCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A56E40E19D2B4BB003FA91C /* RegExCategories.m */; };
+		4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */; };
 		4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144619C2D779002DB2C7 /* btn-navbar-back.png */; };
 		4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */; };
 		4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */; };
@@ -260,6 +262,10 @@
 		4A4DE15A19CAEE3B00933C76 /* FTProfileLeaderboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTProfileLeaderboardCell.h; sourceTree = "<group>"; };
 		4A4DE15B19CAEE3B00933C76 /* FTProfileLeaderboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTProfileLeaderboardCell.m; sourceTree = "<group>"; };
 		4A4DE15C19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTProfileLeaderboardCell.xib; sourceTree = "<group>"; };
+		4A56E40D19D2B4BB003FA91C /* RegExCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExCategories.h; sourceTree = "<group>"; };
+		4A56E40E19D2B4BB003FA91C /* RegExCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExCategories.m; sourceTree = "<group>"; };
+		4A56E41019D2BDC2003FA91C /* NSString+CompactTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CompactTranslation.h"; sourceTree = "<group>"; };
+		4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CompactTranslation.m"; sourceTree = "<group>"; };
 		4A74144619C2D779002DB2C7 /* btn-navbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back.png"; path = "images/btn-navbar-back.png"; sourceTree = "<group>"; };
 		4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back@2x.png"; path = "images/btn-navbar-back@2x.png"; sourceTree = "<group>"; };
 		4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ExtendedToast.h"; sourceTree = "<group>"; };
@@ -593,6 +599,24 @@
 			path = "user-profile";
 			sourceTree = "<group>";
 		};
+		4A56E40B19D2B4BB003FA91C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				4A56E40C19D2B4BB003FA91C /* RegExCategories */,
+			);
+			name = Libraries;
+			path = libs;
+			sourceTree = "<group>";
+		};
+		4A56E40C19D2B4BB003FA91C /* RegExCategories */ = {
+			isa = PBXGroup;
+			children = (
+				4A56E40D19D2B4BB003FA91C /* RegExCategories.h */,
+				4A56E40E19D2B4BB003FA91C /* RegExCategories.m */,
+			);
+			path = RegExCategories;
+			sourceTree = "<group>";
+		};
 		4A74146119C2FD7F002DB2C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +936,7 @@
 				CA7499A719C094B700C221A9 /* FTAppDelegate.m */,
 				CAEBA27919C4924B0024CA71 /* FTSharedHeader.h */,
 				CA7499C619C0951A00C221A9 /* Helpers */,
+				4A56E40B19D2B4BB003FA91C /* Libraries */,
 				CA7499C919C0951A00C221A9 /* Models */,
 				CA7499CA19C0951A00C221A9 /* Resources */,
 				CA74999E19C094B700C221A9 /* Supporting Files */,
@@ -937,6 +962,8 @@
 				CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */,
 				CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */,
 				CA6C760419CC774600D175DF /* LineChart */,
+				4A56E41019D2BDC2003FA91C /* NSString+CompactTranslation.h */,
+				4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */,
 				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
 				CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */,
 				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
@@ -1482,6 +1509,7 @@
 				CA5DAF0319D067B4003DAB26 /* FTSetGoalCell.m in Sources */,
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
+				4A56E40F19D2B4BB003FA91C /* RegExCategories.m in Sources */,
 				4A85F3D519C6DFA600642C5F /* FTShieldSkillCell.m in Sources */,
 				CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */,
 				4A85F3A019C6976400642C5F /* MLesson.m in Sources */,
@@ -1499,6 +1527,7 @@
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
+				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
 				CABADE6619CD550B000187AF /* FTMoneyBonusViewController.m in Sources */,
 				CA5DAEFE19D06588003DAB26 /* FTSetGoalViewController.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
@@ -1563,7 +1592,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

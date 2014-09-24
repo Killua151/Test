@@ -23,6 +23,7 @@
   #import "FTSharedHeader.h"
   #import "FTAllowsTouchOutsideView.h"
   #import "KLSwitch.h"
+  #import "NSString+CompactTranslation.h"
 #endif
 
 #define DLog(format, ...) \
