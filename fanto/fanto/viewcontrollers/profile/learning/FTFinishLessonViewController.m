@@ -105,7 +105,7 @@
 
 #pragma mark - FTActionSheetDelegate methods
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index {
-  DLog(@"%d", index);
+  DLog(@"%ld", (long)index);
 }
 
 #pragma mark - Private methods
