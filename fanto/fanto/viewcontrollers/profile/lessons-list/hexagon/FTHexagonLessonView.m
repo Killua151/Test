@@ -48,6 +48,8 @@
 }
 
 - (IBAction)btnRetakePressed:(UIButton *)sender {
+  if ([_delegate respondsToSelector:@selector(lessonViewDidSelectLesson:)])
+    [_delegate lessonViewDidSelectLesson:_lessonData];
 }
 
 @end

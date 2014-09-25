@@ -63,7 +63,7 @@
   
   _txtEmail.text = [Utils normalizeString:currentUser.email];
   _txtUsername.text = [Utils normalizeString:currentUser.username];
-  _txtPassword.text = [Utils normalizeString:currentUser.auth_token];
+  _txtPassword.text = @"";
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {

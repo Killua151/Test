@@ -40,7 +40,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  
   [self customTitleWithText:@"Ngày và giờ" color:[self navigationTextColor]];
 }
 
