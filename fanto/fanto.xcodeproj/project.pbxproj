@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		4A1954F519CA8C190004834D /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1954F419CA8C190004834D /* MUser.m */; };
 		4A1954F819CA8FB90004834D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1954F719CA8FB90004834D /* Crashlytics.framework */; };
+		4A4122BB19D3C8B100894095 /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122A219D3C8B100894095 /* FTBeginPlacementTestViewController.m */; };
+		4A4122BC19D3C8B100894095 /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122A319D3C8B100894095 /* FTBeginPlacementTestViewController.xib */; };
+		4A4122BD19D3C8B100894095 /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122A519D3C8B100894095 /* FTCongratsViewController.m */; };
+		4A4122BE19D3C8B100894095 /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122A619D3C8B100894095 /* FTCongratsViewController.xib */; };
+		4A4122BF19D3C8B100894095 /* FTEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122A819D3C8B100894095 /* FTEndLearningViewController.m */; };
+		4A4122C019D3C8B100894095 /* FTFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122AA19D3C8B100894095 /* FTFailLessonViewController.m */; };
+		4A4122C119D3C8B100894095 /* FTFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122AB19D3C8B100894095 /* FTFailLessonViewController.xib */; };
+		4A4122C219D3C8B100894095 /* FTFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122AD19D3C8B100894095 /* FTFinishLessonViewController.m */; };
+		4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122AE19D3C8B100894095 /* FTFinishLessonViewController.xib */; };
+		4A4122C419D3C8B100894095 /* FTFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122B019D3C8B100894095 /* FTFinishSkillViewController.m */; };
+		4A4122C519D3C8B100894095 /* FTFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122B119D3C8B100894095 /* FTFinishSkillViewController.xib */; };
+		4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122B319D3C8B100894095 /* FTMoneyBonusViewController.m */; };
+		4A4122C719D3C8B100894095 /* FTMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122B419D3C8B100894095 /* FTMoneyBonusViewController.xib */; };
+		4A4122C819D3C8B100894095 /* FTSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122B619D3C8B100894095 /* FTSaveProgressViewController.m */; };
+		4A4122C919D3C8B100894095 /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122B719D3C8B100894095 /* FTSaveProgressViewController.xib */; };
+		4A4122CA19D3C8B100894095 /* FTSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122B919D3C8B100894095 /* FTSuggestGoalViewController.m */; };
+		4A4122CB19D3C8B100894095 /* FTSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122BA19D3C8B100894095 /* FTSuggestGoalViewController.xib */; };
+		4A4122D019D3CC0900894095 /* FTLessonLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */; };
+		4A4122D119D3CC0900894095 /* FTLessonLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */; };
 		4A4DE14319CAD50700933C76 /* FTSettingsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DE13E19CAD50700933C76 /* FTSettingsHeaderView.m */; };
 		4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DE13F19CAD50700933C76 /* FTSettingsHeaderView.xib */; };
 		4A4DE14519CAD50700933C76 /* FTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DE14119CAD50700933C76 /* FTSettingsViewController.m */; };
@@ -98,8 +117,6 @@
 		CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5454CF19C743F50052111C /* FTShopItemCell.xib */; };
 		CA5DAEE619D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEE419D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png */; };
 		CA5DAEE719D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEE519D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png */; };
-		CA5DAEEB19D05FCF003DAB26 /* FTSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAEE919D05FCF003DAB26 /* FTSuggestGoalViewController.m */; };
-		CA5DAEEC19D05FCF003DAB26 /* FTSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEEA19D05FCF003DAB26 /* FTSuggestGoalViewController.xib */; };
 		CA5DAEEF19D06074003DAB26 /* img-ant-set_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEED19D06074003DAB26 /* img-ant-set_goal.png */; };
 		CA5DAEF019D06074003DAB26 /* img-ant-set_goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEEE19D06074003DAB26 /* img-ant-set_goal@2x.png */; };
 		CA5DAEF319D06086003DAB26 /* btn-navbar-back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAEF119D06086003DAB26 /* btn-navbar-back_white.png */; };
@@ -112,18 +129,12 @@
 		CA5DAF0A19D0692F003DAB26 /* img-set_goal-radio-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0619D0692F003DAB26 /* img-set_goal-radio-normal@2x.png */; };
 		CA5DAF0B19D0692F003DAB26 /* img-set_goal-radio-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0719D0692F003DAB26 /* img-set_goal-radio-selected.png */; };
 		CA5DAF0C19D0692F003DAB26 /* img-set_goal-radio-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0819D0692F003DAB26 /* img-set_goal-radio-selected@2x.png */; };
-		CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */; };
-		CA5DAF1119D06D3A003DAB26 /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */; };
 		CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */; };
 		CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */; };
-		CA5DAF1919D07048003DAB26 /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */; };
-		CA5DAF1A19D07048003DAB26 /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */; };
 		CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */; };
 		CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */; };
 		CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF1F19D073A8003DAB26 /* img-ant-congrats.png */; };
 		CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */; };
-		CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */; };
-		CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */; };
 		CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */; };
 		CA5DAF3019D18F5A003DAB26 /* img-popup-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2E19D18F5A003DAB26 /* img-popup-bg.png */; };
 		CA5DAF3119D18F5A003DAB26 /* img-popup-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF2F19D18F5A003DAB26 /* img-popup-bg@2x.png */; };
@@ -178,18 +189,12 @@
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
 		CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */; };
 		CABADE5819CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */; };
-		CABADE5D19CD3FB6000187AF /* FTFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */; };
-		CABADE5E19CD3FB6000187AF /* FTFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */; };
 		CABADE6119CD405A000187AF /* img-ant-fail.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5F19CD405A000187AF /* img-ant-fail.png */; };
 		CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6019CD405A000187AF /* img-ant-fail@2x.png */; };
-		CABADE6619CD550B000187AF /* FTMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE6419CD550B000187AF /* FTMoneyBonusViewController.m */; };
-		CABADE6719CD550C000187AF /* FTMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6519CD550B000187AF /* FTMoneyBonusViewController.xib */; };
 		CABADE6A19CD56CF000187AF /* img-count_badge-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6819CD56CF000187AF /* img-count_badge-bg.png */; };
 		CABADE6B19CD56CF000187AF /* img-count_badge-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6919CD56CF000187AF /* img-count_badge-bg@2x.png */; };
 		CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6C19CD56F3000187AF /* img-money-icon_big.png */; };
 		CABADE6F19CD56F3000187AF /* img-money-icon_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE6D19CD56F3000187AF /* img-money-icon_big@2x.png */; };
-		CABADE7319CD5CA3000187AF /* FTFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE7119CD5CA3000187AF /* FTFinishSkillViewController.m */; };
-		CABADE7419CD5CA3000187AF /* FTFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7219CD5CA3000187AF /* FTFinishSkillViewController.xib */; };
 		CABADE7719CD6251000187AF /* img-hexagon_skill-bg_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7519CD6251000187AF /* img-hexagon_skill-bg_big.png */; };
 		CABADE7819CD6251000187AF /* img-hexagon_skill-bg_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7619CD6251000187AF /* img-hexagon_skill-bg_big@2x.png */; };
 		CABADE8119CD63C3000187AF /* img-hexagon_skill-strength-1_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7919CD63C3000187AF /* img-hexagon_skill-strength-1_big.png */; };
@@ -200,9 +205,6 @@
 		CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7E19CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png */; };
 		CABADE8719CD63C3000187AF /* img-hexagon_skill-strength-4_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE7F19CD63C3000187AF /* img-hexagon_skill-strength-4_big.png */; };
 		CABADE8819CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE8019CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png */; };
-		CABADE8C19CD6ACE000187AF /* FTFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE8A19CD6ACE000187AF /* FTFinishLessonViewController.m */; };
-		CABADE8D19CD6ACE000187AF /* FTFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE8B19CD6ACE000187AF /* FTFinishLessonViewController.xib */; };
-		CABADE9019CD6C19000187AF /* FTEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE8F19CD6C19000187AF /* FTEndLearningViewController.m */; };
 		CABADE9319CD6EA8000187AF /* img-ant-finish_lesson.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE9119CD6EA8000187AF /* img-ant-finish_lesson.png */; };
 		CABADE9419CD6EA8000187AF /* img-ant-finish_lesson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE9219CD6EA8000187AF /* img-ant-finish_lesson@2x.png */; };
 		CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */; };
@@ -247,6 +249,35 @@
 		4A1954F319CA8C190004834D /* MUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUser.h; sourceTree = "<group>"; };
 		4A1954F419CA8C190004834D /* MUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUser.m; sourceTree = "<group>"; };
 		4A1954F719CA8FB90004834D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		4A4122A119D3C8B100894095 /* FTBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBeginPlacementTestViewController.h; sourceTree = "<group>"; };
+		4A4122A219D3C8B100894095 /* FTBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBeginPlacementTestViewController.m; sourceTree = "<group>"; };
+		4A4122A319D3C8B100894095 /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
+		4A4122A419D3C8B100894095 /* FTCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCongratsViewController.h; sourceTree = "<group>"; };
+		4A4122A519D3C8B100894095 /* FTCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCongratsViewController.m; sourceTree = "<group>"; };
+		4A4122A619D3C8B100894095 /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
+		4A4122A719D3C8B100894095 /* FTEndLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTEndLearningViewController.h; sourceTree = "<group>"; };
+		4A4122A819D3C8B100894095 /* FTEndLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTEndLearningViewController.m; sourceTree = "<group>"; };
+		4A4122A919D3C8B100894095 /* FTFailLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFailLessonViewController.h; sourceTree = "<group>"; };
+		4A4122AA19D3C8B100894095 /* FTFailLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFailLessonViewController.m; sourceTree = "<group>"; };
+		4A4122AB19D3C8B100894095 /* FTFailLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFailLessonViewController.xib; sourceTree = "<group>"; };
+		4A4122AC19D3C8B100894095 /* FTFinishLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishLessonViewController.h; sourceTree = "<group>"; };
+		4A4122AD19D3C8B100894095 /* FTFinishLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishLessonViewController.m; sourceTree = "<group>"; };
+		4A4122AE19D3C8B100894095 /* FTFinishLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishLessonViewController.xib; sourceTree = "<group>"; };
+		4A4122AF19D3C8B100894095 /* FTFinishSkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishSkillViewController.h; sourceTree = "<group>"; };
+		4A4122B019D3C8B100894095 /* FTFinishSkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishSkillViewController.m; sourceTree = "<group>"; };
+		4A4122B119D3C8B100894095 /* FTFinishSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishSkillViewController.xib; sourceTree = "<group>"; };
+		4A4122B219D3C8B100894095 /* FTMoneyBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMoneyBonusViewController.h; sourceTree = "<group>"; };
+		4A4122B319D3C8B100894095 /* FTMoneyBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMoneyBonusViewController.m; sourceTree = "<group>"; };
+		4A4122B419D3C8B100894095 /* FTMoneyBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTMoneyBonusViewController.xib; sourceTree = "<group>"; };
+		4A4122B519D3C8B100894095 /* FTSaveProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSaveProgressViewController.h; sourceTree = "<group>"; };
+		4A4122B619D3C8B100894095 /* FTSaveProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSaveProgressViewController.m; sourceTree = "<group>"; };
+		4A4122B719D3C8B100894095 /* FTSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSaveProgressViewController.xib; sourceTree = "<group>"; };
+		4A4122B819D3C8B100894095 /* FTSuggestGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSuggestGoalViewController.h; sourceTree = "<group>"; };
+		4A4122B919D3C8B100894095 /* FTSuggestGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSuggestGoalViewController.m; sourceTree = "<group>"; };
+		4A4122BA19D3C8B100894095 /* FTSuggestGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSuggestGoalViewController.xib; sourceTree = "<group>"; };
+		4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLessonLearningViewController.h; sourceTree = "<group>"; };
+		4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLessonLearningViewController.m; sourceTree = "<group>"; };
+		4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLessonLearningViewController.xib; sourceTree = "<group>"; };
 		4A4DE13D19CAD50700933C76 /* FTSettingsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSettingsHeaderView.h; sourceTree = "<group>"; };
 		4A4DE13E19CAD50700933C76 /* FTSettingsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSettingsHeaderView.m; sourceTree = "<group>"; };
 		4A4DE13F19CAD50700933C76 /* FTSettingsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSettingsHeaderView.xib; sourceTree = "<group>"; };
@@ -362,9 +393,6 @@
 		CA5454CF19C743F50052111C /* FTShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemCell.xib; sourceTree = "<group>"; };
 		CA5DAEE419D052EC003DAB26 /* img-finish_lesson-set_goal-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-finish_lesson-set_goal-bg.png"; sourceTree = "<group>"; };
 		CA5DAEE519D052EC003DAB26 /* img-finish_lesson-set_goal-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-finish_lesson-set_goal-bg@2x.png"; sourceTree = "<group>"; };
-		CA5DAEE819D05FCF003DAB26 /* FTSuggestGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSuggestGoalViewController.h; sourceTree = "<group>"; };
-		CA5DAEE919D05FCF003DAB26 /* FTSuggestGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSuggestGoalViewController.m; sourceTree = "<group>"; };
-		CA5DAEEA19D05FCF003DAB26 /* FTSuggestGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSuggestGoalViewController.xib; sourceTree = "<group>"; };
 		CA5DAEED19D06074003DAB26 /* img-ant-set_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-set_goal.png"; sourceTree = "<group>"; };
 		CA5DAEEE19D06074003DAB26 /* img-ant-set_goal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-set_goal@2x.png"; sourceTree = "<group>"; };
 		CA5DAEF119D06086003DAB26 /* btn-navbar-back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-navbar-back_white.png"; path = "images/btn-navbar-back_white.png"; sourceTree = "<group>"; };
@@ -379,21 +407,12 @@
 		CA5DAF0619D0692F003DAB26 /* img-set_goal-radio-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-normal@2x.png"; sourceTree = "<group>"; };
 		CA5DAF0719D0692F003DAB26 /* img-set_goal-radio-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-selected.png"; sourceTree = "<group>"; };
 		CA5DAF0819D0692F003DAB26 /* img-set_goal-radio-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-set_goal-radio-selected@2x.png"; sourceTree = "<group>"; };
-		CA5DAF0D19D06D3A003DAB26 /* FTSaveProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSaveProgressViewController.h; sourceTree = "<group>"; };
-		CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSaveProgressViewController.m; sourceTree = "<group>"; };
-		CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSaveProgressViewController.xib; sourceTree = "<group>"; };
 		CA5DAF1219D06D9E003DAB26 /* img-ant-save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save.png"; sourceTree = "<group>"; };
 		CA5DAF1319D06D9E003DAB26 /* img-ant-save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-save@2x.png"; sourceTree = "<group>"; };
-		CA5DAF1619D07048003DAB26 /* FTBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBeginPlacementTestViewController.h; sourceTree = "<group>"; };
-		CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBeginPlacementTestViewController.m; sourceTree = "<group>"; };
-		CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
 		CA5DAF1B19D07100003DAB26 /* img-ant-placement_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test.png"; sourceTree = "<group>"; };
 		CA5DAF1C19D07100003DAB26 /* img-ant-placement_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-placement_test@2x.png"; sourceTree = "<group>"; };
 		CA5DAF1F19D073A8003DAB26 /* img-ant-congrats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-congrats.png"; sourceTree = "<group>"; };
 		CA5DAF2019D073A8003DAB26 /* img-ant-congrats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-congrats@2x.png"; sourceTree = "<group>"; };
-		CA5DAF2319D073C0003DAB26 /* FTCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCongratsViewController.h; sourceTree = "<group>"; };
-		CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCongratsViewController.m; sourceTree = "<group>"; };
-		CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
 		CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAllowsTouchOutsideView.h; sourceTree = "<group>"; };
 		CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAllowsTouchOutsideView.m; sourceTree = "<group>"; };
 		CA5DAF2E19D18F5A003DAB26 /* img-popup-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-popup-bg.png"; sourceTree = "<group>"; };
@@ -464,21 +483,12 @@
 		CABADE5419CD35CE000187AF /* FTShopItemsGroupHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopItemsGroupHeaderCell.h; sourceTree = "<group>"; };
 		CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopItemsGroupHeaderCell.m; sourceTree = "<group>"; };
 		CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemsGroupHeaderCell.xib; sourceTree = "<group>"; };
-		CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFailLessonViewController.h; sourceTree = "<group>"; };
-		CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFailLessonViewController.m; sourceTree = "<group>"; };
-		CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFailLessonViewController.xib; sourceTree = "<group>"; };
 		CABADE5F19CD405A000187AF /* img-ant-fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-fail.png"; sourceTree = "<group>"; };
 		CABADE6019CD405A000187AF /* img-ant-fail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-fail@2x.png"; sourceTree = "<group>"; };
-		CABADE6319CD550B000187AF /* FTMoneyBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMoneyBonusViewController.h; sourceTree = "<group>"; };
-		CABADE6419CD550B000187AF /* FTMoneyBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMoneyBonusViewController.m; sourceTree = "<group>"; };
-		CABADE6519CD550B000187AF /* FTMoneyBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTMoneyBonusViewController.xib; sourceTree = "<group>"; };
 		CABADE6819CD56CF000187AF /* img-count_badge-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-count_badge-bg.png"; sourceTree = "<group>"; };
 		CABADE6919CD56CF000187AF /* img-count_badge-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-count_badge-bg@2x.png"; sourceTree = "<group>"; };
 		CABADE6C19CD56F3000187AF /* img-money-icon_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon_big.png"; sourceTree = "<group>"; };
 		CABADE6D19CD56F3000187AF /* img-money-icon_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon_big@2x.png"; sourceTree = "<group>"; };
-		CABADE7019CD5CA3000187AF /* FTFinishSkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishSkillViewController.h; sourceTree = "<group>"; };
-		CABADE7119CD5CA3000187AF /* FTFinishSkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishSkillViewController.m; sourceTree = "<group>"; };
-		CABADE7219CD5CA3000187AF /* FTFinishSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishSkillViewController.xib; sourceTree = "<group>"; };
 		CABADE7519CD6251000187AF /* img-hexagon_skill-bg_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg_big.png"; sourceTree = "<group>"; };
 		CABADE7619CD6251000187AF /* img-hexagon_skill-bg_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-bg_big@2x.png"; sourceTree = "<group>"; };
 		CABADE7919CD63C3000187AF /* img-hexagon_skill-strength-1_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-strength-1_big.png"; sourceTree = "<group>"; };
@@ -489,11 +499,6 @@
 		CABADE7E19CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-strength-3_big@2x.png"; sourceTree = "<group>"; };
 		CABADE7F19CD63C3000187AF /* img-hexagon_skill-strength-4_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-strength-4_big.png"; sourceTree = "<group>"; };
 		CABADE8019CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon_skill-strength-4_big@2x.png"; sourceTree = "<group>"; };
-		CABADE8919CD6ACE000187AF /* FTFinishLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishLessonViewController.h; sourceTree = "<group>"; };
-		CABADE8A19CD6ACE000187AF /* FTFinishLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishLessonViewController.m; sourceTree = "<group>"; };
-		CABADE8B19CD6ACE000187AF /* FTFinishLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishLessonViewController.xib; sourceTree = "<group>"; };
-		CABADE8E19CD6C19000187AF /* FTEndLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTEndLearningViewController.h; sourceTree = "<group>"; };
-		CABADE8F19CD6C19000187AF /* FTEndLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTEndLearningViewController.m; sourceTree = "<group>"; };
 		CABADE9119CD6EA8000187AF /* img-ant-finish_lesson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-finish_lesson.png"; sourceTree = "<group>"; };
 		CABADE9219CD6EA8000187AF /* img-ant-finish_lesson@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-finish_lesson@2x.png"; sourceTree = "<group>"; };
 		CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageHelpers.h"; sourceTree = "<group>"; };
@@ -560,6 +565,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4122A019D3C8B100894095 /* End Learning */ = {
+			isa = PBXGroup;
+			children = (
+				4A4122A119D3C8B100894095 /* FTBeginPlacementTestViewController.h */,
+				4A4122A219D3C8B100894095 /* FTBeginPlacementTestViewController.m */,
+				4A4122A319D3C8B100894095 /* FTBeginPlacementTestViewController.xib */,
+				4A4122A419D3C8B100894095 /* FTCongratsViewController.h */,
+				4A4122A519D3C8B100894095 /* FTCongratsViewController.m */,
+				4A4122A619D3C8B100894095 /* FTCongratsViewController.xib */,
+				4A4122A719D3C8B100894095 /* FTEndLearningViewController.h */,
+				4A4122A819D3C8B100894095 /* FTEndLearningViewController.m */,
+				4A4122A919D3C8B100894095 /* FTFailLessonViewController.h */,
+				4A4122AA19D3C8B100894095 /* FTFailLessonViewController.m */,
+				4A4122AB19D3C8B100894095 /* FTFailLessonViewController.xib */,
+				4A4122AC19D3C8B100894095 /* FTFinishLessonViewController.h */,
+				4A4122AD19D3C8B100894095 /* FTFinishLessonViewController.m */,
+				4A4122AE19D3C8B100894095 /* FTFinishLessonViewController.xib */,
+				4A4122AF19D3C8B100894095 /* FTFinishSkillViewController.h */,
+				4A4122B019D3C8B100894095 /* FTFinishSkillViewController.m */,
+				4A4122B119D3C8B100894095 /* FTFinishSkillViewController.xib */,
+				4A4122B219D3C8B100894095 /* FTMoneyBonusViewController.h */,
+				4A4122B319D3C8B100894095 /* FTMoneyBonusViewController.m */,
+				4A4122B419D3C8B100894095 /* FTMoneyBonusViewController.xib */,
+				4A4122B519D3C8B100894095 /* FTSaveProgressViewController.h */,
+				4A4122B619D3C8B100894095 /* FTSaveProgressViewController.m */,
+				4A4122B719D3C8B100894095 /* FTSaveProgressViewController.xib */,
+				4A4122B819D3C8B100894095 /* FTSuggestGoalViewController.h */,
+				4A4122B919D3C8B100894095 /* FTSuggestGoalViewController.m */,
+				4A4122BA19D3C8B100894095 /* FTSuggestGoalViewController.xib */,
+			);
+			name = "End Learning";
+			path = "end-learning";
+			sourceTree = "<group>";
+		};
+		4A4122CC19D3C8CD00894095 /* Lessons Learning */ = {
+			isa = PBXGroup;
+			children = (
+				4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */,
+				4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */,
+				4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */,
+			);
+			name = "Lessons Learning";
+			path = "lessons-learning";
+			sourceTree = "<group>";
+		};
 		4A4DE13C19CAD50700933C76 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,44 +1075,11 @@
 			path = viewcontrollers;
 			sourceTree = "<group>";
 		};
-		CABADE5919CD3F8A000187AF /* Learning */ = {
-			isa = PBXGroup;
-			children = (
-				CA5DAF1619D07048003DAB26 /* FTBeginPlacementTestViewController.h */,
-				CA5DAF1719D07048003DAB26 /* FTBeginPlacementTestViewController.m */,
-				CA5DAF1819D07048003DAB26 /* FTBeginPlacementTestViewController.xib */,
-				CA5DAF2319D073C0003DAB26 /* FTCongratsViewController.h */,
-				CA5DAF2419D073C0003DAB26 /* FTCongratsViewController.m */,
-				CA5DAF2519D073C0003DAB26 /* FTCongratsViewController.xib */,
-				CABADE8E19CD6C19000187AF /* FTEndLearningViewController.h */,
-				CABADE8F19CD6C19000187AF /* FTEndLearningViewController.m */,
-				CABADE5A19CD3FB6000187AF /* FTFailLessonViewController.h */,
-				CABADE5B19CD3FB6000187AF /* FTFailLessonViewController.m */,
-				CABADE5C19CD3FB6000187AF /* FTFailLessonViewController.xib */,
-				CABADE8919CD6ACE000187AF /* FTFinishLessonViewController.h */,
-				CABADE8A19CD6ACE000187AF /* FTFinishLessonViewController.m */,
-				CABADE8B19CD6ACE000187AF /* FTFinishLessonViewController.xib */,
-				CABADE7019CD5CA3000187AF /* FTFinishSkillViewController.h */,
-				CABADE7119CD5CA3000187AF /* FTFinishSkillViewController.m */,
-				CABADE7219CD5CA3000187AF /* FTFinishSkillViewController.xib */,
-				CABADE6319CD550B000187AF /* FTMoneyBonusViewController.h */,
-				CABADE6419CD550B000187AF /* FTMoneyBonusViewController.m */,
-				CABADE6519CD550B000187AF /* FTMoneyBonusViewController.xib */,
-				CA5DAF0D19D06D3A003DAB26 /* FTSaveProgressViewController.h */,
-				CA5DAF0E19D06D3A003DAB26 /* FTSaveProgressViewController.m */,
-				CA5DAF0F19D06D3A003DAB26 /* FTSaveProgressViewController.xib */,
-				CA5DAEE819D05FCF003DAB26 /* FTSuggestGoalViewController.h */,
-				CA5DAEE919D05FCF003DAB26 /* FTSuggestGoalViewController.m */,
-				CA5DAEEA19D05FCF003DAB26 /* FTSuggestGoalViewController.xib */,
-			);
-			name = Learning;
-			path = learning;
-			sourceTree = "<group>";
-		};
 		CAEBA24719C329BF0024CA71 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CABADE5919CD3F8A000187AF /* Learning */,
+				4A4122A019D3C8B100894095 /* End Learning */,
+				4A4122CC19D3C8CD00894095 /* Lessons Learning */,
 				4A85F38F19C68D4600642C5F /* Lessons List */,
 				CA5DAEFA19D06588003DAB26 /* Set Goal */,
 				4A4DE13C19CAD50700933C76 /* Settings */,
@@ -1264,8 +1281,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4122D119D3CC0900894095 /* FTLessonLearningViewController.xib in Resources */,
 				4A85F3ED19C6E2BF00642C5F /* img-hexagon_skill-strength-3@2x.png in Resources */,
 				4A85F3E919C6E2BF00642C5F /* img-hexagon_skill-strength-1@2x.png in Resources */,
+				4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */,
 				4A85F3FE19C6E32100642C5F /* img-shield_skill-strength-4.png in Resources */,
 				4A85F3EC19C6E2BF00642C5F /* img-hexagon_skill-strength-3.png in Resources */,
 				CA5DAEF019D06074003DAB26 /* img-ant-set_goal@2x.png in Resources */,
@@ -1273,7 +1292,6 @@
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
 				CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */,
-				CABADE5E19CD3FB6000187AF /* FTFailLessonViewController.xib in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				CABADE9319CD6EA8000187AF /* img-ant-finish_lesson.png in Resources */,
 				CA5DAEF419D06086003DAB26 /* btn-navbar-back_white@2x.png in Resources */,
@@ -1298,6 +1316,7 @@
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CA6C75EF19CB2E3D00D175DF /* img-ant-begin@2x.png in Resources */,
 				4A85F3FB19C6E32100642C5F /* img-shield_skill-strength-2@x.png in Resources */,
+				4A4122C919D3C8B100894095 /* FTSaveProgressViewController.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
@@ -1316,12 +1335,14 @@
 				CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */,
 				CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
+				4A4122BE19D3C8B100894095 /* FTCongratsViewController.xib in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
 				CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */,
+				4A4122C119D3C8B100894095 /* FTFailLessonViewController.xib in Resources */,
 				CABADE6F19CD56F3000187AF /* img-money-icon_big@2x.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
 				4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */,
@@ -1348,10 +1369,7 @@
 				4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */,
 				CA5DAF4A19D1A730003DAB26 /* img-share-facebook_selected@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
-				CABADE7419CD5CA3000187AF /* FTFinishSkillViewController.xib in Resources */,
-				CA5DAF1A19D07048003DAB26 /* FTBeginPlacementTestViewController.xib in Resources */,
 				CA5DAEEF19D06074003DAB26 /* img-ant-set_goal.png in Resources */,
-				CABADE6719CD550C000187AF /* FTMoneyBonusViewController.xib in Resources */,
 				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
 				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
 				CAEF54BE19C9E4C900729934 /* img-settings-email_icon-disabled.png in Resources */,
@@ -1362,9 +1380,9 @@
 				CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */,
 				CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
+				4A4122C519D3C8B100894095 /* FTFinishSkillViewController.xib in Resources */,
 				CA5DAF0919D0692F003DAB26 /* img-set_goal-radio-normal.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
-				CA5DAF2719D073C0003DAB26 /* FTCongratsViewController.xib in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				CABADE7819CD6251000187AF /* img-hexagon_skill-bg_big@2x.png in Resources */,
 				CA6C761A19CD1D6200D175DF /* img-money-icon.png in Resources */,
@@ -1379,15 +1397,14 @@
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				CA5DAF4919D1A730003DAB26 /* img-share-facebook_selected.png in Resources */,
 				CA5DAF4F19D1A730003DAB26 /* img-share-google.png in Resources */,
+				4A4122BC19D3C8B100894095 /* FTBeginPlacementTestViewController.xib in Resources */,
 				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
 				4A4DE15319CADA0000933C76 /* btn-profile-edit_avatar@2x.png in Resources */,
 				CA5454CC19C741A20052111C /* FTShopViewController.xib in Resources */,
 				CA5454BE19C71EC10052111C /* FTShieldLessonsListViewController.xib in Resources */,
-				CA5DAEEC19D05FCF003DAB26 /* FTSuggestGoalViewController.xib in Resources */,
 				CABADE9419CD6EA8000187AF /* img-ant-finish_lesson@2x.png in Resources */,
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
-				CABADE8D19CD6ACE000187AF /* FTFinishLessonViewController.xib in Resources */,
 				CA5DAF0B19D0692F003DAB26 /* img-set_goal-radio-selected.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
 				CABADE8319CD63C3000187AF /* img-hexagon_skill-strength-2_big.png in Resources */,
@@ -1395,13 +1412,13 @@
 				CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */,
 				CA5DAEFF19D06588003DAB26 /* FTSetGoalViewController.xib in Resources */,
 				CA5DAF0A19D0692F003DAB26 /* img-set_goal-radio-normal@2x.png in Resources */,
-				CA5DAF1119D06D3A003DAB26 /* FTSaveProgressViewController.xib in Resources */,
 				CABADE8819CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png in Resources */,
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */,
 				CA5DAF4E19D1A730003DAB26 /* img-share-google_selected@2x.png in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
 				CAEF54C819CB17F600729934 /* Default.png in Resources */,
+				4A4122CB19D3C8B100894095 /* FTSuggestGoalViewController.xib in Resources */,
 				CA5DAF0C19D0692F003DAB26 /* img-set_goal-radio-selected@2x.png in Resources */,
 				4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
@@ -1420,6 +1437,7 @@
 				CAEF54C119C9E4C900729934 /* img-settings-email_icon-enabled@2x.png in Resources */,
 				CA5DAF3C19D1A5A7003DAB26 /* FTShareViewController.xib in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
+				4A4122C719D3C8B100894095 /* FTMoneyBonusViewController.xib in Resources */,
 				4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */,
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
 				4A85F3F919C6E32100642C5F /* img-shield_skill-strength-1@2x.png in Resources */,
@@ -1496,8 +1514,6 @@
 				CA7499CF19C0951A00C221A9 /* Utils.m in Sources */,
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				CA5DAF3B19D1A5A7003DAB26 /* FTShareViewController.m in Sources */,
-				CABADE8C19CD6ACE000187AF /* FTFinishLessonViewController.m in Sources */,
-				CABADE9019CD6C19000187AF /* FTEndLearningViewController.m in Sources */,
 				4A1954F519CA8C190004834D /* MUser.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
@@ -1507,24 +1523,24 @@
 				CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */,
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
 				4A4DE14B19CAD55100933C76 /* FTProfileViewController.m in Sources */,
-				CA5DAF1919D07048003DAB26 /* FTBeginPlacementTestViewController.m in Sources */,
+				4A4122C819D3C8B100894095 /* FTSaveProgressViewController.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
-				CA5DAF1019D06D3A003DAB26 /* FTSaveProgressViewController.m in Sources */,
 				CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */,
 				CA5DAF0319D067B4003DAB26 /* FTSetGoalCell.m in Sources */,
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				4A56E40F19D2B4BB003FA91C /* RegExCategories.m in Sources */,
+				4A4122C019D3C8B100894095 /* FTFailLessonViewController.m in Sources */,
 				4A85F3D519C6DFA600642C5F /* FTShieldSkillCell.m in Sources */,
 				CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */,
 				4A85F3A019C6976400642C5F /* MLesson.m in Sources */,
+				4A4122C219D3C8B100894095 /* FTFinishLessonViewController.m in Sources */,
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
 				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
-				CABADE7319CD5CA3000187AF /* FTFinishSkillViewController.m in Sources */,
-				CABADE5D19CD3FB6000187AF /* FTFailLessonViewController.m in Sources */,
 				4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */,
 				CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */,
+				4A4122BF19D3C8B100894095 /* FTEndLearningViewController.m in Sources */,
 				4A74148419C2FDBE002DB2C7 /* FTLoginViewController.m in Sources */,
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
@@ -1533,21 +1549,24 @@
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
-				CABADE6619CD550B000187AF /* FTMoneyBonusViewController.m in Sources */,
 				CA5DAEFE19D06588003DAB26 /* FTSetGoalViewController.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
 				CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */,
 				CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */,
-				CA5DAEEB19D05FCF003DAB26 /* FTSuggestGoalViewController.m in Sources */,
+				4A4122D019D3CC0900894095 /* FTLessonLearningViewController.m in Sources */,
 				CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */,
 				CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */,
+				4A4122CA19D3C8B100894095 /* FTSuggestGoalViewController.m in Sources */,
+				4A4122BB19D3C8B100894095 /* FTBeginPlacementTestViewController.m in Sources */,
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
+				4A4122BD19D3C8B100894095 /* FTCongratsViewController.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
+				4A4122C419D3C8B100894095 /* FTFinishSkillViewController.m in Sources */,
+				4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */,
 				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
-				CA5DAF2619D073C0003DAB26 /* FTCongratsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
