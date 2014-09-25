@@ -27,7 +27,7 @@
   
   _totalLessonsCount = 20;
   _currentLessonIndex = 0;
-  _totalHeartsCount = _currentHeartsCount = 4;
+  _totalHeartsCount = _currentHeartsCount = 3;
   
   [self setupViews];
   [self reloadContents];
@@ -42,6 +42,23 @@
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
+  UIAlertView *alertView =
+  [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning!", nil)
+                             message:NSLocalizedString(@"Your progress will be lost. Are you sure to quit?", nil)
+                            delegate:self
+                   cancelButtonTitle:NSLocalizedString(@"No", nil)
+                   otherButtonTitles:NSLocalizedString(@"Yes, I am", nil), nil];
+  
+  [alertView show];
+}
+
+- (IBAction)btnHeartPotionPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnCheckPressed:(UIButton *)sender {
+  if (_currentLessonIndex >= _totalLessonsCount-1)
+    return;
+  
   _currentLessonIndex++;
   
   if (_currentLessonIndex % 5 == 0)
@@ -50,7 +67,12 @@
   [self updateHeaderViews];
 }
 
-- (IBAction)btnHeartPotionPressed:(UIButton *)sender {
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 0)
+    return;
+  
+  [self dismissViewController];
 }
 
 #pragma mark - Private methods
@@ -78,6 +100,10 @@
     
     button.hidden = index >= _totalLessonsCount;
   }];
+  
+  _btnCheck.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnCheck.layer.cornerRadius = 4;
+  [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
 }
 
 - (void)updateHeaderViews {

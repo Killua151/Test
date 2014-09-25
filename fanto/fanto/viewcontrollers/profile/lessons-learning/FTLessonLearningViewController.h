@@ -8,16 +8,18 @@
 
 #import "BaseViewController.h"
 
-@interface FTLessonLearningViewController : BaseViewController {
+@interface FTLessonLearningViewController : BaseViewController <UIAlertViewDelegate> {
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
   IBOutlet UIButton *_btnHeartPotion;
   IBOutlet UIImageView *_imgAntProgressIndicator;
   IBOutletCollection(UIButton) NSArray *_btnProgressSegments;
+  IBOutlet UIButton *_btnCheck;
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender;
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender;
+- (IBAction)btnCheckPressed:(UIButton *)sender;
 
 @end
