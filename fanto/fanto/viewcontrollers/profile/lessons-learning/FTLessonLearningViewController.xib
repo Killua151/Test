@@ -122,7 +122,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M7L-Bt-rT3" userLabel="Progress segment">
-                            <rect key="frame" x="15" y="69" width="9" height="3"/>
+                            <rect key="frame" x="15" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -130,7 +130,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TEt-cK-k7k" userLabel="Progress segment">
-                            <rect key="frame" x="28" y="69" width="9" height="3"/>
+                            <rect key="frame" x="28" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -138,7 +138,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fwC-Ao-LNu" userLabel="Progress segment">
-                            <rect key="frame" x="41" y="69" width="9" height="3"/>
+                            <rect key="frame" x="41" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -146,7 +146,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ENh-fG-e5Q" userLabel="Progress segment">
-                            <rect key="frame" x="54" y="69" width="9" height="3"/>
+                            <rect key="frame" x="54" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -154,7 +154,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JK0-TF-mx4" userLabel="Progress segment">
-                            <rect key="frame" x="67" y="69" width="9" height="3"/>
+                            <rect key="frame" x="67" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -162,7 +162,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SeR-yS-jKf" userLabel="Progress segment">
-                            <rect key="frame" x="80" y="69" width="9" height="3"/>
+                            <rect key="frame" x="80" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -170,7 +170,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ivw-UA-6fL" userLabel="Progress segment">
-                            <rect key="frame" x="93" y="69" width="9" height="3"/>
+                            <rect key="frame" x="93" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -178,7 +178,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H3x-Jt-ud6" userLabel="Progress segment">
-                            <rect key="frame" x="106" y="69" width="9" height="3"/>
+                            <rect key="frame" x="106" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -186,7 +186,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FKg-lO-9LB" userLabel="Progress segment">
-                            <rect key="frame" x="119" y="69" width="9" height="3"/>
+                            <rect key="frame" x="119" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -194,7 +194,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QuA-Vf-c0h" userLabel="Progress segment">
-                            <rect key="frame" x="132" y="69" width="9" height="3"/>
+                            <rect key="frame" x="132" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -202,7 +202,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MXC-BA-srk" userLabel="Progress segment">
-                            <rect key="frame" x="145" y="69" width="9" height="3"/>
+                            <rect key="frame" x="145" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -210,7 +210,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cLb-5s-QYh" userLabel="Progress segment">
-                            <rect key="frame" x="158" y="69" width="9" height="3"/>
+                            <rect key="frame" x="158" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -218,7 +218,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5CL-IV-i02" userLabel="Progress segment">
-                            <rect key="frame" x="171" y="69" width="9" height="3"/>
+                            <rect key="frame" x="171" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -226,7 +226,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-rF-iws" userLabel="Progress segment">
-                            <rect key="frame" x="184" y="69" width="9" height="3"/>
+                            <rect key="frame" x="184" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -234,7 +234,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aFj-T5-sdh" userLabel="Progress segment">
-                            <rect key="frame" x="197" y="69" width="9" height="3"/>
+                            <rect key="frame" x="197" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -242,7 +242,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j1r-oY-c3b" userLabel="Progress segment">
-                            <rect key="frame" x="210" y="69" width="9" height="3"/>
+                            <rect key="frame" x="210" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -250,7 +250,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g67-HD-U0Q" userLabel="Progress segment">
-                            <rect key="frame" x="223" y="69" width="9" height="3"/>
+                            <rect key="frame" x="223" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -258,7 +258,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cdw-zw-Mus" userLabel="Progress segment">
-                            <rect key="frame" x="236" y="69" width="9" height="3"/>
+                            <rect key="frame" x="236" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -266,7 +266,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RAi-il-dAJ" userLabel="Progress segment">
-                            <rect key="frame" x="249" y="69" width="9" height="3"/>
+                            <rect key="frame" x="249" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -274,7 +274,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p41-yD-qit" userLabel="Progress segment">
-                            <rect key="frame" x="262" y="69" width="9" height="3"/>
+                            <rect key="frame" x="262" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -282,7 +282,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jKk-a0-qLn" userLabel="Progress segment">
-                            <rect key="frame" x="275" y="69" width="9" height="3"/>
+                            <rect key="frame" x="275" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -290,7 +290,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iSH-2B-NLt" userLabel="Progress segment">
-                            <rect key="frame" x="288" y="69" width="9" height="3"/>
+                            <rect key="frame" x="288" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -298,7 +298,7 @@
                             </state>
                         </button>
                         <button opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XI1-rx-AbU" userLabel="Progress segment">
-                            <rect key="frame" x="301" y="69" width="9" height="3"/>
+                            <rect key="frame" x="301" y="69" width="10" height="3"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -311,21 +311,28 @@
                 <view contentMode="scaleToFill" id="ydR-Mh-Yaw" userLabel="Content view">
                     <rect key="frame" x="0.0" y="72" width="320" height="430"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cXU-uU-Qfx">
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="Oam-mZ-ICT">
                     <rect key="frame" x="15" y="502" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Kiểm tra">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnCheckPressed:" destination="-1" eventType="touchUpInside" id="DIt-TL-ecS"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cXU-uU-Qfx">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Kiểm tra">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnCheckPressed:" destination="-1" eventType="touchUpInside" id="DIt-TL-ecS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

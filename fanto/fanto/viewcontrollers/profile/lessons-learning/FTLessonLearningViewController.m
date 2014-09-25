@@ -53,6 +53,7 @@
 }
 
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender {
+  _btnCheck.enabled = !_btnCheck.enabled;
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
@@ -93,17 +94,27 @@
   frame.origin.x = _vHearts.frame.origin.x - frame.size.width - 13;
   _btnHeartPotion.frame = frame;
   
+  CGFloat segmentWidth = [[_btnProgressSegments firstObject] frame].size.width;
+  CGFloat segmentsGap = (self.view.frame.size.width - 30 - _totalLessonsCount * segmentWidth)/(_totalLessonsCount-1);
+  
+  __block CGRect buttonFrame;
+  
   [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
     [button setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(158, 158, 158)] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(255, 187, 51)] forState:UIControlStateSelected];
     button.selected = NO;
     
     button.hidden = index >= _totalLessonsCount;
+    buttonFrame = button.frame;
+    buttonFrame.origin.x = 15 + index * (buttonFrame.size.width + segmentsGap);
+    button.frame = buttonFrame;
   }];
   
   _btnCheck.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnCheck.layer.cornerRadius = 4;
+  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(153, 204, 0)] forState:UIControlStateNormal];
+  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
   [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
+  _btnCheck.superview.layer.cornerRadius = 4;
 }
 
 - (void)updateHeaderViews {
