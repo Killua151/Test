@@ -28,6 +28,9 @@
   IBOutlet UIView *_vLeaderboardsHeader;
   IBOutlet UILabel *_lblLeaderboardsHeader;
   IBOutlet UIButton *_btnAddFriend;
+  
+  IBOutlet UITableViewCell *_celEmptyLeaderboards;
+  IBOutlet UILabel *_lblEmptyLeaderboards;
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender;

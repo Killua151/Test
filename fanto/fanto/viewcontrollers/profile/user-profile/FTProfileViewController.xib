@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -13,10 +13,12 @@
                 <outlet property="_btnStreak" destination="JZt-KD-hZ1" id="Zbf-tN-ttO"/>
                 <outlet property="_btnSwitchCourse" destination="Fv9-Kt-nBy" id="m7z-4T-sco"/>
                 <outlet property="_celAvatarNameLevel" destination="Q6U-c5-FVt" id="FAZ-6k-NLW"/>
+                <outlet property="_celEmptyLeaderboards" destination="JPr-OO-iCN" id="beB-oW-x24"/>
                 <outlet property="_celGraphChart" destination="zVO-UA-6PU" id="bgy-w6-Lqa"/>
                 <outlet property="_celStreakMoney" destination="bcW-KD-7Pi" id="QYl-kC-x11"/>
                 <outlet property="_imgAvatar" destination="uTi-vK-IbM" id="Dkk-67-HIT"/>
                 <outlet property="_lblCourseName" destination="zZM-VC-C13" id="Wce-g8-ObT"/>
+                <outlet property="_lblEmptyLeaderboards" destination="ehL-Sj-B2e" id="ds0-oQ-k2b"/>
                 <outlet property="_lblLeaderboardsHeader" destination="18b-QM-M78" id="kpc-6x-oQt"/>
                 <outlet property="_lblLevel" destination="Y1r-Hp-7lp" id="JH1-Z1-ucC"/>
                 <outlet property="_lblUsername" destination="nyq-Ti-dnq" id="ITE-Wr-LPP"/>
@@ -141,14 +143,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiếng Anh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zZM-VC-C13">
-                        <rect key="frame" x="44" y="18" width="82" height="22"/>
+                        <rect key="frame" x="44" y="18" width="110" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fv9-Kt-nBy">
-                        <rect key="frame" x="202" y="12" width="103" height="34"/>
+                        <rect key="frame" x="155" y="12" width="130" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -162,7 +164,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lCM-al-CvJ">
-                        <rect key="frame" x="202" y="248" width="103" height="32"/>
+                        <rect key="frame" x="155" y="248" width="150" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -211,6 +213,25 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
         </view>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="JPr-OO-iCN" userLabel="Empty leaderboards">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JPr-OO-iCN" id="5F7-gW-vai">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có dữ liệu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehL-Sj-B2e">
+                        <rect key="frame" x="15" y="55" width="290" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </tableViewCell>
     </objects>
     <resources>
         <image name="btn-profile-edit_avatar.png" width="32" height="32"/>

@@ -8,6 +8,7 @@
 
 #import "FTSignUpViewController.h"
 #import "FTSkillsListViewController.h"
+#import "MUser.h"
 
 @interface FTSignUpViewController () {
   UIView *_currentFirstResponder;
@@ -40,7 +41,6 @@
   _txtConfirmPassword.text = @"";
   
 #if kTestSignUp
-  return;
   _txtFullName.text = @"Test Account";
   _txtEmail.text = @"test@accou.nt";
   _txtUsername.text = @"test_account";
@@ -77,6 +77,8 @@
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
      
+     [Utils updateSavedUserWithAttributes:userData];
+     [MUser loadCurrentUserFromUserDef];
      [self transitToViewController:[FTSkillsListViewController navigationController]];
    }];
 }

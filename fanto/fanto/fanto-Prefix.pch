@@ -100,7 +100,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamError                             @"error"
 #define kParamFbId                              @"fb_Id"
 #define kParamFbAccessToken                     @"fb_access_token"
-#define kParamFullName                          @"full_name"
+#define kParamName                              @"name"
 #define kParamGmail                             @"gmail"
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"

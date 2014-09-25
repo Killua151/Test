@@ -65,7 +65,7 @@
                   password:(NSString *)password
                 completion:(void (^)(NSDictionary *, NSError *))handler {
   NSDictionary *params = @{
-                           kParamFullName : [Utils normalizeString:fullName],
+                           kParamName : [Utils normalizeString:fullName],
                            kParamEmail : [Utils normalizeString:email],
                            kParamUsername : [Utils normalizeString:username],
                            kParamPassword : [Utils normalizeString:password]
@@ -78,17 +78,22 @@
      handler([responseObject objectFromJSONData], nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", error);
      handler(nil, error);
    }];
 }
 
 #pragma mark - Private methods
 - (void)logInWithParam:(NSDictionary *)params completion:(void (^)(NSDictionary *, NSError *))handler {
+  DLog(@"%@", params);
+  
   [self
    POST:@"users/login"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
+     
+     DLog(@"%@", userData);
      
      if (userData != nil && [userData isKindOfClass:[NSDictionary class]])
        handler(userData, nil);
@@ -96,6 +101,8 @@
        handler(nil, [NSError errorWithDomain:@"Unknown error" code:-1 userInfo:nil]);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", error);
+     DLog(@"%@", [error.userInfo[kServerResponseDataKey] objectFromJSONData]);
      handler(nil, error);
    }];
 }

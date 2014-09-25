@@ -14,7 +14,7 @@
 @interface FTProfileViewController () {
   FTSettingsViewController *_settingsVC;
   FTLineChart *_lineChart;
-  NSArray *_leaderboardsData;
+  NSMutableArray *_leaderboardsData;
 }
 
 - (void)setupViews;
@@ -48,6 +48,8 @@
                           action:@selector(dismissViewController)
                         distance:-10];
   
+  _leaderboardsData = [NSMutableArray new];
+  
   [self setupViews];
   [self reloadContents];
 }
@@ -63,7 +65,16 @@
 }
 
 - (void)reloadContents {
-  _leaderboardsData = @[@"Test", @"abc", @"z_lorem_ipsum", @"abc__def__gasd"];
+  [_leaderboardsData removeAllObjects];
+  [_leaderboardsData addObjectsFromArray:@[@"Test", @"abc", @"xyz"]];
+  
+  MUser *currentUser = [MUser currentUser];
+  
+  _lblUsername.text = currentUser.username;
+  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)currentUser.level];
+  
+  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memos", (long)currentUser.virtual_money]
+             forState:UIControlStateNormal];
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender {
@@ -87,6 +98,9 @@
   if (section == 1)
     return 1;
   
+  if ([_leaderboardsData count] == 0)
+    return 1;
+  
   return [_leaderboardsData count];
 }
 
@@ -103,6 +117,9 @@
   
   if (indexPath.section == 1)
     return _celGraphChart;
+  
+  if ([_leaderboardsData count] == 0)
+    return _celEmptyLeaderboards;
   
   FTProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
                                     NSStringFromClass([FTProfileLeaderboardCell class])];
@@ -141,6 +158,9 @@
   if (indexPath.section == 1)
     return _celGraphChart.frame.size.height;
   
+  if ([_leaderboardsData count] == 0)
+    return _celEmptyLeaderboards.frame.size.height;
+  
   return [FTProfileLeaderboardCell heightToFitWithData:_leaderboardsData[indexPath.row]];
 }
 
@@ -153,11 +173,21 @@
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
+  
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];
+  
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  [_btnSetGoal setTitle:NSLocalizedString(@"Set goal", nil) forState:UIControlStateNormal];
   
   _lblLeaderboardsHeader.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblLeaderboardsHeader.text = NSLocalizedString(@"Leaderboards", nil);
+  
   _btnAddFriend.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  [_btnAddFriend setTitle:NSLocalizedString(@"Add friends", nil) forState:UIControlStateNormal];
+  
+  _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblEmptyLeaderboards.text = NSLocalizedString(@"No leaderboards data", nil);
 }
 
 - (void)gotoSettings {

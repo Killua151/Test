@@ -45,12 +45,25 @@
                           action:@selector(goBack)
                         distance:-8];
   
+  _sectionsData = @[NSLocalizedString(@"Your infomation", nil),
+                    [NSNull null],
+                    [NSNull null],
+                    NSLocalizedString(@"Connections", nil),
+                    NSLocalizedString(@"Notifications", nil)];
   [self setupViews];
-  _sectionsData = @[@"Thông tin của bạn", [NSNull null], [NSNull null], @"Kết nối", @"Thông báo"];
+  [self reloadContents];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+}
+
+- (void)reloadContents {
+  MUser *currentUser = [MUser currentUser];
+  
+  _txtEmail.text = [Utils normalizeString:currentUser.email];
+  _txtUsername.text = [Utils normalizeString:currentUser.username];
+  _txtPassword.text = [Utils normalizeString:currentUser.auth_token];
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
@@ -267,20 +280,31 @@
 - (void)setupViews {
   _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
   
-  for (UILabel *titleLabel in _lblTitles) {
+  NSArray *localizedTitles = @[
+                               NSLocalizedString(@"Avatar", nil),
+                               NSLocalizedString(@"Username", nil),
+                               NSLocalizedString(@"Password", nil),
+                               NSLocalizedString(@"Email", nil),
+                               NSLocalizedString(@"Sound effects", nil),
+                               NSLocalizedString(@"Listening lessons", nil),
+                               NSLocalizedString(@"Facebook", nil),
+                               NSLocalizedString(@"Google+", nil),
+                               NSLocalizedString(@"Practice reminder", nil),
+                               NSLocalizedString(@"Someone add as friend", nil),
+                               NSLocalizedString(@"Someone passed you", nil)
+                               ];
+  
+  [_lblTitles enumerateObjectsUsingBlock:^(UILabel *titleLabel, NSUInteger index, BOOL *stop) {
     titleLabel.font = [UIFont fontWithName:@"ClearSans" size:14];
     titleLabel.textColor = UIColorFromRGB(102, 102, 102);
-  }
+    titleLabel.text = localizedTitles[index];
+  }];
   
   _btnAvatar.layer.cornerRadius = _btnAvatar.frame.size.width/2;
   
   _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:14];
   _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:14];
   _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:14];
-  
-  _txtUsername.text = @"ljnkshady";
-  _txtPassword.text = @"ljnkshady";
-  _txtEmail.text = @"linhlt3@topica.edu.vn";
   
   _btnFeedback.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnFeedback.layer.cornerRadius = 4;
@@ -349,7 +373,6 @@
 }
 
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index {
-  
 }
 
 @end
