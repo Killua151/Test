@@ -96,10 +96,11 @@
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
     ShowAlertWithError(error);
-    
-    [Utils showHUDForView:self.navigationController.view withText:nil];
     
     [[FTServerHelper sharedHelper]
      logInWithGmail:userData[kParamGmail]

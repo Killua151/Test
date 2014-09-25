@@ -165,6 +165,8 @@
 		CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4719D1A730003DAB26 /* img-share-twitter.png */; };
 		CA5DAF5419D1A730003DAB26 /* img-share-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */; };
 		CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */; };
+		CA5DAF5A19D453E7003DAB26 /* FTJudgeQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */; };
+		CA5DAF5C19D453FF003DAB26 /* FTJudgeQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -457,6 +459,9 @@
 		CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-share-twitter@2x.png"; sourceTree = "<group>"; };
 		CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTServerHelper.h; sourceTree = "<group>"; };
 		CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTServerHelper.m; sourceTree = "<group>"; };
+		CA5DAF5819D453E7003DAB26 /* FTJudgeQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeQuestionView.h; sourceTree = "<group>"; };
+		CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeQuestionView.m; sourceTree = "<group>"; };
+		CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeQuestionView.xib; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -622,6 +627,9 @@
 		4A4122CC19D3C8CD00894095 /* Lessons Learning */ = {
 			isa = PBXGroup;
 			children = (
+				CA5DAF5819D453E7003DAB26 /* FTJudgeQuestionView.h */,
+				CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */,
+				CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */,
 				4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */,
 				4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */,
 				4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */,
@@ -1403,6 +1411,7 @@
 				CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
+				CA5DAF5C19D453FF003DAB26 /* FTJudgeQuestionView.xib in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				CABADE8219CD63C3000187AF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
@@ -1594,6 +1603,7 @@
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
 				4ACFE59C19C81A9000AAC524 /* FTShopItemHeaderView.m in Sources */,
+				CA5DAF5A19D453E7003DAB26 /* FTJudgeQuestionView.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,

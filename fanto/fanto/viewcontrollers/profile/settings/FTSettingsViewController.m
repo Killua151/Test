@@ -64,6 +64,9 @@
   _txtEmail.text = [Utils normalizeString:currentUser.email];
   _txtUsername.text = [Utils normalizeString:currentUser.username];
   _txtPassword.text = @"";
+
+  [_swtFacebook setOn:(currentUser.fb_Id != nil && currentUser.fb_Id.length > 0) animated:YES];
+  [_swtGooglePlus setOn:(currentUser.gmail != nil && currentUser.gmail.length > 0) animated:YES];
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
@@ -346,6 +349,7 @@
        swt.didChangeHandler = ^(BOOL isOn) {
          [self switchDidChanged:isOn atIndex:index];
        };
+       
        [cell.contentView addSubview:swt];
      }];
 }

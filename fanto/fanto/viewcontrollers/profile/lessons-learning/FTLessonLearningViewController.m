@@ -47,7 +47,7 @@
                              message:NSLocalizedString(@"Your progress will be lost. Are you sure to quit?", nil)
                             delegate:self
                    cancelButtonTitle:NSLocalizedString(@"No", nil)
-                   otherButtonTitles:NSLocalizedString(@"Yes, I am", nil), nil];
+                   otherButtonTitles:NSLocalizedString(@"Quit", nil), nil];
   
   [alertView show];
 }
