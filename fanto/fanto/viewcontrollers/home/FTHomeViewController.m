@@ -36,6 +36,7 @@
   
   _loginVC = nil;
   _signUpVC = nil;
+  _coursesListVC = nil;
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
@@ -47,18 +48,19 @@
 }
 
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
-//  if (_signUpVC == nil)
-//    _signUpVC = [FTSignUpViewController new];
-//
-//  [self.navigationController pushViewController:_signUpVC animated:YES];
-//  [_signUpVC reloadContents];
-//  return;
-  
+#if kTestSignUp
+  if (_signUpVC == nil)
+    _signUpVC = [FTSignUpViewController new];
+
+  [self.navigationController pushViewController:_signUpVC animated:YES];
+  [_signUpVC reloadContents];
+#else
   if (_coursesListVC == nil)
     _coursesListVC = [FTCoursesListViewController new];
   
   [self.navigationController pushViewController:_coursesListVC animated:YES];
   [_coursesListVC reloadContents];
+#endif
 }
 
 #pragma mark - Private methods

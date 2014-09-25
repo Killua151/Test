@@ -38,10 +38,12 @@ NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class
 self = nib[0]; }
 
 #define ShowAlertWithError(error) \
-if ((error) != nil) {\
+if (kTestPassAllAPIs) \
+DLog("%@", (error)); \
+else if ((error) != nil) {\
 [Utils showAlertWithError:(error)];\
 return;\
-}\
+}
 
 #define ShowToastWithError(error) \
 if (error != nil) { \
@@ -81,6 +83,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kHexagonThemeTestMode                   true
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
+#define kTestSignUp                             true
+#define kTestPassAllAPIs                        false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 #define kGoogleSignInKey                        @"76466559980-1que00mo7kuvfp173ru5854ut5us98bt.apps.googleusercontent.com";
@@ -91,9 +95,11 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAuthToken                         @"auth_token"
+#define kParamEmail                             @"email"
 #define kParamError                             @"error"
 #define kParamFbId                              @"fbId"
 #define kParamFbAccessToken                     @"fb_access_token"
+#define kParamFullName                          @"full_name"
 #define kParamGmail                             @"gmail"
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"

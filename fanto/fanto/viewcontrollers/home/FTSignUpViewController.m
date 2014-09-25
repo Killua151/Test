@@ -7,6 +7,7 @@
 //
 
 #import "FTSignUpViewController.h"
+#import "FTSkillsListViewController.h"
 
 @interface FTSignUpViewController () {
   UIView *_currentFirstResponder;
@@ -24,6 +25,7 @@
   [self customBackButtonWithSuffix:nil];
   [self customTitleWithText:NSLocalizedString(@"Sign up", nil) color:UIColorFromRGB(51, 51, 51)];
   [self setupViews];
+  [self reloadContents];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,11 +37,22 @@
   _txtEmail.text = @"";
   _txtUsername.text = @"";
   _txtPassword.text = @"";
+  _txtConfirmPassword.text = @"";
+  
+#if kTestSignUp
+  _txtFullName.text = @"Test Account";
+  _txtEmail.text = @"test@accou.nt";
+  _txtUsername.text = @"test_account";
+  _txtPassword.text = @"asdfasdf";
+  _txtConfirmPassword.text = @"asdfasdf";
+#endif
 }
 
 - (void)gestureLayerDidTap {
   [_currentFirstResponder resignFirstResponder];
-  [self animateSlideViewUp:NO withDistance:0];
+  
+  if (!DeviceScreenIsRetina4Inch())
+    [self animateSlideViewUp:NO withDistance:0];
 }
 
 - (void)beforeGoBack {
@@ -51,14 +64,29 @@
     return;
   
   [self gestureLayerDidTap];
-  [self.navigationController popViewControllerAnimated:YES];
+  
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[FTServerHelper sharedHelper]
+   signUpWithFullName:_txtFullName.text
+   email:_txtEmail.text
+   username:_txtUsername.text
+   password:_txtPassword.text
+   completion:^(NSDictionary *userData, NSError *error) {
+     [Utils hideAllHUDsForView:self.navigationController.view];
+     ShowAlertWithError(error);
+     
+     [self transitToViewController:[FTSkillsListViewController navigationController]];
+   }];
 }
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   _currentFirstResponder = textField;
   [self gestureLayerDidEnterEdittingMode];
-  [self animateSlideViewUp:YES withDistance:20];
+  
+  if (!DeviceScreenIsRetina4Inch())
+    [self animateSlideViewUp:YES withDistance:20];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

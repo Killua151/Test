@@ -18,7 +18,6 @@
 
 - (void)setupViews;
 - (BOOL)validateFields;
-- (void)goToSkillsList;
 
 @end
 
@@ -64,7 +63,7 @@
                                             kParamUsername : [Utils normalizeString:userData[kParamUsername]],
                                             kParamAuthToken : [Utils normalizeString:userData[kParamAuthToken]]
                                             }];
-     [self goToSkillsList];
+     [self transitToViewController:[FTSkillsListViewController navigationController]];
    }];
   
   return;
@@ -93,7 +92,7 @@
        
        DLog(@"%@", userData);
        [Utils updateSavedUserWithAttributes:userData];
-       [self goToSkillsList];
+       [self transitToViewController:[FTSkillsListViewController navigationController]];
      }];
   }];
 }
@@ -113,7 +112,7 @@
        
        DLog(@"%@", userData);
        [Utils updateSavedUserWithAttributes:userData];
-       [self goToSkillsList];
+       [self transitToViewController:[FTSkillsListViewController navigationController]];
      }];
   }];
 }
@@ -179,16 +178,6 @@
   }
   
   return YES;
-}
-
-- (void)goToSkillsList {
-  UINavigationController *skillsListNavigation = [FTSkillsListViewController navigationController];
-  skillsListNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  
-  [self.navigationController presentViewController:skillsListNavigation animated:YES completion:^{
-    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = skillsListNavigation;
-  }];
 }
 
 @end

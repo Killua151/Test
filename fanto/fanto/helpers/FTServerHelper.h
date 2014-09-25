@@ -24,4 +24,10 @@
            accessToken:(NSString *)accessToken
             completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 
+- (void)signUpWithFullName:(NSString *)fullName
+                     email:(NSString *)email
+                  username:(NSString *)username
+                  password:(NSString *)password
+                completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+
 @end

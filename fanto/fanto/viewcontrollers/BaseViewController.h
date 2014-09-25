@@ -13,6 +13,7 @@
 }
 
 + (UINavigationController *)navigationController;
+- (void)transitToViewController:(UIViewController *)viewController;
 
 - (void)gestureLayerDidEnterEdittingMode;
 - (void)gestureLayerDidTap;

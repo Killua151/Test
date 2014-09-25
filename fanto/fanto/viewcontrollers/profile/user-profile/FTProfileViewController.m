@@ -57,9 +57,13 @@
   _settingsVC = nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self addGraphChart];
+}
+
 - (void)reloadContents {
   _leaderboardsData = @[@"Test", @"abc", @"z_lorem_ipsum", @"abc__def__gasd"];
-  [self addGraphChart];
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender {

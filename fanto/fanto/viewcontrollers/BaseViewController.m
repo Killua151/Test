@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "UIImage+ImageHelpers.h"
+#import "FTAppDelegate.h"
 
 @interface BaseViewController ()
 
@@ -41,6 +42,15 @@
 //    self.view.bounds = viewBounds;
 //  }
 //}
+
+- (void)transitToViewController:(UIViewController *)viewController {
+  viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  
+  [self.navigationController presentViewController:viewController animated:YES completion:^{
+    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = viewController;
+  }];
+}
 
 - (void)gestureLayerDidEnterEdittingMode {
   _vGestureLayer.hidden = NO;
