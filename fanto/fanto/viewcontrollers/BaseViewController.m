@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-#import "UIImage+ImageHelpers.h"
 #import "FTAppDelegate.h"
 
 @interface BaseViewController ()

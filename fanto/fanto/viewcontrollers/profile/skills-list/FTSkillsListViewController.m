@@ -18,6 +18,7 @@
 #import "FTFailLessonViewController.h"
 #import "FTBeginPlacementTestViewController.h"
 #import "FTShareViewController.h"
+#import "FTLessonLearningViewController.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
@@ -184,10 +185,10 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-//  [self.navigationController presentViewController:[FTShareViewController navigationController]
-//                                          animated:YES
-//                                        completion:NULL];
-//  return;
+  [self.navigationController presentViewController:[FTLessonLearningViewController new]
+                                          animated:YES
+                                        completion:NULL];
+  return;
   
   [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES
