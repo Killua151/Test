@@ -13,9 +13,10 @@
 #import <GooglePlus/GooglePlus.h>
 #import "MUser.h"
 
-@interface FTAppDelegate ()
+@interface FTAppDelegate () <UIAlertViewDelegate>
 
 - (void)preSettings;
+- (void)setupRootViewController;
 
 @end
 
@@ -26,12 +27,7 @@
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  
-  if ([MUser currentUser] == nil)
-    self.window.rootViewController = [FTHomeViewController navigationController];
-  else
-    self.window.rootViewController = [FTSkillsListViewController navigationController];
-  
+  [self setupRootViewController];
   [self.window makeKeyAndVisible];
   
   // Whenever a person opens the app, check for a cached session
@@ -57,6 +53,14 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+  if ([[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser] == nil)
+    return;
+  
+  [Utils showHUDForView:self.window withText:nil];
+  [[FTServerHelper sharedHelper] extendAuthToken:^(NSError *error) {
+    [Utils hideAllHUDsForView:self.window];
+    [Utils showAlertWithError:error delegate:self];
+  }];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -105,6 +109,12 @@
   return NO;
 }
 
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  [MUser logOutCurrentUser];
+  [self setupRootViewController];
+}
+
 #pragma mark Private methods
 - (void)preSettings {
 #if kTestLogin
@@ -117,6 +127,13 @@
   
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
+}
+
+- (void)setupRootViewController {
+  if ([MUser currentUser] == nil)
+    self.window.rootViewController = [FTHomeViewController navigationController];
+  else
+    self.window.rootViewController = [FTSkillsListViewController navigationController];
 }
 
 @end

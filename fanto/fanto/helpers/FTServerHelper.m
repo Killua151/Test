@@ -7,6 +7,7 @@
 //
 
 #import "FTServerHelper.h"
+#import "MUser.h"
 
 @interface FTServerHelper ()
 
@@ -79,6 +80,20 @@
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      handler(nil, error);
+   }];
+}
+
+- (void)extendAuthToken:(void (^)(NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]};
+  
+  [self
+   POST:@"users/extendauthtoken"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     handler(error);
    }];
 }
 
