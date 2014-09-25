@@ -23,7 +23,7 @@
   dispatch_once(&onceToken, ^{
     NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
     _sharedHelper = [[FTServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
-    _sharedHelper.responseSerializer = [AFJSONResponseSerializer serializer];
+    _sharedHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
   });
   
   return _sharedHelper;
@@ -68,9 +68,7 @@
      handler(responseObject, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     DLog(@"%@", NSStringFromClass([operation.responseString class]));
-     return;
-     handler(operation.responseObject, error);
+     handler(nil, error);
    }];
 }
 

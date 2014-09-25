@@ -67,6 +67,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define kServerApiUrl                           @"http://fanto-backend.volcano.vn/api"
 #define kServerApiVersion                       @"v1"
+#define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
 #define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
@@ -90,6 +91,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAuthToken                         @"auth_token"
+#define kParamError                             @"error"
 #define kParamFbId                              @"fb_id"
 #define kParamFbAccessToken                     @"fb_access_token"
 #define kParamGmail                             @"gmail"
@@ -97,4 +99,5 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
 #define kParamPassword                          @"password"
+#define kParamResultCode                        @"result_code"
 #define kParamUsername                          @"username"

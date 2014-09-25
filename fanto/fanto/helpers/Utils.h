@@ -24,6 +24,9 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 + (void)showToastWithMessage:(NSString *)toastMessage;
 + (void)showToastWithError:(NSError *)error;
 
++ (NSString *)errorMessageFromError:(NSError *)error;
++ (NSInteger)errorCodeFromError:(NSError *)error;
+
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text;
 + (void)hideAllHUDsForView:(UIView *)view;
 

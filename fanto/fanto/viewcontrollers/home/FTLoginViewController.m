@@ -57,16 +57,17 @@
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
      [Utils hideAllHUDsForView:self.navigationController.view];
-     DLog(@"%@ %@", userData, error);
+     ShowAlertWithError(error);
+     
+     DLog(@"%@", userData);
+     [Utils updateSavedUserWithAttributes:@{
+                                            kParamUsername : [Utils normalizeString:userData[kParamUsername]],
+                                            kParamAuthToken : [Utils normalizeString:userData[kParamAuthToken]]
+                                            }];
+     [self goToSkillsList];
    }];
   
   return;
-  
-  [Utils updateSavedUserWithAttributes:@{
-                                         kParamUsername : [Utils normalizeString:_txtUsername.text],
-                                         kParamAuthToken : [Utils normalizeString:_txtPassword.text]
-                                         }];
-  [self goToSkillsList];
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {

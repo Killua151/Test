@@ -32,11 +32,17 @@ static UIView *_sharedToast = nil;
 @implementation Utils
 
 + (UIAlertView *)showAlertWithError:(NSError *)error {
-  return [[self class] showAlertWithTitle:@"Lỗi" andMessage:[error localizedDescription] delegate:nil];
+  return [[self class] showAlertWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
+                                           [Utils errorCodeFromError:error]]
+                               andMessage:[Utils errorMessageFromError:error]
+                                 delegate:nil];
 }
 
 + (UIAlertView *)showAlertWithError:(NSError *)error delegate:(id)delegate {
-  return [[self class] showAlertWithTitle:@"Lỗi" andMessage:[error localizedDescription] delegate:delegate];
+  return [[self class] showAlertWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
+                                           [Utils errorCodeFromError:error]]
+                               andMessage:[Utils errorMessageFromError:error]
+                                 delegate:delegate];
 }
 
 + (UIAlertView *)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
@@ -68,6 +74,42 @@ static UIView *_sharedToast = nil;
 
 + (void)showToastWithError:(NSError *)error {
   [Utils showToastWithMessage:[error description]];
+}
+
++ (NSString *)errorMessageFromError:(NSError *)error {
+  if (error == nil || ![error isKindOfClass:[NSError class]])
+    return NSLocalizedString(@"Unknown error!", nil);
+  
+  if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
+      error.userInfo[kServerResponseDataKey] == nil ||
+      ![error.userInfo[kServerResponseDataKey] isKindOfClass:[NSData class]])
+    return [error localizedDescription];
+  
+  NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
+  
+  if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
+      errorDict[kParamError] == nil || ![errorDict[kParamError] isKindOfClass:[NSString class]])
+    return [error localizedDescription];
+  
+  return NSLocalizedString(errorDict[kParamError], nil);
+}
+
++ (NSInteger)errorCodeFromError:(NSError *)error {
+  if (error == nil || ![error isKindOfClass:[NSError class]])
+    return -1;
+  
+  if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
+      error.userInfo[kServerResponseDataKey] == nil ||
+      ![error.userInfo[kServerResponseDataKey] isKindOfClass:[NSData class]])
+    return [error code];
+  
+  NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
+  
+  if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
+      errorDict[kParamResultCode] == nil || ![errorDict[kParamResultCode] isKindOfClass:[NSNumber class]])
+    return [error code];
+  
+  return [errorDict[kParamResultCode] integerValue];
 }
 
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text {
