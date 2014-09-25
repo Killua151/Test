@@ -23,7 +23,7 @@
   dispatch_once(&onceToken, ^{
     NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
     _sharedHelper = [[FTServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
-    _sharedHelper.responseSerializer = [AFJSONResponseSerializer serializer];
+    _sharedHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
   });
   
   return _sharedHelper;
@@ -71,16 +71,13 @@
                            kParamPassword : [Utils normalizeString:password]
                            };
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"users"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler(responseObject, nil);
+     handler([responseObject objectFromJSONData], nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     DLog(@"%@", error);
      handler(nil, error);
    }];
 }
@@ -91,7 +88,12 @@
    POST:@"users/login"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler(responseObject, nil);
+     NSDictionary *userData = [responseObject objectFromJSONData];
+     
+     if (userData != nil && [userData isKindOfClass:[NSDictionary class]])
+       handler(userData, nil);
+     else
+       handler(nil, [NSError errorWithDomain:@"Unknown error" code:-1 userInfo:nil]);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      handler(nil, error);

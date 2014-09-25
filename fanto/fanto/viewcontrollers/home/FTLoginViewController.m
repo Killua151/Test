@@ -10,6 +10,7 @@
 #import "FTAppDelegate.h"
 #import "FTForgotPasswordViewController.h"
 #import "FTSkillsListViewController.h"
+#import "MUser.h"
 
 @interface FTLoginViewController () {
   UIView *_currentFirstResponder;
@@ -58,11 +59,8 @@
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
      
-     DLog(@"%@", userData);
-     [Utils updateSavedUserWithAttributes:@{
-                                            kParamUsername : [Utils normalizeString:userData[kParamUsername]],
-                                            kParamAuthToken : [Utils normalizeString:userData[kParamAuthToken]]
-                                            }];
+     [Utils updateSavedUserWithAttributes:userData];
+     [MUser loadCurrentUserFromUserDef];
      [self transitToViewController:[FTSkillsListViewController navigationController]];
    }];
   
@@ -90,8 +88,8 @@
        [Utils hideAllHUDsForView:self.navigationController.view];
        ShowAlertWithError(error);
        
-       DLog(@"%@", userData);
        [Utils updateSavedUserWithAttributes:userData];
+       [MUser loadCurrentUserFromUserDef];
        [self transitToViewController:[FTSkillsListViewController navigationController]];
      }];
   }];
@@ -110,8 +108,8 @@
        [Utils hideAllHUDsForView:self.navigationController.view];
        ShowAlertWithError(error);
        
-       DLog(@"%@", userData);
        [Utils updateSavedUserWithAttributes:userData];
+       [MUser loadCurrentUserFromUserDef];
        [self transitToViewController:[FTSkillsListViewController navigationController]];
      }];
   }];

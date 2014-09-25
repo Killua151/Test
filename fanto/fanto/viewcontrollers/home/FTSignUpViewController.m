@@ -40,6 +40,7 @@
   _txtConfirmPassword.text = @"";
   
 #if kTestSignUp
+  return;
   _txtFullName.text = @"Test Account";
   _txtEmail.text = @"test@accou.nt";
   _txtUsername.text = @"test_account";
@@ -111,7 +112,7 @@
   _vTextFields.layer.borderWidth = 1;
   
   _txtFullName.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtFullName.placeholder = NSLocalizedString(@"Full name", nil);
+  _txtFullName.placeholder = NSLocalizedString(@"Full name (optional)", nil);
   
   _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtEmail.placeholder = NSLocalizedString(@"Email", nil);
@@ -131,11 +132,11 @@
 }
 
 - (BOOL)validateFields {
-  if (![Utils validateBlank:_txtFullName.text]) {
-    [_txtFullName becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your full name", nil)];
-    return NO;
-  }
+//  if (![Utils validateBlank:_txtFullName.text]) {
+//    [_txtFullName becomeFirstResponder];
+//    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your full name", nil)];
+//    return NO;
+//  }
   
   if (![Utils validateBlank:_txtEmail.text]) {
     [_txtEmail becomeFirstResponder];

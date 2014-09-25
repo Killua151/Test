@@ -18,14 +18,14 @@
 
 static UIView *_sharedToast = nil;
 
-@interface Utils () <GPPSignInDelegate> {
-}
+@interface Utils () <GPPSignInDelegate>
 
 @property (nonatomic, strong) SocialLogInCallback googleLogInCallback;
 @property (nonatomic, strong) SocialLogOutCallback googleLogOutCallback;
 
 + (instancetype)sharedUtils;
 + (NSString *)suffixForDayInDate:(NSDate *)date;
++ (BOOL)isObjectValidForSaveToUserDefaults:(id)object;
 
 @end
 
@@ -106,10 +106,10 @@ static UIView *_sharedToast = nil;
   NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
   
   if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
-      errorDict[kParamResultCode] == nil || ![errorDict[kParamResultCode] isKindOfClass:[NSNumber class]])
+      errorDict[kParamResponseCode] == nil || ![errorDict[kParamResponseCode] isKindOfClass:[NSNumber class]])
     return [error code];
   
-  return [errorDict[kParamResultCode] integerValue];
+  return [errorDict[kParamResponseCode] integerValue];
 }
 
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text {
@@ -320,7 +320,10 @@ static UIView *_sharedToast = nil;
   NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
                                     [userDefaults dictionaryForKey:kUserDefSavedUser]];
   
-  [savedUser addEntriesFromDictionary:attributes];
+  [attributes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    if ([[self class] isObjectValidForSaveToUserDefaults:obj])
+      savedUser[key] = obj;
+  }];
   
   [userDefaults setObject:[NSDictionary dictionaryWithDictionary:savedUser] forKey:kUserDefSavedUser];
   [userDefaults synchronize];
@@ -443,6 +446,19 @@ static UIView *_sharedToast = nil;
     return @"rd";
   
   return @"th";
+}
+
++ (BOOL)isObjectValidForSaveToUserDefaults:(id)object {
+  NSArray *validKlasses = @[
+                            [NSArray class], [NSDictionary class], [NSString class],
+                            [NSData class], [NSNumber class], [NSDate class]
+                            ];
+  
+  for (Class klass in validKlasses)
+    if ([object isKindOfClass:klass])
+      return YES;
+  
+  return NO;
 }
 
 @end

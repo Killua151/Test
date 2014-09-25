@@ -12,11 +12,18 @@
 
 @interface MUser : MBase
 
+@property (nonatomic, strong) NSString *_id;
+@property (nonatomic, strong) NSString *auth_token;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *fb_Id;
+@property (nonatomic, strong) NSString *gmail;
+@property (nonatomic, assign) BOOL is_trial;
+@property (nonatomic, assign) NSInteger level;
+@property (nonatomic, strong) NSString *level_title;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *url_avatar;
 @property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *fb_id;
-@property (nonatomic, strong) NSString *fb_access_token;
-@property (nonatomic, strong) NSString *gg_email;
-@property (nonatomic, strong) NSString *gg_access_token;
+@property (nonatomic, assign) NSInteger virtual_money;
 
 + (void)loadCurrentUserFromUserDef;
 + (void)logOutCurrentUser;
