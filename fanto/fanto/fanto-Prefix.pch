@@ -92,7 +92,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamDatabaseId                        @"_id"
 #define kParamAuthToken                         @"auth_token"
 #define kParamError                             @"error"
-#define kParamFbId                              @"fb_id"
+#define kParamFbId                              @"fbId"
 #define kParamFbAccessToken                     @"fb_access_token"
 #define kParamGmail                             @"gmail"
 #define kParamGAccessToken                      @"g_access_token"

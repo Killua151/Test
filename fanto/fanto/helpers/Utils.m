@@ -81,10 +81,10 @@ static UIView *_sharedToast = nil;
     return NSLocalizedString(@"Unknown error!", nil);
   
   if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
-      error.userInfo[kServerResponseDataKey] == nil ||
-      ![error.userInfo[kServerResponseDataKey] isKindOfClass:[NSData class]])
+      error.userInfo[kServerResponseDataKey] == nil || error.userInfo[kServerResponseDataKey] == NULL ||
+      [error.userInfo[kServerResponseDataKey] isEqualToData:[NSData data]])     // Empty data
     return [error localizedDescription];
-  
+
   NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
   
   if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
@@ -99,8 +99,8 @@ static UIView *_sharedToast = nil;
     return -1;
   
   if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
-      error.userInfo[kServerResponseDataKey] == nil ||
-      ![error.userInfo[kServerResponseDataKey] isKindOfClass:[NSData class]])
+      error.userInfo[kServerResponseDataKey] == nil || error.userInfo[kServerResponseDataKey] == NULL ||
+      [error.userInfo[kServerResponseDataKey] isEqualToData:[NSData data]])     // Empty data
     return [error code];
   
   NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
@@ -355,16 +355,15 @@ static UIView *_sharedToast = nil;
        }
        
        [Utils hideAllHUDsForView:view];
-
-       NSDictionary *savedUser =
-       [Utils updateSavedUserWithAttributes:@{
-                                              kParamFbId : [Utils normalizeString:result[kParamId]],
-                                              kParamFbAccessToken : [Utils normalizeString:
-                                                                     [[FBSession activeSession] accessTokenData].accessToken]
-                                              }];
+       
+       NSDictionary *userData = @{
+                                  kParamFbId : [Utils normalizeString:result[kParamId]],
+                                  kParamFbAccessToken : [Utils normalizeString:
+                                                         [[FBSession activeSession] accessTokenData].accessToken]
+                                  };
        
        if (callback != NULL)
-         callback(savedUser, error);
+         callback(userData, error);
      }];
    }];
 }
@@ -400,13 +399,12 @@ static UIView *_sharedToast = nil;
   if (_googleLogInCallback == NULL)
     return;
   
-  NSDictionary *savedUser = [Utils updateSavedUserWithAttributes:
-  @{
-    kParamGmail : [Utils normalizeString:auth.userEmail],
-    kParamGAccessToken : [Utils normalizeString:auth.accessToken]
-    }];
+  NSDictionary *userData = @{
+                             kParamGmail : [Utils normalizeString:auth.userEmail],
+                             kParamGAccessToken : [Utils normalizeString:auth.accessToken]
+                             };
   
-  _googleLogInCallback(savedUser, error);
+  _googleLogInCallback(userData, error);
 }
 
 - (void)didDisconnectWithError:(NSError *)error {

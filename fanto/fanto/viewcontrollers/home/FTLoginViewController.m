@@ -81,14 +81,40 @@
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
-    [self goToSkillsList];
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[FTServerHelper sharedHelper]
+     logInWithFacebookId:userData[kParamFbId]
+     accessToken:userData[kParamFbAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       ShowAlertWithError(error);
+       
+       DLog(@"%@", userData);
+       [Utils updateSavedUserWithAttributes:userData];
+       [self goToSkillsList];
+     }];
   }];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
-    [self goToSkillsList];
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[FTServerHelper sharedHelper]
+     logInWithGmail:userData[kParamGmail]
+     accessToken:userData[kParamGAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       ShowAlertWithError(error);
+       
+       DLog(@"%@", userData);
+       [Utils updateSavedUserWithAttributes:userData];
+       [self goToSkillsList];
+     }];
   }];
 }
 
