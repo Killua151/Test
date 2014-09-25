@@ -31,6 +31,7 @@
 - (void)setupViews;
 - (void)animateSlideStrengthenButton:(BOOL)show;
 - (void)fadeOutBeginningOptions:(void(^)())completion;
+- (void)loadSkillsTree;
 
 @end
 
@@ -55,7 +56,7 @@
                         distance:-8];
   
   [self setupViews];
-  [self reloadContents];
+  [self loadSkillsTree];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -283,6 +284,17 @@
      if (completion != NULL)
        completion();
    }];
+}
+
+- (void)loadSkillsTree {
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[FTServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    ShowAlertWithError(error);
+    
+    [self reloadContents];
+  }];
 }
 
 @end

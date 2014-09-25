@@ -97,6 +97,23 @@
    }];
 }
 
+- (void)getUserProfile:(void (^)(NSDictionary *, NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]};
+  
+  [self
+   GET:[NSString stringWithFormat:@"users/%@", [MUser currentUser]._id]
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *userData = [responseObject objectFromJSONData];
+     DLog(@"%@", [responseObject objectFromJSONData]);
+     handler(userData, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", error);
+     handler(nil, error);
+   }];
+}
+
 #pragma mark - Private methods
 - (void)logInWithParam:(NSDictionary *)params completion:(void (^)(NSDictionary *, NSError *))handler {
   [self

@@ -32,4 +32,6 @@
 
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 
+- (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
+
 @end

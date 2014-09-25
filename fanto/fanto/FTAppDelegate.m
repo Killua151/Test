@@ -53,13 +53,15 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  if ([[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser] == nil)
+  if ([MUser currentUser] == nil)
     return;
   
   [Utils showHUDForView:self.window withText:nil];
   [[FTServerHelper sharedHelper] extendAuthToken:^(NSError *error) {
     [Utils hideAllHUDsForView:self.window];
-    [Utils showAlertWithError:error delegate:self];
+    
+    if (error != nil)
+      [Utils showAlertWithError:error delegate:self];
   }];
 }
 
