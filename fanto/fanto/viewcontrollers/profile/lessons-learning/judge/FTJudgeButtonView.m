@@ -1,0 +1,57 @@
+//
+//  FTJudgeButtonView.m
+//  fanto
+//
+//  Created by Ethan Nguyen on 9/25/14.
+//  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
+//
+
+#import "FTJudgeButtonView.h"
+
+@interface FTJudgeButtonView () {
+  NSInteger _index;
+}
+
+- (void)highlightView:(BOOL)highlighted;
+
+@end
+
+@implementation FTJudgeButtonView
+
+- (id)initWithIndex:(NSInteger)index {
+  if (self = [super init]) {
+    LoadXibWithSameClass();
+    
+    _index = index;
+    self.layer.cornerRadius = 3;
+    _lblOptionTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
+  }
+  
+  return self;
+}
+
+- (IBAction)btnGestureTouchedDown:(UIButton *)sender {
+  [self highlightView:sender.highlighted];
+}
+
+- (IBAction)btnGesturePressed:(UIButton *)sender {
+  sender.selected = !sender.selected;
+  [self highlightView:sender.selected];
+  
+  if ([_delegate respondsToSelector:@selector(judgeQuestionButtonDidChanged:atIndex:)])
+    [_delegate judgeQuestionButtonDidChanged:sender.selected atIndex:_index];
+}
+
+- (IBAction)btnGestureTouchedUpOutside:(UIButton *)sender {
+  [self highlightView:sender.highlighted];
+}
+
+#pragma mark - Private methods
+- (void)highlightView:(BOOL)highlighted {
+  self.backgroundColor = highlighted ? UIColorFromRGB(129, 12, 21) : UIColorFromRGB(219, 219, 219);
+  _imgRadio.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-judge_question-radio%@.png",
+                                         highlighted ? @"_selected" : @""]];
+  _lblOptionTitle.textColor = highlighted ? [UIColor whiteColor] : UIColorFromRGB(102, 102, 102);
+}
+
+@end

@@ -7,6 +7,7 @@
 //
 
 #import "FTLessonLearningViewController.h"
+#import "FTJudgeQuestionView.h"
 
 @interface FTLessonLearningViewController () {
   NSInteger _totalLessonsCount;
@@ -76,6 +77,11 @@
   [self dismissViewController];
 }
 
+#pragma mark - FTLessonLearningDelegate methods
+- (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
+  _btnCheck.enabled = selected;
+}
+
 #pragma mark - Private methods
 - (void)setupViews {
   _lblLessonsCount.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -115,6 +121,11 @@
   [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
   [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
   _btnCheck.superview.layer.cornerRadius = 4;
+  _btnCheck.enabled = NO;
+  
+  FTJudgeQuestionView *judgeQuestionView = [FTJudgeQuestionView new];
+  judgeQuestionView.delegate = self;
+  [_vContentView addSubview:judgeQuestionView];
 }
 
 - (void)updateHeaderViews {

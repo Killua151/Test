@@ -186,10 +186,10 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-//  [self.navigationController presentViewController:[FTLessonLearningViewController new]
-//                                          animated:YES
-//                                        completion:NULL];
-//  return;
+  [self.navigationController presentViewController:[FTLessonLearningViewController new]
+                                          animated:YES
+                                        completion:NULL];
+  return;
   
   [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES

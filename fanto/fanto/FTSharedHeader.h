@@ -31,3 +31,10 @@
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index;
 
 @end
+
+@protocol FTLessonLearningDelegate <NSObject>
+
+@optional
+- (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
+
+@end

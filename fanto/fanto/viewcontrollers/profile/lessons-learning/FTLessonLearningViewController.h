@@ -8,13 +8,14 @@
 
 #import "BaseViewController.h"
 
-@interface FTLessonLearningViewController : BaseViewController <UIAlertViewDelegate> {
+@interface FTLessonLearningViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate> {
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
   IBOutlet UIButton *_btnHeartPotion;
   IBOutlet UIImageView *_imgAntProgressIndicator;
   IBOutletCollection(UIButton) NSArray *_btnProgressSegments;
+  IBOutlet UIView *_vContentView;
   IBOutlet UIButton *_btnCheck;
 }
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FTJudgeButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="a10-ep-Jvp">
+                    <rect key="frame" x="8" y="8" width="122" height="122"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LOi-SE-aFl">
+                            <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-judge_question-radio.png" id="3Fd-XH-ITl">
+                    <rect key="frame" x="8" y="138" width="14" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boys" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="sIf-t6-bzQ">
+                    <rect key="frame" x="30" y="131" width="100" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="E6o-IL-xmM">
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="160"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnGesturePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="gZk-4c-aI6"/>
+                        <action selector="btnGestureTouchedDown:" destination="iN0-l3-epB" eventType="touchDown" id="eB3-H1-8U1"/>
+                        <action selector="btnGestureTouchedUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="e5L-tu-Nvg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="_imgOptionImage" destination="LOi-SE-aFl" id="tLy-XT-gJR"/>
+                <outlet property="_imgRadio" destination="3Fd-XH-ITl" id="LBJ-oO-m7p"/>
+                <outlet property="_lblOptionTitle" destination="sIf-t6-bzQ" id="Euh-LZ-GVa"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="img-judge_question-radio.png" width="14" height="14"/>
+    </resources>
+</document>

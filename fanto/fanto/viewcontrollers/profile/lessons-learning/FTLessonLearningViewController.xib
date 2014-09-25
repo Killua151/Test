@@ -11,6 +11,7 @@
                 <outlet property="_btnHeartPotion" destination="Ysq-QO-8qW" id="K7a-GW-fqs"/>
                 <outlet property="_imgAntProgressIndicator" destination="m5z-uA-XU4" id="Qcg-WY-Jk8"/>
                 <outlet property="_lblLessonsCount" destination="xhz-cp-bQP" id="NjE-Gg-SNK"/>
+                <outlet property="_vContentView" destination="ydR-Mh-Yaw" id="Tgm-Er-YL0"/>
                 <outlet property="_vHearts" destination="8WK-52-W9L" id="amh-hE-Unj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="_btnProgressSegments" destination="M7L-Bt-rT3" id="pi7-FR-vwB"/>
@@ -311,7 +312,7 @@
                 <view contentMode="scaleToFill" id="ydR-Mh-Yaw" userLabel="Content view">
                     <rect key="frame" x="0.0" y="72" width="320" height="430"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="Oam-mZ-ICT">
                     <rect key="frame" x="15" y="502" width="290" height="44"/>

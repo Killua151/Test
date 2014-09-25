@@ -165,8 +165,14 @@
 		CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4719D1A730003DAB26 /* img-share-twitter.png */; };
 		CA5DAF5419D1A730003DAB26 /* img-share-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */; };
 		CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */; };
-		CA5DAF5A19D453E7003DAB26 /* FTJudgeQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */; };
-		CA5DAF5C19D453FF003DAB26 /* FTJudgeQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */; };
+		CA5DAF6119D45BE0003DAB26 /* FTJudgeQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF5F19D45BE0003DAB26 /* FTJudgeQuestionView.m */; };
+		CA5DAF6219D45BE0003DAB26 /* FTJudgeQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6019D45BE0003DAB26 /* FTJudgeQuestionView.xib */; };
+		CA5DAF6519D45C48003DAB26 /* FTJudgeButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF6419D45C48003DAB26 /* FTJudgeButtonView.m */; };
+		CA5DAF6919D45C61003DAB26 /* FTJudgeButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6819D45C61003DAB26 /* FTJudgeButtonView.xib */; };
+		CA5DAF6E19D45DCF003DAB26 /* img-judge_question-radio_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6A19D45DCF003DAB26 /* img-judge_question-radio_selected.png */; };
+		CA5DAF6F19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */; };
+		CA5DAF7019D45DCF003DAB26 /* img-judge_question-radio.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */; };
+		CA5DAF7119D45DCF003DAB26 /* img-judge_question-radio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -459,9 +465,16 @@
 		CA5DAF4819D1A730003DAB26 /* img-share-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-share-twitter@2x.png"; sourceTree = "<group>"; };
 		CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTServerHelper.h; sourceTree = "<group>"; };
 		CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTServerHelper.m; sourceTree = "<group>"; };
-		CA5DAF5819D453E7003DAB26 /* FTJudgeQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeQuestionView.h; sourceTree = "<group>"; };
-		CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeQuestionView.m; sourceTree = "<group>"; };
-		CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeQuestionView.xib; sourceTree = "<group>"; };
+		CA5DAF5E19D45BE0003DAB26 /* FTJudgeQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeQuestionView.h; sourceTree = "<group>"; };
+		CA5DAF5F19D45BE0003DAB26 /* FTJudgeQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeQuestionView.m; sourceTree = "<group>"; };
+		CA5DAF6019D45BE0003DAB26 /* FTJudgeQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeQuestionView.xib; sourceTree = "<group>"; };
+		CA5DAF6319D45C48003DAB26 /* FTJudgeButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeButtonView.h; sourceTree = "<group>"; };
+		CA5DAF6419D45C48003DAB26 /* FTJudgeButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeButtonView.m; sourceTree = "<group>"; };
+		CA5DAF6819D45C61003DAB26 /* FTJudgeButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeButtonView.xib; sourceTree = "<group>"; };
+		CA5DAF6A19D45DCF003DAB26 /* img-judge_question-radio_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio_selected.png"; sourceTree = "<group>"; };
+		CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio_selected@2x.png"; sourceTree = "<group>"; };
+		CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio.png"; sourceTree = "<group>"; };
+		CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -627,9 +640,7 @@
 		4A4122CC19D3C8CD00894095 /* Lessons Learning */ = {
 			isa = PBXGroup;
 			children = (
-				CA5DAF5819D453E7003DAB26 /* FTJudgeQuestionView.h */,
-				CA5DAF5919D453E7003DAB26 /* FTJudgeQuestionView.m */,
-				CA5DAF5B19D453FF003DAB26 /* FTJudgeQuestionView.xib */,
+				CA5DAF5D19D45BE0003DAB26 /* Judge */,
 				4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */,
 				4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */,
 				4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */,
@@ -657,6 +668,10 @@
 			children = (
 				4A4122E519D4006900894095 /* btn-lessons_learning-close.png */,
 				4A4122E619D4006900894095 /* btn-lessons_learning-close@2x.png */,
+				CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */,
+				CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */,
+				CA5DAF6A19D45DCF003DAB26 /* img-judge_question-radio_selected.png */,
+				CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */,
 				4A4122E719D4006900894095 /* img-lessons_learning-heart.png */,
 				4A4122E819D4006900894095 /* img-lessons_learning-heart@2x.png */,
 				4A4122E919D4006900894095 /* img-lessons_learning-heart_disabled.png */,
@@ -916,6 +931,20 @@
 			);
 			name = Shared;
 			path = shared;
+			sourceTree = "<group>";
+		};
+		CA5DAF5D19D45BE0003DAB26 /* Judge */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF6319D45C48003DAB26 /* FTJudgeButtonView.h */,
+				CA5DAF6419D45C48003DAB26 /* FTJudgeButtonView.m */,
+				CA5DAF6819D45C61003DAB26 /* FTJudgeButtonView.xib */,
+				CA5DAF5E19D45BE0003DAB26 /* FTJudgeQuestionView.h */,
+				CA5DAF5F19D45BE0003DAB26 /* FTJudgeQuestionView.m */,
+				CA5DAF6019D45BE0003DAB26 /* FTJudgeQuestionView.xib */,
+			);
+			name = Judge;
+			path = judge;
 			sourceTree = "<group>";
 		};
 		CA6C75EB19CB2E3D00D175DF /* Ants */ = {
@@ -1330,6 +1359,7 @@
 			files = (
 				4A4122D119D3CC0900894095 /* FTLessonLearningViewController.xib in Resources */,
 				4A85F3ED19C6E2BF00642C5F /* img-hexagon_skill-strength-3@2x.png in Resources */,
+				CA5DAF6919D45C61003DAB26 /* FTJudgeButtonView.xib in Resources */,
 				4A85F3E919C6E2BF00642C5F /* img-hexagon_skill-strength-1@2x.png in Resources */,
 				4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */,
 				4A85F3FE19C6E32100642C5F /* img-shield_skill-strength-4.png in Resources */,
@@ -1340,6 +1370,7 @@
 				4A4122DF19D4005A00894095 /* img-finish_lesson-set_goal-bg@2x.png in Resources */,
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
+				CA5DAF6E19D45DCF003DAB26 /* img-judge_question-radio_selected.png in Resources */,
 				CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */,
 				4A85F3FF19C6E32100642C5F /* img-shield_skill-strength-4@2x.png in Resources */,
 				CABADE9319CD6EA8000187AF /* img-ant-finish_lesson.png in Resources */,
@@ -1352,8 +1383,10 @@
 				CA6C75FC19CB32FE00D175DF /* img-beginner-icon@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
 				CABADE5819CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib in Resources */,
+				CA5DAF6219D45BE0003DAB26 /* FTJudgeQuestionView.xib in Resources */,
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
 				4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */,
+				CA5DAF7019D45DCF003DAB26 /* img-judge_question-radio.png in Resources */,
 				CA5DAF4C19D1A730003DAB26 /* img-share-facebook@2x.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CAEF54C919CB17F600729934 /* Default@2x.png in Resources */,
@@ -1368,6 +1401,7 @@
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CA6C75EF19CB2E3D00D175DF /* img-ant-begin@2x.png in Resources */,
 				4A85F3FB19C6E32100642C5F /* img-shield_skill-strength-2@x.png in Resources */,
+				CA5DAF6F19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png in Resources */,
 				4A4122C919D3C8B100894095 /* FTSaveProgressViewController.xib in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
 				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
@@ -1411,7 +1445,6 @@
 				CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
-				CA5DAF5C19D453FF003DAB26 /* FTJudgeQuestionView.xib in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				CABADE8219CD63C3000187AF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
@@ -1436,6 +1469,7 @@
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				4A4122C519D3C8B100894095 /* FTFinishSkillViewController.xib in Resources */,
 				4A4122DE19D4005A00894095 /* img-finish_lesson-set_goal-bg.png in Resources */,
+				CA5DAF7119D45DCF003DAB26 /* img-judge_question-radio@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
 				CABADE7819CD6251000187AF /* img-hexagon_skill-bg_big@2x.png in Resources */,
@@ -1577,6 +1611,7 @@
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
 				4A4DE14319CAD50700933C76 /* FTSettingsHeaderView.m in Sources */,
 				4A85F40219C6F18900642C5F /* FTSkillView.m in Sources */,
+				CA5DAF6519D45C48003DAB26 /* FTJudgeButtonView.m in Sources */,
 				CAEBA29119C4AA710024CA71 /* FTHexagonCheckpointTestCell.m in Sources */,
 				CA5454B519C71E8C0052111C /* FTHexagonLessonsListViewController.m in Sources */,
 				CAEBA25B19C488460024CA71 /* MBase.m in Sources */,
@@ -1603,10 +1638,10 @@
 				4A74146019C2F8A0002DB2C7 /* UIView+ExtendedToast.m in Sources */,
 				CAEBA29319C4AA710024CA71 /* FTHexagonSkillCell.m in Sources */,
 				4ACFE59C19C81A9000AAC524 /* FTShopItemHeaderView.m in Sources */,
-				CA5DAF5A19D453E7003DAB26 /* FTJudgeQuestionView.m in Sources */,
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
+				CA5DAF6119D45BE0003DAB26 /* FTJudgeQuestionView.m in Sources */,
 				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
 				CA5DAEFE19D06588003DAB26 /* FTSetGoalViewController.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,

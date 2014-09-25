@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTJudgeQuestionView : UIView
+@interface FTJudgeQuestionView : UIView <FTLessonLearningDelegate> {
+}
+
+@property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
 
 @end
