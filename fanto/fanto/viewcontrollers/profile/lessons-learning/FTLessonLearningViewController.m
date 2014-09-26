@@ -302,13 +302,12 @@
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {
   CGPoint outterLocation = [panGesture locationInView:panGesture.view.superview];
-  
   CGFloat viewHeight = panGesture.view.frame.size.height;
-  CGFloat superviewHeight = panGesture.view.superview.frame.size.height;
   
   CGRect frame = panGesture.view.frame;
   frame.origin.y = outterLocation.y - _innerPanGestureYPos;
-  frame.origin.y = MAX(44, MIN(superviewHeight - viewHeight, frame.origin.y));
+  frame.origin.y = MAX(_lblLessonsCount.superview.frame.size.height,
+                       MIN(_btnCheck.superview.frame.origin.y - viewHeight - 5, frame.origin.y));
   panGesture.view.frame = frame;
 }
 
