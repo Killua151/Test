@@ -35,6 +35,14 @@
 @protocol FTLessonLearningDelegate <NSObject>
 
 @optional
-- (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
+- (void)selectQuestionDidChangedAnswer:(BOOL)answerSelected;
+- (void)judgeQuestionDidChangedAnswer:(BOOL)answerSelected;
+
+@end
+
+@protocol FTQuestionContentDelegate <NSObject>
+
+@optional
+- (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
 
 @end

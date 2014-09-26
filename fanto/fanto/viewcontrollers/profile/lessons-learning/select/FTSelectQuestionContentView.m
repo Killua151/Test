@@ -19,8 +19,13 @@
 
 - (void)setupViews {
   _btnOptions = [NSMutableArray new];
-  
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _lblQuestion.frame;
+    frame.origin.y -= 10;
+    _lblQuestion.frame = frame;
+  }
   
   CGFloat buttonsTopMargin = DeviceScreenIsRetina4Inch() ? 60 : 48;
   CGFloat buttonsBottomMargin = DeviceScreenIsRetina4Inch() ? 35 : 28;
@@ -37,16 +42,16 @@
     }
 }
 
-#pragma mark - FTLessonLearningDelegate methods
-- (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
+#pragma mark - FTQuestionContentDelegate methods
+- (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
   if (selected) {
     for (FTSelectQuestionButton *button in _btnOptions)
       if (button.tag != index)
         [button setSelected:NO];    
   }
   
-  if ([self.delegate respondsToSelector:@selector(judgeQuestionButtonDidChanged:atIndex:)])
-    [self.delegate judgeQuestionButtonDidChanged:selected atIndex:index];
+  if ([self.delegate respondsToSelector:@selector(selectQuestionDidChangedAnswer:)])
+    [self.delegate selectQuestionDidChangedAnswer:selected];
 }
 
 @end

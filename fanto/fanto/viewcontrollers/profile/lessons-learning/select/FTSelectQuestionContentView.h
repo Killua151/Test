@@ -8,7 +8,7 @@
 
 #import "FTQuestionContentView.h"
 
-@interface FTSelectQuestionContentView : FTQuestionContentView <FTLessonLearningDelegate> {
+@interface FTSelectQuestionContentView : FTQuestionContentView <FTQuestionContentDelegate> {
   IBOutlet UILabel *_lblQuestion;
 }
 

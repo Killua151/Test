@@ -7,8 +7,10 @@
 //
 
 #import "FTLessonLearningViewController.h"
+
 #import "FTSelectQuestionContentView.h"
 #import "FTSpeakQuestionContentView.h"
+#import "FTJudgeQuestionContentView.h"
 
 @interface FTLessonLearningViewController () {
   NSInteger _totalLessonsCount;
@@ -30,7 +32,7 @@
   [super viewDidLoad];
   
   _totalLessonsCount = 20;
-  _currentLessonIndex = 0;
+  _currentLessonIndex = -1;
   _totalHeartsCount = _currentHeartsCount = 3;
   
   [self setupViews];
@@ -42,6 +44,7 @@
 }
 
 - (void)reloadContents {
+  _currentLessonIndex++;
   [self removeCurrentQuestion];
   [self updateHeaderViews];
 }
@@ -74,8 +77,12 @@
 }
 
 #pragma mark - FTLessonLearningDelegate methods
-- (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
-  _btnCheck.enabled = selected;
+- (void)selectQuestionDidChangedAnswer:(BOOL)answerSelected {
+  _btnCheck.enabled = answerSelected;
+}
+
+- (void)judgeQuestionDidChangedAnswer:(BOOL)answerSelected {
+  _btnCheck.enabled = answerSelected;
 }
 
 #pragma mark - Private methods
@@ -120,6 +127,9 @@
 }
 
 - (void)updateHeaderViews {
+  if (_currentLessonIndex >= _totalLessonsCount)
+    return;
+  
   _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentLessonIndex+1, (long)_totalLessonsCount];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
@@ -140,8 +150,14 @@
 }
 
 - (void)prepareNextQuestion {
-  NSArray *klasses = @[[FTSelectQuestionContentView class], [FTSpeakQuestionContentView class]];
+  NSArray *klasses = @[
+                       [FTSelectQuestionContentView class],
+                       [FTSpeakQuestionContentView class],
+                       [FTJudgeQuestionContentView class]
+                       ];
   FTQuestionContentView *questionView = [klasses[arc4random()%[klasses count]] new];
+//  questionView = [FTJudgeQuestionContentView new];
+  
   questionView.delegate = self;
   questionView.alpha = 0;
   questionView.userInteractionEnabled = NO;
@@ -161,6 +177,9 @@
 
 - (void)removeCurrentQuestion {
   _btnCheck.enabled = NO;
+  
+  if (_currentLessonIndex >= _totalLessonsCount)
+    return;
   
   if ([_vContentView.subviews count] == 0) {
     [self prepareNextQuestion];

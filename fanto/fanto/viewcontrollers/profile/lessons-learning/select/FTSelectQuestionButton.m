@@ -44,8 +44,8 @@
   sender.selected = !sender.selected;
   [self highlightView:sender.selected];
   
-  if ([_delegate respondsToSelector:@selector(judgeQuestionButtonDidChanged:atIndex:)])
-    [_delegate judgeQuestionButtonDidChanged:sender.selected atIndex:_index];
+  if ([_delegate respondsToSelector:@selector(selectQuestionButtonDidChanged:atIndex:)])
+    [_delegate selectQuestionButtonDidChanged:sender.selected atIndex:_index];
 }
 
 - (IBAction)btnGestureTouchedUpOutside:(UIButton *)sender {

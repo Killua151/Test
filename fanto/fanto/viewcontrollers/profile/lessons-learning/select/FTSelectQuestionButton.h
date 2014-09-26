@@ -15,7 +15,7 @@
   IBOutlet UIButton *_btnGesture;
 }
 
-@property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
+@property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
 
 - (id)initWithIndex:(NSInteger)index;
 - (void)setSelected:(BOOL)selected;

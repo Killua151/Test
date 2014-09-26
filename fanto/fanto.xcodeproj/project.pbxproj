@@ -184,6 +184,18 @@
 		CA5DAF6F19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */; };
 		CA5DAF7019D45DCF003DAB26 /* img-judge_question-radio.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */; };
 		CA5DAF7119D45DCF003DAB26 /* img-judge_question-radio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */; };
+		CA5DAF7419D59DCA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7319D59DCA003DAB26 /* file */; };
+		CA5DAF7E19D59DDA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7819D59DDA003DAB26 /* file */; };
+		CA5DAF7F19D59DDA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7A19D59DDA003DAB26 /* file */; };
+		CA5DAF8019D59DDA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7C19D59DDA003DAB26 /* file */; };
+		CA5DAF8619D59E2B003DAB26 /* FTJudgeQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF8519D59E2B003DAB26 /* FTJudgeQuestionContentView.m */; };
+		CA5DAF8819D59E3B003DAB26 /* FTJudgeQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF8719D59E3B003DAB26 /* FTJudgeQuestionContentView.xib */; };
+		CA5DAF8C19D5A12C003DAB26 /* FTJudgeOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF8A19D5A12C003DAB26 /* FTJudgeOptionCell.m */; };
+		CA5DAF8D19D5A12C003DAB26 /* FTJudgeOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF8B19D5A12C003DAB26 /* FTJudgeOptionCell.xib */; };
+		CA5DAF9219D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF8E19D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png */; };
+		CA5DAF9319D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF8F19D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png */; };
+		CA5DAF9419D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF9019D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png */; };
+		CA5DAF9519D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF9119D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -499,6 +511,20 @@
 		CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio_selected@2x.png"; sourceTree = "<group>"; };
 		CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio.png"; sourceTree = "<group>"; };
 		CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio@2x.png"; sourceTree = "<group>"; };
+		CA5DAF7319D59DCA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
+		CA5DAF7819D59DDA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
+		CA5DAF7A19D59DDA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
+		CA5DAF7C19D59DDA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
+		CA5DAF8419D59E2B003DAB26 /* FTJudgeQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeQuestionContentView.h; sourceTree = "<group>"; };
+		CA5DAF8519D59E2B003DAB26 /* FTJudgeQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeQuestionContentView.m; sourceTree = "<group>"; };
+		CA5DAF8719D59E3B003DAB26 /* FTJudgeQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeQuestionContentView.xib; sourceTree = "<group>"; };
+		CA5DAF8919D5A12C003DAB26 /* FTJudgeOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeOptionCell.h; sourceTree = "<group>"; };
+		CA5DAF8A19D5A12C003DAB26 /* FTJudgeOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeOptionCell.m; sourceTree = "<group>"; };
+		CA5DAF8B19D5A12C003DAB26 /* FTJudgeOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeOptionCell.xib; sourceTree = "<group>"; };
+		CA5DAF8E19D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-checkbox-checked.png"; sourceTree = "<group>"; };
+		CA5DAF8F19D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-checkbox-checked@2x.png"; sourceTree = "<group>"; };
+		CA5DAF9019D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-checkbox-empty.png"; sourceTree = "<group>"; };
+		CA5DAF9119D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-checkbox-empty@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -664,18 +690,18 @@
 		4A4122CC19D3C8CD00894095 /* Lessons Learning */ = {
 			isa = PBXGroup;
 			children = (
-				4AE8AD8119D5217B00A49880 /* Form */,
+				CA5DAF7219D59DCA003DAB26 /* Form */,
 				4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */,
 				4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */,
 				4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */,
 				4AE8AD8919D521E700A49880 /* FTQuestionContentView.h */,
 				4AE8AD8A19D521E700A49880 /* FTQuestionContentView.m */,
-				CA5DAF5D19D45BE0003DAB26 /* Judge */,
-				4AE8AD8219D5217B00A49880 /* Listen */,
-				4AE8AD8319D5217B00A49880 /* Name */,
+				CA5DAF8119D59E1D003DAB26 /* Judge */,
+				CA5DAF7719D59DDA003DAB26 /* Listen */,
+				CA5DAF7919D59DDA003DAB26 /* Name */,
 				4AE8AD7619D5213700A49880 /* Select */,
 				4AE8AD8419D5217B00A49880 /* Speak */,
-				4AE8AD8519D5217B00A49880 /* Translate */,
+				CA5DAF7B19D59DDA003DAB26 /* Translate */,
 			);
 			name = "Lessons Learning";
 			path = "lessons-learning";
@@ -710,6 +736,10 @@
 				CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */,
 				CA5DAF6A19D45DCF003DAB26 /* img-judge_question-radio_selected.png */,
 				CA5DAF6B19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png */,
+				CA5DAF8E19D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png */,
+				CA5DAF8F19D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png */,
+				CA5DAF9019D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png */,
+				CA5DAF9119D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png */,
 				4A4122E719D4006900894095 /* img-lessons_learning-heart.png */,
 				4A4122E819D4006900894095 /* img-lessons_learning-heart@2x.png */,
 				4A4122E919D4006900894095 /* img-lessons_learning-heart_disabled.png */,
@@ -911,30 +941,6 @@
 			path = select;
 			sourceTree = "<group>";
 		};
-		4AE8AD8119D5217B00A49880 /* Form */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Form;
-			path = form;
-			sourceTree = "<group>";
-		};
-		4AE8AD8219D5217B00A49880 /* Listen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Listen;
-			path = listen;
-			sourceTree = "<group>";
-		};
-		4AE8AD8319D5217B00A49880 /* Name */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Name;
-			path = name;
-			sourceTree = "<group>";
-		};
 		4AE8AD8419D5217B00A49880 /* Speak */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,14 +950,6 @@
 			);
 			name = Speak;
 			path = speak;
-			sourceTree = "<group>";
-		};
-		4AE8AD8519D5217B00A49880 /* Translate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Translate;
-			path = translate;
 			sourceTree = "<group>";
 		};
 		CA5454AE19C71E8C0052111C /* Hexagon */ = {
@@ -1030,9 +1028,51 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
-		CA5DAF5D19D45BE0003DAB26 /* Judge */ = {
+		CA5DAF7219D59DCA003DAB26 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				CA5DAF7319D59DCA003DAB26 /* file */,
+			);
+			name = Form;
+			path = form;
+			sourceTree = "<group>";
+		};
+		CA5DAF7719D59DDA003DAB26 /* Listen */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF7819D59DDA003DAB26 /* file */,
+			);
+			name = Listen;
+			path = listen;
+			sourceTree = "<group>";
+		};
+		CA5DAF7919D59DDA003DAB26 /* Name */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF7A19D59DDA003DAB26 /* file */,
+			);
+			name = Name;
+			path = name;
+			sourceTree = "<group>";
+		};
+		CA5DAF7B19D59DDA003DAB26 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF7C19D59DDA003DAB26 /* file */,
+			);
+			name = Translate;
+			path = translate;
+			sourceTree = "<group>";
+		};
+		CA5DAF8119D59E1D003DAB26 /* Judge */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DAF8919D5A12C003DAB26 /* FTJudgeOptionCell.h */,
+				CA5DAF8A19D5A12C003DAB26 /* FTJudgeOptionCell.m */,
+				CA5DAF8B19D5A12C003DAB26 /* FTJudgeOptionCell.xib */,
+				CA5DAF8419D59E2B003DAB26 /* FTJudgeQuestionContentView.h */,
+				CA5DAF8519D59E2B003DAB26 /* FTJudgeQuestionContentView.m */,
+				CA5DAF8719D59E3B003DAB26 /* FTJudgeQuestionContentView.xib */,
 			);
 			name = Judge;
 			path = judge;
@@ -1487,6 +1527,7 @@
 				CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */,
 				CABADE7719CD6251000187AF /* img-hexagon_skill-bg_big.png in Resources */,
 				4A4122F419D4006900894095 /* img-lessons_learning-heart_potion@2x.png in Resources */,
+				CA5DAF8019D59DDA003DAB26 /* file in Resources */,
 				CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CABADE8119CD63C3000187AF /* img-hexagon_skill-strength-1_big.png in Resources */,
@@ -1508,6 +1549,7 @@
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
 				CA5DAF5219D1A730003DAB26 /* img-share-twitter_selected@2x.png in Resources */,
 				CA6C75FB19CB32FE00D175DF /* img-beginner-icon.png in Resources */,
+				CA5DAF7419D59DCA003DAB26 /* file in Resources */,
 				4A85F3DE19C6E13100642C5F /* img-shield_skill-bg-unlocked.png in Resources */,
 				CAEF54BF19C9E4C900729934 /* img-settings-email_icon-disabled@2x.png in Resources */,
 				4A4122D519D4004500894095 /* img-ant-lessons_learning_progress.png in Resources */,
@@ -1534,6 +1576,7 @@
 				CA5DAF5119D1A730003DAB26 /* img-share-twitter_selected.png in Resources */,
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
 				CA5DAF4D19D1A730003DAB26 /* img-share-google_selected.png in Resources */,
+				CA5DAF7E19D59DDA003DAB26 /* file in Resources */,
 				CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */,
 				4A85F3FD19C6E32100642C5F /* img-shield_skill-strength-3@2x.png in Resources */,
 				4A4122ED19D4006900894095 /* btn-lessons_learning-close.png in Resources */,
@@ -1549,6 +1592,7 @@
 				CA6C761519CD1D4100D175DF /* img-profile-avatar_placeholder.png in Resources */,
 				4A85F3EE19C6E2BF00642C5F /* img-hexagon_skill-strength-4.png in Resources */,
 				CA5454B819C71E8C0052111C /* FTHexagonLessonView.xib in Resources */,
+				CA5DAF9419D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png in Resources */,
 				4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */,
 				CA5DAF4A19D1A730003DAB26 /* img-share-facebook_selected@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
@@ -1563,6 +1607,7 @@
 				CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */,
 				CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
+				CA5DAF9319D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png in Resources */,
 				4A4122C519D3C8B100894095 /* FTFinishSkillViewController.xib in Resources */,
 				4A4122DE19D4005A00894095 /* img-finish_lesson-set_goal-bg.png in Resources */,
 				4AE8AD8D19D522E500A49880 /* FTSpeakQuestionContentView.xib in Resources */,
@@ -1581,10 +1626,12 @@
 				4A4122F319D4006900894095 /* img-lessons_learning-heart_potion.png in Resources */,
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4AE8AD9C19D526BF00A49880 /* img-lessons_learning-popover-bg.png in Resources */,
+				CA5DAF9519D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png in Resources */,
 				CA6C75EE19CB2E3D00D175DF /* img-ant-begin.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				CA5DAF4919D1A730003DAB26 /* img-share-facebook_selected.png in Resources */,
 				4AE8AD9D19D526BF00A49880 /* img-lessons_learning-popover-bg@2x.png in Resources */,
+				CA5DAF9219D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png in Resources */,
 				CA5DAF4F19D1A730003DAB26 /* img-share-google.png in Resources */,
 				4A4122BC19D3C8B100894095 /* FTBeginPlacementTestViewController.xib in Resources */,
 				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
@@ -1629,6 +1676,8 @@
 				CAEF54C119C9E4C900729934 /* img-settings-email_icon-enabled@2x.png in Resources */,
 				CA5DAF3C19D1A5A7003DAB26 /* FTShareViewController.xib in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
+				CA5DAF8819D59E3B003DAB26 /* FTJudgeQuestionContentView.xib in Resources */,
+				CA5DAF7F19D59DDA003DAB26 /* file in Resources */,
 				4A4122C719D3C8B100894095 /* FTMoneyBonusViewController.xib in Resources */,
 				4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */,
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
@@ -1636,6 +1685,7 @@
 				4A85F3F819C6E32100642C5F /* img-shield_skill-strength-1.png in Resources */,
 				4A4DE15219CADA0000933C76 /* btn-profile-edit_avatar.png in Resources */,
 				CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */,
+				CA5DAF8D19D5A12C003DAB26 /* FTJudgeOptionCell.xib in Resources */,
 				CAEF54C319C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png in Resources */,
 				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
 				CA5DAF4B19D1A730003DAB26 /* img-share-facebook.png in Resources */,
@@ -1701,6 +1751,7 @@
 				4A4DE14519CAD50700933C76 /* FTSettingsViewController.m in Sources */,
 				CA5454CB19C741A20052111C /* FTShopViewController.m in Sources */,
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
+				CA5DAF8C19D5A12C003DAB26 /* FTJudgeOptionCell.m in Sources */,
 				4AE8AD8819D521D700A49880 /* FTSpeakQuestionContentView.m in Sources */,
 				CA5454D019C743F50052111C /* FTShopItemCell.m in Sources */,
 				CA6C760719CC774600D175DF /* FTLineChart.m in Sources */,
@@ -1763,6 +1814,7 @@
 				4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */,
 				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
+				CA5DAF8619D59E2B003DAB26 /* FTJudgeQuestionContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
