@@ -117,7 +117,6 @@
   [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
   [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
   _btnCheck.superview.layer.cornerRadius = 4;
-  _btnCheck.enabled = NO;
 }
 
 - (void)updateHeaderViews {
@@ -141,8 +140,8 @@
 }
 
 - (void)prepareNextQuestion {
-//  FTQuestionContentView *questionView = [FTSelectQuestionContentView new];
-  FTQuestionContentView *questionView = [FTSpeakQuestionContentView new];
+  NSArray *klasses = @[[FTSelectQuestionContentView class], [FTSpeakQuestionContentView class]];
+  FTQuestionContentView *questionView = [klasses[arc4random()%[klasses count]] new];
   questionView.delegate = self;
   questionView.alpha = 0;
   questionView.userInteractionEnabled = NO;
@@ -161,6 +160,8 @@
 }
 
 - (void)removeCurrentQuestion {
+  _btnCheck.enabled = NO;
+  
   if ([_vContentView.subviews count] == 0) {
     [self prepareNextQuestion];
     return;

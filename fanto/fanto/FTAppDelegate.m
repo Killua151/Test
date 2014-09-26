@@ -53,16 +53,6 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  if ([MUser currentUser] == nil)
-    return;
-  
-  [Utils showHUDForView:self.window withText:nil];
-  [[FTServerHelper sharedHelper] extendAuthToken:^(NSError *error) {
-    [Utils hideAllHUDsForView:self.window];
-    
-    if (error != nil)
-      [Utils showAlertWithError:error delegate:self];
-  }];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -111,6 +101,13 @@
   return NO;
 }
 
+- (void)setupRootViewController {
+  if ([MUser currentUser] == nil)
+    self.window.rootViewController = [FTHomeViewController navigationController];
+  else
+    self.window.rootViewController = [FTSkillsListViewController navigationController];
+}
+
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   [MUser logOutCurrentUser];
@@ -129,13 +126,6 @@
   
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
-}
-
-- (void)setupRootViewController {
-  if ([MUser currentUser] == nil)
-    self.window.rootViewController = [FTHomeViewController navigationController];
-  else
-    self.window.rootViewController = [FTSkillsListViewController navigationController];
 }
 
 @end

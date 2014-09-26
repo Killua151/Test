@@ -29,7 +29,8 @@
   for (NSInteger i = 0; i < 2; i++)
     for (NSInteger j = 0; j < 2; j++) {
       FTSelectQuestionButton *button = [[FTSelectQuestionButton alloc] initWithIndex:i*2+j];
-      button.frame = CGRectMake(15 + j*(button.frame.size.width + 15), buttonsTopMargin + i*(buttonsHeight + 15), button.frame.size.width, buttonsHeight);
+      button.frame = CGRectMake(15 + j*(button.frame.size.width + 15),
+                                buttonsTopMargin + i*(buttonsHeight + 15), button.frame.size.width, buttonsHeight);
       button.delegate = self;
       [_btnOptions addObject:button];
       [self addSubview:button];

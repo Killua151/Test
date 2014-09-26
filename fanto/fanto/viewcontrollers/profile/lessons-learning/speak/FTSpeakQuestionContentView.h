@@ -9,10 +9,11 @@
 #import "FTQuestionContentView.h"
 
 @interface FTSpeakQuestionContentView : FTQuestionContentView {
-  
   IBOutlet UILabel *_lblQuestionTitle;
+  IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIButton *_btnTooltips;
+  IBOutlet UIButton *_btnRecord;
   IBOutlet UIButton *_btnSkipSpeakQuestion;
 }
 

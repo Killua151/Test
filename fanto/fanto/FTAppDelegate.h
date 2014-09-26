@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (BOOL)sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error;
+- (void)setupRootViewController;
 
 @end

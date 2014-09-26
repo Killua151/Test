@@ -8,10 +8,12 @@
 
 #import "FTServerHelper.h"
 #import "MUser.h"
+#import "FTAppDelegate.h"
 
 @interface FTServerHelper ()
 
 - (void)logInWithParam:(NSDictionary *)params completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+- (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void(^)())handler;
 
 @end
 
@@ -79,7 +81,9 @@
      handler([responseObject objectFromJSONData], nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     handler(nil, error);
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
    }];
 }
 
@@ -105,12 +109,12 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-//     DLog(@"%@", [responseObject objectFromJSONData]);
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//     DLog(@"%@", error);
-     handler(nil, error);
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
    }];
 }
 
@@ -128,8 +132,23 @@
        handler(nil, [NSError errorWithDomain:@"Unknown error" code:-1 userInfo:nil]);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     handler(nil, error);
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
    }];
+}
+
+- (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void (^)())handler {
+  if ([[operation response] statusCode] == 401) {
+    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [MUser logOutCurrentUser];
+    [appDelegate setupRootViewController];
+    [Utils showAlertWithError:error];
+    return;
+  }
+  
+  if (handler != NULL)
+    handler();
 }
 
 @end
