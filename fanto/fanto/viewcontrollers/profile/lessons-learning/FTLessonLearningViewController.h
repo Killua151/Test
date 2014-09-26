@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTLessonLearningViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate> {
+@interface FTLessonLearningViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate, UIGestureRecognizerDelegate> {
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
@@ -17,6 +17,17 @@
   IBOutletCollection(UIButton) NSArray *_btnProgressSegments;
   IBOutlet UIView *_vContentView;
   IBOutlet UIButton *_btnCheck;
+  
+  IBOutlet UIView *_vResultCorrect;
+  IBOutlet UIImageView *_imgResultCorrectBg;
+  IBOutlet UIView *_vResultCorrectBg;
+  IBOutlet UILabel *_lblResultCorrectMessage;
+  
+  IBOutlet UIView *_vResultIncorrect;
+  IBOutlet UIImageView *_imgResultIncorrectBg;
+  IBOutlet UIView *_vResultIncorrectBg;
+  IBOutlet UILabel *_lblResultIncorrectMessage;
+  IBOutlet UILabel *_lblResultIncorrectAnswer;
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender;

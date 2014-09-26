@@ -83,7 +83,6 @@
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
-  DLog(@"invoke");
   [_vShare show];
 }
 

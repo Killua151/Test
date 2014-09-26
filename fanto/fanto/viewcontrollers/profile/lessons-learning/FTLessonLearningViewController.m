@@ -21,13 +21,23 @@
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
   
+  CGFloat _innerPanGestureYPos;
+  
   FTQuestionContentView *_vQuestionContent;
 }
 
 - (void)setupViews;
+- (void)setupHeaderViews;
+- (void)setupResultViews;
+
 - (void)updateHeaderViews;
+- (void)resetResultViews;
+- (void)setResultViewVisible:(BOOL)show forResult:(BOOL)correctAnswer;
+
 - (void)prepareNextQuestion;
 - (void)removeCurrentQuestion;
+
+- (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
 
 @end
 
@@ -49,13 +59,17 @@
 }
 
 - (void)reloadContents {
+  [self setResultViewVisible:NO forResult:YES];
   _currentLessonIndex++;
   [self removeCurrentQuestion];
   [self updateHeaderViews];
 }
 
 - (void)gestureLayerDidTap {
-  [_vQuestionContent gestureLayerDidTap];
+  if (_vResultCorrect.alpha == 1 || _vResultIncorrect.alpha == 1)
+    [self reloadContents];
+  else
+    [_vQuestionContent gestureLayerDidTap];
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
@@ -74,7 +88,7 @@
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
-  [self reloadContents];
+  [self setResultViewVisible:YES forResult:YES];
 }
 
 #pragma mark - UIAlertViewDelegate methods
@@ -94,8 +108,25 @@
   _btnCheck.enabled = validAnswer;
 }
 
+#pragma mark - UIGestureRecognizerDelegate methods
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+  _innerPanGestureYPos = [gestureRecognizer locationInView:gestureRecognizer.view].y;
+  return YES;
+}
+
 #pragma mark - Private methods
 - (void)setupViews {
+  [self setupHeaderViews];
+  [self setupResultViews];
+  
+  _btnCheck.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(153, 204, 0)] forState:UIControlStateNormal];
+  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
+  [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
+  _btnCheck.superview.layer.cornerRadius = 4;
+}
+
+- (void)setupHeaderViews {
   _lblLessonsCount.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
@@ -127,12 +158,35 @@
     buttonFrame.origin.x = 15 + index * (buttonFrame.size.width + segmentsGap);
     button.frame = buttonFrame;
   }];
+}
+
+- (void)setupResultViews {
+  _imgResultCorrectBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
+                               resizingMode:UIImageResizingModeStretch];
+  _vResultCorrectBg.layer.cornerRadius = 3;
+  _lblResultCorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblResultCorrectMessage.text = NSLocalizedString(@"Correct!", nil);
   
-  _btnCheck.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(153, 204, 0)] forState:UIControlStateNormal];
-  [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
-  [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
-  _btnCheck.superview.layer.cornerRadius = 4;
+  _imgResultIncorrectBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
+                                 resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
+                                 resizingMode:UIImageResizingModeStretch];
+  _vResultIncorrectBg.layer.cornerRadius = 3;
+  _lblResultIncorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblResultIncorrectMessage.text = NSLocalizedString(@"Correct answer", nil);
+  
+  _lblResultIncorrectAnswer.font = [UIFont fontWithName:@"ClearSans" size:17];
+  
+  for (UIView *resultView in @[_vResultCorrect, _vResultIncorrect]) {
+    UIPanGestureRecognizer *panGesture =
+    [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+    panGesture.minimumNumberOfTouches = 1;
+    panGesture.maximumNumberOfTouches = 1;
+    panGesture.delegate = self;
+    [resultView addGestureRecognizer:panGesture];
+  }
+  
+  [self resetResultViews];
 }
 
 - (void)updateHeaderViews {
@@ -156,6 +210,37 @@
       _imgAntProgressIndicator.center = center;
     }
   }];
+}
+
+- (void)resetResultViews {
+  CGRect frame = _vResultCorrect.frame;
+  frame.origin.y = _btnCheck.superview.frame.origin.y - 30 - frame.size.height;
+  _vResultCorrect.frame = frame;
+  _vResultIncorrect.frame = frame;
+  
+  _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
+}
+
+- (void)setResultViewVisible:(BOOL)show forResult:(BOOL)correctAnswer {
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     if (show) {
+       if (correctAnswer)
+         _vResultCorrect.alpha = 1;
+       else
+         _vResultIncorrect.alpha = 1;
+     } else
+       _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
+   }
+   completion:^(BOOL finished) {
+     if (show)
+       [self gestureLayerDidEnterEditingMode];
+     else
+       [self resetResultViews];
+   }];
 }
 
 - (void)prepareNextQuestion {
@@ -213,6 +298,18 @@
      [questionView removeFromSuperview];
      [self prepareNextQuestion];
    }];
+}
+
+- (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {
+  CGPoint outterLocation = [panGesture locationInView:panGesture.view.superview];
+  
+  CGFloat viewHeight = panGesture.view.frame.size.height;
+  CGFloat superviewHeight = panGesture.view.superview.frame.size.height;
+  
+  CGRect frame = panGesture.view.frame;
+  frame.origin.y = outterLocation.y - _innerPanGestureYPos;
+  frame.origin.y = MAX(44, MIN(superviewHeight - viewHeight, frame.origin.y));
+  panGesture.view.frame = frame;
 }
 
 @end

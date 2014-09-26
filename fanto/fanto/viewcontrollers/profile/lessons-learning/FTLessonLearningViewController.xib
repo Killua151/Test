@@ -10,10 +10,19 @@
                 <outlet property="_btnCheck" destination="cXU-uU-Qfx" id="oON-lB-GG0"/>
                 <outlet property="_btnHeartPotion" destination="Ysq-QO-8qW" id="K7a-GW-fqs"/>
                 <outlet property="_imgAntProgressIndicator" destination="m5z-uA-XU4" id="Qcg-WY-Jk8"/>
+                <outlet property="_imgResultCorrectBg" destination="l4g-Tb-muP" id="WZ6-cZ-29q"/>
+                <outlet property="_imgResultIncorrectBg" destination="mrn-J1-JRU" id="Ffc-iQ-lXF"/>
                 <outlet property="_lblLessonsCount" destination="xhz-cp-bQP" id="NjE-Gg-SNK"/>
+                <outlet property="_lblResultCorrectMessage" destination="cxR-JD-lfi" id="bMr-dH-zPA"/>
+                <outlet property="_lblResultIncorrectAnswer" destination="E7d-ps-Zyo" id="Hp1-NO-FuT"/>
+                <outlet property="_lblResultIncorrectMessage" destination="nA6-AS-4si" id="bNS-tQ-Wq8"/>
                 <outlet property="_vContentView" destination="ydR-Mh-Yaw" id="Tgm-Er-YL0"/>
                 <outlet property="_vGestureLayer" destination="aHI-dd-Pjg" id="hId-P3-C12"/>
                 <outlet property="_vHearts" destination="8WK-52-W9L" id="amh-hE-Unj"/>
+                <outlet property="_vResultCorrect" destination="PRu-ea-9nh" id="nGa-uB-0tz"/>
+                <outlet property="_vResultCorrectBg" destination="wRO-Tf-iCz" id="Pkk-CE-J6c"/>
+                <outlet property="_vResultIncorrect" destination="dON-38-dQN" id="Lk6-zV-rBL"/>
+                <outlet property="_vResultIncorrectBg" destination="yhy-4j-Wqq" id="nYj-5J-Ira"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="_btnProgressSegments" destination="M7L-Bt-rT3" id="pi7-FR-vwB"/>
                 <outletCollection property="_btnProgressSegments" destination="TEt-cK-k7k" id="Jj6-hg-LPl"/>
@@ -49,14 +58,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="iT9-J3-pRv" userLabel="Header">
+                <view contentMode="scaleToFill" id="iT9-J3-pRv" userLabel="Header view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DyF-Gs-SVy">
-                            <rect key="frame" x="5" y="13" width="40" height="40"/>
+                            <rect key="frame" x="15" y="23" width="20" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="btn-lessons_learning-close.png">
+                            <state key="normal" backgroundImage="btn-lessons_learning-close.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -315,7 +324,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="Oam-mZ-ICT">
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="Oam-mZ-ICT" userLabel="Check button">
                     <rect key="frame" x="15" y="502" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
@@ -335,9 +344,74 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="aHI-dd-Pjg">
+                <view contentMode="scaleToFill" id="aHI-dd-Pjg" userLabel="Gesture layer">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="PRu-ea-9nh" userLabel="Correct result">
+                    <rect key="frame" x="15" y="200" width="290" height="85"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-popup-bg.png" id="l4g-Tb-muP">
+                            <rect key="frame" x="-15" y="-15" width="320" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="wRO-Tf-iCz">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-correct.png" id="A6Q-Z5-dth">
+                                    <rect key="frame" x="18" y="27" width="40" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chính xác!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxR-JD-lfi">
+                                    <rect key="frame" x="68" y="31" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.92156862745098034" green="1" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="dON-38-dQN" userLabel="Incorrect result">
+                    <rect key="frame" x="15" y="300" width="290" height="85"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-popup-bg.png" id="mrn-J1-JRU">
+                            <rect key="frame" x="-15" y="-15" width="320" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="yhy-4j-Wqq">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-lessons_learning-close.png" id="7RN-Iu-f2g">
+                                    <rect key="frame" x="15" y="26" width="32" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nA6-AS-4si">
+                                    <rect key="frame" x="68" y="17" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.50588235294117645" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E7d-ps-Zyo">
+                                    <rect key="frame" x="68" y="43" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.50588235290000005" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -346,10 +420,12 @@
         </view>
     </objects>
     <resources>
-        <image name="btn-lessons_learning-close.png" width="20" height="20"/>
+        <image name="btn-lessons_learning-close.png" width="32" height="32"/>
         <image name="img-ant-lessons_learning_progress.png" width="10" height="8"/>
+        <image name="img-lessons_learning-correct.png" width="40" height="30"/>
         <image name="img-lessons_learning-heart.png" width="25" height="23"/>
         <image name="img-lessons_learning-heart_disabled.png" width="25" height="23"/>
         <image name="img-lessons_learning-heart_potion.png" width="21" height="21"/>
+        <image name="img-popup-bg.png" width="320" height="165"/>
     </resources>
 </document>
