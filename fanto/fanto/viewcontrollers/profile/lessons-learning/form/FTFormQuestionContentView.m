@@ -26,6 +26,29 @@
   _imgAnswerFieldBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
                              resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
                              resizingMode:UIImageResizingModeStretch];
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _lblQuestionTitle.frame;
+    frame.origin.y -= 10;
+    _lblQuestionTitle.frame = frame;
+    
+    frame = _btnQuestionAudio.frame;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
+    _btnQuestionAudio.frame = frame;
+    
+    frame = _lblQuestion.frame;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
+    _lblQuestion.frame = frame;
+    
+    frame = _vAnswerField.frame;
+    frame.origin.y -= DeviceSystemIsOS7() ? 20 : 30;
+    _vAnswerField.frame = frame;
+    
+    frame = _vAnswerTokens.frame;
+    frame.origin.y -= DeviceSystemIsOS7() ? 25 : 30;
+    frame.size.height -= 55;
+    _vAnswerTokens.frame = frame;
+  }
 }
 
 @end

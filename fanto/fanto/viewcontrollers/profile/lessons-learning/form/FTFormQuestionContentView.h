@@ -10,10 +10,12 @@
 
 @interface FTFormQuestionContentView : FTQuestionContentView {
   IBOutlet UILabel *_lblQuestionTitle;
+  IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIView *_vAnswerField;
   IBOutlet UIImageView *_imgAnswerFieldBg;
   IBOutlet UITextField *_txtAnswerPlaceholder;
+  IBOutlet UIView *_vAnswerTokens;
 }
 
 @end
