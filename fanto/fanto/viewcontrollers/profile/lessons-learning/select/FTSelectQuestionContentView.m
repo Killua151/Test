@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTJudgeQuestionView.h"
-#import "FTJudgeButtonView.h"
+#import "FTSelectQuestionContentView.h"
+#import "FTSelectQuestionButton.h"
 
-@interface FTJudgeQuestionView () {
+@interface FTSelectQuestionContentView () {
   NSMutableArray *_btnOptions;
 }
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation FTJudgeQuestionView
+@implementation FTSelectQuestionContentView
 
 - (id)init {
   if (self = [super init]) {
@@ -33,7 +33,7 @@
 #pragma mark - FTLessonLearningDelegate methods
 - (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
   if (selected) {
-    for (FTJudgeButtonView *button in _btnOptions)
+    for (FTSelectQuestionButton *button in _btnOptions)
       if (button.tag != index)
         [button setSelected:NO];    
   }
@@ -56,7 +56,7 @@
   
   for (NSInteger i = 0; i < 2; i++)
     for (NSInteger j = 0; j < 2; j++) {
-      FTJudgeButtonView *button = [[FTJudgeButtonView alloc] initWithIndex:i*2+j];
+      FTSelectQuestionButton *button = [[FTSelectQuestionButton alloc] initWithIndex:i*2+j];
       button.frame = CGRectMake(15 + j*(button.frame.size.width + 15), buttonsTopMargin + i*(buttonsHeight + 15), button.frame.size.width, buttonsHeight);
       button.delegate = self;
       [_btnOptions addObject:button];

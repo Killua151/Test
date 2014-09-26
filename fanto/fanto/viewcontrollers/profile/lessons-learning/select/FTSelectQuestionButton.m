@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTJudgeButtonView.h"
+#import "FTSelectQuestionButton.h"
 
-@interface FTJudgeButtonView () {
+@interface FTSelectQuestionButton () {
   NSInteger _index;
 }
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation FTJudgeButtonView
+@implementation FTSelectQuestionButton
 
 - (id)initWithIndex:(NSInteger)index {
   if (self = [super init]) {

@@ -7,7 +7,7 @@
 //
 
 #import "FTLessonLearningViewController.h"
-#import "FTJudgeQuestionView.h"
+#import "FTSelectQuestionContentView.h"
 
 @interface FTLessonLearningViewController () {
   NSInteger _totalLessonsCount;
@@ -140,7 +140,7 @@
 }
 
 - (void)prepareNextQuestion {
-  FTJudgeQuestionView *questionView = [FTJudgeQuestionView new];
+  FTSelectQuestionContentView *questionView = [FTSelectQuestionContentView new];
   questionView.delegate = self;
   questionView.alpha = 0;
   questionView.userInteractionEnabled = NO;

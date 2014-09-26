@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTJudgeQuestionView : UIView <FTLessonLearningDelegate> {
+@interface FTSelectQuestionContentView : UIView <FTLessonLearningDelegate> {
   IBOutlet UILabel *_lblQuestion;
 }
 

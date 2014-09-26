@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTJudgeButtonView : UIView {
+@interface FTSelectQuestionButton : UIView {
   IBOutlet UIImageView *_imgOptionImage;
   IBOutlet UIImageView *_imgRadio;
   IBOutlet UILabel *_lblOptionTitle;
