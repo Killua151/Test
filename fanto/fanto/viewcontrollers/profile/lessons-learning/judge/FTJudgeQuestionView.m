@@ -9,7 +9,9 @@
 #import "FTJudgeQuestionView.h"
 #import "FTJudgeButtonView.h"
 
-@interface FTJudgeQuestionView ()
+@interface FTJudgeQuestionView () {
+  NSMutableArray *_btnOptions;
+}
 
 - (void)setupViews;
 
@@ -20,6 +22,8 @@
 - (id)init {
   if (self = [super init]) {
     LoadXibWithSameClass();
+    
+    _btnOptions = [NSMutableArray new];
     [self setupViews];
   }
   
@@ -28,15 +32,36 @@
 
 #pragma mark - FTLessonLearningDelegate methods
 - (void)judgeQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
+  if (selected) {
+    for (FTJudgeButtonView *button in _btnOptions)
+      if (button.tag != index)
+        [button setSelected:NO];    
+  }
+  
   if ([_delegate respondsToSelector:@selector(judgeQuestionButtonDidChanged:atIndex:)])
     [_delegate judgeQuestionButtonDidChanged:selected atIndex:index];
 }
 
 #pragma mark - Private methods
 - (void)setupViews {
-  FTJudgeButtonView *button = [[FTJudgeButtonView alloc] initWithIndex:0];
-  button.delegate = self;
-  [self addSubview:button];
+  CGRect frame = self.frame;
+  frame.size.height = DeviceScreenIsRetina4Inch() ? 430 : 342;
+  self.frame = frame;
+  
+  _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  
+  CGFloat buttonsTopMargin = DeviceScreenIsRetina4Inch() ? 60 : 48;
+  CGFloat buttonsBottomMargin = DeviceScreenIsRetina4Inch() ? 35 : 28;
+  CGFloat buttonsHeight = (self.frame.size.height - buttonsTopMargin - buttonsBottomMargin - 15)/2;
+  
+  for (NSInteger i = 0; i < 2; i++)
+    for (NSInteger j = 0; j < 2; j++) {
+      FTJudgeButtonView *button = [[FTJudgeButtonView alloc] initWithIndex:i*2+j];
+      button.frame = CGRectMake(15 + j*(button.frame.size.width + 15), buttonsTopMargin + i*(buttonsHeight + 15), button.frame.size.width, buttonsHeight);
+      button.delegate = self;
+      [_btnOptions addObject:button];
+      [self addSubview:button];
+    }
 }
 
 @end

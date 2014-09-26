@@ -23,11 +23,17 @@
     LoadXibWithSameClass();
     
     _index = index;
+    self.tag = index;
     self.layer.cornerRadius = 3;
     _lblOptionTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
   }
   
   return self;
+}
+
+- (void)setSelected:(BOOL)selected {
+  [self highlightView:selected];
+  _btnGesture.selected = selected;
 }
 
 - (IBAction)btnGestureTouchedDown:(UIButton *)sender {

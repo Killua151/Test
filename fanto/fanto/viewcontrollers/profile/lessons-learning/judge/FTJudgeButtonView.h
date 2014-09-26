@@ -12,11 +12,13 @@
   IBOutlet UIImageView *_imgOptionImage;
   IBOutlet UIImageView *_imgRadio;
   IBOutlet UILabel *_lblOptionTitle;
+  IBOutlet UIButton *_btnGesture;
 }
 
 @property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
 
 - (id)initWithIndex:(NSInteger)index;
+- (void)setSelected:(BOOL)selected;
 
 - (IBAction)btnGestureTouchedDown:(UIButton *)sender;
 - (IBAction)btnGesturePressed:(UIButton *)sender;

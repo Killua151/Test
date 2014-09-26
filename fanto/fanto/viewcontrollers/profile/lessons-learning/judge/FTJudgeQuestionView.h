@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FTJudgeQuestionView : UIView <FTLessonLearningDelegate> {
+  IBOutlet UILabel *_lblQuestion;
 }
 
 @property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;

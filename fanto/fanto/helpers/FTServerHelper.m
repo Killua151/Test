@@ -105,11 +105,11 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     DLog(@"%@", [responseObject objectFromJSONData]);
+//     DLog(@"%@", [responseObject objectFromJSONData]);
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     DLog(@"%@", error);
+//     DLog(@"%@", error);
      handler(nil, error);
    }];
 }
