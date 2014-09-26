@@ -353,7 +353,7 @@
                     <rect key="frame" x="15" y="200" width="290" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-popup-bg.png" id="l4g-Tb-muP">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-result_view-bg.png" id="l4g-Tb-muP">
                             <rect key="frame" x="-15" y="-15" width="320" height="115"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -382,7 +382,7 @@
                     <rect key="frame" x="15" y="300" width="290" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-popup-bg.png" id="mrn-J1-JRU">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-result_view-bg.png" id="mrn-J1-JRU">
                             <rect key="frame" x="-15" y="-15" width="320" height="115"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -426,6 +426,6 @@
         <image name="img-lessons_learning-heart.png" width="25" height="23"/>
         <image name="img-lessons_learning-heart_disabled.png" width="25" height="23"/>
         <image name="img-lessons_learning-heart_potion.png" width="21" height="21"/>
-        <image name="img-popup-bg.png" width="320" height="165"/>
+        <image name="img-lessons_learning-result_view-bg.png" width="320" height="115"/>
     </resources>
 </document>

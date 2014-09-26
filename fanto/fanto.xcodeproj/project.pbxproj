@@ -201,6 +201,8 @@
 		CA5DAFA419D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFA319D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib */; };
 		CA5DAFA719D5D27A003DAB26 /* img-lessons_learning-correct.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFA519D5D27A003DAB26 /* img-lessons_learning-correct.png */; };
 		CA5DAFA819D5D27A003DAB26 /* img-lessons_learning-correct@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFA619D5D27A003DAB26 /* img-lessons_learning-correct@2x.png */; };
+		CA5DAFAB19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFA919D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png */; };
+		CA5DAFAC19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFAA19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -538,6 +540,8 @@
 		CA5DAFA319D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTTranslateQuestionContentView.xib; sourceTree = "<group>"; };
 		CA5DAFA519D5D27A003DAB26 /* img-lessons_learning-correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-correct.png"; sourceTree = "<group>"; };
 		CA5DAFA619D5D27A003DAB26 /* img-lessons_learning-correct@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-correct@2x.png"; sourceTree = "<group>"; };
+		CA5DAFA919D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-result_view-bg.png"; sourceTree = "<group>"; };
+		CA5DAFAA19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-lessons_learning-result_view-bg@2x.png"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -763,6 +767,8 @@
 				4A4122EC19D4006900894095 /* img-lessons_learning-heart_potion@2x.png */,
 				4AE8AD9A19D526BF00A49880 /* img-lessons_learning-popover-bg.png */,
 				4AE8AD9B19D526BF00A49880 /* img-lessons_learning-popover-bg@2x.png */,
+				CA5DAFA919D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png */,
+				CA5DAFAA19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png */,
 			);
 			name = "Lessons Learning";
 			path = "lessons-learning";
@@ -1590,6 +1596,7 @@
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
 				CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */,
 				4A4122C119D3C8B100894095 /* FTFailLessonViewController.xib in Resources */,
+				CA5DAFAC19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png in Resources */,
 				CABADE6F19CD56F3000187AF /* img-money-icon_big@2x.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
 				4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */,
@@ -1701,6 +1708,7 @@
 				CA5DAF3C19D1A5A7003DAB26 /* FTShareViewController.xib in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
 				CA5DAF8819D59E3B003DAB26 /* FTJudgeQuestionContentView.xib in Resources */,
+				CA5DAFAB19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png in Resources */,
 				4A4122C719D3C8B100894095 /* FTMoneyBonusViewController.xib in Resources */,
 				4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */,
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,

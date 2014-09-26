@@ -161,17 +161,11 @@
 }
 
 - (void)setupResultViews {
-  _imgResultCorrectBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
-                               resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
-                               resizingMode:UIImageResizingModeStretch];
-  _vResultCorrectBg.layer.cornerRadius = 3;
+  _vResultCorrectBg.layer.cornerRadius = 5;
   _lblResultCorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblResultCorrectMessage.text = NSLocalizedString(@"Correct!", nil);
-  
-  _imgResultIncorrectBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
-                                 resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
-                                 resizingMode:UIImageResizingModeStretch];
-  _vResultIncorrectBg.layer.cornerRadius = 3;
+
+  _vResultIncorrectBg.layer.cornerRadius = 5;
   _lblResultIncorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblResultIncorrectMessage.text = NSLocalizedString(@"Correct answer", nil);
   
