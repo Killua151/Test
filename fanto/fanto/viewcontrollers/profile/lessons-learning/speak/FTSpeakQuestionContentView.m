@@ -18,6 +18,8 @@
 
 - (void)setupViews {
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblQuestionTitle.text = NSLocalizedString(@"Speak this sentence:", nil);
+  
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   NSString *styledString = NSLocalizedString(@"Tap", nil);

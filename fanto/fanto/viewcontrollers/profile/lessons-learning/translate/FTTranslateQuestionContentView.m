@@ -1,14 +1,14 @@
 //
-//  FTListenQuestionContentView.m
+//  FTTranslateQuestionContentView.m
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/26/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTListenQuestionContentView.h"
+#import "FTTranslateQuestionContentView.h"
 
-@interface FTListenQuestionContentView () {
+@interface FTTranslateQuestionContentView () {
   CGFloat _originalAnswerFieldOriginY;
 }
 
@@ -16,11 +16,13 @@
 
 @end
 
-@implementation FTListenQuestionContentView
+@implementation FTTranslateQuestionContentView
 
 - (void)setupViews {
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestionTitle.text = NSLocalizedString(@"Type what you listen", nil);
+  _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
+  
+  _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
@@ -32,18 +34,14 @@
                              resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
                              resizingMode:UIImageResizingModeStretch];
   
-  if (!DeviceScreenIsRetina4Inch()) {
-    CGRect frame = _vAnswerField.frame;
-    frame.origin.y -= 20;
-    _vAnswerField.frame = frame;
-  }
-  
   _originalAnswerFieldOriginY = _vAnswerField.frame.origin.y;
 }
 
 - (void)gestureLayerDidTap {
   [_txtAnswerField resignFirstResponder];
-  [self animateAnswerFieldSlideUp:NO];
+  
+  if (!DeviceScreenIsRetina4Inch())
+    [self animateAnswerFieldSlideUp:NO];
 }
 
 #pragma mark - UITextViewDelegate methods
@@ -53,7 +51,8 @@
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode)])
     [self.delegate questionContentViewDidEnterEditingMode];
   
-  [self animateAnswerFieldSlideUp:YES];
+  if (!DeviceScreenIsRetina4Inch())
+    [self animateAnswerFieldSlideUp:YES];
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {

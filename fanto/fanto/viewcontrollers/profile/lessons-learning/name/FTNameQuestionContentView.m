@@ -12,17 +12,19 @@
   CGFloat _originalAnswerFieldOriginY;
 }
 
+- (void)animateAnswerFieldSlideUp:(BOOL)isUp;
+
 @end
 
 @implementation FTNameQuestionContentView
 
 - (void)setupViews {
-  _txtAnswerField.delegate = self;
-  
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
+  
+  _txtAnswerField.delegate = self;
   _txtAnswerField.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   _vAnswerField.layer.cornerRadius = 3;

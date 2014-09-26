@@ -185,7 +185,6 @@
 		CA5DAF7019D45DCF003DAB26 /* img-judge_question-radio.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */; };
 		CA5DAF7119D45DCF003DAB26 /* img-judge_question-radio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */; };
 		CA5DAF7419D59DCA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7319D59DCA003DAB26 /* file */; };
-		CA5DAF8019D59DDA003DAB26 /* file in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF7C19D59DDA003DAB26 /* file */; };
 		CA5DAF8619D59E2B003DAB26 /* FTJudgeQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF8519D59E2B003DAB26 /* FTJudgeQuestionContentView.m */; };
 		CA5DAF8819D59E3B003DAB26 /* FTJudgeQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF8719D59E3B003DAB26 /* FTJudgeQuestionContentView.xib */; };
 		CA5DAF8C19D5A12C003DAB26 /* FTJudgeOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF8A19D5A12C003DAB26 /* FTJudgeOptionCell.m */; };
@@ -198,6 +197,8 @@
 		CA5DAF9A19D5B295003DAB26 /* FTListenQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF9919D5B295003DAB26 /* FTListenQuestionContentView.xib */; };
 		CA5DAF9D19D5BF47003DAB26 /* FTNameQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAF9C19D5BF47003DAB26 /* FTNameQuestionContentView.m */; };
 		CA5DAF9F19D5BF53003DAB26 /* FTNameQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAF9E19D5BF53003DAB26 /* FTNameQuestionContentView.xib */; };
+		CA5DAFA219D5C5E6003DAB26 /* FTTranslateQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFA119D5C5E6003DAB26 /* FTTranslateQuestionContentView.m */; };
+		CA5DAFA419D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DAFA319D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -514,7 +515,6 @@
 		CA5DAF6C19D45DCF003DAB26 /* img-judge_question-radio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio.png"; sourceTree = "<group>"; };
 		CA5DAF6D19D45DCF003DAB26 /* img-judge_question-radio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-judge_question-radio@2x.png"; sourceTree = "<group>"; };
 		CA5DAF7319D59DCA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
-		CA5DAF7C19D59DDA003DAB26 /* file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
 		CA5DAF8419D59E2B003DAB26 /* FTJudgeQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeQuestionContentView.h; sourceTree = "<group>"; };
 		CA5DAF8519D59E2B003DAB26 /* FTJudgeQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJudgeQuestionContentView.m; sourceTree = "<group>"; };
 		CA5DAF8719D59E3B003DAB26 /* FTJudgeQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTJudgeQuestionContentView.xib; sourceTree = "<group>"; };
@@ -531,6 +531,9 @@
 		CA5DAF9B19D5BF47003DAB26 /* FTNameQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTNameQuestionContentView.h; sourceTree = "<group>"; };
 		CA5DAF9C19D5BF47003DAB26 /* FTNameQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTNameQuestionContentView.m; sourceTree = "<group>"; };
 		CA5DAF9E19D5BF53003DAB26 /* FTNameQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTNameQuestionContentView.xib; sourceTree = "<group>"; };
+		CA5DAFA019D5C5E6003DAB26 /* FTTranslateQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTTranslateQuestionContentView.h; sourceTree = "<group>"; };
+		CA5DAFA119D5C5E6003DAB26 /* FTTranslateQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTTranslateQuestionContentView.m; sourceTree = "<group>"; };
+		CA5DAFA319D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTTranslateQuestionContentView.xib; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -1068,7 +1071,9 @@
 		CA5DAF7B19D59DDA003DAB26 /* Translate */ = {
 			isa = PBXGroup;
 			children = (
-				CA5DAF7C19D59DDA003DAB26 /* file */,
+				CA5DAFA019D5C5E6003DAB26 /* FTTranslateQuestionContentView.h */,
+				CA5DAFA119D5C5E6003DAB26 /* FTTranslateQuestionContentView.m */,
+				CA5DAFA319D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib */,
 			);
 			name = Translate;
 			path = translate;
@@ -1538,7 +1543,6 @@
 				CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */,
 				CABADE7719CD6251000187AF /* img-hexagon_skill-bg_big.png in Resources */,
 				4A4122F419D4006900894095 /* img-lessons_learning-heart_potion@2x.png in Resources */,
-				CA5DAF8019D59DDA003DAB26 /* file in Resources */,
 				CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CABADE8119CD63C3000187AF /* img-hexagon_skill-strength-1_big.png in Resources */,
@@ -1599,6 +1603,7 @@
 				CABADE8219CD63C3000187AF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */,
+				CA5DAFA419D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib in Resources */,
 				4A4122D619D4004500894095 /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CA6C761519CD1D4100D175DF /* img-profile-avatar_placeholder.png in Resources */,
 				4A85F3EE19C6E2BF00642C5F /* img-hexagon_skill-strength-4.png in Resources */,
@@ -1805,6 +1810,7 @@
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4AE8AD8B19D521E700A49880 /* FTQuestionContentView.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
+				CA5DAFA219D5C5E6003DAB26 /* FTTranslateQuestionContentView.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
 				CA5DAEFE19D06588003DAB26 /* FTSetGoalViewController.m in Sources */,
