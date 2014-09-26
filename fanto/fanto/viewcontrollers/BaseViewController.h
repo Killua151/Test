@@ -15,7 +15,7 @@
 + (UINavigationController *)navigationController;
 - (void)transitToViewController:(UIViewController *)viewController;
 
-- (void)gestureLayerDidEnterEdittingMode;
+- (void)gestureLayerDidEnterEditingMode;
 - (void)gestureLayerDidTap;
 - (void)reloadContents;
 - (void)animateSlideViewUp:(BOOL)isSlidingUp withDistance:(CGFloat)distance;

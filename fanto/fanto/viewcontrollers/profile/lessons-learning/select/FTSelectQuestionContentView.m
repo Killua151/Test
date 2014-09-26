@@ -50,8 +50,8 @@
         [button setSelected:NO];    
   }
   
-  if ([self.delegate respondsToSelector:@selector(selectQuestionDidChangedAnswer:)])
-    [self.delegate selectQuestionDidChangedAnswer:selected];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
+    [self.delegate questionContentViewDidUpdateAnswer:selected];
 }
 
 @end

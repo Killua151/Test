@@ -35,8 +35,8 @@
 @protocol FTLessonLearningDelegate <NSObject>
 
 @optional
-- (void)selectQuestionDidChangedAnswer:(BOOL)answerSelected;
-- (void)judgeQuestionDidChangedAnswer:(BOOL)answerSelected;
+- (void)questionContentViewDidEnterEditingMode;
+- (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer;
 
 @end
 

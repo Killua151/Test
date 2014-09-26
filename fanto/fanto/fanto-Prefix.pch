@@ -80,6 +80,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kHeightNavigationBarLandscape           32
 #define kHeightTabBar                           49
 #define kHeightKeyboard                         216
+#define kDefaultAnimationDuration               0.25
 
 #define kHexagonThemeTestMode                   true
 #define kTestLogin                              false

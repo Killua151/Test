@@ -82,7 +82,7 @@
 #pragma mark - Private methods
 - (void)animateHideTooltips {
   [UIView 
-   animateWithDuration:0.5
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut 
    animations:^{

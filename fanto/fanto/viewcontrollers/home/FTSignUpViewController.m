@@ -86,7 +86,7 @@
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   _currentFirstResponder = textField;
-  [self gestureLayerDidEnterEdittingMode];
+  [self gestureLayerDidEnterEditingMode];
   
   if (!DeviceScreenIsRetina4Inch())
     [self animateSlideViewUp:YES withDistance:20];

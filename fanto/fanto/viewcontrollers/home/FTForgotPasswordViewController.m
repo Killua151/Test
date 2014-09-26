@@ -46,7 +46,7 @@
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  [self gestureLayerDidEnterEdittingMode];
+  [self gestureLayerDidEnterEditingMode];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

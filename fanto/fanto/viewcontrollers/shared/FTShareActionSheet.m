@@ -66,7 +66,7 @@
 
 - (void)animateShowsShareViewUp:(BOOL)isUp {
   [UIView
-   animateWithDuration:0.35
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{

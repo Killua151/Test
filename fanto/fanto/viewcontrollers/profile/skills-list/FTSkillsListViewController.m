@@ -238,7 +238,7 @@
 - (void)animateSlideStrengthenButton:(BOOL)show {
   if (show) {
     [UIView
-     animateWithDuration:0.5
+     animateWithDuration:kDefaultAnimationDuration*2
      delay:0
      options:UIViewAnimationOptionCurveEaseInOut
      animations:^{
@@ -256,7 +256,7 @@
   _currentStrengthenButton.enabled = NO;
   
   [UIView
-   animateWithDuration:0.5
+   animateWithDuration:kDefaultAnimationDuration*2
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
@@ -272,7 +272,7 @@
   [self animateSlideStrengthenButton:YES];
   
   [UIView
-   animateWithDuration:0.5
+   animateWithDuration:kDefaultAnimationDuration*2
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{

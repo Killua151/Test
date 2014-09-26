@@ -30,6 +30,10 @@
   // Implement in child class
 }
 
+- (void)gestureLayerDidTap {
+  // Implement in child class
+}
+
 #pragma mark - Private methods
 - (void)setupViewFrame {
   CGRect frame = self.frame;

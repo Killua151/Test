@@ -39,6 +39,17 @@
                             <rect key="frame" x="-15" y="-15" width="320" height="130"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iLX-k6-Qe6">
+                            <rect key="frame" x="5" y="0.0" width="280" height="100"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="CN2-li-ZOK"/>
+                            </connections>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -49,6 +60,7 @@
                 <outlet property="_btnAudioSlow" destination="Lh8-d4-LN8" id="i99-YO-x7I"/>
                 <outlet property="_imgAnswerFieldBg" destination="ttF-79-DUm" id="SGf-uU-gwQ"/>
                 <outlet property="_lblQuestionTitle" destination="lNq-Ey-jxL" id="JLz-iZ-sXn"/>
+                <outlet property="_txtAnswerField" destination="iLX-k6-Qe6" id="anp-lp-j8V"/>
                 <outlet property="_vAnswerField" destination="VU8-zc-uZU" id="XxS-6G-66F"/>
             </connections>
         </view>

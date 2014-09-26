@@ -74,8 +74,8 @@
 
 #pragma mark - Private methods
 - (void)updateLessonLearningView {
-  if ([self.delegate respondsToSelector:@selector(judgeQuestionDidChangedAnswer:)])
-    [self.delegate judgeQuestionDidChangedAnswer:[_answersData count] > 0];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
+    [self.delegate questionContentViewDidUpdateAnswer:[_answersData count] > 0];
 }
 
 @end

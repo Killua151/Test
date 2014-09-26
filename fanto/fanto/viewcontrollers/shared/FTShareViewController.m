@@ -42,7 +42,7 @@
 #pragma mark - UITextViewDelegate methods
 - (void)textViewDidBeginEditing:(UITextView *)textView {
   _txtPlaceholder.hidden = YES;
-  [self gestureLayerDidEnterEdittingMode];
+  [self gestureLayerDidEnterEditingMode];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {

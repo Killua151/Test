@@ -13,5 +13,6 @@
 @property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
 
 - (void)setupViews;
+- (void)gestureLayerDidTap;
 
 @end

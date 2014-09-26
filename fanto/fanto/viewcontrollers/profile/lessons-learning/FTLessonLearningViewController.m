@@ -18,6 +18,8 @@
   NSInteger _currentLessonIndex;
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
+  
+  FTQuestionContentView *_vQuestionContent;
 }
 
 - (void)setupViews;
@@ -50,6 +52,10 @@
   [self updateHeaderViews];
 }
 
+- (void)gestureLayerDidTap {
+  [_vQuestionContent gestureLayerDidTap];
+}
+
 - (IBAction)btnClosePressed:(UIButton *)sender {
   UIAlertView *alertView =
   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning!", nil)
@@ -78,12 +84,12 @@
 }
 
 #pragma mark - FTLessonLearningDelegate methods
-- (void)selectQuestionDidChangedAnswer:(BOOL)answerSelected {
-  _btnCheck.enabled = answerSelected;
+- (void)questionContentViewDidEnterEditingMode {
+  [self gestureLayerDidEnterEditingMode];
 }
 
-- (void)judgeQuestionDidChangedAnswer:(BOOL)answerSelected {
-  _btnCheck.enabled = answerSelected;
+- (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer {
+  _btnCheck.enabled = validAnswer;
 }
 
 #pragma mark - Private methods
@@ -157,23 +163,23 @@
                        [FTJudgeQuestionContentView class],
                        [FTListenQuestionContentView class]
                        ];
-  FTQuestionContentView *questionView = [klasses[arc4random()%[klasses count]] new];
-  questionView = [FTListenQuestionContentView new];
+  _vQuestionContent = [klasses[arc4random()%[klasses count]] new];
+//  _vQuestionContent = [FTListenQuestionContentView new];
   
-  questionView.delegate = self;
-  questionView.alpha = 0;
-  questionView.userInteractionEnabled = NO;
-  [_vContentView addSubview:questionView];
+  _vQuestionContent.delegate = self;
+  _vQuestionContent.alpha = 0;
+  _vQuestionContent.userInteractionEnabled = NO;
+  [_vContentView addSubview:_vQuestionContent];
   
   [UIView
-   animateWithDuration:0.5
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     questionView.alpha = 1;
+     _vQuestionContent.alpha = 1;
    }
    completion:^(BOOL finished) {
-     questionView.userInteractionEnabled = YES;
+     _vQuestionContent.userInteractionEnabled = YES;
    }];
 }
 
@@ -191,7 +197,7 @@
   UIView *questionView = [_vContentView.subviews firstObject];
   
   [UIView
-   animateWithDuration:0.5
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{

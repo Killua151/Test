@@ -51,7 +51,7 @@
   }];
 }
 
-- (void)gestureLayerDidEnterEdittingMode {
+- (void)gestureLayerDidEnterEditingMode {
   _vGestureLayer.hidden = NO;
 }
 
@@ -68,7 +68,7 @@
   CGFloat topEdgeDelta = DeviceSystemIsOS7() ? iOS7TopEdge : 0;
   
   [UIView
-   animateWithDuration:0.25
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
