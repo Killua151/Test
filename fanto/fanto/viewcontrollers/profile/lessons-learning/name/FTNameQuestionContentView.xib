@@ -17,10 +17,17 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nLZ-BZ-PCB">
-                    <rect key="frame" x="0.0" y="60" width="320" height="282"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="XBX-6D-800">
+                    <rect key="frame" x="15" y="60" width="290" height="282"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nLZ-BZ-PCB">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="282"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" id="8Pm-46-vcs">
                     <rect key="frame" x="15" y="364" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

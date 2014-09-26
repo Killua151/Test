@@ -67,6 +67,8 @@
 
 #pragma mark - Private methods
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp {
+  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
+  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
@@ -74,7 +76,7 @@
    animations:^{
      CGRect frame = _vAnswerField.frame;
      frame.origin.y = isUp ?
-     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - 86 : _originalAnswerFieldOriginY;
+     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
      _vAnswerField.frame = frame;
    }
    completion:^(BOOL finished) {

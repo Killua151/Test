@@ -31,6 +31,16 @@
   _vAnswerField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _vAnswerField.layer.borderWidth = 1;
   
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _imgQuestion.superview.frame;
+    frame.size.height = self.frame.size.height - 148;
+    _imgQuestion.superview.frame = frame;
+    
+    frame = _vAnswerField.frame;
+    frame.origin.y = _imgQuestion.superview.frame.origin.y + _imgQuestion.superview.frame.size.height + 22;
+    _vAnswerField.frame = frame;
+  }
+  
   _originalAnswerFieldOriginY = _vAnswerField.frame.origin.y;
 }
 
@@ -60,6 +70,8 @@
 
 #pragma mark - Private methods
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp {
+  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
+  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
@@ -67,7 +79,7 @@
    animations:^{
      CGRect frame = _vAnswerField.frame;
      frame.origin.y = isUp ?
-     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - 86 : _originalAnswerFieldOriginY;
+     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
      _vAnswerField.frame = frame;
    }
    completion:^(BOOL finished) {

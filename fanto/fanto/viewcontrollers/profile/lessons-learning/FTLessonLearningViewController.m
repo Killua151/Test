@@ -159,16 +159,16 @@
 }
 
 - (void)prepareNextQuestion {
-//  NSArray *klasses = @[
-//                       [FTSelectQuestionContentView class],
-//                       [FTSpeakQuestionContentView class],
-//                       [FTJudgeQuestionContentView class],
-//                       [FTListenQuestionContentView class],
-//                       [FTNameQuestionContentView class],
-//                       [FTTranslateQuestionContentView class]
-//                       ];
-//  _vQuestionContent = [klasses[arc4random()%[klasses count]] new];
-  _vQuestionContent = [FTTranslateQuestionContentView new];
+  NSArray *klasses = @[
+                       [FTJudgeQuestionContentView class],
+                       [FTListenQuestionContentView class],
+                       [FTNameQuestionContentView class],
+                       [FTSelectQuestionContentView class],
+                       [FTSpeakQuestionContentView class],
+                       [FTTranslateQuestionContentView class]
+                       ];
+  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
+//  _vQuestionContent = [FTTranslateQuestionContentView new];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;
