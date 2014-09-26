@@ -55,13 +55,11 @@
     [self animateAnswerFieldSlideUp:YES];
 }
 
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+- (void)textViewDidEndEditing:(UITextView *)textView {
   _txtAnswerPlaceholder.hidden = textView.text.length > 0;
   
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
     [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0];
-  
-  return YES;
 }
 
 #pragma mark - Private methods

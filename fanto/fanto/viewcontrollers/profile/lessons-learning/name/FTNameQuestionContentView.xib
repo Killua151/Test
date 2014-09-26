@@ -32,33 +32,25 @@
                     <rect key="frame" x="15" y="364" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trả lời..." minimumFontSize="17" id="wna-on-JNb">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trả lời..." minimumFontSize="17" id="wna-on-JNb">
                             <rect key="frame" x="10" y="0.0" width="290" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vDt-Oq-s6I">
-                            <rect key="frame" x="5" y="2" width="290" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <connections>
-                                <outlet property="delegate" destination="-1" id="wrD-Ri-Ads"/>
+                                <outlet property="delegate" destination="-1" id="U3o-Mg-kPm"/>
                             </connections>
-                        </textView>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="_imgQuestion" destination="nLZ-BZ-PCB" id="okn-Rp-Bh7"/>
                 <outlet property="_lblQuestion" destination="MmE-Og-OYH" id="XSv-cB-qkw"/>
-                <outlet property="_txtAnswerField" destination="vDt-Oq-s6I" id="reF-Gl-cnY"/>
-                <outlet property="_txtAnswerPlaceholder" destination="wna-on-JNb" id="w8e-oj-Lh2"/>
+                <outlet property="_txtAnswerField" destination="wna-on-JNb" id="Stf-Lj-O3r"/>
                 <outlet property="_vAnswerField" destination="8Pm-46-vcs" id="uZx-YZ-OUd"/>
             </connections>
         </view>

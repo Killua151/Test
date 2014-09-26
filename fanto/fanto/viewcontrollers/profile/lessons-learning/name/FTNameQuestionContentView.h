@@ -8,12 +8,11 @@
 
 #import "FTQuestionContentView.h"
 
-@interface FTNameQuestionContentView : FTQuestionContentView <UITextViewDelegate> {
+@interface FTNameQuestionContentView : FTQuestionContentView <UITextFieldDelegate, UITextViewDelegate> {
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIImageView *_imgQuestion;
   IBOutlet UIView *_vAnswerField;
-  IBOutlet UITextField *_txtAnswerPlaceholder;
-  IBOutlet UITextView *_txtAnswerField;
+  IBOutlet UITextField *_txtAnswerField;
 }
 
 @end

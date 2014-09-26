@@ -21,11 +21,9 @@
 - (void)setupViews {
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   
-  _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
-  
   _txtAnswerField.delegate = self;
   _txtAnswerField.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _txtAnswerField.placeholder = NSLocalizedString(@"Your answer...", nil);
   
   _vAnswerField.layer.cornerRadius = 3;
   _vAnswerField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
@@ -49,23 +47,17 @@
   [self animateAnswerFieldSlideUp:NO];
 }
 
-#pragma mark - UITextViewDelegate methods
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-  _txtAnswerPlaceholder.hidden = YES;
-  
+#pragma mark - UITextFieldDelegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode)])
     [self.delegate questionContentViewDidEnterEditingMode];
   
   [self animateAnswerFieldSlideUp:YES];
 }
 
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
-  _txtAnswerPlaceholder.hidden = textView.text.length > 0;
-  
+- (void)textFieldDidEndEditing:(UITextField *)textField {
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
-    [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0];
-  
-  return YES;
+    [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0];
 }
 
 #pragma mark - Private methods
