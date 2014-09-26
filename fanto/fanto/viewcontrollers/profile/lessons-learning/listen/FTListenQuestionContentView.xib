@@ -39,11 +39,17 @@
                             <rect key="frame" x="-15" y="-15" width="320" height="130"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kết quả nghe..." minimumFontSize="17" id="ykr-1q-SqF">
+                            <rect key="frame" x="10" y="5" width="250" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iLX-k6-Qe6">
                             <rect key="frame" x="5" y="0.0" width="280" height="100"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <connections>
@@ -61,6 +67,7 @@
                 <outlet property="_imgAnswerFieldBg" destination="ttF-79-DUm" id="SGf-uU-gwQ"/>
                 <outlet property="_lblQuestionTitle" destination="lNq-Ey-jxL" id="JLz-iZ-sXn"/>
                 <outlet property="_txtAnswerField" destination="iLX-k6-Qe6" id="anp-lp-j8V"/>
+                <outlet property="_txtAnswerPlaceholder" destination="ykr-1q-SqF" id="GVm-wl-Msd"/>
                 <outlet property="_vAnswerField" destination="VU8-zc-uZU" id="XxS-6G-66F"/>
             </connections>
         </view>

@@ -12,6 +12,7 @@
 #import "FTSpeakQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
 #import "FTListenQuestionContentView.h"
+#import "FTNameQuestionContentView.h"
 
 @interface FTLessonLearningViewController () {
   NSInteger _totalLessonsCount;
@@ -161,10 +162,11 @@
                        [FTSelectQuestionContentView class],
                        [FTSpeakQuestionContentView class],
                        [FTJudgeQuestionContentView class],
-                       [FTListenQuestionContentView class]
+                       [FTListenQuestionContentView class],
+                       [FTNameQuestionContentView class]
                        ];
   _vQuestionContent = [klasses[arc4random()%[klasses count]] new];
-//  _vQuestionContent = [FTListenQuestionContentView new];
+  _vQuestionContent = [FTNameQuestionContentView new];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;

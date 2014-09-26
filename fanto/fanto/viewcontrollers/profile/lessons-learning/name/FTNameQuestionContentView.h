@@ -1,5 +1,5 @@
 //
-//  FTListenQuestionContentView.h
+//  FTNameQuestionContentView.h
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/26/14.
@@ -8,12 +8,10 @@
 
 #import "FTQuestionContentView.h"
 
-@interface FTListenQuestionContentView : FTQuestionContentView <UITextViewDelegate> {
-  IBOutlet UILabel *_lblQuestionTitle;
-  IBOutlet UIButton *_btnAudioNormal;
-  IBOutlet UIButton *_btnAudioSlow;
+@interface FTNameQuestionContentView : FTQuestionContentView <UITextViewDelegate> {
+  IBOutlet UILabel *_lblQuestion;
+  IBOutlet UIImageView *_imgQuestion;
   IBOutlet UIView *_vAnswerField;
-  IBOutlet UIImageView *_imgAnswerFieldBg;
   IBOutlet UITextField *_txtAnswerPlaceholder;
   IBOutlet UITextView *_txtAnswerField;
 }
