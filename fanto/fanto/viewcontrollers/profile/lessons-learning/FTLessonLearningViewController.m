@@ -18,6 +18,8 @@
 
 - (void)setupViews;
 - (void)updateHeaderViews;
+- (void)prepareNextQuestion;
+- (void)removeCurrentQuestion;
 
 @end
 
@@ -39,6 +41,7 @@
 }
 
 - (void)reloadContents {
+  [self removeCurrentQuestion];
   [self updateHeaderViews];
 }
 
@@ -58,15 +61,7 @@
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
-  if (_currentLessonIndex >= _totalLessonsCount-1)
-    return;
-  
-  _currentLessonIndex++;
-  
-  if (_currentLessonIndex % 5 == 0)
-    _currentHeartsCount--;
-  
-  [self updateHeaderViews];
+  [self reloadContents];
 }
 
 #pragma mark - UIAlertViewDelegate methods
@@ -122,10 +117,6 @@
   [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
   _btnCheck.superview.layer.cornerRadius = 4;
   _btnCheck.enabled = NO;
-  
-  FTJudgeQuestionView *judgeQuestionView = [FTJudgeQuestionView new];
-  judgeQuestionView.delegate = self;
-  [_vContentView addSubview:judgeQuestionView];
 }
 
 - (void)updateHeaderViews {
@@ -146,6 +137,48 @@
       _imgAntProgressIndicator.center = center;
     }
   }];
+}
+
+- (void)prepareNextQuestion {
+  FTJudgeQuestionView *questionView = [FTJudgeQuestionView new];
+  questionView.delegate = self;
+  questionView.alpha = 0;
+  questionView.userInteractionEnabled = NO;
+  [_vContentView addSubview:questionView];
+  
+  [UIView
+   animateWithDuration:0.5
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     questionView.alpha = 1;
+   }
+   completion:^(BOOL finished) {
+     questionView.userInteractionEnabled = YES;
+   }];
+}
+
+- (void)removeCurrentQuestion {
+  if ([_vContentView.subviews count] == 0) {
+    [self prepareNextQuestion];
+    return;
+  }
+  
+  UIView *questionView = [_vContentView.subviews firstObject];
+  
+  [UIView
+   animateWithDuration:0.5
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     CGRect frame = questionView.frame;
+     frame.origin.x -= 320;
+     questionView.frame = frame;
+   }
+   completion:^(BOOL finished) {
+     [questionView removeFromSuperview];
+     [self prepareNextQuestion];
+   }];
 }
 
 @end
