@@ -11,6 +11,11 @@
 
 @class MSkill, MLesson, FTFormAnswerTokenButton;
 
+typedef enum FormAnswerTokenStatusEnum {
+  FormAnswerTokenAvailable = 0,
+  FormAnswerTokenAnswered
+} FormAnswerTokenStatus;
+
 @protocol FTSkillViewDelegate <NSObject>
 
 @optional

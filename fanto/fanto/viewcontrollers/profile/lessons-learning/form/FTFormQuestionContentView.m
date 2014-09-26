@@ -10,11 +10,19 @@
 #import "FTFormAnswerTokenButton.h"
 
 @interface FTFormQuestionContentView () {
-  NSArray *_answerTokensData;
-  NSMutableArray *_btnAnswerTokens;
+  NSMutableArray *_btnAnsweredTokens;
+  NSMutableArray *_btnAvailableTokens;
 }
 
-- (void)setupTokenButtons;
+- (void)setupTokenButtonsForView:(UIView *)parentView
+                  withDataSource:(NSArray *)tokensData
+                          saveIn:(NSMutableArray *)buttonsArray;
+- (void)animateSortButtons:(NSArray *)buttonsArray inView:(UIView *)parentView;
+- (void)animateMoveButton:(FTFormAnswerTokenButton *)button
+                 fromView:(UIView *)fromView
+                  inArray:(NSMutableArray *)sourceButtons
+                   toView:(UIView *)toView
+                  inArray:(NSMutableArray *)destinationButtons;
 
 @end
 
@@ -46,59 +54,142 @@
     frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
     _lblQuestion.frame = frame;
     
-    frame = _vAnswerField.frame;
+    frame = _vAnsweredTokens.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 20 : 30;
-    _vAnswerField.frame = frame;
+    _vAnsweredTokens.frame = frame;
     
-    frame = _vAnswerTokens.frame;
+    frame = _vAvailableTokens.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 25 : 30;
     frame.size.height -= 55;
-    _vAnswerTokens.frame = frame;
+    _vAvailableTokens.frame = frame;
   }
   
-  _answerTokensData = [@"Những nước khác nhau thì có nền văn hóa khác nhau" componentsSeparatedByString:@" "];
-  _btnAnswerTokens = [NSMutableArray new];
-  [self setupTokenButtons];
+  _btnAnsweredTokens = [NSMutableArray new];
+  [self setupTokenButtonsForView:_vAnsweredTokens
+                  withDataSource:@[]
+                          saveIn:_btnAnsweredTokens];
+  
+  _btnAvailableTokens = [NSMutableArray new];
+  [self setupTokenButtonsForView:_vAvailableTokens
+                  withDataSource:[@"Những nước khác nhau thì có nền văn hóa khác nhau" componentsSeparatedByString:@" "]
+                          saveIn:_btnAvailableTokens];
 }
 
 #pragma mark - FTQuestionContentDelegate methods
 - (void)formTokenButtonDidSelect:(FTFormAnswerTokenButton *)button {
-  DLog(@"%@", button);
+  if (button.status == FormAnswerTokenAvailable)
+    [self animateMoveButton:button
+                   fromView:_vAvailableTokens
+                    inArray:_btnAvailableTokens
+                     toView:_vAnsweredTokens
+                    inArray:_btnAnsweredTokens];
+  else
+    [self animateMoveButton:button
+                   fromView:_vAnsweredTokens
+                    inArray:_btnAnsweredTokens
+                     toView:_vAvailableTokens
+                    inArray:_btnAvailableTokens];
 }
 
 #pragma mark - Private methods
-- (void)setupTokenButtons {
-  for (UIView *subview in _vAnswerTokens.subviews)
-    [subview removeFromSuperview];
+- (void)setupTokenButtonsForView:(UIView *)parentView
+                  withDataSource:(NSArray *)tokensData
+                          saveIn:(NSMutableArray *)buttonsArray {
+  for (UIView *subview in parentView.subviews)
+    if ([subview isKindOfClass:[FTFormAnswerTokenButton class]])
+      [subview removeFromSuperview];
   
-  [_btnAnswerTokens removeAllObjects];
+  [buttonsArray removeAllObjects];
   
+  [tokensData enumerateObjectsUsingBlock:^(NSString *token, NSUInteger index, BOOL *stop) {
+    FTFormAnswerTokenButton *button = [[FTFormAnswerTokenButton alloc] initWithToken:token atIndex:index];
+    button.delegate = self;
+    button.status = parentView == _vAvailableTokens ? FormAnswerTokenAvailable : FormAnswerTokenAnswered;
+    
+    [buttonsArray addObject:button];
+    [parentView addSubview:button];
+  }];
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self animateSortButtons:buttonsArray inView:parentView];
+  });
+}
+
+- (void)animateSortButtons:(NSArray *)buttonsArray inView:(UIView *)parentView {
   CGPoint origin = CGPointMake(3, 3);
   CGFloat buttonsGap = 10;
   
-  __block CGFloat currentOffsetX = 0;
-  __block CGFloat currentOffsetY = 0;
-  __block CGRect frame = CGRectZero;
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration*2
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     CGFloat currentOffsetX = 0;
+     CGFloat currentOffsetY = 0;
+     CGRect frame = CGRectZero;
+     
+     for (FTFormAnswerTokenButton *button in buttonsArray) {
+       frame = button.frame;
+       
+       if (origin.x + currentOffsetX + frame.size.width > parentView.frame.size.width) {
+         currentOffsetX = 0;
+         currentOffsetY += (frame.size.height + buttonsGap);
+       }
+       
+       frame.origin.x = origin.x + currentOffsetX;
+       frame.origin.y = origin.y + currentOffsetY;
+       button.frame = frame;
+       
+       currentOffsetX += (frame.size.width + buttonsGap);
+     }
+   }
+   completion:^(BOOL finished) {
+   }];
+}
+
+- (void)animateMoveButton:(FTFormAnswerTokenButton *)button
+                 fromView:(UIView *)fromView
+                  inArray:(NSMutableArray *)sourceButtons
+                   toView:(UIView *)toView
+                  inArray:(NSMutableArray *)destinationButtons {
+  CGPoint origin = CGPointMake(3, 3);
+  CGFloat buttonsGap = 10;
   
-  [_answerTokensData enumerateObjectsUsingBlock:^(NSString *token, NSUInteger index, BOOL *stop) {
-    FTFormAnswerTokenButton *button = [[FTFormAnswerTokenButton alloc] initWithToken:token atIndex:index];
-    button.delegate = self;
-    
-    frame = button.frame;
-    
-    if (origin.x + currentOffsetX + frame.size.width > _vAnswerTokens.frame.size.width) {
-      currentOffsetX = 0;
-      currentOffsetY += (frame.size.height + buttonsGap);
-    }
-    
-    frame.origin.x = origin.x + currentOffsetX;
-    frame.origin.y = origin.y + currentOffsetY;
+  CGPoint destButtonOrigin = CGPointMake(0, 3);
+  
+  if ([destinationButtons count] > 0) {
+    FTFormAnswerTokenButton *lastDestButton = [destinationButtons lastObject];
+    destButtonOrigin.x = lastDestButton.frame.origin.x + lastDestButton.frame.size.width + buttonsGap;
+    destButtonOrigin.y = lastDestButton.frame.origin.y;
+  }
+  
+  CGRect frame = button.frame;
+  
+  if (origin.x + destButtonOrigin.x + frame.size.width > toView.frame.size.width) {
+    destButtonOrigin.x = 0;
+    destButtonOrigin.y += (frame.size.height + buttonsGap);
+  }
+  
+  frame.origin.x = origin.x + destButtonOrigin.x;
+  frame.origin.y = destButtonOrigin.y;
+  
+  [sourceButtons removeObject:button];
+  [self animateSortButtons:sourceButtons inView:fromView];
+  
+  CGRect newFrame = [self convertRect:[self convertRect:frame fromView:toView] toView:fromView];
+  
+  [UIView animateWithDuration:kDefaultAnimationDuration animations:^{
+    button.frame = newFrame;
+  } completion:^(BOOL finished) {
+    [button removeFromSuperview];
     button.frame = frame;
+    [destinationButtons addObject:button];
+    [toView addSubview:button];
     
-    currentOffsetX += (frame.size.width + buttonsGap);
+    button.status = (button.status+1)%2;
     
-    [_btnAnswerTokens addObject:button];
-    [_vAnswerTokens addSubview:button];
+    if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
+      [self.delegate questionContentViewDidUpdateAnswer:[_btnAnsweredTokens count] > 0];
   }];
 }
 

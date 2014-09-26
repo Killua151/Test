@@ -14,6 +14,8 @@
 }
 
 @property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, assign) FormAnswerTokenStatus status;
 
 - (id)initWithToken:(NSString *)token atIndex:(NSInteger)index;
 - (IBAction)btnTokenPressed:(UIButton *)sender;

@@ -12,10 +12,10 @@
   IBOutlet UILabel *_lblQuestionTitle;
   IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
-  IBOutlet UIView *_vAnswerField;
+  IBOutlet UIView *_vAnsweredTokens;
   IBOutlet UIImageView *_imgAnswerFieldBg;
   IBOutlet UITextField *_txtAnswerPlaceholder;
-  IBOutlet UIView *_vAnswerTokens;
+  IBOutlet UIView *_vAvailableTokens;
 }
 
 @end

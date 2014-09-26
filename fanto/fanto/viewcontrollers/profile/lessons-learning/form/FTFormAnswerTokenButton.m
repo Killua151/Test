@@ -9,7 +9,6 @@
 #import "FTFormAnswerTokenButton.h"
 
 @interface FTFormAnswerTokenButton () {
-  NSString *_tokenData;
   NSInteger _index;
 }
 
@@ -23,7 +22,7 @@
   if (self = [super init]) {
     LoadXibWithSameClass();
     
-    _tokenData = token;
+    _token = token;
     _index = index;
     [self setupViews];
   }
@@ -39,7 +38,7 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _btnToken.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [_btnToken setTitle:_tokenData forState:UIControlStateNormal];
+  [_btnToken setTitle:_token forState:UIControlStateNormal];
   CGSize sizeThatFits = [_btnToken sizeThatFits:CGSizeMake(MAXFLOAT, _btnToken.frame.size.height)];
   
   CGRect frame = self.frame;

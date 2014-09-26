@@ -23,6 +23,7 @@
   NSInteger _currentHeartsCount;
   
   CGFloat _innerPanGestureYPos;
+  UIView *_currentShowingResultView;
   
   FTQuestionContentView *_vQuestionContent;
 }
@@ -67,7 +68,7 @@
 }
 
 - (void)gestureLayerDidTap {
-  if (_vResultCorrect.alpha == 1 || _vResultIncorrect.alpha == 1)
+  if (_currentShowingResultView != nil)
     [self reloadContents];
   else
     [_vQuestionContent gestureLayerDidTap];
@@ -210,10 +211,10 @@
 - (void)resetResultViews {
   CGRect frame = _vResultCorrect.frame;
   frame.origin.y = _btnCheck.superview.frame.origin.y - 30 - frame.size.height;
-  _vResultCorrect.frame = frame;
-  _vResultIncorrect.frame = frame;
+  _vResultCorrect.frame = _vResultIncorrect.frame = frame;
   
   _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
+  _currentShowingResultView = nil;
 }
 
 - (void)setResultViewVisible:(BOOL)show forResult:(BOOL)correctAnswer {
@@ -223,11 +224,10 @@
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
      if (show) {
-       if (correctAnswer)
-         _vResultCorrect.alpha = 1;
-       else
-         _vResultIncorrect.alpha = 1;
-     } else
+       _currentShowingResultView = correctAnswer ? _vResultCorrect : _vResultIncorrect;
+       _currentShowingResultView.alpha = 1;
+     }
+     else
        _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
    }
    completion:^(BOOL finished) {
@@ -297,6 +297,11 @@
 }
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {
+  if (panGesture.state == UIGestureRecognizerStateBegan)
+    panGesture.view.alpha = 0.2;
+  else if (panGesture.state == UIGestureRecognizerStateEnded)
+    panGesture.view.alpha = 1;
+  
   CGPoint outterLocation = [panGesture locationInView:panGesture.view.superview];
   CGFloat viewHeight = panGesture.view.frame.size.height;
   
