@@ -8,6 +8,7 @@
 
 #import "FTLessonLearningViewController.h"
 
+#import "FTFormQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
 #import "FTListenQuestionContentView.h"
 #import "FTNameQuestionContentView.h"
@@ -238,16 +239,17 @@
 }
 
 - (void)prepareNextQuestion {
-  NSArray *klasses = @[
-                       [FTJudgeQuestionContentView class],
-                       [FTListenQuestionContentView class],
-                       [FTNameQuestionContentView class],
-                       [FTSelectQuestionContentView class],
-                       [FTSpeakQuestionContentView class],
-                       [FTTranslateQuestionContentView class]
-                       ];
-  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
-//  _vQuestionContent = [FTTranslateQuestionContentView new];
+//  NSArray *klasses = @[
+//                       [FTFormQuestionContentView class],
+//                       [FTJudgeQuestionContentView class],
+//                       [FTListenQuestionContentView class],
+//                       [FTNameQuestionContentView class],
+//                       [FTSelectQuestionContentView class],
+//                       [FTSpeakQuestionContentView class],
+//                       [FTTranslateQuestionContentView class]
+//                       ];
+//  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
+  _vQuestionContent = [FTFormQuestionContentView new];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;
