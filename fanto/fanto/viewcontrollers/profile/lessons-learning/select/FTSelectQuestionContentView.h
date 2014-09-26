@@ -6,12 +6,10 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FTQuestionContentView.h"
 
-@interface FTSelectQuestionContentView : UIView <FTLessonLearningDelegate> {
+@interface FTSelectQuestionContentView : FTQuestionContentView <FTLessonLearningDelegate> {
   IBOutlet UILabel *_lblQuestion;
 }
-
-@property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
 
 @end
