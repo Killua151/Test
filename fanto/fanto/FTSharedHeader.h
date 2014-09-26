@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class MSkill, MLesson;
+@class MSkill, MLesson, FTFormAnswerTokenButton;
 
 @protocol FTSkillViewDelegate <NSObject>
 
@@ -44,5 +44,6 @@
 
 @optional
 - (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
+- (void)formTokenButtonDidSelect:(FTFormAnswerTokenButton *)button;
 
 @end

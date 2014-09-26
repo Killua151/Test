@@ -7,8 +7,14 @@
 //
 
 #import "FTFormQuestionContentView.h"
+#import "FTFormAnswerTokenButton.h"
 
-@interface FTFormQuestionContentView ()
+@interface FTFormQuestionContentView () {
+  NSArray *_answerTokensData;
+  NSMutableArray *_btnAnswerTokens;
+}
+
+- (void)setupTokenButtons;
 
 @end
 
@@ -49,6 +55,51 @@
     frame.size.height -= 55;
     _vAnswerTokens.frame = frame;
   }
+  
+  _answerTokensData = [@"Những nước khác nhau thì có nền văn hóa khác nhau" componentsSeparatedByString:@" "];
+  _btnAnswerTokens = [NSMutableArray new];
+  [self setupTokenButtons];
+}
+
+#pragma mark - FTQuestionContentDelegate methods
+- (void)formTokenButtonDidSelect:(FTFormAnswerTokenButton *)button {
+  DLog(@"%@", button);
+}
+
+#pragma mark - Private methods
+- (void)setupTokenButtons {
+  for (UIView *subview in _vAnswerTokens.subviews)
+    [subview removeFromSuperview];
+  
+  [_btnAnswerTokens removeAllObjects];
+  
+  CGPoint origin = CGPointMake(3, 3);
+  CGFloat buttonsGap = 10;
+  
+  __block CGFloat currentOffsetX = 0;
+  __block CGFloat currentOffsetY = 0;
+  __block CGRect frame = CGRectZero;
+  
+  [_answerTokensData enumerateObjectsUsingBlock:^(NSString *token, NSUInteger index, BOOL *stop) {
+    FTFormAnswerTokenButton *button = [[FTFormAnswerTokenButton alloc] initWithToken:token atIndex:index];
+    button.delegate = self;
+    
+    frame = button.frame;
+    
+    if (origin.x + currentOffsetX + frame.size.width > _vAnswerTokens.frame.size.width) {
+      currentOffsetX = 0;
+      currentOffsetY += (frame.size.height + buttonsGap);
+    }
+    
+    frame.origin.x = origin.x + currentOffsetX;
+    frame.origin.y = origin.y + currentOffsetY;
+    button.frame = frame;
+    
+    currentOffsetX += (frame.size.width + buttonsGap);
+    
+    [_btnAnswerTokens addObject:button];
+    [_vAnswerTokens addSubview:button];
+  }];
 }
 
 @end

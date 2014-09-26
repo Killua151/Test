@@ -8,7 +8,7 @@
 
 #import "FTQuestionContentView.h"
 
-@interface FTFormQuestionContentView : FTQuestionContentView {
+@interface FTFormQuestionContentView : FTQuestionContentView <FTQuestionContentDelegate> {
   IBOutlet UILabel *_lblQuestionTitle;
   IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
