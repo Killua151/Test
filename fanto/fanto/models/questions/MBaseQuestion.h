@@ -10,8 +10,9 @@
 
 @interface MBaseQuestion : MBase
 
-@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *_id;
 @property (nonatomic, strong) NSString *lang;
+@property (nonatomic, strong) NSString *type;
 
 + (Class)questionKlassByType:(NSString *)type;
 

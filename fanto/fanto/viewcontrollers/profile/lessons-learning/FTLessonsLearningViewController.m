@@ -16,6 +16,8 @@
 #import "FTSpeakQuestionContentView.h"
 #import "FTTranslateQuestionContentView.h"
 
+#import "MBaseQuestion.h"
+
 @interface FTLessonsLearningViewController () {
   NSInteger _totalLessonsCount;
   NSInteger _currentLessonIndex;
@@ -26,6 +28,8 @@
   UIView *_currentShowingResultView;
   
   FTQuestionContentView *_vQuestionContent;
+  
+  NSArray *_questionsData;
 }
 
 - (void)setupViews;
@@ -40,15 +44,24 @@
 - (void)removeCurrentQuestion;
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
+- (Class)questionContentViewKlassForQuestionType:(NSString *)questionType;
 
 @end
 
 @implementation FTLessonsLearningViewController
 
+- (id)initWithQuestions:(NSArray *)questions {
+  if (self = [super init]) {
+    _questionsData = questions;
+  }
+  
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  _totalLessonsCount = 20;
+  _totalLessonsCount = [_questionsData count];
   _currentLessonIndex = -1;
   _totalHeartsCount = _currentHeartsCount = 3;
   
@@ -239,16 +252,18 @@
 }
 
 - (void)prepareNextQuestion {
-  NSArray *klasses = @[
-                       [FTFormQuestionContentView class],
-                       [FTJudgeQuestionContentView class],
-                       [FTListenQuestionContentView class],
-                       [FTNameQuestionContentView class],
-                       [FTSelectQuestionContentView class],
-                       [FTSpeakQuestionContentView class],
-                       [FTTranslateQuestionContentView class]
-                       ];
-  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
+//  NSArray *klasses = @[
+//                       [FTFormQuestionContentView class],
+//                       [FTJudgeQuestionContentView class],
+//                       [FTListenQuestionContentView class],
+//                       [FTNameQuestionContentView class],
+//                       [FTSelectQuestionContentView class],
+//                       [FTSpeakQuestionContentView class],
+//                       [FTTranslateQuestionContentView class]
+//                       ];
+  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
+  _vQuestionContent = [questionContentViewKlass new];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;
@@ -309,6 +324,10 @@
   frame.origin.y = MAX(_lblLessonsCount.superview.frame.size.height,
                        MIN(_btnCheck.superview.frame.origin.y - viewHeight - 5, frame.origin.y));
   panGesture.view.frame = frame;
+}
+
+- (Class)questionContentViewKlassForQuestionType:(NSString *)questionType {
+  return NSClassFromString([NSString stringWithFormat:@"FT%@QuestionContentView", [questionType capitalizedString]]);
 }
 
 @end

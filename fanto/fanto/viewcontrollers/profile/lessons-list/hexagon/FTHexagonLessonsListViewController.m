@@ -108,10 +108,7 @@
     [Utils hideAllHUDsForView:self.navigationController.view];
     ShowAlertWithError(error);
     
-    DLog(@"%@", questions);
-    return;
-    
-    [self.navigationController presentViewController:[FTLessonsLearningViewController new]
+    [self.navigationController presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
                                             animated:YES
                                           completion:NULL];
   }];

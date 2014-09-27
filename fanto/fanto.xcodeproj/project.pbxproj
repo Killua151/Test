@@ -211,6 +211,7 @@
 		CA5DAFC119D66B1C003DAB26 /* MBaseQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFC019D66B1C003DAB26 /* MBaseQuestion.m */; };
 		CA5DAFC419D66B43003DAB26 /* MSelectQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFC319D66B43003DAB26 /* MSelectQuestion.m */; };
 		CA5DAFC719D66B82003DAB26 /* MSelectQuestionOption.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */; };
+		CA5DAFCA19D67263003DAB26 /* MTranslateQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -563,6 +564,8 @@
 		CA5DAFC319D66B43003DAB26 /* MSelectQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSelectQuestion.m; sourceTree = "<group>"; };
 		CA5DAFC519D66B82003DAB26 /* MSelectQuestionOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSelectQuestionOption.h; sourceTree = "<group>"; };
 		CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSelectQuestionOption.m; sourceTree = "<group>"; };
+		CA5DAFC819D67263003DAB26 /* MTranslateQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTranslateQuestion.h; sourceTree = "<group>"; };
+		CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTranslateQuestion.m; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -1142,6 +1145,8 @@
 				CA5DAFC319D66B43003DAB26 /* MSelectQuestion.m */,
 				CA5DAFC519D66B82003DAB26 /* MSelectQuestionOption.h */,
 				CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */,
+				CA5DAFC819D67263003DAB26 /* MTranslateQuestion.h */,
+				CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */,
 			);
 			name = Questions;
 			path = questions;
@@ -1897,6 +1902,7 @@
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
 				4A4122C419D3C8B100894095 /* FTFinishSkillViewController.m in Sources */,
 				4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */,
+				CA5DAFCA19D67263003DAB26 /* MTranslateQuestion.m in Sources */,
 				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
 				CA5DAF8619D59E2B003DAB26 /* FTJudgeQuestionContentView.m in Sources */,

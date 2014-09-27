@@ -30,6 +30,7 @@
   IBOutlet UILabel *_lblResultIncorrectAnswer;
 }
 
+- (id)initWithQuestions:(NSArray *)questions;
 - (IBAction)btnClosePressed:(UIButton *)sender;
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender;
 - (IBAction)btnCheckPressed:(UIButton *)sender;
