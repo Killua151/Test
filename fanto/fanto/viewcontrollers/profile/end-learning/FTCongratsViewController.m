@@ -67,7 +67,7 @@
 
 #pragma mark - FTActionSheetDelegate methods
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index {
-  DLog(@"%ld", (long)index);
+  [self presentShareViewControllerWithDefaultOption:(ShareOption)index];
 }
 
 @end

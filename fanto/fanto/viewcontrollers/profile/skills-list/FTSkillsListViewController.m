@@ -13,8 +13,6 @@
 #import "FTShopViewController.h"
 #import "FTProfileViewController.h"
 
-#import "FTFinishLessonViewController.h"
-#import "FTFailLessonViewController.h"
 #import "FTBeginPlacementTestViewController.h"
 
 #import "MUser.h"
@@ -104,9 +102,9 @@
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
-  [self.navigationController presentViewController:[FTBeginPlacementTestViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
+  [self presentViewController:[FTBeginPlacementTestViewController navigationController]
+                     animated:YES
+                   completion:NULL];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -188,25 +186,11 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-//  [self.navigationController presentViewController:[FTFinishLessonViewController new]
-//                                          animated:YES
-//                                        completion:NULL];
-//  return;
-  
-  [self.navigationController presentViewController:[FTProfileViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
+  [self presentViewController:[FTProfileViewController navigationController] animated:YES completion:NULL];
 }
 
 - (void)gotoShop {
-//  [self.navigationController presentViewController:[FTFailLessonViewController navigationController]
-//                                          animated:YES
-//                                        completion:NULL];
-//  return;
-  
-  [self.navigationController presentViewController:[FTShopViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
+  [self presentViewController:[FTShopViewController navigationController] animated:YES completion:NULL];
 }
 
 - (void)setupViews {

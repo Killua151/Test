@@ -8,13 +8,23 @@
 
 #import "FTShareViewController.h"
 
-@interface FTShareViewController ()
+@interface FTShareViewController () {
+  ShareOption _defaultShareOption;
+}
 
 - (void)setupViews;
 
 @end
 
 @implementation FTShareViewController
+
+- (id)initWithDefaultOption:(ShareOption)defaultOption {
+  if (self = [super init]) {
+    _defaultShareOption = defaultOption;
+  }
+  
+  return self;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -64,9 +74,10 @@
   _txtPlaceholder.placeholder = NSLocalizedString(@"Write comment...", nil);
   _txtComment.font = [UIFont fontWithName:@"ClearSans" size:17];
   
-  _btnFacebook.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnGoogle.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnTwitter.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  for (UIButton *button in _btnShareOptions) {
+    button.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+    button.selected = button.tag == _defaultShareOption;
+  }
   
   _btnSubmit.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSubmit.layer.cornerRadius = 4;

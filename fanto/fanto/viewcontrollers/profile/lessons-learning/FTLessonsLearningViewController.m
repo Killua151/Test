@@ -8,6 +8,7 @@
 
 #import "FTLessonsLearningViewController.h"
 #import "FTFailLessonViewController.h"
+#import "FTFinishLessonViewController.h"
 
 #import "FTFormQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
@@ -82,15 +83,9 @@
 }
 
 - (void)gestureLayerDidTap {
-  if (_currentShowingResultView != nil) {
-    if (_currentHeartsCount < 0) {
-      FTFailLessonViewController *failLessonVC = [FTFailLessonViewController new];
-      failLessonVC.delegate = self;
-      [self presentViewController:failLessonVC animated:YES completion:NULL];
-    }
-    else
-      [self reloadContents];
-  } else
+  if (_currentShowingResultView != nil)
+    [self reloadContents];
+  else
     [_vQuestionContent gestureLayerDidTap];
 }
 
@@ -321,8 +316,19 @@
 - (void)removeCurrentQuestion {
   _btnCheck.enabled = NO;
   
-  if (_currentLessonIndex >= _totalLessonsCount)
+  // Out of hearts
+  if (_currentHeartsCount < 0) {
+    FTFailLessonViewController *failLessonVC = [FTFailLessonViewController new];
+    failLessonVC.delegate = self;
+    [self presentViewController:failLessonVC animated:YES completion:NULL];
     return;
+  }
+  
+  // Finish all questions
+  if (_currentLessonIndex >= _totalLessonsCount) {
+    [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
+    return;
+  }
   
   if ([_vContentView.subviews count] == 0) {
     [self prepareNextQuestion];

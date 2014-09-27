@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTShareViewController">
             <connections>
-                <outlet property="_btnFacebook" destination="1FS-D8-cmH" id="HCk-Yh-mwj"/>
-                <outlet property="_btnGoogle" destination="edi-28-QBh" id="0Pb-gw-VI2"/>
                 <outlet property="_btnSubmit" destination="eeA-Rm-9aV" id="SvN-lM-JnH"/>
-                <outlet property="_btnTwitter" destination="lkD-u8-q4m" id="cTe-lZ-vKm"/>
                 <outlet property="_imgShareImage" destination="uDj-aO-fJA" id="tdp-OX-Of2"/>
                 <outlet property="_txtComment" destination="UPs-pZ-lgd" id="Rbl-1q-zff"/>
                 <outlet property="_txtPlaceholder" destination="2oC-WN-etI" id="N9h-KN-tGS"/>
                 <outlet property="_vGestureLayer" destination="aBG-Ud-Olb" id="U4N-SN-wmI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="_btnShareOptions" destination="1FS-D8-cmH" id="j9P-BY-4SW"/>
+                <outletCollection property="_btnShareOptions" destination="edi-28-QBh" id="j0Z-dk-Blx"/>
+                <outletCollection property="_btnShareOptions" destination="lkD-u8-q4m" id="pZm-S3-vyk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -86,7 +86,7 @@
                                 <action selector="btnSocialServicePressed:" destination="-1" eventType="touchUpInside" id="GKw-Gc-utb"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="edi-28-QBh">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="edi-28-QBh">
                             <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -103,7 +103,7 @@
                                 <action selector="btnSocialServicePressed:" destination="-1" eventType="touchUpInside" id="kfS-r5-KCB"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lkD-u8-q4m">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lkD-u8-q4m">
                             <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>

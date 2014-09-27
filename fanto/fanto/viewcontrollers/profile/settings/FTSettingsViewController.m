@@ -78,7 +78,7 @@
   UINavigationController *homeNavigation = [FTHomeViewController navigationController];
   homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
-  [self.navigationController presentViewController:homeNavigation animated:YES completion:^{
+  [self presentViewController:homeNavigation animated:YES completion:^{
     FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = homeNavigation;
   }];

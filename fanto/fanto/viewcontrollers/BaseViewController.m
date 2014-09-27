@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "FTAppDelegate.h"
+#import "FTShareViewController.h"
 
 @interface BaseViewController ()
 
@@ -42,18 +43,33 @@
 //  }
 //}
 
+- (void)presentViewController:(UIViewController *)viewController animated:(BOOL)flag completion:(void (^)(void))completion {
+  if (self.navigationController != nil)
+    [self.navigationController presentViewController:viewController animated:flag completion:completion];
+  else
+    [super presentViewController:viewController animated:flag completion:completion];
+}
+
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+  if (self.navigationController != nil)
+    [self.navigationController dismissViewControllerAnimated:flag completion:completion];
+  else
+    [super dismissViewControllerAnimated:flag completion:completion];
+}
+
 - (void)transitToViewController:(UIViewController *)viewController {
   viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
-  UIViewController *selfController = self;
-  
-  if (self.navigationController != nil)
-    selfController = self.navigationController;
-  
-  [selfController presentViewController:viewController animated:YES completion:^{
+  [self presentViewController:viewController animated:YES completion:^{
     FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = viewController;
   }];
+}
+
+- (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption {
+  FTShareViewController *shareVC = [[FTShareViewController alloc] initWithDefaultOption:shareOption];
+  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:shareVC];
+  [self presentViewController:navigation animated:YES completion:NULL];
 }
 
 - (void)gestureLayerDidEnterEditingMode {

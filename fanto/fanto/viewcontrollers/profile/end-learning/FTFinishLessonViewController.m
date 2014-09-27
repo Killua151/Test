@@ -91,9 +91,7 @@
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
-  [self.navigationController presentViewController:[FTSetGoalViewController navigationController]
-                                          animated:YES
-                                        completion:NULL];
+  [self presentViewController:[FTSetGoalViewController navigationController] animated:YES completion:NULL];
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -104,7 +102,7 @@
 
 #pragma mark - FTActionSheetDelegate methods
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index {
-  DLog(@"%ld", (long)index);
+  [self presentShareViewControllerWithDefaultOption:(ShareOption)index];
 }
 
 #pragma mark - Private methods

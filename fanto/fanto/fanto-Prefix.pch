@@ -112,5 +112,6 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamPassword                          @"password"
 #define kParamResponseCode                      @"response_code"
 #define kParamSkillId                           @"skill_id"
+#define kParamSkills                            @"skills"
 #define kParamType                              @"type"
 #define kParamUsername                          @"username"

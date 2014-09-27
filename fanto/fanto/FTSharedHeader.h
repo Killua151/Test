@@ -16,6 +16,13 @@ typedef enum FormAnswerTokenStatusEnum {
   FormAnswerTokenAnswered
 } FormAnswerTokenStatus;
 
+typedef enum ShareOptionEnum {
+  ShareOptionNone = -1,
+  ShareOptionFacebook = 0,
+  ShareOptionGoogle,
+  ShareOptionTwitter
+} ShareOption;
+
 @protocol FTSkillViewDelegate <NSObject>
 
 @optional

@@ -133,6 +133,7 @@
 }
 
 - (void)test {
+  DLog(@"%@", [MUser currentUser].auth_token);
 }
 
 @end

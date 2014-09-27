@@ -22,6 +22,8 @@
 - (void)setupViews {
   MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
   
+  DLog(@"%@", questionData.translation);
+  
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
   

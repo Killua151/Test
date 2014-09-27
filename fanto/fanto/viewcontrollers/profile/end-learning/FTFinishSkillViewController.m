@@ -80,4 +80,9 @@
   [self.navigationController pushViewController:[FTMoneyBonusViewController new] animated:YES];
 }
 
+#pragma mark - FTActionSheetDelegate methods
+- (void)actionSheetDidSelectAtIndex:(NSInteger)index {
+  [self presentShareViewControllerWithDefaultOption:(ShareOption)index];
+}
+
 @end

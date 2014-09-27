@@ -108,9 +108,9 @@
     [Utils hideAllHUDsForView:self.navigationController.view];
     ShowAlertWithError(error);
     
-    [self.navigationController presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
-                                            animated:YES
-                                          completion:NULL];
+    [self presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
+                       animated:YES
+                     completion:NULL];
   }];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "FTMoneyBonusViewController.h"
+#import "FTSkillsListViewController.h"
 
 @interface FTMoneyBonusViewController ()
 
@@ -44,7 +45,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+  [self transitToViewController:[FTSkillsListViewController navigationController]];
 }
 
 @end

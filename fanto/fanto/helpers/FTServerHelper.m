@@ -111,7 +111,7 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     [MUser currentUser].skills = [MSkill modelsFromArr:userData[@"skill"]];
+     [MUser currentUser].skills = [MSkill modelsFromArr:userData[kParamSkills]];
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

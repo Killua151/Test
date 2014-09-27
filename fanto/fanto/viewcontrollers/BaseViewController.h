@@ -14,6 +14,7 @@
 
 + (UINavigationController *)navigationController;
 - (void)transitToViewController:(UIViewController *)viewController;
+- (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption;
 
 - (void)gestureLayerDidEnterEditingMode;
 - (void)gestureLayerDidTap;

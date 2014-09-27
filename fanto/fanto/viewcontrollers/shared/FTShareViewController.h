@@ -12,11 +12,11 @@
   IBOutlet UIImageView *_imgShareImage;
   IBOutlet UITextField *_txtPlaceholder;
   IBOutlet UITextView *_txtComment;
-  IBOutlet UIButton *_btnFacebook;
-  IBOutlet UIButton *_btnGoogle;
-  IBOutlet UIButton *_btnTwitter;
+  IBOutletCollection(UIButton) NSArray *_btnShareOptions;
   IBOutlet UIButton *_btnSubmit;
 }
+
+- (id)initWithDefaultOption:(ShareOption)defaultOption;
 
 - (IBAction)btnSocialServicePressed:(UIButton *)sender;
 - (IBAction)btnSubmitPressed:(UIButton *)sender;
