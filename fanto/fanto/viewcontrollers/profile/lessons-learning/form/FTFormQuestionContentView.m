@@ -43,35 +43,35 @@
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _lblQuestionTitle.frame;
-    frame.origin.y -= 10;
+    frame.origin.y -= DeviceSystemIsOS7() ? 10 : 10;
     _lblQuestionTitle.frame = frame;
     
     frame = _btnQuestionAudio.frame;
-    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
     _btnQuestionAudio.frame = frame;
     
     frame = _lblQuestion.frame;
-    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
     _lblQuestion.frame = frame;
     
     frame = _vAnsweredTokens.frame;
-    frame.origin.y -= DeviceSystemIsOS7() ? 20 : 30;
+    frame.origin.y -= DeviceSystemIsOS7() ? 25 : 30;
+    frame.size.height = 110;
     _vAnsweredTokens.frame = frame;
     
     frame = _vAvailableTokens.frame;
-    frame.origin.y -= DeviceSystemIsOS7() ? 25 : 30;
-    frame.size.height -= 55;
+    frame.origin.y -= DeviceSystemIsOS7() ? 30 : 40;
+    frame.size.height -= DeviceSystemIsOS7() ? 45 : 45;
     _vAvailableTokens.frame = frame;
   }
   
   _btnAnsweredTokens = [NSMutableArray new];
-  [self setupTokenButtonsForView:_vAnsweredTokens
-                  withDataSource:@[]
-                          saveIn:_btnAnsweredTokens];
+//  [self setupTokenButtonsForView:_vAnsweredTokens withDataSource:@[] saveIn:_btnAnsweredTokens];
   
   _btnAvailableTokens = [NSMutableArray new];
   [self setupTokenButtonsForView:_vAvailableTokens
-                  withDataSource:[@"Những nước khác nhau thì có nền văn hóa khác nhau" componentsSeparatedByString:@" "]
+                  withDataSource:[@"Những các nước khác nhau thì có những các nền văn hóa khác nhau"
+                                  componentsSeparatedByString:@" "]
                           saveIn:_btnAvailableTokens];
 }
 
