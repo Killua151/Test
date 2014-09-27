@@ -71,14 +71,14 @@
 
 - (void)reloadContents {
   _skillsData = @[
-                  @[[MSkill new]],
+                  @[[NSNull null], [MSkill new], [NSNull null]],
                   @[[MSkill new], [MSkill new]],
                   @[[MSkill new], [MSkill new], [NSNull null]],
                   @[[MSkill new], [MSkill new]],
                   @[[NSNull null], [MSkill new], [MSkill new]],
                   [NSNull null],
                   @[[MSkill new], [MSkill new]],
-                  @[[MSkill new]],
+                  @[[MSkill new], [NSNull null], [NSNull null]],
                   @[[MSkill new], [MSkill new]],
                   @[[MSkill new], [MSkill new], [NSNull null]],
                   @[[MSkill new], [MSkill new]],
