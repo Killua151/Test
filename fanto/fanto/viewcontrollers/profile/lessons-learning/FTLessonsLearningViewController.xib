@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTLessonLearningViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTLessonsLearningViewController">
             <connections>
                 <outlet property="_btnCheck" destination="cXU-uU-Qfx" id="oON-lB-GG0"/>
                 <outlet property="_btnHeartPotion" destination="Ysq-QO-8qW" id="K7a-GW-fqs"/>

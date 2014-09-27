@@ -8,7 +8,7 @@
 
 #import "FTHexagonLessonsListViewController.h"
 #import "FTHexagonLessonView.h"
-#import "FTLessonLearningViewController.h"
+#import "FTLessonsLearningViewController.h"
 #import "MLesson.h"
 
 #define kNormalLessonWidth        230.f
@@ -102,7 +102,7 @@
 
 #pragma mark - FTLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
-  [self.navigationController presentViewController:[FTLessonLearningViewController new]
+  [self.navigationController presentViewController:[FTLessonsLearningViewController new]
                                           animated:YES
                                         completion:NULL];
 }

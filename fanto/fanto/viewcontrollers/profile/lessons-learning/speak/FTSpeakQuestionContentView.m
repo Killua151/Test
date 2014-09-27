@@ -43,24 +43,25 @@
     _lblQuestionTitle.frame = frame;
     
     frame = _btnQuestionAudio.frame;
-    frame.origin.y -= 15;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
     _btnQuestionAudio.frame = frame;
     
     frame = _lblQuestion.frame;
-    frame.origin.y -= 15;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
     _lblQuestion.frame = frame;
     
     frame = _btnTooltips.frame;
-    frame.origin.y -= 15;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
     _btnTooltips.frame = frame;
     
     frame = _btnRecord.frame;
     frame.size = CGSizeMake(130, 130);
-    frame.origin.y -= 15;
+    frame.origin.y -= DeviceSystemIsOS7() ? 15 : 20;
     frame.origin.x += 15;
     _btnRecord.frame = frame;
     
     frame = _btnSkipSpeakQuestion.frame;
+    frame.origin.y -= DeviceSystemIsOS7() ? 0 : 10;
     frame.origin.y -= 55;
     _btnSkipSpeakQuestion.frame = frame;
   }

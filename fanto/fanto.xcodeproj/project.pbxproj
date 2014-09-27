@@ -26,8 +26,8 @@
 		4A4122C919D3C8B100894095 /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122B719D3C8B100894095 /* FTSaveProgressViewController.xib */; };
 		4A4122CA19D3C8B100894095 /* FTSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122B919D3C8B100894095 /* FTSuggestGoalViewController.m */; };
 		4A4122CB19D3C8B100894095 /* FTSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122BA19D3C8B100894095 /* FTSuggestGoalViewController.xib */; };
-		4A4122D019D3CC0900894095 /* FTLessonLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */; };
-		4A4122D119D3CC0900894095 /* FTLessonLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */; };
+		4A4122D019D3CC0900894095 /* FTLessonsLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4122CE19D3CC0900894095 /* FTLessonsLearningViewController.m */; };
+		4A4122D119D3CC0900894095 /* FTLessonsLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122CF19D3CC0900894095 /* FTLessonsLearningViewController.xib */; };
 		4A4122D519D4004500894095 /* img-ant-lessons_learning_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122D319D4004500894095 /* img-ant-lessons_learning_progress.png */; };
 		4A4122D619D4004500894095 /* img-ant-lessons_learning_progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122D419D4004500894095 /* img-ant-lessons_learning_progress@2x.png */; };
 		4A4122DE19D4005A00894095 /* img-finish_lesson-set_goal-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4122D819D4005A00894095 /* img-finish_lesson-set_goal-bg.png */; };
@@ -328,9 +328,9 @@
 		4A4122B819D3C8B100894095 /* FTSuggestGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSuggestGoalViewController.h; sourceTree = "<group>"; };
 		4A4122B919D3C8B100894095 /* FTSuggestGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSuggestGoalViewController.m; sourceTree = "<group>"; };
 		4A4122BA19D3C8B100894095 /* FTSuggestGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSuggestGoalViewController.xib; sourceTree = "<group>"; };
-		4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLessonLearningViewController.h; sourceTree = "<group>"; };
-		4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLessonLearningViewController.m; sourceTree = "<group>"; };
-		4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLessonLearningViewController.xib; sourceTree = "<group>"; };
+		4A4122CD19D3CC0900894095 /* FTLessonsLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLessonsLearningViewController.h; sourceTree = "<group>"; };
+		4A4122CE19D3CC0900894095 /* FTLessonsLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLessonsLearningViewController.m; sourceTree = "<group>"; };
+		4A4122CF19D3CC0900894095 /* FTLessonsLearningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLessonsLearningViewController.xib; sourceTree = "<group>"; };
 		4A4122D319D4004500894095 /* img-ant-lessons_learning_progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-lessons_learning_progress.png"; sourceTree = "<group>"; };
 		4A4122D419D4004500894095 /* img-ant-lessons_learning_progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-ant-lessons_learning_progress@2x.png"; sourceTree = "<group>"; };
 		4A4122D819D4005A00894095 /* img-finish_lesson-set_goal-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-finish_lesson-set_goal-bg.png"; sourceTree = "<group>"; };
@@ -720,9 +720,9 @@
 			isa = PBXGroup;
 			children = (
 				CA5DAF7219D59DCA003DAB26 /* Form */,
-				4A4122CD19D3CC0900894095 /* FTLessonLearningViewController.h */,
-				4A4122CE19D3CC0900894095 /* FTLessonLearningViewController.m */,
-				4A4122CF19D3CC0900894095 /* FTLessonLearningViewController.xib */,
+				4A4122CD19D3CC0900894095 /* FTLessonsLearningViewController.h */,
+				4A4122CE19D3CC0900894095 /* FTLessonsLearningViewController.m */,
+				4A4122CF19D3CC0900894095 /* FTLessonsLearningViewController.xib */,
 				4AE8AD8919D521E700A49880 /* FTQuestionContentView.h */,
 				4AE8AD8A19D521E700A49880 /* FTQuestionContentView.m */,
 				CA5DAF8119D59E1D003DAB26 /* Judge */,
@@ -1534,7 +1534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4122D119D3CC0900894095 /* FTLessonLearningViewController.xib in Resources */,
+				4A4122D119D3CC0900894095 /* FTLessonsLearningViewController.xib in Resources */,
 				4A85F3ED19C6E2BF00642C5F /* img-hexagon_skill-strength-3@2x.png in Resources */,
 				4A85F3E919C6E2BF00642C5F /* img-hexagon_skill-strength-1@2x.png in Resources */,
 				4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */,
@@ -1857,7 +1857,7 @@
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
 				CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */,
 				CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */,
-				4A4122D019D3CC0900894095 /* FTLessonLearningViewController.m in Sources */,
+				4A4122D019D3CC0900894095 /* FTLessonsLearningViewController.m in Sources */,
 				CA5DAF5719D319F0003DAB26 /* FTServerHelper.m in Sources */,
 				CA6C75E919CB282800D175DF /* FTCourseSelectionCell.m in Sources */,
 				CA5DAF9D19D5BF47003DAB26 /* FTNameQuestionContentView.m in Sources */,

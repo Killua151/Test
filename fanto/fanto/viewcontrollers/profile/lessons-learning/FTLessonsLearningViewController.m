@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTLessonLearningViewController.h"
+#import "FTLessonsLearningViewController.h"
 
 #import "FTFormQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
@@ -16,7 +16,7 @@
 #import "FTSpeakQuestionContentView.h"
 #import "FTTranslateQuestionContentView.h"
 
-@interface FTLessonLearningViewController () {
+@interface FTLessonsLearningViewController () {
   NSInteger _totalLessonsCount;
   NSInteger _currentLessonIndex;
   NSInteger _totalHeartsCount;
@@ -43,7 +43,7 @@
 
 @end
 
-@implementation FTLessonLearningViewController
+@implementation FTLessonsLearningViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -239,17 +239,16 @@
 }
 
 - (void)prepareNextQuestion {
-//  NSArray *klasses = @[
-//                       [FTFormQuestionContentView class],
-//                       [FTJudgeQuestionContentView class],
-//                       [FTListenQuestionContentView class],
-//                       [FTNameQuestionContentView class],
-//                       [FTSelectQuestionContentView class],
-//                       [FTSpeakQuestionContentView class],
-//                       [FTTranslateQuestionContentView class]
-//                       ];
-//  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
-  _vQuestionContent = [FTFormQuestionContentView new];
+  NSArray *klasses = @[
+                       [FTFormQuestionContentView class],
+                       [FTJudgeQuestionContentView class],
+                       [FTListenQuestionContentView class],
+                       [FTNameQuestionContentView class],
+                       [FTSelectQuestionContentView class],
+                       [FTSpeakQuestionContentView class],
+                       [FTTranslateQuestionContentView class]
+                       ];
+  _vQuestionContent = [klasses[_currentLessonIndex%[klasses count]] new];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;
@@ -279,19 +278,19 @@
     return;
   }
   
-  UIView *questionView = [_vContentView.subviews firstObject];
-  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     CGRect frame = questionView.frame;
+     _vQuestionContent.alpha = 0;
+     CGRect frame = _vQuestionContent.frame;
      frame.origin.x -= 320;
-     questionView.frame = frame;
+     _vQuestionContent.frame = frame;
    }
    completion:^(BOOL finished) {
-     [questionView removeFromSuperview];
+     [_vQuestionContent removeFromSuperview];
+     _vQuestionContent = nil;
      [self prepareNextQuestion];
    }];
 }

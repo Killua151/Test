@@ -35,7 +35,8 @@
     _imgQuestion.superview.frame = frame;
     
     frame = _vAnswerField.frame;
-    frame.origin.y = _imgQuestion.superview.frame.origin.y + _imgQuestion.superview.frame.size.height + 22;
+    frame.origin.y = _imgQuestion.superview.frame.origin.y + _imgQuestion.superview.frame.size.height +
+    (DeviceSystemIsOS7() ? 22 : 11);
     _vAnswerField.frame = frame;
   }
   
