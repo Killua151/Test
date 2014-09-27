@@ -25,6 +25,8 @@
   #import "KLSwitch.h"
   #import "NSString+CompactTranslation.h"
   #import "UIImage+ImageHelpers.h"
+  #import "NSMutableArray+MutableArrayHelpers.h"
+  #import "NSArray+ArrayHelpers.h"
   #import "FTServerHelper.h"
 #endif
 

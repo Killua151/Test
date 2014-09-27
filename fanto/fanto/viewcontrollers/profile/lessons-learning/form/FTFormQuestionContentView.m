@@ -188,8 +188,8 @@
     
     button.status = (button.status+1)%2;
     
-    if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
-      [self.delegate questionContentViewDidUpdateAnswer:[_btnAnsweredTokens count] > 0];
+    if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
+      [self.delegate questionContentViewDidUpdateAnswer:[_btnAnsweredTokens count] > 0 withValue:nil];
   }];
 }
 

@@ -30,6 +30,7 @@
   FTQuestionContentView *_vQuestionContent;
   
   NSArray *_questionsData;
+  id _answerValue;
 }
 
 - (void)setupViews;
@@ -38,9 +39,10 @@
 
 - (void)updateHeaderViews;
 - (void)resetResultViews;
-- (void)setResultViewVisible:(BOOL)show forResult:(BOOL)correctAnswer;
+- (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer;
 
 - (void)prepareNextQuestion;
+- (void)checkCurrentQuestion;
 - (void)removeCurrentQuestion;
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
@@ -74,7 +76,7 @@
 }
 
 - (void)reloadContents {
-  [self setResultViewVisible:NO forResult:YES];
+  [self setResultViewVisible:NO withCorrectAnswer:nil];
   _currentLessonIndex++;
   [self removeCurrentQuestion];
   [self updateHeaderViews];
@@ -103,7 +105,7 @@
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
-  [self setResultViewVisible:YES forResult:YES];
+  [self checkCurrentQuestion];
 }
 
 #pragma mark - UIAlertViewDelegate methods
@@ -119,8 +121,9 @@
   [self gestureLayerDidEnterEditingMode];
 }
 
-- (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer {
+- (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer withValue:(id)answerValue {
   _btnCheck.enabled = validAnswer;
+  _answerValue = answerValue;
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -230,17 +233,22 @@
   _currentShowingResultView = nil;
 }
 
-- (void)setResultViewVisible:(BOOL)show forResult:(BOOL)correctAnswer {
+- (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer {
+  BOOL answerIsCorrect = correctAnswer == nil;
+  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
      if (show) {
-       _currentShowingResultView = correctAnswer ? _vResultCorrect : _vResultIncorrect;
+       _currentShowingResultView = answerIsCorrect ? _vResultCorrect : _vResultIncorrect;
+       
+       if (!answerIsCorrect)
+         _lblResultIncorrectAnswer.text = correctAnswer;
+         
        _currentShowingResultView.alpha = 1;
-     }
-     else
+     } else
        _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
    }
    completion:^(BOOL finished) {
@@ -280,6 +288,11 @@
    completion:^(BOOL finished) {
      _vQuestionContent.userInteractionEnabled = YES;
    }];
+}
+
+- (void)checkCurrentQuestion {
+  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  [self setResultViewVisible:YES withCorrectAnswer:[question checkAnswer:_answerValue]];
 }
 
 - (void)removeCurrentQuestion {

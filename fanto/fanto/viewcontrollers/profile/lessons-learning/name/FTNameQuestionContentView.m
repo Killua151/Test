@@ -57,8 +57,8 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:)])
-    [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
+    [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0 withValue:nil];
 }
 
 #pragma mark - Private methods

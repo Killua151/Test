@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *type;
 
 + (Class)questionKlassByType:(NSString *)type;
+- (id)checkAnswer:(id)answerValue;
 
 @end

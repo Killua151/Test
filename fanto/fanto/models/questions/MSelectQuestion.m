@@ -24,4 +24,13 @@
   return [DCKeyValueObjectMapping mapperForClass:[MSelectQuestion class] andConfiguration:config];
 }
 
+- (id)checkAnswer:(NSString *)answerValue {
+  NSString *correctAnswer = [_text firstObject];
+  
+  if ([answerValue compare:correctAnswer options:NSCaseInsensitiveSearch] == NSOrderedSame)
+    return nil;
+  
+  return correctAnswer;
+}
+
 @end
