@@ -10,4 +10,7 @@
 
 @interface MLesson : MBase
 
+@property (nonatomic, assign) NSInteger lesson_number;
+@property (nonatomic, strong) NSString *objectives;
+
 @end

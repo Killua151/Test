@@ -18,7 +18,7 @@
   if (modelDict == nil || ![modelDict isKindOfClass:[NSDictionary class]])
     return nil;
   
-  DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[self class]];
+  DCKeyValueObjectMapping *parser = [[self class] modelMappingParser];
   return [parser parseDictionary:modelDict];
 }
 
@@ -26,8 +26,13 @@
   if (modelsArr == nil || ![modelsArr isKindOfClass:[NSArray class]])
     return nil;
   
-  DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[self class]];
+  DCKeyValueObjectMapping *parser = [[self class] modelMappingParser];
   return [parser parseArray:modelsArr];
+}
+
++ (DCKeyValueObjectMapping *)modelMappingParser {
+  // Default parser
+  return [DCKeyValueObjectMapping mapperForClass:[self class]];
 }
 
 @end

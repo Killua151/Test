@@ -10,4 +10,8 @@
 
 @implementation MLesson
 
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<MLesson - Lesson number: %ld - Objectives: %@>", (long)_lesson_number, _objectives];
+}
+
 @end

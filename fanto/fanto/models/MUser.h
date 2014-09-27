@@ -24,10 +24,13 @@
 @property (nonatomic, strong) NSString *url_avatar;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, assign) NSInteger virtual_money;
+@property (nonatomic, strong) NSArray *skills;
 
 + (void)loadCurrentUserFromUserDef;
 + (void)logOutCurrentUser;
 + (instancetype)currentUser;
+
 - (FTLineChart *)graphLineChartInFrame:(CGRect)frame;
+- (NSArray *)skillsTree;
 
 @end

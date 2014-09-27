@@ -7,7 +7,25 @@
 //
 
 #import "MSkill.h"
+#import "MLesson.h"
+#import "DCParserConfiguration.h"
+#import "DCArrayMapping.h"
 
 @implementation MSkill
+
++ (DCKeyValueObjectMapping *)modelMappingParser {
+  DCParserConfiguration *config = [DCParserConfiguration configuration];
+  
+  DCArrayMapping *lessonsMapping = [DCArrayMapping mapperForClassElements:[MLesson class]
+                                                             forAttribute:@"lessons"
+                                                                  onClass:[MSkill class]];
+
+  [config addArrayMapper:lessonsMapping];  
+  return [DCKeyValueObjectMapping mapperForClass:[MSkill class] andConfiguration:config];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"<MSkill - Id: %@ - Name: %@ - Lessons: %@>", __id, _name, _lessons];
+}
 
 @end

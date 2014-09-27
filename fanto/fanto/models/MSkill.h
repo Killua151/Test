@@ -10,4 +10,14 @@
 
 @interface MSkill : MBase
 
+@property (nonatomic, strong) NSString *_id;
+@property (nonatomic, strong) NSArray *coordinate;
+@property (nonatomic, strong) NSString *course_id;
+@property (nonatomic, assign) NSInteger finished_lesson;
+@property (nonatomic, strong) NSArray *lessons;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *objectives;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) BOOL unlocked;
+
 @end

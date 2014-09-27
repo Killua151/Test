@@ -7,8 +7,9 @@
 //
 
 #import "FTServerHelper.h"
-#import "MUser.h"
 #import "FTAppDelegate.h"
+#import "MUser.h"
+#import "MSkill.h"
 
 @interface FTServerHelper ()
 
@@ -109,6 +110,7 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
+     [MUser currentUser].skills = [MSkill modelsFromArr:userData[@"skill"]];
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

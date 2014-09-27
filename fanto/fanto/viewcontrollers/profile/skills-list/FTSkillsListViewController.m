@@ -12,13 +12,13 @@
 #import "FTLessonsListViewController.h"
 #import "FTShopViewController.h"
 #import "FTProfileViewController.h"
-#import "MSkill.h"
 
 #import "FTFinishLessonViewController.h"
 #import "FTFailLessonViewController.h"
 #import "FTBeginPlacementTestViewController.h"
-#import "FTShareViewController.h"
-#import "FTLessonsLearningViewController.h"
+
+#import "MUser.h"
+#import "MSkill.h"
 
 @interface FTSkillsListViewController () {
   NSArray *_skillsData;
@@ -70,29 +70,40 @@
 }
 
 - (void)reloadContents {
-  _skillsData = @[
-                  @[[NSNull null], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [NSNull null], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new]]
-                  ];
+  _skillsData = [[MUser currentUser] skillsTree];
+  
+  for (NSObject *data in _skillsData) {
+    if ([data isKindOfClass:[NSNull class]]) {
+      DLog(@"null");
+      continue;
+    }
+    
+    
+  }
+  
+//  _skillsData = @[
+//                  @[[NSNull null], [MSkill new], [NSNull null]],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[MSkill new], [MSkill new], [NSNull null]],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[NSNull null], [MSkill new], [MSkill new]],
+//                  [NSNull null],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[MSkill new], [NSNull null], [NSNull null]],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[MSkill new], [MSkill new], [NSNull null]],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[NSNull null], [MSkill new], [MSkill new]],
+//                  [NSNull null],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[MSkill new]],
+//                  @[[MSkill new], [MSkill new]],
+//                  @[[MSkill new], [MSkill new], [NSNull null]],
+//                  @[[MSkill new], [MSkill new]],
+//                  [NSNull null],
+//                  @[[NSNull null], [MSkill new], [MSkill new]],
+//                  @[[MSkill new], [MSkill new]]
+//                  ];
   
   [_tblSkills reloadData];
 }
@@ -186,10 +197,10 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [self.navigationController presentViewController:[FTLessonsLearningViewController new]
-                                          animated:YES
-                                        completion:NULL];
-  return;
+//  [self.navigationController presentViewController:[FTFinishLessonViewController new]
+//                                          animated:YES
+//                                        completion:NULL];
+//  return;
   
   [self.navigationController presentViewController:[FTProfileViewController navigationController]
                                           animated:YES

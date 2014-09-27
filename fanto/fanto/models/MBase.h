@@ -12,5 +12,6 @@
 
 + (instancetype)modelFromDict:(NSDictionary *)modelDict;
 + (NSArray *)modelsFromArr:(NSArray *)modelsArr;
++ (DCKeyValueObjectMapping *)modelMappingParser;
 
 @end
