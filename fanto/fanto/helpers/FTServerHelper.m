@@ -121,9 +121,7 @@
    }];
 }
 
-- (void)startLesson:(NSInteger)lessonNumber
-            inSkill:(NSString *)skillId
-         completion:(void (^)(NSArray *, NSError *))handler {
+- (void)startLesson:(NSInteger)lessonNumber inSkill:(NSString *)skillId completion:(void (^)(NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamLessonNumber : @(lessonNumber),
                            kParamSkillId : [Utils normalizeString:skillId],

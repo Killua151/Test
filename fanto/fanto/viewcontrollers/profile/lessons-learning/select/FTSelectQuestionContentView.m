@@ -40,7 +40,7 @@
   _optionTitles = [NSMutableArray arrayWithObject:questionData.question];
   
   for (MSelectQuestionOption *option in questionData.options)
-    [_optionTitles addObject:[option.text firstObject]];
+    [_optionTitles addObject:option.text];
   
   [_optionTitles shuffle];
   
