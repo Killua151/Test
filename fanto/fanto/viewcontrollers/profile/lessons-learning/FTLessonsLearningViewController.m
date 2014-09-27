@@ -263,7 +263,7 @@
 //                       ];
   MBaseQuestion *question = _questionsData[_currentLessonIndex];
   Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
-  _vQuestionContent = [questionContentViewKlass new];
+  _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];
   
   _vQuestionContent.delegate = self;
   _vQuestionContent.alpha = 0;

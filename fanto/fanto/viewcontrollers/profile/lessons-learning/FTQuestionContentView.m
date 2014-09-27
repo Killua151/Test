@@ -16,9 +16,11 @@
 
 @implementation FTQuestionContentView
 
-- (id)init {
+- (id)initWithQuestion:(MBaseQuestion *)question {
   if (self = [super init]) {
     LoadXibWithSameClass();
+    _questionData = question;
+    
     [self setupViewFrame];
     [self setupViews];
   }

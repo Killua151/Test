@@ -18,7 +18,7 @@
 
 @implementation FTSelectQuestionButton
 
-- (id)initWithIndex:(NSInteger)index {
+- (id)initWithTitle:(NSString *)title atIndex:(NSInteger)index {
   if (self = [super init]) {
     LoadXibWithSameClass();
     
@@ -26,6 +26,7 @@
     self.tag = index;
     self.layer.cornerRadius = 3;
     _lblOptionTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
+    _lblOptionTitle.text = title;
   }
   
   return self;

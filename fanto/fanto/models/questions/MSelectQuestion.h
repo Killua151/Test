@@ -10,6 +10,7 @@
 
 @interface MSelectQuestion : MBaseQuestion
 
+@property (nonatomic, strong) NSArray *text;
 @property (nonatomic, strong) NSArray *options;
 
 @end

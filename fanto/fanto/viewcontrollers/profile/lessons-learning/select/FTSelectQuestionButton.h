@@ -17,7 +17,7 @@
 
 @property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
 
-- (id)initWithIndex:(NSInteger)index;
+- (id)initWithTitle:(NSString *)title atIndex:(NSInteger)index;
 - (void)setSelected:(BOOL)selected;
 
 - (IBAction)btnGestureTouchedDown:(UIButton *)sender;
