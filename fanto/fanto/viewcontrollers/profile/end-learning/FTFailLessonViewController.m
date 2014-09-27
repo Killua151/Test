@@ -7,6 +7,8 @@
 //
 
 #import "FTFailLessonViewController.h"
+#import "FTSkillsListViewController.h"
+#import "FTAppDelegate.h"
 
 @interface FTFailLessonViewController ()
 
@@ -38,11 +40,14 @@
 }
 
 - (IBAction)btnRetryPressed:(UIButton *)sender {
-  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+  [self dismissViewControllerAnimated:YES completion:^{
+    if ([_delegate respondsToSelector:@selector(userDidRetryLesson)])
+      [_delegate userDidRetryLesson];
+  }];
 }
 
 - (IBAction)btnQuitPressed:(UIButton *)sender {
-  [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+  [self transitToViewController:[FTSkillsListViewController navigationController]];
 }
 
 @end

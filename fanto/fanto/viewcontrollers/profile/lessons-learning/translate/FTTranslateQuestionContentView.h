@@ -10,6 +10,7 @@
 
 @interface FTTranslateQuestionContentView : FTQuestionContentView <UITextViewDelegate> {
   IBOutlet UILabel *_lblQuestionTitle;
+  IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIView *_vAnswerField;
   IBOutlet UIImageView *_imgAnswerFieldBg;

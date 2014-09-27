@@ -7,6 +7,7 @@
 //
 
 #import "FTLessonsLearningViewController.h"
+#import "FTFailLessonViewController.h"
 
 #import "FTFormQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
@@ -36,6 +37,7 @@
 - (void)setupViews;
 - (void)setupHeaderViews;
 - (void)setupResultViews;
+- (void)resetCounts;
 
 - (void)updateHeaderViews;
 - (void)resetResultViews;
@@ -63,10 +65,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  _totalLessonsCount = [_questionsData count];
-  _currentLessonIndex = -1;
-  _totalHeartsCount = _currentHeartsCount = 3;
-  
+  [self resetCounts];
   [self setupViews];
   [self reloadContents];
 }
@@ -83,9 +82,15 @@
 }
 
 - (void)gestureLayerDidTap {
-  if (_currentShowingResultView != nil)
-    [self reloadContents];
-  else
+  if (_currentShowingResultView != nil) {
+    if (_currentHeartsCount < 0) {
+      FTFailLessonViewController *failLessonVC = [FTFailLessonViewController new];
+      failLessonVC.delegate = self;
+      [self presentViewController:failLessonVC animated:YES completion:NULL];
+    }
+    else
+      [self reloadContents];
+  } else
     [_vQuestionContent gestureLayerDidTap];
 }
 
@@ -124,6 +129,11 @@
 - (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer withValue:(id)answerValue {
   _btnCheck.enabled = validAnswer;
   _answerValue = answerValue;
+}
+
+- (void)userDidRetryLesson {
+  [self resetCounts];
+  [self reloadContents];
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -201,6 +211,12 @@
   [self resetResultViews];
 }
 
+- (void)resetCounts {
+  _totalLessonsCount = [_questionsData count];
+  _currentLessonIndex = -1;
+  _totalHeartsCount = _currentHeartsCount = 3;
+}
+
 - (void)updateHeaderViews {
   if (_currentLessonIndex >= _totalLessonsCount)
     return;
@@ -236,6 +252,11 @@
 - (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer {
   BOOL answerIsCorrect = correctAnswer == nil;
   
+  if (!answerIsCorrect) {
+    _currentHeartsCount--;
+    [self updateHeaderViews];
+  }
+  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
@@ -244,9 +265,11 @@
      if (show) {
        _currentShowingResultView = answerIsCorrect ? _vResultCorrect : _vResultIncorrect;
        
-       if (!answerIsCorrect)
+       if (!answerIsCorrect) {
          _lblResultIncorrectAnswer.text = correctAnswer;
-         
+         [Utils adjustLabelToFitHeight:_lblResultIncorrectAnswer relatedTo:_lblResultIncorrectMessage withDistance:5];
+       }
+       
        _currentShowingResultView.alpha = 1;
      } else
        _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;

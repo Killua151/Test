@@ -72,15 +72,6 @@
 - (void)reloadContents {
   _skillsData = [[MUser currentUser] skillsTree];
   
-  for (NSObject *data in _skillsData) {
-    if ([data isKindOfClass:[NSNull class]]) {
-      DLog(@"null");
-      continue;
-    }
-    
-    
-  }
-  
 //  _skillsData = @[
 //                  @[[NSNull null], [MSkill new], [NSNull null]],
 //                  @[[MSkill new], [MSkill new]],

@@ -7,6 +7,7 @@
 //
 
 #import "FTTranslateQuestionContentView.h"
+#import "MTranslateQuestion.h"
 
 @interface FTTranslateQuestionContentView () {
   CGFloat _originalAnswerFieldOriginY;
@@ -19,10 +20,18 @@
 @implementation FTTranslateQuestionContentView
 
 - (void)setupViews {
+  MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
+  
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblQuestion.text = questionData.text;
+  [Utils adjustLabelToFitHeight:_lblQuestion];
+  
+  CGPoint center = _lblQuestion.center;
+  center.y = _btnQuestionAudio.center.y;
+  _lblQuestion.center = center;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
@@ -59,7 +68,16 @@
   _txtAnswerPlaceholder.hidden = textView.text.length > 0;
   
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0 withValue:nil];
+    [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0 withValue:textView.text];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+  if ([text isEqualToString:@"\n"]) {
+    [self gestureLayerDidTap];
+    return NO;
+  }
+  
+  return YES;
 }
 
 #pragma mark - Private methods

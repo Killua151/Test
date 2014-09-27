@@ -42,6 +42,7 @@ typedef enum FormAnswerTokenStatusEnum {
 @optional
 - (void)questionContentViewDidEnterEditingMode;
 - (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer withValue:(id)answerValue;
+- (void)userDidRetryLesson;
 
 @end
 

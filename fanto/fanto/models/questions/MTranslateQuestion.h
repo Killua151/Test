@@ -16,6 +16,5 @@
 @property (nonatomic, strong) NSString *translation;
 @property (nonatomic, strong) NSArray *translations_group2;
 @property (nonatomic, strong) NSArray *translations_group3;
-@property (nonatomic, strong) NSArray *words;
 
 @end
