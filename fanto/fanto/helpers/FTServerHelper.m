@@ -10,6 +10,7 @@
 #import "FTAppDelegate.h"
 #import "MUser.h"
 #import "MSkill.h"
+#import "MBaseQuestion.h"
 
 @interface FTServerHelper ()
 
@@ -112,6 +113,29 @@
      NSDictionary *userData = [responseObject objectFromJSONData];
      [MUser currentUser].skills = [MSkill modelsFromArr:userData[@"skill"]];
      handler(userData, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
+- (void)startLesson:(NSInteger)lessonNumber
+            inSkill:(NSString *)skillId
+         completion:(void (^)(NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamLessonNumber : @(lessonNumber),
+                           kParamSkillId : [Utils normalizeString:skillId],
+                           kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]
+                           };
+  
+  [self
+   POST:@"lessons/start"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSArray *questions = [responseObject objectFromJSONData];
+     handler([MBaseQuestion modelsFromArr:questions], nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{

@@ -34,4 +34,8 @@
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
 
+- (void)startLesson:(NSInteger)lessonNumber
+            inSkill:(NSString *)skillId
+         completion:(void(^)(NSArray *questions, NSError *error))handler;
+
 @end

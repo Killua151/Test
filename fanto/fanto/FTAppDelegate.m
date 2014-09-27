@@ -12,11 +12,13 @@
 #import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
 #import "MUser.h"
+#import "MBaseQuestion.h"
 
 @interface FTAppDelegate () <UIAlertViewDelegate>
 
 - (void)preSettings;
 - (void)setupRootViewController;
+- (void)test;
 
 @end
 
@@ -24,6 +26,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [self preSettings];
+  
+  [self test];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
@@ -126,6 +130,9 @@
   
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
+}
+
+- (void)test {
 }
 
 @end

@@ -102,9 +102,19 @@
 
 #pragma mark - FTLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
-  [self.navigationController presentViewController:[FTLessonsLearningViewController new]
-                                          animated:YES
-                                        completion:NULL];
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[FTServerHelper sharedHelper] startLesson:1 inSkill:@"co_ban_1" completion:^(NSArray *questions, NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    ShowAlertWithError(error);
+    
+    DLog(@"%@", questions);
+    return;
+    
+    [self.navigationController presentViewController:[FTLessonsLearningViewController new]
+                                            animated:YES
+                                          completion:NULL];
+  }];
 }
 
 #pragma mark - Private methods
