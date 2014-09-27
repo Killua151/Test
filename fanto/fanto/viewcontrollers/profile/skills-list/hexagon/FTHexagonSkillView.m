@@ -18,6 +18,8 @@
 - (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target {
   if (self = [super initWithSkill:skill andTarget:target]) {
     _lblSkillName.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+    _lblSkillName.text = skill.title;
+    
     _lblLessonsProgress.font = [UIFont fontWithName:@"ClearSans" size:14];
   }
   

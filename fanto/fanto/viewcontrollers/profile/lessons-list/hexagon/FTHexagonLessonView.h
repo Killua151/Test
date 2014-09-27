@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLesson;
+@class MSkill;
 
 @interface FTHexagonLessonView : UIView {
   IBOutlet UILabel *_lblLessonTitle;
@@ -20,7 +20,10 @@
 @property (nonatomic, assign) id<FTLessonViewDelegate> delegate;
 @property (nonatomic, assign) NSInteger index;
 
-- (id)initWithLesson:(MLesson *)lesson atIndex:(NSInteger)index withThemeColor:(UIColor *)themeColor forTarget:(id)target;
+- (id)initWithLessonNumber:(NSInteger)lessonNumber
+                   inSkill:(MSkill *)skill
+            withThemeColor:(UIColor *)themeColor
+                 forTarget:(id)target;
 - (void)refreshView;
 - (IBAction)btnRetakePressed:(UIButton *)sender;
 

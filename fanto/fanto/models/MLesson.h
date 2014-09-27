@@ -11,6 +11,6 @@
 @interface MLesson : MBase
 
 @property (nonatomic, assign) NSInteger lesson_number;
-@property (nonatomic, strong) NSString *objectives;
+@property (nonatomic, strong) NSArray *objectives;
 
 @end

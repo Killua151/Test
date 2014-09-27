@@ -7,40 +7,42 @@
 //
 
 #import "FTHexagonLessonView.h"
+#import "MSkill.h"
 #import "MLesson.h"
 
 @interface FTHexagonLessonView () {
+  MSkill *_skillData;
   MLesson *_lessonData;
+  UIColor *_themeColor;
 }
+
+- (void)setupViews;
 
 @end
 
 @implementation FTHexagonLessonView
 
-- (id)initWithLesson:(MLesson *)lesson atIndex:(NSInteger)index withThemeColor:(UIColor *)themeColor forTarget:(id)target {
+- (id)initWithLessonNumber:(NSInteger)lessonNumber
+                   inSkill:(MSkill *)skill
+            withThemeColor:(UIColor *)themeColor
+                 forTarget:(id)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
-    _lessonData = lesson;
-    _index = index;
+    _skillData = skill;
+    _index = lessonNumber-1;
+    _lessonData = _skillData.lessons[_index];
     _delegate = target;
+    _themeColor = themeColor;
     
-    _lblLessonTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-    _lblObjectives.font = [UIFont fontWithName:@"ClearSans" size:14];
-    _btnRetake.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
-    
-    UIImage *maskingImage = [UIImage imageNamed:@"btn-hexagon_lesson-retake.png"];
-    CALayer *maskingLayer = [CALayer layer];
-    maskingLayer.frame = _btnRetake.bounds;
-    [maskingLayer setContents:(id)[maskingImage CGImage]];
-    [_btnRetake.layer setMask:maskingLayer];
-    
-    [_btnRetake setBackgroundColor:themeColor];
+    [self setupViews];
   }
   
   return self;
 }
 
 - (void)refreshView {
+  return;
+  
   CGSize sizeThatFits = [_lblObjectives sizeThatFits:CGSizeMake(self.frame.size.width * 0.7, MAXFLOAT)];
   sizeThatFits.height = MAX(sizeThatFits.height, 50);
   _lblObjectives.frame = (CGRect){CGPointZero, sizeThatFits};
@@ -50,6 +52,43 @@
 - (IBAction)btnRetakePressed:(UIButton *)sender {
   if ([_delegate respondsToSelector:@selector(lessonViewDidSelectLesson:)])
     [_delegate lessonViewDidSelectLesson:_lessonData];
+}
+
+#pragma mark - Private methods
+- (void)setupViews {
+  _lblLessonTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblLessonTitle.text = [NSString stringWithFormat:NSLocalizedString(@"Lesson %d/%d", nil),
+                          _lessonData.lesson_number, [_skillData.lessons count]];
+  _imgPassed.hidden = _lessonData.lesson_number > _skillData.finished_lesson;
+  
+  _lblObjectives.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblObjectives.text = [_lessonData.objectives componentsJoinedByString:@", "];
+  [Utils adjustLabelToFitHeight:_lblObjectives];
+  
+  _lblObjectives.center = CGPointMake(_lblObjectives.center.x, self.center.y);
+  
+  // Default is passed & user can retake the lesson
+  NSString *btnRetakeTitle = NSLocalizedString(@"RETAKE", nil);
+  
+  // Unlocked but not passed
+  if (_lessonData.lesson_number == _skillData.finished_lesson+1)
+    btnRetakeTitle = NSLocalizedString(@"START", nil);
+  else if (_lessonData.lesson_number > _skillData.finished_lesson+1) {
+    btnRetakeTitle = NSLocalizedString(@"LOCKED", nil);
+    _btnRetake.enabled = NO;
+  }
+  
+  _btnRetake.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+  [_btnRetake setTitle:btnRetakeTitle forState:UIControlStateNormal];
+  
+  UIImage *maskingImage = [UIImage imageNamed:@"btn-hexagon_lesson-retake.png"];
+  CALayer *maskingLayer = [CALayer layer];
+  maskingLayer.frame = _btnRetake.bounds;
+  [maskingLayer setContents:(id)[maskingImage CGImage]];
+  [_btnRetake.layer setMask:maskingLayer];
+  
+  [_btnRetake setBackgroundImage:[UIImage imageFromColor:_themeColor] forState:UIControlStateNormal];
+  [_btnRetake setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
 }
 
 @end

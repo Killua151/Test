@@ -9,6 +9,7 @@
 #import "FTLessonsListViewController.h"
 #import "FTHexagonLessonsListViewController.h"
 #import "FTShieldLessonsListViewController.h"
+#import "MSkill.h"
 
 @interface FTLessonsListViewController ()
 
@@ -28,19 +29,18 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self reloadContents];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self customTitleWithText:_skillData.title color:[self navigationTextColor]];
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Test Out", nil)
                            color:[self navigationTextColor]
                           target:self
                           action:@selector(testOut)
                         distance:-8];
-  
-  [self reloadContents];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  [self customTitleWithText:@"Ngày và giờ" color:[self navigationTextColor]];
 }
 
 - (UIColor *)navigationTextColor {

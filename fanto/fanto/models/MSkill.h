@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *lessons;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *objectives;
+@property (nonatomic, assign) NSInteger order;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL unlocked;
 

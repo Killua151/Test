@@ -9,6 +9,7 @@
 #import "FTHexagonLessonsListViewController.h"
 #import "FTHexagonLessonView.h"
 #import "FTLessonsLearningViewController.h"
+#import "MSkill.h"
 #import "MLesson.h"
 
 #define kNormalLessonWidth        230.f
@@ -17,7 +18,6 @@
 #define kFocusedLessonHeight      181.f
 
 @interface FTHexagonLessonsListViewController () {
-  NSArray *_lessonsData;
   NSInteger _currentFocusedLessonIndex;
 }
 
@@ -45,7 +45,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
-  
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
@@ -60,7 +59,6 @@
     return;
   
   self.view.backgroundColor = UIColorFromRGB(255, 187, 51);
-  _lessonsData = @[[MLesson new], [MLesson new], [MLesson new], [MLesson new]];
   [self setupLessonsScrollView];
 }
 
@@ -119,19 +117,22 @@
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];
   
-  [_lessonsData enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
-    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLesson:lesson
-                                                                          atIndex:index
-                                                                   withThemeColor:UIColorFromRGB(255, 187, 51)
-                                                                        forTarget:self];
+  NSInteger lessonsCount = [self.skillData.lessons count];
+  
+  [self.skillData.lessons enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
+    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLessonNumber:lesson.lesson_number
+                                                                                inSkill:self.skillData
+                                                                         withThemeColor:UIColorFromRGB(255, 187, 51)
+                                                                              forTarget:self];
     CGRect frame = lessonView.frame;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
     lessonView.frame = frame;
     [_vLessonsScrollView addSubview:lessonView];
   }];
   
-  _vLessonsScrollView.contentSize = CGSizeMake([_lessonsData count] * _vLessonsScrollView.frame.size.width,
+  _vLessonsScrollView.contentSize = CGSizeMake(lessonsCount * _vLessonsScrollView.frame.size.width,
                                                _vLessonsScrollView.frame.size.height);
+  _vLessonsScrollView.contentOffset = CGPointZero;
   
   FTHexagonLessonView *lessonView = [_vLessonsScrollView.subviews firstObject];
   [self focusLesson:lessonView atIndex:lessonView.index focused:YES];
@@ -184,7 +185,13 @@
     frame.size.height = kFocusedLessonHeight - (kFocusedLessonHeight - kNormalLessonHeight) * ABS(scaleRatio);
   }
   
-  frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.index + (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
+  if (scaleRatio == 1)
+    frame.size = CGSizeMake(kFocusedLessonWidth, kFocusedLessonHeight);
+  else if (scaleRatio == -1)
+    frame.size = CGSizeMake(kNormalLessonWidth, kNormalLessonHeight);
+  
+  frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.index +
+  (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
   frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
   lessonView.frame = frame;
 }
