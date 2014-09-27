@@ -41,11 +41,11 @@
   _txtConfirmPassword.text = @"";
   
 #if kTestSignUp
-  _txtFullName.text = @"Test Account";
-  _txtEmail.text = @"test@accou.nt";
-  _txtUsername.text = @"test_account";
-  _txtPassword.text = @"asdfasdf";
-  _txtConfirmPassword.text = @"asdfasdf";
+//  _txtFullName.text = @"Test Account";
+//  _txtEmail.text = @"test@accou.nt";
+//  _txtUsername.text = @"test_account";
+//  _txtPassword.text = @"asdfasdf";
+//  _txtConfirmPassword.text = @"asdfasdf";
 #endif
 }
 

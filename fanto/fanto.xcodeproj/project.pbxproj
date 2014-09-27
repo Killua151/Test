@@ -1550,6 +1550,11 @@
 				CLASSPREFIX = FT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ethan Nguyen";
+				TargetAttributes = {
+					CA74999319C094B700C221A9 = {
+						DevelopmentTeam = XPSYFYS4PU;
+					};
+				};
 			};
 			buildConfigurationList = CA74998F19C094B700C221A9 /* Build configuration list for PBXProject "fanto" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2010,8 +2015,8 @@
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2020,7 +2025,7 @@
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "162DC33F-0723-4CE2-95E4-7A01AEE9612C";
+				PROVISIONING_PROFILE = "86685d67-22ce-43b0-9652-79eb771c2edf";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2030,7 +2035,8 @@
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2039,7 +2045,7 @@
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "162DC33F-0723-4CE2-95E4-7A01AEE9612C";
+				PROVISIONING_PROFILE = "86685d67-22ce-43b0-9652-79eb771c2edf";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

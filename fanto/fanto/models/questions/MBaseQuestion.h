@@ -10,7 +10,7 @@
 
 @interface MBaseQuestion : MBase
 
-@property (nonatomic, strong) NSString *_id;
+@property (nonatomic, strong) NSString *question_log_id;
 @property (nonatomic, strong) NSString *lang;
 @property (nonatomic, strong) NSString *type;
 

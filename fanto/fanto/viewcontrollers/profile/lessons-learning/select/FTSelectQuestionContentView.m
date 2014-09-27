@@ -25,8 +25,7 @@
   
   _btnOptions = [NSMutableArray new];
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestion.text = [NSString stringWithFormat:NSLocalizedString(@"Translate \"%@\"", nil),
-                       [questionData.text firstObject]];
+  _lblQuestion.text = [NSString stringWithFormat:NSLocalizedString(@"Translate \"%@\"", nil), questionData.question];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _lblQuestion.frame;
@@ -38,7 +37,7 @@
   CGFloat buttonsBottomMargin = DeviceScreenIsRetina4Inch() ? 35 : 28;
   CGFloat buttonsHeight = (self.frame.size.height - buttonsTopMargin - buttonsBottomMargin - 15)/2;
   
-  _optionTitles = [NSMutableArray arrayWithObject:[questionData.text firstObject]];
+  _optionTitles = [NSMutableArray arrayWithObject:questionData.question];
   
   for (MSelectQuestionOption *option in questionData.options)
     [_optionTitles addObject:[option.text firstObject]];

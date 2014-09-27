@@ -12,7 +12,7 @@
 
 - (id)checkAnswer:(NSString *)answerValue {
   NSMutableArray *correctAnswers = [NSMutableArray arrayWithObject:_translation];
-  [correctAnswers addObjectsFromArray:_translations_group2];
+  [correctAnswers addObjectsFromArray:_compact_translations];
   
   for (NSString *correctAnswer in correctAnswers)
     if ([correctAnswer compare:answerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)

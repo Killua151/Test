@@ -10,11 +10,9 @@
 
 @interface MTranslateQuestion : MBaseQuestion
 
-@property (nonatomic, strong) NSString *answer_lang;
-@property (nonatomic, strong) NSString *question_lang;
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *translation;
-@property (nonatomic, strong) NSArray *translations_group2;
-@property (nonatomic, strong) NSArray *translations_group3;
+@property (nonatomic, strong) NSArray *compact_translations;
+@property (nonatomic, strong) NSArray *common_errors;
 
 @end

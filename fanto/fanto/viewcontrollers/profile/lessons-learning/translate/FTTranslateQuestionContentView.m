@@ -28,7 +28,7 @@
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblQuestion.text = questionData.text;
+  _lblQuestion.text = questionData.question;
   [Utils adjustLabelToFitHeight:_lblQuestion];
   
   CGPoint center = _lblQuestion.center;

@@ -25,12 +25,10 @@
 }
 
 - (id)checkAnswer:(NSString *)answerValue {
-  NSString *correctAnswer = [_text firstObject];
-  
-  if ([answerValue compare:correctAnswer options:NSCaseInsensitiveSearch] == NSOrderedSame)
+  if ([answerValue compare:_hint options:NSCaseInsensitiveSearch] == NSOrderedSame)
     return nil;
   
-  return correctAnswer;
+  return _hint;
 }
 
 @end
