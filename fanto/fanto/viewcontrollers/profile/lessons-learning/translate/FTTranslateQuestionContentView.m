@@ -8,6 +8,7 @@
 
 #import "FTTranslateQuestionContentView.h"
 #import "MTranslateQuestion.h"
+#import "FTLessonsLearningViewController.h"
 
 @interface FTTranslateQuestionContentView () {
   CGFloat _originalAnswerFieldOriginY;
@@ -22,7 +23,9 @@
 - (void)setupViews {
   MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
   
-  DLog(@"%@", questionData.translation);
+#if kTestTranslateQuestions
+  [Utils showToastWithMessage:questionData.translation];
+#endif
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
@@ -49,6 +52,9 @@
 }
 
 - (void)gestureLayerDidTap {
+  if ([self.delegate respondsToSelector:@selector(questionContentViewGestureLayerDidTap)])
+    [self.delegate performSelector:@selector(questionContentViewGestureLayerDidTap)];
+  
   [_txtAnswerField resignFirstResponder];
   
   if (!DeviceScreenIsRetina4Inch())

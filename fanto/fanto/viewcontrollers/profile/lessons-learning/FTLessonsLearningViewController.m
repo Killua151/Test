@@ -89,6 +89,10 @@
     [_vQuestionContent gestureLayerDidTap];
 }
 
+- (void)questionContentViewGestureLayerDidTap {
+  _vGestureLayer.hidden = YES;
+}
+
 - (IBAction)btnClosePressed:(UIButton *)sender {
   UIAlertView *alertView =
   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning!", nil)

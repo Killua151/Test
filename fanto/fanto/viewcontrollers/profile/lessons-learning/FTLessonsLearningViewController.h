@@ -34,5 +34,6 @@
 - (IBAction)btnClosePressed:(UIButton *)sender;
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender;
 - (IBAction)btnCheckPressed:(UIButton *)sender;
+- (void)questionContentViewGestureLayerDidTap;
 
 @end
