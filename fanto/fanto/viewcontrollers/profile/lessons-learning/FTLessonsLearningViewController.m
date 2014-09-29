@@ -267,6 +267,16 @@
        if (!answerIsCorrect) {
          _lblResultIncorrectAnswer.text = correctAnswer;
          [Utils adjustLabelToFitHeight:_lblResultIncorrectAnswer relatedTo:_lblResultIncorrectMessage withDistance:5];
+         
+         BOOL answerInTwoLines = _lblResultIncorrectAnswer.frame.size.height > 23;
+         
+         CGRect frame = _lblResultIncorrectMessage.frame;
+         frame.origin.y = answerInTwoLines ? 8 : 17;
+         _lblResultIncorrectMessage.frame = frame;
+         
+         frame = _lblResultIncorrectAnswer.frame;
+         frame.origin.y = _lblResultIncorrectMessage.frame.origin.y + _lblResultIncorrectMessage.frame.size.height + 5;
+         _lblResultIncorrectAnswer.frame = frame;
        }
        
        _currentShowingResultView.alpha = 1;
