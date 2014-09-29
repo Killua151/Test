@@ -13,10 +13,21 @@
 - (id)checkAnswer:(NSString *)answerValue {
   NSMutableArray *correctAnswers = [NSMutableArray arrayWithObject:_translation];
   [correctAnswers addObjectsFromArray:_compact_translations];
+
+  // Default - Worst comparison
+//  for (NSString *correctAnswer in correctAnswers)
+//    if ([correctAnswer compare:answerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+//      return nil;
   
-  for (NSString *correctAnswer in correctAnswers)
-    if ([correctAnswer compare:answerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+  // V1.0 - Better comparison: remove all punctuations & lower all characters
+  NSString *normalizedAnswerValue = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
+  
+  for (NSString *correctAnswer in correctAnswers) {
+    NSString *normalizedCorrectAnswer = [Utils stringByRemovingAllNonLetterCharacters:correctAnswer];
+    
+    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
       return nil;
+  }
   
   return _translation;
 }

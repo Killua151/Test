@@ -142,6 +142,17 @@ static UIView *_sharedToast = nil;
   return asciiString;
 }
 
++ (NSString *)stringByRemovingAllNonLetterCharacters:(NSString *)string {
+  NSString *resultString = [string lowercaseString];
+  NSMutableArray *components = [NSMutableArray arrayWithArray:[resultString componentsSeparatedByCharactersInSet:
+                                                               [[NSCharacterSet letterCharacterSet] invertedSet]]];
+  
+  [components removeObject:@""];
+  resultString = [components componentsJoinedByString:@" "];
+  
+  return resultString;
+}
+
 + (BOOL)validateEmail:(NSString *)email {
   BOOL stricterFilter = YES;
   

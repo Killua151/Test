@@ -33,6 +33,7 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 + (NSString *)normalizeString:(NSString *)string;
 + (NSString *)normalizeString:(NSString *)string withPlaceholder:(NSString *)placeholder;
 + (NSString *)asciiNormalizedString:(NSString *)unicodeString;
++ (NSString *)stringByRemovingAllNonLetterCharacters:(NSString *)string;
 
 + (BOOL)validateEmail:(NSString *)email;
 + (BOOL)validateAlphaNumeric:(NSString *)password;
