@@ -249,6 +249,19 @@ static UIView *_sharedToast = nil;
   label.attributedText = attributedText;
 }
 
++ (CGFloat)keyboardShrinkRatioForView:(UIView *)view {
+  CGFloat actualContentViewsHeight = 0;
+  
+  for (UIView *subview in view.subviews)
+    if (subview.frame.origin.y + subview.frame.size.height > actualContentViewsHeight)
+      actualContentViewsHeight = subview.frame.origin.y + subview.frame.size.height;
+  
+  CGFloat actualOriginY = [view.superview convertPoint:view.frame.origin toView:nil].y;
+  CGFloat nonKeyboardViewHeight = [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - actualOriginY;
+  
+  return nonKeyboardViewHeight / actualContentViewsHeight;
+}
+
 + (BOOL)floatValueIsInteger:(CGFloat)value {
   NSString *valueString = [NSString stringWithFormat:@"%.2f", value];
   

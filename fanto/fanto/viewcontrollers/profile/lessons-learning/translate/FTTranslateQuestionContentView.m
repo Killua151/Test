@@ -11,7 +11,7 @@
 #import "FTLessonsLearningViewController.h"
 
 @interface FTTranslateQuestionContentView () {
-  CGFloat _originalAnswerFieldOriginY;
+  NSMutableDictionary *_originalSubviewsOriginY;
 }
 
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp;
@@ -21,6 +21,7 @@
 @implementation FTTranslateQuestionContentView
 
 - (void)setupViews {
+  _originalSubviewsOriginY = [NSMutableDictionary dictionary];
   MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
   
 #if kTestTranslateQuestions
@@ -48,7 +49,8 @@
                              resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
                              resizingMode:UIImageResizingModeStretch];
   
-  _originalAnswerFieldOriginY = _vAnswerField.frame.origin.y;
+  for (UIView *subview in self.subviews)
+    _originalSubviewsOriginY[[NSString stringWithFormat:@"%p", subview]] = @(subview.frame.origin.y);
 }
 
 - (void)gestureLayerDidTap {
@@ -90,17 +92,19 @@
 
 #pragma mark - Private methods
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp {
-  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
+  CGFloat ratio = [Utils keyboardShrinkRatioForView:self];
   
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     CGRect frame = _vAnswerField.frame;
-     frame.origin.y = isUp ?
-     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
-     _vAnswerField.frame = frame;
+     for (UIView *subview in self.subviews) {
+       CGRect frame = subview.frame;
+       CGFloat originalOriginY = [_originalSubviewsOriginY[[NSString stringWithFormat:@"%p", subview]] floatValue];
+       frame.origin.y = isUp ? (originalOriginY + frame.size.height) * ratio - frame.size.height - 10 : originalOriginY;
+       subview.frame = frame;
+     }
    }
    completion:^(BOOL finished) {
    }];
