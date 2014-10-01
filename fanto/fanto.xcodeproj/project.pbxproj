@@ -246,6 +246,13 @@
 		CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499A719C094B700C221A9 /* FTAppDelegate.m */; };
 		CA7499CF19C0951A00C221A9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499C819C0951A00C221A9 /* Utils.m */; };
 		CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7499CD19C0951A00C221A9 /* BaseViewController.m */; };
+		CA98CDA719DA926200DBD64E /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDA419DA926200DBD64E /* AppIcon57x57.png */; };
+		CA98CDA819DA926200DBD64E /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDA519DA926200DBD64E /* AppIcon57x57@2x.png */; };
+		CA98CDA919DA926200DBD64E /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDA619DA926200DBD64E /* AppIcon60x60@2x.png */; };
+		CA98CDAD19DA926D00DBD64E /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDAA19DA926D00DBD64E /* AppIcon29x29.png */; };
+		CA98CDAE19DA926D00DBD64E /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDAB19DA926D00DBD64E /* AppIcon29x29@2x.png */; };
+		CA98CDAF19DA926D00DBD64E /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA98CDAC19DA926D00DBD64E /* AppIcon40x40@2x.png */; };
+		CA98CDB319DBBF6700DBD64E /* NSObject+ObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */; };
 		CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */; };
 		CABADE5819CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */; };
 		CABADE6119CD405A000187AF /* img-ant-fail.png in Resources */ = {isa = PBXBuildFile; fileRef = CABADE5F19CD405A000187AF /* img-ant-fail.png */; };
@@ -615,6 +622,14 @@
 		CA7499C819C0951A00C221A9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CA7499CC19C0951A00C221A9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CA7499CD19C0951A00C221A9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CA98CDA419DA926200DBD64E /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
+		CA98CDA519DA926200DBD64E /* AppIcon57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon57x57@2x.png"; sourceTree = "<group>"; };
+		CA98CDA619DA926200DBD64E /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		CA98CDAA19DA926D00DBD64E /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		CA98CDAB19DA926D00DBD64E /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		CA98CDAC19DA926D00DBD64E /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		CA98CDB119DBBF6700DBD64E /* NSObject+ObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectMapping.h"; sourceTree = "<group>"; };
+		CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMapping.m"; sourceTree = "<group>"; };
 		CABADE5419CD35CE000187AF /* FTShopItemsGroupHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTShopItemsGroupHeaderCell.h; sourceTree = "<group>"; };
 		CABADE5519CD35CE000187AF /* FTShopItemsGroupHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTShopItemsGroupHeaderCell.m; sourceTree = "<group>"; };
 		CABADE5619CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTShopItemsGroupHeaderCell.xib; sourceTree = "<group>"; };
@@ -888,6 +903,12 @@
 			isa = PBXGroup;
 			children = (
 				CA6C75EB19CB2E3D00D175DF /* Ants */,
+				CA98CDAA19DA926D00DBD64E /* AppIcon29x29.png */,
+				CA98CDAB19DA926D00DBD64E /* AppIcon29x29@2x.png */,
+				CA98CDAC19DA926D00DBD64E /* AppIcon40x40@2x.png */,
+				CA98CDA419DA926200DBD64E /* AppIcon57x57.png */,
+				CA98CDA519DA926200DBD64E /* AppIcon57x57@2x.png */,
+				CA98CDA619DA926200DBD64E /* AppIcon60x60@2x.png */,
 				4A74144619C2D779002DB2C7 /* btn-navbar-back.png */,
 				4A74144719C2D779002DB2C7 /* btn-navbar-back@2x.png */,
 				CA5DAEF119D06086003DAB26 /* btn-navbar-back_white.png */,
@@ -1315,6 +1336,8 @@
 				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
 				CA7499C719C0951A00C221A9 /* Utils.h */,
 				CA7499C819C0951A00C221A9 /* Utils.m */,
+				CA98CDB119DBBF6700DBD64E /* NSObject+ObjectMapping.h */,
+				CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -1583,6 +1606,7 @@
 				4A85F3E919C6E2BF00642C5F /* img-hexagon_skill-strength-1@2x.png in Resources */,
 				4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */,
 				4A85F3FE19C6E32100642C5F /* img-shield_skill-strength-4.png in Resources */,
+				CA98CDAD19DA926D00DBD64E /* AppIcon29x29.png in Resources */,
 				4A85F3EC19C6E2BF00642C5F /* img-hexagon_skill-strength-3.png in Resources */,
 				CA5DAEF019D06074003DAB26 /* img-ant-set_goal@2x.png in Resources */,
 				4A85F3EF19C6E2BF00642C5F /* img-hexagon_skill-strength-4@2x.png in Resources */,
@@ -1641,6 +1665,7 @@
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
 				CA5DAF5219D1A730003DAB26 /* img-share-twitter_selected@2x.png in Resources */,
 				CA6C75FB19CB32FE00D175DF /* img-beginner-icon.png in Resources */,
+				CA98CDA719DA926200DBD64E /* AppIcon57x57.png in Resources */,
 				CA5DAFA819D5D27A003DAB26 /* img-lessons_learning-correct@2x.png in Resources */,
 				4A85F3DE19C6E13100642C5F /* img-shield_skill-bg-unlocked.png in Resources */,
 				CAEF54BF19C9E4C900729934 /* img-settings-email_icon-disabled@2x.png in Resources */,
@@ -1657,6 +1682,7 @@
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
+				CA98CDAE19DA926D00DBD64E /* AppIcon29x29@2x.png in Resources */,
 				CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */,
 				4A4122C119D3C8B100894095 /* FTFailLessonViewController.xib in Resources */,
 				CA5DAFAC19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png in Resources */,
@@ -1737,6 +1763,7 @@
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
+				CA98CDAF19DA926D00DBD64E /* AppIcon40x40@2x.png in Resources */,
 				CABADE8319CD63C3000187AF /* img-hexagon_skill-strength-2_big.png in Resources */,
 				CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */,
 				CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */,
@@ -1767,6 +1794,7 @@
 				CABADE8419CD63C3000187AF /* img-hexagon_skill-strength-2_big@2x.png in Resources */,
 				CAEBA29C19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CABADE6A19CD56CF000187AF /* img-count_badge-bg.png in Resources */,
+				CA98CDA919DA926200DBD64E /* AppIcon60x60@2x.png in Resources */,
 				CA5DAF0419D067B4003DAB26 /* FTSetGoalCell.xib in Resources */,
 				4A4122F219D4006900894095 /* img-lessons_learning-heart_disabled@2x.png in Resources */,
 				CA5DAF5019D1A730003DAB26 /* img-share-google@2x.png in Resources */,
@@ -1787,6 +1815,7 @@
 				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
 				CA5DAF4B19D1A730003DAB26 /* img-share-facebook.png in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
+				CA98CDA819DA926200DBD64E /* AppIcon57x57@2x.png in Resources */,
 				CABADE8719CD63C3000187AF /* img-hexagon_skill-strength-4_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1917,6 +1946,7 @@
 				4A4122BD19D3C8B100894095 /* FTCongratsViewController.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
+				CA98CDB319DBBF6700DBD64E /* NSObject+ObjectMapping.m in Sources */,
 				4A4122C419D3C8B100894095 /* FTFinishSkillViewController.m in Sources */,
 				4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */,
 				CA5DAFCA19D67263003DAB26 /* MTranslateQuestion.m in Sources */,
@@ -2014,7 +2044,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2025,7 +2054,7 @@
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "86685d67-22ce-43b0-9652-79eb771c2edf";
+				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2034,7 +2063,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2045,7 +2073,7 @@
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "86685d67-22ce-43b0-9652-79eb771c2edf";
+				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

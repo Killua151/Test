@@ -71,6 +71,8 @@
 - (void)reloadContents {
   _skillsData = [[MUser currentUser] skillsTree];
   
+  DLog(@"%@", _skillsData);
+  
 //  _skillsData = @[
 //                  @[[NSNull null], [MSkill new], [NSNull null]],
 //                  @[[MSkill new], [MSkill new]],
