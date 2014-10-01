@@ -20,18 +20,18 @@
 #endif
 }
 
-- (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target {
+- (id)initWithTarget:(id<FTSkillViewDelegate>)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
-    
-    _skillData = skill;
     _delegate = target;
   }
   
   return self;
 }
 
-- (void)populateData {
+- (void)populateViewWithData:(MSkill *)skill {
+  _skillData = skill;
+  // Implement in child class
 }
 
 - (IBAction)btnSkillPressed:(UIButton *)sender {

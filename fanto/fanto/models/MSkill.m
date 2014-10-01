@@ -28,4 +28,14 @@
   return [NSString stringWithFormat:@"<MSkill - Id: %@ - Name: %@ - Lessons: %@>", __id, _name, _lessons];
 }
 
+- (UIColor *)themeColor {
+//  return [UIColor colorWithHexString:@"#33b5e5"];
+//  return UIColorFromRGB(255, 187, 51);
+  
+  if (_theme_color == nil || !_unlocked)
+    return UIColorFromRGB(221, 221, 221);
+  
+  return [UIColor colorWithHexString:_theme_color];
+}
+
 @end

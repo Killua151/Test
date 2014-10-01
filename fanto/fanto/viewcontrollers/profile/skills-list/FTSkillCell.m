@@ -12,6 +12,12 @@
 #import "FTHexagonSkillCell.h"
 #import "FTShieldSkillCell.h"
 
+@interface FTSkillCell ()
+
+- (void)setupSkillViewsWithTotal:(NSInteger)totalSkills;
+
+@end
+
 @implementation FTSkillCell
 
 + (Class)currentSkillCellClass {
@@ -34,37 +40,30 @@
   return reuseId;
 }
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
+                    withTotal:(NSInteger)totalSkills
+                     inTarget:(id<FTSkillViewDelegate>)target {
   if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
     LoadXibWithSameClass();
     [self setValue:reuseIdentifier forKey:@"reuseIdentifier"];
+    _delegate = target;
+    [self setupSkillViewsWithTotal:totalSkills];
   }
   
   return self;
 }
 
 - (void)updateCellWithSkills:(NSArray *)skills {
-  if ([self.contentView.subviews count] == 0) {
-    NSInteger totalSkills = [skills count];
+  [self.contentView.subviews enumerateObjectsUsingBlock:^(FTSkillView *skillView, NSUInteger index, BOOL *stop) {
+    skillView.hidden = YES;
     
-    [skills enumerateObjectsUsingBlock:^(MSkill *skill, NSUInteger index, BOOL *stop) {
-      if (skill == nil || ![skill isKindOfClass:[MSkill class]])
-        return;
-      
-      FTSkillView *skillView = [[[FTSkillView currentSkillViewClass] alloc] initWithSkill:skill andTarget:self.delegate];
-      
-      CGFloat xPos = [self xCenterForSkillAtIndex:index amongTotal:totalSkills] - skillView.frame.size.width/2;
-      skillView.frame = (CGRect){CGPointMake(xPos, [self yPosForSkillViews]), skillView.frame.size};
-      [self.contentView addSubview:skillView];
-    }];
-  }
-  
-  for (FTSkillView *skillView in self.contentView.subviews) {
-    if (![skillView isKindOfClass:[FTSkillView class]])
-      continue;
+    if (![skillView isKindOfClass:[FTSkillView class]] ||
+        index >= [skills count] || ![skills[index] isKindOfClass:[MSkill class]])
+      return;
     
-    [skillView populateData];
-  }
+    skillView.hidden = NO;
+    [skillView populateViewWithData:skills[index]];
+  }];
 }
 
 - (CGFloat)xCenterForSkillAtIndex:(NSInteger)index amongTotal:(NSInteger)total {
@@ -107,6 +106,18 @@
 - (CGFloat)yPosForSkillViews {
   // Implement in child class
   return 0;
+}
+
+#pragma mark - private methods
+- (void)setupSkillViewsWithTotal:(NSInteger)totalSkills {
+  for (NSInteger i = 0; i < totalSkills; i++) {
+    FTSkillView *skillView = [[[FTSkillView currentSkillViewClass] alloc] initWithTarget:_delegate];
+    skillView.hidden = YES;
+    
+    CGFloat xPos = [self xCenterForSkillAtIndex:i amongTotal:totalSkills] - skillView.frame.size.width/2;
+    skillView.frame = (CGRect){CGPointMake(xPos, [self yPosForSkillViews]), skillView.frame.size};
+    [self.contentView addSubview:skillView];
+  }
 }
 
 @end

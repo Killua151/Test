@@ -12,6 +12,7 @@
 
 @interface FTHexagonSkillView : FTSkillView {
   IBOutlet UIImageView *_imgSkillBg;
+  IBOutlet UIImageView *_imgLaurea;
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UILabel *_lblSkillName;
   IBOutlet UILabel *_lblLessonsProgress;

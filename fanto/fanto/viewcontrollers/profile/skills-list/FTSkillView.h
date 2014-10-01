@@ -17,8 +17,8 @@
 @property (nonatomic, assign) id<FTSkillViewDelegate> delegate;
 
 + (Class)currentSkillViewClass;
-- (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target;
-- (void)populateData;
+- (id)initWithTarget:(id<FTSkillViewDelegate>)target;
+- (void)populateViewWithData:(MSkill *)skill;
 
 - (IBAction)btnSkillPressed:(UIButton *)sender;
 

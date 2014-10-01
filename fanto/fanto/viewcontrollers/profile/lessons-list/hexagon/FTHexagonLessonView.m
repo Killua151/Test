@@ -22,17 +22,14 @@
 
 @implementation FTHexagonLessonView
 
-- (id)initWithLessonNumber:(NSInteger)lessonNumber
-                   inSkill:(MSkill *)skill
-            withThemeColor:(UIColor *)themeColor
-                 forTarget:(id)target {
+- (id)initWithLessonNumber:(NSInteger)lessonNumber inSkill:(MSkill *)skill forTarget:(id)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
     _skillData = skill;
     _index = lessonNumber-1;
     _lessonData = _skillData.lessons[_index];
     _delegate = target;
-    _themeColor = themeColor;
+    _themeColor = [_skillData themeColor];
     
     [self setupViews];
   }

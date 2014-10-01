@@ -69,33 +69,31 @@
 }
 
 - (void)reloadContents {
+  _skillsData = @[
+                  @[[NSNull null], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [NSNull null], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new]],
+                  @[[MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new], [NSNull null]],
+                  @[[MSkill new], [MSkill new]],
+                  [NSNull null],
+                  @[[NSNull null], [MSkill new], [MSkill new]],
+                  @[[MSkill new], [MSkill new]]
+                  ];
+  
   _skillsData = [[MUser currentUser] skillsTree];
-  
-  DLog(@"%@", _skillsData);
-  
-//  _skillsData = @[
-//                  @[[NSNull null], [MSkill new], [NSNull null]],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[MSkill new], [MSkill new], [NSNull null]],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[NSNull null], [MSkill new], [MSkill new]],
-//                  [NSNull null],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[MSkill new], [NSNull null], [NSNull null]],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[MSkill new], [MSkill new], [NSNull null]],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[NSNull null], [MSkill new], [MSkill new]],
-//                  [NSNull null],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[MSkill new]],
-//                  @[[MSkill new], [MSkill new]],
-//                  @[[MSkill new], [MSkill new], [NSNull null]],
-//                  @[[MSkill new], [MSkill new]],
-//                  [NSNull null],
-//                  @[[NSNull null], [MSkill new], [MSkill new]],
-//                  @[[MSkill new], [MSkill new]]
-//                  ];
   
   [_tblSkills reloadData];
 }
@@ -135,10 +133,10 @@
   
   FTSkillCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
   
-  if (cell == nil) {
-    cell = [[[FTSkillCell currentSkillCellClass] alloc] initWithReuseIdentifier:reuseIdentifier];
-    cell.delegate = self;
-  }
+  if (cell == nil)
+    cell = [[[FTSkillCell currentSkillCellClass] alloc] initWithReuseIdentifier:reuseIdentifier
+                                                                      withTotal:[skills count]
+                                                                       inTarget:self];
   
   [cell updateCellWithSkills:skills];
   

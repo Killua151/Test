@@ -14,7 +14,9 @@
 
 + (Class)currentSkillCellClass;
 + (NSString *)reuseIdentifierForSkills:(NSArray *)skills;
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
+                    withTotal:(NSInteger)totalSkills
+                     inTarget:(id<FTSkillViewDelegate>)target;
 - (void)updateCellWithSkills:(NSArray *)skills;
 - (CGFloat)xCenterForSkillAtIndex:(NSInteger)index amongTotal:(NSInteger)total;
 - (CGFloat)yPosForSkillViews;

@@ -15,15 +15,27 @@
 
 @implementation FTHexagonSkillView
 
-- (id)initWithSkill:(MSkill *)skill andTarget:(id<FTSkillViewDelegate>)target {
-  if (self = [super initWithSkill:skill andTarget:target]) {
-    _lblSkillName.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
-    _lblSkillName.text = skill.title;
+- (id)initWithTarget:(id<FTSkillViewDelegate>)target {
+  if (self = [super initWithTarget:target]) {
+    UIImage *maskingImage = _imgSkillBg.image;
+    CALayer *maskingLayer = [CALayer layer];
+    maskingLayer.frame = self.bounds;
+    [maskingLayer setContents:(id)[maskingImage CGImage]];
+    [self.layer setMask:maskingLayer];
     
+    _lblSkillName.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
     _lblLessonsProgress.font = [UIFont fontWithName:@"ClearSans" size:14];
   }
   
   return self;
+}
+
+- (void)populateViewWithData:(MSkill *)skill {
+  _skillData = skill;
+  
+  self.backgroundColor = [_skillData themeColor];
+  _lblSkillName.text = _skillData.title;
+  _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", _skillData._id]];
 }
 
 @end

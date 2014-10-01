@@ -29,6 +29,7 @@
   #import "NSArray+ArrayHelpers.h"
   #import "FTServerHelper.h"
   #import "NSObject+ObjectMapping.h"
+  #import "UIColor+ColorHelpers.h"
 #endif
 
 #define DLog(format, ...) \
@@ -66,8 +67,6 @@ if ([self respondsToSelector:@selector(navigationController)]) \
 [Utils hideAllHUDsForView:self.navigationController.view]; \
 else if ([self respondsToSelector:@selector(view)]) \
 [Utils hideAllHUDsForView:self.view];
-
-#define UIColorFromRGB(r, g, b) [UIColor colorWithRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:1]
 
 #define ARC4RANDOM_MAX                          0x100000000
 

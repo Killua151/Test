@@ -133,7 +133,7 @@
 }
 
 - (void)test {
-  DLog(@"%@", [MUser currentUser].auth_token);
+  DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
 }
 
 @end

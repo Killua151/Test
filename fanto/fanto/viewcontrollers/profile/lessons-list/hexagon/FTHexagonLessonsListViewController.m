@@ -58,7 +58,7 @@
   if (self.skillData == nil || CGRectEqualToRect(_vLessonsScrollView.frame, CGRectZero))
     return;
   
-  self.view.backgroundColor = UIColorFromRGB(255, 187, 51);
+  self.view.backgroundColor = [self.skillData themeColor];
   [self setupLessonsScrollView];
 }
 
@@ -102,28 +102,33 @@
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  [[FTServerHelper sharedHelper] startLesson:1 inSkill:@"co_ban_1" completion:^(NSArray *questions, NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
-    ShowAlertWithError(error);
-    
-    [self presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
-                       animated:YES
-                     completion:NULL];
-  }];
+  [[FTServerHelper sharedHelper]
+   startLesson:lesson.lesson_number
+   inSkill:self.skillData._id
+   completion:^(NSArray *questions, NSError *error) {
+     [Utils hideAllHUDsForView:self.navigationController.view];
+     ShowAlertWithError(error);
+     
+     [self presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
+                        animated:YES
+                      completion:NULL];
+   }];
 }
 
 #pragma mark - Private methods
 - (void)setupLessonsScrollView {
+  _imgSkillIcon.image = [UIImage imageNamed:
+                         [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", self.skillData._id]];
+  
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];
   
   NSInteger lessonsCount = [self.skillData.lessons count];
   
   [self.skillData.lessons enumerateObjectsUsingBlock:^(MLesson *lesson, NSUInteger index, BOOL *stop) {
-    FTHexagonLessonView *lessonView = [[FTHexagonLessonView alloc] initWithLessonNumber:lesson.lesson_number
-                                                                                inSkill:self.skillData
-                                                                         withThemeColor:UIColorFromRGB(255, 187, 51)
-                                                                              forTarget:self];
+    FTHexagonLessonView *lessonView =
+    [[FTHexagonLessonView alloc] initWithLessonNumber:lesson.lesson_number inSkill:self.skillData forTarget:self];
+    
     CGRect frame = lessonView.frame;
     frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
     lessonView.frame = frame;

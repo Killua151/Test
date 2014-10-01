@@ -122,8 +122,6 @@ static MUser *_currentUser = nil;
   
   NSMutableArray *fullTree = [NSMutableArray array];
   
-  DLog(@"%@", _skills_tree);
-  
   for (NSArray *row in _skills_tree) {
     if (![row isKindOfClass:[NSArray class]]) {
       [fullTree addObject:[NSNull null]];
@@ -133,8 +131,7 @@ static MUser *_currentUser = nil;
     NSMutableArray *fullRow = [NSMutableArray array];
     
     for (NSString *skillId in row) {
-      if (![skillId isKindOfClass:[NSString class]] || [skillId isEqualToString:@"null"] ||
-          skillsById[skillId] == nil || ![skillsById[skillId] isKindOfClass:[MSkill class]]) {
+      if (skillsById[skillId] == nil || ![skillsById[skillId] isKindOfClass:[MSkill class]]) {
         [fullRow addObject:[NSNull null]];
         continue;
       }

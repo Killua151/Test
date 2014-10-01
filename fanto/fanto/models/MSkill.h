@@ -20,5 +20,8 @@
 @property (nonatomic, assign) NSInteger order;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL unlocked;
+@property (nonatomic, strong) NSString *theme_color;
+
+- (UIColor *)themeColor;
 
 @end

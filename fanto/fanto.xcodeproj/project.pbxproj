@@ -230,14 +230,237 @@
 		CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75FA19CB32FE00D175DF /* img-placement_test-icon@2x.png */; };
 		CA6C760719CC774600D175DF /* FTLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C760619CC774600D175DF /* FTLineChart.m */; };
 		CA6C760A19CC782F00D175DF /* FTLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C760919CC782F00D175DF /* FTLineChartData.m */; };
-		CA6C761119CC84F500D175DF /* img-skills_list-laurea.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */; };
-		CA6C761219CC84F500D175DF /* img-skills_list-laurea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */; };
 		CA6C761519CD1D4100D175DF /* img-profile-avatar_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761319CD1D4100D175DF /* img-profile-avatar_placeholder.png */; };
 		CA6C761619CD1D4100D175DF /* img-profile-avatar_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761419CD1D4100D175DF /* img-profile-avatar_placeholder@2x.png */; };
 		CA6C761A19CD1D6200D175DF /* img-money-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761819CD1D6200D175DF /* img-money-icon.png */; };
 		CA6C761B19CD1D6200D175DF /* img-money-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761919CD1D6200D175DF /* img-money-icon@2x.png */; };
 		CA6C761E19CD1EBA00D175DF /* img-streak-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761C19CD1EBA00D175DF /* img-streak-icon.png */; };
 		CA6C761F19CD1EBA00D175DF /* img-streak-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C761D19CD1EBA00D175DF /* img-streak-icon@2x.png */; };
+		CA6FC6F919DC2F1100403D3D /* UIColor+ColorHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC6F819DC2F1100403D3D /* UIColor+ColorHelpers.m */; };
+		CA6FC6FE19DC36FA00403D3D /* img-skills_list-laurea_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC6FA19DC36FA00403D3D /* img-skills_list-laurea_small.png */; };
+		CA6FC6FF19DC36FA00403D3D /* img-skills_list-laurea_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC6FB19DC36FA00403D3D /* img-skills_list-laurea_small@2x.png */; };
+		CA6FC70019DC36FA00403D3D /* img-skills_list-laurea.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC6FC19DC36FA00403D3D /* img-skills_list-laurea.png */; };
+		CA6FC70119DC36FA00403D3D /* img-skills_list-laurea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC6FD19DC36FA00403D3D /* img-skills_list-laurea@2x.png */; };
+		CA6FC7DF19DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70319DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png */; };
+		CA6FC7E019DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70419DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png */; };
+		CA6FC7E119DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70519DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png */; };
+		CA6FC7E219DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70619DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png */; };
+		CA6FC7E319DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70719DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big.png */; };
+		CA6FC7E419DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70819DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png */; };
+		CA6FC7E519DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70919DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png */; };
+		CA6FC7E619DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70A19DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png */; };
+		CA6FC7E719DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70B19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big.png */; };
+		CA6FC7E819DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70C19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png */; };
+		CA6FC7E919DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70D19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png */; };
+		CA6FC7EA19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70E19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png */; };
+		CA6FC7EB19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC70F19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big.png */; };
+		CA6FC7EC19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71019DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png */; };
+		CA6FC7ED19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71119DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png */; };
+		CA6FC7EE19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71219DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png */; };
+		CA6FC7EF19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71319DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big.png */; };
+		CA6FC7F019DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71419DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png */; };
+		CA6FC7F119DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71519DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big.png */; };
+		CA6FC7F219DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71619DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png */; };
+		CA6FC7F319DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71719DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big.png */; };
+		CA6FC7F419DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71819DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png */; };
+		CA6FC7F519DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71919DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png */; };
+		CA6FC7F619DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71A19DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png */; };
+		CA6FC7F719DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71B19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big.png */; };
+		CA6FC7F819DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71C19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png */; };
+		CA6FC7F919DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71D19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big.png */; };
+		CA6FC7FA19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71E19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png */; };
+		CA6FC7FB19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC71F19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png */; };
+		CA6FC7FC19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72019DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png */; };
+		CA6FC7FD19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72119DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png */; };
+		CA6FC7FE19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72219DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png */; };
+		CA6FC7FF19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72319DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png */; };
+		CA6FC80019DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72419DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png */; };
+		CA6FC80119DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72519DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png */; };
+		CA6FC80219DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72619DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png */; };
+		CA6FC80319DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72719DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png */; };
+		CA6FC80419DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72819DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png */; };
+		CA6FC80519DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72919DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png */; };
+		CA6FC80619DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72A19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png */; };
+		CA6FC80719DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72B19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png */; };
+		CA6FC80819DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72C19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png */; };
+		CA6FC80919DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72D19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png */; };
+		CA6FC80A19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72E19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png */; };
+		CA6FC80B19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC72F19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png */; };
+		CA6FC80C19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73019DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png */; };
+		CA6FC80D19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73119DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png */; };
+		CA6FC80E19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73219DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png */; };
+		CA6FC80F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png */; };
+		CA6FC81019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png */; };
+		CA6FC81119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png */; };
+		CA6FC81219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png */; };
+		CA6FC81319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png */; };
+		CA6FC81419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png */; };
+		CA6FC81519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png */; };
+		CA6FC81619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png */; };
+		CA6FC81719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png */; };
+		CA6FC81819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png */; };
+		CA6FC81919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png */; };
+		CA6FC81A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png */; };
+		CA6FC81B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC73F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png */; };
+		CA6FC81C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png */; };
+		CA6FC81D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png */; };
+		CA6FC81E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png */; };
+		CA6FC81F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png */; };
+		CA6FC82019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png */; };
+		CA6FC82119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png */; };
+		CA6FC82219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png */; };
+		CA6FC82319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png */; };
+		CA6FC82419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png */; };
+		CA6FC82519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png */; };
+		CA6FC82619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png */; };
+		CA6FC82719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png */; };
+		CA6FC82819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png */; };
+		CA6FC82919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png */; };
+		CA6FC82A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png */; };
+		CA6FC82B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC74F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png */; };
+		CA6FC82C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png */; };
+		CA6FC82D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png */; };
+		CA6FC82E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png */; };
+		CA6FC82F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png */; };
+		CA6FC83019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png */; };
+		CA6FC83119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png */; };
+		CA6FC83219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png */; };
+		CA6FC83319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png */; };
+		CA6FC83419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png */; };
+		CA6FC83519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png */; };
+		CA6FC83619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png */; };
+		CA6FC83719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png */; };
+		CA6FC83819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png */; };
+		CA6FC83919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png */; };
+		CA6FC83A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png */; };
+		CA6FC83B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC75F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png */; };
+		CA6FC83C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png */; };
+		CA6FC83D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png */; };
+		CA6FC83E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png */; };
+		CA6FC83F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png */; };
+		CA6FC84019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png */; };
+		CA6FC84119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png */; };
+		CA6FC84219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png */; };
+		CA6FC84319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big.png */; };
+		CA6FC84419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png */; };
+		CA6FC84519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big.png */; };
+		CA6FC84619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png */; };
+		CA6FC84719DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76B19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big.png */; };
+		CA6FC84819DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76C19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big@2x.png */; };
+		CA6FC84919DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76D19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big.png */; };
+		CA6FC84A19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76E19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png */; };
+		CA6FC84B19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC76F19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big.png */; };
+		CA6FC84C19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77019DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big@2x.png */; };
+		CA6FC84D19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77119DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png */; };
+		CA6FC84E19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77219DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png */; };
+		CA6FC84F19DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77319DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big.png */; };
+		CA6FC85019DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77419DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big@2x.png */; };
+		CA6FC85119DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77519DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big.png */; };
+		CA6FC85219DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77619DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png */; };
+		CA6FC85319DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77719DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big.png */; };
+		CA6FC85419DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77819DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big@2x.png */; };
+		CA6FC85519DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77919DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big.png */; };
+		CA6FC85619DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77A19DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png */; };
+		CA6FC85719DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77B19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big.png */; };
+		CA6FC85819DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77C19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png */; };
+		CA6FC85919DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77D19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png */; };
+		CA6FC85A19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77E19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png */; };
+		CA6FC85B19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC77F19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big.png */; };
+		CA6FC85C19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78019DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png */; };
+		CA6FC85D19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78119DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png */; };
+		CA6FC85E19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78219DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png */; };
+		CA6FC85F19DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78319DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big.png */; };
+		CA6FC86019DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78419DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big@2x.png */; };
+		CA6FC86119DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78519DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big.png */; };
+		CA6FC86219DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78619DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png */; };
+		CA6FC86319DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78719DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big.png */; };
+		CA6FC86419DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78819DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png */; };
+		CA6FC86519DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78919DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big.png */; };
+		CA6FC86619DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78A19DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png */; };
+		CA6FC86719DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78B19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big.png */; };
+		CA6FC86819DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78C19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big@2x.png */; };
+		CA6FC86919DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78D19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big.png */; };
+		CA6FC86A19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78E19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big@2x.png */; };
+		CA6FC86B19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC78F19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png */; };
+		CA6FC86C19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79019DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png */; };
+		CA6FC86D19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79119DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png */; };
+		CA6FC86E19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79219DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png */; };
+		CA6FC86F19DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79319DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big.png */; };
+		CA6FC87019DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79419DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png */; };
+		CA6FC87119DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79519DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png */; };
+		CA6FC87219DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79619DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png */; };
+		CA6FC87319DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79719DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big.png */; };
+		CA6FC87419DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79819DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png */; };
+		CA6FC87519DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79919DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png */; };
+		CA6FC87619DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79A19DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png */; };
+		CA6FC87719DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79B19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png */; };
+		CA6FC87819DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79C19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png */; };
+		CA6FC87919DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79D19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png */; };
+		CA6FC87A19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79E19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png */; };
+		CA6FC87B19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC79F19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big.png */; };
+		CA6FC87C19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A019DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big@2x.png */; };
+		CA6FC87D19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A119DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big.png */; };
+		CA6FC87E19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A219DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png */; };
+		CA6FC87F19DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A319DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big.png */; };
+		CA6FC88019DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A419DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big@2x.png */; };
+		CA6FC88119DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A519DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big.png */; };
+		CA6FC88219DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A619DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png */; };
+		CA6FC88319DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A719DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big.png */; };
+		CA6FC88419DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A819DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png */; };
+		CA6FC88519DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7A919DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big.png */; };
+		CA6FC88619DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AA19DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png */; };
+		CA6FC88719DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AB19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big.png */; };
+		CA6FC88819DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AC19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png */; };
+		CA6FC88919DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AD19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big.png */; };
+		CA6FC88A19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AE19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big@2x.png */; };
+		CA6FC88B19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7AF19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big.png */; };
+		CA6FC88C19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B019DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big@2x.png */; };
+		CA6FC88D19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B119DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png */; };
+		CA6FC88E19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B219DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png */; };
+		CA6FC88F19DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B319DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big.png */; };
+		CA6FC89019DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B419DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big@2x.png */; };
+		CA6FC89119DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B519DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big.png */; };
+		CA6FC89219DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B619DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png */; };
+		CA6FC89319DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B719DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big.png */; };
+		CA6FC89419DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B819DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png */; };
+		CA6FC89519DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7B919DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big.png */; };
+		CA6FC89619DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BA19DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png */; };
+		CA6FC89719DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BB19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big.png */; };
+		CA6FC89819DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BC19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big@2x.png */; };
+		CA6FC89919DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BD19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big.png */; };
+		CA6FC89A19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BE19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png */; };
+		CA6FC89B19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7BF19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big.png */; };
+		CA6FC89C19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C019DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big@2x.png */; };
+		CA6FC89D19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C119DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big.png */; };
+		CA6FC89E19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C219DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png */; };
+		CA6FC89F19DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C319DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png */; };
+		CA6FC8A019DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C419DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png */; };
+		CA6FC8A119DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C519DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png */; };
+		CA6FC8A219DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C619DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png */; };
+		CA6FC8A319DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C719DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big.png */; };
+		CA6FC8A419DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C819DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big@2x.png */; };
+		CA6FC8A519DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7C919DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png */; };
+		CA6FC8A619DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CA19DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png */; };
+		CA6FC8A719DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CB19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png */; };
+		CA6FC8A819DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CC19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png */; };
+		CA6FC8A919DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CD19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png */; };
+		CA6FC8AA19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CE19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png */; };
+		CA6FC8AB19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7CF19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png */; };
+		CA6FC8AC19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D019DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png */; };
+		CA6FC8AD19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D119DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png */; };
+		CA6FC8AE19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D219DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png */; };
+		CA6FC8AF19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D319DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png */; };
+		CA6FC8B019DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D419DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png */; };
+		CA6FC8B119DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D519DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png */; };
+		CA6FC8B219DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D619DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png */; };
+		CA6FC8B319DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D719DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png */; };
+		CA6FC8B419DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D819DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png */; };
+		CA6FC8B519DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7D919DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png */; };
+		CA6FC8B619DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DA19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png */; };
+		CA6FC8B719DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DB19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big.png */; };
+		CA6FC8B819DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DC19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png */; };
+		CA6FC8B919DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */; };
+		CA6FC8BA19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -599,14 +822,238 @@
 		CA6C760619CC774600D175DF /* FTLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLineChart.m; sourceTree = "<group>"; };
 		CA6C760819CC782F00D175DF /* FTLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLineChartData.h; sourceTree = "<group>"; };
 		CA6C760919CC782F00D175DF /* FTLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLineChartData.m; sourceTree = "<group>"; };
-		CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea.png"; sourceTree = "<group>"; };
-		CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea@2x.png"; sourceTree = "<group>"; };
 		CA6C761319CD1D4100D175DF /* img-profile-avatar_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-profile-avatar_placeholder.png"; sourceTree = "<group>"; };
 		CA6C761419CD1D4100D175DF /* img-profile-avatar_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-profile-avatar_placeholder@2x.png"; sourceTree = "<group>"; };
 		CA6C761819CD1D6200D175DF /* img-money-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon.png"; sourceTree = "<group>"; };
 		CA6C761919CD1D6200D175DF /* img-money-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-money-icon@2x.png"; sourceTree = "<group>"; };
 		CA6C761C19CD1EBA00D175DF /* img-streak-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-streak-icon.png"; sourceTree = "<group>"; };
 		CA6C761D19CD1EBA00D175DF /* img-streak-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-streak-icon@2x.png"; sourceTree = "<group>"; };
+		CA6FC6F719DC2F1100403D3D /* UIColor+ColorHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorHelpers.h"; sourceTree = "<group>"; };
+		CA6FC6F819DC2F1100403D3D /* UIColor+ColorHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorHelpers.m"; sourceTree = "<group>"; };
+		CA6FC6FA19DC36FA00403D3D /* img-skills_list-laurea_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea_small.png"; sourceTree = "<group>"; };
+		CA6FC6FB19DC36FA00403D3D /* img-skills_list-laurea_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea_small@2x.png"; sourceTree = "<group>"; };
+		CA6FC6FC19DC36FA00403D3D /* img-skills_list-laurea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea.png"; sourceTree = "<group>"; };
+		CA6FC6FD19DC36FA00403D3D /* img-skills_list-laurea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skills_list-laurea@2x.png"; sourceTree = "<group>"; };
+		CA6FC70319DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC70419DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70519DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC70619DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70719DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_cau_hoi-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC70819DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_cau_hoi-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70919DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_cau_hoi-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC70A19DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70B19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_chinh_tri-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC70C19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_chinh_tri-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70D19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_chinh_tri-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC70E19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC70F19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_1-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC71019DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_1-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71119DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_1-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC71219DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71319DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_2-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC71419DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_2-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71519DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_2-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC71619DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71719DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_con_nguoi-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC71819DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_con_nguoi-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71919DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_con_nguoi-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC71A19DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71B19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dac_tinh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC71C19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dac_tinh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71D19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dac_tinh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC71E19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC71F19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC72019DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72119DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC72219DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72319DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC72419DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72519DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC72619DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72719DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC72819DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72919DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC72A19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72B19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC72C19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72D19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC72E19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC72F19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC73019DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73119DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC73219DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC73419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC73619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC73819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC73A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC73C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC73E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC73F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC74019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC74219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC74419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC74619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC74819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC74A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC74C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC74E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC74F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC75019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC75219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC75419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC75619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC75819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC75A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC75C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC75E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC75F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC76019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC76219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC76419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC76619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_vat-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC76819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_vat-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_vat-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC76A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76B19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_du_lich-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC76C19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_du_lich-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76D19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_du_lich-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC76E19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_du_lich-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC76F19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gia_dinh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC77019DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gia_dinh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77119DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gia_dinh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC77219DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77319DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_giao_duc-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC77419DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_giao_duc-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77519DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_giao_duc-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC77619DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77719DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gioi_tu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC77819DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gioi_tu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77919DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gioi_tu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC77A19DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77B19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_khoa_hoc-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC77C19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77D19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_khoa_hoc-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC77E19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC77F19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_kinh_doanh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC78019DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78119DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_kinh_doanh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC78219DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78319DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_lien_tu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC78419DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_lien_tu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78519DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_lien_tu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC78619DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78719DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mau_sac-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC78819DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mau_sac-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78919DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mau_sac-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC78A19DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78B19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mon_an-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC78C19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mon_an-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78D19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mon_an-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC78E19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_mon_an-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC78F19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_ngay_va_gio-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC79019DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79119DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC79219DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79319DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_nghiep-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC79419DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79519DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC79619DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79719DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_thuat-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC79819DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79919DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_thuat-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC79A19DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79B19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC79C19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79D19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC79E19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC79F19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_noi_chon-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7A019DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_noi_chon-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7A119DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_noi_chon-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7A219DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7A319DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_pho_tu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7A419DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_pho_tu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7A519DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_pho_tu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7A619DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7A719DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_quan_ao-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7A819DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_quan_ao-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7A919DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_quan_ao-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7AA19DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7AB19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7AC19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7AD19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7AE19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7AF19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so_nhieu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7B019DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so_nhieu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7B119DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so_nhieu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7B219DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7B319DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_su_kien-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7B419DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_su_kien-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7B519DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_su_kien-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7B619DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_su_kien-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7B719DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tan_ngu-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7B819DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tan_ngu-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7B919DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tan_ngu-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7BA19DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7BB19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_the_thao-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7BC19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_the_thao-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7BD19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_the_thao-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7BE19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_the_thao-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7BF19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_thien_nhien-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7C019DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_thien_nhien-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7C119DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_thien_nhien-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7C219DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7C319DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tinh_tu_1-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7C419DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7C519DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7C619DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7C719DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_truyen_thong-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7C819DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_truyen_thong-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7C919DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_truyen_thong-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7CA19DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7CB19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_han_dinh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7CC19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7CD19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7CE19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7CF19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7D019DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7D119DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7D219DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7D319DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7D419DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7D519DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7D619DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7D719DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7D819DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7D919DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7DA19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7DB19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-locked_big.png"; sourceTree = "<group>"; };
+		CA6FC7DC19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-locked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked_big.png"; sourceTree = "<group>"; };
+		CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked_big@2x.png"; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -965,12 +1412,16 @@
 			children = (
 				4A85F3AA19C6CD3500642C5F /* btn-hexagon_lesson-retake.png */,
 				4A85F3AB19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png */,
-				4A85F3A619C6CC6D00642C5F /* img-lesson-passed_checkmark.png */,
-				4A85F3A719C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png */,
 				4A85F39619C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png */,
 				4A85F39719C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png */,
 				4A85F39819C68EF400642C5F /* img-hexagon_lessons-bg-top.png */,
 				4A85F39919C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png */,
+				4A85F3A619C6CC6D00642C5F /* img-lesson-passed_checkmark.png */,
+				4A85F3A719C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png */,
+				CA6FC6FC19DC36FA00403D3D /* img-skills_list-laurea.png */,
+				CA6FC6FD19DC36FA00403D3D /* img-skills_list-laurea@2x.png */,
+				CA6FC6FA19DC36FA00403D3D /* img-skills_list-laurea_small.png */,
+				CA6FC6FB19DC36FA00403D3D /* img-skills_list-laurea_small@2x.png */,
 			);
 			name = "Lessons List";
 			path = "lessons-list";
@@ -1258,6 +1709,234 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
+		CA6FC70219DC4CBF00403D3D /* Skill Icons */ = {
+			isa = PBXGroup;
+			children = (
+				CA6FC70319DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png */,
+				CA6FC70419DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png */,
+				CA6FC70519DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png */,
+				CA6FC70619DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png */,
+				CA6FC70719DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big.png */,
+				CA6FC70819DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png */,
+				CA6FC70919DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png */,
+				CA6FC70A19DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png */,
+				CA6FC70B19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big.png */,
+				CA6FC70C19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png */,
+				CA6FC70D19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png */,
+				CA6FC70E19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png */,
+				CA6FC70F19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big.png */,
+				CA6FC71019DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png */,
+				CA6FC71119DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png */,
+				CA6FC71219DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png */,
+				CA6FC71319DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big.png */,
+				CA6FC71419DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png */,
+				CA6FC71519DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big.png */,
+				CA6FC71619DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png */,
+				CA6FC71719DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big.png */,
+				CA6FC71819DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png */,
+				CA6FC71919DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png */,
+				CA6FC71A19DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png */,
+				CA6FC71B19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big.png */,
+				CA6FC71C19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png */,
+				CA6FC71D19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big.png */,
+				CA6FC71E19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png */,
+				CA6FC71F19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png */,
+				CA6FC72019DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png */,
+				CA6FC72119DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png */,
+				CA6FC72219DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png */,
+				CA6FC72319DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png */,
+				CA6FC72419DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png */,
+				CA6FC72519DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png */,
+				CA6FC72619DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png */,
+				CA6FC72719DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png */,
+				CA6FC72819DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png */,
+				CA6FC72919DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png */,
+				CA6FC72A19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png */,
+				CA6FC72B19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png */,
+				CA6FC72C19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png */,
+				CA6FC72D19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png */,
+				CA6FC72E19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png */,
+				CA6FC72F19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png */,
+				CA6FC73019DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png */,
+				CA6FC73119DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png */,
+				CA6FC73219DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png */,
+				CA6FC73319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png */,
+				CA6FC73419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png */,
+				CA6FC73519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png */,
+				CA6FC73619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png */,
+				CA6FC73719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png */,
+				CA6FC73819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png */,
+				CA6FC73919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png */,
+				CA6FC73A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png */,
+				CA6FC73B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png */,
+				CA6FC73C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png */,
+				CA6FC73D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png */,
+				CA6FC73E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png */,
+				CA6FC73F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png */,
+				CA6FC74019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png */,
+				CA6FC74119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png */,
+				CA6FC74219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png */,
+				CA6FC74319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png */,
+				CA6FC74419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png */,
+				CA6FC74519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png */,
+				CA6FC74619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png */,
+				CA6FC74719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png */,
+				CA6FC74819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png */,
+				CA6FC74919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png */,
+				CA6FC74A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png */,
+				CA6FC74B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png */,
+				CA6FC74C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png */,
+				CA6FC74D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png */,
+				CA6FC74E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png */,
+				CA6FC74F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png */,
+				CA6FC75019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png */,
+				CA6FC75119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png */,
+				CA6FC75219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png */,
+				CA6FC75319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png */,
+				CA6FC75419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png */,
+				CA6FC75519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png */,
+				CA6FC75619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png */,
+				CA6FC75719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png */,
+				CA6FC75819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png */,
+				CA6FC75919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png */,
+				CA6FC75A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png */,
+				CA6FC75B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png */,
+				CA6FC75C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png */,
+				CA6FC75D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png */,
+				CA6FC75E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png */,
+				CA6FC75F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png */,
+				CA6FC76019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png */,
+				CA6FC76119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png */,
+				CA6FC76219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png */,
+				CA6FC76319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png */,
+				CA6FC76419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png */,
+				CA6FC76519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png */,
+				CA6FC76619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png */,
+				CA6FC76719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big.png */,
+				CA6FC76819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png */,
+				CA6FC76919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big.png */,
+				CA6FC76A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png */,
+				CA6FC76B19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big.png */,
+				CA6FC76C19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big@2x.png */,
+				CA6FC76D19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big.png */,
+				CA6FC76E19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png */,
+				CA6FC76F19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big.png */,
+				CA6FC77019DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big@2x.png */,
+				CA6FC77119DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png */,
+				CA6FC77219DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png */,
+				CA6FC77319DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big.png */,
+				CA6FC77419DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big@2x.png */,
+				CA6FC77519DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big.png */,
+				CA6FC77619DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png */,
+				CA6FC77719DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big.png */,
+				CA6FC77819DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big@2x.png */,
+				CA6FC77919DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big.png */,
+				CA6FC77A19DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png */,
+				CA6FC77B19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big.png */,
+				CA6FC77C19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png */,
+				CA6FC77D19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png */,
+				CA6FC77E19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png */,
+				CA6FC77F19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big.png */,
+				CA6FC78019DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png */,
+				CA6FC78119DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png */,
+				CA6FC78219DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png */,
+				CA6FC78319DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big.png */,
+				CA6FC78419DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big@2x.png */,
+				CA6FC78519DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big.png */,
+				CA6FC78619DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png */,
+				CA6FC78719DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big.png */,
+				CA6FC78819DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png */,
+				CA6FC78919DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big.png */,
+				CA6FC78A19DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png */,
+				CA6FC78B19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big.png */,
+				CA6FC78C19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big@2x.png */,
+				CA6FC78D19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big.png */,
+				CA6FC78E19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big@2x.png */,
+				CA6FC78F19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png */,
+				CA6FC79019DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png */,
+				CA6FC79119DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png */,
+				CA6FC79219DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png */,
+				CA6FC79319DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big.png */,
+				CA6FC79419DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png */,
+				CA6FC79519DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png */,
+				CA6FC79619DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png */,
+				CA6FC79719DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big.png */,
+				CA6FC79819DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png */,
+				CA6FC79919DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png */,
+				CA6FC79A19DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png */,
+				CA6FC79B19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png */,
+				CA6FC79C19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png */,
+				CA6FC79D19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png */,
+				CA6FC79E19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png */,
+				CA6FC79F19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big.png */,
+				CA6FC7A019DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big@2x.png */,
+				CA6FC7A119DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big.png */,
+				CA6FC7A219DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png */,
+				CA6FC7A319DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big.png */,
+				CA6FC7A419DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big@2x.png */,
+				CA6FC7A519DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big.png */,
+				CA6FC7A619DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png */,
+				CA6FC7A719DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big.png */,
+				CA6FC7A819DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png */,
+				CA6FC7A919DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big.png */,
+				CA6FC7AA19DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png */,
+				CA6FC7AB19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big.png */,
+				CA6FC7AC19DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png */,
+				CA6FC7AD19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big.png */,
+				CA6FC7AE19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big@2x.png */,
+				CA6FC7AF19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big.png */,
+				CA6FC7B019DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big@2x.png */,
+				CA6FC7B119DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png */,
+				CA6FC7B219DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png */,
+				CA6FC7B319DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big.png */,
+				CA6FC7B419DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big@2x.png */,
+				CA6FC7B519DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big.png */,
+				CA6FC7B619DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png */,
+				CA6FC7B719DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big.png */,
+				CA6FC7B819DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png */,
+				CA6FC7B919DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big.png */,
+				CA6FC7BA19DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png */,
+				CA6FC7BB19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big.png */,
+				CA6FC7BC19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big@2x.png */,
+				CA6FC7BD19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big.png */,
+				CA6FC7BE19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png */,
+				CA6FC7BF19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big.png */,
+				CA6FC7C019DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big@2x.png */,
+				CA6FC7C119DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big.png */,
+				CA6FC7C219DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png */,
+				CA6FC7C319DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png */,
+				CA6FC7C419DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png */,
+				CA6FC7C519DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png */,
+				CA6FC7C619DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png */,
+				CA6FC7C719DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big.png */,
+				CA6FC7C819DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big@2x.png */,
+				CA6FC7C919DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png */,
+				CA6FC7CA19DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png */,
+				CA6FC7CB19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png */,
+				CA6FC7CC19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png */,
+				CA6FC7CD19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png */,
+				CA6FC7CE19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png */,
+				CA6FC7CF19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png */,
+				CA6FC7D019DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png */,
+				CA6FC7D119DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png */,
+				CA6FC7D219DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png */,
+				CA6FC7D319DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png */,
+				CA6FC7D419DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png */,
+				CA6FC7D519DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png */,
+				CA6FC7D619DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png */,
+				CA6FC7D719DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png */,
+				CA6FC7D819DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png */,
+				CA6FC7D919DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png */,
+				CA6FC7DA19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png */,
+				CA6FC7DB19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big.png */,
+				CA6FC7DC19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png */,
+				CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */,
+				CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */,
+			);
+			name = "Skill Icons";
+			path = "skill-icons";
+			sourceTree = "<group>";
+		};
 		CA74998B19C094B700C221A9 = {
 			isa = PBXGroup;
 			children = (
@@ -1328,16 +2007,18 @@
 				CA5DAFCC19D67CCC003DAB26 /* NSArray+ArrayHelpers.m */,
 				CA5DAFCE19D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.h */,
 				CA5DAFCF19D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.m */,
+				CA98CDB119DBBF6700DBD64E /* NSObject+ObjectMapping.h */,
+				CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */,
 				4A56E41019D2BDC2003FA91C /* NSString+CompactTranslation.h */,
 				4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */,
+				CA6FC6F719DC2F1100403D3D /* UIColor+ColorHelpers.h */,
+				CA6FC6F819DC2F1100403D3D /* UIColor+ColorHelpers.m */,
 				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
 				CAEBA24E19C331CE0024CA71 /* UIImage+ImageHelpers.m */,
 				4A74145E19C2F8A0002DB2C7 /* UIView+ExtendedToast.h */,
 				4A74145F19C2F8A0002DB2C7 /* UIView+ExtendedToast.m */,
 				CA7499C719C0951A00C221A9 /* Utils.h */,
 				CA7499C819C0951A00C221A9 /* Utils.m */,
-				CA98CDB119DBBF6700DBD64E /* NSObject+ObjectMapping.h */,
-				CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -1434,6 +2115,7 @@
 				CAEF54B519C9E4C900729934 /* Settings */,
 				CA6C761719CD1D6200D175DF /* Shared */,
 				4ACFE59519C811A500AAC524 /* Shop */,
+				CA6FC70219DC4CBF00403D3D /* Skill Icons */,
 				CAEBA26719C48C490024CA71 /* Skills List */,
 				4A4DE14D19CADA0000933C76 /* User Profile */,
 			);
@@ -1482,8 +2164,6 @@
 				4A85F3F519C6E32100642C5F /* img-shield_skill-strength-3@2x.png */,
 				4A85F3F619C6E32100642C5F /* img-shield_skill-strength-4.png */,
 				4A85F3F719C6E32100642C5F /* img-shield_skill-strength-4@2x.png */,
-				CA6C760F19CC84F500D175DF /* img-skills_list-laurea.png */,
-				CA6C761019CC84F500D175DF /* img-skills_list-laurea@2x.png */,
 			);
 			name = "Skills List";
 			path = "skills-list";
@@ -1601,9 +2281,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6FC70119DC36FA00403D3D /* img-skills_list-laurea@2x.png in Resources */,
+				CA6FC81719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big.png in Resources */,
+				CA6FC88219DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png in Resources */,
 				4A4122D119D3CC0900894095 /* FTLessonsLearningViewController.xib in Resources */,
+				CA6FC84919DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big.png in Resources */,
+				CA6FC88A19DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big@2x.png in Resources */,
 				4A85F3ED19C6E2BF00642C5F /* img-hexagon_skill-strength-3@2x.png in Resources */,
 				4A85F3E919C6E2BF00642C5F /* img-hexagon_skill-strength-1@2x.png in Resources */,
+				CA6FC7F219DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big@2x.png in Resources */,
+				CA6FC84B19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big.png in Resources */,
+				CA6FC85319DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big.png in Resources */,
 				4A4122C319D3C8B100894095 /* FTFinishLessonViewController.xib in Resources */,
 				4A85F3FE19C6E32100642C5F /* img-shield_skill-strength-4.png in Resources */,
 				CA98CDAD19DA926D00DBD64E /* AppIcon29x29.png in Resources */,
@@ -1612,8 +2300,12 @@
 				4A85F3EF19C6E2BF00642C5F /* img-hexagon_skill-strength-4@2x.png in Resources */,
 				4A4122F119D4006900894095 /* img-lessons_learning-heart_disabled.png in Resources */,
 				4A4122DF19D4005A00894095 /* img-finish_lesson-set_goal-bg@2x.png in Resources */,
+				CA6FC89A19DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png in Resources */,
 				CAEF54C519C9E4C900729934 /* img-settings-phone_icon-enabled@2x.png in Resources */,
+				CA6FC8B819DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png in Resources */,
+				CA6FC81819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked_big@2x.png in Resources */,
 				CA5DAF9F19D5BF53003DAB26 /* FTNameQuestionContentView.xib in Resources */,
+				CA6FC85519DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big.png in Resources */,
 				CA6C75E519CB261C00D175DF /* FTCoursesListViewController.xib in Resources */,
 				CA5DAF6E19D45DCF003DAB26 /* img-judge_question-radio_selected.png in Resources */,
 				CA6C760019CB32FE00D175DF /* img-placement_test-icon@2x.png in Resources */,
@@ -1621,54 +2313,100 @@
 				4AE8AD9819D5249400A49880 /* btn-lessons_learning-record.png in Resources */,
 				CABADE9319CD6EA8000187AF /* img-ant-finish_lesson.png in Resources */,
 				4A4122EF19D4006900894095 /* img-lessons_learning-heart.png in Resources */,
+				CA6FC8B119DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png in Resources */,
+				CA6FC82319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png in Resources */,
+				CA6FC88019DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big@2x.png in Resources */,
+				CA6FC8B319DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png in Resources */,
 				CA5DAEF419D06086003DAB26 /* btn-navbar-back_white@2x.png in Resources */,
+				CA6FC80219DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big@2x.png in Resources */,
+				CA6FC7E519DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */,
+				CA6FC89F19DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png in Resources */,
 				CA6C761E19CD1EBA00D175DF /* img-streak-icon.png in Resources */,
 				CA5DAF3119D18F5A003DAB26 /* img-popup-bg@2x.png in Resources */,
+				CA6FC88619DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big@2x.png in Resources */,
+				CA6FC84E19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png in Resources */,
 				CA6C761F19CD1EBA00D175DF /* img-streak-icon@2x.png in Resources */,
 				4A4122E219D4005A00894095 /* img-set_goal-radio-selected.png in Resources */,
 				4AE8AD7E19D5213700A49880 /* FTSelectQuestionButton.xib in Resources */,
 				CA6C75FC19CB32FE00D175DF /* img-beginner-icon@2x.png in Resources */,
 				4A4DE14619CAD50700933C76 /* FTSettingsViewController.xib in Resources */,
+				CA6FC88719DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big.png in Resources */,
 				CABADE5819CD35CE000187AF /* FTShopItemsGroupHeaderCell.xib in Resources */,
 				4A85F3DF19C6E13100642C5F /* img-shield_skill-bg-unlocked@2x.png in Resources */,
+				CA6FC7E119DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png in Resources */,
 				4A4DE15419CADA0000933C76 /* img-profile-level-bg.png in Resources */,
 				CA5DAF7019D45DCF003DAB26 /* img-judge_question-radio.png in Resources */,
+				CA6FC8AE19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big@2x.png in Resources */,
 				CA5DAF4C19D1A730003DAB26 /* img-share-facebook@2x.png in Resources */,
 				4AE8AD9519D523CF00A49880 /* btn-lessons_learning-audio-slow@2x.png in Resources */,
+				CA6FC85919DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png in Resources */,
+				CA6FC88319DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big.png in Resources */,
 				CAEBA29D19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
+				CA6FC84819DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big@2x.png in Resources */,
 				CAEF54C919CB17F600729934 /* Default@2x.png in Resources */,
+				CA6FC83B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big.png in Resources */,
+				CA6FC8A919DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png in Resources */,
+				CA6FC88C19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big@2x.png in Resources */,
 				4AE8AD9319D523CF00A49880 /* btn-lessons_learning-audio-normal@2x.png in Resources */,
 				CABADE6B19CD56CF000187AF /* img-count_badge-bg@2x.png in Resources */,
 				CA5DAF5319D1A730003DAB26 /* img-share-twitter.png in Resources */,
 				CABADE7719CD6251000187AF /* img-hexagon_skill-bg_big.png in Resources */,
+				CA6FC83919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big.png in Resources */,
 				4A4122F419D4006900894095 /* img-lessons_learning-heart_potion@2x.png in Resources */,
 				CA5DAF2119D073A8003DAB26 /* img-ant-congrats.png in Resources */,
+				CA6FC85A19DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png in Resources */,
 				CA5454D119C743F50052111C /* FTShopItemCell.xib in Resources */,
 				CABADE8119CD63C3000187AF /* img-hexagon_skill-strength-1_big.png in Resources */,
 				CA6C75FE19CB32FE00D175DF /* img-beginning_options-bg@2x.png in Resources */,
+				CA6FC80F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png in Resources */,
+				CA6FC6FE19DC36FA00403D3D /* img-skills_list-laurea_small.png in Resources */,
+				CA6FC82719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png in Resources */,
+				CA6FC85E19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png in Resources */,
+				CA6FC80119DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png in Resources */,
 				CAEBA29219C4AA710024CA71 /* FTHexagonCheckpointTestCell.xib in Resources */,
 				CA6C75EF19CB2E3D00D175DF /* img-ant-begin@2x.png in Resources */,
 				4A85F3FB19C6E32100642C5F /* img-shield_skill-strength-2@x.png in Resources */,
 				4AE8AD9919D5249400A49880 /* btn-lessons_learning-record@2x.png in Resources */,
+				CA6FC89B19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big.png in Resources */,
 				CA5DAF6F19D45DCF003DAB26 /* img-judge_question-radio_selected@2x.png in Resources */,
 				4A4122C919D3C8B100894095 /* FTSaveProgressViewController.xib in Resources */,
 				CA5DAFB419D5E85C003DAB26 /* btn-lessons_learning-form_tokens.png in Resources */,
 				CAEBA27419C48D760024CA71 /* ClearSans-Bold.ttf in Resources */,
+				CA6FC7E819DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png in Resources */,
 				CA5DAF9A19D5B295003DAB26 /* FTListenQuestionContentView.xib in Resources */,
+				CA6FC82D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big.png in Resources */,
+				CA6FC82A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big@2x.png in Resources */,
+				CA6FC81C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big@2x.png in Resources */,
 				4AE8AD9219D523CF00A49880 /* btn-lessons_learning-audio-normal.png in Resources */,
 				CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */,
 				4A74147019C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg.png in Resources */,
-				CA6C761219CC84F500D175DF /* img-skills_list-laurea@2x.png in Resources */,
 				CABADE6119CD405A000187AF /* img-ant-fail.png in Resources */,
 				4A85F3DB19C6E08B00642C5F /* FTShieldSkillView.xib in Resources */,
+				CA6FC85D19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png in Resources */,
+				CA6FC8BA19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */,
 				4A85F3A919C6CC6D00642C5F /* img-lesson-passed_checkmark@2x.png in Resources */,
+				CA6FC80319DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png in Resources */,
+				CA6FC6FF19DC36FA00403D3D /* img-skills_list-laurea_small@2x.png in Resources */,
+				CA6FC82919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */,
 				4A85F39C19C68EF400642C5F /* img-hexagon_lessons-bg-top.png in Resources */,
+				CA6FC88E19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */,
 				CA5DAF5219D1A730003DAB26 /* img-share-twitter_selected@2x.png in Resources */,
+				CA6FC81219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big@2x.png in Resources */,
 				CA6C75FB19CB32FE00D175DF /* img-beginner-icon.png in Resources */,
+				CA6FC83519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png in Resources */,
+				CA6FC84319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big.png in Resources */,
+				CA6FC80519DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big.png in Resources */,
+				CA6FC82219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png in Resources */,
+				CA6FC87019DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png in Resources */,
+				CA6FC89319DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big.png in Resources */,
 				CA98CDA719DA926200DBD64E /* AppIcon57x57.png in Resources */,
+				CA6FC88B19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-locked_big.png in Resources */,
+				CA6FC87819DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big@2x.png in Resources */,
+				CA6FC7F619DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png in Resources */,
 				CA5DAFA819D5D27A003DAB26 /* img-lessons_learning-correct@2x.png in Resources */,
 				4A85F3DE19C6E13100642C5F /* img-shield_skill-bg-unlocked.png in Resources */,
 				CAEF54BF19C9E4C900729934 /* img-settings-email_icon-disabled@2x.png in Resources */,
+				CA6FC87E19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png in Resources */,
 				4A4122D519D4004500894095 /* img-ant-lessons_learning_progress.png in Resources */,
 				CA6C761619CD1D4100D175DF /* img-profile-avatar_placeholder@2x.png in Resources */,
 				4A74146E19C2FD7F002DB2C7 /* img-login-text_boxes-bg.png in Resources */,
@@ -1676,146 +2414,310 @@
 				CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */,
 				CABADE6219CD405A000187AF /* img-ant-fail@2x.png in Resources */,
 				CA7499A219C094B700C221A9 /* InfoPlist.strings in Resources */,
+				CA6FC86A19DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big@2x.png in Resources */,
 				4A4122BE19D3C8B100894095 /* FTCongratsViewController.xib in Resources */,
+				CA6FC7E919DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */,
+				CA6FC7F519DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png in Resources */,
+				CA6FC7E419DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */,
 				4A74148319C2FDBE002DB2C7 /* FTHomeViewController.xib in Resources */,
 				CA5DAF1519D06D9E003DAB26 /* img-ant-save@2x.png in Resources */,
+				CA6FC7E719DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-locked_big.png in Resources */,
 				CAEBA28519C4A7E10024CA71 /* btn-hexagon-strengthen-bg.png in Resources */,
 				4A85F3FA19C6E32100642C5F /* img-shield_skill-strength-2.png in Resources */,
 				CAEF54C419C9E4C900729934 /* img-settings-phone_icon-enabled.png in Resources */,
 				CA98CDAE19DA926D00DBD64E /* AppIcon29x29@2x.png in Resources */,
+				CA6FC87B19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big.png in Resources */,
 				CA5DAF1E19D07100003DAB26 /* img-ant-placement_test@2x.png in Resources */,
 				4A4122C119D3C8B100894095 /* FTFailLessonViewController.xib in Resources */,
 				CA5DAFAC19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg@2x.png in Resources */,
 				CABADE6F19CD56F3000187AF /* img-money-icon_big@2x.png in Resources */,
+				CA6FC8AD19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png in Resources */,
 				4A74146A19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg.png in Resources */,
+				CA6FC84F19DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big.png in Resources */,
+				CA6FC84519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big.png in Resources */,
 				4A4DE15E19CAEE3B00933C76 /* FTProfileLeaderboardCell.xib in Resources */,
+				CA6FC88119DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-unlocked_big.png in Resources */,
+				CA6FC8A219DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png in Resources */,
+				CA6FC83F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big.png in Resources */,
 				CAEF54C019C9E4C900729934 /* img-settings-email_icon-enabled.png in Resources */,
+				CA6FC8AF19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png in Resources */,
 				CA5DAEF319D06086003DAB26 /* btn-navbar-back_white.png in Resources */,
+				CA6FC7EC19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png in Resources */,
 				4A4DE14C19CAD55100933C76 /* FTProfileViewController.xib in Resources */,
+				CA6FC7E019DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png in Resources */,
 				CA5DAF5119D1A730003DAB26 /* img-share-twitter_selected.png in Resources */,
 				CAEBA28619C4A7E10024CA71 /* btn-hexagon-strengthen-bg@2x.png in Resources */,
+				CA6FC83A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png in Resources */,
+				CA6FC84C19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-locked_big@2x.png in Resources */,
 				CA5DAF4D19D1A730003DAB26 /* img-share-google_selected.png in Resources */,
 				CA6C75FD19CB32FE00D175DF /* img-beginning_options-bg.png in Resources */,
+				CA6FC89919DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-unlocked_big.png in Resources */,
 				4A85F3FD19C6E32100642C5F /* img-shield_skill-strength-3@2x.png in Resources */,
+				CA6FC7DF19DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png in Resources */,
+				CA6FC87919DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png in Resources */,
+				CA6FC88819DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png in Resources */,
+				CA6FC86419DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png in Resources */,
+				CA6FC88419DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png in Resources */,
 				4A4122ED19D4006900894095 /* btn-lessons_learning-close.png in Resources */,
+				CA6FC7FB19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png in Resources */,
 				4AE8AD9419D523CF00A49880 /* btn-lessons_learning-audio-slow.png in Resources */,
+				CA6FC80419DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png in Resources */,
 				CA5DAF1419D06D9E003DAB26 /* img-ant-save.png in Resources */,
 				CAEBA29419C4AA710024CA71 /* FTHexagonSkillCell.xib in Resources */,
 				4A85F3A819C6CC6D00642C5F /* img-lesson-passed_checkmark.png in Resources */,
+				CA6FC84219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png in Resources */,
+				CA6FC7E319DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-locked_big.png in Resources */,
 				4A74144919C2D779002DB2C7 /* btn-navbar-back@2x.png in Resources */,
 				CABADE8219CD63C3000187AF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
+				CA6FC81F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png in Resources */,
+				CA6FC89619DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png in Resources */,
+				CA6FC81D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big.png in Resources */,
 				4A74146D19C2FD7F002DB2C7 /* img-home-buttons-bg@2x.png in Resources */,
 				4A85F40719C6F3D800642C5F /* FTShieldCheckpointTestCell.xib in Resources */,
 				CA5DAFA419D5C5F9003DAB26 /* FTTranslateQuestionContentView.xib in Resources */,
+				CA6FC82119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png in Resources */,
 				4A4122D619D4004500894095 /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CA6C761519CD1D4100D175DF /* img-profile-avatar_placeholder.png in Resources */,
+				CA6FC7FD19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png in Resources */,
+				CA6FC86C19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png in Resources */,
 				4A85F3EE19C6E2BF00642C5F /* img-hexagon_skill-strength-4.png in Resources */,
+				CA6FC7F419DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png in Resources */,
 				CA5454B819C71E8C0052111C /* FTHexagonLessonView.xib in Resources */,
+				CA6FC8B419DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big@2x.png in Resources */,
 				CA5DAF9419D5A837003DAB26 /* img-lessons_learning-checkbox-empty.png in Resources */,
 				4A4DE15519CADA0000933C76 /* img-profile-level-bg@2x.png in Resources */,
 				CA5DAF4A19D1A730003DAB26 /* img-share-facebook_selected@2x.png in Resources */,
 				4A85F39D19C68EF400642C5F /* img-hexagon_lessons-bg-top@2x.png in Resources */,
 				CA5DAEEF19D06074003DAB26 /* img-ant-set_goal.png in Resources */,
 				4A85F3AD19C6CD3500642C5F /* btn-hexagon_lesson-retake@2x.png in Resources */,
+				CA6FC8AB19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png in Resources */,
 				CA5454C319C71F5F0052111C /* FTShieldLessonCell.xib in Resources */,
+				CA6FC89419DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png in Resources */,
 				CA5DAFA719D5D27A003DAB26 /* img-lessons_learning-correct.png in Resources */,
+				CA6FC80819DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png in Resources */,
+				CA6FC81519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png in Resources */,
+				CA6FC8A519DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png in Resources */,
 				CAEF54BE19C9E4C900729934 /* img-settings-email_icon-disabled.png in Resources */,
+				CA6FC7FF19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */,
+				CA6FC80D19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png in Resources */,
+				CA6FC8A619DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png in Resources */,
 				4A74148519C2FDBE002DB2C7 /* FTLoginViewController.xib in Resources */,
 				CA6C75FF19CB32FE00D175DF /* img-placement_test-icon.png in Resources */,
+				CA6FC7EE19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big@2x.png in Resources */,
 				CA6C75EA19CB282800D175DF /* FTCourseSelectionCell.xib in Resources */,
 				CA5DAF3019D18F5A003DAB26 /* img-popup-bg.png in Resources */,
+				CA6FC7E219DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png in Resources */,
+				CA6FC87119DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big.png in Resources */,
+				CA6FC7EB19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-locked_big.png in Resources */,
 				CA5DAF1D19D07100003DAB26 /* img-ant-placement_test.png in Resources */,
 				CABADE8619CD63C3000187AF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
+				CA6FC85019DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-locked_big@2x.png in Resources */,
+				CA6FC81B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked_big.png in Resources */,
 				4A74147119C2FD7F002DB2C7 /* img-sign_up-text_boxes-bg@2x.png in Resources */,
+				CA6FC86619DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png in Resources */,
+				CA6FC85819DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big@2x.png in Resources */,
 				CA5DAF9319D5A837003DAB26 /* img-lessons_learning-checkbox-checked@2x.png in Resources */,
 				4A4122C519D3C8B100894095 /* FTFinishSkillViewController.xib in Resources */,
+				CA6FC8B719DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big.png in Resources */,
+				CA6FC87319DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big.png in Resources */,
+				CA6FC8A419DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big@2x.png in Resources */,
+				CA6FC86019DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big@2x.png in Resources */,
+				CA6FC7F319DC4CBF00403D3D /* img-skill_icon-en-vi_con_nguoi-locked_big.png in Resources */,
 				4A4122DE19D4005A00894095 /* img-finish_lesson-set_goal-bg.png in Resources */,
+				CA6FC86719DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big.png in Resources */,
 				4AE8AD8D19D522E500A49880 /* FTSpeakQuestionContentView.xib in Resources */,
+				CA6FC7F719DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big.png in Resources */,
 				CA5DAF7119D45DCF003DAB26 /* img-judge_question-radio@2x.png in Resources */,
+				CA6FC8B219DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big@2x.png in Resources */,
+				CA6FC87419DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-locked_big@2x.png in Resources */,
+				CA6FC82619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png in Resources */,
 				CAEBA27519C48D760024CA71 /* ClearSans-Regular.ttf in Resources */,
+				CA6FC86819DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-locked_big@2x.png in Resources */,
 				CA00EDFC19C0A21600E6D9D5 /* Default-568h@2x.png in Resources */,
+				CA6FC81E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked_big@2x.png in Resources */,
 				CABADE7819CD6251000187AF /* img-hexagon_skill-bg_big@2x.png in Resources */,
+				CA6FC83319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big.png in Resources */,
 				CA6C761A19CD1D6200D175DF /* img-money-icon.png in Resources */,
+				CA6FC87519DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png in Resources */,
+				CA6FC85219DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png in Resources */,
 				4A74148719C2FDBE002DB2C7 /* FTSignUpViewController.xib in Resources */,
 				CA5DAF5419D1A730003DAB26 /* img-share-twitter@2x.png in Resources */,
+				CA6FC7F819DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png in Resources */,
 				4ACFE59E19C81A9C00AAC524 /* FTShopItemHeaderView.xib in Resources */,
 				CAEBA26C19C48C490024CA71 /* img-hexagon_skill-bg-locked.png in Resources */,
+				CA6FC80619DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png in Resources */,
 				4A85F39A19C68EF400642C5F /* img-hexagon_lessons-bg-bottom.png in Resources */,
+				CA6FC84A19DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png in Resources */,
+				CA6FC8A719DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png in Resources */,
+				CA6FC87A19DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big@2x.png in Resources */,
 				4A4122E119D4005A00894095 /* img-set_goal-radio-normal@2x.png in Resources */,
-				CA6C761119CC84F500D175DF /* img-skills_list-laurea.png in Resources */,
+				CA6FC87219DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png in Resources */,
+				CA6FC85F19DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-locked_big.png in Resources */,
 				4A4122F319D4006900894095 /* img-lessons_learning-heart_potion.png in Resources */,
+				CA6FC82B19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png in Resources */,
+				CA6FC89219DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png in Resources */,
 				4A85F3EB19C6E2BF00642C5F /* img-hexagon_skill-strength-2@2x.png in Resources */,
 				4AE8AD9C19D526BF00A49880 /* img-lessons_learning-popover-bg.png in Resources */,
 				CA5DAF9519D5A837003DAB26 /* img-lessons_learning-checkbox-empty@2x.png in Resources */,
 				CA5DAFBA19D5E97B003DAB26 /* FTFormAnswerTokenButton.xib in Resources */,
 				CA6C75EE19CB2E3D00D175DF /* img-ant-begin.png in Resources */,
+				CA6FC8B519DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png in Resources */,
 				4A74146C19C2FD7F002DB2C7 /* img-home-buttons-bg.png in Resources */,
 				CA5DAF4919D1A730003DAB26 /* img-share-facebook_selected.png in Resources */,
+				CA6FC86F19DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_nghiep-locked_big.png in Resources */,
+				CA6FC82519DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png in Resources */,
+				CA6FC81319DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big.png in Resources */,
+				CA6FC80C19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png in Resources */,
+				CA6FC86B19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png in Resources */,
+				CA6FC80019DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big@2x.png in Resources */,
+				CA6FC81A19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big@2x.png in Resources */,
+				CA6FC84019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png in Resources */,
+				CA6FC89519DC4CBF00403D3D /* img-skill_icon-en-vi_tan_ngu-unlocked_big.png in Resources */,
 				4AE8AD9D19D526BF00A49880 /* img-lessons_learning-popover-bg@2x.png in Resources */,
+				CA6FC85B19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big.png in Resources */,
 				CA5DAF9219D5A837003DAB26 /* img-lessons_learning-checkbox-checked.png in Resources */,
 				CA5DAF4F19D1A730003DAB26 /* img-share-google.png in Resources */,
 				4A4122BC19D3C8B100894095 /* FTBeginPlacementTestViewController.xib in Resources */,
+				CA6FC8A819DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png in Resources */,
 				4A85F40E19C6F8FE00642C5F /* btn-shield-strengthen-bg@2x.png in Resources */,
 				4A4DE15319CADA0000933C76 /* btn-profile-edit_avatar@2x.png in Resources */,
 				CA5454CC19C741A20052111C /* FTShopViewController.xib in Resources */,
 				CA5454BE19C71EC10052111C /* FTShieldLessonsListViewController.xib in Resources */,
+				CA6FC84119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big.png in Resources */,
+				CA6FC87619DC4CBF00403D3D /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png in Resources */,
+				CA6FC80B19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png in Resources */,
+				CA6FC83119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big.png in Resources */,
+				CA6FC82E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-unlocked_big@2x.png in Resources */,
+				CA6FC8B019DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png in Resources */,
+				CA6FC88919DC4CBF00403D3D /* img-skill_icon-en-vi_so-unlocked_big.png in Resources */,
+				CA6FC7E619DC4CBF00403D3D /* img-skill_icon-en-vi_cau_hoi-unlocked_big@2x.png in Resources */,
+				CA6FC8B619DC4CBF00403D3D /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big@2x.png in Resources */,
 				CABADE9419CD6EA8000187AF /* img-ant-finish_lesson@2x.png in Resources */,
+				CA6FC83619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big@2x.png in Resources */,
 				4A85F3D619C6DFA600642C5F /* FTShieldSkillCell.xib in Resources */,
 				4A85F3FC19C6E32100642C5F /* img-shield_skill-strength-3.png in Resources */,
 				4A74148119C2FDBE002DB2C7 /* FTForgotPasswordViewController.xib in Resources */,
+				CA6FC83C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked_big@2x.png in Resources */,
+				CA6FC8AA19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png in Resources */,
+				CA6FC7ED19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png in Resources */,
 				CA98CDAF19DA926D00DBD64E /* AppIcon40x40@2x.png in Resources */,
+				CA6FC85419DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-locked_big@2x.png in Resources */,
+				CA6FC81619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big@2x.png in Resources */,
 				CABADE8319CD63C3000187AF /* img-hexagon_skill-strength-2_big.png in Resources */,
+				CA6FC86D19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big.png in Resources */,
 				CA5DAF2219D073A8003DAB26 /* img-ant-congrats@2x.png in Resources */,
 				CABADE6E19CD56F3000187AF /* img-money-icon_big.png in Resources */,
+				CA6FC80A19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big@2x.png in Resources */,
 				CA5DAEFF19D06588003DAB26 /* FTSetGoalViewController.xib in Resources */,
+				CA6FC82819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png in Resources */,
 				CABADE8819CD63C3000187AF /* img-hexagon_skill-strength-4_big@2x.png in Resources */,
+				CA6FC7FA19DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big@2x.png in Resources */,
 				CA5DAFB519D5E85C003DAB26 /* btn-lessons_learning-form_tokens@2x.png in Resources */,
 				4A85F3AC19C6CD3500642C5F /* btn-hexagon_lesson-retake.png in Resources */,
 				CA5DAFB119D5E11A003DAB26 /* FTFormQuestionContentView.xib in Resources */,
+				CA6FC80E19DC4CBF00403D3D /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png in Resources */,
 				4A4DE14419CAD50700933C76 /* FTSettingsHeaderView.xib in Resources */,
 				CA5DAF4E19D1A730003DAB26 /* img-share-google_selected@2x.png in Resources */,
 				4A4122E319D4005A00894095 /* img-set_goal-radio-selected@2x.png in Resources */,
+				CA6FC85C19DC4CBF00403D3D /* img-skill_icon-en-vi_kinh_doanh-locked_big@2x.png in Resources */,
 				4A74146F19C2FD7F002DB2C7 /* img-login-text_boxes-bg@2x.png in Resources */,
+				CA6FC83719DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big.png in Resources */,
 				CAEF54C819CB17F600729934 /* Default.png in Resources */,
+				CA6FC89E19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png in Resources */,
+				CA6FC86319DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big.png in Resources */,
 				4A4122CB19D3C8B100894095 /* FTSuggestGoalViewController.xib in Resources */,
 				4A4122E019D4005A00894095 /* img-set_goal-radio-normal.png in Resources */,
+				CA6FC84719DC4CBF00403D3D /* img-skill_icon-en-vi_du_lich-locked_big.png in Resources */,
 				4A85F39B19C68EF400642C5F /* img-hexagon_lessons-bg-bottom@2x.png in Resources */,
+				CA6FC88F19DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big.png in Resources */,
+				CA6FC8A119DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big.png in Resources */,
+				CA6FC83419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png in Resources */,
+				CA6FC83819DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked_big@2x.png in Resources */,
 				4AE8AD8019D5213700A49880 /* FTSelectQuestionContentView.xib in Resources */,
 				CAEBA25519C487B20024CA71 /* FTSkillsListViewController.xib in Resources */,
 				CAEBA26D19C48C490024CA71 /* img-hexagon_skill-bg-locked@2x.png in Resources */,
+				CA6FC8A019DC4CBF00403D3D /* img-skill_icon-en-vi_tinh_tu_1-locked_big@2x.png in Resources */,
+				CA6FC82F19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png in Resources */,
 				4A74144819C2D779002DB2C7 /* btn-navbar-back.png in Resources */,
+				CA6FC8A319DC4CBF00403D3D /* img-skill_icon-en-vi_truyen_thong-locked_big.png in Resources */,
+				CA6FC86E19DC4CBF00403D3D /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png in Resources */,
+				CA6FC82419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */,
+				CA6FC84419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
+				CA6FC86219DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big@2x.png in Resources */,
 				CA6C761B19CD1D6200D175DF /* img-money-icon@2x.png in Resources */,
+				CA6FC7EA19DC4CBF00403D3D /* img-skill_icon-en-vi_chinh_tri-unlocked_big@2x.png in Resources */,
+				CA6FC87719DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */,
 				CAEBA26E19C48C490024CA71 /* img-hexagon_skill-bg-unlocked.png in Resources */,
 				4A4122EE19D4006900894095 /* btn-lessons_learning-close@2x.png in Resources */,
 				4A85F3E819C6E2BF00642C5F /* img-hexagon_skill-strength-1.png in Resources */,
+				CA6FC85119DC4CBF00403D3D /* img-skill_icon-en-vi_giao_duc-unlocked_big.png in Resources */,
+				CA6FC88D19DC4CBF00403D3D /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png in Resources */,
+				CA6FC80919DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked_big.png in Resources */,
+				CA6FC83E19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big@2x.png in Resources */,
 				CAEF54C219C9E4C900729934 /* img-settings-phone_icon-disabled.png in Resources */,
+				CA6FC85619DC4CBF00403D3D /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png in Resources */,
 				CA5DAF3719D19BDB003DAB26 /* FTShareActionSheet.xib in Resources */,
+				CA6FC82019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big@2x.png in Resources */,
+				CA6FC89D19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-unlocked_big.png in Resources */,
+				CA6FC8B919DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */,
+				CA6FC86919DC4CBF00403D3D /* img-skill_icon-en-vi_mon_an-unlocked_big.png in Resources */,
 				4A4122F019D4006900894095 /* img-lessons_learning-heart@2x.png in Resources */,
+				CA6FC80719DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big.png in Resources */,
+				CA6FC89719DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big.png in Resources */,
 				CABADE8419CD63C3000187AF /* img-hexagon_skill-strength-2_big@2x.png in Resources */,
+				CA6FC7FC19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big@2x.png in Resources */,
+				CA6FC89C19DC4CBF00403D3D /* img-skill_icon-en-vi_thien_nhien-locked_big@2x.png in Resources */,
 				CAEBA29C19C4AC750024CA71 /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CABADE6A19CD56CF000187AF /* img-count_badge-bg.png in Resources */,
+				CA6FC7F919DC4CBF00403D3D /* img-skill_icon-en-vi_dac_tinh-unlocked_big.png in Resources */,
+				CA6FC81119DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked_big.png in Resources */,
 				CA98CDA919DA926200DBD64E /* AppIcon60x60@2x.png in Resources */,
 				CA5DAF0419D067B4003DAB26 /* FTSetGoalCell.xib in Resources */,
 				4A4122F219D4006900894095 /* img-lessons_learning-heart_disabled@2x.png in Resources */,
+				CA6FC88519DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-unlocked_big.png in Resources */,
+				CA6FC7EF19DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big.png in Resources */,
 				CA5DAF5019D1A730003DAB26 /* img-share-google@2x.png in Resources */,
 				CAEF54C119C9E4C900729934 /* img-settings-email_icon-enabled@2x.png in Resources */,
 				CA5DAF3C19D1A5A7003DAB26 /* FTShareViewController.xib in Resources */,
 				CAEBA26F19C48C490024CA71 /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
+				CA6FC83D19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png in Resources */,
+				CA6FC89019DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-locked_big@2x.png in Resources */,
+				CA6FC87D19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-unlocked_big.png in Resources */,
+				CA6FC7FE19DC4CBF00403D3D /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png in Resources */,
+				CA6FC83019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png in Resources */,
 				CA5DAF8819D59E3B003DAB26 /* FTJudgeQuestionContentView.xib in Resources */,
+				CA6FC82C19DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png in Resources */,
+				CA6FC7F019DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png in Resources */,
 				CA5DAFAB19D5DEE8003DAB26 /* img-lessons_learning-result_view-bg.png in Resources */,
+				CA6FC81919DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked_big.png in Resources */,
 				4A4122C719D3C8B100894095 /* FTMoneyBonusViewController.xib in Resources */,
+				CA6FC89119DC4CBF00403D3D /* img-skill_icon-en-vi_su_kien-unlocked_big.png in Resources */,
+				CA6FC84619DC4CBF00403D3D /* img-skill_icon-en-vi_dong_vat-unlocked_big@2x.png in Resources */,
+				CA6FC84D19DC4CBF00403D3D /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png in Resources */,
+				CA6FC89819DC4CBF00403D3D /* img-skill_icon-en-vi_the_thao-locked_big@2x.png in Resources */,
 				4A85F40D19C6F8FE00642C5F /* btn-shield-strengthen-bg.png in Resources */,
 				4A85F3EA19C6E2BF00642C5F /* img-hexagon_skill-strength-2.png in Resources */,
 				4A85F3F919C6E32100642C5F /* img-shield_skill-strength-1@2x.png in Resources */,
+				CA6FC8AC19DC4CBF00403D3D /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png in Resources */,
+				CA6FC86519DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-unlocked_big.png in Resources */,
 				4A85F3F819C6E32100642C5F /* img-shield_skill-strength-1.png in Resources */,
+				CA6FC85719DC4CBF00403D3D /* img-skill_icon-en-vi_khoa_hoc-locked_big.png in Resources */,
+				CA6FC81419DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png in Resources */,
 				4A4DE15219CADA0000933C76 /* btn-profile-edit_avatar.png in Resources */,
+				CA6FC86119DC4CBF00403D3D /* img-skill_icon-en-vi_lien_tu-unlocked_big.png in Resources */,
 				CA5454B619C71E8C0052111C /* FTHexagonLessonsListViewController.xib in Resources */,
 				CA5DAF8D19D5A12C003DAB26 /* FTJudgeOptionCell.xib in Resources */,
+				CA6FC87C19DC4CBF00403D3D /* img-skill_icon-en-vi_noi_chon-locked_big@2x.png in Resources */,
 				CAEF54C319C9E4C900729934 /* img-settings-phone_icon-disabled@2x.png in Resources */,
+				CA6FC7F119DC4CBF00403D3D /* img-skill_icon-en-vi_co_ban_2-unlocked_big.png in Resources */,
+				CA6FC87F19DC4CBF00403D3D /* img-skill_icon-en-vi_pho_tu-locked_big.png in Resources */,
+				CA6FC70019DC36FA00403D3D /* img-skills_list-laurea.png in Resources */,
 				CAEBA29619C4AA710024CA71 /* FTHexagonSkillView.xib in Resources */,
 				CA5DAF4B19D1A730003DAB26 /* img-share-facebook.png in Resources */,
+				CA6FC83219DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png in Resources */,
 				4A74146B19C2FD7F002DB2C7 /* img-forgot_password-text_box-bg@2x.png in Resources */,
 				CA98CDA819DA926200DBD64E /* AppIcon57x57@2x.png in Resources */,
+				CA6FC81019DC4CBF00403D3D /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big@2x.png in Resources */,
 				CABADE8719CD63C3000187AF /* img-hexagon_skill-strength-4_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1875,6 +2777,7 @@
 			files = (
 				CA5DAF3519D19085003DAB26 /* FTShareActionSheet.m in Sources */,
 				4A4DE14519CAD50700933C76 /* FTSettingsViewController.m in Sources */,
+				CA6FC6F919DC2F1100403D3D /* UIColor+ColorHelpers.m in Sources */,
 				CA5454CB19C741A20052111C /* FTShopViewController.m in Sources */,
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
 				CA5DAF8C19D5A12C003DAB26 /* FTJudgeOptionCell.m in Sources */,

@@ -20,10 +20,7 @@
 @property (nonatomic, assign) id<FTLessonViewDelegate> delegate;
 @property (nonatomic, assign) NSInteger index;
 
-- (id)initWithLessonNumber:(NSInteger)lessonNumber
-                   inSkill:(MSkill *)skill
-            withThemeColor:(UIColor *)themeColor
-                 forTarget:(id)target;
+- (id)initWithLessonNumber:(NSInteger)lessonNumber inSkill:(MSkill *)skill forTarget:(id)target;
 - (void)refreshView;
 - (IBAction)btnRetakePressed:(UIButton *)sender;
 
