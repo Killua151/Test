@@ -43,8 +43,12 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 + (NSString *)uniqueDeviceIdentifier;
 
 + (void)adjustLabelToFitHeight:(UILabel *)label;
-+ (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
 + (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight;
++ (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
++ (void)adjustLabelToFitHeight:(UILabel *)label
+            constrainsToHeight:(CGFloat)maxHeight
+                     relatedTo:(UILabel *)otherLabel
+                  withDistance:(CGFloat)distance;
 
 + (void)applyAttributedTextForLabel:(UILabel *)label
                            withText:(NSString *)fullText

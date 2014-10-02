@@ -37,8 +37,14 @@
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
+  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:44];
+  
+  CGPoint center = _lblQuestion.center;
+  CGFloat gap = _tblOptions.frame.origin.y - _lblQuestionTitle.frame.origin.y - _lblQuestionTitle.frame.size.height;
+  center.y = _lblQuestionTitle.frame.origin.y + _lblQuestionTitle.frame.size.height + gap/2;
+  _lblQuestion.center = center;
 
-  _optionsData = questionData.option;
+  _optionsData = questionData.options;
   _answerIndices = [NSMutableArray new];
   _answersIndexSet = [NSMutableIndexSet indexSet];
 }

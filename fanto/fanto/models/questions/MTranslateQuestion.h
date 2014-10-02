@@ -10,7 +10,6 @@
 
 @interface MTranslateQuestion : MBaseQuestion
 
-@property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *translation;
 @property (nonatomic, strong) NSArray *compact_translations;
 @property (nonatomic, strong) NSArray *common_errors;

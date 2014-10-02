@@ -463,6 +463,9 @@
 		CA6FC8BA19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */; };
 		CA6FC8BD19DCEBF000403D3D /* MJudgeQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */; };
 		CA6FC8C019DCFE0A00403D3D /* MFormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */; };
+		CA6FC8C319DD0A1200403D3D /* MNameQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C219DD0A1200403D3D /* MNameQuestion.m */; };
+		CA6FC8C619DD109900403D3D /* MSpeakQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */; };
+		CA6FC8C919DD110B00403D3D /* MListenQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C819DD110B00403D3D /* MListenQuestion.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -1060,6 +1063,12 @@
 		CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJudgeQuestion.m; sourceTree = "<group>"; };
 		CA6FC8BE19DCFE0A00403D3D /* MFormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFormQuestion.h; sourceTree = "<group>"; };
 		CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFormQuestion.m; sourceTree = "<group>"; };
+		CA6FC8C119DD0A1200403D3D /* MNameQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNameQuestion.h; sourceTree = "<group>"; };
+		CA6FC8C219DD0A1200403D3D /* MNameQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNameQuestion.m; sourceTree = "<group>"; };
+		CA6FC8C419DD109900403D3D /* MSpeakQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSpeakQuestion.h; sourceTree = "<group>"; };
+		CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSpeakQuestion.m; sourceTree = "<group>"; };
+		CA6FC8C719DD110B00403D3D /* MListenQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MListenQuestion.h; sourceTree = "<group>"; };
+		CA6FC8C819DD110B00403D3D /* MListenQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MListenQuestion.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1629,10 +1638,16 @@
 				CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */,
 				CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */,
 				CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */,
+				CA6FC8C719DD110B00403D3D /* MListenQuestion.h */,
+				CA6FC8C819DD110B00403D3D /* MListenQuestion.m */,
+				CA6FC8C119DD0A1200403D3D /* MNameQuestion.h */,
+				CA6FC8C219DD0A1200403D3D /* MNameQuestion.m */,
 				CA5DAFC219D66B43003DAB26 /* MSelectQuestion.h */,
 				CA5DAFC319D66B43003DAB26 /* MSelectQuestion.m */,
 				CA5DAFC519D66B82003DAB26 /* MSelectQuestionOption.h */,
 				CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */,
+				CA6FC8C419DD109900403D3D /* MSpeakQuestion.h */,
+				CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */,
 				CA5DAFC819D67263003DAB26 /* MTranslateQuestion.h */,
 				CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */,
 			);
@@ -2801,6 +2816,7 @@
 				4A1954F519CA8C190004834D /* MUser.m in Sources */,
 				CA5DAFB819D5E96F003DAB26 /* FTFormAnswerTokenButton.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
+				CA6FC8C919DD110B00403D3D /* MListenQuestion.m in Sources */,
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
 				4A4DE14319CAD50700933C76 /* FTSettingsHeaderView.m in Sources */,
 				4A85F40219C6F18900642C5F /* FTSkillView.m in Sources */,
@@ -2820,7 +2836,9 @@
 				CAEBA29919C4AB1A0024CA71 /* FTSkillCell.m in Sources */,
 				4A74148219C2FDBE002DB2C7 /* FTHomeViewController.m in Sources */,
 				4A56E40F19D2B4BB003FA91C /* RegExCategories.m in Sources */,
+				CA6FC8C619DD109900403D3D /* MSpeakQuestion.m in Sources */,
 				4A4122C019D3C8B100894095 /* FTFailLessonViewController.m in Sources */,
+				CA6FC8C319DD0A1200403D3D /* MNameQuestion.m in Sources */,
 				CA5DAFCD19D67CCC003DAB26 /* NSArray+ArrayHelpers.m in Sources */,
 				4A85F3D519C6DFA600642C5F /* FTShieldSkillCell.m in Sources */,
 				CA5DAFC419D66B43003DAB26 /* MSelectQuestion.m in Sources */,

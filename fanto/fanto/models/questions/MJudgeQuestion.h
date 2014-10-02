@@ -10,11 +10,7 @@
 
 @interface MJudgeQuestion : MBaseQuestion
 
-@property (nonatomic, strong) NSString *question;
-@property (nonatomic, strong) NSString *hint;
-@property (nonatomic, strong) NSArray *option;
-
-//@property (nonatomic, strong) NSString *question_audio;
-//@property (nonatomic, strong) NSString *slow_audio_file;
+@property (nonatomic, strong) NSArray *hints;
+@property (nonatomic, strong) NSArray *options;
 
 @end

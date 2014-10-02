@@ -232,6 +232,14 @@ static UIView *_sharedToast = nil;
   [self adjustLabelToFitHeight:label relatedTo:nil withDistance:0];
 }
 
++ (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight {
+  [self adjustLabelToFitHeight:label relatedTo:nil withDistance:0];
+  
+  CGRect frame = label.frame;
+  frame.size.height = MIN(frame.size.height, maxHeight);
+  label.frame = frame;
+}
+
 + (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance {
   CGSize sizeThatFits = [label sizeThatFits:CGSizeMake(label.frame.size.width, MAXFLOAT)];
   CGRect frame = label.frame;
@@ -243,11 +251,17 @@ static UIView *_sharedToast = nil;
   label.frame = frame;
 }
 
-+ (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight {
-  [self adjustLabelToFitHeight:label relatedTo:nil withDistance:0];
-  
++ (void)adjustLabelToFitHeight:(UILabel *)label
+            constrainsToHeight:(CGFloat)maxHeight
+                     relatedTo:(UILabel *)otherLabel
+                  withDistance:(CGFloat)distance {
+  CGSize sizeThatFits = [label sizeThatFits:CGSizeMake(label.frame.size.width, MAXFLOAT)];
   CGRect frame = label.frame;
-  frame.size.height = MIN(frame.size.height, maxHeight);
+  
+  if (otherLabel != nil)
+    frame.origin.y = otherLabel.frame.origin.y + otherLabel.frame.size.height + distance;
+  
+  frame.size.height = MIN(sizeThatFits.height, maxHeight);
   label.frame = frame;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "FTNameQuestionContentView.h"
+#import "FTLessonsLearningViewController.h"
 
 @interface FTNameQuestionContentView () {
   CGFloat _originalAnswerFieldOriginY;
@@ -59,6 +60,15 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
     [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0 withValue:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [self gestureLayerDidTap];
+  
+  if ([self.delegate respondsToSelector:@selector(questionContentViewGestureLayerDidTap)])
+    [self.delegate performSelector:@selector(questionContentViewGestureLayerDidTap)];
+  
+  return YES;
 }
 
 #pragma mark - Private methods

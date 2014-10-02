@@ -11,7 +11,7 @@
 @implementation MJudgeQuestion
 
 - (id)checkAnswer:(NSArray *)answerValue {
-  NSArray *correctAnswers = [@[_hint] sortedArrayUsingSelector:@selector(compare:)];
+  NSArray *correctAnswers = [_hints sortedArrayUsingSelector:@selector(compare:)];
   
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
     return [correctAnswers componentsJoinedByString:@" / "];

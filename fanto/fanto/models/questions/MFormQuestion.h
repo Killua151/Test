@@ -10,7 +10,6 @@
 
 @interface MFormQuestion : MBaseQuestion
 
-@property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSArray *tokens;
 @property (nonatomic, strong) NSArray *wrong_tokens;
 

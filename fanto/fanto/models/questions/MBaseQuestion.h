@@ -11,7 +11,7 @@
 @interface MBaseQuestion : MBase
 
 @property (nonatomic, strong) NSString *question_log_id;
-@property (nonatomic, strong) NSString *lang;
+@property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *type;
 
 + (Class)questionKlassByType:(NSString *)type;

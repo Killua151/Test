@@ -11,6 +11,6 @@
 @interface MSelectQuestionOption : MBase
 
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSArray *image_files;
+@property (nonatomic, strong) NSString *image_file;
 
 @end
