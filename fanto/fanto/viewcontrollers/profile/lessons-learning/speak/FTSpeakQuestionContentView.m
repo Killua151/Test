@@ -28,7 +28,7 @@
   [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnQuestionAudio.frame.size.height];
   
   CGPoint center = _lblQuestion.center;
-  center.y = _btnQuestionAudio.center.y;
+  center.y = _btnQuestionAudio.center.y - 3;
   _lblQuestion.center = center;
   
   NSString *styledString = NSLocalizedString(@"Tap", nil);

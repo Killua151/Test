@@ -466,6 +466,7 @@
 		CA6FC8C319DD0A1200403D3D /* MNameQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C219DD0A1200403D3D /* MNameQuestion.m */; };
 		CA6FC8C619DD109900403D3D /* MSpeakQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */; };
 		CA6FC8C919DD110B00403D3D /* MListenQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C819DD110B00403D3D /* MListenQuestion.m */; };
+		CA6FC8CC19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -1069,6 +1070,8 @@
 		CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSpeakQuestion.m; sourceTree = "<group>"; };
 		CA6FC8C719DD110B00403D3D /* MListenQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MListenQuestion.h; sourceTree = "<group>"; };
 		CA6FC8C819DD110B00403D3D /* MListenQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MListenQuestion.m; sourceTree = "<group>"; };
+		CA6FC8CA19DD3BD300403D3D /* FTAllowsTouchUnderneathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAllowsTouchUnderneathView.h; sourceTree = "<group>"; };
+		CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAllowsTouchUnderneathView.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2023,6 +2026,8 @@
 		CA7499C619C0951A00C221A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CA6FC8CA19DD3BD300403D3D /* FTAllowsTouchUnderneathView.h */,
+				CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */,
 				CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */,
 				CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */,
 				CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */,
@@ -2877,6 +2882,7 @@
 				4A85F3D919C6E08100642C5F /* FTShieldSkillView.m in Sources */,
 				CA7499A419C094B700C221A9 /* main.m in Sources */,
 				4A4122BD19D3C8B100894095 /* FTCongratsViewController.m in Sources */,
+				CA6FC8CC19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m in Sources */,
 				CAEBA29519C4AA710024CA71 /* FTHexagonSkillView.m in Sources */,
 				CAEBA27819C48F610024CA71 /* MSkill.m in Sources */,
 				CA98CDB319DBBF6700DBD64E /* NSObject+ObjectMapping.m in Sources */,

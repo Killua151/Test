@@ -43,7 +43,7 @@
   [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:maxQuestionHeight];
   
   CGPoint center = _lblQuestion.center;
-  center.y = _lblQuestionTitle.frame.origin.y + _lblQuestionTitle.frame.size.height + maxQuestionHeight/2;
+  center.y = _lblQuestionTitle.frame.origin.y + _lblQuestionTitle.frame.size.height + maxQuestionHeight/2 - 3;
   _lblQuestion.center = center;
 
   _optionsData = questionData.options;

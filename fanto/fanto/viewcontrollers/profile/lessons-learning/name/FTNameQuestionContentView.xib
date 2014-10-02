@@ -32,7 +32,7 @@
                     <rect key="frame" x="15" y="364" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trả lời..." minimumFontSize="17" id="wna-on-JNb">
+                        <textField opaque="NO" clipsSubviews="YES" tag="-98765" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trả lời..." minimumFontSize="17" id="wna-on-JNb">
                             <rect key="frame" x="10" y="0.0" width="290" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
