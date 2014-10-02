@@ -100,12 +100,22 @@
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     for (UIView *subview in self.subviews) {
-       CGRect frame = subview.frame;
-       CGFloat originalOriginY = [_originalSubviewsOriginY[[NSString stringWithFormat:@"%p", subview]] floatValue];
-       frame.origin.y = isUp ? (originalOriginY + frame.size.height) * ratio - frame.size.height - 10 : originalOriginY;
-       subview.frame = frame;
-     }
+     _lblQuestionTitle.alpha = 1 - isUp;
+     
+     CGRect frame = _lblQuestionTitle.frame;
+     CGFloat originalOriginY = [_originalSubviewsOriginY[[NSString stringWithFormat:@"%p", _lblQuestionTitle]] floatValue];
+     frame.origin.y = isUp ? 0 : originalOriginY;
+     _lblQuestionTitle.frame = frame;
+     
+     frame = _lblQuestion.superview.frame;
+     originalOriginY = [_originalSubviewsOriginY[[NSString stringWithFormat:@"%p", _lblQuestion.superview]] floatValue];
+     frame.origin.y = isUp ? 10 : originalOriginY;
+     _lblQuestion.superview.frame = frame;
+     
+     frame = _vAnswerField.frame;
+     originalOriginY = [_originalSubviewsOriginY[[NSString stringWithFormat:@"%p", _vAnswerField]] floatValue];
+     frame.origin.y = isUp ? (originalOriginY + frame.size.height) * ratio - frame.size.height - 10 : originalOriginY;
+     _vAnswerField.frame = frame;
    }
    completion:^(BOOL finished) {
    }];

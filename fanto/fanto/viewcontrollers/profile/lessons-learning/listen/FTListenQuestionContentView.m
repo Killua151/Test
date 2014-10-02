@@ -90,6 +90,8 @@
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
+     _lblQuestionTitle.alpha = 1 - isUp;
+     
      for (UIView *subview in self.subviews) {
        NSString *subviewKey = [NSString stringWithFormat:@"%p", subview];
        
@@ -108,7 +110,7 @@
            // Maintain original center X
            frame.origin.x = originalOrigin.x + originalSize.width/2 - frame.size.width/2;
            frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height -
-           (DeviceScreenIsRetina4Inch() ? 0 : 3);
+           (DeviceScreenIsRetina4Inch() ? 0 : 5);
          } else
            frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height -
            (DeviceScreenIsRetina4Inch() ? 10 : 5);
