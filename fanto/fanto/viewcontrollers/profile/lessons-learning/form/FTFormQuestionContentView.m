@@ -81,7 +81,9 @@
   [availableTokens addObjectsFromArray:questionData.wrong_tokens];
   [availableTokens shuffle];
   
-  DLog(@"%@", questionData.tokens);
+#if kTestTranslateQuestions
+  [Utils showToastWithMessage:[questionData.tokens componentsJoinedByString:@" "]];
+#endif
   
   _btnAvailableTokens = [NSMutableArray new];
   [self setupTokenButtonsForView:_vAvailableTokens withDataSource:availableTokens saveIn:_btnAvailableTokens];
