@@ -72,6 +72,15 @@
     [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0 withValue:nil];
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+  if ([text isEqualToString:@"\n"]) {
+    [self gestureLayerDidTap];
+    return NO;
+  }
+  
+  return YES;
+}
+
 #pragma mark - Private methods
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp {
   CGFloat ratio = [Utils keyboardShrinkRatioForView:self];
@@ -98,9 +107,10 @@
            
            // Maintain original center X
            frame.origin.x = originalOrigin.x + originalSize.width/2 - frame.size.width/2;
-           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height - 3;
+           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height;
          } else
-           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height - 5;
+           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height -
+           (DeviceScreenIsRetina4Inch() ? 10 : 5);
        }
        
        subview.frame = frame;
@@ -108,21 +118,6 @@
    }
    completion:^(BOOL finished) {
    }];
-  
-//  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
-//  
-//  [UIView
-//   animateWithDuration:kDefaultAnimationDuration
-//   delay:0
-//   options:UIViewAnimationOptionCurveEaseInOut
-//   animations:^{
-//     CGRect frame = _vAnswerField.frame;
-//     frame.origin.y = isUp ?
-//     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
-//     _vAnswerField.frame = frame;
-//   }
-//   completion:^(BOOL finished) {
-//   }];
 }
 
 @end
