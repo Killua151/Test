@@ -262,6 +262,9 @@
     [self updateHeaderViews];
   }
   
+  if (show)
+    [self switchCheckButtonMode:NO];
+  
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
@@ -290,10 +293,9 @@
        _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
    }
    completion:^(BOOL finished) {
-     if (show) {
-       [self switchCheckButtonMode:NO];
+     if (show)
        [self gestureLayerDidEnterEditingMode];
-     } else
+     else
        [self resetResultViews];
    }];
 }

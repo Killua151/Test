@@ -12,6 +12,8 @@
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>AppIcon29x29</string>
@@ -58,6 +60,8 @@
 		<string>ClearSans-Bold.ttf</string>
 		<string>ClearSans-Regular.ttf</string>
 	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -67,8 +71,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

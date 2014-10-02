@@ -72,7 +72,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 //#define kServerApiUrl                           @"http://fanto-backend.volcano.vn/api"
 #define kServerApiUrl                           @"http://192.168.5.39:81/TOPICA/yii/memo/api"
-#define kServerApiVersion                       @"v1"
+#define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
@@ -84,6 +84,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kHeightTabBar                           49
 #define kHeightKeyboard                         216
 #define kDefaultAnimationDuration               0.25
+#define kFontClearSansMarginTop                 (DeviceSystemIsOS7() ? -3 : 0)
 
 #define kHexagonThemeTestMode                   true
 #define kTestLogin                              false

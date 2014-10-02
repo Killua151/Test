@@ -16,6 +16,9 @@
     _vOptionBg.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
     _vOptionBg.layer.borderWidth = 1;
     _lblOption.font = [UIFont fontWithName:@"ClearSans" size:17];
+    
+    if (DeviceSystemIsOS7())
+      _lblOption.minimumScaleFactor = 11.0/_lblOption.font.pointSize;
   }
   
   return self;
@@ -26,7 +29,7 @@
   [Utils adjustLabelToFitHeight:_lblOption constrainsToHeight:_lblOption.superview.frame.size.height];
   
   CGPoint center = _lblOption.center;
-  center.y = _lblOption.superview.frame.size.height/2 - 3;
+  center.y = _lblOption.superview.frame.size.height/2 + kFontClearSansMarginTop;
   _lblOption.center = center;
 }
 
