@@ -43,6 +43,7 @@
 - (void)updateHeaderViews;
 - (void)resetResultViews;
 - (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer;
+- (void)switchCheckButtonMode:(BOOL)useToCheck;
 
 - (void)prepareNextQuestion;
 - (void)checkCurrentQuestion;
@@ -109,7 +110,12 @@
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
-  [self checkCurrentQuestion];
+  if (sender.tag == YES)
+    [self checkCurrentQuestion];
+  else {
+    _vGestureLayer.hidden = YES;
+    [self reloadContents];
+  }
 }
 
 #pragma mark - UIAlertViewDelegate methods
@@ -284,11 +290,18 @@
        _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
    }
    completion:^(BOOL finished) {
-     if (show)
+     if (show) {
+       [self switchCheckButtonMode:NO];
        [self gestureLayerDidEnterEditingMode];
-     else
+     } else
        [self resetResultViews];
    }];
+}
+
+- (void)switchCheckButtonMode:(BOOL)useToCheck {
+  _btnCheck.tag = useToCheck;
+  [_btnCheck setTitle:(useToCheck ? NSLocalizedString(@"Check", nil) : NSLocalizedString(@"Next", nil))
+             forState:UIControlStateNormal];
 }
 
 - (void)prepareNextQuestion {
@@ -329,6 +342,7 @@
 
 - (void)removeCurrentQuestion {
   _btnCheck.enabled = NO;
+  [self switchCheckButtonMode:YES];
   
   // Out of hearts
   if (_currentHeartsCount < 0) {
