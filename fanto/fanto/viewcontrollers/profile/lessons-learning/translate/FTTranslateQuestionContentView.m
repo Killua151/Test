@@ -21,7 +21,6 @@
 @implementation FTTranslateQuestionContentView
 
 - (void)setupViews {
-  _originalSubviewsOriginY = [NSMutableDictionary dictionary];
   MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
   
 #if kTestTranslateQuestions
@@ -48,6 +47,8 @@
   _imgAnswerFieldBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
                              resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)
                              resizingMode:UIImageResizingModeStretch];
+  
+  _originalSubviewsOriginY = [NSMutableDictionary dictionary];
   
   for (UIView *subview in self.subviews)
     _originalSubviewsOriginY[[NSString stringWithFormat:@"%p", subview]] = @(subview.frame.origin.y);

@@ -9,7 +9,8 @@
 #import "FTListenQuestionContentView.h"
 
 @interface FTListenQuestionContentView () {
-  CGFloat _originalAnswerFieldOriginY;
+  NSMutableDictionary *_originalSubviewsOrigin;
+  NSMutableDictionary *_originalSubviewsSize;
 }
 
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp;
@@ -38,7 +39,15 @@
     _vAnswerField.frame = frame;
   }
   
-  _originalAnswerFieldOriginY = _vAnswerField.frame.origin.y;
+  _originalSubviewsOrigin = [NSMutableDictionary dictionary];
+  _originalSubviewsSize = [NSMutableDictionary dictionary];
+  
+  for (UIView *subview in self.subviews) {
+    NSString *subviewKey = [NSString stringWithFormat:@"%p", subview];
+    
+    _originalSubviewsOrigin[subviewKey] = [NSValue valueWithCGPoint:subview.frame.origin];
+    _originalSubviewsSize[subviewKey] = [NSValue valueWithCGSize:subview.frame.size];
+  }
 }
 
 - (void)gestureLayerDidTap {
@@ -65,20 +74,55 @@
 
 #pragma mark - Private methods
 - (void)animateAnswerFieldSlideUp:(BOOL)isUp {
-  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
+  CGFloat ratio = [Utils keyboardShrinkRatioForView:self];
   
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     CGRect frame = _vAnswerField.frame;
-     frame.origin.y = isUp ?
-     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
-     _vAnswerField.frame = frame;
+     for (UIView *subview in self.subviews) {
+       NSString *subviewKey = [NSString stringWithFormat:@"%p", subview];
+       
+       CGRect frame = subview.frame;
+       CGPoint originalOrigin = [_originalSubviewsOrigin[subviewKey] CGPointValue];
+       CGSize originalSize = [_originalSubviewsSize[subviewKey] CGSizeValue];
+       
+       if (!isUp) {
+         frame.origin = originalOrigin;
+         frame.size = originalSize;
+       } else {
+         if ([subview isKindOfClass:[UIButton class]]) {
+           frame.size.width = originalSize.width * ratio;
+           frame.size.height = originalSize.height * ratio;
+           
+           // Maintain original center X
+           frame.origin.x = originalOrigin.x + originalSize.width/2 - frame.size.width/2;
+           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height - 3;
+         } else
+           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height - 5;
+       }
+       
+       subview.frame = frame;
+     }
    }
    completion:^(BOOL finished) {
    }];
+  
+//  CGFloat delta = DeviceSystemIsOS7() ? 86 : 106;
+//  
+//  [UIView
+//   animateWithDuration:kDefaultAnimationDuration
+//   delay:0
+//   options:UIViewAnimationOptionCurveEaseInOut
+//   animations:^{
+//     CGRect frame = _vAnswerField.frame;
+//     frame.origin.y = isUp ?
+//     [UIScreen mainScreen].bounds.size.height - kHeightKeyboard - frame.size.height - delta : _originalAnswerFieldOriginY;
+//     _vAnswerField.frame = frame;
+//   }
+//   completion:^(BOOL finished) {
+//   }];
 }
 
 @end
