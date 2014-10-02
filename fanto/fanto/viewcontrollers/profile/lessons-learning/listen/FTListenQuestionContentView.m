@@ -107,7 +107,8 @@
            
            // Maintain original center X
            frame.origin.x = originalOrigin.x + originalSize.width/2 - frame.size.width/2;
-           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height;
+           frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height -
+           (DeviceScreenIsRetina4Inch() ? 0 : 3);
          } else
            frame.origin.y = (originalOrigin.y + frame.size.height) * ratio - frame.size.height -
            (DeviceScreenIsRetina4Inch() ? 10 : 5);
