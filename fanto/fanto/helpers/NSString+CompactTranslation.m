@@ -11,18 +11,22 @@
 
 @interface NSString (CompactTranslation_Private)
 
-- (NSArray *)tokenizedCompactTranslation:(NSString *)translation;
-- (NSArray *)expandCompactTranslation:(NSArray *)tokensGroup;
-- (NSArray *)normalizeSentences:(NSArray *)sentences;
++ (NSArray *)tokenizedCompactTranslation:(NSString *)translation;
++ (NSArray *)expandCompactTranslation:(NSArray *)tokensGroup;
++ (NSArray *)normalizeSentences:(NSArray *)sentences;
 
 @end
 
 @implementation NSString (CompactTranslation)
 
++ (NSArray *)fullSentencesFromTokensGroup:(NSArray *)tokensGroup {
+  return [[self class] expandCompactTranslation:tokensGroup];
+}
+
 - (NSArray *)fullSentencesFromCompactTranslations {
-  NSArray *tokens = [self tokenizedCompactTranslation:self];
-  NSArray *sentences = [self expandCompactTranslation:tokens];
-  return [self normalizeSentences:sentences];
+  NSArray *tokens = [[self class] tokenizedCompactTranslation:self];
+  NSArray *sentences = [[self class] expandCompactTranslation:tokens];
+  return [[self class] normalizeSentences:sentences];
 }
 
 + (void)testCompactTranslations {
@@ -44,7 +48,7 @@
 }
 
 #pragma mark - Private methods
-- (NSArray *)tokenizedCompactTranslation:(NSString *)translation {
++ (NSArray *)tokenizedCompactTranslation:(NSString *)translation {
   NSArray *matches = [translation matches:RX(@"\\[[^\\]]*\\]")];
   NSMutableArray *matchedTokens = [NSMutableArray array];
   
@@ -60,7 +64,7 @@
     [matchedTokens addObject:tokens];
   }
   
-  NSArray *splittedTokens = [self split:RX(@"\\[[^\\]]*\\]")];
+  NSArray *splittedTokens = [translation split:RX(@"\\[[^\\]]*\\]")];
   
   NSMutableArray *tokens = [NSMutableArray array];
   
@@ -74,7 +78,7 @@
   return tokens;
 }
 
-- (NSArray *)expandCompactTranslation:(NSArray *)tokensGroup {
++ (NSArray *)expandCompactTranslation:(NSArray *)tokensGroup {
   if (tokensGroup == nil || ![tokensGroup isKindOfClass:[NSArray class]])
     return nil;
   
@@ -87,7 +91,7 @@
     return tokens;
   
   NSArray *remainingTokens = [tokensGroup subarrayWithRange:NSMakeRange(1, [tokensGroup count]-1)];
-  NSArray *nextTokens = [self expandCompactTranslation:remainingTokens];
+  NSArray *nextTokens = [[self class] expandCompactTranslation:remainingTokens];
   
   NSMutableArray *results = [NSMutableArray array];
   
@@ -98,7 +102,7 @@
   return results;
 }
 
-- (NSArray *)normalizeSentences:(NSArray *)sentences {
++ (NSArray *)normalizeSentences:(NSArray *)sentences {
   NSMutableArray *normalizedSentences = [NSMutableArray array];
   
   for (NSString *sentence in sentences) {

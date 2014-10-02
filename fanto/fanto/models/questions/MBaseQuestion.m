@@ -48,7 +48,7 @@
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
-  if ([type isEqualToString:@"speak"] || [type isEqualToString:@"listen"])
+  if (![type isEqualToString:@"listen"])
     return nil;
   
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);

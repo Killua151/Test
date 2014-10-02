@@ -10,6 +10,7 @@
 
 @interface NSString (CompactTranslation)
 
++ (NSArray *)fullSentencesFromTokensGroup:(NSArray *)tokensGroup;
 - (NSArray *)fullSentencesFromCompactTranslations;
 + (void)testCompactTranslations;
 
