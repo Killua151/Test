@@ -462,6 +462,7 @@
 		CA6FC8B919DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */; };
 		CA6FC8BA19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */; };
 		CA6FC8BD19DCEBF000403D3D /* MJudgeQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */; };
+		CA6FC8C019DCFE0A00403D3D /* MFormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -1057,6 +1058,8 @@
 		CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked_big@2x.png"; sourceTree = "<group>"; };
 		CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJudgeQuestion.h; sourceTree = "<group>"; };
 		CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJudgeQuestion.m; sourceTree = "<group>"; };
+		CA6FC8BE19DCFE0A00403D3D /* MFormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFormQuestion.h; sourceTree = "<group>"; };
+		CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFormQuestion.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1622,14 +1625,16 @@
 			children = (
 				CA5DAFBF19D66B1C003DAB26 /* MBaseQuestion.h */,
 				CA5DAFC019D66B1C003DAB26 /* MBaseQuestion.m */,
+				CA6FC8BE19DCFE0A00403D3D /* MFormQuestion.h */,
+				CA6FC8BF19DCFE0A00403D3D /* MFormQuestion.m */,
+				CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */,
+				CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */,
 				CA5DAFC219D66B43003DAB26 /* MSelectQuestion.h */,
 				CA5DAFC319D66B43003DAB26 /* MSelectQuestion.m */,
 				CA5DAFC519D66B82003DAB26 /* MSelectQuestionOption.h */,
 				CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */,
 				CA5DAFC819D67263003DAB26 /* MTranslateQuestion.h */,
 				CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */,
-				CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */,
-				CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */,
 			);
 			name = Questions;
 			path = questions;
@@ -2820,6 +2825,7 @@
 				4A85F3D519C6DFA600642C5F /* FTShieldSkillCell.m in Sources */,
 				CA5DAFC419D66B43003DAB26 /* MSelectQuestion.m in Sources */,
 				CA5454BD19C71EC10052111C /* FTShieldLessonsListViewController.m in Sources */,
+				CA6FC8C019DCFE0A00403D3D /* MFormQuestion.m in Sources */,
 				4A85F3A019C6976400642C5F /* MLesson.m in Sources */,
 				4A4122C219D3C8B100894095 /* FTFinishLessonViewController.m in Sources */,
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,

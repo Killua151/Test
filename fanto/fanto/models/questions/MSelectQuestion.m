@@ -25,10 +25,11 @@
 }
 
 - (id)checkAnswer:(NSString *)answerValue {
-  if ([answerValue compare:_hint options:NSCaseInsensitiveSearch] == NSOrderedSame)
-    return nil;
-  
-  return _hint;
+  if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]] ||
+      [answerValue compare:_hint options:NSCaseInsensitiveSearch] != NSOrderedSame)
+    return _hint;
+
+  return nil;
 }
 
 @end

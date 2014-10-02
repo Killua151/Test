@@ -10,12 +10,13 @@
 
 @implementation MJudgeQuestion
 
-- (id)checkAnswer:(id)answerValue {
+- (id)checkAnswer:(NSArray *)answerValue {
+  NSArray *correctAnswers = [@[_hint] sortedArrayUsingSelector:@selector(compare:)];
+  
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
-    return nil;
+    return [correctAnswers componentsJoinedByString:@" / "];
   
   NSArray *usersAnsers = [answerValue sortedArrayUsingSelector:@selector(compare:)];
-  NSArray *correctAnswers = [@[_hint] sortedArrayUsingSelector:@selector(compare:)];
   
   if ([correctAnswers isEqualToArray:usersAnsers])
     return nil;

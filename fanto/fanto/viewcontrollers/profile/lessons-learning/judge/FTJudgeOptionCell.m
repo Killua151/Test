@@ -26,7 +26,7 @@
   [Utils adjustLabelToFitHeight:_lblOption constrainsToHeight:_lblOption.superview.frame.size.height];
   
   CGPoint center = _lblOption.center;
-  center.y = _lblOption.superview.frame.size.height/2;
+  center.y = _lblOption.superview.frame.size.height/2 - 3;
   _lblOption.center = center;
 }
 

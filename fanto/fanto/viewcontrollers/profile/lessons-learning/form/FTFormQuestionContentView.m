@@ -8,6 +8,7 @@
 
 #import "FTFormQuestionContentView.h"
 #import "FTFormAnswerTokenButton.h"
+#import "MFormQuestion.h"
 
 @interface FTFormQuestionContentView () {
   NSMutableArray *_btnAnsweredTokens;
@@ -29,10 +30,18 @@
 @implementation FTFormQuestionContentView
 
 - (void)setupViews {
+  MFormQuestion *questionData = (MFormQuestion *)self.questionData;
+  
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblQuestion.text = questionData.question;
+  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnQuestionAudio.frame.size.height];
+  
+  CGPoint center = _lblQuestion.center;
+  center.y = _btnQuestionAudio.center.y - 3;
+  _lblQuestion.center = center;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
@@ -68,11 +77,14 @@
   _btnAnsweredTokens = [NSMutableArray new];
 //  [self setupTokenButtonsForView:_vAnsweredTokens withDataSource:@[] saveIn:_btnAnsweredTokens];
   
+  NSMutableArray *availableTokens = [NSMutableArray arrayWithArray:questionData.tokens];
+  [availableTokens addObjectsFromArray:questionData.wrong_tokens];
+  [availableTokens shuffle];
+  
+  DLog(@"%@", questionData.tokens);
+  
   _btnAvailableTokens = [NSMutableArray new];
-  [self setupTokenButtonsForView:_vAvailableTokens
-                  withDataSource:[@"Những các nước khác nhau thì có những các nền văn hóa khác nhau"
-                                  componentsSeparatedByString:@" "]
-                          saveIn:_btnAvailableTokens];
+  [self setupTokenButtonsForView:_vAvailableTokens withDataSource:availableTokens saveIn:_btnAvailableTokens];
 }
 
 #pragma mark - FTQuestionContentDelegate methods
@@ -120,7 +132,7 @@
   CGFloat buttonsGap = 10;
   
   [UIView
-   animateWithDuration:kDefaultAnimationDuration*2
+   animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
@@ -178,19 +190,23 @@
   
   CGRect newFrame = [self convertRect:[self convertRect:frame fromView:toView] toView:fromView];
   
-  [UIView animateWithDuration:kDefaultAnimationDuration animations:^{
-    button.frame = newFrame;
-  } completion:^(BOOL finished) {
-    [button removeFromSuperview];
-    button.frame = frame;
-    [destinationButtons addObject:button];
-    [toView addSubview:button];
-    
-    button.status = (button.status+1)%2;
-    
-    if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-      [self.delegate questionContentViewDidUpdateAnswer:[_btnAnsweredTokens count] > 0 withValue:nil];
-  }];
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   animations:^{
+     button.frame = newFrame;
+   }
+   completion:^(BOOL finished) {
+     [button removeFromSuperview];
+     button.frame = frame;
+     [destinationButtons addObject:button];
+     [toView addSubview:button];
+     
+     button.status = (button.status+1)%2;
+     
+     if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
+       [self.delegate questionContentViewDidUpdateAnswer:[_btnAnsweredTokens count] > 0
+                                               withValue:[_btnAnsweredTokens valueForKey:@"token"]];
+   }];
 }
 
 @end
