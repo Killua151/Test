@@ -23,6 +23,11 @@
 
 - (void)updateCellWithData:(NSString *)data {
   _lblOption.text = data;
+  [Utils adjustLabelToFitHeight:_lblOption constrainsToHeight:_lblOption.superview.frame.size.height];
+  
+  CGPoint center = _lblOption.center;
+  center.y = _lblOption.superview.frame.size.height/2;
+  _lblOption.center = center;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

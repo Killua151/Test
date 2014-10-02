@@ -8,10 +8,12 @@
 
 #import "FTJudgeQuestionContentView.h"
 #import "FTJudgeOptionCell.h"
+#import "MJudgeQuestion.h"
 
 @interface FTJudgeQuestionContentView () {
   NSArray *_optionsData;
-  NSMutableArray *_answersData;
+  NSMutableArray *_answerIndices;
+  NSMutableIndexSet *_answersIndexSet;
 }
 
 - (void)updateLessonLearningView;
@@ -20,8 +22,8 @@
 
 @implementation FTJudgeQuestionContentView
 
-- (id)init {
-  if (self = [super init]) {
+- (id)initWithQuestion:(MBaseQuestion *)question {
+  if (self = [super initWithQuestion:question]) {
     _tblOptions.dataSource = self;
     _tblOptions.delegate = self;
   }
@@ -30,11 +32,15 @@
 }
 
 - (void)setupViews {
-  _optionsData = @[@"We eat rice", @"We drink water", @"We drink break"];
-  _answersData = [NSMutableArray new];
+  MJudgeQuestion *questionData = (MJudgeQuestion *)self.questionData;
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblQuestion.text = questionData.question;
+
+  _optionsData = questionData.option;
+  _answerIndices = [NSMutableArray new];
+  _answersIndexSet = [NSMutableIndexSet indexSet];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -59,15 +65,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (![_answersData containsObject:@(indexPath.row)])
-    [_answersData addObject:@(indexPath.row)];
+  if (![_answersIndexSet containsIndex:indexPath.row])
+    [_answersIndexSet addIndex:indexPath.row];
   
   [self updateLessonLearningView];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if ([_answersData containsObject:@(indexPath.row)])
-    [_answersData removeObject:@(indexPath.row)];
+  if ([_answersIndexSet containsIndex:indexPath.row])
+    [_answersIndexSet removeIndex:indexPath.row];
   
   [self updateLessonLearningView];
 }
@@ -75,7 +81,8 @@
 #pragma mark - Private methods
 - (void)updateLessonLearningView {
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:[_answersData count] > 0 withValue:nil];
+    [self.delegate questionContentViewDidUpdateAnswer:[_answersIndexSet count] > 0
+                                            withValue:[_optionsData objectsAtIndexes:_answersIndexSet]];
 }
 
 @end

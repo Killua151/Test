@@ -243,6 +243,14 @@ static UIView *_sharedToast = nil;
   label.frame = frame;
 }
 
++ (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight {
+  [self adjustLabelToFitHeight:label relatedTo:nil withDistance:0];
+  
+  CGRect frame = label.frame;
+  frame.size.height = MIN(frame.size.height, maxHeight);
+  label.frame = frame;
+}
+
 + (void)applyAttributedTextForLabel:(UILabel *)label
                            withText:(NSString *)fullText
                            onString:(NSString *)styledString

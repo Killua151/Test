@@ -71,7 +71,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define ARC4RANDOM_MAX                          0x100000000
 
 #define kServerApiUrl                           @"http://fanto-backend.volcano.vn/api"
-//#define kServerApiUrl                           @"http://192.168.5.22:81/TOPICA/yii/demo/api"
+//#define kServerApiUrl                           @"http://192.168.5.39:81/TOPICA/yii/memo/api"
 #define kServerApiVersion                       @"v1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 

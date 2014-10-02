@@ -44,6 +44,8 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 
 + (void)adjustLabelToFitHeight:(UILabel *)label;
 + (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
++ (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight;
+
 + (void)applyAttributedTextForLabel:(UILabel *)label
                            withText:(NSString *)fullText
                            onString:(NSString *)styledString

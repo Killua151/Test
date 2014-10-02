@@ -461,6 +461,7 @@
 		CA6FC8B819DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DC19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png */; };
 		CA6FC8B919DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */; };
 		CA6FC8BA19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */; };
+		CA6FC8BD19DCEBF000403D3D /* MJudgeQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -1054,6 +1055,8 @@
 		CA6FC7DC19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-locked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-locked_big@2x.png"; sourceTree = "<group>"; };
 		CA6FC7DD19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked_big.png"; sourceTree = "<group>"; };
 		CA6FC7DE19DC4CBF00403D3D /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked_big@2x.png"; sourceTree = "<group>"; };
+		CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJudgeQuestion.h; sourceTree = "<group>"; };
+		CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJudgeQuestion.m; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1625,6 +1628,8 @@
 				CA5DAFC619D66B82003DAB26 /* MSelectQuestionOption.m */,
 				CA5DAFC819D67263003DAB26 /* MTranslateQuestion.h */,
 				CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */,
+				CA6FC8BB19DCEBF000403D3D /* MJudgeQuestion.h */,
+				CA6FC8BC19DCEBF000403D3D /* MJudgeQuestion.m */,
 			);
 			name = Questions;
 			path = questions;
@@ -2834,6 +2839,7 @@
 				CA5DAFA219D5C5E6003DAB26 /* FTTranslateQuestionContentView.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
+				CA6FC8BD19DCEBF000403D3D /* MJudgeQuestion.m in Sources */,
 				CA5DAEFE19D06588003DAB26 /* FTSetGoalViewController.m in Sources */,
 				CA5454C219C71F5F0052111C /* FTShieldLessonCell.m in Sources */,
 				CABADE5719CD35CE000187AF /* FTShopItemsGroupHeaderCell.m in Sources */,
