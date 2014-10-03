@@ -29,8 +29,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [self preSettingsWithLaunchingWithOptions:launchOptions];
   
-  [self test];
-  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
   [self setupRootViewController];
@@ -136,6 +134,8 @@
 #if kTestCompactTranslation
   [NSString testCompactTranslations];
 #endif
+  
+  [self test];
 }
 
 - (void)test {
