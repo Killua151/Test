@@ -5,6 +5,7 @@
 //  Copyright (c) 2012 iSpeech, Inc. All rights reserved.
 //
 
+#if !TARGET_IPHONE_SIMULATOR
 #import "ISpeechSDK+Compatibility.h"
 
 // define some LLVM3 macros if the code is compiled with a different compiler (ie LLVMGCC42)
@@ -378,3 +379,4 @@
 }
 
 @end
+#endif

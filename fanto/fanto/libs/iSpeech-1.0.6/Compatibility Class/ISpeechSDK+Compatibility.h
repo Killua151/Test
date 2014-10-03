@@ -5,6 +5,7 @@
 //  Copyright (c) 2012 iSpeech, Inc. All rights reserved.
 //
 
+#if !TARGET_IPHONE_SIMULATOR
 #import <Foundation/Foundation.h>
 #import "iSpeechSDK.h"
 
@@ -110,3 +111,4 @@ enum {
 	kISpeechRecordingStarted = 1,
 	kISpeechRecordingStopped
 };
+#endif
