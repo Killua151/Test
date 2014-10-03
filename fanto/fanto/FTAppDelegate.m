@@ -12,12 +12,13 @@
 #import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
+#import <Mixpanel/Mixpanel.h>
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
 @interface FTAppDelegate () <UIAlertViewDelegate>
 
-- (void)preSettings;
+- (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
 - (void)test;
 
@@ -26,7 +27,7 @@
 @implementation FTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [self preSettings];
+  [self preSettingsWithLaunchingWithOptions:launchOptions];
   
   [self test];
   
@@ -120,20 +121,21 @@
 }
 
 #pragma mark Private methods
-- (void)preSettings {
-#if kTestLogin
-  [MUser logOutCurrentUser];
-#endif
-
-#if kTestCompactTranslation
-  [NSString testCompactTranslations];
-#endif
-  
+- (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if !TARGET_IPHONE_SIMULATOR
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
 #endif
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
+  [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
+  
+#if kTestLogin
+  [MUser logOutCurrentUser];
+#endif
   [MUser loadCurrentUserFromUserDef];
+  
+#if kTestCompactTranslation
+  [NSString testCompactTranslations];
+#endif
 }
 
 - (void)test {
