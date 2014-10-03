@@ -115,8 +115,6 @@ static MUser *_currentUser = nil;
 //  
 //  return skillsTree;
   
-  DLog(@"%@", _skills_tree);
-  
   NSMutableDictionary *skillsById = [NSMutableDictionary dictionary];
   
   for (MSkill *skill in _skills)

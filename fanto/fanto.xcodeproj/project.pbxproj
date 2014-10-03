@@ -467,6 +467,13 @@
 		CA6FC8C619DD109900403D3D /* MSpeakQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C519DD109900403D3D /* MSpeakQuestion.m */; };
 		CA6FC8C919DD110B00403D3D /* MListenQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8C819DD110B00403D3D /* MListenQuestion.m */; };
 		CA6FC8CC19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */; };
+		CA6FC8E019DEB50200403D3D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FC8DF19DEB50200403D3D /* AudioToolbox.framework */; };
+		CA6FC8E219DEB50800403D3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FC8E119DEB50800403D3D /* SystemConfiguration.framework */; };
+		CA6FC8E419DEB50E00403D3D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FC8E319DEB50E00403D3D /* Security.framework */; };
+		CA6FC8E619DEB51500403D3D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FC8E519DEB51500403D3D /* CFNetwork.framework */; };
+		CA6FC8F619DEB6A400403D3D /* ISpeechSDK+Compatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6FC8EA19DEB6A400403D3D /* ISpeechSDK+Compatibility.m */; };
+		CA6FC8F719DEB6A400403D3D /* iSpeechSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA6FC8F419DEB6A400403D3D /* iSpeechSDK.bundle */; };
+		CA6FC8F819DEB6A400403D3D /* libiSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6FC8F519DEB6A400403D3D /* libiSpeechSDK.a */; };
 		CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999719C094B700C221A9 /* Foundation.framework */; };
 		CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999919C094B700C221A9 /* CoreGraphics.framework */; };
 		CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA74999B19C094B700C221A9 /* UIKit.framework */; };
@@ -1072,6 +1079,22 @@
 		CA6FC8C819DD110B00403D3D /* MListenQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MListenQuestion.m; sourceTree = "<group>"; };
 		CA6FC8CA19DD3BD300403D3D /* FTAllowsTouchUnderneathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAllowsTouchUnderneathView.h; sourceTree = "<group>"; };
 		CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAllowsTouchUnderneathView.m; sourceTree = "<group>"; };
+		CA6FC8DF19DEB50200403D3D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CA6FC8E119DEB50800403D3D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CA6FC8E319DEB50E00403D3D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CA6FC8E519DEB51500403D3D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CA6FC8E919DEB6A400403D3D /* ISpeechSDK+Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISpeechSDK+Compatibility.h"; sourceTree = "<group>"; };
+		CA6FC8EA19DEB6A400403D3D /* ISpeechSDK+Compatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ISpeechSDK+Compatibility.m"; sourceTree = "<group>"; };
+		CA6FC8EC19DEB6A400403D3D /* iSpeechSDK+PaidFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iSpeechSDK+PaidFeatures.h"; sourceTree = "<group>"; };
+		CA6FC8ED19DEB6A400403D3D /* iSpeechSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iSpeechSDK.h; sourceTree = "<group>"; };
+		CA6FC8EE19DEB6A400403D3D /* ISSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognition.h; sourceTree = "<group>"; };
+		CA6FC8EF19DEB6A400403D3D /* ISSpeechRecognitionLocales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognitionLocales.h; sourceTree = "<group>"; };
+		CA6FC8F019DEB6A400403D3D /* ISSpeechRecognitionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognitionResult.h; sourceTree = "<group>"; };
+		CA6FC8F119DEB6A400403D3D /* ISSpeechSynthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechSynthesis.h; sourceTree = "<group>"; };
+		CA6FC8F219DEB6A400403D3D /* ISSpeechSynthesisVoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechSynthesisVoices.h; sourceTree = "<group>"; };
+		CA6FC8F319DEB6A400403D3D /* ISViseme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISViseme.h; sourceTree = "<group>"; };
+		CA6FC8F419DEB6A400403D3D /* iSpeechSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iSpeechSDK.bundle; sourceTree = "<group>"; };
+		CA6FC8F519DEB6A400403D3D /* libiSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiSpeechSDK.a; sourceTree = "<group>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1169,10 +1192,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6FC8E619DEB51500403D3D /* CFNetwork.framework in Frameworks */,
+				CA6FC8E419DEB50E00403D3D /* Security.framework in Frameworks */,
+				CA6FC8E219DEB50800403D3D /* SystemConfiguration.framework in Frameworks */,
+				CA6FC8E019DEB50200403D3D /* AudioToolbox.framework in Frameworks */,
 				CA74999A19C094B700C221A9 /* CoreGraphics.framework in Frameworks */,
 				4A1954F819CA8FB90004834D /* Crashlytics.framework in Frameworks */,
 				CA74999C19C094B700C221A9 /* UIKit.framework in Frameworks */,
 				CA74999819C094B700C221A9 /* Foundation.framework in Frameworks */,
+				CA6FC8F819DEB6A400403D3D /* libiSpeechSDK.a in Frameworks */,
 				E8EAE054E22C4E029457F2D0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1331,6 +1359,7 @@
 		4A56E40B19D2B4BB003FA91C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CA6FC8E719DEB6A400403D3D /* iSpeech-1.0.6 */,
 				4A56E40C19D2B4BB003FA91C /* RegExCategories */,
 			);
 			name = Libraries;
@@ -1965,6 +1994,41 @@
 			path = "skill-icons";
 			sourceTree = "<group>";
 		};
+		CA6FC8E719DEB6A400403D3D /* iSpeech-1.0.6 */ = {
+			isa = PBXGroup;
+			children = (
+				CA6FC8E819DEB6A400403D3D /* Compatibility Class */,
+				CA6FC8EB19DEB6A400403D3D /* Headers */,
+				CA6FC8F419DEB6A400403D3D /* iSpeechSDK.bundle */,
+				CA6FC8F519DEB6A400403D3D /* libiSpeechSDK.a */,
+			);
+			path = "iSpeech-1.0.6";
+			sourceTree = "<group>";
+		};
+		CA6FC8E819DEB6A400403D3D /* Compatibility Class */ = {
+			isa = PBXGroup;
+			children = (
+				CA6FC8E919DEB6A400403D3D /* ISpeechSDK+Compatibility.h */,
+				CA6FC8EA19DEB6A400403D3D /* ISpeechSDK+Compatibility.m */,
+			);
+			path = "Compatibility Class";
+			sourceTree = "<group>";
+		};
+		CA6FC8EB19DEB6A400403D3D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CA6FC8EC19DEB6A400403D3D /* iSpeechSDK+PaidFeatures.h */,
+				CA6FC8ED19DEB6A400403D3D /* iSpeechSDK.h */,
+				CA6FC8EE19DEB6A400403D3D /* ISSpeechRecognition.h */,
+				CA6FC8EF19DEB6A400403D3D /* ISSpeechRecognitionLocales.h */,
+				CA6FC8F019DEB6A400403D3D /* ISSpeechRecognitionResult.h */,
+				CA6FC8F119DEB6A400403D3D /* ISSpeechSynthesis.h */,
+				CA6FC8F219DEB6A400403D3D /* ISSpeechSynthesisVoices.h */,
+				CA6FC8F319DEB6A400403D3D /* ISViseme.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		CA74998B19C094B700C221A9 = {
 			isa = PBXGroup;
 			children = (
@@ -1986,6 +2050,10 @@
 		CA74999619C094B700C221A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA6FC8E519DEB51500403D3D /* CFNetwork.framework */,
+				CA6FC8E319DEB50E00403D3D /* Security.framework */,
+				CA6FC8E119DEB50800403D3D /* SystemConfiguration.framework */,
+				CA6FC8DF19DEB50200403D3D /* AudioToolbox.framework */,
 				CA74999919C094B700C221A9 /* CoreGraphics.framework */,
 				4A1954F719CA8FB90004834D /* Crashlytics.framework */,
 				CA74999719C094B700C221A9 /* Foundation.framework */,
@@ -2486,6 +2554,7 @@
 				CA6FC7DF19DC4CBF00403D3D /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big.png in Resources */,
 				CA6FC87919DC4CBF00403D3D /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-unlocked_big.png in Resources */,
 				CA6FC88819DC4CBF00403D3D /* img-skill_icon-en-vi_so-locked_big@2x.png in Resources */,
+				CA6FC8F719DEB6A400403D3D /* iSpeechSDK.bundle in Resources */,
 				CA6FC86419DC4CBF00403D3D /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png in Resources */,
 				CA6FC88419DC4CBF00403D3D /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png in Resources */,
 				4A4122ED19D4006900894095 /* btn-lessons_learning-close.png in Resources */,
@@ -2834,6 +2903,7 @@
 				CA5DAFC719D66B82003DAB26 /* MSelectQuestionOption.m in Sources */,
 				CA5DAF9819D5B286003DAB26 /* FTListenQuestionContentView.m in Sources */,
 				CA5DAFD019D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.m in Sources */,
+				CA6FC8F619DEB6A400403D3D /* ISpeechSDK+Compatibility.m in Sources */,
 				4A4122C819D3C8B100894095 /* FTSaveProgressViewController.m in Sources */,
 				CAEBA25419C487B20024CA71 /* FTSkillsListViewController.m in Sources */,
 				CA5DAF2D19D184CA003DAB26 /* FTAllowsTouchOutsideView.m in Sources */,
@@ -2992,8 +3062,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fanto/libs/iSpeech-1.0.6",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3011,8 +3086,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fanto/fanto-Prefix.pch";
 				INFOPLIST_FILE = "fanto/fanto-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fanto/libs/iSpeech-1.0.6",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
