@@ -11,6 +11,7 @@
 #import "FTSkillsListViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
+#import "iSpeechSDK.h"
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
@@ -128,6 +129,9 @@
   [NSString testCompactTranslations];
 #endif
   
+#if !TARGET_IPHONE_SIMULATOR
+  [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
+#endif
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [MUser loadCurrentUserFromUserDef];
 }

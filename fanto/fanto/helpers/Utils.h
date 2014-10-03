@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class MBProgressHUD, GTMOAuth2Authentication;
+@class MBProgressHUD, GTMOAuth2Authentication, ISSpeechRecognitionResult;
 
 @interface Utils : NSObject
 
 typedef void(^SocialLogInCallback)(NSDictionary *userData, NSError *error);
 typedef void(^SocialLogOutCallback)(NSError *error);
+typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSError *error);
 
 + (UIAlertView *)showAlertWithError:(NSError *)error;
 + (UIAlertView *)showAlertWithError:(NSError *)error delegate:(id)delegate;
@@ -72,6 +73,9 @@ typedef void(^SocialLogOutCallback)(NSError *error);
 + (void)logOutFacebookWithCompletion:(SocialLogOutCallback)callback;
 + (void)logInGoogleFromView:(UIView *)view completion:(SocialLogInCallback)callback;
 + (void)logOutGoogleWithCompletion:(SocialLogOutCallback)callback;
+
+#pragma mark - Speech recognition
++ (void)recognizeWithCompletion:(SpeechRecognitionCallback)callback;
 
 @end
 

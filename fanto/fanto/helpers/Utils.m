@@ -14,14 +14,16 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
+#import "iSpeechSDK.h"
 #import "FTAppDelegate.h"
 
 static UIView *_sharedToast = nil;
 
-@interface Utils () <GPPSignInDelegate>
+@interface Utils () <GPPSignInDelegate, ISSpeechRecognitionDelegate>
 
 @property (nonatomic, strong) SocialLogInCallback googleLogInCallback;
 @property (nonatomic, strong) SocialLogOutCallback googleLogOutCallback;
+@property (nonatomic, strong) SpeechRecognitionCallback speechRecognitionCallback;
 
 + (instancetype)sharedUtils;
 + (NSString *)suffixForDayInDate:(NSDate *)date;
@@ -516,6 +518,41 @@ static UIView *_sharedToast = nil;
       return YES;
   
   return NO;
+}
+
+#pragma mark - Speech recognition
++ (void)recognizeWithCompletion:(void (^)(ISSpeechRecognitionResult *, NSError *))callback {
+#if TARGET_IPHONE_SIMULATOR
+  if (callback != NULL)
+    callback(nil, nil);
+#else
+  ISSpeechRecognition *recognition = [[ISSpeechRecognition alloc] init];
+  recognition.delegate = [Utils sharedUtils];
+  
+  NSError *error = nil;
+  
+  [Utils sharedUtils].speechRecognitionCallback = callback;
+  
+  if (![recognition listenAndRecognizeWithTimeout:30 error:&error]) {
+    if (callback != NULL)
+      callback(nil, error);
+  }
+#endif
+}
+
+#pragma mark - ISSpeechRecognitionDelegate methods
+- (void)recognition:(ISSpeechRecognition *)speechRecognition didFailWithError:(NSError *)error {
+  if (_speechRecognitionCallback == NULL)
+    return;
+  
+  _speechRecognitionCallback(nil, error);
+}
+
+- (void)recognition:(ISSpeechRecognition *)speechRecognition didGetRecognitionResult:(ISSpeechRecognitionResult *)result {
+  if (_speechRecognitionCallback == NULL)
+    return;
+  
+  _speechRecognitionCallback(result, nil);
 }
 
 @end
