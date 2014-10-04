@@ -69,7 +69,7 @@
   _txtAnswerPlaceholder.hidden = textView.text.length > 0;
   
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0 withValue:nil];
+    [self.delegate questionContentViewDidUpdateAnswer:textView.text.length > 0 withValue:textView.text];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {

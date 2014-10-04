@@ -37,11 +37,7 @@
   CGFloat buttonsBottomMargin = DeviceScreenIsRetina4Inch() ? 35 : 28;
   CGFloat buttonsHeight = (self.frame.size.height - buttonsTopMargin - buttonsBottomMargin - 15)/2;
   
-  _optionTitles = [NSMutableArray arrayWithObject:questionData.question];
-  
-  for (MSelectQuestionOption *option in questionData.options)
-    [_optionTitles addObject:option.text];
-  
+  _optionTitles = [NSMutableArray arrayWithArray:[questionData.options valueForKey:@"text"]];
   [_optionTitles shuffle];
   
   for (NSInteger i = 0; i < 2; i++)

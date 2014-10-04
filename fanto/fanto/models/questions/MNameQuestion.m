@@ -10,4 +10,17 @@
 
 @implementation MNameQuestion
 
+- (id)checkAnswer:(id)answerValue {
+  if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
+    return _hint;
+  
+  NSString *normalizedAnswer = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
+  NSString *normalizedHint = [Utils stringByRemovingAllNonLetterCharacters:_hint];
+  
+  if ([normalizedAnswer compare:normalizedHint options:NSCaseInsensitiveSearch] != NSOrderedSame)
+    return _hint;
+  
+  return nil;
+}
+
 @end

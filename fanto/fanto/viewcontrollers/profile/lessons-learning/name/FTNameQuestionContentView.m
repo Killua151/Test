@@ -8,6 +8,7 @@
 
 #import "FTNameQuestionContentView.h"
 #import "FTLessonsLearningViewController.h"
+#import "MNameQuestion.h"
 
 @interface FTNameQuestionContentView () {
   CGFloat _originalAnswerFieldOriginY;
@@ -20,7 +21,9 @@
 @implementation FTNameQuestionContentView
 
 - (void)setupViews {
+  MNameQuestion *questionData = (MNameQuestion *)self.questionData;
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblQuestion.text = [NSString stringWithFormat:NSLocalizedString(@"Translate \"%@\"", nil), questionData.question];
   
   _txtAnswerField.delegate = self;
   _txtAnswerField.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -59,7 +62,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0 withValue:nil];
+    [self.delegate questionContentViewDidUpdateAnswer:textField.text.length > 0 withValue:textField.text];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

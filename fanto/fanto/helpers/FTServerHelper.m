@@ -124,6 +124,7 @@
 
 - (void)startLesson:(NSInteger)lessonNumber inSkill:(NSString *)skillId completion:(void (^)(NSArray *, NSError *))handler {
   NSDictionary *params = @{
+                           kParamType : @"lesson",
                            kParamLessonNumber : @(lessonNumber),
                            kParamSkillId : [Utils normalizeString:skillId],
                            kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]

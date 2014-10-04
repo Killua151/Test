@@ -10,4 +10,17 @@
 
 @implementation MListenQuestion
 
+- (id)checkAnswer:(id)answerValue {
+  if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
+    return self.question;
+  
+  NSString *normalizedAnswer = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
+  NSString *normalizedQuestion = [Utils stringByRemovingAllNonLetterCharacters:self.question];
+  
+  if ([normalizedAnswer compare:normalizedQuestion options:NSCaseInsensitiveSearch] != NSOrderedSame)
+    return self.question;
+  
+  return nil;
+}
+
 @end
