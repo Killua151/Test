@@ -31,6 +31,7 @@
 - (void)animateSlideStrengthenButton:(BOOL)show;
 - (void)fadeOutBeginningOptions:(void(^)())completion;
 - (void)loadSkillsTree;
+- (void)handleLoadingError:(NSError *)error;
 
 @end
 
@@ -185,6 +186,14 @@
   [_lessonsListVC reloadContents];
 }
 
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 0)
+    exit(0);
+  
+  [self loadSkillsTree];
+}
+
 #pragma mark - Private methods
 - (void)gotoProfile {
   [self presentViewController:[FTProfileViewController navigationController] animated:YES completion:NULL];
@@ -278,10 +287,25 @@
   
   [[FTServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
     [Utils hideAllHUDsForView:self.navigationController.view];
-    ShowAlertWithError(error);
+    
+    if (error != nil) {
+      [self handleLoadingError:error];
+      return;
+    }
     
     [self reloadContents];
   }];
+}
+
+- (void)handleLoadingError:(NSError *)error {
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
+                                                               [Utils errorCodeFromError:error]]
+                                                      message:[Utils errorMessageFromError:error]
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Quit", nil)
+                                            otherButtonTitles:NSLocalizedString(@"Retry", nil), nil];
+  
+  [alertView show];
 }
 
 @end
