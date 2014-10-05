@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTLoginViewController.h"
+#import "MMLoginViewController.h"
 #import "MMAppDelegate.h"
-#import "FTForgotPasswordViewController.h"
+#import "MMForgotPasswordViewController.h"
 #import "FTSkillsListViewController.h"
 #import "MUser.h"
 
-@interface FTLoginViewController () {
+@interface MMLoginViewController () {
   UIView *_currentFirstResponder;
-  FTForgotPasswordViewController *_forgotPasswordVC;
+  MMForgotPasswordViewController *_forgotPasswordVC;
 }
 
 - (void)setupViews;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation FTLoginViewController
+@implementation MMLoginViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -69,7 +69,7 @@
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
   if (_forgotPasswordVC == nil)
-    _forgotPasswordVC = [FTForgotPasswordViewController new];
+    _forgotPasswordVC = [MMForgotPasswordViewController new];
   
   [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
   [_forgotPasswordVC reloadContents];

@@ -8,7 +8,7 @@
 
 #import "FTSettingsViewController.h"
 #import "FTSettingsHeaderView.h"
-#import "FTHomeViewController.h"
+#import "MMHomeViewController.h"
 #import "MMAppDelegate.h"
 #import "MUser.h"
 
@@ -75,7 +75,7 @@
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
   [MUser logOutCurrentUser];
   
-  UINavigationController *homeNavigation = [FTHomeViewController navigationController];
+  UINavigationController *homeNavigation = [MMHomeViewController navigationController];
   homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
   [self presentViewController:homeNavigation animated:YES completion:^{

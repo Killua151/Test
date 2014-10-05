@@ -440,18 +440,18 @@
 		CAF8547219E0F3D200A347CF /* BaseTableSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8520A19E0F3D200A347CF /* BaseTableSectionView.m */; };
 		CAF8547319E0F3D200A347CF /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8520C19E0F3D200A347CF /* BaseTableViewCell.m */; };
 		CAF8547419E0F3D200A347CF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8520E19E0F3D200A347CF /* BaseViewController.m */; };
-		CAF8547519E0F3D200A347CF /* FTCourseSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521119E0F3D200A347CF /* FTCourseSelectionCell.m */; };
-		CAF8547619E0F3D200A347CF /* FTCourseSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521219E0F3D200A347CF /* FTCourseSelectionCell.xib */; };
-		CAF8547719E0F3D200A347CF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521419E0F3D200A347CF /* FTCoursesListViewController.m */; };
-		CAF8547819E0F3D200A347CF /* FTCoursesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521519E0F3D200A347CF /* FTCoursesListViewController.xib */; };
-		CAF8547919E0F3D200A347CF /* FTForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521719E0F3D200A347CF /* FTForgotPasswordViewController.m */; };
-		CAF8547A19E0F3D200A347CF /* FTForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521819E0F3D200A347CF /* FTForgotPasswordViewController.xib */; };
-		CAF8547B19E0F3D200A347CF /* FTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521A19E0F3D200A347CF /* FTHomeViewController.m */; };
-		CAF8547C19E0F3D200A347CF /* FTHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521B19E0F3D200A347CF /* FTHomeViewController.xib */; };
-		CAF8547D19E0F3D200A347CF /* FTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521D19E0F3D200A347CF /* FTLoginViewController.m */; };
-		CAF8547E19E0F3D200A347CF /* FTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521E19E0F3D200A347CF /* FTLoginViewController.xib */; };
-		CAF8547F19E0F3D200A347CF /* FTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522019E0F3D200A347CF /* FTSignUpViewController.m */; };
-		CAF8548019E0F3D200A347CF /* FTSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522119E0F3D200A347CF /* FTSignUpViewController.xib */; };
+		CAF8547519E0F3D200A347CF /* MMCourseSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521119E0F3D200A347CF /* MMCourseSelectionCell.m */; };
+		CAF8547619E0F3D200A347CF /* MMCourseSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521219E0F3D200A347CF /* MMCourseSelectionCell.xib */; };
+		CAF8547719E0F3D200A347CF /* MMCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521419E0F3D200A347CF /* MMCoursesListViewController.m */; };
+		CAF8547819E0F3D200A347CF /* MMCoursesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521519E0F3D200A347CF /* MMCoursesListViewController.xib */; };
+		CAF8547919E0F3D200A347CF /* MMForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521719E0F3D200A347CF /* MMForgotPasswordViewController.m */; };
+		CAF8547A19E0F3D200A347CF /* MMForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521819E0F3D200A347CF /* MMForgotPasswordViewController.xib */; };
+		CAF8547B19E0F3D200A347CF /* MMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521A19E0F3D200A347CF /* MMHomeViewController.m */; };
+		CAF8547C19E0F3D200A347CF /* MMHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521B19E0F3D200A347CF /* MMHomeViewController.xib */; };
+		CAF8547D19E0F3D200A347CF /* MMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521D19E0F3D200A347CF /* MMLoginViewController.m */; };
+		CAF8547E19E0F3D200A347CF /* MMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521E19E0F3D200A347CF /* MMLoginViewController.xib */; };
+		CAF8547F19E0F3D200A347CF /* MMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522019E0F3D200A347CF /* MMSignUpViewController.m */; };
+		CAF8548019E0F3D200A347CF /* MMSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522119E0F3D200A347CF /* MMSignUpViewController.xib */; };
 		CAF8548119E0F3D200A347CF /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */; };
 		CAF8548219E0F3D200A347CF /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */; };
 		CAF8548319E0F3D200A347CF /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522819E0F3D200A347CF /* FTCongratsViewController.m */; };
@@ -1264,24 +1264,24 @@
 		CAF8520C19E0F3D200A347CF /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		CAF8520D19E0F3D200A347CF /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CAF8520E19E0F3D200A347CF /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		CAF8521019E0F3D200A347CF /* FTCourseSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCourseSelectionCell.h; sourceTree = "<group>"; };
-		CAF8521119E0F3D200A347CF /* FTCourseSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCourseSelectionCell.m; sourceTree = "<group>"; };
-		CAF8521219E0F3D200A347CF /* FTCourseSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCourseSelectionCell.xib; sourceTree = "<group>"; };
-		CAF8521319E0F3D200A347CF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
-		CAF8521419E0F3D200A347CF /* FTCoursesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoursesListViewController.m; sourceTree = "<group>"; };
-		CAF8521519E0F3D200A347CF /* FTCoursesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCoursesListViewController.xib; sourceTree = "<group>"; };
-		CAF8521619E0F3D200A347CF /* FTForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTForgotPasswordViewController.h; sourceTree = "<group>"; };
-		CAF8521719E0F3D200A347CF /* FTForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTForgotPasswordViewController.m; sourceTree = "<group>"; };
-		CAF8521819E0F3D200A347CF /* FTForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTForgotPasswordViewController.xib; sourceTree = "<group>"; };
-		CAF8521919E0F3D200A347CF /* FTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTHomeViewController.h; sourceTree = "<group>"; };
-		CAF8521A19E0F3D200A347CF /* FTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTHomeViewController.m; sourceTree = "<group>"; };
-		CAF8521B19E0F3D200A347CF /* FTHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTHomeViewController.xib; sourceTree = "<group>"; };
-		CAF8521C19E0F3D200A347CF /* FTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLoginViewController.h; sourceTree = "<group>"; };
-		CAF8521D19E0F3D200A347CF /* FTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLoginViewController.m; sourceTree = "<group>"; };
-		CAF8521E19E0F3D200A347CF /* FTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLoginViewController.xib; sourceTree = "<group>"; };
-		CAF8521F19E0F3D200A347CF /* FTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSignUpViewController.h; sourceTree = "<group>"; };
-		CAF8522019E0F3D200A347CF /* FTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSignUpViewController.m; sourceTree = "<group>"; };
-		CAF8522119E0F3D200A347CF /* FTSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSignUpViewController.xib; sourceTree = "<group>"; };
+		CAF8521019E0F3D200A347CF /* MMCourseSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCourseSelectionCell.h; sourceTree = "<group>"; };
+		CAF8521119E0F3D200A347CF /* MMCourseSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCourseSelectionCell.m; sourceTree = "<group>"; };
+		CAF8521219E0F3D200A347CF /* MMCourseSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCourseSelectionCell.xib; sourceTree = "<group>"; };
+		CAF8521319E0F3D200A347CF /* MMCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCoursesListViewController.h; sourceTree = "<group>"; };
+		CAF8521419E0F3D200A347CF /* MMCoursesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCoursesListViewController.m; sourceTree = "<group>"; };
+		CAF8521519E0F3D200A347CF /* MMCoursesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCoursesListViewController.xib; sourceTree = "<group>"; };
+		CAF8521619E0F3D200A347CF /* MMForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMForgotPasswordViewController.h; sourceTree = "<group>"; };
+		CAF8521719E0F3D200A347CF /* MMForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMForgotPasswordViewController.m; sourceTree = "<group>"; };
+		CAF8521819E0F3D200A347CF /* MMForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		CAF8521919E0F3D200A347CF /* MMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeViewController.h; sourceTree = "<group>"; };
+		CAF8521A19E0F3D200A347CF /* MMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHomeViewController.m; sourceTree = "<group>"; };
+		CAF8521B19E0F3D200A347CF /* MMHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMHomeViewController.xib; sourceTree = "<group>"; };
+		CAF8521C19E0F3D200A347CF /* MMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoginViewController.h; sourceTree = "<group>"; };
+		CAF8521D19E0F3D200A347CF /* MMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLoginViewController.m; sourceTree = "<group>"; };
+		CAF8521E19E0F3D200A347CF /* MMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMLoginViewController.xib; sourceTree = "<group>"; };
+		CAF8521F19E0F3D200A347CF /* MMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSignUpViewController.h; sourceTree = "<group>"; };
+		CAF8522019E0F3D200A347CF /* MMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSignUpViewController.m; sourceTree = "<group>"; };
+		CAF8522119E0F3D200A347CF /* MMSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMSignUpViewController.xib; sourceTree = "<group>"; };
 		CAF8522419E0F3D200A347CF /* FTBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBeginPlacementTestViewController.h; sourceTree = "<group>"; };
 		CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBeginPlacementTestViewController.m; sourceTree = "<group>"; };
 		CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
@@ -2675,24 +2675,24 @@
 		CAF8520F19E0F3D200A347CF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CAF8521019E0F3D200A347CF /* FTCourseSelectionCell.h */,
-				CAF8521119E0F3D200A347CF /* FTCourseSelectionCell.m */,
-				CAF8521219E0F3D200A347CF /* FTCourseSelectionCell.xib */,
-				CAF8521319E0F3D200A347CF /* FTCoursesListViewController.h */,
-				CAF8521419E0F3D200A347CF /* FTCoursesListViewController.m */,
-				CAF8521519E0F3D200A347CF /* FTCoursesListViewController.xib */,
-				CAF8521619E0F3D200A347CF /* FTForgotPasswordViewController.h */,
-				CAF8521719E0F3D200A347CF /* FTForgotPasswordViewController.m */,
-				CAF8521819E0F3D200A347CF /* FTForgotPasswordViewController.xib */,
-				CAF8521919E0F3D200A347CF /* FTHomeViewController.h */,
-				CAF8521A19E0F3D200A347CF /* FTHomeViewController.m */,
-				CAF8521B19E0F3D200A347CF /* FTHomeViewController.xib */,
-				CAF8521C19E0F3D200A347CF /* FTLoginViewController.h */,
-				CAF8521D19E0F3D200A347CF /* FTLoginViewController.m */,
-				CAF8521E19E0F3D200A347CF /* FTLoginViewController.xib */,
-				CAF8521F19E0F3D200A347CF /* FTSignUpViewController.h */,
-				CAF8522019E0F3D200A347CF /* FTSignUpViewController.m */,
-				CAF8522119E0F3D200A347CF /* FTSignUpViewController.xib */,
+				CAF8521019E0F3D200A347CF /* MMCourseSelectionCell.h */,
+				CAF8521119E0F3D200A347CF /* MMCourseSelectionCell.m */,
+				CAF8521219E0F3D200A347CF /* MMCourseSelectionCell.xib */,
+				CAF8521319E0F3D200A347CF /* MMCoursesListViewController.h */,
+				CAF8521419E0F3D200A347CF /* MMCoursesListViewController.m */,
+				CAF8521519E0F3D200A347CF /* MMCoursesListViewController.xib */,
+				CAF8521619E0F3D200A347CF /* MMForgotPasswordViewController.h */,
+				CAF8521719E0F3D200A347CF /* MMForgotPasswordViewController.m */,
+				CAF8521819E0F3D200A347CF /* MMForgotPasswordViewController.xib */,
+				CAF8521919E0F3D200A347CF /* MMHomeViewController.h */,
+				CAF8521A19E0F3D200A347CF /* MMHomeViewController.m */,
+				CAF8521B19E0F3D200A347CF /* MMHomeViewController.xib */,
+				CAF8521C19E0F3D200A347CF /* MMLoginViewController.h */,
+				CAF8521D19E0F3D200A347CF /* MMLoginViewController.m */,
+				CAF8521E19E0F3D200A347CF /* MMLoginViewController.xib */,
+				CAF8521F19E0F3D200A347CF /* MMSignUpViewController.h */,
+				CAF8522019E0F3D200A347CF /* MMSignUpViewController.m */,
+				CAF8522119E0F3D200A347CF /* MMSignUpViewController.xib */,
 			);
 			name = Home;
 			path = home;
@@ -3091,7 +3091,7 @@
 				CAF852F719E0F3D200A347CF /* img-ant-lessons_learning_progress.png in Resources */,
 				CAF8530219E0F3D200A347CF /* btn-navbar-back_white@2x.png in Resources */,
 				CAF8530019E0F3D200A347CF /* btn-navbar-back@2x.png in Resources */,
-				CAF8547A19E0F3D200A347CF /* FTForgotPasswordViewController.xib in Resources */,
+				CAF8547A19E0F3D200A347CF /* MMForgotPasswordViewController.xib in Resources */,
 				CAF8543C19E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked_big.png in Resources */,
 				CAF854BF19E0F3D200A347CF /* FTShopItemsGroupHeaderCell.xib in Resources */,
 				CAF8543B19E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big@2x.png in Resources */,
@@ -3175,7 +3175,7 @@
 				CAF8565619E0F82700A347CF /* img-skill_icon-en-vi_mau_sac-unlocked@2x.png in Resources */,
 				CAF8538C19E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked_big.png in Resources */,
 				CAF8545E19E0F3D200A347CF /* img-hexagon_skill-strength-4.png in Resources */,
-				CAF8547819E0F3D200A347CF /* FTCoursesListViewController.xib in Resources */,
+				CAF8547819E0F3D200A347CF /* MMCoursesListViewController.xib in Resources */,
 				CAF8561B19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked.png in Resources */,
 				CAF853B219E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png in Resources */,
 				CAF8534019E0F3D200A347CF /* btn-hexagon_lesson-retake.png in Resources */,
@@ -3240,7 +3240,7 @@
 				CAF8568219E0F82700A347CF /* img-skill_icon-en-vi_su_kien-unlocked@2x.png in Resources */,
 				CAF8549E19E0F3D200A347CF /* FTListenQuestionContentView.xib in Resources */,
 				CAF8532119E0F3D200A347CF /* img-set_goal-radio-selected@2x.png in Resources */,
-				CAF8547C19E0F3D200A347CF /* FTHomeViewController.xib in Resources */,
+				CAF8547C19E0F3D200A347CF /* MMHomeViewController.xib in Resources */,
 				CAF8536319E0F3D200A347CF /* img-share-google_selected@2x.png in Resources */,
 				CAF8532B19E0F3D200A347CF /* btn-lessons_learning-record@2x.png in Resources */,
 				CAF853F919E0F3D200A347CF /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png in Resources */,
@@ -3428,7 +3428,7 @@
 				CAF8542519E0F3D200A347CF /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png in Resources */,
 				CAF853E819E0F3D200A347CF /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png in Resources */,
 				CAF8562C19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked@2x.png in Resources */,
-				CAF8547619E0F3D200A347CF /* FTCourseSelectionCell.xib in Resources */,
+				CAF8547619E0F3D200A347CF /* MMCourseSelectionCell.xib in Resources */,
 				CAF8537F19E0F3D200A347CF /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png in Resources */,
 				CAF8545019E0F3D200A347CF /* img-hexagon_skill-bg_big.png in Resources */,
 				CAF8540019E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png in Resources */,
@@ -3472,7 +3472,7 @@
 				CAF855F119E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-unlocked.png in Resources */,
 				CAF8569819E0F82700A347CF /* img-skill_icon-en-vi_tu_han_dinh-locked@2x.png in Resources */,
 				CAF8549C19E0F3D200A347CF /* FTJudgeQuestionContentView.xib in Resources */,
-				CAF8548019E0F3D200A347CF /* FTSignUpViewController.xib in Resources */,
+				CAF8548019E0F3D200A347CF /* MMSignUpViewController.xib in Resources */,
 				CAF853D019E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-unlocked_big.png in Resources */,
 				CAF8543619E0F3D200A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png in Resources */,
 				CAF853C019E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png in Resources */,
@@ -3608,7 +3608,7 @@
 				CAF8561219E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-unlocked@2x.png in Resources */,
 				CAF8541519E0F3D200A347CF /* img-skill_icon-en-vi_so-unlocked_big@2x.png in Resources */,
 				CAF8565419E0F82700A347CF /* img-skill_icon-en-vi_mau_sac-locked@2x.png in Resources */,
-				CAF8547E19E0F3D200A347CF /* FTLoginViewController.xib in Resources */,
+				CAF8547E19E0F3D200A347CF /* MMLoginViewController.xib in Resources */,
 				CAF8565919E0F82700A347CF /* img-skill_icon-en-vi_mon_an-unlocked.png in Resources */,
 				CAF8541D19E0F3D200A347CF /* img-skill_icon-en-vi_su_kien-unlocked_big@2x.png in Resources */,
 				CAF852F919E0F3D200A347CF /* img-ant-placement_test.png in Resources */,
@@ -3799,7 +3799,7 @@
 				CAF8549D19E0F3D200A347CF /* FTListenQuestionContentView.m in Sources */,
 				CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */,
 				CAF8548619E0F3D200A347CF /* FTFailLessonViewController.m in Sources */,
-				CAF8547719E0F3D200A347CF /* FTCoursesListViewController.m in Sources */,
+				CAF8547719E0F3D200A347CF /* MMCoursesListViewController.m in Sources */,
 				CAF854C419E0F3D200A347CF /* FTSkillsListViewController.m in Sources */,
 				CAF854D519E0F3D200A347CF /* FTProfileViewController.m in Sources */,
 				CAF854D319E0F3D200A347CF /* FTProfileLeaderboardCell.m in Sources */,
@@ -3811,8 +3811,8 @@
 				CAF8548119E0F3D200A347CF /* FTBeginPlacementTestViewController.m in Sources */,
 				CAF852E219E0F3D200A347CF /* MNameQuestion.m in Sources */,
 				CAF852DE19E0F3D200A347CF /* MBaseQuestion.m in Sources */,
-				CAF8547519E0F3D200A347CF /* FTCourseSelectionCell.m in Sources */,
-				CAF8547B19E0F3D200A347CF /* FTHomeViewController.m in Sources */,
+				CAF8547519E0F3D200A347CF /* MMCourseSelectionCell.m in Sources */,
+				CAF8547B19E0F3D200A347CF /* MMHomeViewController.m in Sources */,
 				CAF8549219E0F3D200A347CF /* FTFormAnswerTokenButton.m in Sources */,
 				CAF852CB19E0F3D200A347CF /* UIColor+ColorHelpers.m in Sources */,
 				CAF852CE19E0F3D200A347CF /* Utils.m in Sources */,
@@ -3822,9 +3822,9 @@
 				CAF854D119E0F3D200A347CF /* FTShieldSkillView.m in Sources */,
 				CAF854A719E0F3D200A347CF /* FTTranslateQuestionContentView.m in Sources */,
 				CAF852D419E0F3D200A347CF /* NSString+UriCompatibility.m in Sources */,
-				CAF8547D19E0F3D200A347CF /* FTLoginViewController.m in Sources */,
+				CAF8547D19E0F3D200A347CF /* MMLoginViewController.m in Sources */,
 				CAF852D319E0F3D200A347CF /* NSString+UnicharUtilities.m in Sources */,
-				CAF8547919E0F3D200A347CF /* FTForgotPasswordViewController.m in Sources */,
+				CAF8547919E0F3D200A347CF /* MMForgotPasswordViewController.m in Sources */,
 				CAF852CF19E0F3D200A347CF /* DiffMatchPatch.m in Sources */,
 				CAF854AC19E0F3D200A347CF /* FTHexagonLessonView.m in Sources */,
 				CAF852DC19E0F3D200A347CF /* MSkill.m in Sources */,
@@ -3851,7 +3851,7 @@
 				CAF852DB19E0F3D200A347CF /* MLesson.m in Sources */,
 				CAF854C019E0F3D200A347CF /* FTShopViewController.m in Sources */,
 				CAF852C219E0F3D200A347CF /* MMLineChartData.m in Sources */,
-				CAF8547F19E0F3D200A347CF /* FTSignUpViewController.m in Sources */,
+				CAF8547F19E0F3D200A347CF /* MMSignUpViewController.m in Sources */,
 				CAF8549919E0F3D200A347CF /* FTJudgeOptionCell.m in Sources */,
 				CAF854C719E0F3D200A347CF /* FTHexagonCheckpointTestCell.m in Sources */,
 				CAF852C319E0F3D200A347CF /* MMAllowsTouchOutsideView.m in Sources */,

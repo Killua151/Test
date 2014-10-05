@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTHomeViewController : BaseViewController {
+@interface MMHomeViewController : BaseViewController {
   IBOutlet UIImageView *_imgBg;
   IBOutlet UIButton *_btnLogIn;
   IBOutlet UIButton *_btnNewUser;

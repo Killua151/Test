@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTSignUpViewController.h"
+#import "MMSignUpViewController.h"
 #import "FTSkillsListViewController.h"
 #import "MUser.h"
 
-@interface FTSignUpViewController () {
+@interface MMSignUpViewController () {
   UIView *_currentFirstResponder;
 }
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation FTSignUpViewController
+@implementation MMSignUpViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

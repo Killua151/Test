@@ -7,7 +7,7 @@
 //
 
 #import "MMAppDelegate.h"
-#import "FTHomeViewController.h"
+#import "MMHomeViewController.h"
 #import "FTSkillsListViewController.h"
 //#import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
@@ -107,7 +107,7 @@
 
 - (void)setupRootViewController {
   if ([MUser currentUser] == nil)
-    self.window.rootViewController = [FTHomeViewController navigationController];
+    self.window.rootViewController = [MMHomeViewController navigationController];
   else
     self.window.rootViewController = [FTSkillsListViewController navigationController];
 }

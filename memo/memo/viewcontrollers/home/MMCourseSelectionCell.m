@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTCourseSelectionCell.h"
+#import "MMCourseSelectionCell.h"
 
-@implementation FTCourseSelectionCell
+@implementation MMCourseSelectionCell
 
 - (id)init {
   if (self = [super init]) {

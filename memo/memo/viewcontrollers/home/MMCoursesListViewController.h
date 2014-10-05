@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTCoursesListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface MMCoursesListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
   IBOutlet UITableView *_tblCourses;
 }
 

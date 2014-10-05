@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTSignUpViewController : BaseViewController <UITextFieldDelegate> {
+@interface MMSignUpViewController : BaseViewController <UITextFieldDelegate> {
   IBOutlet UIView *_vTextFields;
   IBOutlet UITextField *_txtFullName;
   IBOutlet UITextField *_txtEmail;

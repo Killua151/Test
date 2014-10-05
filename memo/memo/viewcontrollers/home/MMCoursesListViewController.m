@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTCoursesListViewController.h"
-#import "FTCourseSelectionCell.h"
+#import "MMCoursesListViewController.h"
+#import "MMCourseSelectionCell.h"
 
-@interface FTCoursesListViewController () {
+@interface MMCoursesListViewController () {
   NSArray *_coursesData;
 }
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation FTCoursesListViewController
+@implementation MMCoursesListViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -43,11 +43,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  FTCourseSelectionCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                                 NSStringFromClass([FTCourseSelectionCell class])];
+  MMCourseSelectionCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                                 NSStringFromClass([MMCourseSelectionCell class])];
   
   if (cell == nil)
-    cell = [FTCourseSelectionCell new];
+    cell = [MMCourseSelectionCell new];
   
   [cell updateCellWithData:_coursesData[indexPath.row]];
   
@@ -56,7 +56,7 @@
 
 #pragma mark - UITableViewDelegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [FTCourseSelectionCell heightToFitWithData:_coursesData[indexPath.row]];
+  return [MMCourseSelectionCell heightToFitWithData:_coursesData[indexPath.row]];
 }
 
 #pragma mark - Private methods

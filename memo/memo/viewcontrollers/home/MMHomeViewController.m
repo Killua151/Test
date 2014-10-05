@@ -6,22 +6,22 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTHomeViewController.h"
-#import "FTLoginViewController.h"
-#import "FTSignUpViewController.h"
-#import "FTCoursesListViewController.h"
+#import "MMHomeViewController.h"
+#import "MMLoginViewController.h"
+#import "MMSignUpViewController.h"
+#import "MMCoursesListViewController.h"
 
-@interface FTHomeViewController () {
-  FTLoginViewController *_loginVC;
-  FTSignUpViewController *_signUpVC;
-  FTCoursesListViewController *_coursesListVC;
+@interface MMHomeViewController () {
+  MMLoginViewController *_loginVC;
+  MMSignUpViewController *_signUpVC;
+  MMCoursesListViewController *_coursesListVC;
 }
 
 - (void)setupViews;
 
 @end
 
-@implementation FTHomeViewController
+@implementation MMHomeViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -41,7 +41,7 @@
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
   if (_loginVC == nil)
-    _loginVC = [FTLoginViewController new];
+    _loginVC = [MMLoginViewController new];
   
   [self.navigationController pushViewController:_loginVC animated:YES];
   [_loginVC reloadContents];
@@ -50,7 +50,7 @@
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
 #if kTestSignUp
   if (_signUpVC == nil)
-    _signUpVC = [FTSignUpViewController new];
+    _signUpVC = [MMSignUpViewController new];
 
   [self.navigationController pushViewController:_signUpVC animated:YES];
   [_signUpVC reloadContents];

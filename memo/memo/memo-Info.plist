@@ -65,6 +65,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb856714854352716</string>
+				<string>vn.topica.memo</string>
 			</array>
 		</dict>
 	</array>

@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTForgotPasswordViewController : BaseViewController <UITextFieldDelegate> {  
+@interface MMForgotPasswordViewController : BaseViewController <UITextFieldDelegate> {  
   IBOutlet UILabel *_lblInstructions;
   IBOutlet UIView *_vTextField;
   IBOutlet UITextField *_txtEmail;

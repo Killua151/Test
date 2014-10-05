@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTLoginViewController : BaseViewController <UITextFieldDelegate> {
+@interface MMLoginViewController : BaseViewController <UITextFieldDelegate> {
   IBOutlet UIView *_vTextFields;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;

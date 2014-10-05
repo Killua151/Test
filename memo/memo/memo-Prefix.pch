@@ -100,7 +100,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestTranslateQuestions                 true
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
-#define kGoogleSignInKey                        @"76466559980-1que00mo7kuvfp173ru5854ut5us98bt.apps.googleusercontent.com"
+#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
 #define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kMixPanelToken                          @"fb30a8d7fb9b98eda0f31970de871063"
 

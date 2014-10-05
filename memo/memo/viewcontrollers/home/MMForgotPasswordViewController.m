@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTForgotPasswordViewController.h"
+#import "MMForgotPasswordViewController.h"
 
-@interface FTForgotPasswordViewController ()
+@interface MMForgotPasswordViewController ()
 
 - (void)setupViews;
 - (BOOL)validateFields;
 
 @end
 
-@implementation FTForgotPasswordViewController
+@implementation MMForgotPasswordViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

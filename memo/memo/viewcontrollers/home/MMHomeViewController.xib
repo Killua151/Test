@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTHomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMHomeViewController">
             <connections>
                 <outlet property="_btnLogIn" destination="vSy-Ps-4Ui" id="RdK-G5-8vE"/>
                 <outlet property="_btnNewUser" destination="QXq-DJ-7da" id="UJ4-Ur-uMe"/>

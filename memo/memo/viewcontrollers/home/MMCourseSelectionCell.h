@@ -8,7 +8,7 @@
 
 #import "BaseTableViewCell.h"
 
-@interface FTCourseSelectionCell : BaseTableViewCell {
+@interface MMCourseSelectionCell : BaseTableViewCell {
   IBOutlet UIButton *_btnCourse;
 }
 
