@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTAllowsTouchOutsideView.h"
+#import "MMAllowsTouchOutsideView.h"
 
-@implementation FTAllowsTouchOutsideView
+@implementation MMAllowsTouchOutsideView
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
   if (!self.clipsToBounds && !self.hidden && self.alpha > 0) {

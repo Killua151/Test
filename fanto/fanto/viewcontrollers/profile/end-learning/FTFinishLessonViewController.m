@@ -13,7 +13,7 @@
 #import "MUser.h"
 
 @interface FTFinishLessonViewController () {
-  FTLineChart *_lineChart;
+  MMLineChart *_lineChart;
   FTShareActionSheet *_vShare;
   CGFloat _innerPanGestureYPos;
 }

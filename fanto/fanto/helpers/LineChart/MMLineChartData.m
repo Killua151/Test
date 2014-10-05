@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Alessandro Calzavara. All rights reserved.
 //
 
-#import "FTLineChartData.h"
+#import "MMLineChartData.h"
 
-@interface FTLineChartData ()
+@interface MMLineChartData ()
 
 @property (nonatomic, strong, readwrite) NSArray * values;
 
 @end
 
-@implementation FTLineChartData
+@implementation MMLineChartData
 
 @synthesize pointStyle = _pointStyle;
 @synthesize pointWidth = _pointWidth;
@@ -45,7 +45,7 @@
 
 + (instancetype)dataWithValues:(NSArray *)values color:(UIColor *)color pointStyle:(SPLineChartPointStyle)pointStyle
 {
-  FTLineChartData * data = [FTLineChartData new];
+  MMLineChartData * data = [MMLineChartData new];
   
   data.values = values;
   data.color = color;

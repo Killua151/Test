@@ -13,7 +13,7 @@
 
 @interface FTProfileViewController () {
   FTSettingsViewController *_settingsVC;
-  FTLineChart *_lineChart;
+  MMLineChart *_lineChart;
   NSMutableArray *_leaderboardsData;
 }
 

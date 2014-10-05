@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Alessandro Calzavara. All rights reserved.
 //
 
-#import "FTLineChart.h"
-#import "FTLineChartData.h"
+#import "MMLineChart.h"
+#import "MMLineChartData.h"
 #import "SPChartUtil.h"
 
 const CGFloat FTLineChartXLabelMargin = 15.0;
 const CGFloat FTLineChartYLabelMargin = 8.0;
 
-@interface FTLineChart ()
+@interface MMLineChart ()
 
 @property (nonatomic, strong) NSMutableArray * labels;
 
@@ -31,7 +31,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
 @end
 
 
-@implementation FTLineChart
+@implementation MMLineChart
 {
   CGFloat _xLabelWidth;
 }
@@ -106,7 +106,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
 
 - (void)setDatas:(NSArray *)datas forXValues:(NSArray *)xValues
 {
-  [datas enumerateObjectsUsingBlock:^(FTLineChartData * data, NSUInteger idx, BOOL *stop) {
+  [datas enumerateObjectsUsingBlock:^(MMLineChartData * data, NSUInteger idx, BOOL *stop) {
     NSAssert(data.values.count <= xValues.count, @"There is not enough labels compared to the data");
   }];
   
@@ -116,7 +116,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   // Calculate some data
   self.yMaxValue = 1;
   self.yMinValue = 0;
-  [datas enumerateObjectsUsingBlock:^(FTLineChartData * data, NSUInteger idx, BOOL *stop) {
+  [datas enumerateObjectsUsingBlock:^(MMLineChartData * data, NSUInteger idx, BOOL *stop) {
     self.yMaxValue = MAX(self.yMaxValue, data.maxValue);
   }];
   
@@ -152,7 +152,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   if (isChartEmpty) {
     [self _strokeEmptyChartLabel];
   } else {
-    for (FTLineChartData * data in self.datas) {
+    for (MMLineChartData * data in self.datas) {
       [self _strokeLineAndPointsWithData:data];
     }
   }
@@ -162,7 +162,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
 {
   __block BOOL empty = YES;
   
-  [self.datas enumerateObjectsUsingBlock:^(FTLineChartData * data, NSUInteger idx, BOOL *stop) {
+  [self.datas enumerateObjectsUsingBlock:^(MMLineChartData * data, NSUInteger idx, BOOL *stop) {
     
     empty = [data isEmpty];
     *stop = !empty;
@@ -199,7 +199,7 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   [self addSubview:label];
 }
 
-- (void)_strokeLineAndPointsWithData:(FTLineChartData *)chartData
+- (void)_strokeLineAndPointsWithData:(MMLineChartData *)chartData
 {
   // Draw line
   CAShapeLayer * lineLayer = [self _createLineLayerWithLineWidth:chartData.lineWidth];

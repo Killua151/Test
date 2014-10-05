@@ -102,7 +102,7 @@
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  [[FTServerHelper sharedHelper]
+  [[MMServerHelper sharedHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
    completion:^(NSArray *questions, NSError *error) {

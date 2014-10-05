@@ -6,28 +6,28 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTServerHelper.h"
-#import "FTAppDelegate.h"
+#import "MMServerHelper.h"
+#import "MMAppDelegate.h"
 #import "MUser.h"
 #import "MSkill.h"
 #import "MBaseQuestion.h"
 
-@interface FTServerHelper ()
+@interface MMServerHelper ()
 
 - (void)logInWithParam:(NSDictionary *)params completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void(^)())handler;
 
 @end
 
-@implementation FTServerHelper
+@implementation MMServerHelper
 
 + (instancetype)sharedHelper {
-  static FTServerHelper *_sharedHelper = nil;
+  static MMServerHelper *_sharedHelper = nil;
   
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
-    _sharedHelper = [[FTServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _sharedHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
     _sharedHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
   });
   
@@ -166,7 +166,7 @@
 
 - (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void (^)())handler {
   if ([[operation response] statusCode] == 401) {
-    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     [MUser logOutCurrentUser];
     [appDelegate setupRootViewController];
     [Utils showAlertWithError:error];

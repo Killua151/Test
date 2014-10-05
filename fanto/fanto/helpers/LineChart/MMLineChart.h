@@ -8,7 +8,7 @@
 
 #import "SPLineChart.h"
 
-@interface FTLineChart : SPLineChart
+@interface MMLineChart : SPLineChart
 
 @property (nonatomic, strong) NSString * yLabelSuffix;
 

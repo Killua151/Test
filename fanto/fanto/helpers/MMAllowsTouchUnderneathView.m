@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTAllowsTouchUnderneathView.h"
+#import "MMAllowsTouchUnderneathView.h"
 
-@interface FTAllowsTouchUnderneathView ()
+@interface MMAllowsTouchUnderneathView ()
 
-- (UIView *)recursivelyFindTouchAllowedUnderneathViewInView:(UIView *)siblingView atPoint:(CGPoint)touchPoint level:(NSInteger)level;
+- (UIView *)recursivelyFindTouchAllowedUnderneathViewInView:(UIView *)siblingView atPoint:(CGPoint)touchPoint;
 
 @end
 
-@implementation FTAllowsTouchUnderneathView
+@implementation MMAllowsTouchUnderneathView
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
   if (self.hidden || !self.userInteractionEnabled)
@@ -34,8 +34,7 @@
     
     UIView *foundButton = [self
                            recursivelyFindTouchAllowedUnderneathViewInView:siblingView
-                           atPoint:[self convertPoint:point toView:self.superview]
-                           level:0];
+                           atPoint:[self convertPoint:point toView:self.superview]];
     
     if (foundButton != nil)
       return foundButton;
@@ -45,7 +44,7 @@
 }
 
 #pragma mark - Private methods
-- (UIView *)recursivelyFindTouchAllowedUnderneathViewInView:(UIView *)siblingView atPoint:(CGPoint)touchPoint level:(NSInteger)level {
+- (UIView *)recursivelyFindTouchAllowedUnderneathViewInView:(UIView *)siblingView atPoint:(CGPoint)touchPoint {
   CGPoint convertedPoint = [siblingView.superview convertPoint:touchPoint toView:siblingView];
   
   for (UIView *subview in [siblingView.subviews reverseObjectEnumerator]) {
@@ -59,7 +58,7 @@
       if (CGRectContainsPoint(subview.frame, convertedPoint))
         return subview;
     } else {
-      UIView *foundView = [self recursivelyFindTouchAllowedUnderneathViewInView:subview atPoint:convertedPoint level:level+1];
+      UIView *foundView = [self recursivelyFindTouchAllowedUnderneathViewInView:subview atPoint:convertedPoint];
       
       if (foundView != nil)
         return foundView;

@@ -9,7 +9,7 @@
 #import "FTSettingsViewController.h"
 #import "FTSettingsHeaderView.h"
 #import "FTHomeViewController.h"
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 #import "MUser.h"
 
 #define kTextFieldTypes           @[@"username", @"password", @"email"]
@@ -79,7 +79,7 @@
   homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
   [self presentViewController:homeNavigation animated:YES completion:^{
-    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = homeNavigation;
   }];
 }

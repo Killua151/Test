@@ -8,7 +8,7 @@
 
 #import "SPLineChartData.h"
 
-@interface FTLineChartData : SPLineChartData
+@interface MMLineChartData : SPLineChartData
 
 @property (nonatomic, copy) UIColor *pointColor;
 

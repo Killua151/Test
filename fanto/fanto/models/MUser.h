@@ -8,7 +8,7 @@
 
 #import "MBase.h"
 
-@class FTLineChart;
+@class MMLineChart;
 
 @interface MUser : MBase
 
@@ -31,7 +31,7 @@
 + (void)logOutCurrentUser;
 + (instancetype)currentUser;
 
-- (FTLineChart *)graphLineChartInFrame:(CGRect)frame;
+- (MMLineChart *)graphLineChartInFrame:(CGRect)frame;
 - (NSArray *)skillsTree;
 
 @end

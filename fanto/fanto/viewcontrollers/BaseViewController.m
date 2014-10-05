@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 #import "FTShareViewController.h"
 
 @interface BaseViewController ()
@@ -61,7 +61,7 @@
   viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
   [self presentViewController:viewController animated:YES completion:^{
-    FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = viewController;
   }];
 }
@@ -160,7 +160,7 @@
   [btnBack setImage:btnBackBg forState:UIControlStateNormal];
   [btnBack addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
   
-  FTAllowsTouchOutsideView *view = [[FTAllowsTouchOutsideView alloc] initWithFrame:btnBack.frame];
+  MMAllowsTouchOutsideView *view = [[MMAllowsTouchOutsideView alloc] initWithFrame:btnBack.frame];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? 16 : 10, 0);
   [view addSubview:btnBack];
   
@@ -213,7 +213,7 @@
   else
     distance = 5;
   
-  FTAllowsTouchOutsideView *view = [[FTAllowsTouchOutsideView alloc] initWithFrame:button.frame];
+  MMAllowsTouchOutsideView *view = [[MMAllowsTouchOutsideView alloc] initWithFrame:button.frame];
   view.bounds = CGRectOffset(view.bounds, DeviceSystemIsOS7() ? distance : -distance, 0);
   [view addSubview:button];
   

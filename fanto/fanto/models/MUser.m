@@ -41,8 +41,8 @@ static MUser *_currentUser = nil;
   return _currentUser;
 }
 
-- (FTLineChart *)graphLineChartInFrame:(CGRect)frame {
-  FTLineChart *lineChart = [[FTLineChart alloc] initWithFrame:frame];
+- (MMLineChart *)graphLineChartInFrame:(CGRect)frame {
+  MMLineChart *lineChart = [[MMLineChart alloc] initWithFrame:frame];
   
   UIEdgeInsets margin = lineChart.chartMargin;
   margin.left += 20;
@@ -53,7 +53,7 @@ static MUser *_currentUser = nil;
   lineChart.yLabelSuffix = @"XP";
   lineChart.yLabelCount = 5;
   
-  FTLineChartData *chartData = [FTLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5]
+  MMLineChartData *chartData = [MMLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5]
                                                          color:[UIColor blackColor]
                                                     pointStyle:SPLineChartPointStyleCycle];
   chartData.pointColor = [UIColor redColor];

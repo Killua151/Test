@@ -7,7 +7,7 @@
 //
 
 #import "FTLoginViewController.h"
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 #import "FTForgotPasswordViewController.h"
 #import "FTSkillsListViewController.h"
 #import "MUser.h"
@@ -52,7 +52,7 @@
   
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  [[FTServerHelper sharedHelper]
+  [[MMServerHelper sharedHelper]
    logInWithUsername:_txtUsername.text
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
@@ -81,7 +81,7 @@
     
     [Utils showHUDForView:self.navigationController.view withText:nil];
     
-    [[FTServerHelper sharedHelper]
+    [[MMServerHelper sharedHelper]
      logInWithFacebookId:userData[kParamFbId]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {
@@ -102,7 +102,7 @@
     [Utils hideAllHUDsForView:self.navigationController.view];
     ShowAlertWithError(error);
     
-    [[FTServerHelper sharedHelper]
+    [[MMServerHelper sharedHelper]
      logInWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {

@@ -10,6 +10,6 @@
 
 #define kTagTouchAllowedUnderneathView          -98765
 
-@interface FTAllowsTouchUnderneathView : UIView
+@interface MMAllowsTouchUnderneathView : UIView
 
 @end

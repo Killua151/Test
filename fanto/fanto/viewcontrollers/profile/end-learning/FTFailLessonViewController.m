@@ -8,7 +8,7 @@
 
 #import "FTFailLessonViewController.h"
 #import "FTSkillsListViewController.h"
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 
 @interface FTFailLessonViewController ()
 

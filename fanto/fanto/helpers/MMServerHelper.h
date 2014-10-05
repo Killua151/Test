@@ -8,7 +8,7 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
-@interface FTServerHelper : AFHTTPRequestOperationManager
+@interface MMServerHelper : AFHTTPRequestOperationManager
 
 + (instancetype)sharedHelper;
 

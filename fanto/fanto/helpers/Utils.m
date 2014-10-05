@@ -15,7 +15,7 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 
 static UIView *_sharedToast = nil;
 
@@ -319,7 +319,7 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback {
-  FTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+  MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
   
   if (FBSession.activeSession.state == FBSessionStateOpen ||
       FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {

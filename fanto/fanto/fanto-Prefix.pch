@@ -29,12 +29,12 @@
   #import "KLSwitch.h"
   #import "MBProgressHUD.h"
 
-  #import "FTAllowsTouchOutsideView.h"
-  #import "FTAllowsTouchUnderneathView.h"
-  #import "FTLineChart.h"
-  #import "FTLineChartData.h"
-  #import "FTSharedHeader.h"
-  #import "FTServerHelper.h"
+  #import "MMAllowsTouchOutsideView.h"
+  #import "MMAllowsTouchUnderneathView.h"
+  #import "MMLineChart.h"
+  #import "MMLineChartData.h"
+  #import "MMSharedHeader.h"
+  #import "MMServerHelper.h"
   #import "Utils.h"
 #endif
 

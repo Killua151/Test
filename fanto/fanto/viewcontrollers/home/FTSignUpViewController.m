@@ -68,7 +68,7 @@
   
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  [[FTServerHelper sharedHelper]
+  [[MMServerHelper sharedHelper]
    signUpWithFullName:_txtFullName.text
    email:_txtEmail.text
    username:_txtUsername.text

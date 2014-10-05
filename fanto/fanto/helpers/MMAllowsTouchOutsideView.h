@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTAllowsTouchOutsideView : UIView
+@interface MMAllowsTouchOutsideView : UIView
 
 @end

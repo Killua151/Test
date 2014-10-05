@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTAppDelegate.h"
+#import "MMAppDelegate.h"
 #import "FTHomeViewController.h"
 #import "FTSkillsListViewController.h"
 #import <Crashlytics/Crashlytics.h>
@@ -16,7 +16,7 @@
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
-@interface FTAppDelegate () <UIAlertViewDelegate>
+@interface MMAppDelegate () <UIAlertViewDelegate>
 
 - (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation FTAppDelegate
+@implementation MMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [self preSettingsWithLaunchingWithOptions:launchOptions];
