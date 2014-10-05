@@ -98,14 +98,14 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestSignUp                             true
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 true
+#define kTestPushNotification                   true
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 #define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
 #define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kMixPanelToken                          @"fb30a8d7fb9b98eda0f31970de871063"
-#define kParseApplicationId                     @"oBLeKQ3Y64DHlwn1ltst2dsH7w7b75hXIVaMJ2Qz"
-//#define kParseClientKey                         @"b9X4AUuoI2FXRGupoJZVNJIvNmrAqf8AiEJtzb6R"
-#define kParseRestApiKey                        @"QwGNqV6WXikycp6gJ1BTnkkBTbgbA6OyxPmd5nVh"
+#define kParseApplicationId                     @"2DTkEScw7lE6qlIx9nnrIr9LSXmBOWLTxwJaQwi8"
+#define kParseRestApiKey                        @"kcejJNuS8jIXPZo8sJex2phhRuFYoSeuF6DT3wj0"
 
 #define kUserDefUDID                            @"udid"
 #define kUserDefSettingsLocale                  @"settings_locale"
