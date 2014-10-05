@@ -9,7 +9,7 @@
 #import "MMAppDelegate.h"
 #import "MMHomeViewController.h"
 #import "FTSkillsListViewController.h"
-//#import <Crashlytics/Crashlytics.h>
+#import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
 #import <Mixpanel/Mixpanel.h>
@@ -123,7 +123,7 @@
 #if !TARGET_IPHONE_SIMULATOR
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
 #endif
-//  [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
+  [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
   
 #if kTestLogin
