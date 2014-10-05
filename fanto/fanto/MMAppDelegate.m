@@ -140,14 +140,6 @@
 
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
-  
-  DiffMatchPatch *dfp = [DiffMatchPatch new];
-  NSMutableArray *diffs = [dfp diff_mainOfOldString:@"I learn English quite fast" andNewString:@"i learn English, quite fast!"];
-  
-  for (id diff in diffs) {
-    DLog(@"%@", NSStringFromClass([diff class]));
-    DLog(@"%@", diff);
-  }
 }
 
 @end
