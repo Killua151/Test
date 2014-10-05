@@ -62,6 +62,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  NSString *token = [Utils trimmedDeviceToken:deviceToken];
+  [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefDeviceToken];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefDeviceToken];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -120,6 +132,11 @@
 
 #pragma mark Private methods
 - (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [[UIApplication sharedApplication]
+   registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                       UIRemoteNotificationTypeAlert |
+                                       UIRemoteNotificationTypeSound)];
+  
 #if !TARGET_IPHONE_SIMULATOR
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
 #endif

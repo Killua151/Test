@@ -36,6 +36,7 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (BOOL)validateBlank:(NSString *)string;
 
 + (NSString *)uniqueDeviceIdentifier;
++ (NSString *)trimmedDeviceToken:(NSData *)deviceToken;
 
 + (void)adjustLabelToFitHeight:(UILabel *)label;
 + (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight;

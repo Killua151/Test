@@ -103,10 +103,14 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
 #define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kMixPanelToken                          @"fb30a8d7fb9b98eda0f31970de871063"
+#define kParseApplicationId                     @"oBLeKQ3Y64DHlwn1ltst2dsH7w7b75hXIVaMJ2Qz"
+//#define kParseClientKey                         @"b9X4AUuoI2FXRGupoJZVNJIvNmrAqf8AiEJtzb6R"
+#define kParseRestApiKey                        @"QwGNqV6WXikycp6gJ1BTnkkBTbgbA6OyxPmd5nVh"
 
 #define kUserDefUDID                            @"udid"
 #define kUserDefSettingsLocale                  @"settings_locale"
 #define kUserDefSavedUser                       @"saved_user"
+#define kUserDefDeviceToken                     @"ios_device_token"
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAuthToken                         @"auth_token"

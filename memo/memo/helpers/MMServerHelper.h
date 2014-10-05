@@ -38,4 +38,6 @@
             inSkill:(NSString *)skillId
          completion:(void(^)(NSArray *questions, NSError *error))handler;
 
+- (void)registerDeviceTokenForAPNS;
+
 @end

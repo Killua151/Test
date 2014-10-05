@@ -144,6 +144,45 @@
    }];
 }
 
+- (void)registerDeviceTokenForAPNS {
+  NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefDeviceToken];
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
+                                  [NSURL URLWithString:@"https://api.parse.com/1/installations"]];
+  [request setHTTPMethod:@"POST"];
+  [request setValue:kParseApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
+  [request setValue:kParseRestApiKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+  
+  NSDictionary *params = @{
+                           @"deviceType" : @"ios",
+                           @"deviceToken" : [NSString normalizedString:deviceToken],
+#if kTestPushNotification
+                           @"channels": @[@"test_apns"]
+#else
+                           @"channels": @[@""]
+#endif
+                           };
+  
+#if kTestPushNotification
+  DLog(@"%@", params);
+#endif
+  
+  [request setHTTPBody:[params JSONData]];
+  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+  [operation
+   setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+#if kTestPushNotification
+     NSDictionary *response = [responseObject objectFromJSONData];
+     DLog(@"%@", response);
+#endif
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
+  
+  [operation start];
+}
+
 #pragma mark - Private methods
 - (void)logInWithParam:(NSDictionary *)params completion:(void (^)(NSDictionary *, NSError *))handler {
   [self

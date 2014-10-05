@@ -175,6 +175,13 @@ static UIView *_sharedToast = nil;
   return uniqueIdentifier;
 }
 
++ (NSString*)trimmedDeviceToken:(NSData*)token {
+  NSString *trimmedToken = [token description];
+  trimmedToken = [trimmedToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+  trimmedToken = [trimmedToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+  return trimmedToken;
+}
+
 + (NSString *)getDeviceModel {
   size_t size;
   sysctlbyname("hw.machine", NULL, &size, NULL, 0);
