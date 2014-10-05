@@ -61,8 +61,8 @@
 - (void)reloadContents {
   MUser *currentUser = [MUser currentUser];
   
-  _txtEmail.text = [Utils normalizeString:currentUser.email];
-  _txtUsername.text = [Utils normalizeString:currentUser.username];
+  _txtEmail.text = [NSString normalizedString:currentUser.email];
+  _txtUsername.text = [NSString normalizedString:currentUser.username];
   _txtPassword.text = @"";
 
   [_swtFacebook setOn:(currentUser.fb_Id != nil && currentUser.fb_Id.length > 0) animated:YES];

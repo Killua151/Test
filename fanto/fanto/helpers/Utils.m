@@ -125,47 +125,6 @@ static UIView *_sharedToast = nil;
   [MBProgressHUD hideAllHUDsForView:view animated:YES];
 }
 
-+ (NSString *)normalizeString:(NSString *)string {
-  return [self normalizeString:string withPlaceholder:@""];
-}
-
-+ (NSString *)normalizeString:(NSString *)string withPlaceholder:(NSString *)placeholder {
-  return string == nil || ![string isKindOfClass:[NSString class]] ? placeholder : string;
-}
-
-+ (NSString *)asciiNormalizedString:(NSString *)unicodeString {
-  NSString *stringToNormalize = [Utils normalizeString:unicodeString];
-  
-  NSString *standard = [stringToNormalize stringByReplacingOccurrencesOfString:@"đ" withString:@"d"];
-  standard = [standard stringByReplacingOccurrencesOfString:@"Đ" withString:@"D"];
-  NSData *decode = [standard dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-  NSString *asciiString = [[NSString alloc] initWithData:decode encoding:NSASCIIStringEncoding];
-  
-  return asciiString;
-}
-
-+ (NSString *)stringByRemovingAllNonLetterCharacters:(NSString *)string {
-  NSString *resultString = [string lowercaseString];
-  NSMutableArray *components = [NSMutableArray arrayWithArray:[resultString componentsSeparatedByCharactersInSet:
-                                                               [[NSCharacterSet letterCharacterSet] invertedSet]]];
-  
-  [components removeObject:@""];
-  resultString = [components componentsJoinedByString:@" "];
-  
-  return resultString;
-}
-
-+ (NSString *)stringByRemovingAllNonDigitCharacters:(NSString *)string {
-  NSString *resultString = [string lowercaseString];
-  NSMutableArray *components = [NSMutableArray arrayWithArray:[resultString componentsSeparatedByCharactersInSet:
-                                                               [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]];
-  
-  [components removeObject:@""];
-  resultString = [components componentsJoinedByString:@" "];
-  
-  return resultString;
-}
-
 + (BOOL)validateEmail:(NSString *)email {
   BOOL stricterFilter = YES;
   
@@ -297,37 +256,6 @@ static UIView *_sharedToast = nil;
   return nonKeyboardViewHeight / actualContentViewsHeight;
 }
 
-+ (BOOL)floatValueIsInteger:(CGFloat)value {
-  NSString *valueString = [NSString stringWithFormat:@"%.2f", value];
-  
-  return [[valueString componentsSeparatedByString:@"."][1] isEqualToString:@"00"];
-}
-
-+ (NSString *)stringForFloatValue:(CGFloat)value shouldDisplayZero:(BOOL)displayZero {
-  if (value == 0.0 && !displayZero)
-    return @"";
-  
-  if ([Utils floatValueIsInteger:value])
-    return [NSString stringWithFormat:@"%d", (int)value];
-  
-  return [NSString stringWithFormat:@"%.2f", value];
-}
-
-+ (NSString *)listStringForArray:(NSArray *)array withJoinStringForLastItem:(NSString *)lastJoinString {
-  if (array == nil || ![array isKindOfClass:[NSArray class]] || [array count] == 0)
-    return @"";
-  
-  if (lastJoinString == nil)
-    return [array componentsJoinedByString:@", "];
-  
-  if ([array count] == 1)
-    return [array firstObject];
-  
-  NSArray *subArray = [array subarrayWithRange:NSMakeRange(0, [array count]-1)];
-  
-  return [NSString stringWithFormat:@"%@ %@ %@", [subArray componentsJoinedByString:@", "], lastJoinString, [array lastObject]];
-}
-
 //+ (BOOL)isDeviceCapableForRealTimeSearch {
 //  NSString *deviceModel = [self getDeviceModel];
 //  
@@ -419,8 +347,8 @@ static UIView *_sharedToast = nil;
        [Utils hideAllHUDsForView:view];
        
        NSDictionary *userData = @{
-                                  kParamFbId : [Utils normalizeString:result[kParamId]],
-                                  kParamFbAccessToken : [Utils normalizeString:
+                                  kParamFbId : [NSString normalizedString:result[kParamId]],
+                                  kParamFbAccessToken : [NSString normalizedString:
                                                          [[FBSession activeSession] accessTokenData].accessToken]
                                   };
        
@@ -462,8 +390,8 @@ static UIView *_sharedToast = nil;
     return;
   
   NSDictionary *userData = @{
-                             kParamGmail : [Utils normalizeString:auth.userEmail],
-                             kParamGAccessToken : [Utils normalizeString:auth.accessToken]
+                             kParamGmail : [NSString normalizedString:auth.userEmail],
+                             kParamGAccessToken : [NSString normalizedString:auth.accessToken]
                              };
   
   _googleLogInCallback(userData, error);

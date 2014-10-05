@@ -14,8 +14,8 @@
   if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
     return self.question;
   
-  NSString *normalizedAnswer = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
-  NSString *normalizedQuestion = [Utils stringByRemovingAllNonLetterCharacters:self.question];
+  NSString *normalizedAnswer = [answerValue stringByRemovingAllNonLetterCharacters];
+  NSString *normalizedQuestion = [self.question stringByRemovingAllNonLetterCharacters];
   
   if ([normalizedAnswer compare:normalizedQuestion options:NSCaseInsensitiveSearch] != NSOrderedSame)
     return self.question;

@@ -215,6 +215,13 @@
 		CA5DAFCA19D67263003DAB26 /* MTranslateQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFC919D67263003DAB26 /* MTranslateQuestion.m */; };
 		CA5DAFCD19D67CCC003DAB26 /* NSArray+ArrayHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFCC19D67CCC003DAB26 /* NSArray+ArrayHelpers.m */; };
 		CA5DAFD019D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DAFCF19D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.m */; };
+		CA69377119DFAE1200974B29 /* DiffMatchPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69376519DFAE1200974B29 /* DiffMatchPatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA69377219DFAE1200974B29 /* DiffMatchPatchCFUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = CA69376619DFAE1200974B29 /* DiffMatchPatchCFUtilities.c */; };
+		CA69377319DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69376A19DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA69377419DFAE1200974B29 /* NSString+JavaSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69376C19DFAE1200974B29 /* NSString+JavaSubstring.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA69377519DFAE1200974B29 /* NSString+UnicharUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69376E19DFAE1200974B29 /* NSString+UnicharUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA69377619DFAE1200974B29 /* NSString+UriCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69377019DFAE1200974B29 /* NSString+UriCompatibility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA69377919DFD43300974B29 /* NSString+StringHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69377819DFD43300974B29 /* NSString+StringHelpers.m */; };
 		CA6C75DF19CB19AB00D175DF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */; };
 		CA6C75E019CB19AB00D175DF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */; };
 		CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6C75E219CB261C00D175DF /* FTCoursesListViewController.m */; };
@@ -815,6 +822,21 @@
 		CA5DAFCC19D67CCC003DAB26 /* NSArray+ArrayHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayHelpers.m"; sourceTree = "<group>"; };
 		CA5DAFCE19D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MutableArrayHelpers.h"; sourceTree = "<group>"; };
 		CA5DAFCF19D67D84003DAB26 /* NSMutableArray+MutableArrayHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MutableArrayHelpers.m"; sourceTree = "<group>"; };
+		CA69376419DFAE1200974B29 /* DiffMatchPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatch.h; sourceTree = "<group>"; };
+		CA69376519DFAE1200974B29 /* DiffMatchPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiffMatchPatch.m; sourceTree = "<group>"; };
+		CA69376619DFAE1200974B29 /* DiffMatchPatchCFUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DiffMatchPatchCFUtilities.c; sourceTree = "<group>"; };
+		CA69376719DFAE1200974B29 /* DiffMatchPatchCFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatchCFUtilities.h; sourceTree = "<group>"; };
+		CA69376819DFAE1200974B29 /* MinMaxMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinMaxMacros.h; sourceTree = "<group>"; };
+		CA69376919DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+DMPExtensions.h"; sourceTree = "<group>"; };
+		CA69376A19DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+DMPExtensions.m"; sourceTree = "<group>"; };
+		CA69376B19DFAE1200974B29 /* NSString+JavaSubstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaSubstring.h"; sourceTree = "<group>"; };
+		CA69376C19DFAE1200974B29 /* NSString+JavaSubstring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaSubstring.m"; sourceTree = "<group>"; };
+		CA69376D19DFAE1200974B29 /* NSString+UnicharUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UnicharUtilities.h"; sourceTree = "<group>"; };
+		CA69376E19DFAE1200974B29 /* NSString+UnicharUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UnicharUtilities.m"; sourceTree = "<group>"; };
+		CA69376F19DFAE1200974B29 /* NSString+UriCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UriCompatibility.h"; sourceTree = "<group>"; };
+		CA69377019DFAE1200974B29 /* NSString+UriCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UriCompatibility.m"; sourceTree = "<group>"; };
+		CA69377719DFD43300974B29 /* NSString+StringHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringHelpers.h"; sourceTree = "<group>"; };
+		CA69377819DFD43300974B29 /* NSString+StringHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringHelpers.m"; sourceTree = "<group>"; };
 		CA6C75DD19CB19AB00D175DF /* img-button_indicator-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right.png"; sourceTree = "<group>"; };
 		CA6C75DE19CB19AB00D175DF /* img-button_indicator-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-button_indicator-right@2x.png"; sourceTree = "<group>"; };
 		CA6C75E119CB261C00D175DF /* FTCoursesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoursesListViewController.h; sourceTree = "<group>"; };
@@ -1095,7 +1117,6 @@
 		CA6FC8F319DEB6A400403D3D /* ISViseme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISViseme.h; sourceTree = "<group>"; };
 		CA6FC8F419DEB6A400403D3D /* iSpeechSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iSpeechSDK.bundle; sourceTree = "<group>"; };
 		CA6FC8F519DEB6A400403D3D /* libiSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiSpeechSDK.a; sourceTree = "<group>"; };
-		CA6FCB1D19DEBA1500403D3D /* fanto copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "fanto copy-Info.plist"; path = "/Users/ethan605/Documents/Workspaces/Topica/Eco/fanto-ios/fanto/fanto copy-Info.plist"; sourceTree = "<absolute>"; };
 		CA74999419C094B700C221A9 /* fanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74999719C094B700C221A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA74999919C094B700C221A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1360,6 +1381,7 @@
 		4A56E40B19D2B4BB003FA91C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CA69376319DFAE1200974B29 /* google-diff-match-patch */,
 				CA6FC8E719DEB6A400403D3D /* iSpeech-1.0.6 */,
 				4A56E40C19D2B4BB003FA91C /* RegExCategories */,
 			);
@@ -1686,6 +1708,26 @@
 			);
 			name = Questions;
 			path = questions;
+			sourceTree = "<group>";
+		};
+		CA69376319DFAE1200974B29 /* google-diff-match-patch */ = {
+			isa = PBXGroup;
+			children = (
+				CA69376419DFAE1200974B29 /* DiffMatchPatch.h */,
+				CA69376519DFAE1200974B29 /* DiffMatchPatch.m */,
+				CA69376619DFAE1200974B29 /* DiffMatchPatchCFUtilities.c */,
+				CA69376719DFAE1200974B29 /* DiffMatchPatchCFUtilities.h */,
+				CA69376819DFAE1200974B29 /* MinMaxMacros.h */,
+				CA69376919DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.h */,
+				CA69376A19DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.m */,
+				CA69376B19DFAE1200974B29 /* NSString+JavaSubstring.h */,
+				CA69376C19DFAE1200974B29 /* NSString+JavaSubstring.m */,
+				CA69376D19DFAE1200974B29 /* NSString+UnicharUtilities.h */,
+				CA69376E19DFAE1200974B29 /* NSString+UnicharUtilities.m */,
+				CA69376F19DFAE1200974B29 /* NSString+UriCompatibility.h */,
+				CA69377019DFAE1200974B29 /* NSString+UriCompatibility.m */,
+			);
+			path = "google-diff-match-patch";
 			sourceTree = "<group>";
 		};
 		CA6C75EB19CB2E3D00D175DF /* Ants */ = {
@@ -2037,7 +2079,6 @@
 				CA74999619C094B700C221A9 /* Frameworks */,
 				CA74999519C094B700C221A9 /* Products */,
 				F4CA9477A6E74D6595BD95FA /* Pods.xcconfig */,
-				CA6FCB1D19DEBA1500403D3D /* fanto copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2096,10 +2137,10 @@
 		CA7499C619C0951A00C221A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CA6FC8CA19DD3BD300403D3D /* FTAllowsTouchUnderneathView.h */,
-				CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */,
 				CA5DAF2B19D184CA003DAB26 /* FTAllowsTouchOutsideView.h */,
 				CA5DAF2C19D184CA003DAB26 /* FTAllowsTouchOutsideView.m */,
+				CA6FC8CA19DD3BD300403D3D /* FTAllowsTouchUnderneathView.h */,
+				CA6FC8CB19DD3BD300403D3D /* FTAllowsTouchUnderneathView.m */,
 				CA5DAF5519D319F0003DAB26 /* FTServerHelper.h */,
 				CA5DAF5619D319F0003DAB26 /* FTServerHelper.m */,
 				CA6C760419CC774600D175DF /* LineChart */,
@@ -2111,6 +2152,8 @@
 				CA98CDB219DBBF6700DBD64E /* NSObject+ObjectMapping.m */,
 				4A56E41019D2BDC2003FA91C /* NSString+CompactTranslation.h */,
 				4A56E41119D2BDC2003FA91C /* NSString+CompactTranslation.m */,
+				CA69377719DFD43300974B29 /* NSString+StringHelpers.h */,
+				CA69377819DFD43300974B29 /* NSString+StringHelpers.m */,
 				CA6FC6F719DC2F1100403D3D /* UIColor+ColorHelpers.h */,
 				CA6FC6F819DC2F1100403D3D /* UIColor+ColorHelpers.m */,
 				CAEBA24D19C331CE0024CA71 /* UIImage+ImageHelpers.h */,
@@ -2879,6 +2922,7 @@
 				CA5DAF3519D19085003DAB26 /* FTShareActionSheet.m in Sources */,
 				4A4DE14519CAD50700933C76 /* FTSettingsViewController.m in Sources */,
 				CA6FC6F919DC2F1100403D3D /* UIColor+ColorHelpers.m in Sources */,
+				CA69377619DFAE1200974B29 /* NSString+UriCompatibility.m in Sources */,
 				CA5454CB19C741A20052111C /* FTShopViewController.m in Sources */,
 				CAEBA25819C487F30024CA71 /* BaseTableViewCell.m in Sources */,
 				CA5DAF8C19D5A12C003DAB26 /* FTJudgeOptionCell.m in Sources */,
@@ -2889,8 +2933,11 @@
 				4A74148619C2FDBE002DB2C7 /* FTSignUpViewController.m in Sources */,
 				4AE8AD7F19D5213700A49880 /* FTSelectQuestionContentView.m in Sources */,
 				CA5DAF3B19D1A5A7003DAB26 /* FTShareViewController.m in Sources */,
+				CA69377919DFD43300974B29 /* NSString+StringHelpers.m in Sources */,
+				CA69377419DFAE1200974B29 /* NSString+JavaSubstring.m in Sources */,
 				4A1954F519CA8C190004834D /* MUser.m in Sources */,
 				CA5DAFB819D5E96F003DAB26 /* FTFormAnswerTokenButton.m in Sources */,
+				CA69377119DFAE1200974B29 /* DiffMatchPatch.m in Sources */,
 				CA7499D019C0951A00C221A9 /* BaseViewController.m in Sources */,
 				CA6FC8C919DD110B00403D3D /* MListenQuestion.m in Sources */,
 				4A85F40619C6F3D800642C5F /* FTShieldCheckpointTestCell.m in Sources */,
@@ -2926,6 +2973,7 @@
 				CA5454C619C720370052111C /* FTLessonsListViewController.m in Sources */,
 				CAEF54AF19C8882A00729934 /* BaseTableSectionView.m in Sources */,
 				CA7499A819C094B700C221A9 /* FTAppDelegate.m in Sources */,
+				CA69377219DFAE1200974B29 /* DiffMatchPatchCFUtilities.c in Sources */,
 				4A4DE15D19CAEE3B00933C76 /* FTProfileLeaderboardCell.m in Sources */,
 				CA6C75E419CB261C00D175DF /* FTCoursesListViewController.m in Sources */,
 				4AE8AD7D19D5213700A49880 /* FTSelectQuestionButton.m in Sources */,
@@ -2937,6 +2985,7 @@
 				4A74148019C2FDBE002DB2C7 /* FTForgotPasswordViewController.m in Sources */,
 				4AE8AD8B19D521E700A49880 /* FTQuestionContentView.m in Sources */,
 				4A85F40A19C6F45400642C5F /* FTCheckpointTestCell.m in Sources */,
+				CA69377519DFAE1200974B29 /* NSString+UnicharUtilities.m in Sources */,
 				CA5DAFA219D5C5E6003DAB26 /* FTTranslateQuestionContentView.m in Sources */,
 				CAEBA24F19C331CE0024CA71 /* UIImage+ImageHelpers.m in Sources */,
 				4A56E41219D2BDC2003FA91C /* NSString+CompactTranslation.m in Sources */,
@@ -2961,6 +3010,7 @@
 				4A4122C419D3C8B100894095 /* FTFinishSkillViewController.m in Sources */,
 				4A4122C619D3C8B100894095 /* FTMoneyBonusViewController.m in Sources */,
 				CA5DAFCA19D67263003DAB26 /* MTranslateQuestion.m in Sources */,
+				CA69377319DFAE1200974B29 /* NSMutableDictionary+DMPExtensions.m in Sources */,
 				4ACFE59419C810AD00AAC524 /* MItem.m in Sources */,
 				CA5454B719C71E8C0052111C /* FTHexagonLessonView.m in Sources */,
 				CA5DAF8619D59E2B003DAB26 /* FTJudgeQuestionContentView.m in Sources */,

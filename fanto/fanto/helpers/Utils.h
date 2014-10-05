@@ -31,12 +31,6 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text;
 + (void)hideAllHUDsForView:(UIView *)view;
 
-+ (NSString *)normalizeString:(NSString *)string;
-+ (NSString *)normalizeString:(NSString *)string withPlaceholder:(NSString *)placeholder;
-+ (NSString *)asciiNormalizedString:(NSString *)unicodeString;
-+ (NSString *)stringByRemovingAllNonLetterCharacters:(NSString *)string;
-+ (NSString *)stringByRemovingAllNonDigitCharacters:(NSString *)string;
-
 + (BOOL)validateEmail:(NSString *)email;
 + (BOOL)validateAlphaNumeric:(NSString *)password;
 + (BOOL)validateBlank:(NSString *)string;
@@ -56,11 +50,6 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
                            onString:(NSString *)styledString
                      withAttributes:(NSDictionary *)attributes;
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
-
-#pragma mark - String number methods
-+ (BOOL)floatValueIsInteger:(CGFloat)value;
-+ (NSString *)stringForFloatValue:(CGFloat)value shouldDisplayZero:(BOOL)displayZero;
-+ (NSString *)listStringForArray:(NSArray *)array withJoinStringForLastItem:(NSString *)lastJoinString;
 
 + (NSString *)getDeviceModel;
 //+ (BOOL)isDeviceCapableForRealTimeSearch;

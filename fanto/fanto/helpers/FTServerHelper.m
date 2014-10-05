@@ -38,8 +38,8 @@
                  password:(NSString *)password
                completion:(void (^)(NSDictionary *, NSError *))handler {
   [self logInWithParam:@{
-                         kParamUsername : [Utils normalizeString:username],
-                         kParamPassword : [Utils normalizeString:password]
+                         kParamUsername : [NSString normalizedString:username],
+                         kParamPassword : [NSString normalizedString:password]
                          }
             completion:handler];
 }
@@ -48,8 +48,8 @@
                 accessToken:(NSString *)accessToken
                  completion:(void (^)(NSDictionary *, NSError *))handler {
   [self logInWithParam:@{
-                         kParamFbId : [Utils normalizeString:facebookId],
-                         kParamFbAccessToken : [Utils normalizeString:accessToken]
+                         kParamFbId : [NSString normalizedString:facebookId],
+                         kParamFbAccessToken : [NSString normalizedString:accessToken]
                          }
             completion:handler];
 }
@@ -58,8 +58,8 @@
            accessToken:(NSString *)accessToken
             completion:(void (^)(NSDictionary *, NSError *))handler {
   [self logInWithParam:@{
-                         kParamGmail : [Utils normalizeString:gmail],
-                         kParamGAccessToken : [Utils normalizeString:accessToken]
+                         kParamGmail : [NSString normalizedString:gmail],
+                         kParamGAccessToken : [NSString normalizedString:accessToken]
                          }
             completion:handler];
 }
@@ -70,10 +70,10 @@
                   password:(NSString *)password
                 completion:(void (^)(NSDictionary *, NSError *))handler {
   NSDictionary *params = @{
-                           kParamName : [Utils normalizeString:fullName],
-                           kParamEmail : [Utils normalizeString:email],
-                           kParamUsername : [Utils normalizeString:username],
-                           kParamPassword : [Utils normalizeString:password]
+                           kParamName : [NSString normalizedString:fullName],
+                           kParamEmail : [NSString normalizedString:email],
+                           kParamUsername : [NSString normalizedString:username],
+                           kParamPassword : [NSString normalizedString:password]
                            };
   
   [self
@@ -90,7 +90,7 @@
 }
 
 - (void)extendAuthToken:(void (^)(NSError *))handler {
-  NSDictionary *params = @{kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]};
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
   [self
    POST:@"users/extendauthtoken"
@@ -104,7 +104,7 @@
 }
 
 - (void)getUserProfile:(void (^)(NSDictionary *, NSError *))handler {
-  NSDictionary *params = @{kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]};
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
   [self
    GET:[NSString stringWithFormat:@"users/%@", [MUser currentUser]._id]
@@ -126,8 +126,8 @@
   NSDictionary *params = @{
                            kParamType : @"lesson",
                            kParamLessonNumber : @(lessonNumber),
-                           kParamSkillId : [Utils normalizeString:skillId],
-                           kParamAuthToken : [Utils normalizeString:[MUser currentUser].auth_token]
+                           kParamSkillId : [NSString normalizedString:skillId],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
   
   [self

@@ -11,5 +11,6 @@
 @interface NSArray (ArrayHelpers)
 
 - (NSArray *)shuffledArray;
+- (NSString *)componentsJoinedByString:(NSString *)separator withSpecialStringForLastItem:(NSString *)specialSeparator;
 
 @end

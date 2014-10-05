@@ -20,10 +20,10 @@
 //      return nil;
   
   // V1.0 - Better comparison: remove all punctuations & lower all characters
-  NSString *normalizedAnswerValue = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
+  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
   
   for (NSString *correctAnswer in correctAnswers) {
-    NSString *normalizedCorrectAnswer = [Utils stringByRemovingAllNonLetterCharacters:correctAnswer];
+    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
     
     if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
       return nil;

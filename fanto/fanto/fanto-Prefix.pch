@@ -13,23 +13,29 @@
 #ifdef __OBJC__
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
-  #import "JSONKit.h"
-  #import "DCKeyValueObjectMapping.h"
-  #import "MBProgressHUD.h"
-  #import "Utils.h"
+
+  #import "NSArray+ArrayHelpers.h"
+  #import "NSMutableArray+MutableArrayHelpers.h"
+  #import "NSObject+ObjectMapping.h"
+  #import "NSString+CompactTranslation.h"
+  #import "NSString+StringHelpers.h"
+  #import "UIColor+ColorHelpers.h"
+  #import "UIImage+ImageHelpers.h"
   #import "UIView+ExtendedToast.h"
+
+  #import "DCKeyValueObjectMapping.h"
+  #import "DiffMatchPatch.h"
+  #import "JSONKit.h"
+  #import "KLSwitch.h"
+  #import "MBProgressHUD.h"
+
+  #import "FTAllowsTouchOutsideView.h"
+  #import "FTAllowsTouchUnderneathView.h"
   #import "FTLineChart.h"
   #import "FTLineChartData.h"
   #import "FTSharedHeader.h"
-  #import "FTAllowsTouchOutsideView.h"
-  #import "KLSwitch.h"
-  #import "NSString+CompactTranslation.h"
-  #import "UIImage+ImageHelpers.h"
-  #import "NSMutableArray+MutableArrayHelpers.h"
-  #import "NSArray+ArrayHelpers.h"
   #import "FTServerHelper.h"
-  #import "NSObject+ObjectMapping.h"
-  #import "UIColor+ColorHelpers.h"
+  #import "Utils.h"
 #endif
 
 #define DLog(format, ...) \

@@ -14,8 +14,8 @@
   if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
     return _hint;
   
-  NSString *normalizedAnswer = [Utils stringByRemovingAllNonLetterCharacters:answerValue];
-  NSString *normalizedHint = [Utils stringByRemovingAllNonLetterCharacters:_hint];
+  NSString *normalizedAnswer = [answerValue stringByRemovingAllNonLetterCharacters];
+  NSString *normalizedHint = [_hint stringByRemovingAllNonLetterCharacters];
   
   if ([normalizedAnswer compare:normalizedHint options:NSCaseInsensitiveSearch] != NSOrderedSame)
     return _hint;

@@ -111,7 +111,7 @@ static const char *getPropertyType(objc_property_t property);
       const char *propType = getPropertyType(property);
       NSString *propertyName = [NSString stringWithUTF8String:propName];
       NSString *propertyType = [NSString stringWithUTF8String:propType];
-      results[propertyName] = [Utils normalizeString:propertyType];
+      results[propertyName] = [NSString normalizedString:propertyType];
     }
   }
   
