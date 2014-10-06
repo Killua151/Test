@@ -17,14 +17,64 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="XBX-6D-800">
+                <view contentMode="scaleToFill" id="XBX-6D-800">
                     <rect key="frame" x="15" y="60" width="290" height="282"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nLZ-BZ-PCB">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="282"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" id="md4-Fm-PaV">
+                            <rect key="frame" x="33" y="33" width="112" height="216"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" id="SNe-QD-WaM">
+                                    <rect key="frame" x="8" y="8" width="96" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="exA-WG-G4z">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" id="i23-xF-EfF">
+                            <rect key="frame" x="145" y="33" width="112" height="216"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" id="W6T-Mo-OAU">
+                                    <rect key="frame" x="8" y="8" width="96" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="twZ-Dj-8e9">
+                                            <rect key="frame" x="-20" y="-46" width="136" height="292"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" id="9LT-Rw-yVX">
+                            <rect key="frame" x="89" y="0.0" width="112" height="216"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" id="heR-wm-7gc">
+                                    <rect key="frame" x="8" y="8" width="96" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nLZ-BZ-PCB">
+                                            <rect key="frame" x="-20" y="-46" width="136" height="292"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -48,10 +98,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="_imgQuestion" destination="nLZ-BZ-PCB" id="okn-Rp-Bh7"/>
                 <outlet property="_lblQuestion" destination="MmE-Og-OYH" id="XSv-cB-qkw"/>
                 <outlet property="_txtAnswerField" destination="wna-on-JNb" id="Stf-Lj-O3r"/>
                 <outlet property="_vAnswerField" destination="8Pm-46-vcs" id="uZx-YZ-OUd"/>
+                <outlet property="_vQuestion" destination="XBX-6D-800" id="cor-kb-fOc"/>
+                <outletCollection property="_vQuestionImages" destination="9LT-Rw-yVX" id="DOw-jL-a4y"/>
+                <outletCollection property="_vQuestionImages" destination="md4-Fm-PaV" id="3t6-BX-67O"/>
+                <outletCollection property="_vQuestionImages" destination="i23-xF-EfF" id="KJb-zQ-QdH"/>
+                <outletCollection property="_imgQuestionImages" destination="exA-WG-G4z" id="FeC-w9-dRW"/>
+                <outletCollection property="_imgQuestionImages" destination="twZ-Dj-8e9" id="vh2-Sd-2FT"/>
+                <outletCollection property="_imgQuestionImages" destination="nLZ-BZ-PCB" id="uW5-23-Vs7"/>
             </connections>
         </view>
     </objects>

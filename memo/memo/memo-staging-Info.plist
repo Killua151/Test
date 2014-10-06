@@ -41,11 +41,11 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>vn.topica.memo</string>
+			<string>vn.topica.memo.staging</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb856714854352716</string>
-				<string>vn.topica.memo</string>
+				<string>vn.topica.memo.staging</string>
 			</array>
 		</dict>
 	</array>

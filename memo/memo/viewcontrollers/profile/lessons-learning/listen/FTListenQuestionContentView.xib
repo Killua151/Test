@@ -24,6 +24,9 @@
                     <state key="normal" image="btn-lessons_learning-audio-normal.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnNormalAudioPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="35w-8D-WnJ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="-98765" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lh8-d4-LN8">
                     <rect key="frame" x="188" y="95" width="80" height="80"/>
@@ -32,6 +35,9 @@
                     <state key="normal" image="btn-lessons_learning-audio-slow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnSlowAudioPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="mMv-CX-Mof"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" id="VU8-zc-uZU">
                     <rect key="frame" x="15" y="234" width="290" height="100"/>

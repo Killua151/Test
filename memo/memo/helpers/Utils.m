@@ -14,12 +14,15 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
+#import <AVFoundation/AVAudioPlayer.h>
 #import "iSpeechSDK.h"
 #import "MMAppDelegate.h"
 
 static UIView *_sharedToast = nil;
 
-@interface Utils () <GPPSignInDelegate, ISSpeechRecognitionDelegate>
+@interface Utils () <GPPSignInDelegate, ISSpeechRecognitionDelegate, AVAudioPlayerDelegate> {
+  AVAudioPlayer *audioPlayer;
+}
 
 @property (nonatomic, strong) SocialLogInCallback googleLogInCallback;
 @property (nonatomic, strong) SocialLogOutCallback googleLogOutCallback;
@@ -28,6 +31,7 @@ static UIView *_sharedToast = nil;
 + (instancetype)sharedUtils;
 + (NSString *)suffixForDayInDate:(NSDate *)date;
 + (BOOL)isObjectValidForSaveToUserDefaults:(id)object;
+- (void)playAudioFromAudioUrl:(NSURL *)audioUrl;
 
 @end
 
@@ -391,6 +395,32 @@ static UIView *_sharedToast = nil;
   [[GPPSignIn sharedInstance] disconnect];
 }
 
+#pragma mark - Lessons learning utils
++ (void)recognizeWithCompletion:(void (^)(ISSpeechRecognitionResult *, NSError *))callback {
+#if TARGET_IPHONE_SIMULATOR
+  if (callback != NULL)
+    callback(nil, nil);
+#else
+  ISSpeechRecognition *recognition = [[ISSpeechRecognition alloc] init];
+  recognition.delegate = [Utils sharedUtils];
+  
+  NSError *error = nil;
+  
+  [Utils sharedUtils].speechRecognitionCallback = callback;
+  
+  if (![recognition listenAndRecognizeWithTimeout:30 error:&error]) {
+    if (callback != NULL)
+      callback(nil, error);
+  }
+#endif
+}
+
++ (void)playAudioFromUrl:(NSString *)audioUrl {
+  NSURL *url = [NSURL URLWithString:audioUrl];
+//  url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"mp3"];
+  [[Utils sharedUtils] playAudioFromAudioUrl:url];
+}
+
 #pragma mark - GPPSignInDelegate methods
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
   if (_googleLogInCallback == NULL)
@@ -409,6 +439,27 @@ static UIView *_sharedToast = nil;
     return;
   
   _googleLogOutCallback(error);
+}
+
+#pragma mark - ISSpeechRecognitionDelegate methods
+- (void)recognition:(ISSpeechRecognition *)speechRecognition didFailWithError:(NSError *)error {
+  if (_speechRecognitionCallback == NULL)
+    return;
+  
+  _speechRecognitionCallback(nil, error);
+}
+
+- (void)recognition:(ISSpeechRecognition *)speechRecognition didGetRecognitionResult:(ISSpeechRecognitionResult *)result {
+  if (_speechRecognitionCallback == NULL)
+    return;
+  
+  _speechRecognitionCallback(result, nil);
+}
+
+#pragma mark - AVAudioPlayerDelegate methods
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+  DLog(@"%@", NSStringFromBOOL(flag));
+  [player stop];
 }
 
 #pragma mark - Private methods
@@ -455,39 +506,11 @@ static UIView *_sharedToast = nil;
   return NO;
 }
 
-#pragma mark - Speech recognition
-+ (void)recognizeWithCompletion:(void (^)(ISSpeechRecognitionResult *, NSError *))callback {
-#if TARGET_IPHONE_SIMULATOR
-  if (callback != NULL)
-    callback(nil, nil);
-#else
-  ISSpeechRecognition *recognition = [[ISSpeechRecognition alloc] init];
-  recognition.delegate = [Utils sharedUtils];
-  
-  NSError *error = nil;
-  
-  [Utils sharedUtils].speechRecognitionCallback = callback;
-  
-  if (![recognition listenAndRecognizeWithTimeout:30 error:&error]) {
-    if (callback != NULL)
-      callback(nil, error);
-  }
-#endif
-}
-
-#pragma mark - ISSpeechRecognitionDelegate methods
-- (void)recognition:(ISSpeechRecognition *)speechRecognition didFailWithError:(NSError *)error {
-  if (_speechRecognitionCallback == NULL)
-    return;
-  
-  _speechRecognitionCallback(nil, error);
-}
-
-- (void)recognition:(ISSpeechRecognition *)speechRecognition didGetRecognitionResult:(ISSpeechRecognitionResult *)result {
-  if (_speechRecognitionCallback == NULL)
-    return;
-  
-  _speechRecognitionCallback(result, nil);
+- (void)playAudioFromAudioUrl:(NSURL *)audioUrl {
+  audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:NULL];
+  audioPlayer.delegate = self;
+  [audioPlayer prepareToPlay];
+  [audioPlayer play];
 }
 
 @end

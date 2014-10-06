@@ -7,6 +7,7 @@
 //
 
 #import "FTListenQuestionContentView.h"
+#import "MListenQuestion.h"
 
 @interface FTListenQuestionContentView () {
   NSMutableDictionary *_originalSubviewsOrigin;
@@ -53,6 +54,14 @@
 - (void)gestureLayerDidTap {
   [_txtAnswerField resignFirstResponder];
   [self animateAnswerFieldSlideUp:NO];
+}
+
+- (IBAction)btnNormalAudioPressed:(UIButton *)sender {
+  [Utils playAudioFromUrl:[(MListenQuestion *)self.questionData normal_question_audio]];
+}
+
+- (IBAction)btnSlowAudioPressed:(UIButton *)sender {
+  [Utils playAudioFromUrl:[(MListenQuestion *)self.questionData slow_question_audio]];
 }
 
 #pragma mark - UITextViewDelegate methods

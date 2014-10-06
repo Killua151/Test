@@ -11,6 +11,6 @@
 @interface MNameQuestion : MBaseQuestion
 
 @property (nonatomic, strong) NSString *hint;
-@property (nonatomic, strong) NSString *question_image;
+@property (nonatomic, strong) NSArray *question_images;
 
 @end

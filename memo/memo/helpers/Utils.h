@@ -64,8 +64,9 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)logInGoogleFromView:(UIView *)view completion:(SocialLogInCallback)callback;
 + (void)logOutGoogleWithCompletion:(SocialLogOutCallback)callback;
 
-#pragma mark - Speech recognition
+#pragma mark - Lessons learning utils
 + (void)recognizeWithCompletion:(SpeechRecognitionCallback)callback;
++ (void)playAudioFromUrl:(NSString *)audioUrl;
 
 @end
 

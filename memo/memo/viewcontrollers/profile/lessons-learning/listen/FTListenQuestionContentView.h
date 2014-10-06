@@ -18,4 +18,7 @@
   IBOutlet UITextView *_txtAnswerField;
 }
 
+- (IBAction)btnNormalAudioPressed:(UIButton *)sender;
+- (IBAction)btnSlowAudioPressed:(UIButton *)sender;
+
 @end

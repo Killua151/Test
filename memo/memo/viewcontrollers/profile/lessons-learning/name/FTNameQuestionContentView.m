@@ -33,16 +33,41 @@
   _vAnswerField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _vAnswerField.layer.borderWidth = 1;
   
+  for (UIView *vQuestionImage in _vQuestionImages)
+    vQuestionImage.layer.cornerRadius = 8;
+  
+  [_imgQuestionImages enumerateObjectsUsingBlock:^(UIImageView *imgQuestionImage, NSUInteger index, BOOL *stop) {
+    [imgQuestionImage sd_setImageWithURL:[NSURL URLWithString:questionData.question_images[index]]];
+  }];
+  
   if (!DeviceScreenIsRetina4Inch()) {
-    CGRect frame = _imgQuestion.superview.frame;
-    frame.size.height = self.frame.size.height - 148;
-    _imgQuestion.superview.frame = frame;
+    CGRect frame = _lblQuestion.frame;
+    frame.origin.y = 5;
+    _lblQuestion.frame = frame;
+    
+    frame = _vQuestion.frame;
+    frame.origin.y = _lblQuestion.frame.origin.y + _lblQuestion.frame.size.height + 10;
+    frame.size.height = self.frame.size.height - 118;
+    _vQuestion.frame = frame;
+    
+    for (UIView *vQuestionImage in _vQuestionImages) {
+      frame = vQuestionImage.frame;
+      frame.size.height -= 30;
+      vQuestionImage.frame = frame;
+    }
     
     frame = _vAnswerField.frame;
-    frame.origin.y = _imgQuestion.superview.frame.origin.y + _imgQuestion.superview.frame.size.height +
-    (DeviceSystemIsOS7() ? 22 : 11);
+    frame.origin.y = _vQuestion.frame.origin.y + _vQuestion.frame.size.height + (DeviceSystemIsOS7() ? 22 : 11);
     _vAnswerField.frame = frame;
   }
+  
+  UIView *vQuestionImage = _vQuestionImages[1];
+  vQuestionImage.transform = CGAffineTransformMakeRotation(-M_PI/180 * 15);
+  vQuestionImage.transform = CGAffineTransformTranslate(vQuestionImage.transform, -20, 0);
+  
+  vQuestionImage = _vQuestionImages[2];
+  vQuestionImage.transform = CGAffineTransformMakeRotation(M_PI/180 * 15);
+  vQuestionImage.transform = CGAffineTransformTranslate(vQuestionImage.transform, 20, 0);
   
   _originalAnswerFieldOriginY = _vAnswerField.frame.origin.y;
 }

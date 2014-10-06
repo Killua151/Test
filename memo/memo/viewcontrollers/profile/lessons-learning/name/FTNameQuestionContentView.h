@@ -10,7 +10,9 @@
 
 @interface FTNameQuestionContentView : FTQuestionContentView <UITextFieldDelegate, UITextViewDelegate> {
   IBOutlet UILabel *_lblQuestion;
-  IBOutlet UIImageView *_imgQuestion;
+  IBOutlet UIView *_vQuestion;
+  IBOutletCollection(UIView) NSArray *_vQuestionImages;
+  IBOutletCollection(UIImageView) NSArray *_imgQuestionImages;
   IBOutlet UIView *_vAnswerField;
   IBOutlet UITextField *_txtAnswerField;
 }

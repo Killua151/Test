@@ -44,6 +44,8 @@
      }];
   }
   
+  [Utils playAudioFromUrl:@"http://localhost/memo/memo/static/sentence_sounds/normal_cacbd30fa1581136bd71bbfa33014007.mp3"];
+  
   return YES;
 }
 
