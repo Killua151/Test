@@ -32,6 +32,7 @@
   FTQuestionContentView *_vQuestionContent;
   
   NSArray *_questionsData;
+  NSMutableDictionary *_answersData;
   id _answerValue;
 }
 
@@ -59,6 +60,7 @@
 - (id)initWithQuestions:(NSArray *)questions {
   if (self = [super init]) {
     _questionsData = questions;
+    _answersData = [NSMutableDictionary new];
   }
   
   return self;
@@ -339,7 +341,10 @@
 
 - (void)checkCurrentQuestion {
   MBaseQuestion *question = _questionsData[_currentLessonIndex];
-  [self setResultViewVisible:YES withCorrectAnswer:[question checkAnswer:_answerValue]];
+  id result = [question checkAnswer:_answerValue];
+  [self setResultViewVisible:YES withCorrectAnswer:result];
+  
+  _answersData[question.question_log_id] = @(result == nil ? YES : NO);
 }
 
 - (void)removeCurrentQuestion {
@@ -356,6 +361,7 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
+    DLog(@"%@", _answersData);
     [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
     return;
   }

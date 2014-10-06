@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MSelectQuestionOption;
+
 @interface FTSelectQuestionButton : UIView {
   IBOutlet UIImageView *_imgOptionImage;
   IBOutlet UIImageView *_imgRadio;
@@ -17,7 +19,7 @@
 
 @property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
 
-- (id)initWithTitle:(NSString *)title atIndex:(NSInteger)index;
+- (id)initWithOption:(MSelectQuestionOption *)option atIndex:(NSInteger)index;
 - (void)setSelected:(BOOL)selected;
 
 - (IBAction)btnGestureTouchedDown:(UIButton *)sender;

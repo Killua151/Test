@@ -7,8 +7,10 @@
 //
 
 #import "FTSelectQuestionButton.h"
+#import "MSelectQuestionOption.h"
 
 @interface FTSelectQuestionButton () {
+  MSelectQuestionOption *_optionData;
   NSInteger _index;
 }
 
@@ -18,15 +20,17 @@
 
 @implementation FTSelectQuestionButton
 
-- (id)initWithTitle:(NSString *)title atIndex:(NSInteger)index {
+- (id)initWithOption:(MSelectQuestionOption *)option atIndex:(NSInteger)index {
   if (self = [super init]) {
     LoadXibWithSameClass();
     
+    _optionData = option;
     _index = index;
     self.tag = index;
     self.layer.cornerRadius = 3;
     _lblOptionTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
-    _lblOptionTitle.text = title;
+    _lblOptionTitle.text = _optionData.text;
+    [_imgOptionImage sd_setImageWithURL:[NSURL URLWithString:_optionData.image_file]];
   }
   
   return self;

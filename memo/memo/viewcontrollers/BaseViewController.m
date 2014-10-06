@@ -231,14 +231,20 @@
   if (self.navigationController == nil)
     return;
   
-  UILabel *lblTitle = [UILabel new];
+  UILabel *lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, 44)];
   lblTitle.backgroundColor = [UIColor clearColor];
   lblTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   lblTitle.text = title;
   lblTitle.textColor = titleColor;
+  lblTitle.minimumScaleFactor = 12.0/lblTitle.font.pointSize;
+  lblTitle.adjustsFontSizeToFitWidth = YES;
+  lblTitle.numberOfLines = 1;
   [lblTitle sizeToFit];
+  
   CGRect frame = lblTitle.frame;
+  frame.size.width = MIN(frame.size.width, 165);
   lblTitle.frame = frame;
+  
   UIView *lblTitleView = [[UIView alloc] initWithFrame:lblTitle.frame];
   [lblTitleView addSubview:lblTitle];
   

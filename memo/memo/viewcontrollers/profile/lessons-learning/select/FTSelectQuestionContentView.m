@@ -13,7 +13,7 @@
 
 @interface FTSelectQuestionContentView () {
   NSMutableArray *_btnOptions;
-  NSMutableArray *_optionTitles;
+  NSMutableArray *_optionsData;
 }
 
 @end
@@ -37,17 +37,17 @@
   CGFloat buttonsBottomMargin = DeviceScreenIsRetina4Inch() ? 35 : 28;
   CGFloat buttonsHeight = (self.frame.size.height - buttonsTopMargin - buttonsBottomMargin - 15)/2;
   
-  _optionTitles = [NSMutableArray arrayWithArray:[questionData.options valueForKey:@"text"]];
-  [_optionTitles shuffle];
+  _optionsData = [NSMutableArray arrayWithArray:questionData.options];
+  [_optionsData shuffle];
   
   for (NSInteger i = 0; i < 2; i++)
     for (NSInteger j = 0; j < 2; j++) {
       NSInteger index = i*2+j;
       
-      if (index >= [_optionTitles count])
+      if (index >= [_optionsData count])
         break;
       
-      FTSelectQuestionButton *button = [[FTSelectQuestionButton alloc] initWithTitle:_optionTitles[index] atIndex:index];
+      FTSelectQuestionButton *button = [[FTSelectQuestionButton alloc] initWithOption:_optionsData[index] atIndex:index];
       
       button.frame = CGRectMake(15 + j*(button.frame.size.width + 15),
                                 buttonsTopMargin + i*(buttonsHeight + 15), button.frame.size.width, buttonsHeight);
@@ -66,7 +66,7 @@
   }
   
   if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:selected withValue:_optionTitles[index]];
+    [self.delegate questionContentViewDidUpdateAnswer:selected withValue:[_optionsData[index] text]];
 }
 
 @end

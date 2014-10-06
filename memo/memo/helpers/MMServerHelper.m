@@ -135,6 +135,7 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSArray *questions = [responseObject objectFromJSONData];
+     DLog(@"%@", questions);
      handler([MBaseQuestion modelsFromArr:questions], nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

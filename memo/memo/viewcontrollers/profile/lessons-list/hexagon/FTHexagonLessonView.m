@@ -67,13 +67,12 @@
   // Default is passed & user can retake the lesson
   NSString *btnRetakeTitle = NSLocalizedString(@"RETAKE", nil);
   
-  // Unlocked but not passed
-  if (_lessonData.lesson_number == _skillData.finished_lesson+1)
-    btnRetakeTitle = NSLocalizedString(@"START", nil);
-  else if (_lessonData.lesson_number > _skillData.finished_lesson+1) {
+  if (!_skillData.unlocked || _lessonData.lesson_number > _skillData.finished_lesson+1) {
     btnRetakeTitle = NSLocalizedString(@"LOCKED", nil);
     _btnRetake.enabled = NO;
-  }
+  } else if (_lessonData.lesson_number == _skillData.finished_lesson+1)
+    // Unlocked but not passed
+    btnRetakeTitle = NSLocalizedString(@"START", nil);
   
   _btnRetake.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   [_btnRetake setTitle:btnRetakeTitle forState:UIControlStateNormal];

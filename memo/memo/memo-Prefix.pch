@@ -11,31 +11,32 @@
 #endif
 
 #ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
 
-#import "NSArray+ArrayHelpers.h"
-#import "NSMutableArray+MutableArrayHelpers.h"
-#import "NSObject+ObjectMapping.h"
-#import "NSString+CompactTranslation.h"
-#import "NSString+StringHelpers.h"
-#import "UIColor+ColorHelpers.h"
-#import "UIImage+ImageHelpers.h"
-#import "UIView+ExtendedToast.h"
+  #import "NSArray+ArrayHelpers.h"
+  #import "NSMutableArray+MutableArrayHelpers.h"
+  #import "NSObject+ObjectMapping.h"
+  #import "NSString+CompactTranslation.h"
+  #import "NSString+StringHelpers.h"
+  #import "UIColor+ColorHelpers.h"
+  #import "UIImage+ImageHelpers.h"
+  #import "UIView+ExtendedToast.h"
 
-#import "DCKeyValueObjectMapping.h"
-#import "DiffMatchPatch.h"
-#import "JSONKit.h"
-#import "KLSwitch.h"
-#import "MBProgressHUD.h"
+  #import "DCKeyValueObjectMapping.h"
+  #import "DiffMatchPatch.h"
+  #import "JSONKit.h"
+  #import "KLSwitch.h"
+  #import "MBProgressHUD.h"
+  #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "MMAllowsTouchOutsideView.h"
-#import "MMAllowsTouchUnderneathView.h"
-#import "MMLineChart.h"
-#import "MMLineChartData.h"
-#import "MMSharedHeader.h"
-#import "MMServerHelper.h"
-#import "Utils.h"
+  #import "MMAllowsTouchOutsideView.h"
+  #import "MMAllowsTouchUnderneathView.h"
+  #import "MMLineChart.h"
+  #import "MMLineChartData.h"
+  #import "MMSharedHeader.h"
+  #import "MMServerHelper.h"
+  #import "Utils.h"
 #endif
 
 #define DLog(format, ...) \
