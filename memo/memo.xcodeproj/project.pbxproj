@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		92F7FF9E436F43B5BEDCCED0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2B8D9B1D0490BA0D689EC /* libPods.a */; };
+		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
+		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
+		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
+		CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8319E0E4C800EFED33 /* Foundation.framework */; };
 		CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */; };
 		CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8719E0E4C800EFED33 /* UIKit.framework */; };
@@ -1010,7 +1014,6 @@
 		CAF8579E19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8550E19E0F82500A347CF /* img-skill_icon-en-vi_dac_tinh-unlocked@2x.png */; };
 		CAF8579F19E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8510819E0F3D200A347CF /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png */; };
 		CAF857A019E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8552219E0F82500A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked@2x.png */; };
-		CAF857A119E0FDF600A347CF /* img-beginner-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509319E0F3D100A347CF /* img-beginner-icon@2x.png */; };
 		CAF857A219E0FDF600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8557619E0F82600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked@2x.png */; };
 		CAF857A319E0FDF600A347CF /* img-skill_icon-en-vi_con_nguoi-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8550819E0F82500A347CF /* img-skill_icon-en-vi_con_nguoi-locked@2x.png */; };
 		CAF857A419E0FDF600A347CF /* img-hexagon_skill-strength-3_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851F219E0F3D200A347CF /* img-hexagon_skill-strength-3_big@2x.png */; };
@@ -1125,7 +1128,6 @@
 		CAF8581119E0FDF600A347CF /* img-lessons_learning-result_view-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850CF19E0F3D200A347CF /* img-lessons_learning-result_view-bg@2x.png */; };
 		CAF8581219E0FDF600A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851D419E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png */; };
 		CAF8581319E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8517919E0F3D200A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png */; };
-		CAF8581419E0FDF600A347CF /* img-beginner-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A419E0F3D100A347CF /* img-beginner-icon.png */; };
 		CAF8581519E0FDF600A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8517119E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png */; };
 		CAF8581619E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8559B19E0F82700A347CF /* img-skill_icon-en-vi_so_nhieu-locked.png */; };
 		CAF8581719E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851B519E0F3D200A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png */; };
@@ -1229,7 +1231,6 @@
 		CAF8587919E0FDF600A347CF /* FTShieldLessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8527619E0F3D200A347CF /* FTShieldLessonCell.xib */; };
 		CAF8587A19E0FDF600A347CF /* img-hexagon_skill-bg-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851E419E0F3D200A347CF /* img-hexagon_skill-bg-unlocked@2x.png */; };
 		CAF8587B19E0FDF600A347CF /* img-hexagon_skill-bg-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851E119E0F3D200A347CF /* img-hexagon_skill-bg-locked.png */; };
-		CAF8587C19E0FDF600A347CF /* img-placement_test-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509619E0F3D100A347CF /* img-placement_test-icon.png */; };
 		CAF8587D19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8510319E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png */; };
 		CAF8587E19E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8551119E0F82500A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png */; };
 		CAF8587F19E0FDF600A347CF /* img-popup-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850EE19E0F3D200A347CF /* img-popup-bg@2x.png */; };
@@ -1461,7 +1462,6 @@
 		CAF8596119E0FDF600A347CF /* FTFormQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524519E0F3D200A347CF /* FTFormQuestionContentView.xib */; };
 		CAF8596219E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8517619E0F3D200A347CF /* img-skill_icon-en-vi_khoa_hoc-locked_big.png */; };
 		CAF8596319E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8514019E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png */; };
-		CAF8596419E0FDF600A347CF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A919E0F3D100A347CF /* img-placement_test-icon@2x.png */; };
 		CAF8596519E0FDF600A347CF /* img-lessons_learning-heart_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850CA19E0F3D200A347CF /* img-lessons_learning-heart_potion.png */; };
 		CAF8596619E0FDF600A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8518B19E0F3D200A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png */; };
 		CAF8596719E0FDF600A347CF /* img-hexagon_skill-strength-2_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851EE19E0F3D200A347CF /* img-hexagon_skill-strength-2_big@2x.png */; };
@@ -1543,6 +1543,8 @@
 /* Begin PBXFileReference section */
 		0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
+		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CABBEA8019E0E4C800EFED33 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBEA8319E0E4C800EFED33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -3391,6 +3393,8 @@
 				CAF851DE19E0F3D200A347CF /* btn-shield-strengthen-bg@2x.png */,
 				CAF851DF19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png */,
 				CAF851E019E0F3D200A347CF /* img-hexagon-checkpoint_test-bg@2x.png */,
+				CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */,
+				CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */,
 				CAF851E119E0F3D200A347CF /* img-hexagon_skill-bg-locked.png */,
 				CAF851E219E0F3D200A347CF /* img-hexagon_skill-bg-locked@2x.png */,
 				CAF851E319E0F3D200A347CF /* img-hexagon_skill-bg-unlocked.png */,
@@ -4234,6 +4238,7 @@
 				CAF8539F19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked_big@2x.png in Resources */,
 				CAF855DF19E0F82700A347CF /* img-skill_icon-en-vi_co_ban_2-locked.png in Resources */,
 				CAF8543019E0F3D200A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked_big.png in Resources */,
+				CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */,
 				CAF8542519E0F3D200A347CF /* img-skill_icon-en-vi_the_thao-unlocked_big@2x.png in Resources */,
 				CAF853E819E0F3D200A347CF /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png in Resources */,
 				CAF8562C19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked@2x.png in Resources */,
@@ -4455,6 +4460,7 @@
 				CAF8566E19E0F82700A347CF /* img-skill_icon-en-vi_noi_chon-unlocked@2x.png in Resources */,
 				CAF855D119E0F82700A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked.png in Resources */,
 				CAF8541A19E0F3D200A347CF /* img-skill_icon-en-vi_su_kien-locked_big.png in Resources */,
+				CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */,
 				CAF8568119E0F82700A347CF /* img-skill_icon-en-vi_su_kien-unlocked.png in Resources */,
 				CAF8569B19E0F82700A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-locked.png in Resources */,
 				CAF8532919E0F3D200A347CF /* btn-lessons_learning-form_tokens@2x.png in Resources */,
@@ -4698,7 +4704,6 @@
 				CAF8579E19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-unlocked@2x.png in Resources */,
 				CAF8579F19E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */,
 				CAF857A019E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked@2x.png in Resources */,
-				CAF857A119E0FDF600A347CF /* img-beginner-icon@2x.png in Resources */,
 				CAF857A219E0FDF600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked@2x.png in Resources */,
 				CAF857A319E0FDF600A347CF /* img-skill_icon-en-vi_con_nguoi-locked@2x.png in Resources */,
 				CAF857A419E0FDF600A347CF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
@@ -4745,12 +4750,14 @@
 				CAF857CD19E0FDF600A347CF /* img-skill_icon-en-vi_nghe_nghiep-locked_big@2x.png in Resources */,
 				CAF857CE19E0FDF600A347CF /* img-button_indicator-right@2x.png in Resources */,
 				CAF857CF19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big.png in Resources */,
+				CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */,
 				CAF857D019E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked_big@2x.png in Resources */,
 				CAF857D119E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big.png in Resources */,
 				CAF857D219E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked@2x.png in Resources */,
 				CAF857D319E0FDF600A347CF /* img-skill_icon-en-vi_co_ban_2-locked_big.png in Resources */,
 				CAF857D419E0FDF600A347CF /* img-skill_icon-en-vi_tinh_tu_1-locked_big.png in Resources */,
 				CAF857D519E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big@2x.png in Resources */,
+				CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */,
 				CAF857D619E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_2-locked@2x.png in Resources */,
 				CAF857D719E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-locked_big.png in Resources */,
 				CAF857D819E0FDF600A347CF /* img-money-icon@2x.png in Resources */,
@@ -4813,7 +4820,6 @@
 				CAF8581119E0FDF600A347CF /* img-lessons_learning-result_view-bg@2x.png in Resources */,
 				CAF8581219E0FDF600A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png in Resources */,
 				CAF8581319E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png in Resources */,
-				CAF8581419E0FDF600A347CF /* img-beginner-icon.png in Resources */,
 				CAF8581519E0FDF600A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png in Resources */,
 				CAF8581619E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-locked.png in Resources */,
 				CAF8581719E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png in Resources */,
@@ -4917,7 +4923,6 @@
 				CAF8587919E0FDF600A347CF /* FTShieldLessonCell.xib in Resources */,
 				CAF8587A19E0FDF600A347CF /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
 				CAF8587B19E0FDF600A347CF /* img-hexagon_skill-bg-locked.png in Resources */,
-				CAF8587C19E0FDF600A347CF /* img-placement_test-icon.png in Resources */,
 				CAF8587D19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */,
 				CAF8587E19E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png in Resources */,
 				CAF8587F19E0FDF600A347CF /* img-popup-bg@2x.png in Resources */,
@@ -5149,7 +5154,6 @@
 				CAF8596119E0FDF600A347CF /* FTFormQuestionContentView.xib in Resources */,
 				CAF8596219E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-locked_big.png in Resources */,
 				CAF8596319E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png in Resources */,
-				CAF8596419E0FDF600A347CF /* img-placement_test-icon@2x.png in Resources */,
 				CAF8596519E0FDF600A347CF /* img-lessons_learning-heart_potion.png in Resources */,
 				CAF8596619E0FDF600A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png in Resources */,
 				CAF8596719E0FDF600A347CF /* img-hexagon_skill-strength-2_big@2x.png in Resources */,

@@ -33,5 +33,6 @@
 
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame;
 - (NSArray *)skillsTree;
+- (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
 
 @end

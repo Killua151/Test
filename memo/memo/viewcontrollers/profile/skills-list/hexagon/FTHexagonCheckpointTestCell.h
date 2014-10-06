@@ -9,6 +9,7 @@
 #import "FTCheckpointTestCell.h"
 
 @interface FTHexagonCheckpointTestCell : FTCheckpointTestCell {
+  IBOutlet UIButton *_btnCheckpointTest;
 }
 
 @end

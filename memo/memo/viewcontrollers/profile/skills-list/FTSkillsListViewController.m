@@ -127,6 +127,8 @@
     if (cell == nil)
       cell = [[FTCheckpointTestCell currentCheckpointTestCellClass] new];
     
+    [cell updateCellWithData:(MBase *)@(indexPath.row)];
+    
     return cell;
   }
   

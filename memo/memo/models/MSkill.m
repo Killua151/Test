@@ -29,13 +29,14 @@
 }
 
 - (UIColor *)themeColor {
-//  return [UIColor colorWithHexString:@"#33b5e5"];
-//  return UIColorFromRGB(255, 187, 51);
-  
-  if (_theme_color == nil || !_unlocked)
+  if (_theme_color == nil || !self.unlocked)
     return UIColorFromRGB(221, 221, 221);
   
   return [UIColor colorWithHexString:_theme_color];
 }
+
+//- (BOOL)unlocked {
+//  return YES;
+//}
 
 @end

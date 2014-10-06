@@ -34,7 +34,7 @@
   _skillData = skill;
   
   self.backgroundColor = [_skillData themeColor];
-  _lblSkillName.text = _skillData.title;
+  _lblSkillName.text = _skillData.slug;
   _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-unlocked", _skillData._id]];
 }
 

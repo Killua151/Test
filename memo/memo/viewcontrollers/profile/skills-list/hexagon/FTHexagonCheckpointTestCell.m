@@ -7,15 +7,31 @@
 //
 
 #import "FTHexagonCheckpointTestCell.h"
+#import "MUser.h"
 
 @implementation FTHexagonCheckpointTestCell
 
 - (id)init {
   if (self = [super init]) {
-    _lblCheckpointTestTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
+    _btnCheckpointTest.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   }
   
   return self;
+}
+
+- (void)updateCellWithData:(NSNumber *)data {
+  NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:[data integerValue]];
+  
+  if (numberOfLockedSkills <= 0) {
+    [_btnCheckpointTest setTitle:NSLocalizedString(@"Checkpoint passed", nil) forState:UIControlStateNormal];
+    _btnCheckpointTest.enabled = NO;
+    return;
+  }
+  
+  NSString *suffix = numberOfLockedSkills == 1 ? NSLocalizedString(@"skill", nil) : NSLocalizedString(@"skills", nil);
+  NSString *checkpointTitle = [NSString stringWithFormat:
+                               NSLocalizedString(@"Checkpoint test for %d %@", nil), numberOfLockedSkills, suffix];
+  [_btnCheckpointTest setTitle:checkpointTitle forState:UIControlStateNormal];
 }
 
 @end

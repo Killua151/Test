@@ -11,7 +11,13 @@
 #import <GooglePlus/GooglePlus.h>
 #import "MSkill.h"
 
-@interface MUser ()
+@interface MUser () {
+  NSMutableDictionary *_skillsById;
+  NSMutableDictionary *_checkpointsMapper;
+}
+
+- (void)mapSkillsById;
+- (void)updateCheckpointsMapper;
 
 @end
 
@@ -115,10 +121,8 @@ static MUser *_currentUser = nil;
 //  
 //  return skillsTree;
   
-  NSMutableDictionary *skillsById = [NSMutableDictionary dictionary];
-  
-  for (MSkill *skill in _skills)
-    skillsById[skill._id] = skill;
+  [self mapSkillsById];
+  [self updateCheckpointsMapper];
   
   NSMutableArray *fullTree = [NSMutableArray array];
   
@@ -131,18 +135,66 @@ static MUser *_currentUser = nil;
     NSMutableArray *fullRow = [NSMutableArray array];
     
     for (NSString *skillId in row) {
-      if (skillsById[skillId] == nil || ![skillsById[skillId] isKindOfClass:[MSkill class]]) {
+      if (_skillsById[skillId] == nil || ![_skillsById[skillId] isKindOfClass:[MSkill class]]) {
         [fullRow addObject:[NSNull null]];
         continue;
       }
       
-      [fullRow addObject:skillsById[skillId]];
+      [fullRow addObject:_skillsById[skillId]];
     }
     
     [fullTree addObject:fullRow];
   }
   
   return fullTree;
+}
+
+- (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow {
+  return [_checkpointsMapper[@(checkpointRow)] integerValue];
+}
+
+#pragma mark - Private methods
+- (void)mapSkillsById {
+  if (_skillsById == nil)
+    _skillsById = [NSMutableDictionary new];
+  
+  [_skillsById removeAllObjects];
+  
+  for (MSkill *skill in _skills)
+    _skillsById[skill._id] = skill;
+}
+
+- (void)updateCheckpointsMapper {
+  if (_checkpointsMapper == nil)
+    _checkpointsMapper = [NSMutableDictionary new];
+  
+  [_checkpointsMapper removeAllObjects];
+  
+  [_skills_tree enumerateObjectsUsingBlock:^(id row, NSUInteger index, BOOL *stop) {
+    if (![row isKindOfClass:[NSString class]])
+      return;
+    
+    _checkpointsMapper[@(index)] = @0;
+  }];
+  
+  for (NSNumber *rowIndex in [_checkpointsMapper allKeys]) {
+    for (NSInteger i = 0; i < [rowIndex integerValue]; i++) {
+      id rowData = _skills_tree[i];
+      
+      if (![rowData isKindOfClass:[NSArray class]])
+        continue;
+      
+      for (NSString *skillId in rowData) {
+        if ([skillId isEqualToString:@"null"])
+          continue;
+        
+        if (![_skillsById[skillId] unlocked]) {
+          NSInteger count = [_checkpointsMapper[rowIndex] integerValue];
+          _checkpointsMapper[rowIndex] = @(count+1);
+        }
+      }
+    }
+  }
 }
 
 @end
