@@ -14,10 +14,10 @@
   MSkill *_skillData;
 }
 
-@property (nonatomic, assign) id<FTSkillViewDelegate> delegate;
+@property (nonatomic, assign) id<MMSkillViewDelegate> delegate;
 
 + (Class)currentSkillViewClass;
-- (id)initWithTarget:(id<FTSkillViewDelegate>)target;
+- (id)initWithTarget:(id<MMSkillViewDelegate>)target;
 - (void)populateViewWithData:(MSkill *)skill;
 
 - (IBAction)btnSkillPressed:(UIButton *)sender;

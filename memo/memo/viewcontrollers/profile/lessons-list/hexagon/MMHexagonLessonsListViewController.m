@@ -99,7 +99,7 @@
   }
 }
 
-#pragma mark - FTLessonViewDelegate methods
+#pragma mark - MMLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
   [Utils showHUDForView:self.navigationController.view withText:nil];
   

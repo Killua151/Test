@@ -21,10 +21,10 @@
 @implementation MMSkillCell
 
 + (Class)currentSkillCellClass {
-#if kHexagonThemeTestMode
+#if kHexagonThemeDisplayMode
   return [MMHexagonSkillCell class];
 #else
-  return [FTShieldSkillCell class];
+  return [MMShieldSkillCell class];
 #endif
 }
 
@@ -42,7 +42,7 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
                     withTotal:(NSInteger)totalSkills
-                     inTarget:(id<FTSkillViewDelegate>)target {
+                     inTarget:(id<MMSkillViewDelegate>)target {
   if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
     LoadXibWithSameClass();
     [self setValue:reuseIdentifier forKey:@"reuseIdentifier"];

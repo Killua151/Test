@@ -12,7 +12,7 @@
 
 @interface MMQuestionContentView : UIView
 
-@property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
+@property (nonatomic, assign) id<MMLessonLearningDelegate> delegate;
 @property (nonatomic, strong) MBaseQuestion *questionData;
 
 - (id)initWithQuestion:(MBaseQuestion *)question;

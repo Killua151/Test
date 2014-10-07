@@ -17,7 +17,7 @@
   IBOutlet UIButton *_btnRetake;
 }
 
-@property (nonatomic, assign) id<FTLessonViewDelegate> delegate;
+@property (nonatomic, assign) id<MMLessonViewDelegate> delegate;
 @property (nonatomic, assign) NSInteger index;
 
 - (id)initWithLessonNumber:(NSInteger)lessonNumber inSkill:(MSkill *)skill forTarget:(id)target;

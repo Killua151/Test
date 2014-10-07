@@ -8,7 +8,7 @@
 
 #import "MMEndLearningViewController.h"
 
-@interface MMFinishLessonViewController : MMEndLearningViewController <UIGestureRecognizerDelegate, FTActionSheetDelegate> {
+@interface MMFinishLessonViewController : MMEndLearningViewController <UIGestureRecognizerDelegate, MMActionSheetDelegate> {
   IBOutlet UILabel *_lblFinishLessonMessage;
   IBOutlet UILabel *_lblHeartBonusMessage;
   IBOutlet UIButton *_btnShare;

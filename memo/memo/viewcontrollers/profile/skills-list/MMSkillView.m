@@ -13,14 +13,14 @@
 @implementation MMSkillView
 
 + (Class)currentSkillViewClass {
-#if kHexagonThemeTestMode
+#if kHexagonThemeDisplayMode
   return [MMHexagonSkillView class];
 #else
-  return [FTShieldSkillView class];
+  return [MMShieldSkillView class];
 #endif
 }
 
-- (id)initWithTarget:(id<FTSkillViewDelegate>)target {
+- (id)initWithTarget:(id<MMSkillViewDelegate>)target {
   if (self = [super init]) {
     LoadXibWithSameClass();
     _delegate = target;

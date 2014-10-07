@@ -178,7 +178,7 @@
   [self animateSlideStrengthenButton:YES];
 }
 
-#pragma mark - FTSkillViewDelegate methods
+#pragma mark - MMSkillViewDelegate methods
 - (void)skillViewDidSelectSkill:(MSkill *)skill {
   if (_lessonsListVC == nil)
     _lessonsListVC = [[MMLessonsListViewController currentLessonsListClass] new];
@@ -208,7 +208,7 @@
 - (void)setupViews {
   _btnHexagonStrengthen.hidden = _btnShieldStrengthen.hidden = YES;
   
-  _currentStrengthenButton = kHexagonThemeTestMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
+  _currentStrengthenButton = kHexagonThemeDisplayMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
   _currentStrengthenButton.hidden = NO;
   _currentStrengthenButton.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   [_currentStrengthenButton setTitle:NSLocalizedString(@"Strengthen skills", nil) forState:UIControlStateNormal];
@@ -234,7 +234,7 @@
   _lblPlacementTestSubTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblPlacementTestSubTitle.text = NSLocalizedString(@"Try this Placement Test", nil);
   
-  CGFloat footerViewDelta = kHexagonThemeTestMode ? 52 : 22;
+  CGFloat footerViewDelta = kHexagonThemeDisplayMode ? 52 : 22;
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];

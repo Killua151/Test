@@ -20,10 +20,10 @@
 @implementation MMLessonsListViewController
 
 + (Class)currentLessonsListClass {
-#if kHexagonThemeTestMode
+#if kHexagonThemeDisplayMode
   return [MMHexagonLessonsListViewController class];
 #else
-  return [FTShieldLessonsListViewController class];
+  return [MMShieldLessonsListViewController class];
 #endif
 }
 

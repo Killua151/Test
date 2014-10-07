@@ -93,7 +93,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kDefaultAnimationDuration               0.25
 #define kFontClearSansMarginTop                 (DeviceSystemIsOS7() ? -3 : 0)
 
-#define kHexagonThemeTestMode                   true
+#define kHexagonThemeDisplayMode                true
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             true

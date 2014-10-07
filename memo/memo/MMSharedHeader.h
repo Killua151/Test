@@ -23,28 +23,28 @@ typedef enum ShareOptionEnum {
   ShareOptionTwitter
 } ShareOption;
 
-@protocol FTSkillViewDelegate <NSObject>
+@protocol MMSkillViewDelegate <NSObject>
 
 @optional
 - (void)skillViewDidSelectSkill:(MSkill *)skill;
 
 @end
 
-@protocol FTLessonViewDelegate <NSObject>
+@protocol MMLessonViewDelegate <NSObject>
 
 @optional
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson;
 
 @end
 
-@protocol FTActionSheetDelegate <NSObject>
+@protocol MMActionSheetDelegate <NSObject>
 
 @optional
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index;
 
 @end
 
-@protocol FTLessonLearningDelegate <NSObject>
+@protocol MMLessonLearningDelegate <NSObject>
 
 @optional
 - (void)questionContentViewDidEnterEditingMode;

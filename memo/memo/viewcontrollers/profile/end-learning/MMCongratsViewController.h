@@ -8,7 +8,7 @@
 
 #import "MMEndLearningViewController.h"
 
-@interface MMCongratsViewController : MMEndLearningViewController <FTActionSheetDelegate> {
+@interface MMCongratsViewController : MMEndLearningViewController <MMActionSheetDelegate> {
   IBOutlet UIImageView *_imgAnt;
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;

@@ -15,7 +15,7 @@
 
 @implementation MMHexagonSkillView
 
-- (id)initWithTarget:(id<FTSkillViewDelegate>)target {
+- (id)initWithTarget:(id<MMSkillViewDelegate>)target {
   if (self = [super initWithTarget:target]) {
     UIImage *maskingImage = _imgSkillBg.image;
     CALayer *maskingLayer = [CALayer layer];

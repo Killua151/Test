@@ -16,9 +16,9 @@
   IBOutlet UIButton *_btnTwitter;
 }
 
-@property (nonatomic, assign) id<FTActionSheetDelegate> delegate;
+@property (nonatomic, assign) id<MMActionSheetDelegate> delegate;
 
-- (id)initInViewController:(UIViewController<FTActionSheetDelegate> *)viewController;
+- (id)initInViewController:(UIViewController<MMActionSheetDelegate> *)viewController;
 - (void)show;
 - (void)hide;
 

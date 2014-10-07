@@ -16,7 +16,7 @@
 
 @implementation MMShareActionSheet
 
-- (id)initInViewController:(UIViewController<FTActionSheetDelegate> *)viewController {
+- (id)initInViewController:(UIViewController<MMActionSheetDelegate> *)viewController {
   if (self = [super init]) {
     LoadXibWithSameClass();
     

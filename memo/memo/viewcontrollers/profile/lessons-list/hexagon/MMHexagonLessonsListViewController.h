@@ -8,7 +8,7 @@
 
 #import "MMLessonsListViewController.h"
 
-@interface MMHexagonLessonsListViewController : MMLessonsListViewController <UIScrollViewDelegate, FTLessonViewDelegate> {
+@interface MMHexagonLessonsListViewController : MMLessonsListViewController <UIScrollViewDelegate, MMLessonViewDelegate> {
   IBOutlet UIImageView *_imgBgLaurea;
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UIScrollView *_vLessonsScrollView;

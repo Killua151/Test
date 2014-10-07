@@ -19,6 +19,7 @@
 #import "MMTranslateQuestionContentView.h"
 
 #import "MBaseQuestion.h"
+#import "MUser.h"
 
 @interface MMExamViewController () {
   NSInteger _totalLessonsCount;
@@ -139,7 +140,7 @@
   [self dismissViewController];
 }
 
-#pragma mark - FTLessonLearningDelegate methods
+#pragma mark - MMLessonLearningDelegate methods
 - (void)questionContentViewDidEnterEditingMode {
   [self gestureLayerDidEnterEditingMode];
 }
@@ -385,6 +386,8 @@
        [Utils hideAllHUDsForView:self.view];
        ShowAlertWithError(error);
        
+       DLog(@"%@", [MUser currentUser].lastReceivedBonuses);
+       
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
     
@@ -433,7 +436,7 @@
 }
 
 - (Class)questionContentViewKlassForQuestionType:(NSString *)questionType {
-  return NSClassFromString([NSString stringWithFormat:@"FT%@QuestionContentView", [questionType capitalizedString]]);
+  return NSClassFromString([NSString stringWithFormat:@"MM%@QuestionContentView", [questionType capitalizedString]]);
 }
 
 @end

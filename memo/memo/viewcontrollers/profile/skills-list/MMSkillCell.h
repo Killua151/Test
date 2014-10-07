@@ -10,13 +10,13 @@
 
 @interface MMSkillCell : BaseTableViewCell
 
-@property (nonatomic, assign) id<FTSkillViewDelegate> delegate;
+@property (nonatomic, assign) id<MMSkillViewDelegate> delegate;
 
 + (Class)currentSkillCellClass;
 + (NSString *)reuseIdentifierForSkills:(NSArray *)skills;
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
                     withTotal:(NSInteger)totalSkills
-                     inTarget:(id<FTSkillViewDelegate>)target;
+                     inTarget:(id<MMSkillViewDelegate>)target;
 - (void)updateCellWithSkills:(NSArray *)skills;
 - (CGFloat)xCenterForSkillAtIndex:(NSInteger)index amongTotal:(NSInteger)total;
 - (CGFloat)yPosForSkillViews;

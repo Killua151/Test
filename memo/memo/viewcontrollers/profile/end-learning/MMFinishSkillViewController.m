@@ -80,7 +80,7 @@
   [self.navigationController pushViewController:[MMMoneyBonusViewController new] animated:YES];
 }
 
-#pragma mark - FTActionSheetDelegate methods
+#pragma mark - MMActionSheetDelegate methods
 - (void)actionSheetDidSelectAtIndex:(NSInteger)index {
   [self presentShareViewControllerWithDefaultOption:(ShareOption)index];
 }

@@ -13,10 +13,10 @@
 @implementation MMCheckpointTestCell
 
 + (Class)currentCheckpointTestCellClass {
-#if kHexagonThemeTestMode
+#if kHexagonThemeDisplayMode
   return [MMHexagonCheckpointTestCell class];
 #else
-  return [FTShieldCheckpointTestCell class];
+  return [MMShieldCheckpointTestCell class];
 #endif
 }
 

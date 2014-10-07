@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MMExamViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate, UIGestureRecognizerDelegate> {
+@interface MMExamViewController : BaseViewController <UIAlertViewDelegate, MMLessonLearningDelegate, UIGestureRecognizerDelegate> {
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;

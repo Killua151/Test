@@ -15,7 +15,7 @@
   IBOutlet UIButton *_btnQuit;
 }
 
-@property (nonatomic, assign) id<FTLessonLearningDelegate> delegate;
+@property (nonatomic, assign) id<MMLessonLearningDelegate> delegate;
 
 - (IBAction)btnRetryPressed:(UIButton *)sender;
 - (IBAction)btnQuitPressed:(UIButton *)sender;
