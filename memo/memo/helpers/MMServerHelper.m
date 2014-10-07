@@ -148,7 +148,7 @@
                            kParamSkillId : [NSString normalizedString:skillId],
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamExamToken : [NSString normalizedString:examToken],
-                           kParamAnswers : answerResults
+                           kParamAnswers : [answerResults JSONString]
                            };
   
   DLog(@"%@", params);

@@ -61,11 +61,8 @@
 - (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata {
   if (self = [super init]) {
     _metadata = metadata;
-    DLog(@"%@", _metadata);
-    
     _questionsData = questions;
     _answersData = [NSMutableDictionary new];
-    [Utils preDownloadAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:_questionsData]];
   }
   
   return self;
