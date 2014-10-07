@@ -417,7 +417,7 @@ static UIView *_sharedToast = nil;
 
 + (void)playAudioFromUrl:(NSString *)audioUrl {
   NSURL *url = [NSURL URLWithString:audioUrl];
-//  url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"mp3"];
+  url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"mp3"];
   [[Utils sharedUtils] playAudioFromAudioUrl:url];
 }
 

@@ -82,8 +82,6 @@
 		CAF8530119E0F3D200A347CF /* btn-navbar-back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8508B19E0F3D100A347CF /* btn-navbar-back_white.png */; };
 		CAF8530219E0F3D200A347CF /* btn-navbar-back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8508C19E0F3D100A347CF /* btn-navbar-back_white@2x.png */; };
 		CAF8530619E0F3D200A347CF /* img-beginner-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509219E0F3D100A347CF /* img-beginner-icon.png */; };
-		CAF8530719E0F3D200A347CF /* img-beginner-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509319E0F3D100A347CF /* img-beginner-icon@2x.png */; };
-		CAF8530A19E0F3D200A347CF /* img-placement_test-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509619E0F3D100A347CF /* img-placement_test-icon.png */; };
 		CAF8530B19E0F3D200A347CF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509719E0F3D100A347CF /* img-placement_test-icon@2x.png */; };
 		CAF8530C19E0F3D200A347CF /* img-button_indicator-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509819E0F3D100A347CF /* img-button_indicator-right.png */; };
 		CAF8530D19E0F3D200A347CF /* img-button_indicator-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509919E0F3D100A347CF /* img-button_indicator-right@2x.png */; };
@@ -95,12 +93,10 @@
 		CAF8531319E0F3D200A347CF /* img-login-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8509F19E0F3D100A347CF /* img-login-text_boxes-bg@2x.png */; };
 		CAF8531419E0F3D200A347CF /* img-sign_up-text_boxes-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A019E0F3D100A347CF /* img-sign_up-text_boxes-bg.png */; };
 		CAF8531519E0F3D200A347CF /* img-sign_up-text_boxes-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A119E0F3D100A347CF /* img-sign_up-text_boxes-bg@2x.png */; };
-		CAF8531619E0F3D200A347CF /* img-beginner-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A419E0F3D100A347CF /* img-beginner-icon.png */; };
 		CAF8531719E0F3D200A347CF /* img-beginner-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A519E0F3D100A347CF /* img-beginner-icon@2x.png */; };
 		CAF8531819E0F3D200A347CF /* img-beginning_options-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A619E0F3D100A347CF /* img-beginning_options-bg.png */; };
 		CAF8531919E0F3D200A347CF /* img-beginning_options-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A719E0F3D100A347CF /* img-beginning_options-bg@2x.png */; };
 		CAF8531A19E0F3D200A347CF /* img-placement_test-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A819E0F3D100A347CF /* img-placement_test-icon.png */; };
-		CAF8531B19E0F3D200A347CF /* img-placement_test-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850A919E0F3D100A347CF /* img-placement_test-icon@2x.png */; };
 		CAF8531C19E0F3D200A347CF /* img-finish_lesson-set_goal-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850AB19E0F3D100A347CF /* img-finish_lesson-set_goal-bg.png */; };
 		CAF8531D19E0F3D200A347CF /* img-finish_lesson-set_goal-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850AC19E0F3D100A347CF /* img-finish_lesson-set_goal-bg@2x.png */; };
 		CAF8531E19E0F3D200A347CF /* img-set_goal-radio-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850AD19E0F3D100A347CF /* img-set_goal-radio-normal.png */; };
@@ -4034,7 +4030,6 @@
 				CAF855EA19E0F82700A347CF /* img-skill_icon-en-vi_dac_tinh-unlocked@2x.png in Resources */,
 				CAF8537419E0F3D200A347CF /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */,
 				CAF855FE19E0F82700A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked@2x.png in Resources */,
-				CAF8530719E0F3D200A347CF /* img-beginner-icon@2x.png in Resources */,
 				CAF8565219E0F82700A347CF /* img-skill_icon-en-vi_lien_tu-unlocked@2x.png in Resources */,
 				CAF855E419E0F82700A347CF /* img-skill_icon-en-vi_con_nguoi-locked@2x.png in Resources */,
 				CAF8545D19E0F3D200A347CF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
@@ -4149,7 +4144,6 @@
 				CAF8533F19E0F3D200A347CF /* img-lessons_learning-result_view-bg@2x.png in Resources */,
 				CAF8544019E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked_big.png in Resources */,
 				CAF853E519E0F3D200A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked_big@2x.png in Resources */,
-				CAF8531619E0F3D200A347CF /* img-beginner-icon.png in Resources */,
 				CAF853DD19E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big@2x.png in Resources */,
 				CAF8567719E0F82700A347CF /* img-skill_icon-en-vi_so_nhieu-locked.png in Resources */,
 				CAF8542119E0F3D200A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked_big@2x.png in Resources */,
@@ -4255,7 +4249,6 @@
 				CAF854AF19E0F3D200A347CF /* FTShieldLessonCell.xib in Resources */,
 				CAF8544F19E0F3D200A347CF /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
 				CAF8544C19E0F3D200A347CF /* img-hexagon_skill-bg-locked.png in Resources */,
-				CAF8530A19E0F3D200A347CF /* img-placement_test-icon.png in Resources */,
 				CAF8536F19E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */,
 				CAF855ED19E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png in Resources */,
 				CAF8535B19E0F3D200A347CF /* img-popup-bg@2x.png in Resources */,
@@ -4489,7 +4482,6 @@
 				CAF8549519E0F3D200A347CF /* FTFormQuestionContentView.xib in Resources */,
 				CAF853E219E0F3D200A347CF /* img-skill_icon-en-vi_khoa_hoc-locked_big.png in Resources */,
 				CAF853AC19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big.png in Resources */,
-				CAF8531B19E0F3D200A347CF /* img-placement_test-icon@2x.png in Resources */,
 				CAF8533A19E0F3D200A347CF /* img-lessons_learning-heart_potion.png in Resources */,
 				CAF853F719E0F3D200A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked_big@2x.png in Resources */,
 				CAF8545919E0F3D200A347CF /* img-hexagon_skill-strength-2_big@2x.png in Resources */,
