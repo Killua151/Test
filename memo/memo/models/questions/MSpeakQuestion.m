@@ -10,4 +10,9 @@
 
 @implementation MSpeakQuestion
 
+- (id)checkAnswer:(id)answerValue {
+  DLog(@"%@ %@", answerValue, self.question);
+  return nil;
+}
+
 @end

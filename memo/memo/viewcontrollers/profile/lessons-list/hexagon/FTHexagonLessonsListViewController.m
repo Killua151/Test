@@ -12,7 +12,6 @@
 #import "MSkill.h"
 #import "MLesson.h"
 #import "MBaseQuestion.h"
-#import "ISSpeechRecognitionResult.h"
 
 #define kNormalLessonWidth        230.f
 #define kNormalLessonHeight       160.f
@@ -102,11 +101,6 @@
 
 #pragma mark - FTLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
-  [Utils recognizeWithCompletion:^(ISSpeechRecognitionResult *result, NSError *error) {
-    DLog(@"%@ %f %@", result.text, result.confidence, error);
-  }];
-  return;
-  
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
   [[MMServerHelper sharedHelper]
@@ -152,8 +146,11 @@
                                                _vLessonsScrollView.frame.size.height);
   _vLessonsScrollView.contentOffset = CGPointZero;
   
-  FTHexagonLessonView *lessonView = [_vLessonsScrollView.subviews firstObject];
-  [self focusLesson:lessonView atIndex:lessonView.index focused:YES];
+  for (FTHexagonLessonView *lessonView in _vLessonsScrollView.subviews)
+    if (lessonView.index == 0) {
+      [self focusLesson:lessonView atIndex:0 focused:YES];
+      break;
+    }
 }
 
 - (void)updateFocusedLesson {

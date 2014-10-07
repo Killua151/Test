@@ -8,6 +8,7 @@
 
 #import "FTSpeakQuestionContentView.h"
 #import "MSpeakQuestion.h"
+#import "ISSpeechRecognitionResult.h"
 
 @interface FTSpeakQuestionContentView ()
 
@@ -86,8 +87,12 @@
 }
 
 - (IBAction)btnRecordPressed:(UIButton *)sender {
-  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
-    [self.delegate questionContentViewDidUpdateAnswer:YES withValue:nil];
+  [Utils recognizeWithCompletion:^(ISSpeechRecognitionResult *result, NSError *error) {
+    ShowAlertWithError(error);
+    
+    if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
+      [self.delegate questionContentViewDidUpdateAnswer:YES withValue:result.text];
+  }];
 }
 
 - (IBAction)btnSkipSpeakQuestionPressed:(UIButton *)sender {

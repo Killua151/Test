@@ -8,8 +8,6 @@
 
 #import "FTLessonsListViewController.h"
 
-@class MSkill;
-
 @interface FTHexagonLessonsListViewController : FTLessonsListViewController <UIScrollViewDelegate, FTLessonViewDelegate> {
   IBOutlet UIImageView *_imgBgLaurea;
   IBOutlet UIImageView *_imgSkillIcon;
