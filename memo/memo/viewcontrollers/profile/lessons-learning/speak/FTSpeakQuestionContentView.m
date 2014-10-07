@@ -43,7 +43,8 @@
   _btnSkipSpeakQuestion.layer.cornerRadius = 4;
   _btnSkipSpeakQuestion.layer.borderColor = [UIColorFromRGB(179, 179, 179) CGColor];
   _btnSkipSpeakQuestion.layer.borderWidth = 2;
-  [_btnSkipSpeakQuestion setTitle:NSLocalizedString(@"I can’t use microphone right now", nil) forState:UIControlStateNormal];
+  [_btnSkipSpeakQuestion setTitle:NSLocalizedString(@"I can’t use microphone right now", nil)
+                         forState:UIControlStateNormal];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _lblQuestionTitle.frame;
@@ -85,10 +86,13 @@
 }
 
 - (IBAction)btnRecordPressed:(UIButton *)sender {
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidUpdateAnswer:withValue:)])
+    [self.delegate questionContentViewDidUpdateAnswer:YES withValue:nil];
 }
 
 - (IBAction)btnSkipSpeakQuestionPressed:(UIButton *)sender {
-  DLog(@"invoke");
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidSkipAnswer)])
+    [self.delegate questionContentViewDidSkipAnswer];
 }
 
 #pragma mark - Private methods

@@ -150,6 +150,11 @@
   _answerValue = answerValue;
 }
 
+- (void)questionContentViewDidSkipAnswer {
+  _vGestureLayer.hidden = YES;
+  [self reloadContents];
+}
+
 - (void)userDidRetryLesson {
   [self resetCounts];
   [self reloadContents];
@@ -360,9 +365,6 @@
 }
 
 - (void)removeCurrentQuestion {
-  _btnCheck.enabled = NO;
-  [self switchCheckButtonMode:YES];
-  
   // Out of hearts
   if (_currentHeartsCount < 0) {
     FTFailLessonViewController *failLessonVC = [FTFailLessonViewController new];
@@ -373,6 +375,9 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
+    [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
+    return;
+    
     [Utils showHUDForView:self.view withText:nil];
     
     [[MMServerHelper sharedHelper]
@@ -389,6 +394,9 @@
     
     return;
   }
+  
+  _btnCheck.enabled = NO;
+  [self switchCheckButtonMode:YES];
   
   if ([_vContentView.subviews count] == 0) {
     [self prepareNextQuestion];
