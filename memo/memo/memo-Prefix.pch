@@ -98,7 +98,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             true
 #define kTestPassAllAPIs                        false
-#define kTestTranslateQuestions                 false
+#define kTestTranslateQuestions                 true
 #define kTestPushNotification                   false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
@@ -114,6 +114,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kUserDefDeviceToken                     @"ios_device_token"
 
 #define kParamDatabaseId                        @"_id"
+#define kParamAnswers                           @"answers"
 #define kParamAuthToken                         @"auth_token"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"

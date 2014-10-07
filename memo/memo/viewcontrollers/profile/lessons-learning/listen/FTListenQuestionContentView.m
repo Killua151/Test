@@ -57,7 +57,13 @@
 }
 
 - (IBAction)btnNormalAudioPressed:(UIButton *)sender {
-  [Utils playAudioWithUrl:[(MListenQuestion *)self.questionData normal_question_audio]];
+  MListenQuestion *questionData = (MListenQuestion *)self.questionData;
+  
+#if kTestTranslateQuestions
+  [Utils showToastWithMessage:questionData.question];
+#endif
+  
+  [Utils playAudioWithUrl:questionData.normal_question_audio];
 }
 
 - (IBAction)btnSlowAudioPressed:(UIButton *)sender {

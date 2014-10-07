@@ -110,7 +110,13 @@
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
      
-     MMExamViewController *examVC = [[MMExamViewController alloc] initWithToken:examToken andQuestions:questions];
+     MMExamViewController *examVC =
+     [[MMExamViewController alloc] initWithQuestions:questions
+                                         andMetadata:@{
+                                                       kParamExamToken : [NSString normalizedString:examToken],
+                                                       kParamLessonNumber : @(lesson.lesson_number),
+                                                       kParamSkillId : self.skillData._id
+                                                       }];
      [self presentViewController:examVC animated:YES completion:NULL];
    }];
 }

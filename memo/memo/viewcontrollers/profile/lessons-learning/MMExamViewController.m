@@ -31,7 +31,7 @@
   
   FTQuestionContentView *_vQuestionContent;
   
-  NSString *_examToken;
+  NSDictionary *_metadata;
   NSArray *_questionsData;
   NSMutableDictionary *_answersData;
   id _answerValue;
@@ -58,9 +58,11 @@
 
 @implementation MMExamViewController
 
-- (id)initWithToken:(NSString *)examToken andQuestions:(NSArray *)questions {
+- (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata {
   if (self = [super init]) {
-    _examToken = examToken;
+    _metadata = metadata;
+    DLog(@"%@", _metadata);
+    
     _questionsData = questions;
     _answersData = [NSMutableDictionary new];
     [Utils preDownloadAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:_questionsData]];
@@ -374,7 +376,20 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
-    [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
+    [Utils showHUDForView:self.view withText:nil];
+    
+    [[MMServerHelper sharedHelper]
+     finishLesson:[_metadata[kParamLessonNumber] integerValue]
+     inSkill:_metadata[kParamSkillId]
+     withToken:_metadata[kParamExamToken]
+     andResults:_answersData
+     completion:^(NSError *error) {
+       [Utils hideAllHUDsForView:self.view];
+       ShowAlertWithError(error);
+       
+       [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
+     }];
+    
     return;
   }
   

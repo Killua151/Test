@@ -430,18 +430,26 @@ static UIView *_sharedToast = nil;
 + (void)preDownloadAudioFromUrls:(NSArray *)audioUrls {
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
     for (NSString *audioUrl in audioUrls) {
+#if kTestDownloadAudio
       NSURL *audioUri = [NSURL URLWithString:audioUrl];
+#endif
       
       @autoreleasepool {
+#if kTestDownloadAudio
         dispatch_sync(dispatch_get_main_queue(), ^{
           DLog(@"start download audio with %@", [audioUri lastPathComponent]);
         });
         
-        NSString *savedAudioPath = [self saveTempAudioWithUrl:audioUrl];
+        NSString *savedAudioPath =
+#endif
         
+        [self saveTempAudioWithUrl:audioUrl];
+
+#if kTestDownloadAudio
         dispatch_sync(dispatch_get_main_queue(), ^{
           DLog(@"finish download audio with %@ at path %@", [audioUri lastPathComponent], savedAudioPath);
         });
+#endif
       }
     }
   });

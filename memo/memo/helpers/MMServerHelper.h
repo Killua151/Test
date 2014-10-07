@@ -38,6 +38,12 @@
             inSkill:(NSString *)skillId
          completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
+- (void)finishLesson:(NSInteger)lessonNumber
+             inSkill:(NSString *)skillId
+           withToken:(NSString *)examToken
+          andResults:(NSDictionary *)answerResults
+          completion:(void(^)(NSError *error))handler;
+
 - (void)registerDeviceTokenForAPNS;
 
 @end

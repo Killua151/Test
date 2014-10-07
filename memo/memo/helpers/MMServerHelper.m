@@ -137,6 +137,36 @@
   [self startExamWithParam:params completion:handler];
 }
 
+- (void)finishLesson:(NSInteger)lessonNumber
+             inSkill:(NSString *)skillId
+           withToken:(NSString *)examToken
+          andResults:(NSDictionary *)answerResults
+          completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : @"lesson",
+                           kParamLessonNumber : @(lessonNumber),
+                           kParamSkillId : [NSString normalizedString:skillId],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamExamToken : [NSString normalizedString:examToken],
+                           kParamAnswers : answerResults
+                           };
+  
+  DLog(@"%@", params);
+  
+  [self
+   POST:@"exam/finish"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     DLog(@"%@", [responseObject objectFromJSONData]);
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)registerDeviceTokenForAPNS {
   NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefDeviceToken];
   
