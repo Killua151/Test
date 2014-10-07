@@ -213,6 +213,15 @@
   _currentStrengthenButton.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   [_currentStrengthenButton setTitle:NSLocalizedString(@"Strengthen skills", nil) forState:UIControlStateNormal];
   
+  UIImage *maskingImage = [UIImage imageNamed:@"img-placement_test-icon.png"];
+  
+  for (UIView *iconBg in _vIconsBg) {
+    CALayer *maskingLayer = [CALayer layer];
+    maskingLayer.frame = iconBg.bounds;
+    [maskingLayer setContents:(id)[maskingImage CGImage]];
+    [iconBg.layer setMask:maskingLayer];
+  }
+  
   _lblBeginnerTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblBeginnerTitle.text = NSLocalizedString(@"Are you a beginner?", nil);
   

@@ -35,7 +35,9 @@
   
   self.backgroundColor = [_skillData themeColor];
   _lblSkillName.text = _skillData.slug;
-  _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-unlocked", _skillData._id]];
+  
+  NSString *suffix = skill.unlocked ? @"unlocked" : @"locked";
+  _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-%@", _skillData._id, suffix]];
 }
 
 @end

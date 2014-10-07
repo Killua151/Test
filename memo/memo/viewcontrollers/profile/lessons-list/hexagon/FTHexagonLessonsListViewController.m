@@ -12,6 +12,7 @@
 #import "MSkill.h"
 #import "MLesson.h"
 #import "MBaseQuestion.h"
+#import "ISSpeechRecognitionResult.h"
 
 #define kNormalLessonWidth        230.f
 #define kNormalLessonHeight       160.f
@@ -101,6 +102,11 @@
 
 #pragma mark - FTLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
+  [Utils recognizeWithCompletion:^(ISSpeechRecognitionResult *result, NSError *error) {
+    DLog(@"%@ %f %@", result.text, result.confidence, error);
+  }];
+  return;
+  
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
   [[MMServerHelper sharedHelper]
@@ -123,8 +129,9 @@
 
 #pragma mark - Private methods
 - (void)setupLessonsScrollView {
+  NSString *suffix = self.skillData.unlocked ? @"unlocked" : @"locked";
   _imgSkillIcon.image = [UIImage imageNamed:
-                         [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", self.skillData._id]];
+                         [NSString stringWithFormat:@"img-skill_icon-%@-%@_big", self.skillData._id, suffix]];
   
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];

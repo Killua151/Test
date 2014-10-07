@@ -11,6 +11,7 @@
 @interface FTSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, FTSkillViewDelegate, UIAlertViewDelegate> {
   IBOutlet UITableView *_tblSkills;
   IBOutlet UIView *_vBeginningOptions;
+  IBOutletCollection(UIView) NSArray *_vIconsBg;
   IBOutlet UILabel *_lblBeginnerTitle;
   IBOutlet UILabel *_lblBeginnerSubTitle;
   IBOutlet UILabel *_lblPlacementTestTitle;
