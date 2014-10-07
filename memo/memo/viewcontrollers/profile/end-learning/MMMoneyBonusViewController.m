@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTMoneyBonusViewController.h"
+#import "MMMoneyBonusViewController.h"
 #import "FTSkillsListViewController.h"
 
-@interface FTMoneyBonusViewController ()
+@interface MMMoneyBonusViewController ()
 
 @end
 
-@implementation FTMoneyBonusViewController
+@implementation MMMoneyBonusViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

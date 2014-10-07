@@ -7,8 +7,8 @@
 //
 
 #import "MMExamViewController.h"
-#import "FTFailLessonViewController.h"
-#import "FTFinishLessonViewController.h"
+#import "MMFailLessonViewController.h"
+#import "MMFinishLessonViewController.h"
 
 #import "FTFormQuestionContentView.h"
 #import "FTJudgeQuestionContentView.h"
@@ -120,7 +120,6 @@
 }
 
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender {
-  _btnCheck.enabled = !_btnCheck.enabled;
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
@@ -367,7 +366,7 @@
 - (void)removeCurrentQuestion {
   // Out of hearts
   if (_currentHeartsCount < 0) {
-    FTFailLessonViewController *failLessonVC = [FTFailLessonViewController new];
+    MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
     [self presentViewController:failLessonVC animated:YES completion:NULL];
     return;
@@ -375,9 +374,6 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
-    [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
-    return;
-    
     [Utils showHUDForView:self.view withText:nil];
     
     [[MMServerHelper sharedHelper]
@@ -389,7 +385,7 @@
        [Utils hideAllHUDsForView:self.view];
        ShowAlertWithError(error);
        
-       [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
+       [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
     
     return;

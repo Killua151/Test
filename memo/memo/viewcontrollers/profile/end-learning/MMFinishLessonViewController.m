@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTFinishLessonViewController.h"
-#import "FTFinishSkillViewController.h"
+#import "MMFinishLessonViewController.h"
+#import "MMFinishSkillViewController.h"
 #import "FTSetGoalViewController.h"
 #import "FTShareActionSheet.h"
 #import "MUser.h"
 
-@interface FTFinishLessonViewController () {
+@interface MMFinishLessonViewController () {
   MMLineChart *_lineChart;
   FTShareActionSheet *_vShare;
   CGFloat _innerPanGestureYPos;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation FTFinishLessonViewController
+@implementation MMFinishLessonViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -87,7 +87,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[FTFinishSkillViewController new] animated:YES];
+  [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {

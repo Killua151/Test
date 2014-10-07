@@ -13,7 +13,7 @@
 #import "FTShopViewController.h"
 #import "FTProfileViewController.h"
 
-#import "FTBeginPlacementTestViewController.h"
+#import "MMBeginPlacementTestViewController.h"
 #import "MMExamViewController.h"
 
 #import "MUser.h"
@@ -104,7 +104,7 @@
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
-  [self presentViewController:[FTBeginPlacementTestViewController navigationController]
+  [self presentViewController:[MMBeginPlacementTestViewController navigationController]
                      animated:YES
                    completion:NULL];
 }

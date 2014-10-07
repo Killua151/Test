@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTCongratsViewController.h"
+#import "MMCongratsViewController.h"
 #import "FTShareActionSheet.h"
 
-@interface FTCongratsViewController () {
+@interface MMCongratsViewController () {
   FTShareActionSheet *_vShare;
 }
 
 @end
 
-@implementation FTCongratsViewController
+@implementation MMCongratsViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

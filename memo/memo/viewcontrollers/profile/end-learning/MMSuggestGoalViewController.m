@@ -1,18 +1,20 @@
 //
-//  FTSaveProgressViewController.m
+//  FTSetGoalViewController.m
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/22/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTSaveProgressViewController.h"
+#import "MMSuggestGoalViewController.h"
 
-@interface FTSaveProgressViewController ()
+@interface MMSuggestGoalViewController ()
+
+- (void)setupViews;
 
 @end
 
-@implementation FTSaveProgressViewController
+@implementation MMSuggestGoalViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -39,28 +41,22 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Save your progress", nil);
+  _lblMessage.text = NSLocalizedString(@"Let's get started!", nil);
   [Utils adjustLabelToFitHeight:_lblMessage];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = NSLocalizedString(@"You now need a Memo profile to save your progress. Register now!", nil);
+  _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
   [Utils adjustLabelToFitHeight:_lblSubMessage];
   
-  _btnCreateProfile.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnCreateProfile.layer.cornerRadius = 4;
-  [_btnCreateProfile setTitle:NSLocalizedString(@"Create profile", nil) forState:UIControlStateNormal];
+  _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSetGoal.layer.cornerRadius = 4;
+  [_btnSetGoal setTitle:NSLocalizedString(@"Set daily goal", nil) forState:UIControlStateNormal];
   
-  _btnCancel.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnCancel.layer.cornerRadius = 4;
-  _btnCancel.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
-  _btnCancel.layer.borderWidth = 2;
-  [_btnCancel setTitle:NSLocalizedString(@"Cancel my progress", nil) forState:UIControlStateNormal];
-}
-
-- (IBAction)btnCreateProfile:(UIButton *)sender {
-}
-
-- (IBAction)btnCancel:(UIButton *)sender {
+  _btnSkip.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnSkip.layer.cornerRadius = 4;
+  _btnSkip.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _btnSkip.layer.borderWidth = 2;
+  [_btnSkip setTitle:NSLocalizedString(@"Skip", nil) forState:UIControlStateNormal];
 }
 
 @end

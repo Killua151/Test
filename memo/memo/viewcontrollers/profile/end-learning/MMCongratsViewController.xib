@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTCongratsViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMCongratsViewController">
             <connections>
                 <outlet property="_btnNext" destination="JKg-YD-kMx" id="qhE-N1-duL"/>
                 <outlet property="_btnShare" destination="wXn-hQ-ozl" id="tij-cI-BB1"/>

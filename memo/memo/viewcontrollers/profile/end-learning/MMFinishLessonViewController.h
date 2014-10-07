@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTEndLearningViewController.h"
+#import "MMEndLearningViewController.h"
 
-@interface FTFinishLessonViewController : FTEndLearningViewController <UIGestureRecognizerDelegate, FTActionSheetDelegate> {
+@interface MMFinishLessonViewController : MMEndLearningViewController <UIGestureRecognizerDelegate, FTActionSheetDelegate> {
   IBOutlet UILabel *_lblFinishLessonMessage;
   IBOutlet UILabel *_lblHeartBonusMessage;
   IBOutlet UIButton *_btnShare;

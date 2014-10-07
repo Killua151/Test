@@ -452,23 +452,23 @@
 		CAF8547E19E0F3D200A347CF /* MMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8521E19E0F3D200A347CF /* MMLoginViewController.xib */; };
 		CAF8547F19E0F3D200A347CF /* MMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522019E0F3D200A347CF /* MMSignUpViewController.m */; };
 		CAF8548019E0F3D200A347CF /* MMSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522119E0F3D200A347CF /* MMSignUpViewController.xib */; };
-		CAF8548119E0F3D200A347CF /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */; };
-		CAF8548219E0F3D200A347CF /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */; };
-		CAF8548319E0F3D200A347CF /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522819E0F3D200A347CF /* FTCongratsViewController.m */; };
-		CAF8548419E0F3D200A347CF /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522919E0F3D200A347CF /* FTCongratsViewController.xib */; };
-		CAF8548519E0F3D200A347CF /* FTEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522B19E0F3D200A347CF /* FTEndLearningViewController.m */; };
-		CAF8548619E0F3D200A347CF /* FTFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522D19E0F3D200A347CF /* FTFailLessonViewController.m */; };
-		CAF8548719E0F3D200A347CF /* FTFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522E19E0F3D200A347CF /* FTFailLessonViewController.xib */; };
-		CAF8548819E0F3D200A347CF /* FTFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523019E0F3D200A347CF /* FTFinishLessonViewController.m */; };
-		CAF8548919E0F3D200A347CF /* FTFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523119E0F3D200A347CF /* FTFinishLessonViewController.xib */; };
-		CAF8548A19E0F3D200A347CF /* FTFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523319E0F3D200A347CF /* FTFinishSkillViewController.m */; };
-		CAF8548B19E0F3D200A347CF /* FTFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523419E0F3D200A347CF /* FTFinishSkillViewController.xib */; };
-		CAF8548C19E0F3D200A347CF /* FTMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523619E0F3D200A347CF /* FTMoneyBonusViewController.m */; };
-		CAF8548D19E0F3D200A347CF /* FTMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523719E0F3D200A347CF /* FTMoneyBonusViewController.xib */; };
-		CAF8548E19E0F3D200A347CF /* FTSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523919E0F3D200A347CF /* FTSaveProgressViewController.m */; };
-		CAF8548F19E0F3D200A347CF /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523A19E0F3D200A347CF /* FTSaveProgressViewController.xib */; };
-		CAF8549019E0F3D200A347CF /* FTSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523C19E0F3D200A347CF /* FTSuggestGoalViewController.m */; };
-		CAF8549119E0F3D200A347CF /* FTSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523D19E0F3D200A347CF /* FTSuggestGoalViewController.xib */; };
+		CAF8548119E0F3D200A347CF /* MMBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522519E0F3D200A347CF /* MMBeginPlacementTestViewController.m */; };
+		CAF8548219E0F3D200A347CF /* MMBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522619E0F3D200A347CF /* MMBeginPlacementTestViewController.xib */; };
+		CAF8548319E0F3D200A347CF /* MMCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522819E0F3D200A347CF /* MMCongratsViewController.m */; };
+		CAF8548419E0F3D200A347CF /* MMCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522919E0F3D200A347CF /* MMCongratsViewController.xib */; };
+		CAF8548519E0F3D200A347CF /* MMEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522B19E0F3D200A347CF /* MMEndLearningViewController.m */; };
+		CAF8548619E0F3D200A347CF /* MMFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522D19E0F3D200A347CF /* MMFailLessonViewController.m */; };
+		CAF8548719E0F3D200A347CF /* MMFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522E19E0F3D200A347CF /* MMFailLessonViewController.xib */; };
+		CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523019E0F3D200A347CF /* MMFinishLessonViewController.m */; };
+		CAF8548919E0F3D200A347CF /* MMFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523119E0F3D200A347CF /* MMFinishLessonViewController.xib */; };
+		CAF8548A19E0F3D200A347CF /* MMFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523319E0F3D200A347CF /* MMFinishSkillViewController.m */; };
+		CAF8548B19E0F3D200A347CF /* MMFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523419E0F3D200A347CF /* MMFinishSkillViewController.xib */; };
+		CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523619E0F3D200A347CF /* MMMoneyBonusViewController.m */; };
+		CAF8548D19E0F3D200A347CF /* MMMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523719E0F3D200A347CF /* MMMoneyBonusViewController.xib */; };
+		CAF8548E19E0F3D200A347CF /* MMSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523919E0F3D200A347CF /* MMSaveProgressViewController.m */; };
+		CAF8548F19E0F3D200A347CF /* MMSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523A19E0F3D200A347CF /* MMSaveProgressViewController.xib */; };
+		CAF8549019E0F3D200A347CF /* MMSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523C19E0F3D200A347CF /* MMSuggestGoalViewController.m */; };
+		CAF8549119E0F3D200A347CF /* MMSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523D19E0F3D200A347CF /* MMSuggestGoalViewController.xib */; };
 		CAF8549219E0F3D200A347CF /* FTFormAnswerTokenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524119E0F3D200A347CF /* FTFormAnswerTokenButton.m */; };
 		CAF8549319E0F3D200A347CF /* FTFormAnswerTokenButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524219E0F3D200A347CF /* FTFormAnswerTokenButton.xib */; };
 		CAF8549419E0F3D200A347CF /* FTFormQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524419E0F3D200A347CF /* FTFormQuestionContentView.m */; };
@@ -783,17 +783,17 @@
 		CAF856B919E0FDF600A347CF /* FTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8528619E0F3D200A347CF /* FTSettingsViewController.m */; };
 		CAF856BA19E0FDF600A347CF /* FTListenQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8525419E0F3D200A347CF /* FTListenQuestionContentView.m */; };
 		CAF856BB19E0FDF600A347CF /* MMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501119E0F3D100A347CF /* MMLineChart.m */; };
-		CAF856BC19E0FDF600A347CF /* FTFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522D19E0F3D200A347CF /* FTFailLessonViewController.m */; };
+		CAF856BC19E0FDF600A347CF /* MMFailLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522D19E0F3D200A347CF /* MMFailLessonViewController.m */; };
 		CAF856BD19E0FDF600A347CF /* MMCoursesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521419E0F3D200A347CF /* MMCoursesListViewController.m */; };
 		CAF856BE19E0FDF600A347CF /* FTSkillsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8529B19E0F3D200A347CF /* FTSkillsListViewController.m */; };
 		CAF856BF19E0FDF600A347CF /* FTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF852B819E0F3D200A347CF /* FTProfileViewController.m */; };
 		CAF856C019E0FDF600A347CF /* FTProfileLeaderboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF852B519E0F3D200A347CF /* FTProfileLeaderboardCell.m */; };
 		CAF856C119E0FDF600A347CF /* FTLessonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8526B19E0F3D200A347CF /* FTLessonsListViewController.m */; };
-		CAF856C219E0FDF600A347CF /* FTCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522819E0F3D200A347CF /* FTCongratsViewController.m */; };
+		CAF856C219E0FDF600A347CF /* MMCongratsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522819E0F3D200A347CF /* MMCongratsViewController.m */; };
 		CAF856C319E0FDF600A347CF /* FTSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8529E19E0F3D200A347CF /* FTSkillView.m */; };
 		CAF856C419E0FDF600A347CF /* FTSelectQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8525F19E0F3D200A347CF /* FTSelectQuestionContentView.m */; };
 		CAF856C519E0FDF600A347CF /* MSpeakQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8506919E0F3D100A347CF /* MSpeakQuestion.m */; };
-		CAF856C619E0FDF600A347CF /* FTBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */; };
+		CAF856C619E0FDF600A347CF /* MMBeginPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522519E0F3D200A347CF /* MMBeginPlacementTestViewController.m */; };
 		CAF856C719E0FDF600A347CF /* MNameQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8506319E0F3D100A347CF /* MNameQuestion.m */; };
 		CAF856C819E0FDF600A347CF /* MBaseQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8505B19E0F3D100A347CF /* MBaseQuestion.m */; };
 		CAF856C919E0FDF600A347CF /* MMCourseSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8521119E0F3D200A347CF /* MMCourseSelectionCell.m */; };
@@ -824,13 +824,13 @@
 		CAF856E219E0FDF600A347CF /* FTShopItemHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8528D19E0F3D200A347CF /* FTShopItemHeaderView.m */; };
 		CAF856E319E0FDF600A347CF /* NSMutableArray+MutableArrayHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501D19E0F3D100A347CF /* NSMutableArray+MutableArrayHelpers.m */; };
 		CAF856E419E0FDF600A347CF /* FTSetGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8527C19E0F3D200A347CF /* FTSetGoalCell.m */; };
-		CAF856E519E0FDF600A347CF /* FTSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523C19E0F3D200A347CF /* FTSuggestGoalViewController.m */; };
+		CAF856E519E0FDF600A347CF /* MMSuggestGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523C19E0F3D200A347CF /* MMSuggestGoalViewController.m */; };
 		CAF856E619E0FDF600A347CF /* FTFormQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524419E0F3D200A347CF /* FTFormQuestionContentView.m */; };
 		CAF856E719E0FDF600A347CF /* MListenQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8506119E0F3D100A347CF /* MListenQuestion.m */; };
 		CAF856E819E0FDF600A347CF /* FTSelectQuestionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8525C19E0F3D200A347CF /* FTSelectQuestionButton.m */; };
 		CAF856E919E0FDF600A347CF /* RegExCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8504C19E0F3D100A347CF /* RegExCategories.m */; };
 		CAF856EA19E0FDF600A347CF /* MSelectQuestionOption.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8506719E0F3D100A347CF /* MSelectQuestionOption.m */; };
-		CAF856EB19E0FDF600A347CF /* FTSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523919E0F3D200A347CF /* FTSaveProgressViewController.m */; };
+		CAF856EB19E0FDF600A347CF /* MMSaveProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523919E0F3D200A347CF /* MMSaveProgressViewController.m */; };
 		CAF856EC19E0FDF600A347CF /* NSString+CompactTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8502119E0F3D100A347CF /* NSString+CompactTranslation.m */; };
 		CAF856ED19E0FDF600A347CF /* FTJudgeQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8525019E0F3D200A347CF /* FTJudgeQuestionContentView.m */; };
 		CAF856EE19E0FDF600A347CF /* MLesson.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8505419E0F3D100A347CF /* MLesson.m */; };
@@ -844,16 +844,16 @@
 		CAF856F619E0FDF600A347CF /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8505819E0F3D100A347CF /* MUser.m */; };
 		CAF856F719E0FDF600A347CF /* FTCheckpointTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8529719E0F3D200A347CF /* FTCheckpointTestCell.m */; };
 		CAF856F819E0FDF600A347CF /* FTShopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8528A19E0F3D200A347CF /* FTShopItemCell.m */; };
-		CAF856F919E0FDF600A347CF /* FTMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523619E0F3D200A347CF /* FTMoneyBonusViewController.m */; };
-		CAF856FA19E0FDF600A347CF /* FTFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523019E0F3D200A347CF /* FTFinishLessonViewController.m */; };
+		CAF856F919E0FDF600A347CF /* MMMoneyBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523619E0F3D200A347CF /* MMMoneyBonusViewController.m */; };
+		CAF856FA19E0FDF600A347CF /* MMFinishLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523019E0F3D200A347CF /* MMFinishLessonViewController.m */; };
 		CAF856FB19E0FDF600A347CF /* NSString+StringHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8502319E0F3D100A347CF /* NSString+StringHelpers.m */; };
 		CAF856FC19E0FDF600A347CF /* MMAllowsTouchUnderneathView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501719E0F3D100A347CF /* MMAllowsTouchUnderneathView.m */; };
 		CAF856FD19E0FDF600A347CF /* MFormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8505D19E0F3D100A347CF /* MFormQuestion.m */; };
-		CAF856FE19E0FDF600A347CF /* FTFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523319E0F3D200A347CF /* FTFinishSkillViewController.m */; };
+		CAF856FE19E0FDF600A347CF /* MMFinishSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8523319E0F3D200A347CF /* MMFinishSkillViewController.m */; };
 		CAF856FF19E0FDF600A347CF /* DiffMatchPatchCFUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = CAF8503019E0F3D100A347CF /* DiffMatchPatchCFUtilities.c */; };
 		CAF8570019E0FDF600A347CF /* FTQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524A19E0F3D200A347CF /* FTQuestionContentView.m */; };
 		CAF8570119E0FDF600A347CF /* FTShieldLessonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8527519E0F3D200A347CF /* FTShieldLessonCell.m */; };
-		CAF8570219E0FDF600A347CF /* FTEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522B19E0F3D200A347CF /* FTEndLearningViewController.m */; };
+		CAF8570219E0FDF600A347CF /* MMEndLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8522B19E0F3D200A347CF /* MMEndLearningViewController.m */; };
 		CAF8570319E0FDF600A347CF /* FTHexagonSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF852A719E0F3D200A347CF /* FTHexagonSkillView.m */; };
 		CAF8570419E0FDF600A347CF /* NSString+JavaSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8503619E0F3D100A347CF /* NSString+JavaSubstring.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CAF8570519E0FDF600A347CF /* FTSkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8529919E0F3D200A347CF /* FTSkillCell.m */; };
@@ -941,7 +941,7 @@
 		CAF8575919E0FDF600A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851CE19E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png */; };
 		CAF8575A19E0FDF600A347CF /* img-skill_icon-en-vi_nghe_thuat-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8519219E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-locked_big.png */; };
 		CAF8575B19E0FDF600A347CF /* img-hexagon_skill-strength-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851EF19E0F3D200A347CF /* img-hexagon_skill-strength-3.png */; };
-		CAF8575C19E0FDF600A347CF /* FTBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */; };
+		CAF8575C19E0FDF600A347CF /* MMBeginPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522619E0F3D200A347CF /* MMBeginPlacementTestViewController.xib */; };
 		CAF8575D19E0FDF600A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF855BE19E0F82700A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked@2x.png */; };
 		CAF8575E19E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8556B19E0F82600A347CF /* img-skill_icon-en-vi_khoa_hoc-locked.png */; };
 		CAF8575F19E0FDF600A347CF /* img-settings-email_icon-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850E019E0F3D200A347CF /* img-settings-email_icon-enabled.png */; };
@@ -1192,7 +1192,7 @@
 		CAF8585619E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8511E19E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png */; };
 		CAF8585719E0FDF600A347CF /* img-share-google.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850F319E0F3D200A347CF /* img-share-google.png */; };
 		CAF8585819E0FDF600A347CF /* img-shield_skill-bg-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851F719E0F3D200A347CF /* img-shield_skill-bg-unlocked.png */; };
-		CAF8585919E0FDF600A347CF /* FTSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523D19E0F3D200A347CF /* FTSuggestGoalViewController.xib */; };
+		CAF8585919E0FDF600A347CF /* MMSuggestGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523D19E0F3D200A347CF /* MMSuggestGoalViewController.xib */; };
 		CAF8585A19E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851AD19E0F3D200A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png */; };
 		CAF8585B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8514819E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png */; };
 		CAF8585C19E0FDF600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8557519E0F82600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked.png */; };
@@ -1321,7 +1321,7 @@
 		CAF858D819E0FDF600A347CF /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8559A19E0F82700A347CF /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png */; };
 		CAF858D919E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8559019E0F82600A347CF /* img-skill_icon-en-vi_noi_chon-locked@2x.png */; };
 		CAF858DA19E0FDF600A347CF /* img-lessons_learning-correct@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850C519E0F3D200A347CF /* img-lessons_learning-correct@2x.png */; };
-		CAF858DB19E0FDF600A347CF /* FTFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523419E0F3D200A347CF /* FTFinishSkillViewController.xib */; };
+		CAF858DB19E0FDF600A347CF /* MMFinishSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523419E0F3D200A347CF /* MMFinishSkillViewController.xib */; };
 		CAF858DC19E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8555719E0F82600A347CF /* img-skill_icon-en-vi_dong_vat-locked.png */; };
 		CAF858DD19E0FDF600A347CF /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF854E519E0F50D00A347CF /* AppIcon57x57@2x.png */; };
 		CAF858DE19E0FDF600A347CF /* btn-navbar-back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8508B19E0F3D100A347CF /* btn-navbar-back_white.png */; };
@@ -1335,7 +1335,7 @@
 		CAF858E619E0FDF600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8558619E0F82600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked@2x.png */; };
 		CAF858E719E0FDF600A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850FF19E0F3D200A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png */; };
 		CAF858E819E0FDF600A347CF /* img-skill_icon-en-vi_truyen_thong-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851C219E0F3D200A347CF /* img-skill_icon-en-vi_truyen_thong-locked_big.png */; };
-		CAF858E919E0FDF600A347CF /* FTFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522E19E0F3D200A347CF /* FTFailLessonViewController.xib */; };
+		CAF858E919E0FDF600A347CF /* MMFailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522E19E0F3D200A347CF /* MMFailLessonViewController.xib */; };
 		CAF858EA19E0FDF600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8558519E0F82600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked.png */; };
 		CAF858EB19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF854FA19E0F82500A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked@2x.png */; };
 		CAF858EC19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8553019E0F82500A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked@2x.png */; };
@@ -1440,12 +1440,12 @@
 		CAF8594F19E0FDF600A347CF /* btn-lessons_learning-form_tokens@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850B919E0F3D100A347CF /* btn-lessons_learning-form_tokens@2x.png */; };
 		CAF8595019E0FDF600A347CF /* img-judge_question-radio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850BD19E0F3D100A347CF /* img-judge_question-radio@2x.png */; };
 		CAF8595119E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8553319E0F82500A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked.png */; };
-		CAF8595219E0FDF600A347CF /* FTFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523119E0F3D200A347CF /* FTFinishLessonViewController.xib */; };
+		CAF8595219E0FDF600A347CF /* MMFinishLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523119E0F3D200A347CF /* MMFinishLessonViewController.xib */; };
 		CAF8595319E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8553919E0F82500A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked.png */; };
 		CAF8595419E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8510719E0F3D200A347CF /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png */; };
 		CAF8595519E0FDF600A347CF /* img-lessons_learning-checkbox-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850C219E0F3D200A347CF /* img-lessons_learning-checkbox-empty.png */; };
 		CAF8595619E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8551719E0F82500A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked.png */; };
-		CAF8595719E0FDF600A347CF /* FTCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522919E0F3D200A347CF /* FTCongratsViewController.xib */; };
+		CAF8595719E0FDF600A347CF /* MMCongratsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8522919E0F3D200A347CF /* MMCongratsViewController.xib */; };
 		CAF8595819E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF854FC19E0F82500A347CF /* img-skill_icon-en-vi_chinh_tri-locked@2x.png */; };
 		CAF8595919E0FDF600A347CF /* img-settings-phone_icon-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850E519E0F3D200A347CF /* img-settings-phone_icon-enabled@2x.png */; };
 		CAF8595A19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8552C19E0F82500A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked@2x.png */; };
@@ -1481,7 +1481,7 @@
 		CAF8597919E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8512A19E0F3D200A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png */; };
 		CAF8597A19E0FDF600A347CF /* img-hexagon_skill-bg_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851E619E0F3D200A347CF /* img-hexagon_skill-bg_big@2x.png */; };
 		CAF8597B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8554F19E0F82600A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked.png */; };
-		CAF8597C19E0FDF600A347CF /* FTMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523719E0F3D200A347CF /* FTMoneyBonusViewController.xib */; };
+		CAF8597C19E0FDF600A347CF /* MMMoneyBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523719E0F3D200A347CF /* MMMoneyBonusViewController.xib */; };
 		CAF8597D19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8552419E0F82500A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked@2x.png */; };
 		CAF8597E19E0FDF600A347CF /* FTTranslateQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8526819E0F3D200A347CF /* FTTranslateQuestionContentView.xib */; };
 		CAF8597F19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8550C19E0F82500A347CF /* img-skill_icon-en-vi_dac_tinh-locked@2x.png */; };
@@ -1529,7 +1529,7 @@
 		CAF859A919E0FDF600A347CF /* img-profile-level-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8520619E0F3D200A347CF /* img-profile-level-bg.png */; };
 		CAF859AA19E0FDF600A347CF /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF854E219E0F50D00A347CF /* AppIcon29x29@2x.png */; };
 		CAF859AB19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8510419E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png */; };
-		CAF859AC19E0FDF600A347CF /* FTSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523A19E0F3D200A347CF /* FTSaveProgressViewController.xib */; };
+		CAF859AC19E0FDF600A347CF /* MMSaveProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8523A19E0F3D200A347CF /* MMSaveProgressViewController.xib */; };
 		CAF859AD19E0FDF600A347CF /* img-lessons_learning-popover-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF850CD19E0F3D200A347CF /* img-lessons_learning-popover-bg@2x.png */; };
 		CAF859AE19E0FDF600A347CF /* FTSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8529C19E0F3D200A347CF /* FTSkillsListViewController.xib */; };
 		CAF859AF19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8514319E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png */; };
@@ -2047,32 +2047,32 @@
 		CAF8521F19E0F3D200A347CF /* MMSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSignUpViewController.h; sourceTree = "<group>"; };
 		CAF8522019E0F3D200A347CF /* MMSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSignUpViewController.m; sourceTree = "<group>"; };
 		CAF8522119E0F3D200A347CF /* MMSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMSignUpViewController.xib; sourceTree = "<group>"; };
-		CAF8522419E0F3D200A347CF /* FTBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBeginPlacementTestViewController.h; sourceTree = "<group>"; };
-		CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBeginPlacementTestViewController.m; sourceTree = "<group>"; };
-		CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
-		CAF8522719E0F3D200A347CF /* FTCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCongratsViewController.h; sourceTree = "<group>"; };
-		CAF8522819E0F3D200A347CF /* FTCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCongratsViewController.m; sourceTree = "<group>"; };
-		CAF8522919E0F3D200A347CF /* FTCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTCongratsViewController.xib; sourceTree = "<group>"; };
-		CAF8522A19E0F3D200A347CF /* FTEndLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTEndLearningViewController.h; sourceTree = "<group>"; };
-		CAF8522B19E0F3D200A347CF /* FTEndLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTEndLearningViewController.m; sourceTree = "<group>"; };
-		CAF8522C19E0F3D200A347CF /* FTFailLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFailLessonViewController.h; sourceTree = "<group>"; };
-		CAF8522D19E0F3D200A347CF /* FTFailLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFailLessonViewController.m; sourceTree = "<group>"; };
-		CAF8522E19E0F3D200A347CF /* FTFailLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFailLessonViewController.xib; sourceTree = "<group>"; };
-		CAF8522F19E0F3D200A347CF /* FTFinishLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishLessonViewController.h; sourceTree = "<group>"; };
-		CAF8523019E0F3D200A347CF /* FTFinishLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishLessonViewController.m; sourceTree = "<group>"; };
-		CAF8523119E0F3D200A347CF /* FTFinishLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishLessonViewController.xib; sourceTree = "<group>"; };
-		CAF8523219E0F3D200A347CF /* FTFinishSkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFinishSkillViewController.h; sourceTree = "<group>"; };
-		CAF8523319E0F3D200A347CF /* FTFinishSkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFinishSkillViewController.m; sourceTree = "<group>"; };
-		CAF8523419E0F3D200A347CF /* FTFinishSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFinishSkillViewController.xib; sourceTree = "<group>"; };
-		CAF8523519E0F3D200A347CF /* FTMoneyBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMoneyBonusViewController.h; sourceTree = "<group>"; };
-		CAF8523619E0F3D200A347CF /* FTMoneyBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMoneyBonusViewController.m; sourceTree = "<group>"; };
-		CAF8523719E0F3D200A347CF /* FTMoneyBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTMoneyBonusViewController.xib; sourceTree = "<group>"; };
-		CAF8523819E0F3D200A347CF /* FTSaveProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSaveProgressViewController.h; sourceTree = "<group>"; };
-		CAF8523919E0F3D200A347CF /* FTSaveProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSaveProgressViewController.m; sourceTree = "<group>"; };
-		CAF8523A19E0F3D200A347CF /* FTSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSaveProgressViewController.xib; sourceTree = "<group>"; };
-		CAF8523B19E0F3D200A347CF /* FTSuggestGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSuggestGoalViewController.h; sourceTree = "<group>"; };
-		CAF8523C19E0F3D200A347CF /* FTSuggestGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSuggestGoalViewController.m; sourceTree = "<group>"; };
-		CAF8523D19E0F3D200A347CF /* FTSuggestGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTSuggestGoalViewController.xib; sourceTree = "<group>"; };
+		CAF8522419E0F3D200A347CF /* MMBeginPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBeginPlacementTestViewController.h; sourceTree = "<group>"; };
+		CAF8522519E0F3D200A347CF /* MMBeginPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBeginPlacementTestViewController.m; sourceTree = "<group>"; };
+		CAF8522619E0F3D200A347CF /* MMBeginPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMBeginPlacementTestViewController.xib; sourceTree = "<group>"; };
+		CAF8522719E0F3D200A347CF /* MMCongratsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCongratsViewController.h; sourceTree = "<group>"; };
+		CAF8522819E0F3D200A347CF /* MMCongratsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCongratsViewController.m; sourceTree = "<group>"; };
+		CAF8522919E0F3D200A347CF /* MMCongratsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCongratsViewController.xib; sourceTree = "<group>"; };
+		CAF8522A19E0F3D200A347CF /* MMEndLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEndLearningViewController.h; sourceTree = "<group>"; };
+		CAF8522B19E0F3D200A347CF /* MMEndLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEndLearningViewController.m; sourceTree = "<group>"; };
+		CAF8522C19E0F3D200A347CF /* MMFailLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFailLessonViewController.h; sourceTree = "<group>"; };
+		CAF8522D19E0F3D200A347CF /* MMFailLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFailLessonViewController.m; sourceTree = "<group>"; };
+		CAF8522E19E0F3D200A347CF /* MMFailLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMFailLessonViewController.xib; sourceTree = "<group>"; };
+		CAF8522F19E0F3D200A347CF /* MMFinishLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFinishLessonViewController.h; sourceTree = "<group>"; };
+		CAF8523019E0F3D200A347CF /* MMFinishLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFinishLessonViewController.m; sourceTree = "<group>"; };
+		CAF8523119E0F3D200A347CF /* MMFinishLessonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMFinishLessonViewController.xib; sourceTree = "<group>"; };
+		CAF8523219E0F3D200A347CF /* MMFinishSkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFinishSkillViewController.h; sourceTree = "<group>"; };
+		CAF8523319E0F3D200A347CF /* MMFinishSkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFinishSkillViewController.m; sourceTree = "<group>"; };
+		CAF8523419E0F3D200A347CF /* MMFinishSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMFinishSkillViewController.xib; sourceTree = "<group>"; };
+		CAF8523519E0F3D200A347CF /* MMMoneyBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMoneyBonusViewController.h; sourceTree = "<group>"; };
+		CAF8523619E0F3D200A347CF /* MMMoneyBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMoneyBonusViewController.m; sourceTree = "<group>"; };
+		CAF8523719E0F3D200A347CF /* MMMoneyBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMMoneyBonusViewController.xib; sourceTree = "<group>"; };
+		CAF8523819E0F3D200A347CF /* MMSaveProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSaveProgressViewController.h; sourceTree = "<group>"; };
+		CAF8523919E0F3D200A347CF /* MMSaveProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSaveProgressViewController.m; sourceTree = "<group>"; };
+		CAF8523A19E0F3D200A347CF /* MMSaveProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMSaveProgressViewController.xib; sourceTree = "<group>"; };
+		CAF8523B19E0F3D200A347CF /* MMSuggestGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSuggestGoalViewController.h; sourceTree = "<group>"; };
+		CAF8523C19E0F3D200A347CF /* MMSuggestGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuggestGoalViewController.m; sourceTree = "<group>"; };
+		CAF8523D19E0F3D200A347CF /* MMSuggestGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMSuggestGoalViewController.xib; sourceTree = "<group>"; };
 		CAF8524019E0F3D200A347CF /* FTFormAnswerTokenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFormAnswerTokenButton.h; sourceTree = "<group>"; };
 		CAF8524119E0F3D200A347CF /* FTFormAnswerTokenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFormAnswerTokenButton.m; sourceTree = "<group>"; };
 		CAF8524219E0F3D200A347CF /* FTFormAnswerTokenButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFormAnswerTokenButton.xib; sourceTree = "<group>"; };
@@ -3504,32 +3504,32 @@
 		CAF8522319E0F3D200A347CF /* End Learning */ = {
 			isa = PBXGroup;
 			children = (
-				CAF8522419E0F3D200A347CF /* FTBeginPlacementTestViewController.h */,
-				CAF8522519E0F3D200A347CF /* FTBeginPlacementTestViewController.m */,
-				CAF8522619E0F3D200A347CF /* FTBeginPlacementTestViewController.xib */,
-				CAF8522719E0F3D200A347CF /* FTCongratsViewController.h */,
-				CAF8522819E0F3D200A347CF /* FTCongratsViewController.m */,
-				CAF8522919E0F3D200A347CF /* FTCongratsViewController.xib */,
-				CAF8522A19E0F3D200A347CF /* FTEndLearningViewController.h */,
-				CAF8522B19E0F3D200A347CF /* FTEndLearningViewController.m */,
-				CAF8522C19E0F3D200A347CF /* FTFailLessonViewController.h */,
-				CAF8522D19E0F3D200A347CF /* FTFailLessonViewController.m */,
-				CAF8522E19E0F3D200A347CF /* FTFailLessonViewController.xib */,
-				CAF8522F19E0F3D200A347CF /* FTFinishLessonViewController.h */,
-				CAF8523019E0F3D200A347CF /* FTFinishLessonViewController.m */,
-				CAF8523119E0F3D200A347CF /* FTFinishLessonViewController.xib */,
-				CAF8523219E0F3D200A347CF /* FTFinishSkillViewController.h */,
-				CAF8523319E0F3D200A347CF /* FTFinishSkillViewController.m */,
-				CAF8523419E0F3D200A347CF /* FTFinishSkillViewController.xib */,
-				CAF8523519E0F3D200A347CF /* FTMoneyBonusViewController.h */,
-				CAF8523619E0F3D200A347CF /* FTMoneyBonusViewController.m */,
-				CAF8523719E0F3D200A347CF /* FTMoneyBonusViewController.xib */,
-				CAF8523819E0F3D200A347CF /* FTSaveProgressViewController.h */,
-				CAF8523919E0F3D200A347CF /* FTSaveProgressViewController.m */,
-				CAF8523A19E0F3D200A347CF /* FTSaveProgressViewController.xib */,
-				CAF8523B19E0F3D200A347CF /* FTSuggestGoalViewController.h */,
-				CAF8523C19E0F3D200A347CF /* FTSuggestGoalViewController.m */,
-				CAF8523D19E0F3D200A347CF /* FTSuggestGoalViewController.xib */,
+				CAF8522419E0F3D200A347CF /* MMBeginPlacementTestViewController.h */,
+				CAF8522519E0F3D200A347CF /* MMBeginPlacementTestViewController.m */,
+				CAF8522619E0F3D200A347CF /* MMBeginPlacementTestViewController.xib */,
+				CAF8522719E0F3D200A347CF /* MMCongratsViewController.h */,
+				CAF8522819E0F3D200A347CF /* MMCongratsViewController.m */,
+				CAF8522919E0F3D200A347CF /* MMCongratsViewController.xib */,
+				CAF8522A19E0F3D200A347CF /* MMEndLearningViewController.h */,
+				CAF8522B19E0F3D200A347CF /* MMEndLearningViewController.m */,
+				CAF8522C19E0F3D200A347CF /* MMFailLessonViewController.h */,
+				CAF8522D19E0F3D200A347CF /* MMFailLessonViewController.m */,
+				CAF8522E19E0F3D200A347CF /* MMFailLessonViewController.xib */,
+				CAF8522F19E0F3D200A347CF /* MMFinishLessonViewController.h */,
+				CAF8523019E0F3D200A347CF /* MMFinishLessonViewController.m */,
+				CAF8523119E0F3D200A347CF /* MMFinishLessonViewController.xib */,
+				CAF8523219E0F3D200A347CF /* MMFinishSkillViewController.h */,
+				CAF8523319E0F3D200A347CF /* MMFinishSkillViewController.m */,
+				CAF8523419E0F3D200A347CF /* MMFinishSkillViewController.xib */,
+				CAF8523519E0F3D200A347CF /* MMMoneyBonusViewController.h */,
+				CAF8523619E0F3D200A347CF /* MMMoneyBonusViewController.m */,
+				CAF8523719E0F3D200A347CF /* MMMoneyBonusViewController.xib */,
+				CAF8523819E0F3D200A347CF /* MMSaveProgressViewController.h */,
+				CAF8523919E0F3D200A347CF /* MMSaveProgressViewController.m */,
+				CAF8523A19E0F3D200A347CF /* MMSaveProgressViewController.xib */,
+				CAF8523B19E0F3D200A347CF /* MMSuggestGoalViewController.h */,
+				CAF8523C19E0F3D200A347CF /* MMSuggestGoalViewController.m */,
+				CAF8523D19E0F3D200A347CF /* MMSuggestGoalViewController.xib */,
 			);
 			name = "End Learning";
 			path = "end-learning";
@@ -3957,7 +3957,7 @@
 				CAF8543A19E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png in Resources */,
 				CAF853FE19E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-locked_big.png in Resources */,
 				CAF8545A19E0F3D200A347CF /* img-hexagon_skill-strength-3.png in Resources */,
-				CAF8548219E0F3D200A347CF /* FTBeginPlacementTestViewController.xib in Resources */,
+				CAF8548219E0F3D200A347CF /* MMBeginPlacementTestViewController.xib in Resources */,
 				CAF8569A19E0F82700A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked@2x.png in Resources */,
 				CAF8564719E0F82700A347CF /* img-skill_icon-en-vi_khoa_hoc-locked.png in Resources */,
 				CAF8534E19E0F3D200A347CF /* img-settings-email_icon-enabled.png in Resources */,
@@ -4208,7 +4208,7 @@
 				CAF8538A19E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */,
 				CAF8536019E0F3D200A347CF /* img-share-google.png in Resources */,
 				CAF8546219E0F3D200A347CF /* img-shield_skill-bg-unlocked.png in Resources */,
-				CAF8549119E0F3D200A347CF /* FTSuggestGoalViewController.xib in Resources */,
+				CAF8549119E0F3D200A347CF /* MMSuggestGoalViewController.xib in Resources */,
 				CAF8541919E0F3D200A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */,
 				CAF853B419E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */,
 				CAF8565119E0F82700A347CF /* img-skill_icon-en-vi_lien_tu-unlocked.png in Resources */,
@@ -4339,7 +4339,7 @@
 				CAF8567619E0F82700A347CF /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png in Resources */,
 				CAF8566C19E0F82700A347CF /* img-skill_icon-en-vi_noi_chon-locked@2x.png in Resources */,
 				CAF8533519E0F3D200A347CF /* img-lessons_learning-correct@2x.png in Resources */,
-				CAF8548B19E0F3D200A347CF /* FTFinishSkillViewController.xib in Resources */,
+				CAF8548B19E0F3D200A347CF /* MMFinishSkillViewController.xib in Resources */,
 				CAF8563319E0F82700A347CF /* img-skill_icon-en-vi_dong_vat-locked.png in Resources */,
 				CAF854EE19E0F50D00A347CF /* AppIcon57x57@2x.png in Resources */,
 				CAF8530119E0F3D200A347CF /* btn-navbar-back_white.png in Resources */,
@@ -4353,7 +4353,7 @@
 				CAF8566219E0F82700A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked@2x.png in Resources */,
 				CAF8536B19E0F3D200A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png in Resources */,
 				CAF8542E19E0F3D200A347CF /* img-skill_icon-en-vi_truyen_thong-locked_big.png in Resources */,
-				CAF8548719E0F3D200A347CF /* FTFailLessonViewController.xib in Resources */,
+				CAF8548719E0F3D200A347CF /* MMFailLessonViewController.xib in Resources */,
 				CAF8566119E0F82700A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked.png in Resources */,
 				CAF855D619E0F82700A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked@2x.png in Resources */,
 				CAF8560C19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked@2x.png in Resources */,
@@ -4459,12 +4459,12 @@
 				CAF8532919E0F3D200A347CF /* btn-lessons_learning-form_tokens@2x.png in Resources */,
 				CAF8532D19E0F3D200A347CF /* img-judge_question-radio@2x.png in Resources */,
 				CAF8560F19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked.png in Resources */,
-				CAF8548919E0F3D200A347CF /* FTFinishLessonViewController.xib in Resources */,
+				CAF8548919E0F3D200A347CF /* MMFinishLessonViewController.xib in Resources */,
 				CAF8561519E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked.png in Resources */,
 				CAF8537319E0F3D200A347CF /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png in Resources */,
 				CAF8533219E0F3D200A347CF /* img-lessons_learning-checkbox-empty.png in Resources */,
 				CAF855F319E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked.png in Resources */,
-				CAF8548419E0F3D200A347CF /* FTCongratsViewController.xib in Resources */,
+				CAF8548419E0F3D200A347CF /* MMCongratsViewController.xib in Resources */,
 				CAF855D819E0F82700A347CF /* img-skill_icon-en-vi_chinh_tri-locked@2x.png in Resources */,
 				CAF8535319E0F3D200A347CF /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CAF8560819E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked@2x.png in Resources */,
@@ -4500,7 +4500,7 @@
 				CAF8539619E0F3D200A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png in Resources */,
 				CAF8545119E0F3D200A347CF /* img-hexagon_skill-bg_big@2x.png in Resources */,
 				CAF8562B19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked.png in Resources */,
-				CAF8548D19E0F3D200A347CF /* FTMoneyBonusViewController.xib in Resources */,
+				CAF8548D19E0F3D200A347CF /* MMMoneyBonusViewController.xib in Resources */,
 				CAF8560019E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked@2x.png in Resources */,
 				CAF854A819E0F3D200A347CF /* FTTranslateQuestionContentView.xib in Resources */,
 				CAF855E819E0F82700A347CF /* img-skill_icon-en-vi_dac_tinh-locked@2x.png in Resources */,
@@ -4548,7 +4548,7 @@
 				CAF8547019E0F3D200A347CF /* img-profile-level-bg.png in Resources */,
 				CAF854EB19E0F50D00A347CF /* AppIcon29x29@2x.png in Resources */,
 				CAF8537019E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */,
-				CAF8548F19E0F3D200A347CF /* FTSaveProgressViewController.xib in Resources */,
+				CAF8548F19E0F3D200A347CF /* MMSaveProgressViewController.xib in Resources */,
 				CAF8533D19E0F3D200A347CF /* img-lessons_learning-popover-bg@2x.png in Resources */,
 				CAF854C519E0F3D200A347CF /* FTSkillsListViewController.xib in Resources */,
 				CAF853AF19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */,
@@ -4627,7 +4627,7 @@
 				CAF8575919E0FDF600A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked_big.png in Resources */,
 				CAF8575A19E0FDF600A347CF /* img-skill_icon-en-vi_nghe_thuat-locked_big.png in Resources */,
 				CAF8575B19E0FDF600A347CF /* img-hexagon_skill-strength-3.png in Resources */,
-				CAF8575C19E0FDF600A347CF /* FTBeginPlacementTestViewController.xib in Resources */,
+				CAF8575C19E0FDF600A347CF /* MMBeginPlacementTestViewController.xib in Resources */,
 				CAF8575D19E0FDF600A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked@2x.png in Resources */,
 				CAF8575E19E0FDF600A347CF /* img-skill_icon-en-vi_khoa_hoc-locked.png in Resources */,
 				CAF8575F19E0FDF600A347CF /* img-settings-email_icon-enabled.png in Resources */,
@@ -4880,7 +4880,7 @@
 				CAF8585619E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */,
 				CAF8585719E0FDF600A347CF /* img-share-google.png in Resources */,
 				CAF8585819E0FDF600A347CF /* img-shield_skill-bg-unlocked.png in Resources */,
-				CAF8585919E0FDF600A347CF /* FTSuggestGoalViewController.xib in Resources */,
+				CAF8585919E0FDF600A347CF /* MMSuggestGoalViewController.xib in Resources */,
 				CAF8585A19E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */,
 				CAF8585B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */,
 				CAF8585C19E0FDF600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked.png in Resources */,
@@ -5009,7 +5009,7 @@
 				CAF858D819E0FDF600A347CF /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png in Resources */,
 				CAF858D919E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-locked@2x.png in Resources */,
 				CAF858DA19E0FDF600A347CF /* img-lessons_learning-correct@2x.png in Resources */,
-				CAF858DB19E0FDF600A347CF /* FTFinishSkillViewController.xib in Resources */,
+				CAF858DB19E0FDF600A347CF /* MMFinishSkillViewController.xib in Resources */,
 				CAF858DC19E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-locked.png in Resources */,
 				CAF858DD19E0FDF600A347CF /* AppIcon57x57@2x.png in Resources */,
 				CAF858DE19E0FDF600A347CF /* btn-navbar-back_white.png in Resources */,
@@ -5023,7 +5023,7 @@
 				CAF858E619E0FDF600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked@2x.png in Resources */,
 				CAF858E719E0FDF600A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-locked_big@2x.png in Resources */,
 				CAF858E819E0FDF600A347CF /* img-skill_icon-en-vi_truyen_thong-locked_big.png in Resources */,
-				CAF858E919E0FDF600A347CF /* FTFailLessonViewController.xib in Resources */,
+				CAF858E919E0FDF600A347CF /* MMFailLessonViewController.xib in Resources */,
 				CAF858EA19E0FDF600A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked.png in Resources */,
 				CAF858EB19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked@2x.png in Resources */,
 				CAF858EC19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked@2x.png in Resources */,
@@ -5128,12 +5128,12 @@
 				CAF8594F19E0FDF600A347CF /* btn-lessons_learning-form_tokens@2x.png in Resources */,
 				CAF8595019E0FDF600A347CF /* img-judge_question-radio@2x.png in Resources */,
 				CAF8595119E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked.png in Resources */,
-				CAF8595219E0FDF600A347CF /* FTFinishLessonViewController.xib in Resources */,
+				CAF8595219E0FDF600A347CF /* MMFinishLessonViewController.xib in Resources */,
 				CAF8595319E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked.png in Resources */,
 				CAF8595419E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-locked_big@2x.png in Resources */,
 				CAF8595519E0FDF600A347CF /* img-lessons_learning-checkbox-empty.png in Resources */,
 				CAF8595619E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked.png in Resources */,
-				CAF8595719E0FDF600A347CF /* FTCongratsViewController.xib in Resources */,
+				CAF8595719E0FDF600A347CF /* MMCongratsViewController.xib in Resources */,
 				CAF8595819E0FDF600A347CF /* img-skill_icon-en-vi_chinh_tri-locked@2x.png in Resources */,
 				CAF8595919E0FDF600A347CF /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CAF8595A19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked@2x.png in Resources */,
@@ -5169,7 +5169,7 @@
 				CAF8597919E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big.png in Resources */,
 				CAF8597A19E0FDF600A347CF /* img-hexagon_skill-bg_big@2x.png in Resources */,
 				CAF8597B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked.png in Resources */,
-				CAF8597C19E0FDF600A347CF /* FTMoneyBonusViewController.xib in Resources */,
+				CAF8597C19E0FDF600A347CF /* MMMoneyBonusViewController.xib in Resources */,
 				CAF8597D19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked@2x.png in Resources */,
 				CAF8597E19E0FDF600A347CF /* FTTranslateQuestionContentView.xib in Resources */,
 				CAF8597F19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-locked@2x.png in Resources */,
@@ -5217,7 +5217,7 @@
 				CAF859A919E0FDF600A347CF /* img-profile-level-bg.png in Resources */,
 				CAF859AA19E0FDF600A347CF /* AppIcon29x29@2x.png in Resources */,
 				CAF859AB19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */,
-				CAF859AC19E0FDF600A347CF /* FTSaveProgressViewController.xib in Resources */,
+				CAF859AC19E0FDF600A347CF /* MMSaveProgressViewController.xib in Resources */,
 				CAF859AD19E0FDF600A347CF /* img-lessons_learning-popover-bg@2x.png in Resources */,
 				CAF859AE19E0FDF600A347CF /* FTSkillsListViewController.xib in Resources */,
 				CAF859AF19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */,
@@ -5331,17 +5331,17 @@
 				CAF854B819E0F3D200A347CF /* FTSettingsViewController.m in Sources */,
 				CAF8549D19E0F3D200A347CF /* FTListenQuestionContentView.m in Sources */,
 				CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */,
-				CAF8548619E0F3D200A347CF /* FTFailLessonViewController.m in Sources */,
+				CAF8548619E0F3D200A347CF /* MMFailLessonViewController.m in Sources */,
 				CAF8547719E0F3D200A347CF /* MMCoursesListViewController.m in Sources */,
 				CAF854C419E0F3D200A347CF /* FTSkillsListViewController.m in Sources */,
 				CAF854D519E0F3D200A347CF /* FTProfileViewController.m in Sources */,
 				CAF854D319E0F3D200A347CF /* FTProfileLeaderboardCell.m in Sources */,
 				CAF854A919E0F3D200A347CF /* FTLessonsListViewController.m in Sources */,
-				CAF8548319E0F3D200A347CF /* FTCongratsViewController.m in Sources */,
+				CAF8548319E0F3D200A347CF /* MMCongratsViewController.m in Sources */,
 				CAF854C619E0F3D200A347CF /* FTSkillView.m in Sources */,
 				CAF854A319E0F3D200A347CF /* FTSelectQuestionContentView.m in Sources */,
 				CAF852E519E0F3D200A347CF /* MSpeakQuestion.m in Sources */,
-				CAF8548119E0F3D200A347CF /* FTBeginPlacementTestViewController.m in Sources */,
+				CAF8548119E0F3D200A347CF /* MMBeginPlacementTestViewController.m in Sources */,
 				CAF852E219E0F3D200A347CF /* MNameQuestion.m in Sources */,
 				CAF852DE19E0F3D200A347CF /* MBaseQuestion.m in Sources */,
 				CAF8547519E0F3D200A347CF /* MMCourseSelectionCell.m in Sources */,
@@ -5372,13 +5372,13 @@
 				CAF854BC19E0F3D200A347CF /* FTShopItemHeaderView.m in Sources */,
 				CAF852C719E0F3D200A347CF /* NSMutableArray+MutableArrayHelpers.m in Sources */,
 				CAF854B219E0F3D200A347CF /* FTSetGoalCell.m in Sources */,
-				CAF8549019E0F3D200A347CF /* FTSuggestGoalViewController.m in Sources */,
+				CAF8549019E0F3D200A347CF /* MMSuggestGoalViewController.m in Sources */,
 				CAF8549419E0F3D200A347CF /* FTFormQuestionContentView.m in Sources */,
 				CAF852E119E0F3D200A347CF /* MListenQuestion.m in Sources */,
 				CAF854A119E0F3D200A347CF /* FTSelectQuestionButton.m in Sources */,
 				CAF852D819E0F3D200A347CF /* RegExCategories.m in Sources */,
 				CAF852E419E0F3D200A347CF /* MSelectQuestionOption.m in Sources */,
-				CAF8548E19E0F3D200A347CF /* FTSaveProgressViewController.m in Sources */,
+				CAF8548E19E0F3D200A347CF /* MMSaveProgressViewController.m in Sources */,
 				CAF852C919E0F3D200A347CF /* NSString+CompactTranslation.m in Sources */,
 				CAF8549B19E0F3D200A347CF /* FTJudgeQuestionContentView.m in Sources */,
 				CAF852DB19E0F3D200A347CF /* MLesson.m in Sources */,
@@ -5392,16 +5392,16 @@
 				CAF852DD19E0F3D200A347CF /* MUser.m in Sources */,
 				CAF854C219E0F3D200A347CF /* FTCheckpointTestCell.m in Sources */,
 				CAF854BA19E0F3D200A347CF /* FTShopItemCell.m in Sources */,
-				CAF8548C19E0F3D200A347CF /* FTMoneyBonusViewController.m in Sources */,
-				CAF8548819E0F3D200A347CF /* FTFinishLessonViewController.m in Sources */,
+				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
+				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,
 				CAF852C419E0F3D200A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF852DF19E0F3D200A347CF /* MFormQuestion.m in Sources */,
-				CAF8548A19E0F3D200A347CF /* FTFinishSkillViewController.m in Sources */,
+				CAF8548A19E0F3D200A347CF /* MMFinishSkillViewController.m in Sources */,
 				CAF852D019E0F3D200A347CF /* DiffMatchPatchCFUtilities.c in Sources */,
 				CAF8549819E0F3D200A347CF /* FTQuestionContentView.m in Sources */,
 				CAF854AE19E0F3D200A347CF /* FTShieldLessonCell.m in Sources */,
-				CAF8548519E0F3D200A347CF /* FTEndLearningViewController.m in Sources */,
+				CAF8548519E0F3D200A347CF /* MMEndLearningViewController.m in Sources */,
 				CAF854CB19E0F3D200A347CF /* FTHexagonSkillView.m in Sources */,
 				CAF852D219E0F3D200A347CF /* NSString+JavaSubstring.m in Sources */,
 				CAF854C319E0F3D200A347CF /* FTSkillCell.m in Sources */,
@@ -5433,17 +5433,17 @@
 				CAF856B919E0FDF600A347CF /* FTSettingsViewController.m in Sources */,
 				CAF856BA19E0FDF600A347CF /* FTListenQuestionContentView.m in Sources */,
 				CAF856BB19E0FDF600A347CF /* MMLineChart.m in Sources */,
-				CAF856BC19E0FDF600A347CF /* FTFailLessonViewController.m in Sources */,
+				CAF856BC19E0FDF600A347CF /* MMFailLessonViewController.m in Sources */,
 				CAF856BD19E0FDF600A347CF /* MMCoursesListViewController.m in Sources */,
 				CAF856BE19E0FDF600A347CF /* FTSkillsListViewController.m in Sources */,
 				CAF856BF19E0FDF600A347CF /* FTProfileViewController.m in Sources */,
 				CAF856C019E0FDF600A347CF /* FTProfileLeaderboardCell.m in Sources */,
 				CAF856C119E0FDF600A347CF /* FTLessonsListViewController.m in Sources */,
-				CAF856C219E0FDF600A347CF /* FTCongratsViewController.m in Sources */,
+				CAF856C219E0FDF600A347CF /* MMCongratsViewController.m in Sources */,
 				CAF856C319E0FDF600A347CF /* FTSkillView.m in Sources */,
 				CAF856C419E0FDF600A347CF /* FTSelectQuestionContentView.m in Sources */,
 				CAF856C519E0FDF600A347CF /* MSpeakQuestion.m in Sources */,
-				CAF856C619E0FDF600A347CF /* FTBeginPlacementTestViewController.m in Sources */,
+				CAF856C619E0FDF600A347CF /* MMBeginPlacementTestViewController.m in Sources */,
 				CAF856C719E0FDF600A347CF /* MNameQuestion.m in Sources */,
 				CAF856C819E0FDF600A347CF /* MBaseQuestion.m in Sources */,
 				CAF856C919E0FDF600A347CF /* MMCourseSelectionCell.m in Sources */,
@@ -5474,13 +5474,13 @@
 				CAF856E219E0FDF600A347CF /* FTShopItemHeaderView.m in Sources */,
 				CAF856E319E0FDF600A347CF /* NSMutableArray+MutableArrayHelpers.m in Sources */,
 				CAF856E419E0FDF600A347CF /* FTSetGoalCell.m in Sources */,
-				CAF856E519E0FDF600A347CF /* FTSuggestGoalViewController.m in Sources */,
+				CAF856E519E0FDF600A347CF /* MMSuggestGoalViewController.m in Sources */,
 				CAF856E619E0FDF600A347CF /* FTFormQuestionContentView.m in Sources */,
 				CAF856E719E0FDF600A347CF /* MListenQuestion.m in Sources */,
 				CAF856E819E0FDF600A347CF /* FTSelectQuestionButton.m in Sources */,
 				CAF856E919E0FDF600A347CF /* RegExCategories.m in Sources */,
 				CAF856EA19E0FDF600A347CF /* MSelectQuestionOption.m in Sources */,
-				CAF856EB19E0FDF600A347CF /* FTSaveProgressViewController.m in Sources */,
+				CAF856EB19E0FDF600A347CF /* MMSaveProgressViewController.m in Sources */,
 				CAF856EC19E0FDF600A347CF /* NSString+CompactTranslation.m in Sources */,
 				CAF856ED19E0FDF600A347CF /* FTJudgeQuestionContentView.m in Sources */,
 				CAF856EE19E0FDF600A347CF /* MLesson.m in Sources */,
@@ -5494,16 +5494,16 @@
 				CAF856F619E0FDF600A347CF /* MUser.m in Sources */,
 				CAF856F719E0FDF600A347CF /* FTCheckpointTestCell.m in Sources */,
 				CAF856F819E0FDF600A347CF /* FTShopItemCell.m in Sources */,
-				CAF856F919E0FDF600A347CF /* FTMoneyBonusViewController.m in Sources */,
-				CAF856FA19E0FDF600A347CF /* FTFinishLessonViewController.m in Sources */,
+				CAF856F919E0FDF600A347CF /* MMMoneyBonusViewController.m in Sources */,
+				CAF856FA19E0FDF600A347CF /* MMFinishLessonViewController.m in Sources */,
 				CAF856FB19E0FDF600A347CF /* NSString+StringHelpers.m in Sources */,
 				CAF856FC19E0FDF600A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF856FD19E0FDF600A347CF /* MFormQuestion.m in Sources */,
-				CAF856FE19E0FDF600A347CF /* FTFinishSkillViewController.m in Sources */,
+				CAF856FE19E0FDF600A347CF /* MMFinishSkillViewController.m in Sources */,
 				CAF856FF19E0FDF600A347CF /* DiffMatchPatchCFUtilities.c in Sources */,
 				CAF8570019E0FDF600A347CF /* FTQuestionContentView.m in Sources */,
 				CAF8570119E0FDF600A347CF /* FTShieldLessonCell.m in Sources */,
-				CAF8570219E0FDF600A347CF /* FTEndLearningViewController.m in Sources */,
+				CAF8570219E0FDF600A347CF /* MMEndLearningViewController.m in Sources */,
 				CAF8570319E0FDF600A347CF /* FTHexagonSkillView.m in Sources */,
 				CAF8570419E0FDF600A347CF /* NSString+JavaSubstring.m in Sources */,
 				CAF8570519E0FDF600A347CF /* FTSkillCell.m in Sources */,

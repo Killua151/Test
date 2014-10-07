@@ -113,7 +113,8 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     [[MUser currentUser] assignProperties:userData];
+     [[MUser currentUser] assignProperties:userData[kParamUserInfo]];
+     [MUser currentUser].skills_tree = userData[kParamSkillsTree];
      [MUser currentUser].skills = [MSkill modelsFromArr:userData[kParamSkills]];
      handler(userData, nil);
    }
@@ -151,13 +152,11 @@
                            kParamAnswers : [answerResults JSONString]
                            };
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"exam/finish"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     DLog(@"%@", [responseObject objectFromJSONData]);
+     [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
      handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

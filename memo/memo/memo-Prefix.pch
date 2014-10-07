@@ -77,8 +77,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-#define kServerApiUrl                           @"http://memo.volcano.vn/api"
-//#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
+//#define kServerApiUrl                           @"http://memo.volcano.vn/api"
+#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
@@ -135,5 +135,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamResult                            @"result"
 #define kParamSkillId                           @"skill_id"
 #define kParamSkills                            @"skills"
+#define kParamSkillsTree                        @"skills_tree"
 #define kParamType                              @"type"
+#define kParamUserInfo                          @"user_info"
 #define kParamUsername                          @"username"

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FTFailLessonViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMFailLessonViewController">
             <connections>
                 <outlet property="_btnQuit" destination="JPu-uq-EZG" id="4QB-ge-BUy"/>
                 <outlet property="_btnRetry" destination="PTf-r5-1ic" id="8kI-Yv-MVI"/>

@@ -1,18 +1,18 @@
 //
-//  FTBeginPlacementTestViewController.m
+//  FTSaveProgressViewController.m
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/22/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTBeginPlacementTestViewController.h"
+#import "MMSaveProgressViewController.h"
 
-@interface FTBeginPlacementTestViewController ()
+@interface MMSaveProgressViewController ()
 
 @end
 
-@implementation FTBeginPlacementTestViewController
+@implementation MMSaveProgressViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -39,29 +39,28 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Let's get started!", nil);
+  _lblMessage.text = NSLocalizedString(@"Save your progress", nil);
   [Utils adjustLabelToFitHeight:_lblMessage];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
+  _lblSubMessage.text = NSLocalizedString(@"You now need a Memo profile to save your progress. Register now!", nil);
   [Utils adjustLabelToFitHeight:_lblSubMessage];
   
-  _btnStart.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnStart.layer.cornerRadius = 4;
-  [_btnStart setTitle:NSLocalizedString(@"Start", nil) forState:UIControlStateNormal];
+  _btnCreateProfile.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnCreateProfile.layer.cornerRadius = 4;
+  [_btnCreateProfile setTitle:NSLocalizedString(@"Create profile", nil) forState:UIControlStateNormal];
   
-  _btnBack.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnBack.layer.cornerRadius = 4;
-  _btnBack.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
-  _btnBack.layer.borderWidth = 2;
-  [_btnBack setTitle:NSLocalizedString(@"Back", nil) forState:UIControlStateNormal];
+  _btnCancel.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnCancel.layer.cornerRadius = 4;
+  _btnCancel.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _btnCancel.layer.borderWidth = 2;
+  [_btnCancel setTitle:NSLocalizedString(@"Cancel my progress", nil) forState:UIControlStateNormal];
 }
 
-- (IBAction)btnStartPressed:(UIButton *)sender {
+- (IBAction)btnCreateProfile:(UIButton *)sender {
 }
 
-- (IBAction)btnBackPressed:(UIButton *)sender {
-  [self dismissViewController];
+- (IBAction)btnCancel:(UIButton *)sender {
 }
 
 @end

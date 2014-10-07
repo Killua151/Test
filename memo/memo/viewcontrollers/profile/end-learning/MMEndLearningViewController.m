@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTEndLearningViewController.h"
+#import "MMEndLearningViewController.h"
 
-@interface FTEndLearningViewController ()
+@interface MMEndLearningViewController ()
 
 @end
 
-@implementation FTEndLearningViewController
+@implementation MMEndLearningViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];

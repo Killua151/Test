@@ -1,20 +1,18 @@
 //
-//  FTSetGoalViewController.m
+//  FTBeginPlacementTestViewController.m
 //  fanto
 //
 //  Created by Ethan Nguyen on 9/22/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTSuggestGoalViewController.h"
+#import "MMBeginPlacementTestViewController.h"
 
-@interface FTSuggestGoalViewController ()
-
-- (void)setupViews;
+@interface MMBeginPlacementTestViewController ()
 
 @end
 
-@implementation FTSuggestGoalViewController
+@implementation MMBeginPlacementTestViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -48,15 +46,22 @@
   _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
   [Utils adjustLabelToFitHeight:_lblSubMessage];
   
-  _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnSetGoal.layer.cornerRadius = 4;
-  [_btnSetGoal setTitle:NSLocalizedString(@"Set daily goal", nil) forState:UIControlStateNormal];
+  _btnStart.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnStart.layer.cornerRadius = 4;
+  [_btnStart setTitle:NSLocalizedString(@"Start", nil) forState:UIControlStateNormal];
   
-  _btnSkip.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnSkip.layer.cornerRadius = 4;
-  _btnSkip.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
-  _btnSkip.layer.borderWidth = 2;
-  [_btnSkip setTitle:NSLocalizedString(@"Skip", nil) forState:UIControlStateNormal];
+  _btnBack.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnBack.layer.cornerRadius = 4;
+  _btnBack.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
+  _btnBack.layer.borderWidth = 2;
+  [_btnBack setTitle:NSLocalizedString(@"Back", nil) forState:UIControlStateNormal];
+}
+
+- (IBAction)btnStartPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnBackPressed:(UIButton *)sender {
+  [self dismissViewController];
 }
 
 @end

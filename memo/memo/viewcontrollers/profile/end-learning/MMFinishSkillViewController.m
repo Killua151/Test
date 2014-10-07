@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTFinishSkillViewController.h"
-#import "FTMoneyBonusViewController.h"
+#import "MMFinishSkillViewController.h"
+#import "MMMoneyBonusViewController.h"
 
-@interface FTFinishSkillViewController ()
+@interface MMFinishSkillViewController ()
 
 @end
 
-@implementation FTFinishSkillViewController
+@implementation MMFinishSkillViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -77,7 +77,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[FTMoneyBonusViewController new] animated:YES];
+  [self.navigationController pushViewController:[MMMoneyBonusViewController new] animated:YES];
 }
 
 #pragma mark - FTActionSheetDelegate methods

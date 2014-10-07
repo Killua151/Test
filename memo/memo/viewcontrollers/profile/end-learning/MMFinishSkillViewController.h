@@ -1,15 +1,16 @@
 //
-//  FTCongratsViewController.h
+//  FTFinishSkillViewController.h
 //  fanto
 //
-//  Created by Ethan Nguyen on 9/22/14.
+//  Created by Ethan Nguyen on 9/20/14.
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTEndLearningViewController.h"
+#import "MMEndLearningViewController.h"
 
-@interface FTCongratsViewController : FTEndLearningViewController <FTActionSheetDelegate> {
-  IBOutlet UIImageView *_imgAnt;
+@interface MMFinishSkillViewController : MMEndLearningViewController {
+  IBOutlet UILabel *_lblSkillName;
+  IBOutlet UIImageView *_imgSkillStrength;
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;
   IBOutlet UIButton *_btnShare;

@@ -26,6 +26,7 @@
 @property (nonatomic, assign) NSInteger virtual_money;
 @property (nonatomic, strong) NSArray *skills;
 @property (nonatomic, strong) NSArray *skills_tree;
+@property (nonatomic, strong) NSDictionary *lastReceivedBonuses;
 
 + (void)loadCurrentUserFromUserDef;
 + (void)logOutCurrentUser;

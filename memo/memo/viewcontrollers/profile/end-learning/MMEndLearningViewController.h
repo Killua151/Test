@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTEndLearningViewController : BaseViewController
+@interface MMEndLearningViewController : BaseViewController
 
 - (void)setupViews;
 

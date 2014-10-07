@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTFailLessonViewController.h"
+#import "MMFailLessonViewController.h"
 #import "FTSkillsListViewController.h"
 #import "MMAppDelegate.h"
 
-@interface FTFailLessonViewController ()
+@interface MMFailLessonViewController ()
 
 @end
 
-@implementation FTFailLessonViewController
+@implementation MMFailLessonViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
