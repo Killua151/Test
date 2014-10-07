@@ -8,6 +8,8 @@
 
 #import "MMMoneyBonusViewController.h"
 #import "MMSkillsListViewController.h"
+#import "MUser.h"
+#import "MSkill.h"
 
 @interface MMMoneyBonusViewController ()
 
@@ -24,7 +26,11 @@
 }
 
 - (void)setupViews {
-  NSString *styledString = @"2 Memos";
+  NSDictionary *receivedBonuses = [MUser currentUser].lastReceivedBonuses;
+  MSkill *affectedSkill = receivedBonuses[kParamAffectedSkill];
+  NSInteger bonusMoney = [receivedBonuses[kParamBonusMoney] integerValue];
+  
+  NSString *styledString = [NSString stringWithFormat:@"%d Memo Coin", bonusMoney];
   NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã được thưởng %@", nil), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -35,9 +41,10 @@
   [Utils adjustLabelToFitHeight:_lblMessage];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = [NSString stringWithFormat:NSLocalizedString(@"Hoàn thành kỹ năng %@", nil), @"Cơ bản 1"];
+  _lblSubMessage.text = [NSString stringWithFormat:NSLocalizedString(@"Hoàn thành kỹ năng %@", nil), affectedSkill.title];
   
-  _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];
+  _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];  
+  _lblCount.text = [NSString stringWithFormat:@"%d", bonusMoney];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;

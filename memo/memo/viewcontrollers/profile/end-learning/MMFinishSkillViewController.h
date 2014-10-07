@@ -8,8 +8,10 @@
 
 #import "MMEndLearningViewController.h"
 
-@interface MMFinishSkillViewController : MMEndLearningViewController {
+@interface MMFinishSkillViewController : MMEndLearningViewController <MMActionSheetDelegate> {
+  IBOutlet UIView *_vSkill;
   IBOutlet UILabel *_lblSkillName;
+  IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UIImageView *_imgSkillStrength;
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;

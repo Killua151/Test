@@ -386,8 +386,6 @@
        [Utils hideAllHUDsForView:self.view];
        ShowAlertWithError(error);
        
-       DLog(@"%@", [MUser currentUser].lastReceivedBonuses);
-       
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
     

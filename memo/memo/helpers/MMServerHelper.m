@@ -152,19 +152,14 @@
                            kParamAnswers : [answerResults JSONString]
                            };
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"exam/finish"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
-     DLog(@"%@", [responseObject objectFromJSONData]);
      handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     DLog(@"%@", error);
-     
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(error);
      }];

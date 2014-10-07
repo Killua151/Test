@@ -10,6 +10,7 @@
 #import "MMFinishSkillViewController.h"
 #import "MMSetGoalViewController.h"
 #import "MMShareActionSheet.h"
+#import "MMSkillsListViewController.h"
 #import "MUser.h"
 
 @interface MMFinishLessonViewController () {
@@ -41,7 +42,9 @@
 }
 
 - (void)setupViews {
-  NSString *styledString = @"+999 XP";
+  NSDictionary *receivedBonuses = [MUser currentUser].lastReceivedBonuses;
+  
+  NSString *styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamFinishExamBonusExp]];
   NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bài tập hoàn thành! %@", nil), styledString];
   
   _lblFinishLessonMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
@@ -51,7 +54,7 @@
                       withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
   [Utils adjustLabelToFitHeight:_lblFinishLessonMessage];
   
-  styledString = @"+1 XP";
+  styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
   message = [NSString stringWithFormat:NSLocalizedString(@"Thưởng trái tim %@", nil), styledString];
   
   _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
@@ -69,7 +72,7 @@
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
   
-  styledString = @"3 ngày streak";
+  styledString = @"3 ngày Combo";
   message = [NSString stringWithFormat:NSLocalizedString(@"Bạn có %@!", nil), styledString];
   _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [Utils applyAttributedTextForLabel:_lblStreaksCount
@@ -87,7 +90,10 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
+  if ([MUser currentUser].lastReceivedBonuses[kParamAffectedSkill] != nil)
+    [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
+  else
+    [self transitToViewController:[MMSkillsListViewController navigationController]];
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {

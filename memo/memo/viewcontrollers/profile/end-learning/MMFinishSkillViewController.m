@@ -8,8 +8,14 @@
 
 #import "MMFinishSkillViewController.h"
 #import "MMMoneyBonusViewController.h"
+#import "MMShareActionSheet.h"
+#import "MMSkillsListViewController.h"
+#import "MUser.h"
+#import "MSkill.h"
 
-@interface MMFinishSkillViewController ()
+@interface MMFinishSkillViewController () {
+  MMShareActionSheet *_vShare;
+}
 
 @end
 
@@ -39,10 +45,21 @@
     _lblSubMessage.frame = frame;
   }
   
-  _lblSkillName.text = @"Cơ bản 1";
+  MSkill *affectedSkill = [MUser currentUser].lastReceivedBonuses[kParamAffectedSkill];
+  
+  UIImage *maskingImage = [UIImage imageNamed:@"img-hexagon_skill-bg_big.png"];
+  CALayer *maskingLayer = [CALayer layer];
+  maskingLayer.frame = _vSkill.bounds;
+  [maskingLayer setContents:(id)[maskingImage CGImage]];
+  [_vSkill.layer setMask:maskingLayer];
+  
+  _vSkill.backgroundColor = [UIColor colorWithHexString:affectedSkill.theme_color];
+  _lblSkillName.text = affectedSkill.title;
+  _imgSkillIcon.image = [UIImage imageNamed:
+                         [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill._id]];
   
   NSString *styledString = _lblSkillName.text;
-  NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã hoàn thành kỹ năng %@!", nil), styledString];
+  NSString *message = [NSString stringWithFormat:NSLocalizedString(@"You have finished skill %@!", nil), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   [Utils applyAttributedTextForLabel:_lblMessage
@@ -71,13 +88,20 @@
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  
+  _vShare = [[MMShareActionSheet alloc] initInViewController:self];
+  [self.view bringSubviewToFront:_vShare];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
+  [_vShare show];
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self.navigationController pushViewController:[MMMoneyBonusViewController new] animated:YES];
+  if ([MUser currentUser].lastReceivedBonuses[kParamBonusMoney] != nil)
+    [self.navigationController pushViewController:[MMMoneyBonusViewController new] animated:YES];
+  else
+    [self transitToViewController:[MMSkillsListViewController navigationController]];
 }
 
 #pragma mark - MMActionSheetDelegate methods
