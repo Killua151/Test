@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "MMAppDelegate.h"
-#import "FTShareViewController.h"
+#import "MMShareViewController.h"
 
 @interface BaseViewController ()
 
@@ -67,7 +67,7 @@
 }
 
 - (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption {
-  FTShareViewController *shareVC = [[FTShareViewController alloc] initWithDefaultOption:shareOption];
+  MMShareViewController *shareVC = [[MMShareViewController alloc] initWithDefaultOption:shareOption];
   UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:shareVC];
   [self presentViewController:navigation animated:YES completion:NULL];
 }

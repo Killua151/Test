@@ -7,7 +7,7 @@
 //
 
 #import "MMFailLessonViewController.h"
-#import "FTSkillsListViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MMAppDelegate.h"
 
 @interface MMFailLessonViewController ()
@@ -47,7 +47,7 @@
 }
 
 - (IBAction)btnQuitPressed:(UIButton *)sender {
-  [self transitToViewController:[FTSkillsListViewController navigationController]];
+  [self transitToViewController:[MMSkillsListViewController navigationController]];
 }
 
 @end

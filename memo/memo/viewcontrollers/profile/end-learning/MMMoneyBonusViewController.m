@@ -7,7 +7,7 @@
 //
 
 #import "MMMoneyBonusViewController.h"
-#import "FTSkillsListViewController.h"
+#import "MMSkillsListViewController.h"
 
 @interface MMMoneyBonusViewController ()
 
@@ -45,7 +45,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  [self transitToViewController:[FTSkillsListViewController navigationController]];
+  [self transitToViewController:[MMSkillsListViewController navigationController]];
 }
 
 @end

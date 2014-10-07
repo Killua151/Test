@@ -10,13 +10,13 @@
 #import "MMFailLessonViewController.h"
 #import "MMFinishLessonViewController.h"
 
-#import "FTFormQuestionContentView.h"
-#import "FTJudgeQuestionContentView.h"
-#import "FTListenQuestionContentView.h"
-#import "FTNameQuestionContentView.h"
-#import "FTSelectQuestionContentView.h"
-#import "FTSpeakQuestionContentView.h"
-#import "FTTranslateQuestionContentView.h"
+#import "MMFormQuestionContentView.h"
+#import "MMJudgeQuestionContentView.h"
+#import "MMListenQuestionContentView.h"
+#import "MMNameQuestionContentView.h"
+#import "MMSelectQuestionContentView.h"
+#import "MMSpeakQuestionContentView.h"
+#import "MMTranslateQuestionContentView.h"
 
 #import "MBaseQuestion.h"
 
@@ -29,7 +29,7 @@
   CGFloat _innerPanGestureYPos;
   UIView *_currentShowingResultView;
   
-  FTQuestionContentView *_vQuestionContent;
+  MMQuestionContentView *_vQuestionContent;
   
   NSDictionary *_metadata;
   NSArray *_questionsData;

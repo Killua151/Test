@@ -7,10 +7,10 @@
 //
 
 #import "MMCongratsViewController.h"
-#import "FTShareActionSheet.h"
+#import "MMShareActionSheet.h"
 
 @interface MMCongratsViewController () {
-  FTShareActionSheet *_vShare;
+  MMShareActionSheet *_vShare;
 }
 
 @end
@@ -55,7 +55,7 @@
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
   
-  _vShare = [[FTShareActionSheet alloc] initInViewController:self];
+  _vShare = [[MMShareActionSheet alloc] initInViewController:self];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMSkillsListViewController">
+            <connections>
+                <outlet property="_btnHexagonStrengthen" destination="Uo9-ia-1NQ" id="bvC-zC-RPb"/>
+                <outlet property="_btnShieldStrengthen" destination="i36-ig-4GK" id="sTI-dY-Jyk"/>
+                <outlet property="_lblBeginnerSubTitle" destination="CYC-yO-Lne" id="6vH-hr-Sjf"/>
+                <outlet property="_lblBeginnerTitle" destination="yPr-Hf-JJg" id="tm2-1z-gW2"/>
+                <outlet property="_lblPlacementTestSubTitle" destination="ZWf-Ru-r8z" id="CNJ-OV-5Wu"/>
+                <outlet property="_lblPlacementTestTitle" destination="ppC-hU-6xA" id="uCm-La-8d7"/>
+                <outlet property="_tblSkills" destination="zjn-W4-tCL" id="e3k-Ng-hAu"/>
+                <outlet property="_vBeginningOptions" destination="ySD-8M-8xh" id="BBj-NH-F4l"/>
+                <outlet property="_vStrengthenButton" destination="Jyp-qc-wTD" id="hsM-Dl-rGs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="_vIconsBg" destination="HcR-r1-HyF" id="Nor-JO-cXn"/>
+                <outletCollection property="_vIconsBg" destination="NUO-YR-t2a" id="9ro-1z-g8c"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="zjn-W4-tCL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oPT-cG-URH"/>
+                        <outlet property="delegate" destination="-1" id="uQr-uf-mkc"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" id="ySD-8M-8xh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-ant-begin.png" id="RnT-6H-QPn">
+                            <rect key="frame" x="85" y="22" width="151" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="lJ6-8q-pSw">
+                            <rect key="frame" x="15" y="187" width="290" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-beginning_options-bg.png" id="ZZn-Yl-O06">
+                                    <rect key="frame" x="-15" y="-15" width="320" height="230"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" id="HcR-r1-HyF">
+                                    <rect key="frame" x="15" y="15" width="61" height="71"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.20000000000000001" green="0.70980392156862748" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-skill_icon-en-vi_co_ban_1-unlocked.png" id="j6E-YA-Ody">
+                                    <rect key="frame" x="21" y="20" width="49" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a beginner?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="yPr-Hf-JJg">
+                                    <rect key="frame" x="80" y="30" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start here with the Basics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="CYC-yO-Lne">
+                                    <rect key="frame" x="80" y="49" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aFr-9i-F26">
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnBeginnerPressed:" destination="-1" eventType="touchUpInside" id="SiQ-oQ-K3r"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" id="NUO-YR-t2a">
+                                    <rect key="frame" x="15" y="115" width="61" height="71"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-skill_icon-en-vi_chinh_tri-unlocked.png" id="4Qa-Cq-piM">
+                                    <rect key="frame" x="22" y="128" width="45" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a beginner?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="ppC-hU-6xA">
+                                    <rect key="frame" x="80" y="130" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try this Placement Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="ZWf-Ru-r8z">
+                                    <rect key="frame" x="80" y="149" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8og-5P-jjf">
+                                    <rect key="frame" x="0.0" y="100" width="290" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnPlacementTestPressed:" destination="-1" eventType="touchUpInside" id="v7f-Bj-n4M"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="Jyp-qc-wTD">
+                    <rect key="frame" x="15" y="465" width="290" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uo9-ia-1NQ">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <state key="normal" title="Luyện tập kỹ năng" backgroundImage="btn-hexagon-strengthen-bg.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnStrengthenPressed:" destination="-1" eventType="touchUpInside" id="Yu7-gN-aRW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i36-ig-4GK">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="Kiểm tra kỹ năng yếu">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnStrengthenPressed:" destination="-1" eventType="touchUpInside" id="eUs-zH-Pa2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn-hexagon-strengthen-bg.png" width="290" height="44"/>
+        <image name="img-ant-begin.png" width="151" height="182"/>
+        <image name="img-beginning_options-bg.png" width="320" height="230"/>
+        <image name="img-skill_icon-en-vi_chinh_tri-unlocked.png" width="100" height="100"/>
+        <image name="img-skill_icon-en-vi_co_ban_1-unlocked.png" width="100" height="100"/>
+    </resources>
+</document>

@@ -7,7 +7,7 @@
 //
 
 #import "MMSignUpViewController.h"
-#import "FTSkillsListViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MUser.h"
 
 @interface MMSignUpViewController () {
@@ -79,7 +79,7 @@
      
      [Utils updateSavedUserWithAttributes:userData];
      [MUser loadCurrentUserFromUserDef];
-     [self transitToViewController:[FTSkillsListViewController navigationController]];
+     [self transitToViewController:[MMSkillsListViewController navigationController]];
    }];
 }
 

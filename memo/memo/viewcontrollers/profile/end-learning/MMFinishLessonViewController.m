@@ -8,13 +8,13 @@
 
 #import "MMFinishLessonViewController.h"
 #import "MMFinishSkillViewController.h"
-#import "FTSetGoalViewController.h"
-#import "FTShareActionSheet.h"
+#import "MMSetGoalViewController.h"
+#import "MMShareActionSheet.h"
 #import "MUser.h"
 
 @interface MMFinishLessonViewController () {
   MMLineChart *_lineChart;
-  FTShareActionSheet *_vShare;
+  MMShareActionSheet *_vShare;
   CGFloat _innerPanGestureYPos;
 }
 
@@ -91,7 +91,7 @@
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
-  [self presentViewController:[FTSetGoalViewController navigationController] animated:YES completion:NULL];
+  [self presentViewController:[MMSetGoalViewController navigationController] animated:YES completion:NULL];
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -124,7 +124,7 @@
 - (void)setupSetGoalView {
   [self.view bringSubviewToFront:_vSetGoal];
   
-  _vShare = [[FTShareActionSheet alloc] initInViewController:self];
+  _vShare = [[MMShareActionSheet alloc] initInViewController:self];
   [self.view bringSubviewToFront:_vShare];
   
   if (!DeviceScreenIsRetina4Inch()) {

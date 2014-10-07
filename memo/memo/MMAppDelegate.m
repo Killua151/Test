@@ -8,7 +8,7 @@
 
 #import "MMAppDelegate.h"
 #import "MMHomeViewController.h"
-#import "FTSkillsListViewController.h"
+#import "MMSkillsListViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
@@ -121,7 +121,7 @@
   if ([MUser currentUser] == nil)
     self.window.rootViewController = [MMHomeViewController navigationController];
   else
-    self.window.rootViewController = [FTSkillsListViewController navigationController];
+    self.window.rootViewController = [MMSkillsListViewController navigationController];
 }
 
 #pragma mark - UIAlertViewDelegate methods

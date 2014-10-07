@@ -9,7 +9,7 @@
 #import "MMLoginViewController.h"
 #import "MMAppDelegate.h"
 #import "MMForgotPasswordViewController.h"
-#import "FTSkillsListViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MUser.h"
 
 @interface MMLoginViewController () {
@@ -61,7 +61,7 @@
      
      [Utils updateSavedUserWithAttributes:userData];
      [MUser loadCurrentUserFromUserDef];
-     [self transitToViewController:[FTSkillsListViewController navigationController]];
+     [self transitToViewController:[MMSkillsListViewController navigationController]];
    }];
   
   return;
@@ -90,7 +90,7 @@
        
        [Utils updateSavedUserWithAttributes:userData];
        [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[FTSkillsListViewController navigationController]];
+       [self transitToViewController:[MMSkillsListViewController navigationController]];
      }];
   }];
 }
@@ -111,7 +111,7 @@
        
        [Utils updateSavedUserWithAttributes:userData];
        [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[FTSkillsListViewController navigationController]];
+       [self transitToViewController:[MMSkillsListViewController navigationController]];
      }];
   }];
 }
