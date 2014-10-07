@@ -110,7 +110,6 @@
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
      
-     [Utils downloadMultipleAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:questions]];
      MMExamViewController *examVC = [[MMExamViewController alloc] initWithToken:examToken andQuestions:questions];
      [self presentViewController:examVC animated:YES completion:NULL];
    }];

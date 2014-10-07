@@ -68,7 +68,7 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)recognizeWithCompletion:(SpeechRecognitionCallback)callback;
 + (void)playAudioWithUrl:(NSString *)audioUrl;
 + (void)preDownloadAudioFromUrls:(NSArray *)audioUrls;
-+ (void)removeMultipleAudioWithOriginalUrls:(NSArray *)audioUrls;
++ (void)removePreDownloadedAudioWithOriginalUrls:(NSArray *)audioUrls;
 
 @end
 

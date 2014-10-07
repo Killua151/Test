@@ -447,7 +447,7 @@ static UIView *_sharedToast = nil;
   });
 }
 
-+ (void)removeMultipleAudioWithOriginalUrls:(NSArray *)audioUrls {
++ (void)removePreDownloadedAudioWithOriginalUrls:(NSArray *)audioUrls {
   for (NSString *audioUrl in audioUrls)
     [[self class] removePreDownloadedAudio:audioUrl];
 }
