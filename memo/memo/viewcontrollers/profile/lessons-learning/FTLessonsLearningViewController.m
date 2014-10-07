@@ -361,7 +361,6 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
-    DLog(@"%@", _answersData);
     [self presentViewController:[FTFinishLessonViewController navigationController] animated:YES completion:NULL];
     return;
   }

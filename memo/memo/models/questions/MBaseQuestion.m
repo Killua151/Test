@@ -7,6 +7,8 @@
 //
 
 #import "MBaseQuestion.h"
+#import "MListenQuestion.h"
+#import "MTranslateQuestion.h"
 
 @interface MBaseQuestion ()
 
@@ -36,6 +38,29 @@
   }
   
   return models;
+}
+
++ (NSArray *)audioUrlsFromQuestions:(NSArray *)questions {
+  NSMutableArray *audioUrls = [NSMutableArray array];
+  
+  for (MBaseQuestion *question in questions) {
+    if (![question isKindOfClass:[MBaseQuestion class]])
+      continue;
+    
+    if ([question isKindOfClass:[MListenQuestion class]]) {
+      if ([(MListenQuestion *)question normal_question_audio] != nil)
+        [audioUrls addObject:[(MListenQuestion *)question normal_question_audio]];
+      
+      if ([(MListenQuestion *)question slow_question_audio])
+        [audioUrls addObject:[(MListenQuestion *)question slow_question_audio]];
+    }
+    
+    if ([question isKindOfClass:[MTranslateQuestion class]])
+      if ([(MTranslateQuestion *)question normal_question_audio] != nil)
+        [audioUrls addObject:[(MTranslateQuestion *)question normal_question_audio]];
+  }
+  
+  return audioUrls;
 }
 
 // Check if answer value is correct

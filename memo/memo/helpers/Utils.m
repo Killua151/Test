@@ -31,7 +31,11 @@ static UIView *_sharedToast = nil;
 + (instancetype)sharedUtils;
 + (NSString *)suffixForDayInDate:(NSDate *)date;
 + (BOOL)isObjectValidForSaveToUserDefaults:(id)object;
-- (void)playAudioFromAudioUrl:(NSURL *)audioUrl;
++ (NSString *)savedAudioPathWithOriginalUrl:(NSString *)audioUrl;
++ (BOOL)isAudioSavedWithOriginalUrl:(NSString *)audioUrl;
++ (NSString *)saveTempAudioWithUrl:(NSString *)audioUrl;
++ (void)removePreDownloadedAudio:(NSString *)audioUrl;
+- (void)playAudioWithPath:(NSString *)audioPath;
 
 @end
 
@@ -415,10 +419,38 @@ static UIView *_sharedToast = nil;
 #endif
 }
 
-+ (void)playAudioFromUrl:(NSString *)audioUrl {
-  NSURL *url = [NSURL URLWithString:audioUrl];
-  url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"mp3"];
-  [[Utils sharedUtils] playAudioFromAudioUrl:url];
++ (void)playAudioWithUrl:(NSString *)audioUrl {
+  if (![[self class] isAudioSavedWithOriginalUrl:audioUrl])
+    [[self class] downloadMultipleAudioFromUrls:@[audioUrl]];
+  
+  NSString *savedAudioPath = [[self class] savedAudioPathWithOriginalUrl:audioUrl];
+  DLog(@"%@", savedAudioPath);
+  [[Utils sharedUtils] playAudioWithPath:savedAudioPath];
+}
+
++ (void)downloadMultipleAudioFromUrls:(NSArray *)audioUrls {
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    for (NSString *audioUrl in audioUrls) {
+      NSURL *audioUri = [NSURL URLWithString:audioUrl];
+      
+      @autoreleasepool {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+          DLog(@"start download audio with %@", [audioUri lastPathComponent]);
+        });
+        
+        NSString *savedAudioPath = [self saveTempAudioWithUrl:audioUrl];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+          DLog(@"finish download audio with %@ at path %@", [audioUri lastPathComponent], savedAudioPath);
+        });
+      }
+    }
+  });
+}
+
++ (void)removeMultipleAudioWithOriginalUrls:(NSArray *)audioUrls {
+  for (NSString *audioUrl in audioUrls)
+    [[self class] removePreDownloadedAudio:audioUrl];
 }
 
 #pragma mark - GPPSignInDelegate methods
@@ -458,7 +490,6 @@ static UIView *_sharedToast = nil;
 
 #pragma mark - AVAudioPlayerDelegate methods
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-  DLog(@"%@", NSStringFromBOOL(flag));
   [player stop];
 }
 
@@ -506,7 +537,49 @@ static UIView *_sharedToast = nil;
   return NO;
 }
 
-- (void)playAudioFromAudioUrl:(NSURL *)audioUrl {
++ (NSString *)savedAudioPathWithOriginalUrl:(NSString *)audioUrl {
+  NSFileManager *manager = [NSFileManager defaultManager];
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *savedAudioFilePath = paths[0];
+  [manager createDirectoryAtPath:savedAudioFilePath withIntermediateDirectories:YES attributes:nil error:nil];
+  
+  NSURL *audioUri = [NSURL URLWithString:audioUrl];
+  NSString *audioFileName = [audioUri lastPathComponent];
+  
+  savedAudioFilePath = [savedAudioFilePath stringByAppendingPathComponent:audioFileName];
+
+  return savedAudioFilePath;
+}
+
++ (BOOL)isAudioSavedWithOriginalUrl:(NSString *)audioUrl {
+  NSString *savedAudioFilePath = [[self class] savedAudioPathWithOriginalUrl:audioUrl];
+  return [[NSFileManager defaultManager] fileExistsAtPath:savedAudioFilePath];
+}
+
++ (NSString *)saveTempAudioWithUrl:(NSString *)audioUrl {
+  NSString *savedAudioPath = [[self class] savedAudioPathWithOriginalUrl:audioUrl];
+  
+  if ([[NSFileManager defaultManager] fileExistsAtPath:savedAudioPath])
+    return savedAudioPath;
+  
+  [self removePreDownloadedAudio:audioUrl];
+  
+  // download & save to path
+  NSData *urlData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:audioUrl]];
+  
+  if (urlData != nil)
+    [urlData writeToFile:savedAudioPath atomically:YES];
+  
+  return savedAudioPath;
+}
+
++ (void)removePreDownloadedAudio:(NSString *)audioUrl {
+  NSString *savedAudioFilePath = [[self class] savedAudioPathWithOriginalUrl:audioUrl];
+  [[NSFileManager defaultManager] removeItemAtPath:savedAudioFilePath error:nil];
+}
+
+- (void)playAudioWithPath:(NSString *)audioPath {
+  NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
   audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:NULL];
   audioPlayer.delegate = self;
   [audioPlayer prepareToPlay];

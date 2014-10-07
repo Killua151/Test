@@ -66,7 +66,9 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 
 #pragma mark - Lessons learning utils
 + (void)recognizeWithCompletion:(SpeechRecognitionCallback)callback;
-+ (void)playAudioFromUrl:(NSString *)audioUrl;
++ (void)playAudioWithUrl:(NSString *)audioUrl;
++ (void)downloadMultipleAudioFromUrls:(NSArray *)audioUrls;
++ (void)removeMultipleAudioWithOriginalUrls:(NSArray *)audioUrls;
 
 @end
 

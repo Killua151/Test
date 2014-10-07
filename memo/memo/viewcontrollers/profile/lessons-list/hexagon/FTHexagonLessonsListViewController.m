@@ -11,6 +11,7 @@
 #import "FTLessonsLearningViewController.h"
 #import "MSkill.h"
 #import "MLesson.h"
+#import "MBaseQuestion.h"
 
 #define kNormalLessonWidth        230.f
 #define kNormalLessonHeight       160.f
@@ -108,6 +109,8 @@
    completion:^(NSArray *questions, NSError *error) {
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
+     
+     DLog(@"%@", [MBaseQuestion audioUrlsFromQuestions:questions]);
      
      [self presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
                         animated:YES

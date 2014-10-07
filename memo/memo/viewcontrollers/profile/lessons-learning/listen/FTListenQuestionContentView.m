@@ -57,11 +57,11 @@
 }
 
 - (IBAction)btnNormalAudioPressed:(UIButton *)sender {
-  [Utils playAudioFromUrl:[(MListenQuestion *)self.questionData normal_question_audio]];
+  [Utils playAudioWithUrl:[(MListenQuestion *)self.questionData normal_question_audio]];
 }
 
 - (IBAction)btnSlowAudioPressed:(UIButton *)sender {
-  [Utils playAudioFromUrl:[(MListenQuestion *)self.questionData slow_question_audio]];
+  [Utils playAudioWithUrl:[(MListenQuestion *)self.questionData slow_question_audio]];
 }
 
 #pragma mark - UITextViewDelegate methods

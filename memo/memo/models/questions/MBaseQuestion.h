@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *type;
 
 + (Class)questionKlassByType:(NSString *)type;
++ (NSArray *)audioUrlsFromQuestions:(NSArray *)questions;
 - (id)checkAnswer:(id)answerValue;
 
 @end
