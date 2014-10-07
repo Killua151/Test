@@ -475,8 +475,8 @@
 		CAF8549319E0F3D200A347CF /* FTFormAnswerTokenButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524219E0F3D200A347CF /* FTFormAnswerTokenButton.xib */; };
 		CAF8549419E0F3D200A347CF /* FTFormQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524419E0F3D200A347CF /* FTFormQuestionContentView.m */; };
 		CAF8549519E0F3D200A347CF /* FTFormQuestionContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524519E0F3D200A347CF /* FTFormQuestionContentView.xib */; };
-		CAF8549619E0F3D200A347CF /* FTLessonsLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524719E0F3D200A347CF /* FTLessonsLearningViewController.m */; };
-		CAF8549719E0F3D200A347CF /* FTLessonsLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524819E0F3D200A347CF /* FTLessonsLearningViewController.xib */; };
+		CAF8549619E0F3D200A347CF /* MMExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524719E0F3D200A347CF /* MMExamViewController.m */; };
+		CAF8549719E0F3D200A347CF /* MMExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524819E0F3D200A347CF /* MMExamViewController.xib */; };
 		CAF8549819E0F3D200A347CF /* FTQuestionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524A19E0F3D200A347CF /* FTQuestionContentView.m */; };
 		CAF8549919E0F3D200A347CF /* FTJudgeOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524D19E0F3D200A347CF /* FTJudgeOptionCell.m */; };
 		CAF8549A19E0F3D200A347CF /* FTJudgeOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524E19E0F3D200A347CF /* FTJudgeOptionCell.xib */; };
@@ -862,7 +862,7 @@
 		CAF8570619E0FDF600A347CF /* FTSetGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8527F19E0F3D200A347CF /* FTSetGoalViewController.m */; };
 		CAF8570719E0FDF600A347CF /* ISpeechSDK+Compatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8503E19E0F3D100A347CF /* ISpeechSDK+Compatibility.m */; };
 		CAF8570819E0FDF600A347CF /* FTShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF852BF19E0F3D200A347CF /* FTShareViewController.m */; };
-		CAF8570919E0FDF600A347CF /* FTLessonsLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524719E0F3D200A347CF /* FTLessonsLearningViewController.m */; };
+		CAF8570919E0FDF600A347CF /* MMExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8524719E0F3D200A347CF /* MMExamViewController.m */; };
 		CAF8570A19E0FDF600A347CF /* NSArray+ArrayHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501B19E0F3D100A347CF /* NSArray+ArrayHelpers.m */; };
 		CAF8570B19E0FDF600A347CF /* MBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8505019E0F3D100A347CF /* MBase.m */; };
 		CAF8570C19E0FDF600A347CF /* FTShieldSkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF852AE19E0F3D200A347CF /* FTShieldSkillCell.m */; };
@@ -1156,7 +1156,7 @@
 		CAF8583019E0FDF600A347CF /* img-hexagon_skill-strength-1_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851E919E0F3D200A347CF /* img-hexagon_skill-strength-1_big.png */; };
 		CAF8583119E0FDF600A347CF /* img-ant-set_goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8508819E0F3D100A347CF /* img-ant-set_goal@2x.png */; };
 		CAF8583219E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-locked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF854F719E0F82500A347CF /* img-skill_icon-en-vi_cau_hoi-locked.png */; };
-		CAF8583319E0FDF600A347CF /* FTLessonsLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524819E0F3D200A347CF /* FTLessonsLearningViewController.xib */; };
+		CAF8583319E0FDF600A347CF /* MMExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8524819E0F3D200A347CF /* MMExamViewController.xib */; };
 		CAF8583419E0FDF600A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8519619E0F3D200A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png */; };
 		CAF8583519E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8516319E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png */; };
 		CAF8583619E0FDF600A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF851DF19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png */; };
@@ -2082,9 +2082,9 @@
 		CAF8524319E0F3D200A347CF /* FTFormQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFormQuestionContentView.h; sourceTree = "<group>"; };
 		CAF8524419E0F3D200A347CF /* FTFormQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFormQuestionContentView.m; sourceTree = "<group>"; };
 		CAF8524519E0F3D200A347CF /* FTFormQuestionContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTFormQuestionContentView.xib; sourceTree = "<group>"; };
-		CAF8524619E0F3D200A347CF /* FTLessonsLearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLessonsLearningViewController.h; sourceTree = "<group>"; };
-		CAF8524719E0F3D200A347CF /* FTLessonsLearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLessonsLearningViewController.m; sourceTree = "<group>"; };
-		CAF8524819E0F3D200A347CF /* FTLessonsLearningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTLessonsLearningViewController.xib; sourceTree = "<group>"; };
+		CAF8524619E0F3D200A347CF /* MMExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExamViewController.h; sourceTree = "<group>"; };
+		CAF8524719E0F3D200A347CF /* MMExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExamViewController.m; sourceTree = "<group>"; };
+		CAF8524819E0F3D200A347CF /* MMExamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMExamViewController.xib; sourceTree = "<group>"; };
 		CAF8524919E0F3D200A347CF /* FTQuestionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTQuestionContentView.h; sourceTree = "<group>"; };
 		CAF8524A19E0F3D200A347CF /* FTQuestionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTQuestionContentView.m; sourceTree = "<group>"; };
 		CAF8524C19E0F3D200A347CF /* FTJudgeOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTJudgeOptionCell.h; sourceTree = "<group>"; };
@@ -3543,9 +3543,9 @@
 			isa = PBXGroup;
 			children = (
 				CAF8523F19E0F3D200A347CF /* Form */,
-				CAF8524619E0F3D200A347CF /* FTLessonsLearningViewController.h */,
-				CAF8524719E0F3D200A347CF /* FTLessonsLearningViewController.m */,
-				CAF8524819E0F3D200A347CF /* FTLessonsLearningViewController.xib */,
+				CAF8524619E0F3D200A347CF /* MMExamViewController.h */,
+				CAF8524719E0F3D200A347CF /* MMExamViewController.m */,
+				CAF8524819E0F3D200A347CF /* MMExamViewController.xib */,
 				CAF8524919E0F3D200A347CF /* FTQuestionContentView.h */,
 				CAF8524A19E0F3D200A347CF /* FTQuestionContentView.m */,
 				CAF8524B19E0F3D200A347CF /* Judge */,
@@ -4174,7 +4174,7 @@
 				CAF8545419E0F3D200A347CF /* img-hexagon_skill-strength-1_big.png in Resources */,
 				CAF852FE19E0F3D200A347CF /* img-ant-set_goal@2x.png in Resources */,
 				CAF855D319E0F82700A347CF /* img-skill_icon-en-vi_cau_hoi-locked.png in Resources */,
-				CAF8549719E0F3D200A347CF /* FTLessonsLearningViewController.xib in Resources */,
+				CAF8549719E0F3D200A347CF /* MMExamViewController.xib in Resources */,
 				CAF8540219E0F3D200A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */,
 				CAF853CF19E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
 				CAF8544A19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */,
@@ -4847,7 +4847,7 @@
 				CAF8583019E0FDF600A347CF /* img-hexagon_skill-strength-1_big.png in Resources */,
 				CAF8583119E0FDF600A347CF /* img-ant-set_goal@2x.png in Resources */,
 				CAF8583219E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-locked.png in Resources */,
-				CAF8583319E0FDF600A347CF /* FTLessonsLearningViewController.xib in Resources */,
+				CAF8583319E0FDF600A347CF /* MMExamViewController.xib in Resources */,
 				CAF8583419E0FDF600A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */,
 				CAF8583519E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
 				CAF8583619E0FDF600A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */,
@@ -5414,7 +5414,7 @@
 				CAF854B419E0F3D200A347CF /* FTSetGoalViewController.m in Sources */,
 				CAF852D519E0F3D200A347CF /* ISpeechSDK+Compatibility.m in Sources */,
 				CAF854D919E0F3D200A347CF /* FTShareViewController.m in Sources */,
-				CAF8549619E0F3D200A347CF /* FTLessonsLearningViewController.m in Sources */,
+				CAF8549619E0F3D200A347CF /* MMExamViewController.m in Sources */,
 				CAF852C619E0F3D200A347CF /* NSArray+ArrayHelpers.m in Sources */,
 				CAF852D919E0F3D200A347CF /* MBase.m in Sources */,
 				CAF854CF19E0F3D200A347CF /* FTShieldSkillCell.m in Sources */,
@@ -5516,7 +5516,7 @@
 				CAF8570619E0FDF600A347CF /* FTSetGoalViewController.m in Sources */,
 				CAF8570719E0FDF600A347CF /* ISpeechSDK+Compatibility.m in Sources */,
 				CAF8570819E0FDF600A347CF /* FTShareViewController.m in Sources */,
-				CAF8570919E0FDF600A347CF /* FTLessonsLearningViewController.m in Sources */,
+				CAF8570919E0FDF600A347CF /* MMExamViewController.m in Sources */,
 				CAF8570A19E0FDF600A347CF /* NSArray+ArrayHelpers.m in Sources */,
 				CAF8570B19E0FDF600A347CF /* MBase.m in Sources */,
 				CAF8570C19E0FDF600A347CF /* FTShieldSkillCell.m in Sources */,

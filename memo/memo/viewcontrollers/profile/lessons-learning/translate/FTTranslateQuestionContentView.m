@@ -8,7 +8,7 @@
 
 #import "FTTranslateQuestionContentView.h"
 #import "MTranslateQuestion.h"
-#import "FTLessonsLearningViewController.h"
+#import "MMExamViewController.h"
 
 @interface FTTranslateQuestionContentView () {
   NSMutableDictionary *_originalSubviewsOriginY;

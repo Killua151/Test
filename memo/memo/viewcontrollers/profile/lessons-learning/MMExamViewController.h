@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface FTLessonsLearningViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate, UIGestureRecognizerDelegate> {
+@interface MMExamViewController : BaseViewController <UIAlertViewDelegate, FTLessonLearningDelegate, UIGestureRecognizerDelegate> {
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
@@ -30,7 +30,7 @@
   IBOutlet UILabel *_lblResultIncorrectAnswer;
 }
 
-- (id)initWithQuestions:(NSArray *)questions;
+- (id)initWithToken:(NSString *)examToken andQuestions:(NSArray *)questions;
 - (IBAction)btnClosePressed:(UIButton *)sender;
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender;
 - (IBAction)btnCheckPressed:(UIButton *)sender;

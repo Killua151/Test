@@ -36,7 +36,7 @@
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
-         completion:(void(^)(NSArray *questions, NSError *error))handler;
+         completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 

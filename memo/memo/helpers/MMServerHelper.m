@@ -15,6 +15,8 @@
 @interface MMServerHelper ()
 
 - (void)logInWithParam:(NSDictionary *)params completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+- (void)startExamWithParam:(NSDictionary *)params
+                completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 - (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void(^)())handler;
 
 @end
@@ -122,7 +124,9 @@
    }];
 }
 
-- (void)startLesson:(NSInteger)lessonNumber inSkill:(NSString *)skillId completion:(void (^)(NSArray *, NSError *))handler {
+- (void)startLesson:(NSInteger)lessonNumber
+            inSkill:(NSString *)skillId
+         completion:(void (^)(NSString *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : @"lesson",
                            kParamLessonNumber : @(lessonNumber),
@@ -130,19 +134,7 @@
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
   
-  [self
-   POST:@"exam/start"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSArray *questions = [responseObject objectFromJSONData];
-     DLog(@"%@", questions);
-     handler([MBaseQuestion modelsFromArr:questions], nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, error);
-     }];
-   }];
+  [self startExamWithParam:params completion:handler];
 }
 
 - (void)registerDeviceTokenForAPNS {
@@ -174,8 +166,7 @@
   [operation
    setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
 #if kTestPushNotification
-     NSDictionary *response = [responseObject objectFromJSONData];
-     DLog(@"%@", response);
+     DLog(@"%@", [responseObject objectFromJSONData]);
 #endif
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -200,6 +191,21 @@
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(nil, error);
+     }];
+   }];
+}
+
+- (void)startExamWithParam:(NSDictionary *)params completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  [self
+   POST:@"exam/start"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *responseDict = [responseObject objectFromJSONData];
+     handler(responseDict[kParamExamToken], [MBaseQuestion modelsFromArr:responseDict[@"questions"]], nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, nil, error);
      }];
    }];
 }

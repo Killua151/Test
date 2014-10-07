@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "FTLessonsLearningViewController.h"
+#import "MMExamViewController.h"
 #import "FTFailLessonViewController.h"
 #import "FTFinishLessonViewController.h"
 
@@ -20,7 +20,7 @@
 
 #import "MBaseQuestion.h"
 
-@interface FTLessonsLearningViewController () {
+@interface MMExamViewController () {
   NSInteger _totalLessonsCount;
   NSInteger _currentLessonIndex;
   NSInteger _totalHeartsCount;
@@ -31,6 +31,7 @@
   
   FTQuestionContentView *_vQuestionContent;
   
+  NSString *_examToken;
   NSArray *_questionsData;
   NSMutableDictionary *_answersData;
   id _answerValue;
@@ -55,10 +56,11 @@
 
 @end
 
-@implementation FTLessonsLearningViewController
+@implementation MMExamViewController
 
-- (id)initWithQuestions:(NSArray *)questions {
+- (id)initWithToken:(NSString *)examToken andQuestions:(NSArray *)questions {
   if (self = [super init]) {
+    _examToken = examToken;
     _questionsData = questions;
     _answersData = [NSMutableDictionary new];
   }

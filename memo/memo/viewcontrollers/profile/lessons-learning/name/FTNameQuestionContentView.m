@@ -7,7 +7,7 @@
 //
 
 #import "FTNameQuestionContentView.h"
-#import "FTLessonsLearningViewController.h"
+#import "MMExamViewController.h"
 #import "MNameQuestion.h"
 
 @interface FTNameQuestionContentView () {

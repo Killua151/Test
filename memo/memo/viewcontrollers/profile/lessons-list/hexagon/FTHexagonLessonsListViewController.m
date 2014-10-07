@@ -8,7 +8,7 @@
 
 #import "FTHexagonLessonsListViewController.h"
 #import "FTHexagonLessonView.h"
-#import "FTLessonsLearningViewController.h"
+#import "MMExamViewController.h"
 #import "MSkill.h"
 #import "MLesson.h"
 #import "MBaseQuestion.h"
@@ -106,15 +106,13 @@
   [[MMServerHelper sharedHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
-   completion:^(NSArray *questions, NSError *error) {
+   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
      [Utils hideAllHUDsForView:self.navigationController.view];
      ShowAlertWithError(error);
      
-     DLog(@"%@", [MBaseQuestion audioUrlsFromQuestions:questions]);
-     
-     [self presentViewController:[[FTLessonsLearningViewController alloc] initWithQuestions:questions]
-                        animated:YES
-                      completion:NULL];
+     [Utils downloadMultipleAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:questions]];
+     MMExamViewController *examVC = [[MMExamViewController alloc] initWithToken:examToken andQuestions:questions];
+     [self presentViewController:examVC animated:YES completion:NULL];
    }];
 }
 

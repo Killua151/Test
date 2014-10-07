@@ -78,7 +78,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define ARC4RANDOM_MAX                          0x100000000
 
 //#define kServerApiUrl                           @"http://fanto-backend.volcano.vn/api"
-#define kServerApiUrl                           @"http://192.168.64.5/memo/memo/index.php/api"
+#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
@@ -98,8 +98,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             true
 #define kTestPassAllAPIs                        false
-#define kTestTranslateQuestions                 true
-#define kTestPushNotification                   true
+#define kTestTranslateQuestions                 false
+#define kTestPushNotification                   false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 #define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
@@ -117,6 +117,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamAuthToken                         @"auth_token"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
+#define kParamExamToken                         @"exam_token"
 #define kParamFbId                              @"fb_Id"
 #define kParamFbAccessToken                     @"fb_access_token"
 #define kParamLessonNumber                      @"lesson_number"
@@ -125,6 +126,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
+#define kParamQuestions                         @"questions"
 #define kParamPassword                          @"password"
 #define kParamResponseCode                      @"response_code"
 #define kParamSkillId                           @"skill_id"

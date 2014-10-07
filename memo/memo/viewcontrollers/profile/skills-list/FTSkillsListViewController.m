@@ -14,7 +14,7 @@
 #import "FTProfileViewController.h"
 
 #import "FTBeginPlacementTestViewController.h"
-#import "FTLessonsLearningViewController.h"
+#import "MMExamViewController.h"
 
 #import "MUser.h"
 #import "MSkill.h"
