@@ -34,7 +34,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="286" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </imageView>
-                                <view clipsSubviews="YES" contentMode="scaleToFill" id="OzP-4w-RGc">
+                                <view contentMode="scaleToFill" id="OzP-4w-RGc">
                                     <rect key="frame" x="96" y="87" width="95" height="95"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>

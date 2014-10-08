@@ -30,7 +30,7 @@
   MSkill *affectedSkill = receivedBonuses[kParamAffectedSkill];
   NSInteger bonusMoney = [receivedBonuses[kParamBonusMoney] integerValue];
   
-  NSString *styledString = [NSString stringWithFormat:@"%d Memo Coin", bonusMoney];
+  NSString *styledString = [NSString stringWithFormat:@"%ld Memo Coin", (long)bonusMoney];
   NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã được thưởng %@", nil), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -44,7 +44,7 @@
   _lblSubMessage.text = [NSString stringWithFormat:NSLocalizedString(@"Hoàn thành kỹ năng %@", nil), affectedSkill.title];
   
   _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];  
-  _lblCount.text = [NSString stringWithFormat:@"%d", bonusMoney];
+  _lblCount.text = [NSString stringWithFormat:@"%ld", (long)bonusMoney];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
