@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <GooglePlus/GooglePlus.h>
 #import "MSkill.h"
+#import "MLeaderboardData.h"
 
 @interface MUser () {
   NSMutableDictionary *_skillsById;
@@ -47,6 +48,14 @@ static MUser *_currentUser = nil;
   return _currentUser;
 }
 
+- (void)setFollowings_leaderboard_by_month:(NSArray *)followings_leaderboard_by_month {
+  _followings_leaderboard_by_month = [MLeaderboardData modelsFromArr:followings_leaderboard_by_month];
+}
+
+- (void)setFollowings_leaderboard_by_week:(NSArray *)followings_leaderboard_by_week {
+  _followings_leaderboard_by_week = [MLeaderboardData modelsFromArr:followings_leaderboard_by_week];
+}
+
 - (void)setLastReceivedBonuses:(NSDictionary *)lastReceivedBonuses {
   if (lastReceivedBonuses == nil || ![lastReceivedBonuses isKindOfClass:[NSDictionary class]])
     return;
@@ -69,6 +78,18 @@ static MUser *_currentUser = nil;
 }
 
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame {
+  NSArray *expData = nil;
+  NSArray *daysData = nil;
+  
+  if (_exp_chart != nil && [_exp_chart isKindOfClass:[NSDictionary class]] &&
+      _exp_chart[@"days"] != nil && [_exp_chart[@"days"] isKindOfClass:[NSArray class]] &&
+      _exp_chart[@"exp"] != nil && [_exp_chart[@"exp"] isKindOfClass:[NSArray class]]) {
+    daysData = _exp_chart[@"exp"];
+    expData = _exp_chart[@"days"];
+  }
+  
+  DLog(@"%@ %@", daysData, expData);
+  
   MMLineChart *lineChart = [[MMLineChart alloc] initWithFrame:frame];
   
   UIEdgeInsets margin = lineChart.chartMargin;
@@ -80,14 +101,14 @@ static MUser *_currentUser = nil;
   lineChart.yLabelSuffix = @"XP";
   lineChart.yLabelCount = 5;
   
-  MMLineChartData *chartData = [MMLineChartData dataWithValues:@[@9, @6, @11, @14, @8, @5]
+  MMLineChartData *chartData = [MMLineChartData dataWithValues:expData
                                                          color:[UIColor blackColor]
                                                     pointStyle:SPLineChartPointStyleCycle];
   chartData.pointColor = [UIColor redColor];
   chartData.pointWidth = 12;
   chartData.lineWidth = 1;
   
-  [lineChart setDatas:@[chartData] forXValues:@[@"T2", @"T3", @"T4", @"T5", @"T6", @"T7"]];
+  [lineChart setDatas:@[chartData] forXValues:daysData];
   lineChart.emptyChartText = NSLocalizedString(@"The chart is empty.", nil);
   
   return lineChart;

@@ -362,6 +362,7 @@ static UIView *_sharedToast = nil;
        [Utils hideAllHUDsForView:view];
        
        NSDictionary *userData = @{
+                                  kParamFbName : [NSString normalizedString:result[kParamName]],
                                   kParamFbId : [NSString normalizedString:result[kParamId]],
                                   kParamFbAccessToken : [NSString normalizedString:
                                                          [[FBSession activeSession] accessTokenData].accessToken]

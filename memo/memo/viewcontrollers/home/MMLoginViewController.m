@@ -83,6 +83,7 @@
     
     [[MMServerHelper sharedHelper]
      logInWithFacebookId:userData[kParamFbId]
+     facebookName:userData[kParamFbName]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {
        [Utils hideAllHUDsForView:self.navigationController.view];

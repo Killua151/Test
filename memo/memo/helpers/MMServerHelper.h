@@ -8,6 +8,8 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
+@class MUser;
+
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
 + (instancetype)sharedHelper;
@@ -17,6 +19,7 @@
                completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 
 - (void)logInWithFacebookId:(NSString *)facebookId
+               facebookName:(NSString *)facebookName
                 accessToken:(NSString *)accessToken
                  completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 
@@ -33,6 +36,7 @@
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
+- (void)getProfileDetails:(void(^)(MUser *user, NSError *error))handler;
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
@@ -43,6 +47,8 @@
            withToken:(NSString *)examToken
           andResults:(NSDictionary *)answerResults
           completion:(void(^)(NSError *error))handler;
+
+- (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 

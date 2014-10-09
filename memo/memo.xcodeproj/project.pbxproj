@@ -12,6 +12,8 @@
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
+		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
+		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8319E0E4C800EFED33 /* Foundation.framework */; };
 		CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */; };
 		CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8719E0E4C800EFED33 /* UIKit.framework */; };
@@ -1541,6 +1543,8 @@
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
+		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
+		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
 		CABBEA8019E0E4C800EFED33 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBEA8319E0E4C800EFED33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2636,6 +2640,8 @@
 				CAF8505019E0F3D100A347CF /* MBase.m */,
 				CAF8505119E0F3D100A347CF /* MItem.h */,
 				CAF8505219E0F3D100A347CF /* MItem.m */,
+				CAA91C7019E679510076A9BC /* MLeaderboardData.h */,
+				CAA91C7119E679510076A9BC /* MLeaderboardData.m */,
 				CAF8505319E0F3D100A347CF /* MLesson.h */,
 				CAF8505419E0F3D100A347CF /* MLesson.m */,
 				CAF8505519E0F3D100A347CF /* MSkill.h */,
@@ -5363,6 +5369,7 @@
 				CAF852CF19E0F3D200A347CF /* DiffMatchPatch.m in Sources */,
 				CAF854AC19E0F3D200A347CF /* MMHexagonLessonView.m in Sources */,
 				CAF852DC19E0F3D200A347CF /* MSkill.m in Sources */,
+				CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */,
 				CAF852E319E0F3D200A347CF /* MSelectQuestion.m in Sources */,
 				CAF852C819E0F3D200A347CF /* NSObject+ObjectMapping.m in Sources */,
 				CAF854BE19E0F3D200A347CF /* MMShopItemsGroupHeaderCell.m in Sources */,
@@ -5465,6 +5472,7 @@
 				CAF856D719E0FDF600A347CF /* DiffMatchPatch.m in Sources */,
 				CAF856D819E0FDF600A347CF /* MMHexagonLessonView.m in Sources */,
 				CAF856D919E0FDF600A347CF /* MSkill.m in Sources */,
+				CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */,
 				CAF856DA19E0FDF600A347CF /* MSelectQuestion.m in Sources */,
 				CAF856DB19E0FDF600A347CF /* NSObject+ObjectMapping.m in Sources */,
 				CAF856DC19E0FDF600A347CF /* MMShopItemsGroupHeaderCell.m in Sources */,

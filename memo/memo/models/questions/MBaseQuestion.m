@@ -73,6 +73,9 @@
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
+  if (![type isEqualToString:@"select"])
+    return nil;
+  
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);
 }
 

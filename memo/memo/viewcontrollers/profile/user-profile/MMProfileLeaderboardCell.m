@@ -7,6 +7,7 @@
 //
 
 #import "MMProfileLeaderboardCell.h"
+#import "MLeaderboardData.h"
 
 @implementation MMProfileLeaderboardCell
 
@@ -20,8 +21,8 @@
   return self;
 }
 
-- (void)updateCellWithData:(NSString *)data {
-  _lblUsername.text = data;
+- (void)updateCellWithData:(MLeaderboardData *)data {
+  _lblUsername.text = data.username;
 }
 
 @end

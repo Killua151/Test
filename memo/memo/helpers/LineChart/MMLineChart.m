@@ -129,6 +129,11 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   
   BOOL isChartEmpty = [self isEmpty] && self.emptyChartText != nil;
   
+  if (isChartEmpty) {
+    [self _strokeEmptyChartLabel];
+    return;
+  }
+  
   // Add axis and labels
   if (self.showXAxis) {
     [self _strokeXAxis];
@@ -149,12 +154,8 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
   }
   
   // Add data lines
-  if (isChartEmpty) {
-    [self _strokeEmptyChartLabel];
-  } else {
-    for (MMLineChartData * data in self.datas) {
-      [self _strokeLineAndPointsWithData:data];
-    }
+  for (MMLineChartData * data in self.datas) {
+    [self _strokeLineAndPointsWithData:data];
   }
 }
 

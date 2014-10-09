@@ -47,9 +47,11 @@
 }
 
 - (void)logInWithFacebookId:(NSString *)facebookId
+               facebookName:(NSString *)facebookName
                 accessToken:(NSString *)accessToken
                  completion:(void (^)(NSDictionary *, NSError *))handler {
   [self logInWithParam:@{
+                         kParamFbName : [NSString normalizedString:facebookName],
                          kParamFbId : [NSString normalizedString:facebookId],
                          kParamFbAccessToken : [NSString normalizedString:accessToken]
                          }
@@ -125,6 +127,24 @@
    }];
 }
 
+- (void)getProfileDetails:(void (^)(MUser *, NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   GET:@"users/profile_details"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *userData = [responseObject objectFromJSONData];
+     MUser *user = [MUser modelFromDict:userData];
+     handler(user, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
          completion:(void (^)(NSString *, NSArray *, NSError *))handler {
@@ -163,6 +183,18 @@
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(error);
      }];
+   }];
+}
+
+- (void)listFriends:(void (^)(NSArray *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   GET:@"users/list_friends"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
    }];
 }
 

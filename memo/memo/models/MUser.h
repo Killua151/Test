@@ -26,6 +26,11 @@
 @property (nonatomic, assign) NSInteger virtual_money;
 @property (nonatomic, strong) NSArray *skills;
 @property (nonatomic, strong) NSArray *skills_tree;
+@property (nonatomic, assign) NSInteger combo_days;
+@property (nonatomic, strong) NSDictionary *exp_chart;
+@property (nonatomic, strong) NSArray *followings_leaderboard_by_week;
+@property (nonatomic, strong) NSArray *followings_leaderboard_by_month;
+
 @property (nonatomic, strong) NSDictionary *lastReceivedBonuses;
 
 + (void)loadCurrentUserFromUserDef;

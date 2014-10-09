@@ -14,10 +14,11 @@
 @interface MMProfileViewController () {
   MMSettingsViewController *_settingsVC;
   MMLineChart *_lineChart;
-  NSMutableArray *_leaderboardsData;
+  MUser *_userData;
 }
 
 - (void)setupViews;
+- (void)updateViews;
 - (void)gotoSettings;
 - (void)dismissViewController;
 - (void)adjustUsername;
@@ -48,8 +49,6 @@
                           action:@selector(dismissViewController)
                         distance:-10];
   
-  _leaderboardsData = [NSMutableArray new];
-  
   [self setupViews];
   [self reloadContents];
 }
@@ -61,20 +60,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [self addGraphChart];
 }
 
 - (void)reloadContents {
-  [_leaderboardsData removeAllObjects];
-  [_leaderboardsData addObjectsFromArray:@[@"Test", @"abc", @"xyz"]];
+  [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  MUser *currentUser = [MUser currentUser];
-  
-  _lblUsername.text = currentUser.username;
-  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)currentUser.level];
-  
-  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memos", (long)currentUser.virtual_money]
-             forState:UIControlStateNormal];
+  [[MMServerHelper sharedHelper] getProfileDetails:^(MUser *user, NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    ShowAlertWithError(error);
+    
+    _userData = user;
+    [self updateViews];
+  }];
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender {
@@ -98,10 +95,10 @@
   if (section == 1)
     return 1;
   
-  if ([_leaderboardsData count] == 0)
+  if ([_userData.followings_leaderboard_by_week count] == 0)
     return 1;
   
-  return [_leaderboardsData count];
+  return [_userData.followings_leaderboard_by_week count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,7 +115,7 @@
   if (indexPath.section == 1)
     return _celGraphChart;
   
-  if ([_leaderboardsData count] == 0)
+  if ([_userData.followings_leaderboard_by_week count] == 0)
     return _celEmptyLeaderboards;
   
   MMProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
@@ -127,7 +124,7 @@
   if (cell == nil)
     cell = [MMProfileLeaderboardCell new];
   
-  [cell updateCellWithData:_leaderboardsData[indexPath.row]];
+  [cell updateCellWithData:_userData.followings_leaderboard_by_week[indexPath.row]];
   
   return cell;
 }
@@ -158,10 +155,10 @@
   if (indexPath.section == 1)
     return _celGraphChart.frame.size.height;
   
-  if ([_leaderboardsData count] == 0)
+  if ([_userData.followings_leaderboard_by_week count] == 0)
     return _celEmptyLeaderboards.frame.size.height;
   
-  return [MMProfileLeaderboardCell heightToFitWithData:_leaderboardsData[indexPath.row]];
+  return [MMProfileLeaderboardCell heightToFitWithData:_userData.followings_leaderboard_by_week[indexPath.row]];
 }
 
 #pragma mark - Private methods
@@ -188,6 +185,19 @@
   
   _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblEmptyLeaderboards.text = NSLocalizedString(@"No leaderboards data", nil);
+}
+
+- (void)updateViews {
+  _lblUsername.text = _userData.username;
+  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
+  
+  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo", (long)_userData.combo_days]
+              forState:UIControlStateNormal];
+  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)_userData.virtual_money]
+             forState:UIControlStateNormal];
+  
+  [self addGraphChart];
+  [_tblProfileInfo reloadData];
 }
 
 - (void)gotoSettings {
@@ -229,7 +239,7 @@
     _lineChart = nil;    
   }
   
-  _lineChart = [[MUser currentUser] graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
+  _lineChart = [_userData graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
 }
