@@ -204,6 +204,7 @@
   if (_settingsVC == nil)
     _settingsVC = [MMSettingsViewController new];
   
+  _settingsVC.userData = _userData;
   [self.navigationController pushViewController:_settingsVC animated:YES];
   [_settingsVC reloadContents];
 }

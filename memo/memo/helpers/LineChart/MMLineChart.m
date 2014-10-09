@@ -394,7 +394,6 @@ const CGFloat FTLineChartYLabelMargin = 8.0;
     
     [self.labels addObject:label];
     [self addSubview:label];
-    
   }];
 }
 

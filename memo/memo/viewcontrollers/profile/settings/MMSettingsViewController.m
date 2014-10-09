@@ -59,17 +59,27 @@
 }
 
 - (void)reloadContents {
-  MUser *currentUser = [MUser currentUser];
-  
-  _txtEmail.text = [NSString normalizedString:currentUser.email];
-  _txtUsername.text = [NSString normalizedString:currentUser.username];
+  _txtEmail.text = [NSString normalizedString:_userData.email];
+  _txtUsername.text = [NSString normalizedString:_userData.username];
   _txtPassword.text = @"";
 
-  [_swtFacebook setOn:(currentUser.fb_Id != nil && currentUser.fb_Id.length > 0) animated:YES];
-  [_swtGooglePlus setOn:(currentUser.gmail != nil && currentUser.gmail.length > 0) animated:YES];
+  [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES];
+  [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES];
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
+  NSString *toEmail = @"support@memo.edu.vn";
+  NSString *subject = @"Memo feedback";
+  NSString *messageBody = @"Hi!";
+  
+  MFMailComposeViewController *controller = [MFMailComposeViewController new];
+  controller.mailComposeDelegate = self;
+  [controller setToRecipients:@[toEmail]];
+  [controller setSubject:subject];
+  [controller setMessageBody:messageBody isHTML:NO];
+  
+  if (controller != nil)
+    [self.navigationController presentViewController:controller animated:YES completion:NULL];
 }
 
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
@@ -277,6 +287,13 @@
     UITextField *alertTextField = [alertView textFieldAtIndex:0];
     [alertTextField becomeFirstResponder];
   }
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate methods
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error {
+  [controller dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Private methods

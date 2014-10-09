@@ -84,11 +84,9 @@ static MUser *_currentUser = nil;
   if (_exp_chart != nil && [_exp_chart isKindOfClass:[NSDictionary class]] &&
       _exp_chart[@"days"] != nil && [_exp_chart[@"days"] isKindOfClass:[NSArray class]] &&
       _exp_chart[@"exp"] != nil && [_exp_chart[@"exp"] isKindOfClass:[NSArray class]]) {
-    daysData = _exp_chart[@"exp"];
-    expData = _exp_chart[@"days"];
+    daysData = _exp_chart[@"days"];
+    expData = _exp_chart[@"exp"];
   }
-  
-  DLog(@"%@ %@", daysData, expData);
   
   MMLineChart *lineChart = [[MMLineChart alloc] initWithFrame:frame];
   
@@ -96,7 +94,7 @@ static MUser *_currentUser = nil;
   margin.left += 20;
   lineChart.chartMargin = margin;
   
-  lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:17];
+  lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:10];
   lineChart.labelTextColor = UIColorFromRGB(102, 102, 102);
   lineChart.yLabelSuffix = @"XP";
   lineChart.yLabelCount = 5;

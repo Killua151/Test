@@ -7,8 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MMSettingsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
+@class MUser;
+
+@interface MMSettingsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate, MFMailComposeViewControllerDelegate> {
   IBOutlet UITableView *_tblSettings;
   
   IBOutlet UITableViewCell *_celAvatar;
@@ -51,6 +54,8 @@
   
   IBOutletCollection(UILabel) NSArray *_lblTitles;
 }
+
+@property (nonatomic, strong) MUser *userData;
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender;
 - (IBAction)btnLogoutPressed:(UIButton *)sender;
