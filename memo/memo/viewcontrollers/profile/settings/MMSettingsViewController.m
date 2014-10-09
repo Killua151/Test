@@ -12,13 +12,15 @@
 #import "MMAppDelegate.h"
 #import "MUser.h"
 
-#define kTextFieldTypes           @[@"username", @"password", @"email"]
+#define kTextFieldTypes           @[kParamUsername, kParamPassword, kParamEmail]
 #define kSwitchFrame              CGRectMake(254, 9, 51, 31)
 
 @interface MMSettingsViewController () {
   NSArray *_sectionsData;
   UIView *_currentFirstResponder;
   BOOL _textFieldsShouldEndEditting;
+  BOOL _textFieldDidChanged;
+  NSMutableDictionary *_userInfo;
 }
 
 - (void)setupViews;
@@ -54,6 +56,9 @@
                     [NSNull null],
                     NSLocalizedString(@"Connections", nil),
                     NSLocalizedString(@"Notifications", nil)];
+  
+  _userInfo = [NSMutableDictionary new];
+  
   [self setupViews];
   [self reloadContents];
 }
@@ -249,6 +254,7 @@
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   if (textField == _txtUsername || textField == _txtPassword || textField == _txtEmail) {
+    _textFieldDidChanged = NO;
     _currentFirstResponder = textField;
     _textFieldsShouldEndEditting = NO;
     [self animateSlideViewUp:YES withDistance:50];
@@ -262,6 +268,12 @@
   
   [self animateSlideViewUp:NO withDistance:0];
   [self confirmTextField:textField withType:kTextFieldTypes[textField.tag]];
+  
+  return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  _textFieldDidChanged = YES;
   return YES;
 }
 
@@ -275,14 +287,28 @@
   if (buttonIndex == 0)
     return;
   
+  NSString *textFieldType = kTextFieldTypes[alertView.tag-1];
+  
   if (alertView.tag >= 1 && alertView.tag <= [kTextFieldTypes count]) {
     UITextField *originalTextField = @[_txtUsername, _txtPassword, _txtEmail][alertView.tag-1];
     UITextField *alertTextField = [alertView textFieldAtIndex:0];
     
-    if ([originalTextField.text isEqualToString:alertTextField.text])
-      return;
+    BOOL validField = YES;
     
-    [self confirmTextField:originalTextField withType:kTextFieldTypes[alertView.tag-1]];
+    if ([textFieldType isEqualToString:kParamUsername])
+      validField = [Utils validateBlank:originalTextField.text];
+    else if ([textFieldType isEqualToString:kParamPassword])
+      validField = [Utils validateBlank:originalTextField.text] && originalTextField.text.length >= 8;
+    else if ([textFieldType isEqualToString:kParamEmail])
+      validField = [Utils validateEmail:originalTextField.text];
+    
+    if ([originalTextField.text isEqualToString:alertTextField.text] && validField) {
+      _userInfo[textFieldType] = originalTextField.text;
+      [self submitChanges];
+      return;
+    }
+    
+    [self confirmTextField:originalTextField withType:textFieldType];
   }
 }
 
@@ -378,9 +404,28 @@
 }
 
 - (void)submitChanges {
+  NSString *changeType = [[_userInfo allKeys] firstObject];
+  NSString *value = [[_userInfo allValues] firstObject];
+  
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[MMServerHelper sharedHelper] updateProfile:_userInfo completion:^(NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    ShowAlertWithError(error);
+    
+    if ([changeType isEqualToString:kParamUsername])
+      _userData.username = value;
+    else if ([changeType isEqualToString:kParamEmail])
+      _userData.email = value;
+  }];
 }
 
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type {
+  [_userInfo removeAllObjects];
+  
+  if (!_textFieldDidChanged)
+    return;
+  
   NSString *alertTitle = [NSString stringWithFormat:@"Confirm %@", type];
   NSString *alertMessage = [NSString stringWithFormat:@"Please confirm your %@", type];
   
@@ -390,7 +435,7 @@
                                             cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                             otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
   
-  if ([type isEqualToString:@"password"])
+  if ([type isEqualToString:kParamPassword])
     alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
   else
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -431,11 +476,13 @@
     [[MMServerHelper sharedHelper]
      linkFacebookWithFacebookId:userData[kParamFbId]
      accessToken:userData[kParamFbAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
+     completion:^(NSError *error) {
        [Utils hideAllHUDsForView:self.navigationController.view];
        
        if (error != nil)
          [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
+       else
+         _userData.fb_Id = userData[kParamFbId];
        
        ShowAlertWithError(error);
      }];
@@ -452,6 +499,8 @@
     
     if (error != nil)
       [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
+    else
+      _userData.gmail = @"";
     
     ShowAlertWithError(error);
   }];
@@ -468,11 +517,13 @@
     [[MMServerHelper sharedHelper]
      linkGoogleWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
+     completion:^(NSError *error) {
        [Utils hideAllHUDsForView:self.navigationController.view];
        
        if (error != nil)
          [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
+       else
+         _userData.gmail = userData[kParamGmail];
        
        ShowAlertWithError(error);
      }];
@@ -489,6 +540,8 @@
     
     if (error != nil)
       [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
+    else
+      _userData.gmail = @"";
     
     ShowAlertWithError(error);
   }];

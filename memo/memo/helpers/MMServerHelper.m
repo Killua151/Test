@@ -17,6 +17,9 @@
 - (void)logInWithParam:(NSDictionary *)params completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)startExamWithParam:(NSDictionary *)params
                 completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+- (void)interactSocialServicesAtPath:(NSString *)path
+                          withParams:(NSDictionary *)params
+                          completion:(void(^)(NSError *error))handler;
 - (void)handleFailedOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error fallback:(void(^)())handler;
 
 @end
@@ -60,41 +63,19 @@
 
 - (void)linkFacebookWithFacebookId:(NSString *)facebookId
                        accessToken:(NSString *)accessToken
-                        completion:(void (^)(NSDictionary *, NSError *))handler {
+                        completion:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamFbId : [NSString normalizedString:facebookId],
                            kParamFbAccessToken : [NSString normalizedString:accessToken],
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
   
-  [self
-   POST:@"users/link_facebook"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler([responseObject objectFromJSONData], nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, error);
-     }];
-   }];
+  [self interactSocialServicesAtPath:@"users/link_facebook" withParams:params completion:handler];
 }
 
 - (void)unlinkFacebook:(void (^)(NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
-  
-  [self
-   POST:@"users/unlink_facebook"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     DLog(@"%@", [responseObject objectFromJSONData]);
-     handler(nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(error);
-     }];
-   }];
+  [self interactSocialServicesAtPath:@"users/unlink_facebook" withParams:params completion:handler];
 }
 
 - (void)logInWithGmail:(NSString *)gmail
@@ -109,41 +90,19 @@
 
 - (void)linkGoogleWithGmail:(NSString *)gmail
                 accessToken:(NSString *)accessToken
-                 completion:(void (^)(NSDictionary *, NSError *))handler {
+                 completion:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamGmail : [NSString normalizedString:gmail],
                            kParamGAccessToken : [NSString normalizedString:accessToken],
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
   
-  [self
-   POST:@"users/link_google"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler([responseObject objectFromJSONData], nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, error);
-     }];
-   }];
+  [self interactSocialServicesAtPath:@"users/link_google" withParams:params completion:handler];
 }
 
 - (void)unlinkGoogle:(void (^)(NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
-  
-  [self
-   POST:@"users/unlink_google"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     DLog(@"%@", [responseObject objectFromJSONData]);
-     handler(nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(error);
-     }];
-   }];
+  [self interactSocialServicesAtPath:@"users/unlink_google" withParams:params completion:handler];
 }
 
 - (void)signUpWithFullName:(NSString *)fullName
@@ -219,6 +178,23 @@
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(nil, error);
+     }];
+   }];
+}
+
+- (void)updateProfile:(NSDictionary *)fields completion:(void (^)(NSError *))handler {
+  NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:fields];
+  params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
+  
+  [self
+   POST:@"users/edit"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
      }];
    }];
 }
@@ -345,6 +321,22 @@
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(nil, nil, error);
+     }];
+   }];
+}
+
+- (void)interactSocialServicesAtPath:(NSString *)path
+                          withParams:(NSDictionary *)params
+                          completion:(void (^)(NSError *))handler {
+  [self
+   POST:path
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
      }];
    }];
 }

@@ -25,7 +25,7 @@
 
 - (void)linkFacebookWithFacebookId:(NSString *)facebookId
                        accessToken:(NSString *)accessToken
-                        completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+                        completion:(void(^)(NSError *error))handler;
 
 - (void)unlinkFacebook:(void(^)(NSError *error))handler;
 
@@ -35,7 +35,7 @@
 
 - (void)linkGoogleWithGmail:(NSString *)gmail
                 accessToken:(NSString *)accessToken
-                 completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+                 completion:(void(^)(NSError *error))handler;
 
 - (void)unlinkGoogle:(void(^)(NSError *error))handler;
 
@@ -49,6 +49,7 @@
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)getProfileDetails:(void(^)(MUser *user, NSError *error))handler;
+- (void)updateProfile:(NSDictionary *)fields completion:(void(^)(NSError *error))handler;
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
