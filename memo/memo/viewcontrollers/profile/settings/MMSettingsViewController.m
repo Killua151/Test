@@ -492,17 +492,21 @@
 - (void)unlinkFacebook {
   [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
   
-  [Utils showHUDForView:self.navigationController.view withText:nil];
-  
-  [[MMServerHelper sharedHelper] unlinkFacebook:^(NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
-    
-    if (error != nil)
-      [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
-    else
-      _userData.gmail = @"";
-    
+  [Utils logOutFacebookWithCompletion:^(NSError *error) {
     ShowAlertWithError(error);
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[MMServerHelper sharedHelper] unlinkFacebook:^(NSError *error) {
+      [Utils hideAllHUDsForView:self.navigationController.view];
+      
+      if (error != nil)
+        [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
+      else
+        _userData.fb_Id = @"";
+      
+      ShowAlertWithError(error);
+    }];
   }];
 }
 
@@ -533,17 +537,21 @@
 - (void)unlinkGoogle {
   [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
   
-  [Utils showHUDForView:self.navigationController.view withText:nil];
-  
-  [[MMServerHelper sharedHelper] unlinkGoogle:^(NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
-    
-    if (error != nil)
-      [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
-    else
-      _userData.gmail = @"";
-    
+  [Utils logOutGoogleWithCompletion:^(NSError *error) {
     ShowAlertWithError(error);
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[MMServerHelper sharedHelper] unlinkGoogle:^(NSError *error) {
+      [Utils hideAllHUDsForView:self.navigationController.view];
+      
+      if (error != nil)
+        [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
+      else
+        _userData.gmail = @"";
+      
+      ShowAlertWithError(error);
+    }];
   }];
 }
 
