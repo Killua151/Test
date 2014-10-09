@@ -33,7 +33,7 @@
     return;
   
   _lblTitle.text = data[@"title"];
-  _lblValue.text = [NSString stringWithFormat:NSLocalizedString(@"%d XP mỗi ngày", nil), [data[@"value"] integerValue]];
+  _lblValue.text = [NSString stringWithFormat:NSLocalizedString(@"%d EXP daily", nil), [data[@"value"] integerValue]];
   _lblValue.hidden = [data[@"value"] integerValue] <= 0;
 }
 

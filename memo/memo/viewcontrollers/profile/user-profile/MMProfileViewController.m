@@ -9,12 +9,12 @@
 #import "MMProfileViewController.h"
 #import "MMSettingsViewController.h"
 #import "MMProfileLeaderboardCell.h"
+#import "MMSetGoalViewController.h"
 #import "MUser.h"
 
 @interface MMProfileViewController () {
   MMSettingsViewController *_settingsVC;
   MMLineChart *_lineChart;
-  MUser *_userData;
 }
 
 - (void)setupViews;
@@ -65,11 +65,9 @@
 - (void)reloadContents {
   [Utils showHUDForView:self.navigationController.view withText:nil];
   
-  [[MMServerHelper sharedHelper] getProfileDetails:^(MUser *user, NSError *error) {
+  [[MMServerHelper sharedHelper] getProfileDetails:^(NSError *error) {
     [Utils hideAllHUDsForView:self.navigationController.view];
     ShowAlertWithError(error);
-    
-    _userData = user;
     [self updateViews];
   }];
 }
@@ -78,6 +76,7 @@
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
+  [self presentViewController:[MMSetGoalViewController navigationController] animated:YES completion:NULL];
 }
 
 - (IBAction)btnAddFriendPressed:(UIButton *)sender {
@@ -95,10 +94,10 @@
   if (section == 1)
     return 1;
   
-  if ([_userData.followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
     return 1;
   
-  return [_userData.followings_leaderboard_by_week count];
+  return [[MUser currentUser].followings_leaderboard_by_week count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,7 +114,7 @@
   if (indexPath.section == 1)
     return _celGraphChart;
   
-  if ([_userData.followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
     return _celEmptyLeaderboards;
   
   MMProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
@@ -124,7 +123,7 @@
   if (cell == nil)
     cell = [MMProfileLeaderboardCell new];
   
-  [cell updateCellWithData:_userData.followings_leaderboard_by_week[indexPath.row]];
+  [cell updateCellWithData:[MUser currentUser].followings_leaderboard_by_week[indexPath.row]];
   
   return cell;
 }
@@ -155,10 +154,10 @@
   if (indexPath.section == 1)
     return _celGraphChart.frame.size.height;
   
-  if ([_userData.followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
     return _celEmptyLeaderboards.frame.size.height;
   
-  return [MMProfileLeaderboardCell heightToFitWithData:_userData.followings_leaderboard_by_week[indexPath.row]];
+  return [MMProfileLeaderboardCell heightToFitWithData:[MUser currentUser].followings_leaderboard_by_week[indexPath.row]];
 }
 
 #pragma mark - Private methods
@@ -188,12 +187,12 @@
 }
 
 - (void)updateViews {
-  _lblUsername.text = _userData.username;
-  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
+  _lblUsername.text = [MUser currentUser].username;
+  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)[MUser currentUser].level];
   
-  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo", (long)_userData.combo_days]
+  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo days", (long)[MUser currentUser].combo_days]
               forState:UIControlStateNormal];
-  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)_userData.virtual_money]
+  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)[MUser currentUser].virtual_money]
              forState:UIControlStateNormal];
   
   [self addGraphChart];
@@ -204,7 +203,7 @@
   if (_settingsVC == nil)
     _settingsVC = [MMSettingsViewController new];
   
-  _settingsVC.userData = _userData;
+  _settingsVC.userData = [MUser currentUser];
   [self.navigationController pushViewController:_settingsVC animated:YES];
   [_settingsVC reloadContents];
 }
@@ -240,7 +239,7 @@
     _lineChart = nil;    
   }
   
-  _lineChart = [_userData graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
+  _lineChart = [[MUser currentUser] graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
 }

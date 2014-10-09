@@ -39,7 +39,7 @@
                  @{@"title" : NSLocalizedString(@"Very hard", nil), @"value" : @50},
                  @{@"title" : NSLocalizedString(@"Turn off Coach mode", nil), @"value" : @0}
                  ];
-  [_tblGoals selectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]
+  [_tblGoals selectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]
                          animated:YES
                    scrollPosition:UITableViewScrollPositionNone];
   [self setupViews];

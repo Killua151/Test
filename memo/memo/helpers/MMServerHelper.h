@@ -8,8 +8,6 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
-@class MUser;
-
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
 + (instancetype)sharedHelper;
@@ -48,7 +46,7 @@
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
-- (void)getProfileDetails:(void(^)(MUser *user, NSError *error))handler;
+- (void)getProfileDetails:(void(^)(NSError *error))handler;
 - (void)updateProfile:(NSDictionary *)fields completion:(void(^)(NSError *error))handler;
 
 - (void)startLesson:(NSInteger)lessonNumber

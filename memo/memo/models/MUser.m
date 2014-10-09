@@ -60,6 +60,10 @@ static MUser *_currentUser = nil;
   if (lastReceivedBonuses == nil || ![lastReceivedBonuses isKindOfClass:[NSDictionary class]])
     return;
   
+  if (lastReceivedBonuses[kParamExpChart] != nil &&
+      [lastReceivedBonuses[kParamExpChart] isKindOfClass:[NSDictionary class]])
+    _exp_chart = lastReceivedBonuses[kParamExpChart];
+  
   NSMutableDictionary *receivedBonus = [NSMutableDictionary dictionary];
   
   MSkill *affectedSkill = [MSkill modelFromDict:lastReceivedBonuses[kParamAffectedSkill]];
@@ -94,9 +98,9 @@ static MUser *_currentUser = nil;
   margin.left += 20;
   lineChart.chartMargin = margin;
   
-  lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:10];
+  lineChart.labelFont = [UIFont fontWithName:@"ClearSans" size:13];
   lineChart.labelTextColor = UIColorFromRGB(102, 102, 102);
-  lineChart.yLabelSuffix = @"XP";
+  lineChart.yLabelSuffix = @"EXP";
   lineChart.yLabelCount = 5;
   
   MMLineChartData *chartData = [MMLineChartData dataWithValues:expData

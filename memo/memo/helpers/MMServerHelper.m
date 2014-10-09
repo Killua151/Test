@@ -164,7 +164,7 @@
    }];
 }
 
-- (void)getProfileDetails:(void (^)(MUser *, NSError *))handler {
+- (void)getProfileDetails:(void (^)(NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
   [self
@@ -172,12 +172,12 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     MUser *user = [MUser modelFromDict:userData];
-     handler(user, nil);
+     [[MUser currentUser] assignProperties:userData];
+     handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, error);
+       handler(error);
      }];
    }];
 }
