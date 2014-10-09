@@ -336,7 +336,7 @@
                                NSLocalizedString(@"Password", nil),
                                NSLocalizedString(@"Email", nil),
                                NSLocalizedString(@"Sound effects", nil),
-                               NSLocalizedString(@"Listening lessons", nil),
+                               NSLocalizedString(@"Speaking lessons", nil),
                                NSLocalizedString(@"Facebook", nil),
                                NSLocalizedString(@"Google+", nil),
                                NSLocalizedString(@"Practice reminder", nil),
