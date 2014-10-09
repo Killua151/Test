@@ -58,6 +58,45 @@
             completion:handler];
 }
 
+- (void)linkFacebookWithFacebookId:(NSString *)facebookId
+                       accessToken:(NSString *)accessToken
+                        completion:(void (^)(NSDictionary *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamFbId : [NSString normalizedString:facebookId],
+                           kParamFbAccessToken : [NSString normalizedString:accessToken],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self
+   POST:@"users/link_facebook"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler([responseObject objectFromJSONData], nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
+- (void)unlinkFacebook:(void (^)(NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   POST:@"users/unlink_facebook"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     DLog(@"%@", [responseObject objectFromJSONData]);
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)logInWithGmail:(NSString *)gmail
            accessToken:(NSString *)accessToken
             completion:(void (^)(NSDictionary *, NSError *))handler {
@@ -66,6 +105,45 @@
                          kParamGAccessToken : [NSString normalizedString:accessToken]
                          }
             completion:handler];
+}
+
+- (void)linkGoogleWithGmail:(NSString *)gmail
+                accessToken:(NSString *)accessToken
+                 completion:(void (^)(NSDictionary *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamGmail : [NSString normalizedString:gmail],
+                           kParamGAccessToken : [NSString normalizedString:accessToken],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self
+   POST:@"users/link_google"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler([responseObject objectFromJSONData], nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
+- (void)unlinkGoogle:(void (^)(NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   POST:@"users/unlink_google"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     DLog(@"%@", [responseObject objectFromJSONData]);
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
 }
 
 - (void)signUpWithFullName:(NSString *)fullName

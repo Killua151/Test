@@ -29,16 +29,16 @@
   IBOutlet UIButton *_btnLogOut;
   
   IBOutlet UITableViewCell *_celSoundEffects;
-  KLSwitch *_swtSoundEffects;
+  MMSwitch *_swtSoundEffects;
   
   IBOutlet UITableViewCell *_celListeningLessons;
-  KLSwitch *_swtListeningLessons;
+  MMSwitch *_swtListeningLessons;
   
   IBOutlet UITableViewCell *_celFacebook;
-  KLSwitch *_swtFacebook;
+  MMSwitch *_swtFacebook;
   
   IBOutlet UITableViewCell *_celGooglePlus;
-  KLSwitch *_swtGooglePlus;
+  MMSwitch *_swtGooglePlus;
   
   IBOutlet UITableViewCell *_celPracticeReminder;
   IBOutlet UIButton *_btnPracticeReminderPhone;

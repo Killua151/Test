@@ -25,6 +25,10 @@
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index;
+- (void)linkFacebook;
+- (void)unlinkFacebook;
+- (void)linkGoogle;
+- (void)unlinkGoogle;
 
 @end
 
@@ -63,8 +67,8 @@
   _txtUsername.text = [NSString normalizedString:_userData.username];
   _txtPassword.text = @"";
 
-  [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES];
-  [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES];
+  [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES shouldCallback:NO];
+  [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES shouldCallback:NO];
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
@@ -336,10 +340,12 @@
   _btnLogOut.layer.borderWidth = 2;
   [_btnLogOut setTitle:NSLocalizedString(@"Log out", nil) forState:UIControlStateNormal];
   
-  _swtSoundEffects = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
-  _swtListeningLessons = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
-  _swtFacebook = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
-  _swtGooglePlus = [[KLSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtSoundEffects = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtListeningLessons = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtFacebook = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtGooglePlus = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
+  
+  __block MMSettingsViewController *selfDelegate = self;
   
   [@[
      @{
@@ -360,11 +366,11 @@
        }
      ] enumerateObjectsUsingBlock:^(NSDictionary *data, NSUInteger index, BOOL *stop) {
        UITableViewCell *cell = data[@"cell"];
-       KLSwitch *swt = data[@"switch"];
+       MMSwitch *swt = data[@"switch"];
        
        swt.onTintColor = UIColorFromRGB(129, 12, 21);
        swt.didChangeHandler = ^(BOOL isOn) {
-         [self switchDidChanged:isOn atIndex:index];
+         [selfDelegate switchDidChanged:isOn atIndex:index];
        };
        
        [cell.contentView addSubview:swt];
@@ -394,6 +400,98 @@
 }
 
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index {
+  switch (index) {
+    case 0:
+      break;
+      
+    case 1:
+      break;
+      
+    case 2:
+      _swtFacebook.isOn ? [self linkFacebook] : [self unlinkFacebook];
+      break;
+      
+    case 3:
+      _swtGooglePlus.isOn ? [self linkGoogle] : [self unlinkGoogle];
+      break;
+      
+    default:
+      break;
+  }
+}
+
+- (void)linkFacebook {
+  [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
+  
+  [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    ShowAlertWithError(error);
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[MMServerHelper sharedHelper]
+     linkFacebookWithFacebookId:userData[kParamFbId]
+     accessToken:userData[kParamFbAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       
+       if (error != nil)
+         [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
+       
+       ShowAlertWithError(error);
+     }];
+  }];
+}
+
+- (void)unlinkFacebook {
+  [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
+  
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[MMServerHelper sharedHelper] unlinkFacebook:^(NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    
+    if (error != nil)
+      [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
+    
+    ShowAlertWithError(error);
+  }];
+}
+
+- (void)linkGoogle {
+  [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
+  
+  [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    ShowAlertWithError(error);
+    
+    [Utils showHUDForView:self.navigationController.view withText:nil];
+    
+    [[MMServerHelper sharedHelper]
+     linkGoogleWithGmail:userData[kParamGmail]
+     accessToken:userData[kParamGAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       [Utils hideAllHUDsForView:self.navigationController.view];
+       
+       if (error != nil)
+         [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
+       
+       ShowAlertWithError(error);
+     }];
+  }];
+}
+
+- (void)unlinkGoogle {
+  [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
+  
+  [Utils showHUDForView:self.navigationController.view withText:nil];
+  
+  [[MMServerHelper sharedHelper] unlinkGoogle:^(NSError *error) {
+    [Utils hideAllHUDsForView:self.navigationController.view];
+    
+    if (error != nil)
+      [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
+    
+    ShowAlertWithError(error);
+  }];
 }
 
 @end

@@ -23,9 +23,21 @@
                 accessToken:(NSString *)accessToken
                  completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 
+- (void)linkFacebookWithFacebookId:(NSString *)facebookId
+                       accessToken:(NSString *)accessToken
+                        completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+
+- (void)unlinkFacebook:(void(^)(NSError *error))handler;
+
 - (void)logInWithGmail:(NSString *)gmail
            accessToken:(NSString *)accessToken
             completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+
+- (void)linkGoogleWithGmail:(NSString *)gmail
+                accessToken:(NSString *)accessToken
+                 completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+
+- (void)unlinkGoogle:(void(^)(NSError *error))handler;
 
 - (void)signUpWithFullName:(NSString *)fullName
                      email:(NSString *)email

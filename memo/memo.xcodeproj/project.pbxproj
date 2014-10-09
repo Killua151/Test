@@ -14,6 +14,8 @@
 		CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
+		CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
+		CAA91C7F19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
 		CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8319E0E4C800EFED33 /* Foundation.framework */; };
 		CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */; };
 		CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8719E0E4C800EFED33 /* UIKit.framework */; };
@@ -1545,6 +1547,8 @@
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
 		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
+		CAA91C7C19E694EC0076A9BC /* MMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSwitch.h; sourceTree = "<group>"; };
+		CAA91C7D19E694EC0076A9BC /* MMSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSwitch.m; sourceTree = "<group>"; };
 		CABBEA8019E0E4C800EFED33 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBEA8319E0E4C800EFED33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2524,6 +2528,8 @@
 				CAF8501719E0F3D100A347CF /* MMAllowsTouchUnderneathView.m */,
 				CAF8501819E0F3D100A347CF /* MMServerHelper.h */,
 				CAF8501919E0F3D100A347CF /* MMServerHelper.m */,
+				CAA91C7C19E694EC0076A9BC /* MMSwitch.h */,
+				CAA91C7D19E694EC0076A9BC /* MMSwitch.m */,
 				CAF8501A19E0F3D100A347CF /* NSArray+ArrayHelpers.h */,
 				CAF8501B19E0F3D100A347CF /* NSArray+ArrayHelpers.m */,
 				CAF8501C19E0F3D100A347CF /* NSMutableArray+MutableArrayHelpers.h */,
@@ -5336,6 +5342,7 @@
 				CAF852DA19E0F3D200A347CF /* MItem.m in Sources */,
 				CAF854CD19E0F3D200A347CF /* MMShieldCheckpointTestCell.m in Sources */,
 				CAF854A519E0F3D200A347CF /* MMSpeakQuestionContentView.m in Sources */,
+				CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */,
 				CAF854B819E0F3D200A347CF /* MMSettingsViewController.m in Sources */,
 				CAF8549D19E0F3D200A347CF /* MMListenQuestionContentView.m in Sources */,
 				CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */,
@@ -5439,6 +5446,7 @@
 				CAF856B619E0FDF600A347CF /* MItem.m in Sources */,
 				CAF856B719E0FDF600A347CF /* MMShieldCheckpointTestCell.m in Sources */,
 				CAF856B819E0FDF600A347CF /* MMSpeakQuestionContentView.m in Sources */,
+				CAA91C7F19E694EC0076A9BC /* MMSwitch.m in Sources */,
 				CAF856B919E0FDF600A347CF /* MMSettingsViewController.m in Sources */,
 				CAF856BA19E0FDF600A347CF /* MMListenQuestionContentView.m in Sources */,
 				CAF856BB19E0FDF600A347CF /* MMLineChart.m in Sources */,

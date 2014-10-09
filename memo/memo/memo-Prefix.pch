@@ -17,7 +17,7 @@
   #import "DCKeyValueObjectMapping.h"
   #import "DiffMatchPatch.h"
   #import "JSONKit.h"
-  #import "KLSwitch.h"
+  #import "MMSwitch.h"
   #import "MBProgressHUD.h"
   #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -102,7 +102,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestPushNotification                   false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
-#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
+//#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
+#define kGoogleSignInKey                        @"76466559980-e77rmjonj38929p9lnadvt6b1rlckbol.apps.googleusercontent.com"
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kiSpeechApiKey                          @"3023d34c2451d4502a8c85f5d4cbabff"
 #define kMixPanelToken                          @"fb30a8d7fb9b98eda0f31970de871063"
