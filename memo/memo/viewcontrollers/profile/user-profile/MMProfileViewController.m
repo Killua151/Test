@@ -169,6 +169,7 @@
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
+  _lblCourseName.text = NSLocalizedString([MUser currentUser].current_course, nil);
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];

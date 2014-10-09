@@ -36,7 +36,7 @@
                         <outlet property="delegate" destination="-1" id="uQr-uf-mkc"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" id="ySD-8M-8xh">
+                <view hidden="YES" contentMode="scaleToFill" id="ySD-8M-8xh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

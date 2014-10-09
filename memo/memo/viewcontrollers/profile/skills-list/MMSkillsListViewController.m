@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:@"Tiếng Anh" color:[UIColor blackColor]];
+  [self customTitleWithText:NSLocalizedString([MUser currentUser].current_course, nil) color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Profile", nil)
                            color:UIColorFromRGB(129, 12, 21)
@@ -70,32 +70,12 @@
 }
 
 - (void)reloadContents {
-  _skillsData = @[
-                  @[[NSNull null], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [NSNull null], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new]],
-                  @[[MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new], [NSNull null]],
-                  @[[MSkill new], [MSkill new]],
-                  [NSNull null],
-                  @[[NSNull null], [MSkill new], [MSkill new]],
-                  @[[MSkill new], [MSkill new]]
-                  ];
+  MUser *currentUser = [MUser currentUser];
   
-  _skillsData = [[MUser currentUser] skillsTree];
+  [self customTitleWithText:NSLocalizedString(currentUser.current_course, nil) color:[UIColor blackColor]];
+  _vBeginningOptions.hidden = _vStrengthenButton.hidden = !currentUser.is_beginner;
   
+  _skillsData = [currentUser skillsTree];
   [_tblSkills reloadData];
 }
 
@@ -104,9 +84,7 @@
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
-  [self presentViewController:[MMBeginPlacementTestViewController navigationController]
-                     animated:YES
-                   completion:NULL];
+  [self presentViewController:[MMBeginPlacementTestViewController navigationController] animated:YES completion:NULL];
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
@@ -243,6 +221,9 @@
 }
 
 - (void)animateSlideStrengthenButton:(BOOL)show {
+  if ([MUser currentUser].is_beginner)
+    return;
+  
   if (show) {
     [UIView
      animateWithDuration:kDefaultAnimationDuration*2
