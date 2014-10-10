@@ -230,8 +230,18 @@
             inSkill:(NSString *)skillId
          completion:(void (^)(NSString *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
-                           kParamType : @"lesson",
+                           kParamType : kValueExamTypeLesson,
                            kParamLessonNumber : @(lessonNumber),
+                           kParamSkillId : [NSString normalizedString:skillId],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)startShortcutTest:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : kValueExamTypeShortcut,
                            kParamSkillId : [NSString normalizedString:skillId],
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
@@ -242,8 +252,36 @@
 - (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
                            completion:(void (^)(NSString *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
-                           kParamType : @"checkpoint",
+                           kParamType : kValueExamTypeCheckpoint,
                            kParamCheckpointPosition : @(checkpointPosition),
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)startStrengthenSkill:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : kValueExamTypeStrengthenSkill,
+                           kParamSkillId : [NSString normalizedString:skillId],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)startStrengthenAll:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : kValueExamTypeStrengthenAll,
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)startPlacementTest:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : kValueExamTypePlacementTest,
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
                            };
   
@@ -257,11 +295,14 @@
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswers] = [answerResults JSONString];
   
+  DLog(@"%@", params);
+  
   [self
    POST:@"exam/finish"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
+     DLog(@"%@", [responseObject objectFromJSONData]);
      handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

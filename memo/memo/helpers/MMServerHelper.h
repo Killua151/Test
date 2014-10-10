@@ -56,8 +56,18 @@
             inSkill:(NSString *)skillId
          completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
+- (void)startShortcutTest:(NSString *)skillId
+               completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+
 - (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
                            completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+
+- (void)startStrengthenSkill:(NSString *)skillId
+                  completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+
+- (void)startStrengthenAll:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+
+- (void)startPlacementTest:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
 - (void)finishExamWithMetadata:(NSDictionary *)metadata
                     andResults:(NSDictionary *)answerResults

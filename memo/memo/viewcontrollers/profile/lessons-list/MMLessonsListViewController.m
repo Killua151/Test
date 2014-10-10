@@ -9,6 +9,7 @@
 #import "MMLessonsListViewController.h"
 #import "MMHexagonLessonsListViewController.h"
 #import "MMShieldLessonsListViewController.h"
+#import "MMExamViewController.h"
 #import "MSkill.h"
 
 @interface MMLessonsListViewController ()
@@ -53,6 +54,24 @@
 
 #pragma mark - Private methods
 - (void)shortcutTest {
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   startShortcutTest:_skillData._id
+   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
+     HideHudForCurrentView();
+     ShowAlertWithError(error);
+     
+     MMExamViewController *examVC =
+     [[MMExamViewController alloc] initWithQuestions:questions
+                                         andMetadata:@{
+                                                       kParamType : kValueExamTypeShortcut,
+                                                       kParamExamToken : [NSString normalizedString:examToken],
+                                                       kParamSkillId : _skillData._id
+                                                       }];
+     
+     [self presentViewController:examVC animated:YES completion:NULL];
+   }];
 }
 
 @end
