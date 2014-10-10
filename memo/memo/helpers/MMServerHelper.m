@@ -238,6 +238,9 @@
   handler(friends, nil);
 }
 
+- (void)interactFriend:(NSString *)friendId toFollow:(BOOL)follow completion:(void (^)(NSError *))handler {
+}
+
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
          completion:(void (^)(NSString *, NSArray *, NSError *))handler {
