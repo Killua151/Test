@@ -18,7 +18,7 @@
 - (NSString *)asciiNormalizedString;
 - (NSString *)stringByRemovingAllNonLetterCharacters;
 - (NSString *)stringByRemovingAllNonDigitCharacters;
-- (NSString *)localizedStringWithLanguage:(NSString *)language;
+- (NSString *)localizedStringForLanguage:(NSString *)language;
 
 - (BOOL)isAcceptedSimilarToOneOfStrings:(NSArray *)otherStrings;
 - (BOOL)isAcceptedSimilarToString:(NSString *)otherString;

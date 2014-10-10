@@ -33,7 +33,7 @@
   MFormQuestion *questionData = (MFormQuestion *)self.questionData;
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
+  _lblQuestionTitle.text = MMLocalizedString(@"Translate this sentence:");
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
@@ -44,7 +44,7 @@
   _lblQuestion.center = center;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
+  _txtAnswerPlaceholder.placeholder = MMLocalizedString(@"Your answer...");
   
   _imgAnswerFieldBg.image = [[UIImage imageNamed:@"img-popup-bg.png"]
                              resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)

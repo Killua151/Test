@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButtonWithSuffix:nil];
-  [self customTitleWithText:NSLocalizedString(@"Forgot password", nil) color:UIColorFromRGB(51, 51, 51)];
+  [self customTitleWithText:MMLocalizedString(@"Forgot password") color:UIColorFromRGB(51, 51, 51)];
   [self setupViews];
 }
 
@@ -57,30 +57,30 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _lblInstructions.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblInstructions.text = NSLocalizedString(@"Chúng tôi sẽ gửi cho bạn hướng dẫn lấy lại mật khẩu qua email", nil);
+  _lblInstructions.text = MMLocalizedString(@"Chúng tôi sẽ gửi cho bạn hướng dẫn lấy lại mật khẩu qua email");
   
   _vTextField.layer.cornerRadius = 4;
   _vTextField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _vTextField.layer.borderWidth = 1;
   
   _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtEmail.placeholder = NSLocalizedString(@"Email address", nil);
+  _txtEmail.placeholder = MMLocalizedString(@"Email address");
   
   _btnSubmit.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSubmit.layer.cornerRadius = 4;
-  [_btnSubmit setTitle:NSLocalizedString(@"Submit", nil) forState:UIControlStateNormal];
+  [_btnSubmit setTitle:MMLocalizedString(@"Submit") forState:UIControlStateNormal];
 }
 
 - (BOOL)validateFields {
   if (![Utils validateBlank:_txtEmail.text]) {
     [_txtEmail becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your email", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your email")];
     return NO;
   }
   
   if (![Utils validateEmail:_txtEmail.text]) {
     [_txtEmail becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Invalid email", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Invalid email")];
     return NO;
   }
   

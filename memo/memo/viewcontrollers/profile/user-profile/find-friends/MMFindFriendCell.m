@@ -33,7 +33,7 @@
   
   NSString *interactionTitle = _friendData.is_following ? @"UNFOLLOW" : @"FOLLOW";
   interactionTitle = _friendData.is_following ? @"BỎ THEO DÕI" : @"THEO DÕI";
-  [_btnInteraction setTitle:NSLocalizedString(interactionTitle, nil) forState:UIControlStateNormal];
+  [_btnInteraction setTitle:MMLocalizedString(interactionTitle) forState:UIControlStateNormal];
   [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];
   
   CGRect frame = _btnInteraction.frame;

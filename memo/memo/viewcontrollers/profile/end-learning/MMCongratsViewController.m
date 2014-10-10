@@ -49,11 +49,11 @@
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;
-  [_btnShare setTitle:NSLocalizedString(@"Share", nil) forState:UIControlStateNormal];
+  [_btnShare setTitle:MMLocalizedString(@"Share") forState:UIControlStateNormal];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
-  [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
 }

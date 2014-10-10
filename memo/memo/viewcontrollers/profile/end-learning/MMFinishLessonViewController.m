@@ -45,7 +45,7 @@
   NSDictionary *receivedBonuses = [MUser currentUser].lastReceivedBonuses;
   
   NSString *styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamFinishExamBonusExp]];
-  NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bài tập hoàn thành! %@", nil), styledString];
+  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"Bài tập hoàn thành! %@"), styledString];
   
   _lblFinishLessonMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [Utils applyAttributedTextForLabel:_lblFinishLessonMessage
@@ -55,7 +55,7 @@
   [Utils adjustLabelToFitHeight:_lblFinishLessonMessage];
   
   styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
-  message = [NSString stringWithFormat:NSLocalizedString(@"Thưởng trái tim %@", nil), styledString];
+  message = [NSString stringWithFormat:MMLocalizedString(@"Thưởng trái tim %@"), styledString];
   
   _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [Utils applyAttributedTextForLabel:_lblHeartBonusMessage
@@ -66,14 +66,14 @@
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;
-  [_btnShare setTitle:NSLocalizedString(@"Share", nil) forState:UIControlStateNormal];
+  [_btnShare setTitle:MMLocalizedString(@"Share") forState:UIControlStateNormal];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
-  [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
   styledString = [NSString stringWithFormat:@"%ld Combo days", (long)[MUser currentUser].combo_days];
-  message = [NSString stringWithFormat:NSLocalizedString(@"You have %@!", nil), styledString];
+  message = [NSString stringWithFormat:MMLocalizedString(@"You have %@!"), styledString];
   _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [Utils applyAttributedTextForLabel:_lblStreaksCount
                             withText:message
@@ -82,7 +82,7 @@
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSetGoal.layer.cornerRadius = 4;
-  [_btnSetGoal setTitle:NSLocalizedString(@"Set goal", nil) forState:UIControlStateNormal];
+  [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

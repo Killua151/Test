@@ -40,16 +40,16 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:NSLocalizedString([MUser currentUser].current_course, nil) color:[UIColor blackColor]];
+  [self customTitleWithText:MMLocalizedString([MUser currentUser].current_course) color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Profile", nil)
+                           title:MMLocalizedString(@"Profile")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoProfile)
                         distance:8];
   
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Shop", nil)
+                           title:MMLocalizedString(@"Shop")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoShop)
@@ -72,7 +72,7 @@
 - (void)reloadContents {
   MUser *currentUser = [MUser currentUser];
   
-  [self customTitleWithText:NSLocalizedString(currentUser.current_course, nil) color:[UIColor blackColor]];
+  [self customTitleWithText:MMLocalizedString(currentUser.current_course) color:[UIColor blackColor]];
   _vBeginningOptions.hidden = !currentUser.is_beginner;
   
   _skillsData = [currentUser skillsTree];
@@ -213,7 +213,7 @@
   _currentStrengthenButton = kHexagonThemeDisplayMode ? _btnHexagonStrengthen : _btnShieldStrengthen;
   _currentStrengthenButton.hidden = NO;
   _currentStrengthenButton.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
-  [_currentStrengthenButton setTitle:NSLocalizedString(@"Strengthen skills", nil) forState:UIControlStateNormal];
+  [_currentStrengthenButton setTitle:MMLocalizedString(@"Strengthen skills") forState:UIControlStateNormal];
   
   UIImage *maskingImage = [UIImage imageNamed:@"img-placement_test-icon.png"];
   
@@ -225,16 +225,16 @@
   }
   
   _lblBeginnerTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblBeginnerTitle.text = NSLocalizedString(@"Are you a beginner?", nil);
+  _lblBeginnerTitle.text = MMLocalizedString(@"Are you a beginner?");
   
   _lblBeginnerSubTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblBeginnerSubTitle.text = NSLocalizedString(@"Start here with the Basics", nil);
+  _lblBeginnerSubTitle.text = MMLocalizedString(@"Start here with the Basics");
   
   _lblPlacementTestTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblPlacementTestTitle.text = NSLocalizedString(@"Not a beginner?", nil);
+  _lblPlacementTestTitle.text = MMLocalizedString(@"Not a beginner?");
   
   _lblPlacementTestSubTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblPlacementTestSubTitle.text = NSLocalizedString(@"Try this Placement Test", nil);
+  _lblPlacementTestSubTitle.text = MMLocalizedString(@"Try this Placement Test");
   
   CGFloat footerViewDelta = kHexagonThemeDisplayMode ? 52 : 22;
   _tblSkills.tableFooterView =
@@ -314,12 +314,12 @@
 }
 
 - (void)handleLoadingError:(NSError *)error {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"),
                                                                [Utils errorCodeFromError:error]]
                                                       message:[Utils errorMessageFromError:error]
                                                      delegate:self
-                                            cancelButtonTitle:NSLocalizedString(@"Quit", nil)
-                                            otherButtonTitles:NSLocalizedString(@"Retry", nil), nil];
+                                            cancelButtonTitle:MMLocalizedString(@"Quit")
+                                            otherButtonTitles:MMLocalizedString(@"Retry"), nil];
   
   [alertView show];
 }

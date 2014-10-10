@@ -111,11 +111,11 @@
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
   UIAlertView *alertView =
-  [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning!", nil)
-                             message:NSLocalizedString(@"Your progress will be lost. Are you sure to quit?", nil)
+  [[UIAlertView alloc] initWithTitle:MMLocalizedString(@"Warning!")
+                             message:MMLocalizedString(@"Your progress will be lost. Are you sure to quit?")
                             delegate:self
-                   cancelButtonTitle:NSLocalizedString(@"No", nil)
-                   otherButtonTitles:NSLocalizedString(@"Quit", nil), nil];
+                   cancelButtonTitle:MMLocalizedString(@"No")
+                   otherButtonTitles:MMLocalizedString(@"Quit"), nil];
   
   [alertView show];
 }
@@ -174,7 +174,7 @@
   _btnCheck.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(153, 204, 0)] forState:UIControlStateNormal];
   [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
-  [_btnCheck setTitle:NSLocalizedString(@"Check", nil) forState:UIControlStateNormal];
+  [_btnCheck setTitle:MMLocalizedString(@"Check") forState:UIControlStateNormal];
   _btnCheck.superview.layer.cornerRadius = 4;
 }
 
@@ -215,11 +215,11 @@
 - (void)setupResultViews {
   _vResultCorrectBg.layer.cornerRadius = 5;
   _lblResultCorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblResultCorrectMessage.text = NSLocalizedString(@"Correct!", nil);
+  _lblResultCorrectMessage.text = MMLocalizedString(@"Correct!");
 
   _vResultIncorrectBg.layer.cornerRadius = 5;
   _lblResultIncorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblResultIncorrectMessage.text = NSLocalizedString(@"Correct answer", nil);
+  _lblResultIncorrectMessage.text = MMLocalizedString(@"Correct answer");
   
   _lblResultIncorrectAnswer.font = [UIFont fontWithName:@"ClearSans" size:17];
   
@@ -321,7 +321,7 @@
 
 - (void)switchCheckButtonMode:(BOOL)useToCheck {
   _btnCheck.tag = useToCheck;
-  [_btnCheck setTitle:(useToCheck ? NSLocalizedString(@"Check", nil) : NSLocalizedString(@"Next", nil))
+  [_btnCheck setTitle:(useToCheck ? MMLocalizedString(@"Check") : MMLocalizedString(@"Next"))
              forState:UIControlStateNormal];
 }
 

@@ -59,7 +59,7 @@
                          [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill._id]];
   
   NSString *styledString = _lblSkillName.text;
-  NSString *message = [NSString stringWithFormat:NSLocalizedString(@"You have finished skill %@!", nil), styledString];
+  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@!"), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   [Utils applyAttributedTextForLabel:_lblMessage
@@ -69,7 +69,7 @@
   [Utils adjustLabelToFitHeight:_lblMessage];
   
   styledString = @"strength bars";
-  message = [NSString stringWithFormat:NSLocalizedString(@"Keep those %@ full as words fade from your memory", nil), styledString];
+  message = [NSString stringWithFormat:MMLocalizedString(@"Keep those %@ full as words fade from your memory"), styledString];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   [Utils applyAttributedTextForLabel:_lblSubMessage
@@ -83,11 +83,11 @@
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;
-  [_btnShare setTitle:NSLocalizedString(@"Share", nil) forState:UIControlStateNormal];
+  [_btnShare setTitle:MMLocalizedString(@"Share") forState:UIControlStateNormal];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
-  [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
   [self.view bringSubviewToFront:_vShare];

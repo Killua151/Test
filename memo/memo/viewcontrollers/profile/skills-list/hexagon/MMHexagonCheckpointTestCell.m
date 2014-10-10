@@ -23,14 +23,14 @@
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:[data integerValue]];
   
   if (numberOfLockedSkills <= 0) {
-    [_btnCheckpointTest setTitle:NSLocalizedString(@"Checkpoint passed", nil) forState:UIControlStateNormal];
+    [_btnCheckpointTest setTitle:MMLocalizedString(@"Checkpoint passed") forState:UIControlStateNormal];
     _btnCheckpointTest.enabled = NO;
     return;
   }
   
-  NSString *suffix = numberOfLockedSkills == 1 ? NSLocalizedString(@"skill", nil) : NSLocalizedString(@"skills", nil);
+  NSString *suffix = numberOfLockedSkills == 1 ? MMLocalizedString(@"skill") : MMLocalizedString(@"skills");
   NSString *checkpointTitle = [NSString stringWithFormat:
-                               NSLocalizedString(@"Checkpoint test for %d %@", nil), numberOfLockedSkills, suffix];
+                               MMLocalizedString(@"Checkpoint test for %d %@"), numberOfLockedSkills, suffix];
   [_btnCheckpointTest setTitle:checkpointTitle forState:UIControlStateNormal];
 }
 

@@ -39,22 +39,22 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Let's get started!", nil);
+  _lblMessage.text = MMLocalizedString(@"Let's get started!");
   [Utils adjustLabelToFitHeight:_lblMessage];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
+  _lblSubMessage.text = MMLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.");
   [Utils adjustLabelToFitHeight:_lblSubMessage];
   
   _btnStart.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnStart.layer.cornerRadius = 4;
-  [_btnStart setTitle:NSLocalizedString(@"Start", nil) forState:UIControlStateNormal];
+  [_btnStart setTitle:MMLocalizedString(@"Start") forState:UIControlStateNormal];
   
   _btnBack.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnBack.layer.cornerRadius = 4;
   _btnBack.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnBack.layer.borderWidth = 2;
-  [_btnBack setTitle:NSLocalizedString(@"Back", nil) forState:UIControlStateNormal];
+  [_btnBack setTitle:MMLocalizedString(@"Back") forState:UIControlStateNormal];
 }
 
 - (IBAction)btnStartPressed:(UIButton *)sender {

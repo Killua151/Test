@@ -89,6 +89,9 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define ShowHudForCurrentView()                 [Utils showHUDForView:[self mainView] withText:nil];
 #define HideHudForCurrentView()                 [Utils hideAllHUDsForView:[self mainView]];
 
+#define PreferedAppLanguage()                   @"vi"
+#define MMLocalizedString(string)               ([(string) localizedStringForLanguage:PreferedAppLanguage()])
+
 #define kHeightStatusBar                        20
 #define kHeightNavigationBar                    44
 #define kHeightNavigationBarLandscape           32
@@ -104,7 +107,6 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 true
 #define kTestPushNotification                   true
-#define kAppLanguage                            @"vi"
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 //#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"

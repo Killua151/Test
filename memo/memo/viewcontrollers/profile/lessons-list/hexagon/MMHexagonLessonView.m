@@ -54,7 +54,7 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _lblLessonTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblLessonTitle.text = [NSString stringWithFormat:NSLocalizedString(@"Lesson %d/%d", nil),
+  _lblLessonTitle.text = [NSString stringWithFormat:MMLocalizedString(@"Lesson %d/%d"),
                           _lessonData.lesson_number, [_skillData.lessons count]];
   _imgPassed.hidden = _lessonData.lesson_number > _skillData.finished_lesson;
   
@@ -65,14 +65,14 @@
   _lblObjectives.center = CGPointMake(_lblObjectives.center.x, self.center.y);
   
   // Default is passed & user can retake the lesson
-  NSString *btnRetakeTitle = NSLocalizedString(@"RETAKE", nil);
+  NSString *btnRetakeTitle = MMLocalizedString(@"RETAKE");
   
   if (!_skillData.unlocked || _lessonData.lesson_number > _skillData.finished_lesson+1) {
-    btnRetakeTitle = NSLocalizedString(@"LOCKED", nil);
+    btnRetakeTitle = MMLocalizedString(@"LOCKED");
     _btnRetake.enabled = NO;
   } else if (_lessonData.lesson_number == _skillData.finished_lesson+1)
     // Unlocked but not passed
-    btnRetakeTitle = NSLocalizedString(@"START", nil);
+    btnRetakeTitle = MMLocalizedString(@"START");
   
   _btnRetake.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   [_btnRetake setTitle:btnRetakeTitle forState:UIControlStateNormal];

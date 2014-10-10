@@ -26,17 +26,17 @@
 
 - (void)setupViews {
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Bạn đã dùng hết trái tim!", nil);
+  _lblMessage.text = MMLocalizedString(@"Bạn đã dùng hết trái tim!");
   
   _btnRetry.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnRetry.layer.cornerRadius = 4;
-  [_btnRetry setTitle:NSLocalizedString(@"Retry", nil) forState:UIControlStateNormal];
+  [_btnRetry setTitle:MMLocalizedString(@"Retry") forState:UIControlStateNormal];
   
   _btnQuit.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnQuit.layer.cornerRadius = 4;
   _btnQuit.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnQuit.layer.borderWidth = 3;
-  [_btnQuit setTitle:NSLocalizedString(@"Quit", nil) forState:UIControlStateNormal];
+  [_btnQuit setTitle:MMLocalizedString(@"Quit") forState:UIControlStateNormal];
 }
 
 - (IBAction)btnRetryPressed:(UIButton *)sender {
