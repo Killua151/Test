@@ -13,7 +13,7 @@
   IBOutlet UIButton *_btnToken;
 }
 
-@property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
+@property (nonatomic, assign) id<MMQuestionContentDelegate> delegate;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, assign) FormAnswerTokenStatus status;
 

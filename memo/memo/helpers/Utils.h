@@ -46,6 +46,8 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
                      relatedTo:(UILabel *)otherLabel
                   withDistance:(CGFloat)distance;
 
++ (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth;
+
 + (void)applyAttributedTextForLabel:(UILabel *)label
                            withText:(NSString *)fullText
                            onString:(NSString *)styledString

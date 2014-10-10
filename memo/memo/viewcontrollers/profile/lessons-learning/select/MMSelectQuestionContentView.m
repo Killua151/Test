@@ -57,7 +57,7 @@
     }
 }
 
-#pragma mark - FTQuestionContentDelegate methods
+#pragma mark - MMQuestionContentDelegate methods
 - (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index {
   if (selected) {
     for (MMSelectQuestionButton *button in _btnOptions)

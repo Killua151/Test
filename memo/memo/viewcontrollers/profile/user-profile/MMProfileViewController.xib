@@ -159,7 +159,6 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="btnAddFriendPressed:" destination="-1" eventType="touchUpInside" id="kS7-K9-oba"/>
                             <action selector="btnSwitchCoursePressed:" destination="-1" eventType="touchUpInside" id="lbD-Kl-r13"/>
                         </connections>
                     </button>
@@ -173,7 +172,6 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="btnAddFriendPressed:" destination="-1" eventType="touchUpInside" id="mgb-Ej-E6V"/>
                             <action selector="btnSetGoalPressed:" destination="-1" eventType="touchUpInside" id="lQv-kX-ADL"/>
                         </connections>
                     </button>

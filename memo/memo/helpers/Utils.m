@@ -258,6 +258,15 @@ static UIView *_sharedToast = nil;
   label.attributedText = attributedText;
 }
 
++ (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth {
+  CGSize sizeThatFits = [button.titleLabel sizeThatFits:CGSizeMake(MAXFLOAT, button.frame.size.height)];
+  sizeThatFits.width += padding;
+  
+  CGRect frame = button.frame;
+  frame.size.width = MIN(sizeThatFits.width, maxWidth);
+  button.frame = frame;
+}
+
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view {
   CGFloat actualContentViewsHeight = 0;
   

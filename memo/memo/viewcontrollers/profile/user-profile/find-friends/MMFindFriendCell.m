@@ -1,0 +1,53 @@
+//
+//  MMFindFriendCell.m
+//  memo
+//
+//  Created by Ethan Nguyen on 10/10/14.
+//  Copyright (c) 2014 Topica. All rights reserved.
+//
+
+#import "MMFindFriendCell.h"
+#import "MFriend.h"
+
+@interface MMFindFriendCell () {
+  MFriend *_friendData;
+}
+
+@end
+
+@implementation MMFindFriendCell
+
+- (id)init {
+  if (self = [super init]) {
+    _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
+    _lblUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
+    _btnInteraction.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:13];
+    _btnInteraction.layer.cornerRadius = 4;
+  }
+  
+  return self;
+}
+
+- (void)updateCellWithData:(MFriend *)data {
+  _friendData = data;
+  _lblUsername.text = _friendData.username;
+  
+  NSString *interactionTitle = _friendData.is_following ? @"UNFOLLOW" : @"FOLLOW";
+  interactionTitle = _friendData.is_following ? @"BỎ THEO DÕI" : @"THEO DÕI";
+  [_btnInteraction setTitle:NSLocalizedString(interactionTitle, nil) forState:UIControlStateNormal];
+  [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];
+  
+  CGRect frame = _btnInteraction.frame;
+  frame.origin.x = self.frame.size.width - 15 - frame.size.width;
+  _btnInteraction.frame = frame;
+  _btnInteraction.tag = _friendData.is_following;
+}
+
+- (IBAction)btnInteractionPressed:(UIButton *)sender {
+  sender.tag = !sender.tag;
+  
+  if ([_delegate respondsToSelector:@selector(interactFriend:toFollow:atIndex:)])
+    [_delegate interactFriend:_friendData.user_id toFollow:sender.tag atIndex:_index];
+}
+
+@end

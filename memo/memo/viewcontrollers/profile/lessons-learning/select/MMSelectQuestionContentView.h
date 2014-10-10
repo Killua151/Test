@@ -8,7 +8,7 @@
 
 #import "MMQuestionContentView.h"
 
-@interface MMSelectQuestionContentView : MMQuestionContentView <FTQuestionContentDelegate> {
+@interface MMSelectQuestionContentView : MMQuestionContentView <MMQuestionContentDelegate> {
   IBOutlet UILabel *_lblQuestion;
 }
 

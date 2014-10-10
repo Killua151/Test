@@ -10,6 +10,7 @@
 #import "MMSettingsViewController.h"
 #import "MMProfileLeaderboardCell.h"
 #import "MMSetGoalViewController.h"
+#import "MMFindFriendsViewController.h"
 #import "MUser.h"
 
 @interface MMProfileViewController () {
@@ -80,6 +81,7 @@
 }
 
 - (IBAction)btnAddFriendPressed:(UIButton *)sender {
+  [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
 }
 
 #pragma mark - UITableViewDataSource methods

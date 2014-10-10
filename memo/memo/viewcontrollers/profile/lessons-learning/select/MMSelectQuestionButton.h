@@ -17,7 +17,7 @@
   IBOutlet UIButton *_btnGesture;
 }
 
-@property (nonatomic, assign) id<FTQuestionContentDelegate> delegate;
+@property (nonatomic, assign) id<MMQuestionContentDelegate> delegate;
 
 - (id)initWithOption:(MSelectQuestionOption *)option atIndex:(NSInteger)index;
 - (void)setSelected:(BOOL)selected;

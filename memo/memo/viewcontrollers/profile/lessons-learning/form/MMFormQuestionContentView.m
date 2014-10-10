@@ -89,7 +89,7 @@
   [self setupTokenButtonsForView:_vAvailableTokens withDataSource:availableTokens saveIn:_btnAvailableTokens];
 }
 
-#pragma mark - FTQuestionContentDelegate methods
+#pragma mark - MMQuestionContentDelegate methods
 - (void)formTokenButtonDidSelect:(MMFormAnswerTokenButton *)button {
   if (button.status == FormAnswerTokenAvailable)
     [self animateMoveButton:button

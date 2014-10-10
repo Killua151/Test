@@ -54,10 +54,17 @@ typedef enum ShareOptionEnum {
 
 @end
 
-@protocol FTQuestionContentDelegate <NSObject>
+@protocol MMQuestionContentDelegate <NSObject>
 
 @optional
 - (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
 - (void)formTokenButtonDidSelect:(MMFormAnswerTokenButton *)button;
+
+@end
+
+@protocol MMFindFriendDelegate <NSObject>
+
+@optional
+- (void)interactFriend:(NSString *)userId toFollow:(BOOL)follow atIndex:(NSInteger)index;
 
 @end
