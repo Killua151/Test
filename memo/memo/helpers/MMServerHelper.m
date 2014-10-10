@@ -170,7 +170,9 @@
   NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
   @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]}];
   
-  if (friendId != nil)
+  BOOL isFriend = friendId != nil && ![friendId isEqualToString:[MUser currentUser]._id];
+  
+  if (isFriend)
     params[kParamFriendId] = friendId;
   
   [self
@@ -179,13 +181,13 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
      
-     if (friendId == nil) {
-       [[MUser currentUser] assignProperties:userData];
-       handler([MUser currentUser], nil);
-     } else {
-       MUser *user = [MUser modelFromDict:userData];
-       handler(user, nil);
-     }
+     MUser *user = [MUser currentUser];
+     
+     if (isFriend)
+       user = [MUser new];
+
+     [user assignProperties:userData];
+     handler(user, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{

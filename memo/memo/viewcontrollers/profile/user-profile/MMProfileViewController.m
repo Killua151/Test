@@ -83,7 +83,7 @@
 - (void)reloadContents {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] getProfileDetails:nil completion:^(MUser *user, NSError *error) {
+  [[MMServerHelper sharedHelper] getProfileDetails:_userId completion:^(MUser *user, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
