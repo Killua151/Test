@@ -13,6 +13,7 @@
   
   IBOutlet UITableViewCell *_celAvatarNameLevel;
   IBOutlet UIImageView *_imgAvatar;
+  IBOutlet UIButton *_btnInteraction;
   IBOutlet UILabel *_lblUsername;
   
   IBOutlet UITableViewCell *_celStreakMoney;
@@ -35,6 +36,8 @@
 
 - (id)initWithUserId:(NSString *)userId;
 
+- (IBAction)btnEditAvatarPressed:(UIButton *)sender;
+- (IBAction)btnInteractionPressed:(UIButton *)sender;
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender;
 - (IBAction)btnSetGoalPressed:(UIButton *)sender;
 - (IBAction)btnAddFriendPressed:(UIButton *)sender;

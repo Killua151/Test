@@ -31,6 +31,8 @@
 @property (nonatomic, strong) NSArray *skills_tree;
 @property (nonatomic, assign) NSInteger combo_days;
 @property (nonatomic, strong) NSDictionary *exp_chart;
+@property (nonatomic, strong) NSArray *follower_user_ids;
+@property (nonatomic, strong) NSArray *following_user_ids;
 @property (nonatomic, strong) NSArray *followings_leaderboard_by_week;
 @property (nonatomic, strong) NSArray *followings_leaderboard_by_month;
 @property (nonatomic, strong) NSArray *followings_leaderboard_all_time;

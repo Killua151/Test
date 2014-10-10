@@ -41,6 +41,12 @@
   return self;
 }
 
+- (IBAction)btnEditAvatarPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnInteractionPressed:(UIButton *)sender {
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -193,11 +199,13 @@
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
   _lblUsername.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   
+  _btnInteraction.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:13];
+  _btnInteraction.layer.cornerRadius = 4;
+  
   _btnStreak.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
-  _lblCourseName.text = NSLocalizedString(_userData.current_course, nil);
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];
@@ -217,11 +225,24 @@
 }
 
 - (void)updateViews {
-  if ([_userData._id isEqualToString:[MUser currentUser]._id])
-    [self customTitleWithText:_userData.username color:[UIColor blackColor]];
+  BOOL isFriend = ![_userId isEqualToString:[MUser currentUser]._id];
   
-  _lblUsername.text = _userData.username;
+  _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;
+  _btnInteraction.hidden = !isFriend;
+  
+  if (isFriend) {
+    [self customTitleWithText:_userData.username color:[UIColor blackColor]];
+    BOOL isFollowing = [[MUser currentUser].following_user_ids containsObject:_userId];
+    NSString *interactionTitle = isFollowing ? @"UNFOLLOW" : @"FOLLOW";
+    [_btnInteraction setTitle:MMLocalizedString(interactionTitle) forState:UIControlStateNormal];
+    
+    [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];
+    _btnInteraction.center = _lblUsername.center;
+  } else
+    _lblUsername.text = _userData.username;
+  
   _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
+  _lblCourseName.text = NSLocalizedString(_userData.current_course, nil);
   
   [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo days", (long)_userData.combo_days]
               forState:UIControlStateNormal];
