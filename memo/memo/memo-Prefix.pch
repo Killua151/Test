@@ -78,8 +78,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-//#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
+//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 

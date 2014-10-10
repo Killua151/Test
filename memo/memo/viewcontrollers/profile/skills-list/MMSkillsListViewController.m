@@ -91,6 +91,22 @@
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   startStrengthenAll:^(NSString *examToken, NSArray *questions, NSError *error) {
+     HideHudForCurrentView();
+     ShowAlertWithError(error);
+     
+     MMExamViewController *examVC =
+     [[MMExamViewController alloc] initWithQuestions:questions
+                                         andMetadata:@{
+                                                       kParamType : kValueExamTypeStrengthenAll,
+                                                       kParamExamToken : [NSString normalizedString:examToken]
+                                                       }];
+     
+     [self presentViewController:examVC animated:YES completion:NULL];
+   }];
 }
 
 #pragma mark - UITableViewDataSource methods
