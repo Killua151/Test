@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSString *_id;
 @property (nonatomic, strong) NSString *auth_token;
+@property (nonatomic, strong) NSArray *checkpoint_positions;
 @property (nonatomic, strong) NSString *current_course;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *fb_Id;
@@ -42,5 +43,6 @@
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame;
 - (NSArray *)skillsTree;
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
+- (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow;
 
 @end

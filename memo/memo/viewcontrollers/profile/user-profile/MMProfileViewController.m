@@ -64,10 +64,10 @@
 }
 
 - (void)reloadContents {
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] getProfileDetails:^(NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
+    HideHudForCurrentView();
     ShowAlertWithError(error);
     [self updateViews];
   }];

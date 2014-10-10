@@ -153,9 +153,10 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     [[MUser currentUser] assignProperties:userData[kParamUserInfo]];
-     [MUser currentUser].skills_tree = userData[kParamSkillsTree];
-     [MUser currentUser].skills = [MSkill modelsFromArr:userData[kParamSkills]];
+     MUser *currentUser = [MUser currentUser];
+     [currentUser assignProperties:userData[kParamUserInfo]];
+     currentUser.skills_tree = userData[kParamSkillsTree];
+     currentUser.skills = [MSkill modelsFromArr:userData[kParamSkills]];
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -200,47 +201,6 @@
    }];
 }
 
-- (void)startLesson:(NSInteger)lessonNumber
-            inSkill:(NSString *)skillId
-         completion:(void (^)(NSString *, NSArray *, NSError *))handler {
-  NSDictionary *params = @{
-                           kParamType : @"lesson",
-                           kParamLessonNumber : @(lessonNumber),
-                           kParamSkillId : [NSString normalizedString:skillId],
-                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
-                           };
-  
-  [self startExamWithParam:params completion:handler];
-}
-
-- (void)finishLesson:(NSInteger)lessonNumber
-             inSkill:(NSString *)skillId
-           withToken:(NSString *)examToken
-          andResults:(NSDictionary *)answerResults
-          completion:(void (^)(NSError *))handler {
-  NSDictionary *params = @{
-                           kParamType : @"lesson",
-                           kParamLessonNumber : @(lessonNumber),
-                           kParamSkillId : [NSString normalizedString:skillId],
-                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamExamToken : [NSString normalizedString:examToken],
-                           kParamAnswers : [answerResults JSONString]
-                           };
-  
-  [self
-   POST:@"exam/finish"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
-     handler(nil);
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(error);
-     }];
-   }];
-}
-
 - (void)listFriends:(void (^)(NSArray *, NSArray *, NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
@@ -264,6 +224,51 @@
   }
   
   handler(friends, nil);
+}
+
+- (void)startLesson:(NSInteger)lessonNumber
+            inSkill:(NSString *)skillId
+         completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : @"lesson",
+                           kParamLessonNumber : @(lessonNumber),
+                           kParamSkillId : [NSString normalizedString:skillId],
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
+                           completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamType : @"checkpoint",
+                           kParamCheckpointPosition : @(checkpointPosition),
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
+                           };
+  
+  [self startExamWithParam:params completion:handler];
+}
+
+- (void)finishExamWithMetadata:(NSDictionary *)metadata
+                    andResults:(NSDictionary *)answerResults
+                    completion:(void (^)(NSError *))handler {
+  NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:metadata];
+  params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
+  params[kParamAnswers] = [answerResults JSONString];
+  
+  [self
+   POST:@"exam/finish"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
 }
 
 - (void)registerDeviceTokenForAPNS {

@@ -77,6 +77,9 @@
   
   _skillsData = [currentUser skillsTree];
   [_tblSkills reloadData];
+  
+  if (![MUser currentUser].is_beginner)
+    [self animateSlideStrengthenButton:YES];
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {
@@ -139,6 +142,27 @@
   
   if ([skills isKindOfClass:[NSArray class]])
     return;
+  
+  NSInteger checkpointPosition = [[MUser currentUser] checkpointPositionForCheckpoint:indexPath.row];
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   startCheckpointTestAtPosition:checkpointPosition
+   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
+     HideHudForCurrentView();
+     ShowAlertWithError(error);
+     
+     MMExamViewController *examVC =
+     [[MMExamViewController alloc] initWithQuestions:questions
+                                         andMetadata:@{
+                                                       kParamType : kValueExamTypeCheckpoint,
+                                                       kParamExamToken : [NSString normalizedString:examToken],
+                                                       kParamCheckpointPosition : @(checkpointPosition)
+                                                       }];
+     
+     [self presentViewController:examVC animated:YES completion:NULL];
+   }];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -217,8 +241,7 @@
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
-  if ([MUser currentUser].is_beginner)
-    [self animateSlideStrengthenButton:NO];
+  [self animateSlideStrengthenButton:NO];
 }
 
 - (void)animateSlideStrengthenButton:(BOOL)show {
@@ -276,10 +299,10 @@
 }
 
 - (void)loadSkillsTree {
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
+    HideHudForCurrentView();
     
     if (error != nil) {
       [self handleLoadingError:error];

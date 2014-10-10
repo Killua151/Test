@@ -67,6 +67,10 @@
   return resultString;
 }
 
+- (NSString *)localizedStringWithLanguage:(NSString *)language {
+  return self;
+}
+
 - (BOOL)isAcceptedSimilarToOneOfStrings:(NSArray *)otherStrings {
   if (otherStrings == nil || ![otherStrings isKindOfClass:[NSArray class]])
     return NO;

@@ -2584,14 +2584,14 @@
 				CAF8502319E0F3D100A347CF /* NSString+StringHelpers.m */,
 				CAF8502419E0F3D100A347CF /* UIColor+ColorHelpers.h */,
 				CAF8502519E0F3D100A347CF /* UIColor+ColorHelpers.m */,
+				CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */,
+				CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */,
 				CAF8502619E0F3D100A347CF /* UIImage+ImageHelpers.h */,
 				CAF8502719E0F3D100A347CF /* UIImage+ImageHelpers.m */,
 				CAF8502819E0F3D100A347CF /* UIView+ExtendedToast.h */,
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
-				CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */,
-				CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */,
 			);
 			name = Helpers;
 			path = helpers;

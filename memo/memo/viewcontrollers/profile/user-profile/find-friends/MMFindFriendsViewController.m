@@ -114,10 +114,10 @@
 }
 
 - (void)searchFriends {
-  [Utils showHUDForView:self.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
-    [Utils hideAllHUDsForView:self.view];
+    HideHudForCurrentView();
     ShowAlertWithError(error);
     
     [_friendsData removeAllObjects];

@@ -66,7 +66,7 @@
   
   [self gestureLayerDidTap];
   
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
    signUpWithFullName:_txtFullName.text
@@ -74,7 +74,7 @@
    username:_txtUsername.text
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
-     [Utils hideAllHUDsForView:self.navigationController.view];
+     HideHudForCurrentView();
      ShowAlertWithError(error);
      
      [Utils updateSavedUserWithAttributes:userData];

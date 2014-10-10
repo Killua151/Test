@@ -69,7 +69,23 @@
 - (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption {
   MMShareViewController *shareVC = [[MMShareViewController alloc] initWithDefaultOption:shareOption];
   UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:shareVC];
-  [self presentViewController:navigation animated:YES completion:NULL];
+  [[self mainViewController] presentViewController:navigation animated:YES completion:NULL];
+}
+
+- (UIViewController *)mainViewController {
+  if (self.navigationController != nil)
+    return self.navigationController;
+  
+  return self;
+}
+
+- (UIView *)mainView {
+  UIViewController *mainViewController = [self mainViewController];
+  
+  if ([mainViewController respondsToSelector:@selector(view)])
+    return [self mainViewController].view;
+  
+  return nil;
 }
 
 - (void)gestureLayerDidEnterEditingMode {

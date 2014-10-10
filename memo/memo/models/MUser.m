@@ -14,6 +14,7 @@
 
 @interface MUser () {
   NSMutableDictionary *_skillsById;
+  NSMutableDictionary *_remainingSkillsMapper;
   NSMutableDictionary *_checkpointsMapper;
 }
 
@@ -141,6 +142,10 @@ static MUser *_currentUser = nil;
 }
 
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow {
+  return [_remainingSkillsMapper[@(checkpointRow)] integerValue];
+}
+
+- (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow {
   return [_checkpointsMapper[@(checkpointRow)] integerValue];
 }
 
@@ -156,19 +161,31 @@ static MUser *_currentUser = nil;
 }
 
 - (void)updateCheckpointsMapper {
-  if (_checkpointsMapper == nil)
+  if (_remainingSkillsMapper == nil) {
+    _remainingSkillsMapper = [NSMutableDictionary new];
     _checkpointsMapper = [NSMutableDictionary new];
+  }
   
+  [_remainingSkillsMapper removeAllObjects];
   [_checkpointsMapper removeAllObjects];
+  
+  __block NSInteger checkpointsCount = 0;
   
   [_skills_tree enumerateObjectsUsingBlock:^(id row, NSUInteger index, BOOL *stop) {
     if (![row isKindOfClass:[NSString class]])
       return;
     
-    _checkpointsMapper[@(index)] = @0;
+    _remainingSkillsMapper[@(index)] = @0;
+    
+    if (_checkpoint_positions[checkpointsCount] != nil)
+      _checkpointsMapper[@(index)] = _checkpoint_positions[checkpointsCount];
+    else
+      _checkpointsMapper[@(index)] = @0;
+    
+    checkpointsCount++;
   }];
   
-  for (NSNumber *rowIndex in [_checkpointsMapper allKeys]) {
+  for (NSNumber *rowIndex in [_remainingSkillsMapper allKeys]) {
     for (NSInteger i = 0; i < [rowIndex integerValue]; i++) {
       id rowData = _skills_tree[i];
       
@@ -180,8 +197,8 @@ static MUser *_currentUser = nil;
           continue;
         
         if (![_skillsById[skillId] unlocked]) {
-          NSInteger count = [_checkpointsMapper[rowIndex] integerValue];
-          _checkpointsMapper[rowIndex] = @(count+1);
+          NSInteger count = [_remainingSkillsMapper[rowIndex] integerValue];
+          _remainingSkillsMapper[rowIndex] = @(count+1);
         }
       }
     }

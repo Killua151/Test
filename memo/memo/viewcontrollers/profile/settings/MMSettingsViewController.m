@@ -407,10 +407,10 @@
   NSString *changeType = [[_userInfo allKeys] firstObject];
   NSString *value = [[_userInfo allValues] firstObject];
   
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] updateProfile:_userInfo completion:^(NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
+    HideHudForCurrentView();
     ShowAlertWithError(error);
     
     if ([changeType isEqualToString:kParamUsername])
@@ -471,13 +471,13 @@
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
-    [Utils showHUDForView:self.navigationController.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
      linkFacebookWithFacebookId:userData[kParamFbId]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSError *error) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
+       HideHudForCurrentView();
        
        if (error != nil)
          [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
@@ -495,10 +495,10 @@
   [Utils logOutFacebookWithCompletion:^(NSError *error) {
     ShowAlertWithError(error);
     
-    [Utils showHUDForView:self.navigationController.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper] unlinkFacebook:^(NSError *error) {
-      [Utils hideAllHUDsForView:self.navigationController.view];
+      HideHudForCurrentView();
       
       if (error != nil)
         [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
@@ -516,13 +516,13 @@
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
-    [Utils showHUDForView:self.navigationController.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
      linkGoogleWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSError *error) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
+       HideHudForCurrentView();
        
        if (error != nil)
          [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
@@ -540,10 +540,10 @@
   [Utils logOutGoogleWithCompletion:^(NSError *error) {
     ShowAlertWithError(error);
     
-    [Utils showHUDForView:self.navigationController.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper] unlinkGoogle:^(NSError *error) {
-      [Utils hideAllHUDsForView:self.navigationController.view];
+      HideHudForCurrentView();
       
       if (error != nil)
         [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];

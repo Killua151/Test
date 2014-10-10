@@ -101,18 +101,19 @@
 
 #pragma mark - MMLessonViewDelegate methods
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
    completion:^(NSString *examToken, NSArray *questions, NSError *error) {
-     [Utils hideAllHUDsForView:self.navigationController.view];
+     HideHudForCurrentView();
      ShowAlertWithError(error);
      
      MMExamViewController *examVC =
      [[MMExamViewController alloc] initWithQuestions:questions
                                          andMetadata:@{
+                                                       kParamType : kValueExamTypeLesson,
                                                        kParamExamToken : [NSString normalizedString:examToken],
                                                        kParamLessonNumber : @(lesson.lesson_number),
                                                        kParamSkillId : self.skillData._id

@@ -375,17 +375,13 @@
   
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
-    [Utils showHUDForView:self.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
-     finishLesson:[_metadata[kParamLessonNumber] integerValue]
-     inSkill:_metadata[kParamSkillId]
-     withToken:_metadata[kParamExamToken]
-     andResults:_answersData
-     completion:^(NSError *error) {
-       [Utils hideAllHUDsForView:self.view];
+     finishExamWithMetadata:_metadata
+     andResults:_answersData completion:^(NSError *error) {
+       HideHudForCurrentView();
        ShowAlertWithError(error);
-       
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
     

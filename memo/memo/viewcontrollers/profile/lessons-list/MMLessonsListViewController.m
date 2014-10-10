@@ -13,7 +13,7 @@
 
 @interface MMLessonsListViewController ()
 
-- (void)testOut;
+- (void)shortcutTest;
 
 @end
 
@@ -36,10 +36,10 @@
   [super viewWillAppear:animated];
   [self customTitleWithText:_skillData.title color:[self navigationTextColor]];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Test Out", nil)
+                           title:NSLocalizedString(@"Test", nil)
                            color:[self navigationTextColor]
                           target:self
-                          action:@selector(testOut)
+                          action:@selector(shortcutTest)
                         distance:-8];
 }
 
@@ -52,7 +52,7 @@
 }
 
 #pragma mark - Private methods
-- (void)testOut {
+- (void)shortcutTest {
 }
 
 @end

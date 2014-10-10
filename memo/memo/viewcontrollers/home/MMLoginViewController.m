@@ -50,13 +50,13 @@
   
   [self gestureLayerDidTap];
   
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
    logInWithUsername:_txtUsername.text
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
-     [Utils hideAllHUDsForView:self.navigationController.view];
+     HideHudForCurrentView();
      ShowAlertWithError(error);
      
      [Utils updateSavedUserWithAttributes:userData];
@@ -79,14 +79,14 @@
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
-    [Utils showHUDForView:self.navigationController.view withText:nil];
+    ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
      logInWithFacebookId:userData[kParamFbId]
      facebookName:userData[kParamFbName]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
+       HideHudForCurrentView();
        ShowAlertWithError(error);
        
        [Utils updateSavedUserWithAttributes:userData];
@@ -97,17 +97,19 @@
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
-  [Utils showHUDForView:self.navigationController.view withText:nil];
+  ShowHudForCurrentView();
   
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
-    [Utils hideAllHUDsForView:self.navigationController.view];
+    if (error != nil)
+      HideHudForCurrentView();
+    
     ShowAlertWithError(error);
     
     [[MMServerHelper sharedHelper]
      logInWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {
-       [Utils hideAllHUDsForView:self.navigationController.view];
+       HideHudForCurrentView();
        ShowAlertWithError(error);
        
        [Utils updateSavedUserWithAttributes:userData];

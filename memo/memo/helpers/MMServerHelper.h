@@ -49,18 +49,19 @@
 - (void)getProfileDetails:(void(^)(NSError *error))handler;
 - (void)updateProfile:(NSDictionary *)fields completion:(void(^)(NSError *error))handler;
 
+- (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
+- (void)searchFriends:(NSString *)keywords completion:(void(^)(NSArray *results, NSError *error))handler;
+
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
          completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
-- (void)finishLesson:(NSInteger)lessonNumber
-             inSkill:(NSString *)skillId
-           withToken:(NSString *)examToken
-          andResults:(NSDictionary *)answerResults
-          completion:(void(^)(NSError *error))handler;
+- (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
+                           completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
-- (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
-- (void)searchFriends:(NSString *)keywords completion:(void(^)(NSArray *results, NSError *error))handler;
+- (void)finishExamWithMetadata:(NSDictionary *)metadata
+                    andResults:(NSDictionary *)answerResults
+                    completion:(void(^)(NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 
