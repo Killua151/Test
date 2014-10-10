@@ -33,6 +33,7 @@
 @property (nonatomic, strong) NSDictionary *exp_chart;
 @property (nonatomic, strong) NSArray *followings_leaderboard_by_week;
 @property (nonatomic, strong) NSArray *followings_leaderboard_by_month;
+@property (nonatomic, strong) NSArray *followings_leaderboard_all_time;
 
 @property (nonatomic, strong) NSDictionary *lastReceivedBonuses;
 

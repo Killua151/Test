@@ -10,13 +10,6 @@
 
 @implementation MMShieldLessonCell
 
-- (id)init {
-  if (self = [super init]) {
-  }
-  
-  return self;
-}
-
 - (void)updateCellWithData:(MLesson *)data {
   CGRect frame = _vLesson.frame;
   frame.origin.y = DeviceScreenIsRetina4Inch() ? -54 : -10;

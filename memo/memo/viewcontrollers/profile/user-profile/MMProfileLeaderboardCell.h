@@ -11,7 +11,7 @@
 @interface MMProfileLeaderboardCell : BaseTableViewCell {
   IBOutlet UIImageView *_imgAvatar;
   IBOutlet UILabel *_lblUsername;
-  IBOutlet UILabel *_lblUserXp;
+  IBOutlet UILabel *_lblUserExp;
 }
 
 @end

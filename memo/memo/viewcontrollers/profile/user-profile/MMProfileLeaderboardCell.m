@@ -15,7 +15,7 @@
   if (self = [super init]) {
     _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
     _lblUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
-    _lblUserXp.font = [UIFont fontWithName:@"ClearSans" size:17];
+    _lblUserExp.font = [UIFont fontWithName:@"ClearSans" size:17];
   }
   
   return self;
@@ -23,6 +23,7 @@
 
 - (void)updateCellWithData:(MLeaderboardData *)data {
   _lblUsername.text = data.username;
+  _lblUserExp.text = [NSString stringWithFormat:@"%ld EXP", (long)data.earned_exp];
 }
 
 @end

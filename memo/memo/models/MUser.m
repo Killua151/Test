@@ -57,6 +57,10 @@ static MUser *_currentUser = nil;
   _followings_leaderboard_by_week = [MLeaderboardData modelsFromArr:followings_leaderboard_by_week];
 }
 
+- (void)setFollowings_leaderboard_all_time:(NSArray *)followings_leaderboard_all_time {
+  _followings_leaderboard_all_time = [MLeaderboardData modelsFromArr:followings_leaderboard_all_time];
+}
+
 - (void)setLastReceivedBonuses:(NSDictionary *)lastReceivedBonuses {
   if (lastReceivedBonuses == nil || ![lastReceivedBonuses isKindOfClass:[NSDictionary class]])
     return;

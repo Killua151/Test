@@ -44,7 +44,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="_imgAvatar" destination="XzH-7E-aOj" id="9gK-tT-Wbv"/>
-                <outlet property="_lblUserXp" destination="mVz-oB-zLn" id="umY-MY-6hd"/>
+                <outlet property="_lblUserExp" destination="mVz-oB-zLn" id="ATC-hs-fV4"/>
                 <outlet property="_lblUsername" destination="oCD-wY-rkp" id="cBf-Rt-0QF"/>
             </connections>
         </tableViewCell>

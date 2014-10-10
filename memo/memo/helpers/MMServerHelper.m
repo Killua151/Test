@@ -295,14 +295,11 @@
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswers] = [answerResults JSONString];
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"exam/finish"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [MUser currentUser].lastReceivedBonuses = [responseObject objectFromJSONData];
-     DLog(@"%@", [responseObject objectFromJSONData]);
      handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

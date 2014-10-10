@@ -96,10 +96,10 @@
   if (section == 1)
     return 1;
   
-  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
     return 1;
   
-  return [[MUser currentUser].followings_leaderboard_by_week count];
+  return [[MUser currentUser].followings_leaderboard_all_time count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,7 +116,7 @@
   if (indexPath.section == 1)
     return _celGraphChart;
   
-  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards;
   
   MMProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
@@ -125,7 +125,7 @@
   if (cell == nil)
     cell = [MMProfileLeaderboardCell new];
   
-  [cell updateCellWithData:[MUser currentUser].followings_leaderboard_by_week[indexPath.row]];
+  [cell updateCellWithData:[MUser currentUser].followings_leaderboard_all_time[indexPath.row]];
   
   return cell;
 }
@@ -156,10 +156,10 @@
   if (indexPath.section == 1)
     return _celGraphChart.frame.size.height;
   
-  if ([[MUser currentUser].followings_leaderboard_by_week count] == 0)
+  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards.frame.size.height;
   
-  return [MMProfileLeaderboardCell heightToFitWithData:[MUser currentUser].followings_leaderboard_by_week[indexPath.row]];
+  return [MMProfileLeaderboardCell heightToFitWithData:[MUser currentUser].followings_leaderboard_all_time[indexPath.row]];
 }
 
 #pragma mark - Private methods
