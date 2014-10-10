@@ -11,6 +11,7 @@
 #import "MUser.h"
 #import "MSkill.h"
 #import "MBaseQuestion.h"
+#import "MFriend.h"
 
 @interface MMServerHelper ()
 
@@ -250,6 +251,19 @@
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
    }];
+}
+
+- (void)searchFriends:(NSString *)keywords completion:(void (^)(NSArray *, NSError *))handler {
+  NSMutableArray *friends = [NSMutableArray array];
+  
+  for (NSInteger i = 0; i < 10; i++) {
+    MFriend *friend = [MFriend new];
+    friend.username = [NSString stringWithFormat:@"test_username_%d", i];
+    friend.is_following = i%2;
+    [friends addObject:friend];
+  }
+  
+  handler(friends, nil);
 }
 
 - (void)registerDeviceTokenForAPNS {

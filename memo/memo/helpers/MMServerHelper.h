@@ -60,6 +60,7 @@
           completion:(void(^)(NSError *error))handler;
 
 - (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
+- (void)searchFriends:(NSString *)keywords completion:(void(^)(NSArray *results, NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 

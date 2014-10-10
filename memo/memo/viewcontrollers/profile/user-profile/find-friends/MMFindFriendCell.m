@@ -30,7 +30,6 @@
 
 - (void)updateCellWithData:(MFriend *)data {
   _friendData = data;
-  _lblUsername.text = _friendData.username;
   
   NSString *interactionTitle = _friendData.is_following ? @"UNFOLLOW" : @"FOLLOW";
   interactionTitle = _friendData.is_following ? @"BỎ THEO DÕI" : @"THEO DÕI";
@@ -41,6 +40,12 @@
   frame.origin.x = self.frame.size.width - 15 - frame.size.width;
   _btnInteraction.frame = frame;
   _btnInteraction.tag = _friendData.is_following;
+  
+  _lblUsername.text = _friendData.username;
+  
+  frame = _lblUsername.frame;
+  frame.size.width = _btnInteraction.frame.origin.x - frame.origin.x - 12;
+  _lblUsername.frame = frame;
 }
 
 - (IBAction)btnInteractionPressed:(UIButton *)sender {

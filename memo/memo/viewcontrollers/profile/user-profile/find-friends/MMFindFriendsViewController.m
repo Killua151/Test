@@ -15,6 +15,7 @@
 }
 
 - (void)setupViews;
+- (void)searchFriends;
 
 @end
 
@@ -23,7 +24,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  _friendsData = [NSMutableArray new];
   [self setupViews];
   [self reloadContents];
 }
@@ -33,13 +33,7 @@
 }
 
 - (void)reloadContents {
-  for (NSInteger i = 0; i < 10; i++) {
-    MFriend *friend = [MFriend new];
-    friend.username = [NSString stringWithFormat:@"test_username_%d", i];
-    friend.is_following = i%2;
-    [_friendsData addObject:friend];
-  }
-  
+  _friendsData = [NSMutableArray new];
   [_tblFriends reloadData];
 }
 
@@ -69,10 +63,10 @@
   
   if (cell == nil) {
     cell = [MMFindFriendCell new];
-    cell.index = indexPath.row;
     cell.delegate = self;
   }
   
+  cell.index = indexPath.row;
   [cell updateCellWithData:_friendsData[indexPath.row]];
   
   return cell;
@@ -89,6 +83,12 @@
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   [self gestureLayerDidEnterEditingMode];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [self gestureLayerDidTap];
+  [self searchFriends];
+  return YES;
 }
 
 #pragma mark - MMFindFriendDelegate methods
@@ -110,6 +110,19 @@
     frame.size.height += 20;
     _tblFriends.frame = frame;
   }
+}
+
+- (void)searchFriends {
+  [Utils showHUDForView:self.view withText:nil];
+  
+  [[MMServerHelper sharedHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
+    [Utils showHUDForView:self.view withText:nil];
+    ShowAlertWithError(error);
+    
+    [_friendsData removeAllObjects];
+    [_friendsData addObjectsFromArray:results];
+    [_tblFriends reloadData];
+  }];
 }
 
 @end
