@@ -63,7 +63,7 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  NSString *token = [Utils trimmedDeviceToken:deviceToken];
+  NSString *token = [UIDevice trimmedDeviceToken:deviceToken];
   [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefDeviceToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
   [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];

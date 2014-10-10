@@ -30,6 +30,8 @@
 		CAA91C9B19E780E10076A9BC /* MMFindFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA91C9719E780E10076A9BC /* MMFindFriendCell.xib */; };
 		CAA91C9E19E783770076A9BC /* MFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C9D19E783770076A9BC /* MFriend.m */; };
 		CAA91C9F19E783770076A9BC /* MFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C9D19E783770076A9BC /* MFriend.m */; };
+		CAA91CA219E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */; };
+		CAA91CA319E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */; };
 		CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8319E0E4C800EFED33 /* Foundation.framework */; };
 		CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */; };
 		CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8719E0E4C800EFED33 /* UIKit.framework */; };
@@ -1573,6 +1575,8 @@
 		CAA91C9719E780E10076A9BC /* MMFindFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMFindFriendCell.xib; sourceTree = "<group>"; };
 		CAA91C9C19E783770076A9BC /* MFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFriend.h; sourceTree = "<group>"; };
 		CAA91C9D19E783770076A9BC /* MFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFriend.m; sourceTree = "<group>"; };
+		CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceHelpers.h"; sourceTree = "<group>"; };
+		CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceHelpers.m"; sourceTree = "<group>"; };
 		CABBEA8019E0E4C800EFED33 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBEA8319E0E4C800EFED33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2586,6 +2590,8 @@
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
+				CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */,
+				CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -5397,6 +5403,7 @@
 				CAF854B819E0F3D200A347CF /* MMSettingsViewController.m in Sources */,
 				CAF8549D19E0F3D200A347CF /* MMListenQuestionContentView.m in Sources */,
 				CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */,
+				CAA91CA219E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */,
 				CAF8548619E0F3D200A347CF /* MMFailLessonViewController.m in Sources */,
 				CAF8547719E0F3D200A347CF /* MMCoursesListViewController.m in Sources */,
 				CAF854C419E0F3D200A347CF /* MMSkillsListViewController.m in Sources */,
@@ -5504,6 +5511,7 @@
 				CAF856B919E0FDF600A347CF /* MMSettingsViewController.m in Sources */,
 				CAF856BA19E0FDF600A347CF /* MMListenQuestionContentView.m in Sources */,
 				CAF856BB19E0FDF600A347CF /* MMLineChart.m in Sources */,
+				CAA91CA319E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */,
 				CAF856BC19E0FDF600A347CF /* MMFailLessonViewController.m in Sources */,
 				CAF856BD19E0FDF600A347CF /* MMCoursesListViewController.m in Sources */,
 				CAF856BE19E0FDF600A347CF /* MMSkillsListViewController.m in Sources */,

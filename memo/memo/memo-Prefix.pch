@@ -27,6 +27,7 @@
   #import "NSString+CompactTranslation.h"
   #import "NSString+StringHelpers.h"
   #import "UIColor+ColorHelpers.h"
+  #import "UIDevice+DeviceHelpers.h"
   #import "UIImage+ImageHelpers.h"
   #import "UIView+ExtendedToast.h"
 

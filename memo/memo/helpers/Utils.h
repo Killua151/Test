@@ -35,9 +35,6 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (BOOL)validateAlphaNumeric:(NSString *)password;
 + (BOOL)validateBlank:(NSString *)string;
 
-+ (NSString *)uniqueDeviceIdentifier;
-+ (NSString *)trimmedDeviceToken:(NSData *)deviceToken;
-
 + (void)adjustLabelToFitHeight:(UILabel *)label;
 + (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight;
 + (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
@@ -54,10 +51,8 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
                      withAttributes:(NSDictionary *)attributes;
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
 
-+ (NSString *)getDeviceModel;
-//+ (BOOL)isDeviceCapableForRealTimeSearch;
-//+ (void)logAnalyticsForScreen:(NSString *)screenName;
-//+ (void)logAnalyticsForSearchText:(NSString *)searchText;
++ (void)logAnalyticsForScreen:(NSString *)screenName;
++ (void)logAnalyticsForSearchText:(NSString *)searchText;
 
 #pragma mark - User utils methods
 + (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes;

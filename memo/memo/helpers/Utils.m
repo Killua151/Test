@@ -7,8 +7,6 @@
 //
 
 #import "Utils.h"
-#include <sys/types.h>
-#include <sys/sysctl.h>
 #import "UIView+ExtendedToast.h"
 #import "MBProgressHUD.h"
 #import <FacebookSDK/FacebookSDK.h>
@@ -160,50 +158,6 @@ static UIView *_sharedToast = nil;
   return ![filtedString isEqualToString:@""];
 }
 
-+ (NSString *)uniqueDeviceIdentifier {
-  NSString *uniqueIdentifier = nil;
-  
-  // iOS 6+
-  if ([UIDevice instancesRespondToSelector:@selector(identifierForVendor)])
-    return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-  
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  // before iOS 6
-  uniqueIdentifier = [userDefaults objectForKey:kUserDefUDID];
-  
-  if (uniqueIdentifier == nil) {
-    CFUUIDRef uuid = CFUUIDCreate(NULL);
-    uniqueIdentifier = (NSString*)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
-    CFRelease(uuid);
-    
-    [userDefaults setObject:uniqueIdentifier forKey:kUserDefUDID];
-    [userDefaults synchronize];
-  }
-  
-  return uniqueIdentifier;
-}
-
-+ (NSString*)trimmedDeviceToken:(NSData*)token {
-  NSString *trimmedToken = [token description];
-  trimmedToken = [trimmedToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-  trimmedToken = [trimmedToken stringByReplacingOccurrencesOfString:@" " withString:@""];
-  return trimmedToken;
-}
-
-+ (NSString *)getDeviceModel {
-  size_t size;
-  sysctlbyname("hw.machine", NULL, &size, NULL, 0);
-  char *model = malloc(size);
-  sysctlbyname("hw.machine", model, &size, NULL, 0);
-  NSString *deviceModel = [NSString stringWithCString:model encoding:NSUTF8StringEncoding];
-  free(model);
-  
-  if ([deviceModel isEqualToString:@"i386"] || [deviceModel isEqualToString:@"x86_64"])
-    return nil;
-  
-  return deviceModel;
-}
-
 + (void)adjustLabelToFitHeight:(UILabel *)label {
   [self adjustLabelToFitHeight:label relatedTo:nil withDistance:0];
 }
@@ -280,41 +234,13 @@ static UIView *_sharedToast = nil;
   return nonKeyboardViewHeight / actualContentViewsHeight;
 }
 
-//+ (BOOL)isDeviceCapableForRealTimeSearch {
-//  NSString *deviceModel = [self getDeviceModel];
-//  
-//  if (deviceModel == nil)
-//    return YES;
-//  
-//  if ([deviceModel rangeOfString:@"iPod"].location != NSNotFound)
-//    return NO;
-//  
-//  if ([deviceModel rangeOfString:@"iPad"].location != NSNotFound) {
-//    CGFloat version = [[[deviceModel stringByReplacingOccurrencesOfString:@"iPad" withString:@""]
-//                        stringByReplacingOccurrencesOfString:@"," withString:@"."]
-//                       floatValue];
-//    
-//    return version >= 2.5;
-//  }
-//  
-//  if ([deviceModel rangeOfString:@"iPhone"].location != NSNotFound) {
-//    CGFloat version = [[[deviceModel stringByReplacingOccurrencesOfString:@"iPhone" withString:@""]
-//                        stringByReplacingOccurrencesOfString:@"," withString:@"."]
-//                       floatValue];
-//    
-//    return version >= 5;
-//  }
-//  
-//  return NO;
-//}
-//
-//+ (void)logAnalyticsForScreen:(NSString *)screenName {
++ (void)logAnalyticsForScreen:(NSString *)screenName {
 //  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 //  [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"Screen %@", screenName]];
 //  [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-//}
-//
-//+ (void)logAnalyticsForSearchText:(NSString *)searchText {
+}
+
++ (void)logAnalyticsForSearchText:(NSString *)searchText {
 //  if (searchText == nil || ![searchText isKindOfClass:[NSString class]] || searchText.length == 0)
 //    return;
 //  
@@ -323,7 +249,7 @@ static UIView *_sharedToast = nil;
 //                                                        action:@"search"
 //                                                         label:searchText
 //                                                         value:nil] build]];
-//}
+}
 
 #pragma mark - User utils methods
 + (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes {
