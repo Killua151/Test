@@ -137,6 +137,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamFbId                              @"fb_Id"
 #define kParamFbName                            @"fb_name"
 #define kParamFinishExamBonusExp                @"finish_exam_bonus_exp"
+#define kParamFriendId                          @"friend_id"
 #define kParamHeartBonusExp                     @"heart_bonus_exp"
 #define kParamGmail                             @"gmail"
 #define kParamGAccessToken                      @"g_access_token"

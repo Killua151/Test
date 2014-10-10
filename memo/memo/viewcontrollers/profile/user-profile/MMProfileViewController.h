@@ -33,6 +33,8 @@
   IBOutlet UILabel *_lblEmptyLeaderboards;
 }
 
+- (id)initWithUserId:(NSString *)userId;
+
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender;
 - (IBAction)btnSetGoalPressed:(UIButton *)sender;
 - (IBAction)btnAddFriendPressed:(UIButton *)sender;

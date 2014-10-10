@@ -10,8 +10,9 @@
 
 @interface MFriend : MBase
 
+@property (nonatomic, assign) BOOL is_following;
 @property (nonatomic, strong) NSString *user_id;
 @property (nonatomic, strong) NSString *username;
-@property (nonatomic, assign) BOOL is_following;
+@property (nonatomic, strong) NSString *url_avatar;
 
 @end

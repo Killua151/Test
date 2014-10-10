@@ -10,8 +10,9 @@
 
 @interface MLeaderboardData : MBase
 
-@property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *url_avatar;
 @property (nonatomic, assign) NSInteger earned_exp;
+@property (nonatomic, strong) NSString *url_avatar;
+@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, strong) NSString *username;
 
 @end

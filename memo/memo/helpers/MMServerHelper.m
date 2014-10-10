@@ -166,20 +166,30 @@
    }];
 }
 
-- (void)getProfileDetails:(void (^)(NSError *))handler {
-  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+- (void)getProfileDetails:(NSString *)friendId completion:(void (^)(MUser *, NSError *))handler {
+  NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
+  @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]}];
+  
+  if (friendId != nil)
+    params[kParamFriendId] = friendId;
   
   [self
    GET:@"users/profile_details"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     [[MUser currentUser] assignProperties:userData];
-     handler(nil);
+     
+     if (friendId == nil) {
+       [[MUser currentUser] assignProperties:userData];
+       handler([MUser currentUser], nil);
+     } else {
+       MUser *user = [MUser modelFromDict:userData];
+       handler(user, nil);
+     }
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(error);
+       handler(nil, error);
      }];
    }];
 }

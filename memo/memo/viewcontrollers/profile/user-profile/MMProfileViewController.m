@@ -12,10 +12,13 @@
 #import "MMSetGoalViewController.h"
 #import "MMFindFriendsViewController.h"
 #import "MUser.h"
+#import "MLeaderboardData.h"
 
 @interface MMProfileViewController () {
   MMSettingsViewController *_settingsVC;
   MMLineChart *_lineChart;
+  NSString *_userId;
+  MUser *_userData;
 }
 
 - (void)setupViews;
@@ -30,18 +33,32 @@
 
 @implementation MMProfileViewController
 
+- (id)initWithUserId:(NSString *)userId {
+  if (self = [super init]) {
+    _userId = userId;
+  }
+  
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
   [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
-  [self customTitleWithText:NSLocalizedString(@"Profile", nil) color:[UIColor blackColor]];
   
-  [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Settings", nil)
-                           color:UIColorFromRGB(129, 12, 21)
-                          target:self
-                          action:@selector(gotoSettings)
-                        distance:10];
+  if (_userId == nil)
+    _userId = [MUser currentUser]._id;
+  
+  if ([_userId isEqualToString:[MUser currentUser]._id]) {
+    [self customTitleWithText:NSLocalizedString(@"Profile", nil) color:[UIColor blackColor]];
+    
+    [self customBarButtonWithImage:nil
+                             title:NSLocalizedString(@"Settings", nil)
+                             color:UIColorFromRGB(129, 12, 21)
+                            target:self
+                            action:@selector(gotoSettings)
+                          distance:10];
+  }
   
   [self customBarButtonWithImage:nil
                            title:NSLocalizedString(@"Close", nil)
@@ -66,9 +83,11 @@
 - (void)reloadContents {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] getProfileDetails:^(NSError *error) {
+  [[MMServerHelper sharedHelper] getProfileDetails:nil completion:^(MUser *user, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
+    
+    _userData = user;
     [self updateViews];
   }];
 }
@@ -96,10 +115,10 @@
   if (section == 1)
     return 1;
   
-  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
+  if ([_userData.followings_leaderboard_all_time count] == 0)
     return 1;
   
-  return [[MUser currentUser].followings_leaderboard_all_time count];
+  return [_userData.followings_leaderboard_all_time count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,7 +135,7 @@
   if (indexPath.section == 1)
     return _celGraphChart;
   
-  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
+  if ([_userData.followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards;
   
   MMProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
@@ -125,7 +144,7 @@
   if (cell == nil)
     cell = [MMProfileLeaderboardCell new];
   
-  [cell updateCellWithData:[MUser currentUser].followings_leaderboard_all_time[indexPath.row]];
+  [cell updateCellWithData:_userData.followings_leaderboard_all_time[indexPath.row]];
   
   return cell;
 }
@@ -156,10 +175,17 @@
   if (indexPath.section == 1)
     return _celGraphChart.frame.size.height;
   
-  if ([[MUser currentUser].followings_leaderboard_all_time count] == 0)
+  if ([_userData.followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards.frame.size.height;
   
-  return [MMProfileLeaderboardCell heightToFitWithData:[MUser currentUser].followings_leaderboard_all_time[indexPath.row]];
+  return [MMProfileLeaderboardCell heightToFitWithData:_userData.followings_leaderboard_all_time[indexPath.row]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  MLeaderboardData *following = _userData.followings_leaderboard_all_time[indexPath.row];
+  MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:following.user_id];
+  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:friendProfileVC];
+  [[self mainViewController] presentViewController:navigation animated:YES completion:NULL];
 }
 
 #pragma mark - Private methods
@@ -171,7 +197,7 @@
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
   
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
-  _lblCourseName.text = NSLocalizedString([MUser currentUser].current_course, nil);
+  _lblCourseName.text = NSLocalizedString(_userData.current_course, nil);
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];
@@ -191,12 +217,15 @@
 }
 
 - (void)updateViews {
-  _lblUsername.text = [MUser currentUser].username;
-  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)[MUser currentUser].level];
+  if ([_userData._id isEqualToString:[MUser currentUser]._id])
+    [self customTitleWithText:_userData.username color:[UIColor blackColor]];
   
-  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo days", (long)[MUser currentUser].combo_days]
+  _lblUsername.text = _userData.username;
+  _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
+  
+  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo days", (long)_userData.combo_days]
               forState:UIControlStateNormal];
-  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)[MUser currentUser].virtual_money]
+  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)_userData.virtual_money]
              forState:UIControlStateNormal];
   
   [self addGraphChart];
@@ -207,7 +236,7 @@
   if (_settingsVC == nil)
     _settingsVC = [MMSettingsViewController new];
   
-  _settingsVC.userData = [MUser currentUser];
+  _settingsVC.userData = _userData;
   [self.navigationController pushViewController:_settingsVC animated:YES];
   [_settingsVC reloadContents];
 }
@@ -243,7 +272,7 @@
     _lineChart = nil;    
   }
   
-  _lineChart = [[MUser currentUser] graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
+  _lineChart = [_userData graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
 }

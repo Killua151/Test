@@ -8,6 +8,8 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
+@class MUser;
+
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
 + (instancetype)sharedHelper;
@@ -46,7 +48,7 @@
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
-- (void)getProfileDetails:(void(^)(NSError *error))handler;
+- (void)getProfileDetails:(NSString *)friendId completion:(void(^)(MUser *user, NSError *error))handler;
 - (void)updateProfile:(NSDictionary *)fields completion:(void(^)(NSError *error))handler;
 
 - (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
