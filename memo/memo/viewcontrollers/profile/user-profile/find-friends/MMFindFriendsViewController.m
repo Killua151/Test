@@ -86,7 +86,8 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  [self gestureLayerDidTap];
+  _vGestureLayer.hidden = YES;
+  [textField resignFirstResponder];
   [self searchFriends];
   return YES;
 }
@@ -116,7 +117,7 @@
   [Utils showHUDForView:self.view withText:nil];
   
   [[MMServerHelper sharedHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
-    [Utils showHUDForView:self.view withText:nil];
+    [Utils hideAllHUDsForView:self.view];
     ShowAlertWithError(error);
     
     [_friendsData removeAllObjects];
