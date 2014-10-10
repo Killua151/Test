@@ -175,6 +175,7 @@
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];
+  _btnSwitchCourse.hidden = YES;
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSetGoal setTitle:NSLocalizedString(@"Set goal", nil) forState:UIControlStateNormal];

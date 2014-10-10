@@ -59,10 +59,8 @@ static MUser *_currentUser = nil;
 - (void)setLastReceivedBonuses:(NSDictionary *)lastReceivedBonuses {
   if (lastReceivedBonuses == nil || ![lastReceivedBonuses isKindOfClass:[NSDictionary class]])
     return;
-  
-  if (lastReceivedBonuses[kParamExpChart] != nil &&
-      [lastReceivedBonuses[kParamExpChart] isKindOfClass:[NSDictionary class]])
-    _exp_chart = lastReceivedBonuses[kParamExpChart];
+
+  [self assignProperties:lastReceivedBonuses];
   
   NSMutableDictionary *receivedBonus = [NSMutableDictionary dictionary];
   
@@ -71,12 +69,9 @@ static MUser *_currentUser = nil;
   if (affectedSkill != nil)
     receivedBonus[kParamAffectedSkill] = affectedSkill;
   
-  [lastReceivedBonuses enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-    if ([key isEqualToString:kParamAffectedSkill] || [obj isKindOfClass:[NSNull class]])
-      return;
-    
-    receivedBonus[key] = obj;
-  }];
+  for (NSString *key in @[kParamBonusMoney, kParamFinishExamBonusExp, kParamHeartBonusExp, kParamLeveledUp])
+    if (lastReceivedBonuses[key] != nil && ![lastReceivedBonuses[key] isKindOfClass:[NSNull class]])
+      receivedBonus[key] = lastReceivedBonuses[key];
   
   _lastReceivedBonuses = [NSDictionary dictionaryWithDictionary:receivedBonus];
 }

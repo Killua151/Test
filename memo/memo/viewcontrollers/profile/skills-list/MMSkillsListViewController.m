@@ -73,7 +73,7 @@
   MUser *currentUser = [MUser currentUser];
   
   [self customTitleWithText:NSLocalizedString(currentUser.current_course, nil) color:[UIColor blackColor]];
-  _vBeginningOptions.hidden = _vStrengthenButton.hidden = !currentUser.is_beginner;
+  _vBeginningOptions.hidden = !currentUser.is_beginner;
   
   _skillsData = [currentUser skillsTree];
   [_tblSkills reloadData];
@@ -217,7 +217,8 @@
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
-  [self animateSlideStrengthenButton:NO];
+  if ([MUser currentUser].is_beginner)
+    [self animateSlideStrengthenButton:NO];
 }
 
 - (void)animateSlideStrengthenButton:(BOOL)show {
