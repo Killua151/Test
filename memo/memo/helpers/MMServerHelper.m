@@ -226,21 +226,44 @@
 }
 
 - (void)searchFriends:(NSString *)keywords completion:(void (^)(NSArray *, NSError *))handler {
-  NSMutableArray *friends = [NSMutableArray array];
-  
-  for (NSInteger i = 0; i < 10; i++) {
-    MFriend *friend = [MFriend new];
-    friend.username = [NSString stringWithFormat:@"test_username_%d", i];
-    friend.is_following = i%2;
-    [friends addObject:friend];
-  }
-  
-  handler(friends, nil);
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamKeywords : [NSString normalizedString:keywords]
+                           };
+  [self
+   POST:@"users/search_friends"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSArray *searchResults = [MFriend modelsFromArr:[responseObject objectFromJSONData]];
+     handler(searchResults, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
 }
 
 - (void)interactFriend:(NSString *)friendId toFollow:(BOOL)follow completion:(void (^)(NSError *))handler {
-  DLog(@"%@ %@", friendId, NSStringFromBOOL(follow));
-  handler(nil);
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamFriendId : [NSString normalizedString:friendId]
+                           };
+  NSString *interactAction = follow ? @"follow" : @"unfollow";
+  
+  [self
+   POST:[NSString stringWithFormat:@"users/%@", interactAction]
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *userData = [responseObject objectFromJSONData];
+     [[MUser currentUser] assignProperties:userData];
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
 }
 
 - (void)inviteFriendByEmail:(NSString *)email completion:(void (^)(NSString *, NSError *))handler {

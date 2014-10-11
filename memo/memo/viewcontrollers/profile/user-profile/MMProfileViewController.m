@@ -60,6 +60,10 @@
                             target:self
                             action:@selector(gotoSettings)
                           distance:10];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(reloadContents) name:kNotificationReloadProfile object:nil];
+    
   }
   
   [self customBarButtonWithImage:nil
@@ -108,6 +112,7 @@
       [self toggleFriendInteractionButton];
     
     ShowAlertWithError(error);
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationReloadProfile object:nil];
   }];
 }
 

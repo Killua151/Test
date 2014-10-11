@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   [self setupViews];
   [self reloadContents];
 }
@@ -97,6 +96,19 @@
   MFriend *friend = _friendsData[index];
   friend.is_following = !friend.is_following;
   [_tblFriends reloadData];
+
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] interactFriend:friend.user_id toFollow:follow completion:^(NSError *error) {
+    HideHudForCurrentView();
+    
+    if (error != nil) {
+      friend.is_following = !friend.is_following;
+      [_tblFriends reloadData];
+    }
+    
+    ShowAlertWithError(error);
+  }];
 }
 
 #pragma mark - Private methods
@@ -123,6 +135,8 @@
     [_friendsData removeAllObjects];
     [_friendsData addObjectsFromArray:results];
     [_tblFriends reloadData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationReloadProfile object:nil];
   }];
 }
 

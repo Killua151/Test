@@ -78,8 +78,8 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-//#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
+//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
@@ -143,6 +143,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
+#define kParamKeywords                          @"keywords"
 #define kParamLessonNumber                      @"lesson_number"
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamName                              @"name"
@@ -164,3 +165,5 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
 #define kValueExamTypePlacementTest             @"placement_test"
+
+#define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"
