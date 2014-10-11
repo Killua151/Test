@@ -29,6 +29,7 @@
 - (void)adjustUsername;
 - (void)adjustStreakAndMoneyLabels;
 - (void)addGraphChart;
+- (void)showEmailInviteDialog;
 
 @end
 
@@ -118,7 +119,19 @@
 }
 
 - (IBAction)btnAddFriendPressed:(UIButton *)sender {
-  [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
+  UIActionSheet *actionSheet =
+  [[UIActionSheet alloc]
+   initWithTitle:nil
+   delegate:self
+   cancelButtonTitle:MMLocalizedString(@"Cancel")
+   destructiveButtonTitle:nil
+   otherButtonTitles:
+   MMLocalizedString(@"Find friends"),
+   MMLocalizedString(@"Invite by email"),
+   MMLocalizedString(@"Find Facebook friends"),
+   nil];
+  
+  [actionSheet showInView:[self mainView]];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -212,6 +225,56 @@
   MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:following.user_id];
   UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:friendProfileVC];
   [[self mainViewController] presentViewController:navigation animated:YES completion:NULL];
+}
+
+#pragma mark - UIActionSheetDelegate methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 2)
+    return;
+  
+  if (buttonIndex == 0) {
+    [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
+    return;
+  }
+  
+  if (buttonIndex == 1) {
+    [self showEmailInviteDialog];
+    return;
+  }
+}
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
+  for (UIButton *subview in actionSheet.subviews) {
+    if (![subview isKindOfClass:[UIButton class]])
+      continue;
+    
+    NSString *fontSuffix = subview.tag == 4 ? @"-Bold" : @"";
+    UIFont *font = [UIFont fontWithName:[NSString stringWithFormat:@"ClearSans%@", fontSuffix] size:17];
+    [subview.titleLabel setFont:font];
+    subview.titleLabel.textColor = UIColorFromRGB(51, 51, 51);
+  }
+}
+
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 0)
+    return;
+  
+  UITextField *emailField = [alertView textFieldAtIndex:0];
+  
+  if (![Utils validateEmail:emailField.text]) {
+    [self showEmailInviteDialog];
+    return;
+  }
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [Utils showAlertWithTitle:nil andMessage:MMLocalizedString(message)];
+  }];
 }
 
 #pragma mark - Private methods
@@ -321,6 +384,23 @@
   _lineChart = [_userData graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
+}
+
+- (void)showEmailInviteDialog {
+  UIAlertView *alertView = [[UIAlertView alloc]
+                            initWithTitle:MMLocalizedString(@"Invite by email")
+                            message:MMLocalizedString(@"Enter your friend's email to send them invite")
+                            delegate:self
+                            cancelButtonTitle:MMLocalizedString(@"Cancel")
+                            otherButtonTitles:MMLocalizedString(@"Invite"), nil];
+  
+  alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+  
+  UITextField *emailField = [alertView textFieldAtIndex:0];
+  emailField.keyboardType = UIKeyboardTypeEmailAddress;
+  emailField.placeholder = MMLocalizedString(@"Email");
+  
+  [alertView show];
 }
 
 @end

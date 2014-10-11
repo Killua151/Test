@@ -243,6 +243,10 @@
   handler(nil);
 }
 
+- (void)inviteFriendByEmail:(NSString *)email completion:(void (^)(NSString *, NSError *))handler {
+  handler(@"Invite email sent successfully", nil);
+}
+
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
          completion:(void (^)(NSString *, NSArray *, NSError *))handler {
