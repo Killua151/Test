@@ -11,7 +11,7 @@
 @interface MMFindFriendsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MMFindFriendDelegate> {
   IBOutlet UITableView *_tblFriends;
   IBOutlet UITableViewCell *_celEmpty;
-  IBOutlet UILabel *_lblEmpty;
+  IBOutlet UILabel *_lblEmptySearchResults;
   IBOutlet UITextField *_txtSearchFriends;
   IBOutlet UIButton *_btnClose;
 }

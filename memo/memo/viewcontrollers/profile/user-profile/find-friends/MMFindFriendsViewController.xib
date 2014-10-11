@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="_btnClose" destination="6d4-Vx-8Gg" id="lF0-t2-MeG"/>
                 <outlet property="_celEmpty" destination="qxL-5p-Qz2" id="jXu-af-pv6"/>
-                <outlet property="_lblEmpty" destination="XKO-2U-Xp0" id="ZPa-11-uWd"/>
+                <outlet property="_lblEmptySearchResults" destination="XKO-2U-Xp0" id="ngF-wD-3GU"/>
                 <outlet property="_tblFriends" destination="Aer-PS-Rzx" id="RiB-6z-jD3"/>
                 <outlet property="_txtSearchFriends" destination="ahq-hX-XH3" id="qhK-uY-kny"/>
                 <outlet property="_vGestureLayer" destination="5Ns-Rm-c3N" id="XbD-an-KBI"/>

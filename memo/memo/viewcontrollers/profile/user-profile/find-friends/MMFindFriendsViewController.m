@@ -103,7 +103,7 @@
 - (void)setupViews {
   _txtSearchFriends.font = [UIFont fontWithName:@"ClearSans" size:17];
   _btnClose.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblEmpty.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblEmptySearchResults.font = [UIFont fontWithName:@"ClearSans" size:13];
   _tblFriends.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
   
   if (!DeviceSystemIsOS7()) {

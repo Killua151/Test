@@ -23,6 +23,7 @@
 
 - (void)setupViews;
 - (void)updateViews;
+- (void)toggleFriendInteractionButton;
 - (void)gotoSettings;
 - (void)dismissViewController;
 - (void)adjustUsername;
@@ -39,12 +40,6 @@
   }
   
   return self;
-}
-
-- (IBAction)btnEditAvatarPressed:(UIButton *)sender {
-}
-
-- (IBAction)btnInteractionPressed:(UIButton *)sender {
 }
 
 - (void)viewDidLoad {
@@ -95,6 +90,23 @@
     
     _userData = user;
     [self updateViews];
+  }];
+}
+
+- (IBAction)btnEditAvatarPressed:(UIButton *)sender {
+}
+
+- (IBAction)btnInteractionPressed:(UIButton *)sender {
+  [self toggleFriendInteractionButton];
+  
+  ShowHudForCurrentView();
+  [[MMServerHelper sharedHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
+    HideHudForCurrentView();
+    
+    if (error != nil)
+      [self toggleFriendInteractionButton];
+    
+    ShowAlertWithError(error);
   }];
 }
 
@@ -171,15 +183,20 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  BOOL isFriend = ![_userId isEqualToString:[MUser currentUser]._id];
+  
   if (indexPath.section == 0) {
     if (indexPath.row == 0)
       return _celAvatarNameLevel.frame.size.height;
 
-    return _celStreakMoney.frame.size.height;
+    _celStreakMoney.hidden = isFriend;
+    return isFriend ? 0 : _celStreakMoney.frame.size.height;
   }
   
-  if (indexPath.section == 1)
-    return _celGraphChart.frame.size.height;
+  if (indexPath.section == 1) {
+    CGFloat delta = isFriend ? 20 : 0;
+    return _celGraphChart.frame.size.height - delta;
+  }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards.frame.size.height;
@@ -188,6 +205,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section < 2 || [_userData.followings_leaderboard_all_time count] == 0)
+    return;
+  
   MLeaderboardData *following = _userData.followings_leaderboard_all_time[indexPath.row];
   MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:following.user_id];
   UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:friendProfileVC];
@@ -220,7 +240,7 @@
   _btnAddFriend.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnAddFriend setTitle:NSLocalizedString(@"Add friends", nil) forState:UIControlStateNormal];
   
-  _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:13];
   _lblEmptyLeaderboards.text = NSLocalizedString(@"No leaderboards data", nil);
 }
 
@@ -233,11 +253,8 @@
   if (isFriend) {
     [self customTitleWithText:_userData.username color:[UIColor blackColor]];
     BOOL isFollowing = [[MUser currentUser].following_user_ids containsObject:_userId];
-    NSString *interactionTitle = isFollowing ? @"UNFOLLOW" : @"FOLLOW";
-    [_btnInteraction setTitle:MMLocalizedString(interactionTitle) forState:UIControlStateNormal];
-    
-    [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];
-    _btnInteraction.center = _lblUsername.center;
+    _btnInteraction.selected = !isFollowing;
+    [self toggleFriendInteractionButton];
   } else
     _lblUsername.text = _userData.username;
   
@@ -251,6 +268,14 @@
   
   [self addGraphChart];
   [_tblProfileInfo reloadData];
+}
+
+- (void)toggleFriendInteractionButton {
+  _btnInteraction.selected = !_btnInteraction.selected;
+  NSString *title = _btnInteraction.selected ? @"UNFOLLOW" : @"FOLLOW";
+  [_btnInteraction setTitle:MMLocalizedString(title) forState:UIControlStateNormal];
+  [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];
+  _btnInteraction.center = _lblUsername.center;
 }
 
 - (void)gotoSettings {

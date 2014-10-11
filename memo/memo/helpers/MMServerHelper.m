@@ -239,6 +239,8 @@
 }
 
 - (void)interactFriend:(NSString *)friendId toFollow:(BOOL)follow completion:(void (^)(NSError *))handler {
+  DLog(@"%@ %@", friendId, NSStringFromBOOL(follow));
+  handler(nil);
 }
 
 - (void)startLesson:(NSInteger)lessonNumber
