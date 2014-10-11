@@ -23,10 +23,6 @@
 - (void)setupViews {
   MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
   
-#if kTestTranslateQuestions
-  [Utils showToastWithMessage:questionData.translation];
-#endif
-  
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = NSLocalizedString(@"Translate this sentence:", nil);
   
@@ -62,6 +58,16 @@
   
   if (!DeviceScreenIsRetina4Inch())
     [self animateAnswerFieldSlideUp:NO];
+}
+
+- (IBAction)btnQuestionAudioPressed:(UIButton *)sender {
+  MTranslateQuestion *questionData = (MTranslateQuestion *)self.questionData;
+  
+#if kTestTranslateQuestions
+  [Utils showToastWithMessage:questionData.translation];
+#endif
+  
+  [Utils playAudioWithUrl:questionData.normal_question_audio];
 }
 
 #pragma mark - UITextViewDelegate methods

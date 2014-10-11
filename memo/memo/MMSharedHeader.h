@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class MSkill, MLesson, MMFormAnswerTokenButton;
+@class MSkill, MLesson, MMSortQuestionAnswerTokenButton;
 
 typedef enum FormAnswerTokenStatusEnum {
   FormAnswerTokenAvailable = 0,
@@ -58,7 +58,7 @@ typedef enum ShareOptionEnum {
 
 @optional
 - (void)selectQuestionButtonDidChanged:(BOOL)selected atIndex:(NSInteger)index;
-- (void)formTokenButtonDidSelect:(MMFormAnswerTokenButton *)button;
+- (void)formTokenButtonDidSelect:(MMSortQuestionAnswerTokenButton *)button;
 
 @end
 

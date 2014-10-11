@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "MMFormQuestionContentView.h"
-#import "MMFormAnswerTokenButton.h"
-#import "MFormQuestion.h"
+#import "MMSortQuestionContentView.h"
+#import "MMSortQuestionAnswerTokenButton.h"
+#import "MSortQuestion.h"
 
-@interface MMFormQuestionContentView () {
+@interface MMSortQuestionContentView () {
   NSMutableArray *_btnAnsweredTokens;
   NSMutableArray *_btnAvailableTokens;
 }
@@ -19,7 +19,7 @@
                   withDataSource:(NSArray *)tokensData
                           saveIn:(NSMutableArray *)buttonsArray;
 - (void)animateSortButtons:(NSArray *)buttonsArray inView:(UIView *)parentView;
-- (void)animateMoveButton:(MMFormAnswerTokenButton *)button
+- (void)animateMoveButton:(MMSortQuestionAnswerTokenButton *)button
                  fromView:(UIView *)fromView
                   inArray:(NSMutableArray *)sourceButtons
                    toView:(UIView *)toView
@@ -27,20 +27,20 @@
 
 @end
 
-@implementation MMFormQuestionContentView
+@implementation MMSortQuestionContentView
 
 - (void)setupViews {
-  MFormQuestion *questionData = (MFormQuestion *)self.questionData;
+  MSortQuestion *questionData = (MSortQuestion *)self.questionData;
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = MMLocalizedString(@"Translate this sentence:");
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
-  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnQuestionAudio.frame.size.height];
+  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnAnswerAudio.frame.size.height];
   
   CGPoint center = _lblQuestion.center;
-  center.y = _btnQuestionAudio.center.y + kFontClearSansMarginTop;
+  center.y = _btnAnswerAudio.center.y + kFontClearSansMarginTop;
   _lblQuestion.center = center;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -55,9 +55,9 @@
     frame.origin.y -= DeviceSystemIsOS7() ? 10 : 10;
     _lblQuestionTitle.frame = frame;
     
-    frame = _btnQuestionAudio.frame;
+    frame = _btnAnswerAudio.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
-    _btnQuestionAudio.frame = frame;
+    _btnAnswerAudio.frame = frame;
     
     frame = _lblQuestion.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
@@ -75,22 +75,27 @@
   }
   
   _btnAnsweredTokens = [NSMutableArray new];
-//  [self setupTokenButtonsForView:_vAnsweredTokens withDataSource:@[] saveIn:_btnAnsweredTokens];
   
   NSMutableArray *availableTokens = [NSMutableArray arrayWithArray:questionData.tokens];
   [availableTokens addObjectsFromArray:questionData.wrong_tokens];
   [availableTokens shuffle];
   
-#if kTestTranslateQuestions
-  [Utils showToastWithMessage:[questionData.tokens componentsJoinedByString:@" "]];
-#endif
-  
   _btnAvailableTokens = [NSMutableArray new];
   [self setupTokenButtonsForView:_vAvailableTokens withDataSource:availableTokens saveIn:_btnAvailableTokens];
 }
 
+- (IBAction)btnAnswerAudioPressed:(UIButton *)sender {
+  MSortQuestion *questionData = (MSortQuestion *)self.questionData;
+  
+#if kTestTranslateQuestions
+  [Utils showToastWithMessage:[questionData.tokens componentsJoinedByString:@" "]];
+#endif
+  
+  [Utils playAudioWithUrl:questionData.normal_answer_audio];
+}
+
 #pragma mark - MMQuestionContentDelegate methods
-- (void)formTokenButtonDidSelect:(MMFormAnswerTokenButton *)button {
+- (void)formTokenButtonDidSelect:(MMSortQuestionAnswerTokenButton *)button {
   if (button.status == FormAnswerTokenAvailable)
     [self animateMoveButton:button
                    fromView:_vAvailableTokens
@@ -110,13 +115,13 @@
                   withDataSource:(NSArray *)tokensData
                           saveIn:(NSMutableArray *)buttonsArray {
   for (UIView *subview in parentView.subviews)
-    if ([subview isKindOfClass:[MMFormAnswerTokenButton class]])
+    if ([subview isKindOfClass:[MMSortQuestionAnswerTokenButton class]])
       [subview removeFromSuperview];
   
   [buttonsArray removeAllObjects];
   
   [tokensData enumerateObjectsUsingBlock:^(NSString *token, NSUInteger index, BOOL *stop) {
-    MMFormAnswerTokenButton *button = [[MMFormAnswerTokenButton alloc] initWithToken:token atIndex:index];
+    MMSortQuestionAnswerTokenButton *button = [[MMSortQuestionAnswerTokenButton alloc] initWithToken:token atIndex:index];
     button.delegate = self;
     button.status = parentView == _vAvailableTokens ? FormAnswerTokenAvailable : FormAnswerTokenAnswered;
     
@@ -142,7 +147,7 @@
      CGFloat currentOffsetY = 0;
      CGRect frame = CGRectZero;
      
-     for (MMFormAnswerTokenButton *button in buttonsArray) {
+     for (MMSortQuestionAnswerTokenButton *button in buttonsArray) {
        frame = button.frame;
        
        if (origin.x + currentOffsetX + frame.size.width > parentView.frame.size.width) {
@@ -161,7 +166,7 @@
    }];
 }
 
-- (void)animateMoveButton:(MMFormAnswerTokenButton *)button
+- (void)animateMoveButton:(MMSortQuestionAnswerTokenButton *)button
                  fromView:(UIView *)fromView
                   inArray:(NSMutableArray *)sourceButtons
                    toView:(UIView *)toView
@@ -172,7 +177,7 @@
   CGPoint destButtonOrigin = CGPointMake(0, 3);
   
   if ([destinationButtons count] > 0) {
-    MMFormAnswerTokenButton *lastDestButton = [destinationButtons lastObject];
+    MMSortQuestionAnswerTokenButton *lastDestButton = [destinationButtons lastObject];
     destButtonOrigin.x = lastDestButton.frame.origin.x + lastDestButton.frame.size.width + buttonsGap;
     destButtonOrigin.y = lastDestButton.frame.origin.y;
   }

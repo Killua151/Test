@@ -8,14 +8,16 @@
 
 #import "MMQuestionContentView.h"
 
-@interface MMFormQuestionContentView : MMQuestionContentView <MMQuestionContentDelegate> {
+@interface MMSortQuestionContentView : MMQuestionContentView <MMQuestionContentDelegate> {
   IBOutlet UILabel *_lblQuestionTitle;
-  IBOutlet UIButton *_btnQuestionAudio;
+  IBOutlet UIButton *_btnAnswerAudio;
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIView *_vAnsweredTokens;
   IBOutlet UIImageView *_imgAnswerFieldBg;
   IBOutlet UITextField *_txtAnswerPlaceholder;
   IBOutlet UIView *_vAvailableTokens;
 }
+
+- (IBAction)btnAnswerAudioPressed:(UIButton *)sender;
 
 @end

@@ -9,6 +9,7 @@
 #import "MBaseQuestion.h"
 #import "MListenQuestion.h"
 #import "MTranslateQuestion.h"
+#import "MSortQuestion.h"
 
 @interface MBaseQuestion ()
 
@@ -58,6 +59,10 @@
     if ([question isKindOfClass:[MTranslateQuestion class]])
       if ([(MTranslateQuestion *)question normal_question_audio] != nil)
         [audioUrls addObject:[(MTranslateQuestion *)question normal_question_audio]];
+    
+    if ([question isKindOfClass:[MSortQuestion class]])
+      if ([(MSortQuestion *)question normal_answer_audio] != nil)
+        [audioUrls addObject:[(MSortQuestion *)question normal_answer_audio]];
   }
   
   return audioUrls;
@@ -73,9 +78,9 @@
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
-  if (![type isEqualToString:@"select"])
-    return nil;
-  
+//  if (![type isEqualToString:@"select"])
+//    return nil;
+//  
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);
 }
 

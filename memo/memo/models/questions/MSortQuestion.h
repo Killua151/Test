@@ -8,9 +8,10 @@
 
 #import "MBaseQuestion.h"
 
-@interface MFormQuestion : MBaseQuestion
+@interface MSortQuestion : MBaseQuestion
 
 @property (nonatomic, strong) NSArray *tokens;
 @property (nonatomic, strong) NSArray *wrong_tokens;
+@property (nonatomic, strong) NSString *normal_answer_audio;
 
 @end

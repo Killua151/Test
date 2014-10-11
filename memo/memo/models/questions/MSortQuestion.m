@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "MFormQuestion.h"
+#import "MSortQuestion.h"
 
-@implementation MFormQuestion
+@implementation MSortQuestion
 
 - (id)checkAnswer:(NSArray *)answerValue {
   NSString *correctAnswer = [_tokens componentsJoinedByString:@" "];

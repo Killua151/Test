@@ -10,7 +10,7 @@
 #import "MMFailLessonViewController.h"
 #import "MMFinishLessonViewController.h"
 
-#import "MMFormQuestionContentView.h"
+#import "MMSortQuestionContentView.h"
 #import "MMJudgeQuestionContentView.h"
 #import "MMListenQuestionContentView.h"
 #import "MMNameQuestionContentView.h"

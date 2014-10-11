@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MMFormQuestionContentView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MMSortQuestionContentView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -18,13 +18,16 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lKL-Qw-Tvx">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lKL-Qw-Tvx">
                     <rect key="frame" x="15" y="60" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     <state key="normal" backgroundImage="btn-lessons_learning-audio-normal.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnAnswerAudioPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zyM-PT-OJW"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a woman" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="gI5-2l-4Ev">
                     <rect key="frame" x="69" y="60" width="220" height="44"/>
@@ -61,7 +64,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="_btnQuestionAudio" destination="lKL-Qw-Tvx" id="0cO-5e-bY2"/>
+                <outlet property="_btnAnswerAudio" destination="lKL-Qw-Tvx" id="80d-k9-y5V"/>
                 <outlet property="_imgAnswerFieldBg" destination="Smw-RJ-cWU" id="kMZ-jl-iNl"/>
                 <outlet property="_lblQuestion" destination="gI5-2l-4Ev" id="weR-jR-ego"/>
                 <outlet property="_lblQuestionTitle" destination="4Xg-Cf-Bbz" id="Nrv-z6-Hy2"/>

@@ -18,4 +18,6 @@
   IBOutlet UITextView *_txtAnswerField;
 }
 
+- (IBAction)btnQuestionAudioPressed:(UIButton *)sender;
+
 @end

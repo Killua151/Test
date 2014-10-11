@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMFormAnswerTokenButton : UIView {
+@interface MMSortQuestionAnswerTokenButton : UIView {
   IBOutlet UIImageView *_imgBg;
   IBOutlet UIButton *_btnToken;
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "MMFormAnswerTokenButton.h"
+#import "MMSortQuestionAnswerTokenButton.h"
 
-@interface MMFormAnswerTokenButton () {
+@interface MMSortQuestionAnswerTokenButton () {
   NSInteger _index;
 }
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MMFormAnswerTokenButton
+@implementation MMSortQuestionAnswerTokenButton
 
 - (id)initWithToken:(NSString *)token atIndex:(NSInteger)index {
   if (self = [super init]) {
