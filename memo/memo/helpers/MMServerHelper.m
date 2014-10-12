@@ -284,6 +284,9 @@
 }
 
 - (void)startShortcutTest:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  handler(nil, nil, [NSError errorWithDomain:@"Chức năng chưa hoạt động" code:-1 userInfo:nil]);
+  return;
+  
   NSDictionary *params = @{
                            kParamType : kValueExamTypeShortcut,
                            kParamSkillId : [NSString normalizedString:skillId],
@@ -295,6 +298,9 @@
 
 - (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
                            completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  handler(nil, nil, [NSError errorWithDomain:@"Chức năng chưa hoạt động" code:-1 userInfo:nil]);
+  return;
+  
   NSDictionary *params = @{
                            kParamType : kValueExamTypeCheckpoint,
                            kParamCheckpointPosition : @(checkpointPosition),
@@ -305,6 +311,9 @@
 }
 
 - (void)startStrengthenSkill:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  handler(nil, nil, [NSError errorWithDomain:@"Chức năng chưa hoạt động" code:-1 userInfo:nil]);
+  return;
+  
   NSDictionary *params = @{
                            kParamType : kValueExamTypeStrengthenSkill,
                            kParamSkillId : [NSString normalizedString:skillId],
@@ -315,6 +324,9 @@
 }
 
 - (void)startStrengthenAll:(void (^)(NSString *, NSArray *, NSError *))handler {
+  handler(nil, nil, [NSError errorWithDomain:@"Chức năng chưa hoạt động" code:-1 userInfo:nil]);
+  return;
+  
   NSDictionary *params = @{
                            kParamType : kValueExamTypeStrengthenAll,
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
@@ -324,6 +336,9 @@
 }
 
 - (void)startPlacementTest:(void (^)(NSString *, NSArray *, NSError *))handler {
+  handler(nil, nil, [NSError errorWithDomain:@"Chức năng chưa hoạt động" code:-1 userInfo:nil]);
+  return;
+  
   NSDictionary *params = @{
                            kParamType : kValueExamTypePlacementTest,
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
