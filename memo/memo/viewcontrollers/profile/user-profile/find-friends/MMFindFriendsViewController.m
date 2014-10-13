@@ -105,7 +105,8 @@
     if (error != nil) {
       friend.is_following = !friend.is_following;
       [_tblFriends reloadData];
-    }
+    } else
+      [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationReloadProfile object:nil];
     
     ShowAlertWithError(error);
   }];
@@ -135,8 +136,6 @@
     [_friendsData removeAllObjects];
     [_friendsData addObjectsFromArray:results];
     [_tblFriends reloadData];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationReloadProfile object:nil];
   }];
 }
 
