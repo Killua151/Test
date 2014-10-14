@@ -17,23 +17,11 @@ typedef void(^SocialLogInCallback)(NSDictionary *userData, NSError *error);
 typedef void(^SocialLogOutCallback)(NSError *error);
 typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSError *error);
 
-+ (UIAlertView *)showAlertWithError:(NSError *)error;
-+ (UIAlertView *)showAlertWithError:(NSError *)error delegate:(id)delegate;
-+ (UIAlertView *)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
-+ (UIAlertView *)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id)delegate;
-
 + (void)showToastWithMessage:(NSString *)toastMessage;
 + (void)showToastWithError:(NSError *)error;
 
-+ (NSString *)errorMessageFromError:(NSError *)error;
-+ (NSInteger)errorCodeFromError:(NSError *)error;
-
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text;
 + (void)hideAllHUDsForView:(UIView *)view;
-
-+ (BOOL)validateEmail:(NSString *)email;
-+ (BOOL)validateAlphaNumeric:(NSString *)password;
-+ (BOOL)validateBlank:(NSString *)string;
 
 + (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth;
 

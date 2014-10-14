@@ -39,35 +39,6 @@ static UIView *_sharedToast = nil;
 
 @implementation Utils
 
-+ (UIAlertView *)showAlertWithError:(NSError *)error {
-  return [[self class] showAlertWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
-                                           [Utils errorCodeFromError:error]]
-                               andMessage:[Utils errorMessageFromError:error]
-                                 delegate:nil];
-}
-
-+ (UIAlertView *)showAlertWithError:(NSError *)error delegate:(id)delegate {
-  return [[self class] showAlertWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil),
-                                           [Utils errorCodeFromError:error]]
-                               andMessage:[Utils errorMessageFromError:error]
-                                 delegate:delegate];
-}
-
-+ (UIAlertView *)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
-  return [[self class] showAlertWithTitle:title andMessage:message delegate:nil];
-}
-
-+ (UIAlertView *)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id)delegate {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                      message:message
-                                                     delegate:delegate
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  
-  return alertView;
-}
-
 + (void)showToastWithMessage:(NSString *)toastMessage {
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
   
@@ -84,42 +55,6 @@ static UIView *_sharedToast = nil;
   [Utils showToastWithMessage:[error description]];
 }
 
-+ (NSString *)errorMessageFromError:(NSError *)error {
-  if (error == nil || ![error isKindOfClass:[NSError class]])
-    return NSLocalizedString(@"Unknown error!", nil);
-  
-  if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
-      error.userInfo[kServerResponseDataKey] == nil || error.userInfo[kServerResponseDataKey] == NULL ||
-      [error.userInfo[kServerResponseDataKey] isEqualToData:[NSData data]])     // Empty data
-    return [error localizedDescription];
-
-  NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
-  
-  if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
-      errorDict[kParamError] == nil || ![errorDict[kParamError] isKindOfClass:[NSString class]])
-    return [error localizedDescription];
-  
-  return NSLocalizedString(errorDict[kParamError], nil);
-}
-
-+ (NSInteger)errorCodeFromError:(NSError *)error {
-  if (error == nil || ![error isKindOfClass:[NSError class]])
-    return -1;
-  
-  if (error.userInfo == nil || ![error.userInfo isKindOfClass:[NSDictionary class]] ||
-      error.userInfo[kServerResponseDataKey] == nil || error.userInfo[kServerResponseDataKey] == NULL ||
-      [error.userInfo[kServerResponseDataKey] isEqualToData:[NSData data]])     // Empty data
-    return [error code];
-  
-  NSDictionary *errorDict = [error.userInfo[kServerResponseDataKey] objectFromJSONData];
-  
-  if (errorDict == nil || ![errorDict isKindOfClass:[NSDictionary class]] ||
-      errorDict[kParamResponseCode] == nil || ![errorDict[kParamResponseCode] isKindOfClass:[NSNumber class]])
-    return [error code];
-  
-  return [errorDict[kParamResponseCode] integerValue];
-}
-
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text {
   MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
   hud.dimBackground = YES;
@@ -129,33 +64,6 @@ static UIView *_sharedToast = nil;
 
 + (void)hideAllHUDsForView:(UIView *)view {
   [MBProgressHUD hideAllHUDsForView:view animated:YES];
-}
-
-+ (BOOL)validateEmail:(NSString *)email {
-  BOOL stricterFilter = YES;
-  
-  NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
-  NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
-  NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-  
-  return [predicate evaluateWithObject:email];
-}
-
-+ (BOOL)validateAlphaNumeric:(NSString *)password {
-  NSString *myRegex = @"[A-Z0-9a-z_]*";
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", myRegex];
-  return [predicate evaluateWithObject:password];
-}
-
-+ (BOOL)validateBlank:(NSString *)string {
-  if (string == nil || ![string isKindOfClass:[NSString class]])
-    return NO;
-  
-  NSString *filtedString = [string stringByReplacingOccurrencesOfString:@" " withString:@""];
-  filtedString = [filtedString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-  
-  return ![filtedString isEqualToString:@""];
 }
 
 + (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth {

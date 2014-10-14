@@ -467,7 +467,7 @@
     MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     [MUser logOutCurrentUser];
     [appDelegate setupRootViewController];
-    [Utils showAlertWithError:error];
+    [UIAlertView showWithError:error];
     return;
   }
   

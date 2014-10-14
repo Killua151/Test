@@ -161,19 +161,19 @@
 }
 
 - (BOOL)validateFields {
-  if (![Utils validateBlank:_txtUsername.text]) {
+  if (![_txtUsername.text validateBlank]) {
     [_txtUsername becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your username", nil)];
     return NO;
   }
   
-  if (![Utils validateAlphaNumeric:_txtUsername.text]) {
+  if (![_txtUsername.text validateAlphaNumeric]) {
     [_txtUsername becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Username must contain alphanumeric only", nil)];
     return NO;
   }
   
-  if (![Utils validateBlank:_txtPassword.text]) {
+  if (![_txtPassword.text validateBlank]) {
     [_txtPassword becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password", nil)];
     return NO;

@@ -267,7 +267,7 @@
   
   UITextField *emailField = [alertView textFieldAtIndex:0];
   
-  if (![Utils validateEmail:emailField.text]) {
+  if (![emailField.text validateEmail]) {
     [self showEmailInviteDialog];
     return;
   }
@@ -277,8 +277,7 @@
   [[MMServerHelper sharedHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
-    
-    [Utils showAlertWithTitle:nil andMessage:MMLocalizedString(message)];
+    [UIAlertView showWithTitle:nil andMessage:MMLocalizedString(message)];
   }];
 }
 

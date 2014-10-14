@@ -330,12 +330,12 @@
 }
 
 - (void)handleLoadingError:(NSError *)error {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"),
-                                                               [Utils errorCodeFromError:error]]
-                                                      message:[Utils errorMessageFromError:error]
-                                                     delegate:self
-                                            cancelButtonTitle:MMLocalizedString(@"Quit")
-                                            otherButtonTitles:MMLocalizedString(@"Retry"), nil];
+  UIAlertView *alertView = [[UIAlertView alloc]
+                            initWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
+                            message:[error errorMessage]
+                            delegate:self
+                            cancelButtonTitle:MMLocalizedString(@"Quit")
+                            otherButtonTitles:MMLocalizedString(@"Retry"), nil];
   
   [alertView show];
 }

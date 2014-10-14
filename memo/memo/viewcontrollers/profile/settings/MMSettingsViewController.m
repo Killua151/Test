@@ -296,11 +296,11 @@
     BOOL validField = YES;
     
     if ([textFieldType isEqualToString:kParamUsername])
-      validField = [Utils validateBlank:originalTextField.text];
+      validField = [originalTextField.text validateBlank];
     else if ([textFieldType isEqualToString:kParamPassword])
-      validField = [Utils validateBlank:originalTextField.text] && originalTextField.text.length >= 8;
+      validField = [originalTextField.text validateBlank] && originalTextField.text.length >= 8;
     else if ([textFieldType isEqualToString:kParamEmail])
-      validField = [Utils validateEmail:originalTextField.text];
+      validField = [originalTextField.text validateEmail];
     
     if ([originalTextField.text isEqualToString:alertTextField.text] && validField) {
       _userInfo[textFieldType] = originalTextField.text;

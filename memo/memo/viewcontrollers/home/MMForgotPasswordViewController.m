@@ -72,13 +72,13 @@
 }
 
 - (BOOL)validateFields {
-  if (![Utils validateBlank:_txtEmail.text]) {
+  if (![_txtEmail.text validateBlank]) {
     [_txtEmail becomeFirstResponder];
     [Utils showToastWithMessage:MMLocalizedString(@"Please enter your email")];
     return NO;
   }
   
-  if (![Utils validateEmail:_txtEmail.text]) {
+  if (![_txtEmail.text validateEmail]) {
     [_txtEmail becomeFirstResponder];
     [Utils showToastWithMessage:MMLocalizedString(@"Invalid email")];
     return NO;

@@ -22,10 +22,12 @@
   #import <SDWebImage/UIImageView+WebCache.h>
 
   #import "NSArray+ArrayHelpers.h"
+  #import "NSError+ErrorHelpers.h"
   #import "NSMutableArray+MutableArrayHelpers.h"
   #import "NSObject+ObjectMapping.h"
   #import "NSString+CompactTranslation.h"
   #import "NSString+StringHelpers.h"
+  #import "UIAlertView+AlertHelpers.h"
   #import "UIColor+ColorHelpers.h"
   #import "UIDevice+DeviceHelpers.h"
   #import "UIImage+ImageHelpers.h"
@@ -55,7 +57,7 @@ self = nib[0]; }
 if (kTestPassAllAPIs) \
 DLog("%@", (error)); \
 else if ((error) != nil) {\
-[Utils showAlertWithError:(error)];\
+[UIAlertView showWithError:(error)];\
 return;\
 }
 

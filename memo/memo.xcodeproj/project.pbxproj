@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		92F7FF9E436F43B5BEDCCED0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2B8D9B1D0490BA0D689EC /* libPods.a */; };
 		CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
+		CA452E3719ED592D00A5F5CB /* UIAlertView+AlertHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */; };
+		CA452E3A19ED595200A5F5CB /* NSError+ErrorHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */; };
+		CA452E3B19ED598E00A5F5CB /* NSError+ErrorHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */; };
+		CA452E3C19ED599900A5F5CB /* UIAlertView+AlertHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
@@ -1561,6 +1565,10 @@
 /* Begin PBXFileReference section */
 		0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA452E3519ED592D00A5F5CB /* UIAlertView+AlertHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AlertHelpers.h"; sourceTree = "<group>"; };
+		CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AlertHelpers.m"; sourceTree = "<group>"; };
+		CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ErrorHelpers.h"; sourceTree = "<group>"; };
+		CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+ErrorHelpers.m"; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2586,6 +2594,8 @@
 				CAF8502119E0F3D100A347CF /* NSString+CompactTranslation.m */,
 				CAF8502219E0F3D100A347CF /* NSString+StringHelpers.h */,
 				CAF8502319E0F3D100A347CF /* NSString+StringHelpers.m */,
+				CA452E3519ED592D00A5F5CB /* UIAlertView+AlertHelpers.h */,
+				CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */,
 				CAF8502419E0F3D100A347CF /* UIColor+ColorHelpers.h */,
 				CAF8502519E0F3D100A347CF /* UIColor+ColorHelpers.m */,
 				CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */,
@@ -2598,6 +2608,8 @@
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
+				CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */,
+				CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -5473,6 +5485,7 @@
 				CAF852DD19E0F3D200A347CF /* MUser.m in Sources */,
 				CAF854C219E0F3D200A347CF /* MMCheckpointTestCell.m in Sources */,
 				CAF854BA19E0F3D200A347CF /* MMShopItemCell.m in Sources */,
+				CA452E3719ED592D00A5F5CB /* UIAlertView+AlertHelpers.m in Sources */,
 				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
 				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,
@@ -5480,6 +5493,7 @@
 				CAF852C419E0F3D200A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF852DF19E0F3D200A347CF /* MSortQuestion.m in Sources */,
 				CAF8548A19E0F3D200A347CF /* MMFinishSkillViewController.m in Sources */,
+				CA452E3A19ED595200A5F5CB /* NSError+ErrorHelpers.m in Sources */,
 				CAF852D019E0F3D200A347CF /* DiffMatchPatchCFUtilities.c in Sources */,
 				CAF8549819E0F3D200A347CF /* MMQuestionContentView.m in Sources */,
 				CAF854AE19E0F3D200A347CF /* MMShieldLessonCell.m in Sources */,
@@ -5506,6 +5520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA452E3C19ED599900A5F5CB /* UIAlertView+AlertHelpers.m in Sources */,
+				CA452E3B19ED598E00A5F5CB /* NSError+ErrorHelpers.m in Sources */,
 				CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */,
 				CAF856B119E0FDF600A347CF /* MMSettingsHeaderView.m in Sources */,
 				CAF856B219E0FDF600A347CF /* NSMutableDictionary+DMPExtensions.m in Sources */,

@@ -34,6 +34,31 @@
   return string == nil || ![string isKindOfClass:[NSString class]] ? placeholder : string;
 }
 
+- (BOOL)validateEmail {
+  BOOL stricterFilter = YES;
+  
+  NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+  NSString *laxString = @".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+  NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+  
+  return [predicate evaluateWithObject:self];
+}
+
+- (BOOL)validateAlphaNumeric {
+  NSString *myRegex = @"[A-Z0-9a-z_]*";
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", myRegex];
+  
+  return [predicate evaluateWithObject:self];
+}
+
+- (BOOL)validateBlank {
+  NSString *filtedString = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+  filtedString = [filtedString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+  
+  return ![filtedString isEqualToString:@""];
+}
+
 - (NSString *)asciiNormalizedString {
   NSString *stringToNormalize = [[self class] normalizedString:self];
   

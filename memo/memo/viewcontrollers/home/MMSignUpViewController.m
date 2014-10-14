@@ -134,37 +134,31 @@
 }
 
 - (BOOL)validateFields {
-//  if (![Utils validateBlank:_txtFullName.text]) {
-//    [_txtFullName becomeFirstResponder];
-//    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your full name", nil)];
-//    return NO;
-//  }
-  
-  if (![Utils validateBlank:_txtEmail.text]) {
+  if (![_txtEmail.text validateBlank]) {
     [_txtEmail becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your email", nil)];
     return NO;
   }
   
-  if (![Utils validateEmail:_txtEmail.text]) {
+  if (![_txtEmail.text validateEmail]) {
     [_txtEmail becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Invalid email", nil)];
     return NO;
   }
   
-  if (![Utils validateBlank:_txtUsername.text]) {
+  if (![_txtUsername.text validateBlank]) {
     [_txtUsername becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your username", nil)];
     return NO;
   }
   
-  if (![Utils validateBlank:_txtPassword.text]) {
+  if (![_txtPassword.text validateBlank]) {
     [_txtPassword becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password", nil)];
     return NO;
   }
   
-  if (![Utils validateBlank:_txtConfirmPassword.text]) {
+  if (![_txtConfirmPassword.text validateBlank]) {
     [_txtConfirmPassword becomeFirstResponder];
     [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password again", nil)];
     return NO;

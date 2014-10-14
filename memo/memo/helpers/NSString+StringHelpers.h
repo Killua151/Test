@@ -15,6 +15,10 @@
 + (NSString *)normalizedString:(NSString *)string;
 + (NSString *)normalizedString:(NSString *)string withPlaceholder:(NSString *)placeholder;
 
+- (BOOL)validateEmail;
+- (BOOL)validateAlphaNumeric;
+- (BOOL)validateBlank;
+
 - (NSString *)asciiNormalizedString;
 - (NSString *)stringByRemovingAllNonLetterCharacters;
 - (NSArray *)componentsSeperatedByNonLetterCharacters;
