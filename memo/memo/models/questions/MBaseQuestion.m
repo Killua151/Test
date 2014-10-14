@@ -19,6 +19,14 @@
 
 @implementation MBaseQuestion
 
++ (instancetype)modelFromDict:(NSDictionary *)modelDict {
+  if (modelDict == nil || ![modelDict isKindOfClass:[NSDictionary class]])
+    return nil;
+  
+  Class questionKlass = [[self class] questionKlassByType:modelDict[kParamType]];
+  return [[questionKlass modelMappingParser] parseDictionary:modelDict];
+}
+
 + (NSArray *)modelsFromArr:(NSArray *)modelsArr {
   if (modelsArr == nil || ![modelsArr isKindOfClass:[NSArray class]])
     return nil;

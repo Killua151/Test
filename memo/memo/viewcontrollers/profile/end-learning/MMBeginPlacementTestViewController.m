@@ -7,7 +7,7 @@
 //
 
 #import "MMBeginPlacementTestViewController.h"
-#import "MMExamViewController.h"
+#import "MMPlacementTestViewController.h"
 
 @interface MMBeginPlacementTestViewController ()
 
@@ -61,20 +61,19 @@
 - (IBAction)btnStartPressed:(UIButton *)sender {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
-   startStrengthenAll:^(NSString *examToken, NSArray *questions, NSError *error) {
-     HideHudForCurrentView();
-     ShowAlertWithError(error);
-     
-     MMExamViewController *examVC =
-     [[MMExamViewController alloc] initWithQuestions:questions
-                                         andMetadata:@{
-                                                       kParamType : kValueExamTypePlacementTest,
-                                                       kParamExamToken : [NSString normalizedString:examToken]
-                                                       }];
-     
-     [self presentViewController:examVC animated:YES completion:NULL];
-   }];
+  [[MMServerHelper sharedHelper] startPlacementTest:^(NSString *examToken, MBaseQuestion *question, NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    MMPlacementTestViewController *placementTestVC =
+    [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
+                                                 andMetadata:@{
+                                                               kParamType : kValueExamTypePlacementTest,
+                                                               kParamExamToken : [NSString normalizedString:examToken]
+                                                               }];
+    
+    [self presentViewController:placementTestVC animated:YES completion:NULL];
+  }];
 }
 
 - (IBAction)btnBackPressed:(UIButton *)sender {

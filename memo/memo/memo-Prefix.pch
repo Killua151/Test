@@ -127,6 +127,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
+#define kParamAnswer                            @"answer"
 #define kParamAnswers                           @"answers"
 #define kParamAnswerResult                      @"answer_result"
 #define kParamAuthToken                         @"auth_token"
@@ -153,6 +154,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamName                              @"name"
 #define kParamQuestionId                        @"question_id"
+#define kParamQuestion                          @"question"
 #define kParamQuestions                         @"questions"
 #define kParamPassword                          @"password"
 #define kParamResponseCode                      @"response_code"

@@ -182,6 +182,11 @@
 }
 
 - (void)setupHeaderViews {
+  if (![self isMemberOfClass:[MMExamViewController class]]) {
+    _vHeader.hidden = YES;
+    return;
+  }
+  
   _lblLessonsCount.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
@@ -363,15 +368,6 @@
 }
 
 - (void)prepareNextQuestion {
-//  NSArray *klasses = @[
-//                       [FTFormQuestionContentView class],
-//                       [FTJudgeQuestionContentView class],
-//                       [FTListenQuestionContentView class],
-//                       [FTNameQuestionContentView class],
-//                       [FTSelectQuestionContentView class],
-//                       [FTSpeakQuestionContentView class],
-//                       [FTTranslateQuestionContentView class]
-//                       ];
   MBaseQuestion *question = _questionsData[_currentLessonIndex];
   Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
   _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];

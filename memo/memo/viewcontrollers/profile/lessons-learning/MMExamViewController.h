@@ -9,12 +9,14 @@
 #import "BaseViewController.h"
 
 @interface MMExamViewController : BaseViewController <UIAlertViewDelegate, MMLessonLearningDelegate, UIGestureRecognizerDelegate> {
+  IBOutlet UIView *_vHeader;
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
   IBOutlet UIButton *_btnHeartPotion;
   IBOutlet UIImageView *_imgAntProgressIndicator;
   IBOutletCollection(UIButton) NSArray *_btnProgressSegments;
+  
   IBOutlet UIView *_vContentView;
   IBOutlet UIButton *_btnCheck;
   
@@ -36,5 +38,7 @@
 - (IBAction)btnHeartPotionPressed:(UIButton *)sender;
 - (IBAction)btnCheckPressed:(UIButton *)sender;
 - (void)questionContentViewGestureLayerDidTap;
+
+
 
 @end

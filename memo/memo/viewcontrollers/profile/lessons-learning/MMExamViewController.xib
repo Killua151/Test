@@ -19,6 +19,7 @@
                 <outlet property="_lblResultIncorrectMessage" destination="nA6-AS-4si" id="bNS-tQ-Wq8"/>
                 <outlet property="_vContentView" destination="ydR-Mh-Yaw" id="Tgm-Er-YL0"/>
                 <outlet property="_vGestureLayer" destination="aHI-dd-Pjg" id="hId-P3-C12"/>
+                <outlet property="_vHeader" destination="iT9-J3-pRv" id="2lo-bB-QEg"/>
                 <outlet property="_vHearts" destination="8WK-52-W9L" id="amh-hE-Unj"/>
                 <outlet property="_vResultCorrect" destination="PRu-ea-9nh" id="nGa-uB-0tz"/>
                 <outlet property="_vResultCorrectBg" destination="wRO-Tf-iCz" id="Pkk-CE-J6c"/>

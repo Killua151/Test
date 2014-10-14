@@ -8,7 +8,7 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
-@class MUser;
+@class MUser, MBaseQuestion;
 
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
@@ -71,11 +71,17 @@
 
 - (void)startStrengthenAll:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
 
-- (void)startPlacementTest:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
-
 - (void)finishExamWithMetadata:(NSDictionary *)metadata
                     andResults:(NSDictionary *)answerResults
                     completion:(void(^)(NSError *error))handler;
+
+- (void)startPlacementTest:(void(^)(NSString *examToken, MBaseQuestion *question, NSError *error))handler;
+- (void)submitPlacementTestAnswer:(NSDictionary *)answerResult
+                     withMetadata:(NSDictionary *)metadata
+                       completion:(void(^)(NSString *examToken,
+                                           MBaseQuestion *question,
+                                           BOOL isFinished,
+                                           NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 
