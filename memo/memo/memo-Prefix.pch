@@ -29,6 +29,7 @@
   #import "UIColor+ColorHelpers.h"
   #import "UIDevice+DeviceHelpers.h"
   #import "UIImage+ImageHelpers.h"
+  #import "UILabel+LabelHelpers.h"
   #import "UIView+ExtendedToast.h"
 
   #import "MMAllowsTouchOutsideView.h"
@@ -125,10 +126,12 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
 #define kParamAnswers                           @"answers"
+#define kParamAnswerResult                      @"answer_result"
 #define kParamAuthToken                         @"auth_token"
 #define kParamBonusMoney                        @"bonus_money"
 #define kParamCheckpointPosition                @"checkpoint_position"
 #define kParamCheckpointPositions               @"checkpoint_positions"
+#define kParamCorrectAnswer                     @"correct_answer"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
 #define kParamExamToken                         @"exam_token"
@@ -156,6 +159,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamSkills                            @"skills"
 #define kParamSkillsTree                        @"skills_tree"
 #define kParamType                              @"type"
+#define kParamUnderlineRange                    @"underline_range"
 #define kParamUserInfo                          @"user_info"
 #define kParamUsername                          @"username"
 

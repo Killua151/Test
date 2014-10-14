@@ -46,25 +46,30 @@
 }
 
 - (NSString *)stringByRemovingAllNonLetterCharacters {
+  NSArray *components = [[self lowercaseString] componentsSeperatedByNonLetterCharacters];
+  return [components componentsJoinedByString:@" "];
+}
+
+- (NSArray *)componentsSeperatedByNonLetterCharacters {
   NSString *resultString = [self lowercaseString];
   NSMutableArray *components = [NSMutableArray arrayWithArray:[resultString componentsSeparatedByCharactersInSet:
                                                                [[NSCharacterSet letterCharacterSet] invertedSet]]];
   
   [components removeObject:@""];
-  resultString = [components componentsJoinedByString:@" "];
-  
-  return resultString;
+  return components;
 }
 
 - (NSString *)stringByRemovingAllNonDigitCharacters {
-  NSString *resultString = [self lowercaseString];
-  NSMutableArray *components = [NSMutableArray arrayWithArray:[resultString componentsSeparatedByCharactersInSet:
+  NSArray *components = [[self lowercaseString] componentsSeperatedByNonDigitCharacters];
+  return [components componentsJoinedByString:@" "];
+}
+
+- (NSArray *)componentsSeperatedByNonDigitCharacters {
+  NSMutableArray *components = [NSMutableArray arrayWithArray:[self componentsSeparatedByCharactersInSet:
                                                                [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]];
   
   [components removeObject:@""];
-  resultString = [components componentsJoinedByString:@" "];
-  
-  return resultString;
+  return components;
 }
 
 - (NSString *)localizedStringForLanguage:(NSString *)language {
@@ -85,13 +90,26 @@
 }
 
 - (BOOL)isAcceptedSimilarToString:(NSString *)otherString {
-  DiffMatchPatch *dfp = [DiffMatchPatch new];
+  NSArray *selfComponents = [self componentsSeperatedByNonLetterCharacters];
+  NSArray *otherComponents = [otherString componentsSeperatedByNonLetterCharacters];
   
-  NSArray *diffs = [dfp diff_mainOfOldString:otherString andNewString:self];
+  if ([selfComponents count] != [otherComponents count])
+    return NO;
   
-  for (Diff *diff in diffs) {
-    if (diff.operation == DIFF_DELETE)
-      return YES;
+  DiffMatchPatch *dmp = [DiffMatchPatch new];
+  
+  [selfComponents enumerateObjectsUsingBlock:^(NSString *selfComponent, NSUInteger index, BOOL *stop) {
+    NSArray *diffs = [dmp diff_mainOfOldString:otherComponents[index] andNewString:selfComponent];
+    
+    if ([diffs count] == 1 && [diffs[0] operation] == DIFF_EQUAL)
+      return;
+    
+    for (Diff *diff in diffs) {
+      DLog(@"%d %@", diff.operation, diff.text);
+    }
+  }];
+  
+  for (NSInteger i = 0; i < [selfComponents count]; i++) {
   }
   
   return YES;

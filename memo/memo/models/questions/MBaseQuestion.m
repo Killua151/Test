@@ -69,15 +69,16 @@
 }
 
 // Check if answer value is correct
-// If nil: answer is correct
-// Else: returned value is correct answer
-- (id)checkAnswer:(id)answerValue {
+- (NSDictionary *)checkAnswer:(id)answerValue {
   // Implement in child class
   return nil;
 }
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
+  if (![type isEqualToString:@"translate"])
+    return nil;
+  
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);
 }
 

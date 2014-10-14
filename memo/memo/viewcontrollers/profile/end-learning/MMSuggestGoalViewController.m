@@ -42,11 +42,11 @@
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblMessage.text = NSLocalizedString(@"Let's get started!", nil);
-  [Utils adjustLabelToFitHeight:_lblMessage];
+  [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
-  [Utils adjustLabelToFitHeight:_lblSubMessage];
+  [_lblSubMessage adjustToFitHeight];
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSetGoal.layer.cornerRadius = 4;

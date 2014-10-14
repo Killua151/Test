@@ -20,7 +20,7 @@
 
 - (void)updateCellWithData:(NSString *)data {
   _lblItemGroupsName.text = data;
-  [Utils adjustLabelToFitHeight:_lblItemGroupsName];
+  [_lblItemGroupsName adjustToFitHeight];
 }
 
 - (CGFloat)heightToFit {

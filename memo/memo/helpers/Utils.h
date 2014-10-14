@@ -35,20 +35,8 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (BOOL)validateAlphaNumeric:(NSString *)password;
 + (BOOL)validateBlank:(NSString *)string;
 
-+ (void)adjustLabelToFitHeight:(UILabel *)label;
-+ (void)adjustLabelToFitHeight:(UILabel *)label constrainsToHeight:(CGFloat)maxHeight;
-+ (void)adjustLabelToFitHeight:(UILabel *)label relatedTo:(UILabel *)otherLabel withDistance:(CGFloat)distance;
-+ (void)adjustLabelToFitHeight:(UILabel *)label
-            constrainsToHeight:(CGFloat)maxHeight
-                     relatedTo:(UILabel *)otherLabel
-                  withDistance:(CGFloat)distance;
-
 + (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth;
 
-+ (void)applyAttributedTextForLabel:(UILabel *)label
-                           withText:(NSString *)fullText
-                           onString:(NSString *)styledString
-                     withAttributes:(NSDictionary *)attributes;
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
 
 + (void)logAnalyticsForScreen:(NSString *)screenName;

@@ -12,7 +12,11 @@
 
 - (id)checkAnswer:(id)answerValue {
   DLog(@"%@ %@", answerValue, self.question);
-  return nil;
+  return @{
+           kParamAnswerResult : @(YES),
+           kParamCorrectAnswer : self.question,
+           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           };
 }
 
 @end

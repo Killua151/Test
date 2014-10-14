@@ -14,14 +14,26 @@
   NSString *correctAnswer = [_tokens componentsJoinedByString:@" "];
   
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
-    return correctAnswer;
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : correctAnswer,
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
   NSString *usersAnswer = [answerValue componentsJoinedByString:@" "];
   
   if ([usersAnswer isEqualToString:correctAnswer])
-    return nil;
+    return @{
+             kParamAnswerResult : @(YES),
+             kParamCorrectAnswer : correctAnswer,
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
-  return correctAnswer;
+  return @{
+           kParamAnswerResult : @(NO),
+           kParamCorrectAnswer : correctAnswer,
+           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           };
 }
 
 @end

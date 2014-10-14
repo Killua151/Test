@@ -16,7 +16,7 @@
 
 - (void)updateViewWithData:(NSString *)data {
   _lblSectionName.text = data;
-  [Utils adjustLabelToFitHeight:_lblSectionName];
+  [_lblSectionName adjustToFitHeight];
 }
 
 - (CGFloat)heightToFit {

@@ -62,24 +62,22 @@
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@!"), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [Utils applyAttributedTextForLabel:_lblMessage
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
-  [Utils adjustLabelToFitHeight:_lblMessage];
+  [_lblMessage applyAttributedText:message
+                          onString:styledString
+                    withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
+  [_lblMessage adjustToFitHeight];
   
   styledString = @"strength bars";
   message = [NSString stringWithFormat:MMLocalizedString(@"Keep those %@ full as words fade from your memory"), styledString];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [Utils applyAttributedTextForLabel:_lblSubMessage
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{
+  [_lblSubMessage applyAttributedText:message
+                             onString:styledString
+                       withAttributes:@{
                                        NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17],
                                        NSForegroundColorAttributeName : UIColorFromRGB(255, 187, 51)
                                        }];
-  [Utils adjustLabelToFitHeight:_lblSubMessage];
+  [_lblSubMessage adjustToFitHeight];
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;

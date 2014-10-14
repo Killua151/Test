@@ -14,14 +14,26 @@
   NSArray *correctAnswers = [_hints sortedArrayUsingSelector:@selector(compare:)];
   
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
-    return [correctAnswers componentsJoinedByString:@" / "];
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : [correctAnswers componentsJoinedByString:@" / "],
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
   NSArray *usersAnsers = [answerValue sortedArrayUsingSelector:@selector(compare:)];
   
-  if ([correctAnswers isEqualToArray:usersAnsers])
-    return nil;
+  if (![correctAnswers isEqualToArray:usersAnsers])
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : [correctAnswers componentsJoinedByString:@" / "],
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
-  return [correctAnswers componentsJoinedByString:@" / "];
+  return @{
+           kParamAnswerResult : @(YES),
+           kParamCorrectAnswer : [correctAnswers componentsJoinedByString:@" / "],
+           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           };
 }
 
 @end

@@ -40,7 +40,7 @@
   
   CGFloat maxQuestionHeight = _tblOptions.frame.origin.y - _lblQuestionTitle.frame.origin.y -
   _lblQuestionTitle.frame.size.height;
-  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:maxQuestionHeight];
+  [_lblQuestion adjustToFitHeightAndConstrainsToHeight:maxQuestionHeight];
   
   CGPoint center = _lblQuestion.center;
   center.y = _lblQuestionTitle.frame.origin.y + _lblQuestionTitle.frame.size.height +

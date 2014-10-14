@@ -28,7 +28,7 @@
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
-  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnQuestionAudio.frame.size.height];
+  [_lblQuestion adjustToFitHeightAndConstrainsToHeight:_btnQuestionAudio.frame.size.height];
   
   CGPoint center = _lblQuestion.center;
   center.y = _btnQuestionAudio.center.y + kFontClearSansMarginTop;

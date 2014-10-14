@@ -28,10 +28,18 @@
     NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
     
     if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
-      return nil;
+      return @{
+               kParamAnswerResult : @(YES),
+               kParamCorrectAnswer : _translation,
+               kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+               };
   }
   
-  return _translation;
+  return @{
+           kParamAnswerResult : @(NO),
+           kParamCorrectAnswer : _translation,
+           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           };
 }
 
 @end

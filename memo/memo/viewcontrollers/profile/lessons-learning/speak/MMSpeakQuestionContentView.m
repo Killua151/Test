@@ -26,7 +26,7 @@
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
-  [Utils adjustLabelToFitHeight:_lblQuestion constrainsToHeight:_btnQuestionAudio.frame.size.height];
+  [_lblQuestion adjustToFitHeightAndConstrainsToHeight:_btnQuestionAudio.frame.size.height];
   
   CGPoint center = _lblQuestion.center;
   center.y = _btnQuestionAudio.center.y + kFontClearSansMarginTop;
@@ -35,10 +35,9 @@
   NSString *styledString = NSLocalizedString(@"Tap", nil);
   NSString *tooltipsMessage = [NSString stringWithFormat:NSLocalizedString(@"%@ to start recording", nil), styledString];
   _btnTooltips.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [Utils applyAttributedTextForLabel:_btnTooltips.titleLabel
-                            withText:tooltipsMessage
-                            onString:styledString
-                      withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
+  [_btnTooltips.titleLabel applyAttributedText:tooltipsMessage
+                                      onString:styledString
+                                withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
   
   _btnSkipSpeakQuestion.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSkipSpeakQuestion.layer.cornerRadius = 4;

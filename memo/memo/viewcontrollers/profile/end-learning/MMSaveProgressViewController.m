@@ -40,11 +40,11 @@
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblMessage.text = NSLocalizedString(@"Save your progress", nil);
-  [Utils adjustLabelToFitHeight:_lblMessage];
+  [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblSubMessage.text = NSLocalizedString(@"You now need a Memo profile to save your progress. Register now!", nil);
-  [Utils adjustLabelToFitHeight:_lblSubMessage];
+  [_lblSubMessage adjustToFitHeight];
   
   _btnCreateProfile.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnCreateProfile.layer.cornerRadius = 4;

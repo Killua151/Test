@@ -29,8 +29,8 @@
 }
 
 - (void)updateCellWithData:(MItem *)data {
-  [Utils adjustLabelToFitHeight:_lblItemName];
-  [Utils adjustLabelToFitHeight:_lblItemDescription relatedTo:_lblItemName withDistance:10];
+  [_lblItemName adjustToFitHeight];
+  [_lblItemDescription adjustToFitHeightAndRelatedTo:_lblItemName withDistance:10];
   
   [self applyEffectToPriceButton];
 }

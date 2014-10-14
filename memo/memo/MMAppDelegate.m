@@ -157,6 +157,10 @@
 
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
+  NSString *str1 = @"He eats , an !apple";
+  NSString *str2 = @"He ate an apple";
+  
+  [str1 isAcceptedSimilarToString:str2];
 }
 
 @end

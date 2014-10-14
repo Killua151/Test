@@ -12,15 +12,27 @@
 
 - (id)checkAnswer:(id)answerValue {
   if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
-    return _hint;
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : _hint,
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
   NSString *normalizedAnswer = [answerValue stringByRemovingAllNonLetterCharacters];
   NSString *normalizedHint = [_hint stringByRemovingAllNonLetterCharacters];
   
   if ([normalizedAnswer compare:normalizedHint options:NSCaseInsensitiveSearch] != NSOrderedSame)
-    return _hint;
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : _hint,
+             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             };
   
-  return nil;
+  return @{
+           kParamAnswerResult : @(YES),
+           kParamCorrectAnswer : _hint,
+           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           };
 }
 
 @end

@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		92F7FF9E436F43B5BEDCCED0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2B8D9B1D0490BA0D689EC /* libPods.a */; };
+		CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
+		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
 		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
@@ -1561,6 +1563,8 @@
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
+		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
+		CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHelpers.m"; sourceTree = "<group>"; };
 		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
 		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
 		CAA91C7C19E694EC0076A9BC /* MMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSwitch.h; sourceTree = "<group>"; };
@@ -2588,6 +2592,8 @@
 				CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */,
 				CAF8502619E0F3D100A347CF /* UIImage+ImageHelpers.h */,
 				CAF8502719E0F3D100A347CF /* UIImage+ImageHelpers.m */,
+				CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */,
+				CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */,
 				CAF8502819E0F3D100A347CF /* UIView+ExtendedToast.h */,
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
@@ -2711,8 +2717,6 @@
 			children = (
 				CAF8505A19E0F3D100A347CF /* MBaseQuestion.h */,
 				CAF8505B19E0F3D100A347CF /* MBaseQuestion.m */,
-				CAF8505C19E0F3D100A347CF /* MSortQuestion.h */,
-				CAF8505D19E0F3D100A347CF /* MSortQuestion.m */,
 				CAF8505E19E0F3D100A347CF /* MJudgeQuestion.h */,
 				CAF8505F19E0F3D100A347CF /* MJudgeQuestion.m */,
 				CAF8506019E0F3D100A347CF /* MListenQuestion.h */,
@@ -2723,6 +2727,8 @@
 				CAF8506519E0F3D100A347CF /* MSelectQuestion.m */,
 				CAF8506619E0F3D100A347CF /* MSelectQuestionOption.h */,
 				CAF8506719E0F3D100A347CF /* MSelectQuestionOption.m */,
+				CAF8505C19E0F3D100A347CF /* MSortQuestion.h */,
+				CAF8505D19E0F3D100A347CF /* MSortQuestion.m */,
 				CAF8506819E0F3D100A347CF /* MSpeakQuestion.h */,
 				CAF8506919E0F3D100A347CF /* MSpeakQuestion.m */,
 				CAF8506A19E0F3D100A347CF /* MTranslateQuestion.h */,
@@ -5484,6 +5490,7 @@
 				CAF854B419E0F3D200A347CF /* MMSetGoalViewController.m in Sources */,
 				CAF852D519E0F3D200A347CF /* ISpeechSDK+Compatibility.m in Sources */,
 				CAF854D919E0F3D200A347CF /* MMShareViewController.m in Sources */,
+				CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */,
 				CAA91C9819E780E10076A9BC /* MMFindFriendCell.m in Sources */,
 				CAF8549619E0F3D200A347CF /* MMExamViewController.m in Sources */,
 				CAF852C619E0F3D200A347CF /* NSArray+ArrayHelpers.m in Sources */,
@@ -5499,6 +5506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */,
 				CAF856B119E0FDF600A347CF /* MMSettingsHeaderView.m in Sources */,
 				CAF856B219E0FDF600A347CF /* NSMutableDictionary+DMPExtensions.m in Sources */,
 				CAF856B319E0FDF600A347CF /* MMHexagonSkillCell.m in Sources */,

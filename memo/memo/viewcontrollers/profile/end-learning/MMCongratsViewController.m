@@ -42,10 +42,10 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [Utils adjustLabelToFitHeight:_lblMessage];
+  [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [Utils adjustLabelToFitHeight:_lblSubMessage];
+  [_lblSubMessage adjustToFitHeight];
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;

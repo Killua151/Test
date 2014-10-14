@@ -22,6 +22,7 @@
   IBOutlet UIImageView *_imgResultCorrectBg;
   IBOutlet UIView *_vResultCorrectBg;
   IBOutlet UILabel *_lblResultCorrectMessage;
+  IBOutlet UILabel *_lblResultCorrectAnswer;
   
   IBOutlet UIView *_vResultIncorrect;
   IBOutlet UIImageView *_imgResultIncorrectBg;

@@ -26,7 +26,7 @@
 
 - (void)updateCellWithData:(NSString *)data {
   _lblOption.text = data;
-  [Utils adjustLabelToFitHeight:_lblOption constrainsToHeight:_lblOption.superview.frame.size.height];
+  [_lblOption adjustToFitHeightAndConstrainsToHeight:_lblOption.superview.frame.size.height];
   
   CGPoint center = _lblOption.center;
   center.y = _lblOption.superview.frame.size.height/2 + kFontClearSansMarginTop;

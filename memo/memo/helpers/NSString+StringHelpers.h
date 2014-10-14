@@ -17,7 +17,10 @@
 
 - (NSString *)asciiNormalizedString;
 - (NSString *)stringByRemovingAllNonLetterCharacters;
+- (NSArray *)componentsSeperatedByNonLetterCharacters;
 - (NSString *)stringByRemovingAllNonDigitCharacters;
+- (NSArray *)componentsSeperatedByNonDigitCharacters;
+
 - (NSString *)localizedStringForLanguage:(NSString *)language;
 
 - (BOOL)isAcceptedSimilarToOneOfStrings:(NSArray *)otherStrings;

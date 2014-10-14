@@ -16,6 +16,6 @@
 
 + (Class)questionKlassByType:(NSString *)type;
 + (NSArray *)audioUrlsFromQuestions:(NSArray *)questions;
-- (id)checkAnswer:(id)answerValue;
+- (NSDictionary *)checkAnswer:(id)answerValue;
 
 @end

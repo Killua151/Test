@@ -45,7 +45,10 @@
 
 - (void)updateHeaderViews;
 - (void)resetResultViews;
-- (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer;
+- (void)setResultViewVisible:(BOOL)show
+             forAnswerResult:(BOOL)answerResult
+           withCorrectAnswer:(NSString *)correctAnswer
+              underlineRange:(NSRange)underlineRange;
 - (void)switchCheckButtonMode:(BOOL)useToCheck;
 
 - (void)prepareNextQuestion;
@@ -92,7 +95,7 @@
 }
 
 - (void)reloadContents {
-  [self setResultViewVisible:NO withCorrectAnswer:nil];
+  [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRange:NSMakeRange(NSNotFound, 0)];
   _currentLessonIndex++;
   [self removeCurrentQuestion];
   [self updateHeaderViews];
@@ -273,10 +276,13 @@
   _currentShowingResultView = nil;
 }
 
-- (void)setResultViewVisible:(BOOL)show withCorrectAnswer:(id)correctAnswer {
-  BOOL answerIsCorrect = correctAnswer == nil;
+- (void)setResultViewVisible:(BOOL)show
+             forAnswerResult:(BOOL)answerResult
+           withCorrectAnswer:(NSString *)correctAnswer
+              underlineRange:(NSRange)underlineRange {
+//  underlineRange = NSMakeRange(0, correctAnswer.length);
   
-  if (!answerIsCorrect) {
+  if (!answerResult) {
     _currentHeartsCount--;
     [self updateHeaderViews];
   }
@@ -290,21 +296,52 @@
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
      if (show) {
-       _currentShowingResultView = answerIsCorrect ? _vResultCorrect : _vResultIncorrect;
+       _currentShowingResultView = answerResult ? _vResultCorrect : _vResultIncorrect;
        
-       if (!answerIsCorrect) {
-         _lblResultIncorrectAnswer.text = correctAnswer;
-         [Utils adjustLabelToFitHeight:_lblResultIncorrectAnswer relatedTo:_lblResultIncorrectMessage withDistance:5];
+       UILabel *lblResultMessage = nil;
+       UILabel *lblResultAnswer = nil;
+       BOOL shouldShowAnswerLabel = YES;
+       
+       // Incorrect answer, always show answer label
+       if (!answerResult) {
+         lblResultMessage = _lblResultIncorrectMessage;
+         lblResultAnswer = _lblResultIncorrectAnswer;
+       } else { // Correct
+         lblResultMessage = _lblResultCorrectMessage;
+         lblResultAnswer = _lblResultCorrectAnswer;
          
-         BOOL answerInTwoLines = _lblResultIncorrectAnswer.frame.size.height > 23;
+         // Correct with typos
+         shouldShowAnswerLabel = underlineRange.location != NSNotFound;
+       }
+       
+       if (shouldShowAnswerLabel) {
+           
+         if (underlineRange.location == NSNotFound)
+           lblResultAnswer.text = correctAnswer;
+         else
+           [lblResultAnswer applyAttributedText:correctAnswer
+                                        inRange:underlineRange
+                                 withAttributes:@{
+                                                  NSUnderlineColorAttributeName : lblResultAnswer.textColor,
+                                                  NSUnderlineStyleAttributeName : @(NSUnderlineStyleThick)
+                                                  }];
          
-         CGRect frame = _lblResultIncorrectMessage.frame;
+         [lblResultAnswer adjustToFitHeightAndConstrainsToHeight:46 relatedTo:lblResultMessage withDistance:5];
+         
+         BOOL answerInTwoLines = lblResultAnswer.frame.size.height > 23;
+         
+         CGRect frame = lblResultMessage.frame;
          frame.origin.y = answerInTwoLines ? 8 : 17;
-         _lblResultIncorrectMessage.frame = frame;
+         lblResultMessage.frame = frame;
          
-         frame = _lblResultIncorrectAnswer.frame;
-         frame.origin.y = _lblResultIncorrectMessage.frame.origin.y + _lblResultIncorrectMessage.frame.size.height + 5;
-         _lblResultIncorrectAnswer.frame = frame;
+         frame = lblResultAnswer.frame;
+         frame.origin.y = lblResultMessage.frame.origin.y + lblResultMessage.frame.size.height + 5;
+         lblResultAnswer.frame = frame;
+       } else {
+         lblResultAnswer.hidden = YES;
+         CGPoint center = lblResultMessage.center;
+         center.y = lblResultMessage.superview.frame.size.height/2 - 3;
+         lblResultMessage.center = center;
        }
        
        _currentShowingResultView.alpha = 1;
@@ -358,10 +395,17 @@
 
 - (void)checkCurrentQuestion {
   MBaseQuestion *question = _questionsData[_currentLessonIndex];
-  id result = [question checkAnswer:_answerValue];
-  [self setResultViewVisible:YES withCorrectAnswer:result];
+  NSDictionary *checkResult = [question checkAnswer:_answerValue];
   
-  _answersData[question.question_log_id] = @(result == nil ? YES : NO);
+  BOOL answerResult = [checkResult[kParamAnswerResult] boolValue];
+  NSString *correctAnswer = checkResult[kParamCorrectAnswer];
+  NSRange underlineRange = [checkResult[kParamUnderlineRange] rangeValue];
+  [self setResultViewVisible:YES
+             forAnswerResult:answerResult
+           withCorrectAnswer:correctAnswer
+              underlineRange:underlineRange];
+  
+  _answersData[question.question_log_id] = @(answerResult);
 }
 
 - (void)removeCurrentQuestion {

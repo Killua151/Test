@@ -60,7 +60,7 @@
   
   _lblObjectives.font = [UIFont fontWithName:@"ClearSans" size:14];
   _lblObjectives.text = [_lessonData.objectives componentsJoinedByString:@", "];
-  [Utils adjustLabelToFitHeight:_lblObjectives];
+  [_lblObjectives adjustToFitHeight];
   
   _lblObjectives.center = CGPointMake(_lblObjectives.center.x, self.center.y);
   

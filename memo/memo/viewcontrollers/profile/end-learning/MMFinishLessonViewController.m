@@ -48,21 +48,19 @@
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"Bài tập hoàn thành! %@"), styledString];
   
   _lblFinishLessonMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [Utils applyAttributedTextForLabel:_lblFinishLessonMessage
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
-  [Utils adjustLabelToFitHeight:_lblFinishLessonMessage];
+  [_lblFinishLessonMessage applyAttributedText:message
+                                      onString:styledString
+                                withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
+  [_lblFinishLessonMessage adjustToFitHeight];
   
   styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
   message = [NSString stringWithFormat:MMLocalizedString(@"Thưởng trái tim %@"), styledString];
   
   _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [Utils applyAttributedTextForLabel:_lblHeartBonusMessage
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
-  [Utils adjustLabelToFitHeight:_lblHeartBonusMessage relatedTo:_lblFinishLessonMessage withDistance:5];
+  [_lblHeartBonusMessage applyAttributedText:message
+                                    onString:styledString
+                              withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
+  [_lblHeartBonusMessage adjustToFitHeightAndRelatedTo:_lblFinishLessonMessage withDistance:5];
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;
@@ -75,10 +73,9 @@
   styledString = [NSString stringWithFormat:@"%ld Combo days", (long)[MUser currentUser].combo_days];
   message = [NSString stringWithFormat:MMLocalizedString(@"You have %@!"), styledString];
   _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [Utils applyAttributedTextForLabel:_lblStreaksCount
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(255, 187, 51)}];
+  [_lblStreaksCount applyAttributedText:message
+                               onString:styledString
+                         withAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(255, 187, 51)}];
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSetGoal.layer.cornerRadius = 4;

@@ -34,11 +34,10 @@
   NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã được thưởng %@", nil), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [Utils applyAttributedTextForLabel:_lblMessage
-                            withText:message
-                            onString:styledString
-                      withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
-  [Utils adjustLabelToFitHeight:_lblMessage];
+  [_lblMessage applyAttributedText:message
+                          onString:styledString
+                    withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
+  [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblSubMessage.text = [NSString stringWithFormat:NSLocalizedString(@"Hoàn thành kỹ năng %@", nil), affectedSkill.title];

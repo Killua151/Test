@@ -13,6 +13,7 @@
                 <outlet property="_imgResultCorrectBg" destination="l4g-Tb-muP" id="WZ6-cZ-29q"/>
                 <outlet property="_imgResultIncorrectBg" destination="mrn-J1-JRU" id="Ffc-iQ-lXF"/>
                 <outlet property="_lblLessonsCount" destination="xhz-cp-bQP" id="NjE-Gg-SNK"/>
+                <outlet property="_lblResultCorrectAnswer" destination="3Tn-wL-Hbn" id="5UK-7l-ZQZ"/>
                 <outlet property="_lblResultCorrectMessage" destination="cxR-JD-lfi" id="bMr-dH-zPA"/>
                 <outlet property="_lblResultIncorrectAnswer" destination="E7d-ps-Zyo" id="Hp1-NO-FuT"/>
                 <outlet property="_lblResultIncorrectMessage" destination="nA6-AS-4si" id="bNS-tQ-Wq8"/>
@@ -426,6 +427,13 @@
                                     <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="3Tn-wL-Hbn">
+                                    <rect key="frame" x="68" y="43" width="200" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.92156862745098034" green="1" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
@@ -455,7 +463,7 @@
                                     <color key="textColor" red="0.50588235294117645" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E7d-ps-Zyo">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="E7d-ps-Zyo">
                                     <rect key="frame" x="68" y="43" width="200" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
