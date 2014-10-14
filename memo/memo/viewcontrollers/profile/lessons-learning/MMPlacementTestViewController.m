@@ -7,6 +7,8 @@
 //
 
 #import "MMPlacementTestViewController.h"
+#import "MMQuestionContentView.h"
+#import "MBaseQuestion.h"
 
 @interface MMPlacementTestViewController ()
 
@@ -14,25 +16,74 @@
 
 @implementation MMPlacementTestViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)viewDidLoad {
+  [super viewDidLoad];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareNextQuestion {
+  if (_currentLessonIndex == 0) {
+    [super prepareNextQuestion];
+    return;
+  }
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   submitPlacementTestAnswer:_answersData
+   withMetadata:_metadata
+   completion:^(NSString *examToken, MBaseQuestion *question, BOOL isFinished, NSError *error) {
+     HideHudForCurrentView();
+     ShowAlertWithError(error);
+     
+     if (!isFinished) {
+       _metadata[kParamExamToken] = examToken;
+       [_questionsData addObject:question];
+       [Utils preDownloadAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:@[question]]];
+       [super prepareNextQuestion];
+       return;
+     }
+     
+     DLog(@"invoke");
+   }];
+}
+
+- (void)checkCurrentQuestion {
+  [_answersData removeAllObjects];
+  [super checkCurrentQuestion];
+}
+
+- (void)removeCurrentQuestion {
+  _btnCheck.enabled = NO;
+  [self switchCheckButtonMode:YES];
+  
+  if ([_vContentView.subviews count] == 0) {
+    [self prepareNextQuestion];
+    return;
+  }
+  
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vQuestionContent.alpha = 0;
+     CGRect frame = _vQuestionContent.frame;
+     frame.origin.x -= 320;
+     _vQuestionContent.frame = frame;
+   }
+   completion:^(BOOL finished) {
+     [_vQuestionContent removeFromSuperview];
+     _vQuestionContent = nil;
+     [self prepareNextQuestion];
+   }];
+}
+
+- (void)updateHeaderViews {
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld", MMLocalizedString(@"Question"), (long)_currentLessonIndex+1];
 }
 
 @end

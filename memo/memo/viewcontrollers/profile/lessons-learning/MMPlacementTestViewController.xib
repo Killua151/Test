@@ -8,8 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMPlacementTestViewController">
             <connections>
                 <outlet property="_btnCheck" destination="30I-Yi-rE9" id="yxq-vo-rHg"/>
-                <outlet property="_imgResultCorrectBg" destination="rXP-cW-tkl" id="nsW-dn-EbK"/>
-                <outlet property="_imgResultIncorrectBg" destination="XHn-qR-0he" id="NgP-AZ-vpZ"/>
+                <outlet property="_lblLessonsCount" destination="gqk-SJ-dAL" id="gdL-h9-FE9"/>
                 <outlet property="_lblResultCorrectAnswer" destination="bzm-z2-Ckg" id="OO5-qD-XXj"/>
                 <outlet property="_lblResultCorrectMessage" destination="wWq-xN-bcT" id="kYJ-C1-c4V"/>
                 <outlet property="_lblResultIncorrectAnswer" destination="Cy3-Bz-s9N" id="7j4-bW-hXi"/>
@@ -38,6 +37,30 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" id="mmz-V7-eva" userLabel="Header view">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o2g-n1-reA">
+                            <rect key="frame" x="15" y="26" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="btn-lessons_learning-close.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnClosePressed:" destination="-1" eventType="touchUpInside" id="vY6-fP-9YZ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gqk-SJ-dAL">
+                            <rect key="frame" x="55" y="23" width="200" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="uR5-kW-gnK" userLabel="Check button">
                     <rect key="frame" x="15" y="502" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -51,6 +74,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnCheckPressed:" destination="-1" eventType="touchUpInside" id="QIk-yI-e1x"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -59,10 +85,6 @@
                     <rect key="frame" x="15" y="200" width="290" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-result_view-bg.png" id="rXP-cW-tkl">
-                            <rect key="frame" x="-15" y="-15" width="320" height="115"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
                         <view contentMode="scaleToFill" id="UHq-9S-nTc">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,10 +117,6 @@
                     <rect key="frame" x="15" y="300" width="290" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-result_view-bg.png" id="XHn-qR-0he">
-                            <rect key="frame" x="-15" y="-15" width="320" height="115"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
                         <view contentMode="scaleToFill" id="RVc-wz-k5N">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,13 +146,12 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
         <image name="btn-lessons_learning-close.png" width="32" height="32"/>
         <image name="img-lessons_learning-correct.png" width="40" height="30"/>
-        <image name="img-lessons_learning-result_view-bg.png" width="320" height="115"/>
     </resources>
 </document>

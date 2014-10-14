@@ -23,18 +23,12 @@
 
 @interface MMExamViewController () {
   NSInteger _totalLessonsCount;
-  NSInteger _currentLessonIndex;
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
   
   CGFloat _innerPanGestureYPos;
   UIView *_currentShowingResultView;
   
-  MMQuestionContentView *_vQuestionContent;
-  
-  NSDictionary *_metadata;
-  NSArray *_questionsData;
-  NSMutableDictionary *_answersData;
   id _answerValue;
 }
 
@@ -43,17 +37,11 @@
 - (void)setupResultViews;
 - (void)resetCounts;
 
-- (void)updateHeaderViews;
 - (void)resetResultViews;
 - (void)setResultViewVisible:(BOOL)show
              forAnswerResult:(BOOL)answerResult
            withCorrectAnswer:(NSString *)correctAnswer
               underlineRange:(NSRange)underlineRange;
-- (void)switchCheckButtonMode:(BOOL)useToCheck;
-
-- (void)prepareNextQuestion;
-- (void)checkCurrentQuestion;
-- (void)removeCurrentQuestion;
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
 - (Class)questionContentViewKlassForQuestionType:(NSString *)questionType;
@@ -64,8 +52,8 @@
 
 - (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata {
   if (self = [super init]) {
-    _metadata = metadata;
-    _questionsData = questions;
+    _metadata = [NSMutableDictionary dictionaryWithDictionary:metadata];
+    _questionsData = [NSMutableArray arrayWithArray:questions];
     _answersData = [NSMutableDictionary new];
   }
   
@@ -133,6 +121,122 @@
     _vGestureLayer.hidden = YES;
     [self reloadContents];
   }
+}
+
+- (void)prepareNextQuestion {
+  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
+  _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];
+  
+  _vQuestionContent.delegate = self;
+  _vQuestionContent.alpha = 0;
+  _vQuestionContent.userInteractionEnabled = NO;
+  [_vContentView addSubview:_vQuestionContent];
+  
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vQuestionContent.alpha = 1;
+   }
+   completion:^(BOOL finished) {
+     _vQuestionContent.userInteractionEnabled = YES;
+   }];
+}
+
+- (void)checkCurrentQuestion {
+  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  NSDictionary *checkResult = [question checkAnswer:_answerValue];
+  
+  BOOL answerResult = [checkResult[kParamAnswerResult] boolValue];
+  NSString *correctAnswer = checkResult[kParamCorrectAnswer];
+  NSRange underlineRange = [checkResult[kParamUnderlineRange] rangeValue];
+  
+  [self setResultViewVisible:YES
+             forAnswerResult:answerResult
+           withCorrectAnswer:correctAnswer
+              underlineRange:underlineRange];
+  
+  _answersData[question.question_log_id] = @(answerResult);
+}
+
+- (void)removeCurrentQuestion {
+  // Out of hearts
+  if (_currentHeartsCount < 0) {
+    MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
+    failLessonVC.delegate = self;
+    [self presentViewController:failLessonVC animated:YES completion:NULL];
+    return;
+  }
+  
+  // Finish all questions
+  if (_currentLessonIndex >= _totalLessonsCount) {
+    ShowHudForCurrentView();
+    
+    [[MMServerHelper sharedHelper]
+     finishExamWithMetadata:_metadata
+     andResults:_answersData completion:^(NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+       [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
+     }];
+    
+    return;
+  }
+  
+  _btnCheck.enabled = NO;
+  [self switchCheckButtonMode:YES];
+  
+  if ([_vContentView.subviews count] == 0) {
+    [self prepareNextQuestion];
+    return;
+  }
+  
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vQuestionContent.alpha = 0;
+     CGRect frame = _vQuestionContent.frame;
+     frame.origin.x -= 320;
+     _vQuestionContent.frame = frame;
+   }
+   completion:^(BOOL finished) {
+     [_vQuestionContent removeFromSuperview];
+     _vQuestionContent = nil;
+     [self prepareNextQuestion];
+   }];
+}
+
+- (void)updateHeaderViews {
+  if (_currentLessonIndex >= _totalLessonsCount)
+    return;
+  
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentLessonIndex+1, (long)_totalLessonsCount];
+  
+  [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
+    button.selected = index >= _totalHeartsCount - _currentHeartsCount;
+  }];
+  
+  _imgAntProgressIndicator.hidden = _currentLessonIndex < 0;
+  
+  [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
+    button.selected = index <= _currentLessonIndex;
+    
+    if (index == _currentLessonIndex) {
+      CGPoint center = button.center;
+      center.y -= 7;
+      _imgAntProgressIndicator.center = center;
+    }
+  }];
+}
+
+- (void)switchCheckButtonMode:(BOOL)useToCheck {
+  _btnCheck.tag = useToCheck;
+  [_btnCheck setTitle:(useToCheck ? MMLocalizedString(@"Check") : MMLocalizedString(@"Next"))
+             forState:UIControlStateNormal];
 }
 
 #pragma mark - UIAlertViewDelegate methods
@@ -249,29 +353,6 @@
   _totalHeartsCount = _currentHeartsCount = 3;
 }
 
-- (void)updateHeaderViews {
-  if (_currentLessonIndex >= _totalLessonsCount)
-    return;
-  
-  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentLessonIndex+1, (long)_totalLessonsCount];
-  
-  [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
-    button.selected = index >= _totalHeartsCount - _currentHeartsCount;
-  }];
-  
-  _imgAntProgressIndicator.hidden = _currentLessonIndex < 0;
-  
-  [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
-    button.selected = index <= _currentLessonIndex;
-    
-    if (index == _currentLessonIndex) {
-      CGPoint center = button.center;
-      center.y -= 7;
-      _imgAntProgressIndicator.center = center;
-    }
-  }];
-}
-
 - (void)resetResultViews {
   CGRect frame = _vResultCorrect.frame;
   frame.origin.y = _btnCheck.superview.frame.origin.y - 30 - frame.size.height;
@@ -285,8 +366,6 @@
              forAnswerResult:(BOOL)answerResult
            withCorrectAnswer:(NSString *)correctAnswer
               underlineRange:(NSRange)underlineRange {
-//  underlineRange = NSMakeRange(0, correctAnswer.length);
-  
   if (!answerResult) {
     _currentHeartsCount--;
     [self updateHeaderViews];
@@ -358,98 +437,6 @@
        [self gestureLayerDidEnterEditingMode];
      else
        [self resetResultViews];
-   }];
-}
-
-- (void)switchCheckButtonMode:(BOOL)useToCheck {
-  _btnCheck.tag = useToCheck;
-  [_btnCheck setTitle:(useToCheck ? MMLocalizedString(@"Check") : MMLocalizedString(@"Next"))
-             forState:UIControlStateNormal];
-}
-
-- (void)prepareNextQuestion {
-  MBaseQuestion *question = _questionsData[_currentLessonIndex];
-  Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
-  _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];
-  
-  _vQuestionContent.delegate = self;
-  _vQuestionContent.alpha = 0;
-  _vQuestionContent.userInteractionEnabled = NO;
-  [_vContentView addSubview:_vQuestionContent];
-  
-  [UIView
-   animateWithDuration:kDefaultAnimationDuration
-   delay:0
-   options:UIViewAnimationOptionCurveEaseInOut
-   animations:^{
-     _vQuestionContent.alpha = 1;
-   }
-   completion:^(BOOL finished) {
-     _vQuestionContent.userInteractionEnabled = YES;
-   }];
-}
-
-- (void)checkCurrentQuestion {
-  MBaseQuestion *question = _questionsData[_currentLessonIndex];
-  NSDictionary *checkResult = [question checkAnswer:_answerValue];
-  
-  BOOL answerResult = [checkResult[kParamAnswerResult] boolValue];
-  NSString *correctAnswer = checkResult[kParamCorrectAnswer];
-  NSRange underlineRange = [checkResult[kParamUnderlineRange] rangeValue];
-  [self setResultViewVisible:YES
-             forAnswerResult:answerResult
-           withCorrectAnswer:correctAnswer
-              underlineRange:underlineRange];
-  
-  _answersData[question.question_log_id] = @(answerResult);
-}
-
-- (void)removeCurrentQuestion {
-  // Out of hearts
-  if (_currentHeartsCount < 0) {
-    MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
-    failLessonVC.delegate = self;
-    [self presentViewController:failLessonVC animated:YES completion:NULL];
-    return;
-  }
-  
-  // Finish all questions
-  if (_currentLessonIndex >= _totalLessonsCount) {
-    ShowHudForCurrentView();
-    
-    [[MMServerHelper sharedHelper]
-     finishExamWithMetadata:_metadata
-     andResults:_answersData completion:^(NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-       [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
-     }];
-    
-    return;
-  }
-  
-  _btnCheck.enabled = NO;
-  [self switchCheckButtonMode:YES];
-  
-  if ([_vContentView.subviews count] == 0) {
-    [self prepareNextQuestion];
-    return;
-  }
-  
-  [UIView
-   animateWithDuration:kDefaultAnimationDuration
-   delay:0
-   options:UIViewAnimationOptionCurveEaseInOut
-   animations:^{
-     _vQuestionContent.alpha = 0;
-     CGRect frame = _vQuestionContent.frame;
-     frame.origin.x -= 320;
-     _vQuestionContent.frame = frame;
-   }
-   completion:^(BOOL finished) {
-     [_vQuestionContent removeFromSuperview];
-     _vQuestionContent = nil;
-     [self prepareNextQuestion];
    }];
 }
 

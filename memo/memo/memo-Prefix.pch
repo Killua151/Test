@@ -143,6 +143,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamFbId                              @"fb_Id"
 #define kParamFbName                            @"fb_name"
 #define kParamFinishExamBonusExp                @"finish_exam_bonus_exp"
+#define kParamFinished                          @"finished"
 #define kParamFriendId                          @"friend_id"
 #define kParamHeartBonusExp                     @"heart_bonus_exp"
 #define kParamGmail                             @"gmail"
@@ -172,6 +173,5 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kValueExamTypeShortcut                  @"shortcut"
 #define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
-#define kValueExamTypePlacementTest             @"placement_test"
 
 #define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"

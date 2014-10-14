@@ -67,10 +67,7 @@
     
     MMPlacementTestViewController *placementTestVC =
     [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
-                                                 andMetadata:@{
-                                                               kParamType : kValueExamTypePlacementTest,
-                                                               kParamExamToken : [NSString normalizedString:examToken]
-                                                               }];
+                                                 andMetadata:@{kParamExamToken : [NSString normalizedString:examToken]}];
     
     [self presentViewController:placementTestVC animated:YES completion:NULL];
   }];

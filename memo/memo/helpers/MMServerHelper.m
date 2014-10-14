@@ -345,12 +345,6 @@
 }
 
 - (void)startPlacementTest:(void (^)(NSString *, MBaseQuestion *, NSError *))handler {
-  NSString *response = @"{\"exam_token\":\"Ethan Nguyen_543d278fd9a7f\",\"question\":{\"type\":\"translate\",\"question\":\"Ch\u1ecb \u1ea5y gi\u1ea3i th\u00edch c\u00f4ng th\u1ee9c \u0111\u00f3 cho t\u00f4i.\",\"translation\":\"She explains that formula to me.\",\"compact_translations\":[[\"She explains that formula to me.\"]],\"normal_question_audio\":\"http://api.memo.edu.vn/static/sentence_sounds/normal_fb00323f941f3484da60db7e1a1af612.mp3\",\"question_log_id\":\"543d278f48177e75738b50fd\"}}";
-  NSDictionary *responseDict = [response objectFromJSONString];
-  MBaseQuestion *question = [MBaseQuestion modelFromDict:responseDict[kParamQuestion]];
-  handler(responseDict[kParamExamToken], question, nil);
-  return;
-  
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
   [self
@@ -375,10 +369,24 @@
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswer] = [answerResult JSONString];
   
+  DLog(@"%@", params);
+  
   [self
-   POST:@"placement_test/submit"
+   POST:@"placement_test/submit_answer"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *responseDict = [responseObject objectFromJSONData];
+     
+     DLog(@"%@", responseDict);
+     
+     if (responseDict[kParamFinished] != nil &&
+         [params[kParamFinished] isKindOfClass:[NSNumber class]] && [params[kParamFinished] boolValue]) {
+       handler(nil, nil, YES, nil);
+       return;
+     }
+     
+     MBaseQuestion *question = [MBaseQuestion modelFromDict:responseDict[kParamQuestion]];
+     handler(responseDict[kParamExamToken], question, NO, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{

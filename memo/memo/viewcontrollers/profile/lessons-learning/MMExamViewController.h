@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
+@class MMQuestionContentView;
+
 @interface MMExamViewController : BaseViewController <UIAlertViewDelegate, MMLessonLearningDelegate, UIGestureRecognizerDelegate> {
   IBOutlet UIView *_vHeader;
   IBOutlet UILabel *_lblLessonsCount;
@@ -21,16 +23,21 @@
   IBOutlet UIButton *_btnCheck;
   
   IBOutlet UIView *_vResultCorrect;
-  IBOutlet UIImageView *_imgResultCorrectBg;
   IBOutlet UIView *_vResultCorrectBg;
   IBOutlet UILabel *_lblResultCorrectMessage;
   IBOutlet UILabel *_lblResultCorrectAnswer;
   
   IBOutlet UIView *_vResultIncorrect;
-  IBOutlet UIImageView *_imgResultIncorrectBg;
   IBOutlet UIView *_vResultIncorrectBg;
   IBOutlet UILabel *_lblResultIncorrectMessage;
   IBOutlet UILabel *_lblResultIncorrectAnswer;
+  
+  MMQuestionContentView *_vQuestionContent;
+  
+  NSInteger _currentLessonIndex;
+  NSMutableDictionary *_metadata;
+  NSMutableArray *_questionsData;
+  NSMutableDictionary *_answersData;
 }
 
 - (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata;
@@ -39,6 +46,10 @@
 - (IBAction)btnCheckPressed:(UIButton *)sender;
 - (void)questionContentViewGestureLayerDidTap;
 
-
+- (void)prepareNextQuestion;
+- (void)checkCurrentQuestion;
+- (void)removeCurrentQuestion;
+- (void)updateHeaderViews;
+- (void)switchCheckButtonMode:(BOOL)useToCheck;
 
 @end
