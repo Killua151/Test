@@ -369,18 +369,14 @@
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswer] = [answerResult JSONString];
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"placement_test/submit_answer"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
      
-     DLog(@"%@", responseDict);
-     
      if (responseDict[kParamFinished] != nil &&
-         [params[kParamFinished] isKindOfClass:[NSNumber class]] && [params[kParamFinished] boolValue]) {
+         [responseDict[kParamFinished] isKindOfClass:[NSNumber class]] && [responseDict[kParamFinished] boolValue]) {
        handler(nil, nil, YES, nil);
        return;
      }
