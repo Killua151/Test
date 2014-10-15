@@ -40,22 +40,24 @@
   [super viewDidLoad];
   
   [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
-  [self customTitleWithText:NSLocalizedString(@"Settings", nil) color:[UIColor blackColor]];
+  [self customTitleWithText:MMLocalizedString(@"Settings") color:[UIColor blackColor]];
   
   [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
   
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Close", nil)
+                           title:MMLocalizedString(@"Close")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(goBack)
                         distance:-8];
   
-  _sectionsData = @[NSLocalizedString(@"Your infomation", nil),
+  _sectionsData = @[
+                    MMLocalizedString(@"Your infomation"),
                     [NSNull null],
                     [NSNull null],
-                    NSLocalizedString(@"Connections", nil),
-                    NSLocalizedString(@"Notifications", nil)];
+                    MMLocalizedString(@"Connections"),
+                    MMLocalizedString(@"Notifications")
+                    ];
   
   _userInfo = [NSMutableDictionary new];
   
@@ -77,9 +79,9 @@
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
-  NSString *toEmail = @"support@memo.edu.vn";
-  NSString *subject = @"Memo feedback";
-  NSString *messageBody = @"Hi!";
+  NSString *toEmail = kValueSupportEmail;
+  NSString *subject = MMLocalizedString(@"Memo app feedback");
+  NSString *messageBody = MMLocalizedString(@"Hi!");
   
   MFMailComposeViewController *controller = [MFMailComposeViewController new];
   controller.mailComposeDelegate = self;
@@ -331,17 +333,17 @@
   _tblSettings.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 20)}];
   
   NSArray *localizedTitles = @[
-                               NSLocalizedString(@"Avatar", nil),
-                               NSLocalizedString(@"Username", nil),
-                               NSLocalizedString(@"Password", nil),
-                               NSLocalizedString(@"Email", nil),
-                               NSLocalizedString(@"Sound effects", nil),
-                               NSLocalizedString(@"Speaking lessons", nil),
-                               NSLocalizedString(@"Facebook", nil),
-                               NSLocalizedString(@"Google+", nil),
-                               NSLocalizedString(@"Practice reminder", nil),
-                               NSLocalizedString(@"Someone add as friend", nil),
-                               NSLocalizedString(@"Someone passed you", nil)
+                               MMLocalizedString(@"Avatar"),
+                               MMLocalizedString(@"Username"),
+                               MMLocalizedString(@"Password"),
+                               MMLocalizedString(@"Email"),
+                               MMLocalizedString(@"Sound effects"),
+                               MMLocalizedString(@"Speaking lessons"),
+                               MMLocalizedString(@"Facebook"),
+                               MMLocalizedString(@"Google+"),
+                               MMLocalizedString(@"Practice reminder"),
+                               MMLocalizedString(@"Someone add as friend"),
+                               MMLocalizedString(@"Someone passed you")
                                ];
   
   [_lblTitles enumerateObjectsUsingBlock:^(UILabel *titleLabel, NSUInteger index, BOOL *stop) {
@@ -358,13 +360,13 @@
   
   _btnFeedback.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnFeedback.layer.cornerRadius = 4;
-  [_btnFeedback setTitle:NSLocalizedString(@"Send feedback", nil) forState:UIControlStateNormal];
+  [_btnFeedback setTitle:MMLocalizedString(@"Send feedback") forState:UIControlStateNormal];
   
   _btnLogOut.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnLogOut.layer.cornerRadius = 4;
   _btnLogOut.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnLogOut.layer.borderWidth = 2;
-  [_btnLogOut setTitle:NSLocalizedString(@"Log out", nil) forState:UIControlStateNormal];
+  [_btnLogOut setTitle:MMLocalizedString(@"Log out") forState:UIControlStateNormal];
   
   _swtSoundEffects = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
   _swtListeningLessons = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
@@ -429,11 +431,11 @@
   NSString *alertTitle = [NSString stringWithFormat:@"Confirm %@", type];
   NSString *alertMessage = [NSString stringWithFormat:@"Please confirm your %@", type];
   
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(alertTitle, nil)
-                                                      message:NSLocalizedString(alertMessage, nil)
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:MMLocalizedString(alertTitle)
+                                                      message:MMLocalizedString(alertMessage)
                                                      delegate:self
-                                            cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                            otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+                                            cancelButtonTitle:MMLocalizedString(@"Cancel")
+                                            otherButtonTitles:MMLocalizedString(@"OK"), nil];
   
   if ([type isEqualToString:kParamPassword])
     alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;

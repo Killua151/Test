@@ -67,7 +67,7 @@
                     withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
   [_lblMessage adjustToFitHeight];
   
-  styledString = @"strength bars";
+  styledString = MMLocalizedString(@"strength bars");
   message = [NSString stringWithFormat:MMLocalizedString(@"Keep those %@ full as words fade from your memory"), styledString];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];

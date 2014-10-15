@@ -22,7 +22,7 @@
   MSpeakQuestion *questionData = (MSpeakQuestion *)self.questionData;
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestionTitle.text = NSLocalizedString(@"Speak this sentence:", nil);
+  _lblQuestionTitle.text = MMLocalizedString(@"Speak this sentence:");
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
@@ -32,8 +32,8 @@
   center.y = _btnQuestionAudio.center.y + kFontClearSansMarginTop;
   _lblQuestion.center = center;
   
-  NSString *styledString = NSLocalizedString(@"Tap", nil);
-  NSString *tooltipsMessage = [NSString stringWithFormat:NSLocalizedString(@"%@ to start recording", nil), styledString];
+  NSString *styledString = MMLocalizedString(@"Tap");
+  NSString *tooltipsMessage = [NSString stringWithFormat:MMLocalizedString(@"%@ to start recording"), styledString];
   _btnTooltips.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnTooltips.titleLabel applyAttributedText:tooltipsMessage
                                       onString:styledString
@@ -43,8 +43,7 @@
   _btnSkipSpeakQuestion.layer.cornerRadius = 4;
   _btnSkipSpeakQuestion.layer.borderColor = [UIColorFromRGB(179, 179, 179) CGColor];
   _btnSkipSpeakQuestion.layer.borderWidth = 2;
-  [_btnSkipSpeakQuestion setTitle:NSLocalizedString(@"I can’t use microphone right now", nil)
-                         forState:UIControlStateNormal];
+  [_btnSkipSpeakQuestion setTitle:MMLocalizedString(@"I can’t use microphone right now") forState:UIControlStateNormal];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _lblQuestionTitle.frame;

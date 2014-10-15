@@ -57,7 +57,7 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _lblInstructions.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblInstructions.text = MMLocalizedString(@"Chúng tôi sẽ gửi cho bạn hướng dẫn lấy lại mật khẩu qua email");
+  _lblInstructions.text = MMLocalizedString(@"We will send you instructions to recover your password via email");
   
   _vTextField.layer.cornerRadius = 4;
   _vTextField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];

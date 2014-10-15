@@ -97,7 +97,7 @@
   return components;
 }
 
-- (NSString *)localizedStringForLanguage:(NSString *)language {
+- (NSString *)localizedStringForLanguage:(NSString *)language {  
   return NSLocalizedString(self, nil);
 }
 

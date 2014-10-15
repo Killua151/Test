@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButtonWithSuffix:nil];
-  [self customTitleWithText:NSLocalizedString(@"Sign up", nil) color:UIColorFromRGB(51, 51, 51)];
+  [self customTitleWithText:MMLocalizedString(@"Sign up") color:UIColorFromRGB(51, 51, 51)];
   [self setupViews];
   [self reloadContents];
 }
@@ -39,14 +39,6 @@
   _txtUsername.text = @"";
   _txtPassword.text = @"";
   _txtConfirmPassword.text = @"";
-  
-#if kTestSignUp
-//  _txtFullName.text = @"Test Account";
-//  _txtEmail.text = @"test@accou.nt";
-//  _txtUsername.text = @"test_account";
-//  _txtPassword.text = @"asdfasdf";
-//  _txtConfirmPassword.text = @"asdfasdf";
-#endif
 }
 
 - (void)gestureLayerDidTap {
@@ -114,59 +106,60 @@
   _vTextFields.layer.borderWidth = 1;
   
   _txtFullName.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtFullName.placeholder = NSLocalizedString(@"Full name (optional)", nil);
+  _txtFullName.placeholder = MMLocalizedString(@"Full name (optional)");
   
   _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtEmail.placeholder = NSLocalizedString(@"Email", nil);
+  _txtEmail.placeholder = MMLocalizedString(@"Email");
   
   _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtUsername.placeholder = NSLocalizedString(@"Username", nil);
+  _txtUsername.placeholder = MMLocalizedString(@"Username");
   
   _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtPassword.placeholder = NSLocalizedString(@"Password", nil);
+  _txtPassword.placeholder = MMLocalizedString(@"Password");
   
   _txtConfirmPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtConfirmPassword.placeholder = NSLocalizedString(@"Confirm password", nil);
+  _txtConfirmPassword.placeholder = MMLocalizedString(@"Confirm password");
   
   _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSignUp.layer.cornerRadius = 4;
-  [_btnSignUp setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
+  [_btnSignUp setTitle:MMLocalizedString(@"Sign up") forState:UIControlStateNormal];
 }
 
 - (BOOL)validateFields {
   if (![_txtEmail.text validateBlank]) {
     [_txtEmail becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your email", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your email")];
     return NO;
   }
   
   if (![_txtEmail.text validateEmail]) {
     [_txtEmail becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Invalid email", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Invalid email")];
     return NO;
   }
   
   if (![_txtUsername.text validateBlank]) {
     [_txtUsername becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your username", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your username")];
     return NO;
   }
   
   if (![_txtPassword.text validateBlank]) {
     [_txtPassword becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your password")];
     return NO;
   }
   
   if (![_txtConfirmPassword.text validateBlank]) {
     [_txtConfirmPassword becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Please enter your password again", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please confirm your password")];
     return NO;
   }
   
   if (_txtPassword.text.length < 8) {
     [_txtPassword becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Password must be at least 8 characters long", nil)];
+    [Utils showToastWithMessage:
+     [NSString stringWithFormat:MMLocalizedString(@"Password must be at least %ld characters long"), 8]];
     return NO;
   }
   
@@ -174,7 +167,7 @@
     _txtPassword.text = @"";
     _txtConfirmPassword.text = @"";
     [_txtPassword becomeFirstResponder];
-    [Utils showToastWithMessage:NSLocalizedString(@"Passwords not match", nil)];
+    [Utils showToastWithMessage:MMLocalizedString(@"Passwords not match")];
     return NO;
   }
   

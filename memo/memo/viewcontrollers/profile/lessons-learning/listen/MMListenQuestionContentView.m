@@ -22,10 +22,10 @@
 
 - (void)setupViews {
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestionTitle.text = NSLocalizedString(@"Type what you listen", nil);
+  _lblQuestionTitle.text = MMLocalizedString(@"Type what you listen");
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtAnswerPlaceholder.placeholder = NSLocalizedString(@"Your answer...", nil);
+  _txtAnswerPlaceholder.placeholder = MMLocalizedString(@"Your answer...");
   
   _txtAnswerField.delegate = self;
   _txtAnswerField.font = [UIFont fontWithName:@"ClearSans" size:17];

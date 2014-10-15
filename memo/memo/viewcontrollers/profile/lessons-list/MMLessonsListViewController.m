@@ -37,7 +37,7 @@
   [super viewWillAppear:animated];
   [self customTitleWithText:_skillData.title color:[self navigationTextColor]];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Shortcut", nil)
+                           title:MMLocalizedString(@"Shortcut")
                            color:[self navigationTextColor]
                           target:self
                           action:@selector(shortcutTest)

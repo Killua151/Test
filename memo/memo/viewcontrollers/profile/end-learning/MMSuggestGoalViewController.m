@@ -41,22 +41,22 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Let's get started!", nil);
+  _lblMessage.text = MMLocalizedString(@"Let's get started!");
   [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = NSLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.", nil);
+  _lblSubMessage.text = MMLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.");
   [_lblSubMessage adjustToFitHeight];
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSetGoal.layer.cornerRadius = 4;
-  [_btnSetGoal setTitle:NSLocalizedString(@"Set daily goal", nil) forState:UIControlStateNormal];
+  [_btnSetGoal setTitle:MMLocalizedString(@"Set daily goal") forState:UIControlStateNormal];
   
   _btnSkip.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSkip.layer.cornerRadius = 4;
   _btnSkip.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnSkip.layer.borderWidth = 2;
-  [_btnSkip setTitle:NSLocalizedString(@"Skip", nil) forState:UIControlStateNormal];
+  [_btnSkip setTitle:MMLocalizedString(@"Skip") forState:UIControlStateNormal];
 }
 
 @end

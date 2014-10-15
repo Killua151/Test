@@ -52,10 +52,10 @@
     _userId = [MUser currentUser]._id;
   
   if ([_userId isEqualToString:[MUser currentUser]._id]) {
-    [self customTitleWithText:NSLocalizedString(@"Profile", nil) color:[UIColor blackColor]];
+    [self customTitleWithText:MMLocalizedString(@"Profile") color:[UIColor blackColor]];
     
     [self customBarButtonWithImage:nil
-                             title:NSLocalizedString(@"Settings", nil)
+                             title:MMLocalizedString(@"Settings")
                              color:UIColorFromRGB(129, 12, 21)
                             target:self
                             action:@selector(gotoSettings)
@@ -63,11 +63,10 @@
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(reloadContents) name:kNotificationReloadProfile object:nil];
-    
   }
   
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Close", nil)
+                           title:MMLocalizedString(@"Close")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(dismissViewController)
@@ -277,7 +276,7 @@
   [[MMServerHelper sharedHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
-    [UIAlertView showWithTitle:nil andMessage:MMLocalizedString(message)];
+    [UIAlertView showWithTitle:nil andMessage:message];
   }];
 }
 
@@ -295,20 +294,20 @@
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [_btnSwitchCourse setTitle:NSLocalizedString(@"Switch course", nil) forState:UIControlStateNormal];
+  [_btnSwitchCourse setTitle:MMLocalizedString(@"Change language") forState:UIControlStateNormal];
   _btnSwitchCourse.hidden = YES;
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [_btnSetGoal setTitle:NSLocalizedString(@"Set goal", nil) forState:UIControlStateNormal];
+  [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];
   
   _lblLeaderboardsHeader.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblLeaderboardsHeader.text = NSLocalizedString(@"Leaderboards", nil);
+  _lblLeaderboardsHeader.text = MMLocalizedString(@"Leaderboards");
   
   _btnAddFriend.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
-  [_btnAddFriend setTitle:NSLocalizedString(@"Add friends", nil) forState:UIControlStateNormal];
+  [_btnAddFriend setTitle:MMLocalizedString(@"Add friends") forState:UIControlStateNormal];
   
   _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:13];
-  _lblEmptyLeaderboards.text = NSLocalizedString(@"No leaderboards data", nil);
+  _lblEmptyLeaderboards.text = MMLocalizedString(@"No leaderboards data");
 }
 
 - (void)updateViews {
@@ -326,11 +325,11 @@
     _lblUsername.text = _userData.username;
   
   _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
-  _lblCourseName.text = NSLocalizedString(_userData.current_course, nil);
+  _lblCourseName.text = _userData.current_course;
   
-  [_btnStreak setTitle:[NSString stringWithFormat:@"%ld Combo days", (long)_userData.combo_days]
+  [_btnStreak setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld Combo days"), (long)_userData.combo_days]
               forState:UIControlStateNormal];
-  [_btnMoney setTitle:[NSString stringWithFormat:@"%ld Memo Coins", (long)_userData.virtual_money]
+  [_btnMoney setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld Memo Coins"), (long)_userData.virtual_money]
              forState:UIControlStateNormal];
   
   [self addGraphChart];

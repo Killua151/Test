@@ -35,6 +35,7 @@
   MJudgeQuestion *questionData = (MJudgeQuestion *)self.questionData;
   
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblQuestionTitle.text = MMLocalizedString(@"Select all correct answers");
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
   

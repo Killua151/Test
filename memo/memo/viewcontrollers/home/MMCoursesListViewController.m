@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customBackButtonWithSuffix:nil];
-  [self customTitleWithText:MMLocalizedString(@"Select course") color:UIColorFromRGB(51, 51, 51)];
+  [self customTitleWithText:MMLocalizedString(@"Select language") color:UIColorFromRGB(51, 51, 51)];
   
   [self setupViews];
   [self reloadContents];

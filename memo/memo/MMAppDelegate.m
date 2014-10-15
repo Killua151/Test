@@ -142,6 +142,7 @@
 #endif
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
+  [[LocalizationHelper sharedHelper] loadLocalizationForLanguage:PreferedAppLanguage()];
   
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
@@ -155,16 +156,16 @@
 #endif
   [MUser loadCurrentUserFromUserDef];
   
-#if kTestCompactTranslation
-  [NSString testCompactTranslations];
-#endif
-  
   [self test];
 }
 
 - (void)test {
-//  DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
-//  
+  DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
+  
+#if kTestCompactTranslation
+  [NSString testCompactTranslations];
+#endif
+  
 //  NSArray *strCouples = @[
 //                          @[@"Hoàng tử", @"Hoảng tụ"],
 //                          @[@"Bạn có những kế hoạch cho tối nay chưa?", @"Ban co nhung ke hoach cho toi này chua"],

@@ -25,7 +25,7 @@
   
   _btnOptions = [NSMutableArray new];
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestion.text = [NSString stringWithFormat:NSLocalizedString(@"Translate \"%@\"", nil), questionData.question];
+  _lblQuestion.text = [NSString stringWithFormat:MMLocalizedString(@"Translate \"%@\""), questionData.question];
   
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _lblQuestion.frame;

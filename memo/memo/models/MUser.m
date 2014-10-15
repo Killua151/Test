@@ -111,7 +111,7 @@ static MUser *_currentUser = nil;
   chartData.lineWidth = 1;
   
   [lineChart setDatas:@[chartData] forXValues:daysData];
-  lineChart.emptyChartText = NSLocalizedString(@"The chart is empty.", nil);
+  lineChart.emptyChartText = MMLocalizedString(@"The chart is empty.");
   
   return lineChart;
 }

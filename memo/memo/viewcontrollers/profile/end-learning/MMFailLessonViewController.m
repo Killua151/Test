@@ -26,7 +26,7 @@
 
 - (void)setupViews {
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = MMLocalizedString(@"Bạn đã dùng hết trái tim!");
+  _lblMessage.text = MMLocalizedString(@"You have no hearts remained!");
   
   _btnRetry.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnRetry.layer.cornerRadius = 4;

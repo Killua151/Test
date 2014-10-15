@@ -30,8 +30,8 @@
   MSkill *affectedSkill = receivedBonuses[kParamAffectedSkill];
   NSInteger bonusMoney = [receivedBonuses[kParamBonusMoney] integerValue];
   
-  NSString *styledString = [NSString stringWithFormat:@"%ld Memo Coin", (long)bonusMoney];
-  NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Bạn đã được thưởng %@", nil), styledString];
+  NSString *styledString = [NSString stringWithFormat:MMLocalizedString(@"%ld Memo Coin"), (long)bonusMoney];
+  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You are bonused %@"), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_lblMessage applyAttributedText:message
@@ -40,14 +40,14 @@
   [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = [NSString stringWithFormat:NSLocalizedString(@"Hoàn thành kỹ năng %@", nil), affectedSkill.title];
+  _lblSubMessage.text = [NSString stringWithFormat:MMLocalizedString(@"Finish skill %@"), affectedSkill.title];
   
-  _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];  
+  _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];
   _lblCount.text = [NSString stringWithFormat:@"%ld", (long)bonusMoney];
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
-  [_btnNext setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+  [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {

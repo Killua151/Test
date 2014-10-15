@@ -70,11 +70,11 @@
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnLogIn.layer.cornerRadius = 4;
-  [_btnLogIn setTitle:NSLocalizedString(@"Log in", nil) forState:UIControlStateNormal];
+  [_btnLogIn setTitle:MMLocalizedString(@"Log in") forState:UIControlStateNormal];
   
   _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNewUser.layer.cornerRadius = 4;
-  [_btnNewUser setTitle:NSLocalizedString(@"New user", nil) forState:UIControlStateNormal];
+  [_btnNewUser setTitle:MMLocalizedString(@"New user") forState:UIControlStateNormal];
 }
 
 @end

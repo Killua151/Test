@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:MMLocalizedString([MUser currentUser].current_course) color:[UIColor blackColor]];
+  [self customTitleWithText:[MUser currentUser].current_course color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
                            title:MMLocalizedString(@"Profile")
                            color:UIColorFromRGB(129, 12, 21)
@@ -49,7 +49,7 @@
                         distance:8];
   
   [self customBarButtonWithImage:nil
-                           title:MMLocalizedString(@"Shop")
+                           title:MMLocalizedString(@"Plaza")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(gotoShop)
@@ -72,7 +72,7 @@
 - (void)reloadContents {
   MUser *currentUser = [MUser currentUser];
   
-  [self customTitleWithText:MMLocalizedString(currentUser.current_course) color:[UIColor blackColor]];
+  [self customTitleWithText:currentUser.current_course color:[UIColor blackColor]];
   _vBeginningOptions.hidden = !currentUser.is_beginner;
   _vStrengthenButton.hidden = currentUser.is_beginner;
   

@@ -23,21 +23,21 @@
   [super viewDidLoad];
   
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:NSLocalizedString(@"Set goal", nil) color:[UIColor blackColor]];
+  [self customTitleWithText:MMLocalizedString(@"Set goal") color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Close", nil)
+                           title:MMLocalizedString(@"Close")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(dismissViewController)
                         distance:-8];
   
   _goalsData = @[
-                 @{@"title" : NSLocalizedString(@"Easy", nil), @"value" : @10},
-                 @{@"title" : NSLocalizedString(@"Medium", nil), @"value" : @20},
-                 @{@"title" : NSLocalizedString(@"Hard", nil), @"value" : @30},
-                 @{@"title" : NSLocalizedString(@"Very hard", nil), @"value" : @50},
-                 @{@"title" : NSLocalizedString(@"Turn off Coach mode", nil), @"value" : @0}
+                 @{@"title" : MMLocalizedString(@"Easy"), @"value" : @10},
+                 @{@"title" : MMLocalizedString(@"Medium"), @"value" : @20},
+                 @{@"title" : MMLocalizedString(@"Hard"), @"value" : @30},
+                 @{@"title" : MMLocalizedString(@"Very hard"), @"value" : @50},
+                 @{@"title" : MMLocalizedString(@"Turn off Coach mode"), @"value" : @0}
                  ];
   [_tblGoals selectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]
                          animated:YES
@@ -78,7 +78,7 @@
 - (void)setupViews {
   _btnAccept.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnAccept.layer.cornerRadius = 4;
-  [_btnAccept setTitle:NSLocalizedString(@"Accept", nil) forState:UIControlStateNormal];
+  [_btnAccept setTitle:MMLocalizedString(@"Accept") forState:UIControlStateNormal];
 }
 
 @end

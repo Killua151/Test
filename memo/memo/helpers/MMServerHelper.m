@@ -267,7 +267,7 @@
 }
 
 - (void)inviteFriendByEmail:(NSString *)email completion:(void (^)(NSString *, NSError *))handler {
-  handler(@"Invite email sent successfully", nil);
+  handler(MMLocalizedString(@"Invite email sent successfully"), nil);
 }
 
 - (void)startLesson:(NSInteger)lessonNumber

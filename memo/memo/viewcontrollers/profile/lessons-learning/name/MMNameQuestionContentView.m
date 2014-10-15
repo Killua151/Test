@@ -23,11 +23,11 @@
 - (void)setupViews {
   MNameQuestion *questionData = (MNameQuestion *)self.questionData;
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblQuestion.text = [NSString stringWithFormat:NSLocalizedString(@"Translate \"%@\"", nil), questionData.question];
+  _lblQuestion.text = [NSString stringWithFormat:MMLocalizedString(@"Translate \"%@\""), questionData.question];
   
   _txtAnswerField.delegate = self;
   _txtAnswerField.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtAnswerField.placeholder = NSLocalizedString(@"Your answer...", nil);
+  _txtAnswerField.placeholder = MMLocalizedString(@"Your answer...");
   
   _vAnswerField.layer.cornerRadius = 3;
   _vAnswerField.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];

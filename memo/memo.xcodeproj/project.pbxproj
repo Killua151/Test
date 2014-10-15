@@ -17,6 +17,10 @@
 		CA452E4719ED643500A5F5CB /* MMPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA452E4519ED643500A5F5CB /* MMPlacementTestViewController.xib */; };
 		CA452E4819ED64CE00A5F5CB /* MMPlacementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E4419ED643500A5F5CB /* MMPlacementTestViewController.m */; };
 		CA452E4919ED64E500A5F5CB /* MMPlacementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA452E4519ED643500A5F5CB /* MMPlacementTestViewController.xib */; };
+		CA452E4C19EEA01B00A5F5CB /* vi.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA452E4B19EEA01B00A5F5CB /* vi.strings */; };
+		CA452E4D19EEA01B00A5F5CB /* vi.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA452E4B19EEA01B00A5F5CB /* vi.strings */; };
+		CA452E5019EEA28B00A5F5CB /* LocalizationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */; };
+		CA452E5119EEA28B00A5F5CB /* LocalizationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
@@ -1576,6 +1580,9 @@
 		CA452E4319ED643500A5F5CB /* MMPlacementTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPlacementTestViewController.h; sourceTree = "<group>"; };
 		CA452E4419ED643500A5F5CB /* MMPlacementTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPlacementTestViewController.m; sourceTree = "<group>"; };
 		CA452E4519ED643500A5F5CB /* MMPlacementTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMPlacementTestViewController.xib; sourceTree = "<group>"; };
+		CA452E4B19EEA01B00A5F5CB /* vi.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = vi.strings; sourceTree = "<group>"; };
+		CA452E4E19EEA28B00A5F5CB /* LocalizationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationHelper.h; sourceTree = "<group>"; };
+		CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationHelper.m; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2504,6 +2511,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA452E4A19EEA00500A5F5CB /* l10n */ = {
+			isa = PBXGroup;
+			children = (
+				CA452E4B19EEA01B00A5F5CB /* vi.strings */,
+			);
+			path = l10n;
+			sourceTree = "<group>";
+		};
 		CAA91C8D19E780BC0076A9BC /* Find Friends */ = {
 			isa = PBXGroup;
 			children = (
@@ -2570,6 +2585,7 @@
 		CABBEA8A19E0E4C800EFED33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA452E4A19EEA00500A5F5CB /* l10n */,
 				CABBEA8C19E0E4C800EFED33 /* InfoPlist.strings */,
 				CABBEA8F19E0E4C800EFED33 /* main.m */,
 				CABBEA8B19E0E4C800EFED33 /* memo-Info.plist */,
@@ -2617,6 +2633,8 @@
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
 				CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */,
 				CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */,
+				CA452E4E19EEA28B00A5F5CB /* LocalizationHelper.h */,
+				CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */,
 			);
 			name = Helpers;
 			path = helpers;
@@ -4039,6 +4057,7 @@
 				CAF8542919E0F3D200A347CF /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png in Resources */,
 				CAF855F519E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked.png in Resources */,
 				CAF8539819E0F3D200A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png in Resources */,
+				CA452E4C19EEA01B00A5F5CB /* vi.strings in Resources */,
 				CAF8533019E0F3D200A347CF /* img-lessons_learning-checkbox-checked.png in Resources */,
 				CAF8539719E0F3D200A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png in Resources */,
 				CAF8562F19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked.png in Resources */,
@@ -5064,6 +5083,7 @@
 				CAF858AB19E0FDF600A347CF /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */,
 				CAF858AC19E0FDF600A347CF /* img-beginner-icon.png in Resources */,
 				CAF858AD19E0FDF600A347CF /* img-share-google_selected.png in Resources */,
+				CA452E4D19EEA01B00A5F5CB /* vi.strings in Resources */,
 				CAF858AE19E0FDF600A347CF /* MMJudgeOptionCell.xib in Resources */,
 				CAF858AF19E0FDF600A347CF /* img-skill_icon-en-vi_gia_dinh-unlocked.png in Resources */,
 				CAF858B019E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked.png in Resources */,
@@ -5427,6 +5447,7 @@
 				CAF854D719E0F3D200A347CF /* MMShareActionSheet.m in Sources */,
 				CABBEA9419E0E4C800EFED33 /* MMAppDelegate.m in Sources */,
 				CAF852DA19E0F3D200A347CF /* MItem.m in Sources */,
+				CA452E5019EEA28B00A5F5CB /* LocalizationHelper.m in Sources */,
 				CAF854CD19E0F3D200A347CF /* MMShieldCheckpointTestCell.m in Sources */,
 				CAF854A519E0F3D200A347CF /* MMSpeakQuestionContentView.m in Sources */,
 				CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */,
@@ -5539,6 +5560,7 @@
 				CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */,
 				CAF856B119E0FDF600A347CF /* MMSettingsHeaderView.m in Sources */,
 				CAF856B219E0FDF600A347CF /* NSMutableDictionary+DMPExtensions.m in Sources */,
+				CA452E5119EEA28B00A5F5CB /* LocalizationHelper.m in Sources */,
 				CAF856B319E0FDF600A347CF /* MMHexagonSkillCell.m in Sources */,
 				CAF856B419E0FDF600A347CF /* MMShareActionSheet.m in Sources */,
 				CAF856B519E0FDF600A347CF /* MMAppDelegate.m in Sources */,

@@ -39,22 +39,22 @@
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblMessage.text = NSLocalizedString(@"Save your progress", nil);
+  _lblMessage.text = MMLocalizedString(@"Save your progress");
   [_lblMessage adjustToFitHeight];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = NSLocalizedString(@"You now need a Memo profile to save your progress. Register now!", nil);
+  _lblSubMessage.text = MMLocalizedString(@"You now need a Memo profile to save your progress. Register now!");
   [_lblSubMessage adjustToFitHeight];
   
   _btnCreateProfile.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnCreateProfile.layer.cornerRadius = 4;
-  [_btnCreateProfile setTitle:NSLocalizedString(@"Create profile", nil) forState:UIControlStateNormal];
+  [_btnCreateProfile setTitle:MMLocalizedString(@"Create profile") forState:UIControlStateNormal];
   
   _btnCancel.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnCancel.layer.cornerRadius = 4;
   _btnCancel.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
   _btnCancel.layer.borderWidth = 2;
-  [_btnCancel setTitle:NSLocalizedString(@"Cancel my progress", nil) forState:UIControlStateNormal];
+  [_btnCancel setTitle:MMLocalizedString(@"Cancel my progress") forState:UIControlStateNormal];
 }
 
 - (IBAction)btnCreateProfile:(UIButton *)sender {

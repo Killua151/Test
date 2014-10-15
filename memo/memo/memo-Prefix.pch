@@ -34,6 +34,7 @@
   #import "UILabel+LabelHelpers.h"
   #import "UIView+ExtendedToast.h"
 
+  #import "LocalizationHelper.h"
   #import "MMAllowsTouchOutsideView.h"
   #import "MMAllowsTouchUnderneathView.h"
   #import "MMLineChart.h"
@@ -83,7 +84,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 //#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
 #define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
-#define kServerApiVersion                       @"v1.2"
+#define kServerApiVersion                       @"v1.1"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
@@ -93,7 +94,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define HideHudForCurrentView()                 [Utils hideAllHUDsForView:[self mainView]];
 
 #define PreferedAppLanguage()                   @"vi"
-#define MMLocalizedString(string)               ([(string) localizedStringForLanguage:PreferedAppLanguage()])
+#define MMLocalizedString(string)               ([[LocalizationHelper sharedHelper] localizedStringForString:(string)])
 
 #define kHeightStatusBar                        20
 #define kHeightNavigationBar                    44
@@ -176,5 +177,6 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kValueExamTypeShortcut                  @"shortcut"
 #define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
+#define kValueSupportEmail                      @"support@memo.edu.vn"
 
 #define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"

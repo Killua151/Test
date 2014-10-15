@@ -29,10 +29,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:NSLocalizedString(@"Share", nil) color:UIColorFromRGB(51, 51, 51)];
+  [self customTitleWithText:MMLocalizedString(@"Share") color:UIColorFromRGB(51, 51, 51)];
   [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:8];
   [self customBarButtonWithImage:nil
-                           title:NSLocalizedString(@"Close", nil)
+                           title:MMLocalizedString(@"Close")
                            color:UIColorFromRGB(129, 12, 21)
                           target:self
                           action:@selector(dismissViewController)
@@ -71,7 +71,7 @@
 - (void)setupViews {
   _imgShareImage.superview.layer.cornerRadius = 5;
   _txtPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtPlaceholder.placeholder = NSLocalizedString(@"Write comment...", nil);
+  _txtPlaceholder.placeholder = MMLocalizedString(@"Write comment...");
   _txtComment.font = [UIFont fontWithName:@"ClearSans" size:17];
   
   for (UIButton *button in _btnShareOptions) {

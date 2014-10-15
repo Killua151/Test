@@ -26,7 +26,7 @@
                     <rect key="frame" x="8" y="138" width="14" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boys" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="sIf-t6-bzQ">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boys" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" id="sIf-t6-bzQ">
                     <rect key="frame" x="30" y="131" width="100" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

@@ -11,13 +11,13 @@
 @implementation UIAlertView (AlertHelpers)
 
 + (UIAlertView *)showWithError:(NSError *)error {
-  return [[self class] showWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil), [error errorCode]]
+  return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
                           andMessage:[error errorMessage]
                             delegate:nil];
 }
 
 + (UIAlertView *)showWithError:(NSError *)error delegate:(id)delegate {
-  return [[self class] showWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error %d", nil), [error errorCode]]
+  return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
                           andMessage:[error errorMessage]
                             delegate:delegate];
 }
@@ -30,7 +30,7 @@
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                       message:message
                                                      delegate:delegate
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                            cancelButtonTitle:MMLocalizedString(@"OK")
                                             otherButtonTitles:nil];
   [alertView show];
   

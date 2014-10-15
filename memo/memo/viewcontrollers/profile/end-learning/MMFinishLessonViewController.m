@@ -45,7 +45,7 @@
   NSDictionary *receivedBonuses = [MUser currentUser].lastReceivedBonuses;
   
   NSString *styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamFinishExamBonusExp]];
-  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"Bài tập hoàn thành! %@"), styledString];
+  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"Lesson done! %@"), styledString];
   
   _lblFinishLessonMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_lblFinishLessonMessage applyAttributedText:message
@@ -54,7 +54,7 @@
   [_lblFinishLessonMessage adjustToFitHeight];
   
   styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
-  message = [NSString stringWithFormat:MMLocalizedString(@"Thưởng trái tim %@"), styledString];
+  message = [NSString stringWithFormat:MMLocalizedString(@"Heart bonus %@"), styledString];
   
   _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_lblHeartBonusMessage applyAttributedText:message
@@ -70,7 +70,7 @@
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
-  styledString = [NSString stringWithFormat:@"%ld Combo days", (long)[MUser currentUser].combo_days];
+  styledString = [NSString stringWithFormat:MMLocalizedString(@"%ld Combo days"), (long)[MUser currentUser].combo_days];
   message = [NSString stringWithFormat:MMLocalizedString(@"You have %@!"), styledString];
   _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_lblStreaksCount applyAttributedText:message
