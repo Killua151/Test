@@ -84,7 +84,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 
 //#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
 #define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
-#define kServerApiVersion                       @"v1.1"
+#define kServerApiVersion                       @"v1.2"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
@@ -134,9 +134,11 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamAnswerResult                      @"answer_result"
 #define kParamAuthToken                         @"auth_token"
 #define kParamBonusMoney                        @"bonus_money"
+#define kParamCheckpoints                       @"checkpoints"
 #define kParamCheckpointPosition                @"checkpoint_position"
 #define kParamCheckpointPositions               @"checkpoint_positions"
 #define kParamCorrectAnswer                     @"correct_answer"
+#define kParamCourseId                          @"course_id"
 #define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"

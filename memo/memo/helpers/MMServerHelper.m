@@ -12,6 +12,8 @@
 #import "MSkill.h"
 #import "MBaseQuestion.h"
 #import "MFriend.h"
+#import "MCourse.h"
+#import "MCheckpoint.h"
 
 @interface MMServerHelper ()
 
@@ -145,6 +147,42 @@
    }];
 }
 
+- (void)getCourses:(void (^)(NSArray *, NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   GET:@"courses"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSArray *courses = [MCourse modelsFromArr:[responseObject objectFromJSONData]];
+     handler(courses, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
+- (void)selectCourse:(NSString *)courseId completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamCourseId : [NSString normalizedString:courseId]
+                           };
+  
+  [self
+   POST:@"users/select_course"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)getUserProfile:(void (^)(NSDictionary *, NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
@@ -153,10 +191,7 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
-     MUser *currentUser = [MUser currentUser];
-     [currentUser assignProperties:userData[kParamUserInfo]];
-     currentUser.skills_tree = userData[kParamSkillsTree];
-     currentUser.skills = [MSkill modelsFromArr:userData[kParamSkills]];
+     [[MUser currentUser] updateAttributesFromProfileData:userData];
      handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

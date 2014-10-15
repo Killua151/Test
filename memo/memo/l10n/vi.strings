@@ -20,6 +20,7 @@
 "Change language" = "Đổi ngôn ngữ";
 "Check" = "Kiểm tra";
 "Checkpoint passed" = "Đã vượt qua checkpoint";
+"Checkpoint test for %d %@" = "Kiểm tra rút ngắn %d %@";
 "Close" = "Đóng";
 "Connections" = "Kết nối";
 "Confirm email" = "Xác nhận email";

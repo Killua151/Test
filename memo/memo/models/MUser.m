@@ -11,6 +11,7 @@
 #import <GooglePlus/GooglePlus.h>
 #import "MSkill.h"
 #import "MLeaderboardData.h"
+#import "MCheckpoint.h"
 
 @interface MUser () {
   NSMutableDictionary *_skillsById;
@@ -79,6 +80,13 @@ static MUser *_currentUser = nil;
       receivedBonus[key] = lastReceivedBonuses[key];
   
   _lastReceivedBonuses = [NSDictionary dictionaryWithDictionary:receivedBonus];
+}
+
+- (void)updateAttributesFromProfileData:(NSDictionary *)userData {
+  [self assignProperties:userData[kParamUserInfo]];
+  _checkpoints = [MCheckpoint modelsFromArr:userData[kParamCheckpoints]];
+  _skills_tree = userData[kParamSkillsTree];
+  _skills = [MSkill modelsFromArr:userData[kParamSkills]];
 }
 
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame {
@@ -150,7 +158,7 @@ static MUser *_currentUser = nil;
 }
 
 - (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow {
-  return [_checkpointsMapper[@(checkpointRow)] integerValue];
+  return [_checkpointsMapper[@(checkpointRow)] row];
 }
 
 #pragma mark - Private methods
@@ -181,8 +189,8 @@ static MUser *_currentUser = nil;
     
     _remainingSkillsMapper[@(index)] = @0;
     
-    if (_checkpoint_positions[checkpointsCount] != nil)
-      _checkpointsMapper[@(index)] = _checkpoint_positions[checkpointsCount];
+    if (_checkpoints[checkpointsCount] != nil)
+      _checkpointsMapper[@(index)] = _checkpoints[checkpointsCount];
     else
       _checkpointsMapper[@(index)] = @0;
     
