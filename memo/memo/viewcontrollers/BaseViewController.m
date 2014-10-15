@@ -60,7 +60,7 @@
 - (void)transitToViewController:(UIViewController *)viewController {
   viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
-  [self presentViewController:viewController animated:YES completion:^{
+  [[self mainViewController] presentViewController:viewController animated:YES completion:^{
     MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = viewController;
   }];

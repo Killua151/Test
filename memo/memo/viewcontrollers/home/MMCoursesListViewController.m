@@ -7,7 +7,9 @@
 //
 
 #import "MMCoursesListViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MMCourseSelectionCell.h"
+#import "MCourse.h"
 
 @interface MMCoursesListViewController () {
   NSMutableArray *_coursesData;
@@ -70,6 +72,19 @@
 #pragma mark - UITableViewDelegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   return [MMCourseSelectionCell heightToFitWithData:_coursesData[indexPath.row]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  MCourse *course = _coursesData[indexPath.row];
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] selectCourse:course._id completion:^(NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [self transitToViewController:[MMSkillsListViewController navigationController]];
+  }];
 }
 
 #pragma mark - Private methods

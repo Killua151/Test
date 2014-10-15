@@ -48,7 +48,7 @@
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 
 - (void)getCourses:(void(^)(NSArray *courses, NSError *error))handler;
-- (void)selectCourse:(NSString *)courseId completion:(void(^)(NSError *error))handler;
+- (void)selectCourse:(NSString *)baseCourseId completion:(void(^)(NSError *error))handler;
 
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)getProfileDetails:(NSString *)friendId completion:(void(^)(MUser *user, NSError *error))handler;

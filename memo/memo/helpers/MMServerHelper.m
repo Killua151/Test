@@ -164,10 +164,10 @@
    }];
 }
 
-- (void)selectCourse:(NSString *)courseId completion:(void (^)(NSError *))handler {
+- (void)selectCourse:(NSString *)baseCourseId completion:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamCourseId : [NSString normalizedString:courseId]
+                           kParamBaseCourseId : [NSString normalizedString:baseCourseId]
                            };
   
   [self
