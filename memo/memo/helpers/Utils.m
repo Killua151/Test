@@ -105,6 +105,43 @@ static UIView *_sharedToast = nil;
 //                                                         value:nil] build]];
 }
 
++ (NSTimeInterval)benchmarkOperation:(void (^)())operation {
+  if (operation == NULL)
+    return -1;
+
+  NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
+  
+  operation();
+  
+  NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+  
+  return endTime - startTime;
+}
+
++ (void)benchmarkOperationInBackground:(void (^)())operation completion:(void (^)(NSTimeInterval))handler {
+  if (operation == NULL) {
+    if (handler != NULL)
+      handler(-1);
+    
+    return;
+  }
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
+    
+    operation();
+    
+    NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
+      if (handler != NULL)
+        handler(endTime - startTime);
+      else
+        DLog(@"%f", endTime - startTime);
+    });
+  });
+}
+
 #pragma mark - User utils methods
 + (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

@@ -157,6 +157,21 @@
 
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
+  
+//  NSArray *strCouples = @[
+//                          @[@"Hoàng tử", @"Hoảng tụ"],
+//                          @[@"Bạn có những kế hoạch cho tối nay chưa?", @"Ban co nhung ke hoach cho toi này chua"],
+//                          @[@"Thống đốc mới có những ý tưởng khác", @"Thốn đốc mói cos những ý tưởn khác"],
+//                          @[@"Bạn có kế hoạch cho tối nay chưa?", @"Bạn cí kế hoạch cho tối nai chưa"],
+//                          ];
+//  
+//  for (NSArray *couple in strCouples) {
+//    NSTimeInterval elapsedTime = [Utils benchmarkOperation:^{
+//      DLog(@"%@", [[couple firstObject] checkTyposOnString:[couple lastObject]]);
+//    }];
+//    
+//    DLog(@"%f", elapsedTime);
+//  }
 }
 
 @end

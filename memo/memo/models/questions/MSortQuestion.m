@@ -16,23 +16,16 @@
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : correctAnswer,
-             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             kParamCorrectAnswer : correctAnswer
              };
   
   NSString *usersAnswer = [answerValue componentsJoinedByString:@" "];
   
-  if ([usersAnswer isEqualToString:correctAnswer])
-    return @{
-             kParamAnswerResult : @(YES),
-             kParamCorrectAnswer : correctAnswer,
-             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
-             };
+  BOOL answerResult = [usersAnswer isEqualToString:correctAnswer];
   
   return @{
-           kParamAnswerResult : @(NO),
-           kParamCorrectAnswer : correctAnswer,
-           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           kParamAnswerResult : @(answerResult),
+           kParamCorrectAnswer : correctAnswer
            };
 }
 

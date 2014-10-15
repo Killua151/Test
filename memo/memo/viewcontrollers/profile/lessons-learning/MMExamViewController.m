@@ -41,7 +41,7 @@
 - (void)setResultViewVisible:(BOOL)show
              forAnswerResult:(BOOL)answerResult
            withCorrectAnswer:(NSString *)correctAnswer
-              underlineRange:(NSRange)underlineRange;
+             underlineRanges:(NSArray *)underlineRanges;
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
 - (Class)questionContentViewKlassForQuestionType:(NSString *)questionType;
@@ -83,7 +83,7 @@
 }
 
 - (void)reloadContents {
-  [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRange:NSMakeRange(NSNotFound, 0)];
+  [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRanges:nil];
   _currentLessonIndex++;
   [self removeCurrentQuestion];
   [self updateHeaderViews];
@@ -151,12 +151,12 @@
   
   BOOL answerResult = [checkResult[kParamAnswerResult] boolValue];
   NSString *correctAnswer = checkResult[kParamCorrectAnswer];
-  NSRange underlineRange = [checkResult[kParamUnderlineRange] rangeValue];
+  NSArray *underlineRanges = checkResult[kParamUnderlineRanges];
   
   [self setResultViewVisible:YES
              forAnswerResult:answerResult
            withCorrectAnswer:correctAnswer
-              underlineRange:underlineRange];
+             underlineRanges:underlineRanges];
   
   _answersData[question.question_log_id] = @(answerResult);
 }
@@ -328,7 +328,7 @@
   _vResultCorrectBg.layer.cornerRadius = 5;
   _lblResultCorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblResultCorrectMessage.text = MMLocalizedString(@"Correct!");
-
+  
   _vResultIncorrectBg.layer.cornerRadius = 5;
   _lblResultIncorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblResultIncorrectMessage.text = MMLocalizedString(@"Correct answer");
@@ -365,7 +365,7 @@
 - (void)setResultViewVisible:(BOOL)show
              forAnswerResult:(BOOL)answerResult
            withCorrectAnswer:(NSString *)correctAnswer
-              underlineRange:(NSRange)underlineRange {
+             underlineRanges:(NSArray *)underlineRanges {
   if (!answerResult) {
     _currentHeartsCount--;
     [self updateHeaderViews];
@@ -391,24 +391,31 @@
          lblResultMessage = _lblResultIncorrectMessage;
          lblResultAnswer = _lblResultIncorrectAnswer;
        } else { // Correct
+         // Correct with typos
+         shouldShowAnswerLabel = [underlineRanges count] > 0;
+         
          lblResultMessage = _lblResultCorrectMessage;
          lblResultAnswer = _lblResultCorrectAnswer;
          
-         // Correct with typos
-         shouldShowAnswerLabel = underlineRange.location != NSNotFound;
+         if (shouldShowAnswerLabel)
+           lblResultMessage.text = MMLocalizedString(@"You have typos in your answer");
+         else
+           lblResultMessage.text = MMLocalizedString(@"Correct!");
        }
        
+       lblResultAnswer.hidden = !shouldShowAnswerLabel;
+       
        if (shouldShowAnswerLabel) {
-           
-         if (underlineRange.location == NSNotFound)
+         if ([underlineRanges count] == 0)
            lblResultAnswer.text = correctAnswer;
          else
-           [lblResultAnswer applyAttributedText:correctAnswer
-                                        inRange:underlineRange
-                                 withAttributes:@{
-                                                  NSUnderlineColorAttributeName : lblResultAnswer.textColor,
-                                                  NSUnderlineStyleAttributeName : @(NSUnderlineStyleThick)
-                                                  }];
+           for (NSValue *underlineRange in underlineRanges)
+             [lblResultAnswer applyAttributedText:correctAnswer
+                                          inRange:[underlineRange rangeValue]
+                                   withAttributes:@{
+                                                    NSUnderlineColorAttributeName : lblResultAnswer.textColor,
+                                                    NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)
+                                                    }];
          
          [lblResultAnswer adjustToFitHeightAndConstrainsToHeight:46 relatedTo:lblResultMessage withDistance:5];
          
@@ -422,7 +429,6 @@
          frame.origin.y = lblResultMessage.frame.origin.y + lblResultMessage.frame.size.height + 5;
          lblResultAnswer.frame = frame;
        } else {
-         lblResultAnswer.hidden = YES;
          CGPoint center = lblResultMessage.center;
          center.y = lblResultMessage.superview.frame.size.height/2 - 3;
          lblResultMessage.center = center;

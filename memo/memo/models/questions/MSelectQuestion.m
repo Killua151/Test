@@ -25,18 +25,12 @@
 }
 
 - (id)checkAnswer:(NSString *)answerValue {
-  if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]] ||
-      [answerValue compare:_hint options:NSCaseInsensitiveSearch] != NSOrderedSame)
-    return @{
-             kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint,
-             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
-             };
-
+  BOOL answerResult = answerValue != nil && [answerValue isKindOfClass:[NSString class]] &&
+  [answerValue compare:_hint options:NSCaseInsensitiveSearch] != NSOrderedSame;
+  
   return @{
-           kParamAnswerResult : @(YES),
-           kParamCorrectAnswer : _hint,
-           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           kParamAnswerResult : @(answerResult),
+           kParamCorrectAnswer : _hint
            };
 }
 

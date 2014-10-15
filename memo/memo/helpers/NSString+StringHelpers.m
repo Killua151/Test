@@ -140,4 +140,50 @@
   return YES;
 }
 
+- (NSInteger)wordsCount {
+  return [[self componentsSeperatedByNonLetterCharacters] count];
+}
+
+- (NSArray *)checkTyposOnString:(NSString *)inputString {
+  NSArray *selfComponents = [[self lowercaseString] componentsSeperatedByNonLetterCharacters];
+  NSArray *inputComponents = [[inputString lowercaseString] componentsSeperatedByNonLetterCharacters];
+
+  // Reduce cost of check typos operation, inputs should be at the same amount of words
+//  if ([selfComponents count] != [inputComponents count])
+//    return @[[NSValue valueWithRange:NSMakeRange(0, self.length)]];
+  
+  __block NSMutableArray *ranges = [NSMutableArray array];
+  
+  DiffMatchPatch *dmp = [DiffMatchPatch new];
+  __block NSInteger location = 0;
+  
+  [selfComponents enumerateObjectsUsingBlock:^(NSString *selfComponent, NSUInteger index, BOOL *stop) {
+    NSString *inputComponent = inputComponents[index];
+    
+    if ([selfComponent isEqualToString:inputComponent]) {
+      location += selfComponent.length+1;
+      return;
+    }
+    
+    NSArray *diffs = [dmp diff_mainOfOldString:inputComponent andNewString:selfComponent];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"operation = %d", DIFF_EQUAL];
+    NSArray *filtered = [diffs filteredArrayUsingPredicate:predicate];
+    
+    NSInteger equalCounts = [filtered count];
+    
+    // Incorrect word
+    if (equalCounts == 0) {
+      ranges = nil;
+      *stop = YES;
+      return;
+    }
+    
+    [ranges addObject:[NSValue valueWithRange:NSMakeRange(location, selfComponent.length)]];
+    location += selfComponent.length+1;
+  }];
+  
+  return ranges;
+}
+
 @end

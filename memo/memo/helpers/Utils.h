@@ -30,6 +30,9 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)logAnalyticsForScreen:(NSString *)screenName;
 + (void)logAnalyticsForSearchText:(NSString *)searchText;
 
++ (NSTimeInterval)benchmarkOperation:(void(^)())operation;
++ (void)benchmarkOperationInBackground:(void(^)())operation completion:(void(^)(NSTimeInterval elapsedTime))handler;
+
 #pragma mark - User utils methods
 + (NSDictionary *)updateSavedUserWithAttributes:(NSDictionary *)attributes;
 + (void)logInFacebookFromView:(UIView *)view completion:(SocialLogInCallback)callback;

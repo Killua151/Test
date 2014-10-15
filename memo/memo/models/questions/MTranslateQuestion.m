@@ -22,23 +22,38 @@
 //      return nil;
   
   // V1.0 - Better comparison: remove all punctuations & lower all characters
-  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+//  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+//  
+//  for (NSString *correctAnswer in correctAnswers) {
+//    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+//    
+//    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+//      return @{
+//               kParamAnswerResult : @(YES),
+//               kParamCorrectAnswer : _translation
+//               };
+//  }
   
+  // V1.1 - Better comparison: be able to check typos
   for (NSString *correctAnswer in correctAnswers) {
-    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+    if ([answerValue wordsCount] != [correctAnswer wordsCount])
+      continue;
     
-    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
-      return @{
-               kParamAnswerResult : @(YES),
-               kParamCorrectAnswer : _translation,
-               kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
-               };
+    NSArray *typos = [correctAnswer checkTyposOnString:answerValue];
+    
+    if (typos == nil)
+      continue;
+    
+    return @{
+             kParamAnswerResult : @(YES),
+             kParamCorrectAnswer : correctAnswer,
+             kParamUnderlineRanges : typos
+             };
   }
   
   return @{
            kParamAnswerResult : @(NO),
-           kParamCorrectAnswer : _translation,
-           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           kParamCorrectAnswer : _translation
            };
 }
 

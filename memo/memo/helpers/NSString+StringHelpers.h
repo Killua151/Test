@@ -30,4 +30,7 @@
 - (BOOL)isAcceptedSimilarToOneOfStrings:(NSArray *)otherStrings;
 - (BOOL)isAcceptedSimilarToString:(NSString *)otherString;
 
+- (NSInteger)wordsCount;
+- (NSArray *)checkTyposOnString:(NSString *)inputString;
+
 @end

@@ -164,7 +164,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamSkills                            @"skills"
 #define kParamSkillsTree                        @"skills_tree"
 #define kParamType                              @"type"
-#define kParamUnderlineRange                    @"underline_range"
+#define kParamUnderlineRanges                   @"underline_ranges"
 #define kParamUserInfo                          @"user_info"
 #define kParamUsername                          @"username"
 

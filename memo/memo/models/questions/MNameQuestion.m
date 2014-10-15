@@ -14,24 +14,27 @@
   if (answerValue == nil || ![answerValue isKindOfClass:[NSString class]])
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint,
-             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             kParamCorrectAnswer : _hint
              };
   
-  NSString *normalizedAnswer = [answerValue stringByRemovingAllNonLetterCharacters];
-  NSString *normalizedHint = [_hint stringByRemovingAllNonLetterCharacters];
-  
-  if ([normalizedAnswer compare:normalizedHint options:NSCaseInsensitiveSearch] != NSOrderedSame)
+  if ([answerValue wordsCount] != [_hint wordsCount])
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint,
-             kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+             kParamCorrectAnswer : _hint
+             };
+  
+  NSArray *typos = [_hint checkTyposOnString:answerValue];
+  
+  if (typos == nil)
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : self.question
              };
   
   return @{
-           kParamAnswerResult : @(YES),
-           kParamCorrectAnswer : _hint,
-           kParamUnderlineRange : [NSValue valueWithRange:NSMakeRange(NSNotFound, 0)]
+           kParamAnswerResult : @([typos count] > 0),
+           kParamCorrectAnswer : self.question,
+           kParamUnderlineRanges : typos
            };
 }
 

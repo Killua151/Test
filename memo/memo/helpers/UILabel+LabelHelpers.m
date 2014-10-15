@@ -58,7 +58,12 @@
 }
 
 - (void)applyAttributedText:(NSString *)fullText inRange:(NSRange)styledRange withAttributes:(NSDictionary *)attributes {
-  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
+  NSMutableAttributedString *attributedText =
+  [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+  
+  if (![[attributedText string] isEqualToString:fullText])
+    attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
+  
   [attributedText addAttributes:attributes range:styledRange];
   self.attributedText = attributedText;
 }
