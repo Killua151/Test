@@ -20,7 +20,8 @@
 @implementation NSString (CompactTranslation)
 
 + (NSArray *)fullSentencesFromTokensGroup:(NSArray *)tokensGroup {
-  return [[self class] expandCompactTranslation:tokensGroup];
+  NSArray *sentences = [[self class] expandCompactTranslation:tokensGroup];
+  return [[self class] normalizeSentences:sentences];
 }
 
 - (NSArray *)fullSentencesFromCompactTranslations {
