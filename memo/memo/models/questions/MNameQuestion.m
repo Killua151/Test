@@ -28,12 +28,12 @@
   if (typos == nil)
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : self.question
+             kParamCorrectAnswer : _hint
              };
   
   return @{
-           kParamAnswerResult : @([typos count] > 0),
-           kParamCorrectAnswer : self.question,
+           kParamAnswerResult : @(YES),
+           kParamCorrectAnswer : _hint,
            kParamUnderlineRanges : typos
            };
 }

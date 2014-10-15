@@ -86,4 +86,14 @@
   _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld", MMLocalizedString(@"Question"), (long)_currentLessonIndex+1];
 }
 
+#pragma mark - MMLessonLearningDelegate methods
+- (void)questionContentViewDidSkipAnswer {
+  [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefSpeakEnabled];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
+  [_answersData removeAllObjects];
+  _vGestureLayer.hidden = YES;
+  [self prepareNextQuestion];
+}
+
 @end

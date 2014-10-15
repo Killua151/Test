@@ -26,7 +26,7 @@
 
 - (id)checkAnswer:(NSString *)answerValue {
   BOOL answerResult = answerValue != nil && [answerValue isKindOfClass:[NSString class]] &&
-  [answerValue compare:_hint options:NSCaseInsensitiveSearch] != NSOrderedSame;
+  [answerValue compare:_hint options:NSCaseInsensitiveSearch] == NSOrderedSame;
   
   return @{
            kParamAnswerResult : @(answerResult),
