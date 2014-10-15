@@ -74,12 +74,10 @@
   
   [self customTitleWithText:MMLocalizedString(currentUser.current_course) color:[UIColor blackColor]];
   _vBeginningOptions.hidden = !currentUser.is_beginner;
+  _vStrengthenButton.hidden = currentUser.is_beginner;
   
   _skillsData = [currentUser skillsTree];
   [_tblSkills reloadData];
-  
-  if (![MUser currentUser].is_beginner)
-    [self animateSlideStrengthenButton:YES];
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {

@@ -86,7 +86,6 @@
   [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRanges:nil];
   _currentLessonIndex++;
   [self removeCurrentQuestion];
-  [self updateHeaderViews];
 }
 
 - (void)gestureLayerDidTap {
@@ -142,6 +141,7 @@
    }
    completion:^(BOOL finished) {
      _vQuestionContent.userInteractionEnabled = YES;
+     [self updateHeaderViews];
    }];
 }
 
@@ -258,6 +258,9 @@
 }
 
 - (void)questionContentViewDidSkipAnswer {
+  [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefSpeakEnabled];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
   _vGestureLayer.hidden = YES;
   [self reloadContents];
 }

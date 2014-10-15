@@ -345,7 +345,11 @@
 }
 
 - (void)startPlacementTest:(void (^)(NSString *, MBaseQuestion *, NSError *))handler {
-  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : @"ios",
+                           kParamSpeakEnabled : @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled])
+                           };
   
   [self
    POST:@"placement_test/start"
@@ -368,6 +372,8 @@
   NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:metadata];
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswer] = [answerResult JSONString];
+  params[kParamDevice] = @"ios";
+  params[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);
   
   [self
    POST:@"placement_test/submit_answer"
@@ -450,6 +456,10 @@
 }
 
 - (void)startExamWithParam:(NSDictionary *)params completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+  NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
+  paramsDict[kParamDevice] = @"ios";
+  paramsDict[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);
+  
   [self
    POST:@"exam/start"
    parameters:params

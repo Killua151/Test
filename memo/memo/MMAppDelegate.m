@@ -143,6 +143,13 @@
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
   
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  
+  if ([userDefaults objectForKey:kUserDefSpeakEnabled] == nil)
+    [userDefaults setBool:YES forKey:kUserDefSpeakEnabled];
+  
+  [userDefaults synchronize];
+  
 #if kTestLogin
   [MUser logOutCurrentUser];
 #endif

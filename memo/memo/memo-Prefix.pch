@@ -124,6 +124,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kUserDefSettingsLocale                  @"settings_locale"
 #define kUserDefSavedUser                       @"saved_user"
 #define kUserDefDeviceToken                     @"ios_device_token"
+#define kUserDefSpeakEnabled                    @"speak_enabled"
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
@@ -135,6 +136,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamCheckpointPosition                @"checkpoint_position"
 #define kParamCheckpointPositions               @"checkpoint_positions"
 #define kParamCorrectAnswer                     @"correct_answer"
+#define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
 #define kParamExamToken                         @"exam_token"
@@ -163,6 +165,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamSkillId                           @"skill_id"
 #define kParamSkills                            @"skills"
 #define kParamSkillsTree                        @"skills_tree"
+#define kParamSpeakEnabled                      @"speak_enabled"
 #define kParamType                              @"type"
 #define kParamUnderlineRanges                   @"underline_ranges"
 #define kParamUserInfo                          @"user_info"
