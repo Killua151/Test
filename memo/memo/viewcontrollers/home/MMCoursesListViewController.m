@@ -10,7 +10,7 @@
 #import "MMCourseSelectionCell.h"
 
 @interface MMCoursesListViewController () {
-  NSArray *_coursesData;
+  NSMutableArray *_coursesData;
 }
 
 - (void)setupViews;
@@ -21,7 +21,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self customBackButtonWithSuffix:nil];
+  
+  if ([self.navigationController.viewControllers count] > 1)
+    [self customBackButtonWithSuffix:nil];
+  
   [self customTitleWithText:MMLocalizedString(@"Select language") color:UIColorFromRGB(51, 51, 51)];
   
   [self setupViews];
@@ -33,8 +36,18 @@
 }
 
 - (void)reloadContents {
-  _coursesData = @[@"Tiếng Anh", @"Tiếng Pháp", @"Tiếng Đức", @"Tiếng Ý", @"Tiếng Nhật", @"Tiếng Trung"];
-  [_tblCourses reloadData];
+  if (_coursesData == nil)
+    _coursesData = [NSMutableArray new];
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] getCourses:^(NSArray *courses, NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [_coursesData addObjectsFromArray:courses];
+    [_tblCourses reloadData];
+  }];
 }
 
 #pragma mark - UITableViewDataSource methods

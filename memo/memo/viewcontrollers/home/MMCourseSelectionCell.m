@@ -7,6 +7,7 @@
 //
 
 #import "MMCourseSelectionCell.h"
+#import "MCourse.h"
 
 @implementation MMCourseSelectionCell
 
@@ -19,8 +20,8 @@
   return self;
 }
 
-- (void)updateCellWithData:(NSString *)data {
-  [_btnCourse setTitle:data forState:UIControlStateNormal];
+- (void)updateCellWithData:(MCourse *)data {
+  [_btnCourse setTitle:data.name forState:UIControlStateNormal];
 }
 
 @end

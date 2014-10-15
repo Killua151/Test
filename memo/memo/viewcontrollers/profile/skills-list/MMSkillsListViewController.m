@@ -12,6 +12,8 @@
 #import "MMLessonsListViewController.h"
 #import "MMShopViewController.h"
 #import "MMProfileViewController.h"
+#import "MMCoursesListViewController.h"
+#import "MMHomeViewController.h"
 
 #import "MMBeginPlacementTestViewController.h"
 #import "MMExamViewController.h"
@@ -206,8 +208,11 @@
 
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 0)
-    exit(0);
+  if (buttonIndex == 0) {
+    [MUser logOutCurrentUser];
+    [self transitToViewController:[MMHomeViewController navigationController]];
+    return;
+  }
   
   [self loadSkillsTree];
 }
@@ -328,11 +333,16 @@
 }
 
 - (void)handleLoadingError:(NSError *)error {
+  if ([error errorCode] == 400) {
+    [self transitToViewController:[MMCoursesListViewController navigationController]];
+    return;
+  }
+  
   UIAlertView *alertView = [[UIAlertView alloc]
                             initWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
                             message:[error errorMessage]
                             delegate:self
-                            cancelButtonTitle:MMLocalizedString(@"Quit")
+                            cancelButtonTitle:MMLocalizedString(@"Log out")
                             otherButtonTitles:MMLocalizedString(@"Retry"), nil];
   
   [alertView show];

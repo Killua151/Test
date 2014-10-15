@@ -9,7 +9,6 @@
 #import "MMSettingsViewController.h"
 #import "MMSettingsHeaderView.h"
 #import "MMHomeViewController.h"
-#import "MMAppDelegate.h"
 #import "MUser.h"
 
 #define kTextFieldTypes           @[kParamUsername, kParamPassword, kParamEmail]
@@ -95,14 +94,7 @@
 
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
   [MUser logOutCurrentUser];
-  
-  UINavigationController *homeNavigation = [MMHomeViewController navigationController];
-  homeNavigation.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  
-  [self presentViewController:homeNavigation animated:YES completion:^{
-    MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = homeNavigation;
-  }];
+  [self transitToViewController:[MMHomeViewController navigationController]];
 }
 
 - (IBAction)btnNotificationModesPressed:(UIButton *)sender {
