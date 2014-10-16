@@ -8,7 +8,7 @@
 
 "%ld Combo days" = "%ld ngày Combo";
 "%d EXP daily" = "%d EXP mỗi ngày";
-"%ld Memo Coin" = "%ld Memo Coin";
+"%ld MemoCoin" = "%ld MemoCoin";
 "%@ to start recording" = "%@ để bắt đầu ghi âm";
 "Accept" = "Đồng ý";
 "Add friends" = "Thêm bạn";
@@ -89,7 +89,7 @@
 "Set goal" = "Đặt mục tiêu";
 "Settings" = "Cài đặt";
 "Share" = "Chia sẻ";
-"Shortcut" = "Rút ngắn";
+"Shortcut" = "Vượt rào";
 "Sign up" = "Đăng ký";
 "skill" = "kỹ năng";
 "skills" = "kỹ năng";
@@ -102,7 +102,7 @@
 "Strengthen skills" = "Luyện tập kỹ năng";
 "START" = "LÀM BÀI";
 "Start here with the Basics" = "Bắt đầu từ Cơ bản";
-"strength bars" = "thanh sức mạnh";
+"Memo Bar" = "Lực Memo";
 "Submit" = "Gửi";
 "Tap" = "Chạm";
 "The chart is empty." = "Không có dữ liệu";
@@ -121,6 +121,7 @@
 "You are bonused %@" = "Bạn đã được thưởng %@";
 "You have %@!" = "Bạn có %@!";
 "You have finished skill %@!" = "Bạn đã hoàn thành kỹ năng %@!";
+"You have finished skill %@ and %d other skills!" = "Bạn đã hoàn thành kỹ năng %@ và %d kỹ năng khác!";
 "You have no hearts remained!" = "Bạn đã dùng hết trái tim!";
 "You have typos in your answer" = "Bạn có một vài lỗi nhỏ";
 "You now need a Memo profile to save your progress. Register now!" = "Giờ bạn cần một tài khoản Memo để lưu lại quá trình học tập của mình. Mời bạn đăng ký!";

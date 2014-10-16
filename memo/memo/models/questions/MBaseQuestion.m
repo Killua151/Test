@@ -46,6 +46,10 @@
     [models addObject:[[questionKlass modelMappingParser] parseDictionary:modelDict]];
   }
   
+#if kTestQuickExam
+  [models removeObjectsInRange:NSMakeRange(2, [models count]-2)];
+#endif
+  
   return models;
 }
 
@@ -84,9 +88,6 @@
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
-//  if (![type isEqualToString:@"translate"])
-//    return nil;
-//  
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);
 }
 

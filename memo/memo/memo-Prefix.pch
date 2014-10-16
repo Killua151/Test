@@ -111,6 +111,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 true
 #define kTestPushNotification                   true
+#define kTestQuickExam                          true
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 //#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
@@ -159,6 +160,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamLessonNumber                      @"lesson_number"
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamName                              @"name"
+#define kParamNumAffectedSkills                 @"num_affected_skills"
 #define kParamQuestionId                        @"question_id"
 #define kParamQuestion                          @"question"
 #define kParamQuestions                         @"questions"

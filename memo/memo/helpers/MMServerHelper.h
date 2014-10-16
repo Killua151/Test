@@ -86,6 +86,8 @@
                                            BOOL isFinished,
                                            NSError *error))handler;
 
+//- (void)getPlazaItems:(
+
 - (void)registerDeviceTokenForAPNS;
 
 @end

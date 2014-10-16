@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *_id;
 @property (nonatomic, strong) NSString *auth_token;
 @property (nonatomic, strong) NSArray *checkpoints;
-@property (nonatomic, strong) NSString *current_course;
+@property (nonatomic, strong) NSString *current_course_name;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *fb_Id;
 @property (nonatomic, strong) NSString *gmail;

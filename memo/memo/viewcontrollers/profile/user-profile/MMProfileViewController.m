@@ -325,11 +325,11 @@
     _lblUsername.text = _userData.username;
   
   _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)_userData.level];
-  _lblCourseName.text = _userData.current_course;
+  _lblCourseName.text = _userData.current_course_name;
   
   [_btnStreak setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld Combo days"), (long)_userData.combo_days]
               forState:UIControlStateNormal];
-  [_btnMoney setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld Memo Coins"), (long)_userData.virtual_money]
+  [_btnMoney setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld MemoCoin"), (long)_userData.virtual_money]
              forState:UIControlStateNormal];
   
   [self addGraphChart];

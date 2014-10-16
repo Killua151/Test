@@ -54,20 +54,31 @@
   [_vSkill.layer setMask:maskingLayer];
   
   _vSkill.backgroundColor = [UIColor colorWithHexString:affectedSkill.theme_color];
-  _lblSkillName.text = affectedSkill.title;
+  _lblSkillName.text = affectedSkill.slug;
   _imgSkillIcon.image = [UIImage imageNamed:
                          [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill._id]];
   
   NSString *styledString = _lblSkillName.text;
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@!"), styledString];
-  
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
+  
+  NSNumber *numAffectedSkills = [MUser currentUser].lastReceivedBonuses[kParamNumAffectedSkills];
+  
+  if (numAffectedSkills != nil &&
+      [numAffectedSkills isKindOfClass:[NSNumber class]] &&
+      [numAffectedSkills integerValue] > 0) {
+    message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@ and %d other skills!"),
+               styledString, [numAffectedSkills integerValue]-1];
+    _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:13];
+  }
+  
   [_lblMessage applyAttributedText:message
                           onString:styledString
-                    withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
+                    withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold"
+                                                                           size:_lblMessage.font.pointSize]}];
   [_lblMessage adjustToFitHeight];
   
-  styledString = MMLocalizedString(@"strength bars");
+  styledString = MMLocalizedString(@"Memo Bar");
   message = [NSString stringWithFormat:MMLocalizedString(@"Keep those %@ full as words fade from your memory"), styledString];
   
   _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
@@ -78,6 +89,10 @@
                                        NSForegroundColorAttributeName : UIColorFromRGB(255, 187, 51)
                                        }];
   [_lblSubMessage adjustToFitHeight];
+  
+  CGRect frame = _lblMessage.frame;
+  frame.origin.y = _vSkill.frame.origin.y - frame.size.height - 5;
+  _lblMessage.frame = frame;
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;

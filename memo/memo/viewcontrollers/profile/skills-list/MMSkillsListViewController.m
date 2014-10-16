@@ -42,7 +42,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
-  [self customTitleWithText:[MUser currentUser].current_course color:[UIColor blackColor]];
+  [self customTitleWithText:[MUser currentUser].current_course_name color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
                            title:MMLocalizedString(@"Profile")
                            color:UIColorFromRGB(129, 12, 21)
@@ -74,7 +74,7 @@
 - (void)reloadContents {
   MUser *currentUser = [MUser currentUser];
   
-  [self customTitleWithText:currentUser.current_course color:[UIColor blackColor]];
+  [self customTitleWithText:currentUser.current_course_name color:[UIColor blackColor]];
   _vBeginningOptions.hidden = !currentUser.is_beginner;
   _vStrengthenButton.hidden = currentUser.is_beginner;
   
@@ -157,6 +157,11 @@
   NSArray *skills = _skillsData[indexPath.row];
   
   if ([skills isKindOfClass:[NSArray class]])
+    return;
+  
+  NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:indexPath.row];
+  
+  if (numberOfLockedSkills <= 0)
     return;
   
   NSInteger checkpointPosition = [[MUser currentUser] checkpointPositionForCheckpoint:indexPath.row];
