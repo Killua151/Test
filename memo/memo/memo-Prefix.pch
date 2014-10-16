@@ -70,8 +70,8 @@ return; \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
+#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+//#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.2"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 
@@ -99,8 +99,8 @@ return; \
 #define kTestSignUp                             true
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 false
-#define kTestPushNotification                   true
-#define kTestQuickExam                          true
+#define kTestPushNotification                   false
+#define kTestQuickExam                          false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 //#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
