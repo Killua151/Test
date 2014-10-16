@@ -173,7 +173,7 @@
     NSInteger equalCounts = [filtered count];
     
     // Incorrect word
-    if (equalCounts == 0 && selfComponent.length != inputComponent.length) {
+    if (equalCounts == 0) {// && selfComponent.length != inputComponent.length) {
       ranges = nil;
       *stop = YES;
       return;

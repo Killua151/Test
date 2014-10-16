@@ -80,6 +80,12 @@
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSetGoal.layer.cornerRadius = 4;
   [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];
+  
+#if kTempDisableForCloseBeta
+  _lblStreaksCount.center = CGPointMake(_lblStreaksCount.superview.frame.size.width/2,
+                                        _lblStreaksCount.superview.frame.size.height/2-3);
+  _btnSetGoal.hidden = _btnShare.hidden = YES;
+#endif
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
@@ -147,6 +153,11 @@
 }
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {
+  if (panGesture.state == UIGestureRecognizerStateBegan)
+    panGesture.view.alpha = 0.2;
+  else if (panGesture.state == UIGestureRecognizerStateEnded)
+    panGesture.view.alpha = 1;
+  
   CGPoint outterLocation = [panGesture locationInView:panGesture.view.superview];
   
   CGFloat viewHeight = panGesture.view.frame.size.height;

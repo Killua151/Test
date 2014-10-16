@@ -104,6 +104,10 @@
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
   [self.view bringSubviewToFront:_vShare];
+  
+#if kTempDisableForCloseBeta
+  _btnShare.hidden = YES;
+#endif
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

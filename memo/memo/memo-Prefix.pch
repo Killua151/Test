@@ -98,7 +98,7 @@ return; \
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             true
 #define kTestPassAllAPIs                        false
-#define kTestTranslateQuestions                 true
+#define kTestTranslateQuestions                 false
 #define kTestPushNotification                   true
 #define kTestQuickExam                          true
 
