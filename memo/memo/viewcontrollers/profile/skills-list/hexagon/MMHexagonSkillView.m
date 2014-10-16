@@ -35,6 +35,15 @@
   
   self.backgroundColor = [_skillData themeColor];
   _lblSkillName.text = _skillData.slug;
+  _imgLaurea.hidden = _imgSkillStrength.hidden = ![_skillData isFinished];
+  _lblLessonsProgress.hidden = [_skillData isFinished];
+  
+  if ([_skillData isFinished])
+    _imgSkillStrength.image = [UIImage imageNamed:
+                               [NSString stringWithFormat:@"img-hexagon_skill-strength-%d", _skillData.strength]];
+  else
+    _lblLessonsProgress.text = [NSString stringWithFormat:@"%d/%d",
+                                _skillData.finished_lesson, [_skillData.lessons count]];
   
   NSString *suffix = skill.unlocked ? @"unlocked" : @"locked";
   _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-%@", _skillData._id, suffix]];

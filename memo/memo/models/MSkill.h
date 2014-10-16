@@ -22,7 +22,9 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL unlocked;
 @property (nonatomic, strong) NSString *theme_color;
+@property (nonatomic, assign) NSInteger strength;
 
 - (UIColor *)themeColor;
+- (BOOL)isFinished;
 
 @end

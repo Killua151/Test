@@ -127,6 +127,7 @@
   NSString *suffix = self.skillData.unlocked ? @"unlocked" : @"locked";
   _imgSkillIcon.image = [UIImage imageNamed:
                          [NSString stringWithFormat:@"img-skill_icon-%@-%@_big", self.skillData._id, suffix]];
+  _imgBgLaurea.hidden = ![self.skillData isFinished];
   
   for (UIView *subview in _vLessonsScrollView.subviews)
     [subview removeFromSuperview];

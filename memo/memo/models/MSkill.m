@@ -28,9 +28,19 @@
   return [NSString stringWithFormat:@"<MSkill - Id: %@ - Name: %@ - Lessons: %@>", __id, _name, _lessons];
 }
 
+- (NSInteger)strength {
+  if (_strength <= 0 || _strength > 4)
+    return 4;
+  
+  return _strength;
+}
+
 - (UIColor *)themeColor {
   if (_theme_color == nil || !self.unlocked)
     return UIColorFromRGB(221, 221, 221);
+  
+  if ([self isFinished])
+    return UIColorFromRGB(255, 187, 51);
   
   return [UIColor colorWithHexString:_theme_color];
 }
@@ -38,5 +48,9 @@
 //- (BOOL)unlocked {
 //  return YES;
 //}
+
+- (BOOL)isFinished {
+  return _finished_lesson >= [_lessons count];
+}
 
 @end

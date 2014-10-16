@@ -22,9 +22,10 @@
 - (void)updateCellWithData:(NSNumber *)data {
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:[data integerValue]];
   
+  _btnCheckpointTest.enabled = numberOfLockedSkills > 0;
+  
   if (numberOfLockedSkills <= 0) {
     [_btnCheckpointTest setTitle:MMLocalizedString(@"Checkpoint passed") forState:UIControlStateNormal];
-    _btnCheckpointTest.enabled = NO;
     return;
   }
   

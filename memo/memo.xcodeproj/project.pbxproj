@@ -25,6 +25,10 @@
 		CA452E5619EEB88900A5F5CB /* MCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E5419EEB88900A5F5CB /* MCourse.m */; };
 		CA452E5919EEBE9800A5F5CB /* MCheckpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */; };
 		CA452E5A19EEBE9800A5F5CB /* MCheckpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */; };
+		CA452E5D19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */; };
+		CA452E5E19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */; };
+		CA452E5F19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */; };
+		CA452E6019EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
@@ -1591,6 +1595,8 @@
 		CA452E5419EEB88900A5F5CB /* MCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCourse.m; sourceTree = "<group>"; };
 		CA452E5719EEBE9800A5F5CB /* MCheckpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCheckpoint.h; sourceTree = "<group>"; };
 		CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCheckpoint.m; sourceTree = "<group>"; };
+		CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-checkpoint_test-bg_disabled.png"; sourceTree = "<group>"; };
+		CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-checkpoint_test-bg_disabled@2x.png"; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -3502,6 +3508,8 @@
 				CAF851DE19E0F3D200A347CF /* btn-shield-strengthen-bg@2x.png */,
 				CAF851DF19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png */,
 				CAF851E019E0F3D200A347CF /* img-hexagon-checkpoint_test-bg@2x.png */,
+				CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */,
+				CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */,
 				CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */,
 				CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */,
 				CAF851E119E0F3D200A347CF /* img-hexagon_skill-bg-locked.png */,
@@ -4039,6 +4047,7 @@
 				CAF855DB19E0F82700A347CF /* img-skill_icon-en-vi_co_ban_1-locked.png in Resources */,
 				CAF855E319E0F82700A347CF /* img-skill_icon-en-vi_con_nguoi-locked.png in Resources */,
 				CAF8541B19E0F3D200A347CF /* img-skill_icon-en-vi_su_kien-locked_big@2x.png in Resources */,
+				CA452E5D19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */,
 				CAF8563119E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked.png in Resources */,
 				CAF853E919E0F3D200A347CF /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png in Resources */,
 				CAF8532219E0F3D200A347CF /* btn-lessons_learning-audio-normal.png in Resources */,
@@ -4423,6 +4432,7 @@
 				CAF8568519E0F82700A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked.png in Resources */,
 				CAF8537819E0F3D200A347CF /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png in Resources */,
 				CAF856A119E0F82700A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-unlocked.png in Resources */,
+				CA452E5F19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */,
 				CAF853F619E0F3D200A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked_big.png in Resources */,
 				CAF8534F19E0F3D200A347CF /* img-settings-email_icon-enabled@2x.png in Resources */,
 				CAF853DA19E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-locked_big.png in Resources */,
@@ -5028,6 +5038,7 @@
 				CAF8586719E0FDF600A347CF /* img-skills_list-laurea.png in Resources */,
 				CAF8586819E0FDF600A347CF /* img-hexagon_skill-strength-1.png in Resources */,
 				CAF8586919E0FDF600A347CF /* img-judge_question-radio.png in Resources */,
+				CA452E6019EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */,
 				CAF8586A19E0FDF600A347CF /* MMHexagonSkillCell.xib in Resources */,
 				CAF8586B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png in Resources */,
 				CAF8586C19E0FDF600A347CF /* img-money-icon_big@2x.png in Resources */,
@@ -5118,6 +5129,7 @@
 				CAF858C119E0FDF600A347CF /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CAF858C219E0FDF600A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked@2x.png in Resources */,
 				CAF858C319E0FDF600A347CF /* img-count_badge-bg@2x.png in Resources */,
+				CA452E5E19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */,
 				CAF858C419E0FDF600A347CF /* img-skill_icon-en-vi_thien_nhien-locked@2x.png in Resources */,
 				CAF858C519E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-unlocked@2x.png in Resources */,
 				CAF858C619E0FDF600A347CF /* MMHexagonLessonsListViewController.xib in Resources */,
