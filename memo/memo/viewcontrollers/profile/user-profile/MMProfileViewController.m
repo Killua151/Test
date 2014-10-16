@@ -283,6 +283,11 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
+  
+#if kTempDisableForCloseBeta
+  _btnEditAvatar.hidden = YES;
+#endif
+  
   _lblUsername.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   
   _btnInteraction.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:13];

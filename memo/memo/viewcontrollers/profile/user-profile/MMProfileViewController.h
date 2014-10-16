@@ -13,6 +13,7 @@
   
   IBOutlet UITableViewCell *_celAvatarNameLevel;
   IBOutlet UIImageView *_imgAvatar;
+  IBOutlet UIButton *_btnEditAvatar;
   IBOutlet UIButton *_btnInteraction;
   IBOutlet UILabel *_lblUsername;
   

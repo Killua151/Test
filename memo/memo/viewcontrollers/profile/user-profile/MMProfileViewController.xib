@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMProfileViewController">
             <connections>
                 <outlet property="_btnAddFriend" destination="xo2-YN-NxR" id="H69-fk-zFe"/>
+                <outlet property="_btnEditAvatar" destination="viQ-c9-sNi" id="Fa9-UI-ueA"/>
                 <outlet property="_btnInteraction" destination="it6-P9-svl" id="zwe-a4-RN5"/>
                 <outlet property="_btnMoney" destination="zRT-Ag-pRz" id="70X-FM-x8T"/>
                 <outlet property="_btnSetGoal" destination="lCM-al-CvJ" id="xpG-ik-6fx"/>
@@ -65,7 +66,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="viQ-c9-sNi">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="viQ-c9-sNi">
                         <rect key="frame" x="185" y="48" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="btn-profile-edit_avatar.png">
