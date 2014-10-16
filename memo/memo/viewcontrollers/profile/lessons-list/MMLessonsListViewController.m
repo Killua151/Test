@@ -44,6 +44,8 @@
                             target:self
                             action:@selector(shortcutTest)
                           distance:-8];
+  else
+    [self customBarButtonWithImage:nil title:@"" color:nil target:nil action:nil distance:-8];
 }
 
 - (UIColor *)navigationTextColor {
@@ -60,12 +62,18 @@
   
   [[MMServerHelper sharedHelper]
    startShortcutTest:_skillData._id
-   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
+   completion:^(NSString *examToken,
+                NSInteger maxHeartsCount,
+                NSDictionary *availableItems,
+                NSArray *questions,
+                NSError *error) {
      HideHudForCurrentView();
      ShowAlertWithError(error);
      
      MMExamViewController *examVC =
      [[MMExamViewController alloc] initWithQuestions:questions
+                                      maxHeartsCount:maxHeartsCount
+                                      availableItems:availableItems
                                          andMetadata:@{
                                                        kParamType : kValueExamTypeShortcut,
                                                        kParamExamToken : [NSString normalizedString:examToken],

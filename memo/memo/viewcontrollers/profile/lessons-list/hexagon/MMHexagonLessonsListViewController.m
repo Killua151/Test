@@ -106,12 +106,18 @@
   [[MMServerHelper sharedHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
-   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
+   completion:^(NSString *examToken,
+                NSInteger maxHeartsCount,
+                NSDictionary *availableItems,
+                NSArray *questions,
+                NSError *error) {
      HideHudForCurrentView();
      ShowAlertWithError(error);
      
      MMExamViewController *examVC =
      [[MMExamViewController alloc] initWithQuestions:questions
+                                      maxHeartsCount:maxHeartsCount
+                                      availableItems:availableItems
                                          andMetadata:@{
                                                        kParamType : kValueExamTypeLesson,
                                                        kParamExamToken : [NSString normalizedString:examToken],

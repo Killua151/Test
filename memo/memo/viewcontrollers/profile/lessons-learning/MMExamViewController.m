@@ -20,11 +20,17 @@
 
 #import "MBaseQuestion.h"
 #import "MUser.h"
+#import "MItem.h"
+
+#define kTagQuitAlertView               0x01
+#define kTagUseItemAlertView            0x02
 
 @interface MMExamViewController () {
   NSInteger _totalLessonsCount;
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
+  NSDictionary *_availableItems;
+  BOOL _didAskUsingItem;
   
   CGFloat _innerPanGestureYPos;
   UIView *_currentShowingResultView;
@@ -55,6 +61,18 @@
     _metadata = [NSMutableDictionary dictionaryWithDictionary:metadata];
     _questionsData = [NSMutableArray arrayWithArray:questions];
     _answersData = [NSMutableDictionary new];
+  }
+  
+  return self;
+}
+
+- (id)initWithQuestions:(NSArray *)questions
+         maxHeartsCount:(NSInteger)maxHeartsCount
+         availableItems:(NSDictionary *)availableItems
+            andMetadata:(NSDictionary *)metadata {
+  if (self = [self initWithQuestions:questions andMetadata:metadata]) {
+    _totalHeartsCount = maxHeartsCount;
+    _availableItems = availableItems;
   }
   
   return self;
@@ -107,10 +125,31 @@
                    cancelButtonTitle:MMLocalizedString(@"No")
                    otherButtonTitles:MMLocalizedString(@"Quit"), nil];
   
+  alertView.tag = kTagQuitAlertView;
   [alertView show];
 }
 
-- (IBAction)btnHeartPotionPressed:(UIButton *)sender {
+- (IBAction)btnHealthPotionPressed:(UIButton *)sender {
+  if (_currentHeartsCount > 0) {
+    [Utils showToastWithMessage:
+     [NSString stringWithFormat:MMLocalizedString(@"You still have %d health remaining"), _currentHeartsCount]];
+    return;
+  }
+  
+  if (![MItem checkItemAvailability:kItemHealthPotionId inAvailableItems:_availableItems])
+    return;
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] useItem:kItemHealthPotionId completion:^(NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    _availableItems = [MItem useItem:kItemHealthPotionId inAvailableItems:_availableItems];
+    _btnHealthPotion.enabled = NO;
+    _currentHeartsCount++;
+    [self updateHeaderViews];
+  }];
 }
 
 - (IBAction)btnCheckPressed:(UIButton *)sender {
@@ -122,7 +161,7 @@
   }
 }
 
-- (void)prepareNextQuestion {
+- (void)prepareNextQuestion {  
   MBaseQuestion *question = _questionsData[_currentLessonIndex];
   Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
   _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];
@@ -163,13 +202,30 @@
 
 - (void)removeCurrentQuestion {
   // Out of hearts
+  if (_currentHeartsCount == 0 && !_didAskUsingItem &&
+      [MItem checkItemAvailability:kItemHealthPotionId inAvailableItems:_availableItems]) {
+    NSInteger quantity = [_availableItems[kItemHealthPotionId] integerValue];
+    NSString *message = [NSString stringWithFormat:
+                         MMLocalizedString(@"You have %d Health Potion, do you want to use it?"), quantity];
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:MMLocalizedString(@"Confirm item using")
+                              message:message
+                              delegate:self
+                              cancelButtonTitle:MMLocalizedString(@"No")
+                              otherButtonTitles:MMLocalizedString(@"Yes, use it"), nil];
+    
+    alertView.tag = kTagUseItemAlertView;
+    [alertView show];
+    return;
+  }
+
   if (_currentHeartsCount < 0) {
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
     [self presentViewController:failLessonVC animated:YES completion:NULL];
     return;
   }
-  
+
   // Finish all questions
   if (_currentLessonIndex >= _totalLessonsCount) {
     ShowHudForCurrentView();
@@ -217,7 +273,7 @@
   _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentLessonIndex+1, (long)_totalLessonsCount];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
-    button.selected = index >= _totalHeartsCount - _currentHeartsCount;
+    button.selected = index >= (_totalHeartsCount - _currentHeartsCount);
   }];
   
   _imgAntProgressIndicator.hidden = _currentLessonIndex < 0;
@@ -241,10 +297,21 @@
 
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 0)
+  if (alertView.tag == kTagQuitAlertView) {
+    if (buttonIndex == 0)
+      return;
+    
+    [self dismissViewController];
     return;
+  }
   
-  [self dismissViewController];
+  if (buttonIndex == 0) {
+    _didAskUsingItem = YES;
+    [self btnCheckPressed:nil];
+    return;
+  }
+  
+  [self btnHealthPotionPressed:nil];
 }
 
 #pragma mark - MMLessonLearningDelegate methods
@@ -306,9 +373,10 @@
   frame.origin.x = self.view.frame.size.width - 15 - frame.size.width;
   _vHearts.frame = frame;
   
-  frame = _btnHeartPotion.frame;
+  frame = _btnHealthPotion.frame;
   frame.origin.x = _vHearts.frame.origin.x - frame.size.width - 13;
-  _btnHeartPotion.frame = frame;
+  _btnHealthPotion.frame = frame;
+  _btnHealthPotion.hidden = ![MItem checkItemAvailability:kItemHealthPotionId inAvailableItems:_availableItems];
   
   CGFloat segmentWidth = [[_btnProgressSegments firstObject] frame].size.width;
   CGFloat segmentsGap = (self.view.frame.size.width - 30 - _totalLessonsCount * segmentWidth)/(_totalLessonsCount-1);
@@ -353,7 +421,7 @@
 - (void)resetCounts {
   _totalLessonsCount = [_questionsData count];
   _currentLessonIndex = -1;
-  _totalHeartsCount = _currentHeartsCount = 3;
+  _currentHeartsCount = _totalHeartsCount;
 }
 
 - (void)resetResultViews {

@@ -159,7 +159,7 @@
   if (_txtPassword.text.length < 8) {
     [_txtPassword becomeFirstResponder];
     [Utils showToastWithMessage:
-     [NSString stringWithFormat:MMLocalizedString(@"Password must be at least %ld characters long"), 8]];
+     [NSString stringWithFormat:MMLocalizedString(@"Password must be at least %d characters long"), 8]];
     return NO;
   }
   

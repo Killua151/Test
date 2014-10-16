@@ -25,4 +25,29 @@
   return sections;
 }
 
++ (BOOL)checkItemAvailability:(NSString *)itemId inAvailableItems:(NSDictionary *)availableItems {
+  if (availableItems == nil || ![availableItems isKindOfClass:[NSDictionary class]])
+    return NO;
+  
+  if (availableItems[itemId] == nil || ![availableItems[itemId] isKindOfClass:[NSNumber class]])
+    return NO;
+  
+  return [availableItems[itemId] integerValue] > 0;
+}
+
++ (NSDictionary *)useItem:(NSString *)itemId inAvailableItems:(NSDictionary *)availableItems {
+  if (availableItems == nil || ![availableItems isKindOfClass:[NSDictionary class]])
+    return availableItems;
+  
+  if (availableItems[itemId] == nil || ![availableItems[itemId] isKindOfClass:[NSNumber class]] ||
+      [availableItems[itemId] integerValue] <= 0)
+    return availableItems;
+  
+  NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:availableItems];
+  NSInteger quantity = [result[itemId] integerValue];
+  result[itemId] = @(quantity-1);
+  
+  return [NSDictionary dictionaryWithDictionary:result];
+}
+
 @end

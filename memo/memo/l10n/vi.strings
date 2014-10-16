@@ -6,9 +6,9 @@
   Copyright (c) 2014 Topica. All rights reserved.
 */
 
-"%ld Combo days" = "%ld ngày Combo";
+"%d Combo days" = "%d ngày Combo";
 "%d EXP daily" = "%d EXP mỗi ngày";
-"%ld MemoCoin" = "%ld MemoCoin";
+"%d MemoCoin" = "%d MemoCoin";
 "%@ to start recording" = "%@ để bắt đầu ghi âm";
 "Accept" = "Đồng ý";
 "Add friends" = "Thêm bạn";
@@ -22,10 +22,11 @@
 "Checkpoint passed" = "Đã vượt qua checkpoint";
 "Checkpoint test for %d %@" = "Kiểm tra rút ngắn %d %@";
 "Close" = "Đóng";
-"Connections" = "Kết nối";
 "Confirm email" = "Xác nhận email";
+"Confirm item using" = "Xác nhận dùng vật phẩm";
 "Confirm password" = "Xác nhận mật khẩu";
 "Confirm username" = "Xác nhận tên đăng nhập";
+"Connections" = "Kết nối";
 "Correct!" = "Chính xác!";
 "Correct answer" = "Câu trả lời đúng";
 "Create profile" = "Tạo tài khoản";
@@ -67,7 +68,7 @@
 "Not a beginner?" = "Không phải là người mới?";
 "Notifications" = "Thông báo";
 "Password" = "Mật khẩu";
-"Password must be at least %ld characters long" = "Mật khẩu phải dài ít nhất %ld ký tự";
+"Password must be at least %d characters long" = "Mật khẩu phải dài ít nhất %d ký tự";
 "Passwords not match" = "Mật khẩu không khớp";
 "Please enter your email" = "Hãy nhập email của bạn";
 "Please enter your password" = "Hãy nhập mật khẩu của bạn";
@@ -118,7 +119,9 @@
 "Warning!" = "Cẩn trọng!";
 "We will send you instructions to recover your password via email" = "Chúng tôi sẽ gửi cho bạn hướng dẫn lấy lại mật khẩu qua email";
 "Write comment..." = "Bình luận của bạn...";
+"Yes, use it" = "Có";
 "You are bonused %@" = "Bạn đã được thưởng %@";
+"You have %d Health Potion, do you want to use it?" = "Bạn có %d bình Hồi Máu, bạn có muốn sử dụng ngay?";
 "You have %@ MemoCoin" = "Bạn đang có %@ MemoCoin";
 "You have %@!" = "Bạn có %@!";
 "You have finished skill %@!" = "Bạn đã hoàn thành kỹ năng %@!";
@@ -126,6 +129,7 @@
 "You have no hearts remained!" = "Bạn đã dùng hết trái tim!";
 "You have typos in your answer" = "Bạn có một vài lỗi nhỏ";
 "You now need a Memo profile to save your progress. Register now!" = "Giờ bạn cần một tài khoản Memo để lưu lại quá trình học tập của mình. Mời bạn đăng ký!";
+"You still have %d health remaining" = "Bạn vẫn còn %d máu";
 "Your answer..." = "Câu trả lời của bạn...";
 "Your infomation" = "Thông tin cá nhân";
 "Your progress will be lost. Are you sure to quit?" = "Bài làm của bạn sẽ bị mất. Chắc chắn thoát?";

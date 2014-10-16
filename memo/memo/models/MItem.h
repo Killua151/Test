@@ -20,5 +20,7 @@
 @property (nonatomic, strong) NSString *section;
 
 + (NSDictionary *)itemsBySectionsFromArr:(NSArray *)itemsArr;
++ (BOOL)checkItemAvailability:(NSString *)itemId inAvailableItems:(NSDictionary *)availableItems;
++ (NSDictionary *)useItem:(NSString *)itemId inAvailableItems:(NSDictionary *)availableItems;
 
 @end

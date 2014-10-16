@@ -70,7 +70,7 @@
   _btnNext.layer.cornerRadius = 4;
   [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
-  styledString = [NSString stringWithFormat:MMLocalizedString(@"%ld Combo days"), (long)[MUser currentUser].combo_days];
+  styledString = [NSString stringWithFormat:MMLocalizedString(@"%d Combo days"), (long)[MUser currentUser].combo_days];
   message = [NSString stringWithFormat:MMLocalizedString(@"You have %@!"), styledString];
   _lblStreaksCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_lblStreaksCount applyAttributedText:message

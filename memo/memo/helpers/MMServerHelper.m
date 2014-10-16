@@ -20,7 +20,10 @@
 
 - (void)logInWithParam:(NSDictionary *)params completion:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)startExamWithParam:(NSDictionary *)params
-                completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+                completion:(void(^)(NSString *examToken,
+                                    NSInteger maxHeartsCount,
+                                    NSDictionary *availableItems,
+                                    NSArray *questions, NSError *error))handler;
 - (void)interactSocialServicesAtPath:(NSString *)path
                           withParams:(NSDictionary *)params
                           completion:(void(^)(NSError *error))handler;
@@ -308,7 +311,7 @@
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
-         completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+         completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : kValueExamTypeLesson,
                            kParamLessonNumber : @(lessonNumber),
@@ -319,7 +322,8 @@
   [self startExamWithParam:params completion:handler];
 }
 
-- (void)startShortcutTest:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+- (void)startShortcutTest:(NSString *)skillId
+               completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : kValueExamTypeShortcut,
                            kParamSkillId : [NSString normalizedString:skillId],
@@ -330,7 +334,7 @@
 }
 
 - (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
-                           completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+                           completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : kValueExamTypeCheckpoint,
                            kParamCheckpointPosition : @(checkpointPosition),
@@ -340,7 +344,8 @@
   [self startExamWithParam:params completion:handler];
 }
 
-- (void)startStrengthenSkill:(NSString *)skillId completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+- (void)startStrengthenSkill:(NSString *)skillId
+                  completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : kValueExamTypeStrengthenSkill,
                            kParamSkillId : [NSString normalizedString:skillId],
@@ -350,7 +355,7 @@
   [self startExamWithParam:params completion:handler];
 }
 
-- (void)startStrengthenAll:(void (^)(NSString *, NSArray *, NSError *))handler {
+- (void)startStrengthenAll:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamType : kValueExamTypeStrengthenAll,
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]
@@ -476,6 +481,26 @@
    }];
 }
 
+- (void)useItem:(NSString *)itemId completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : @"ios",
+                           kParamBaseItemId : [NSString normalizedString:itemId],
+                           };
+  
+  [self
+   POST:@"plaza/use_item"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)registerDeviceTokenForAPNS {
   NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefDeviceToken];
   
@@ -534,7 +559,8 @@
    }];
 }
 
-- (void)startExamWithParam:(NSDictionary *)params completion:(void (^)(NSString *, NSArray *, NSError *))handler {
+- (void)startExamWithParam:(NSDictionary *)params
+                completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
   NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
   paramsDict[kParamDevice] = @"ios";
   paramsDict[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);
@@ -544,11 +570,15 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
-     handler(responseDict[kParamExamToken], [MBaseQuestion modelsFromArr:responseDict[@"questions"]], nil);
+     handler(responseDict[kParamExamToken],
+             [responseDict[kParamMaxHeartsCount] integerValue],
+             responseDict[kParamAvailableItems],
+             [MBaseQuestion modelsFromArr:responseDict[@"questions"]],
+             nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, nil, error);
+       handler(nil, 0, nil, nil, error);
      }];
    }];
 }

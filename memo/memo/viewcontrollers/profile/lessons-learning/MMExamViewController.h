@@ -15,7 +15,7 @@
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;
   IBOutletCollection(UIButton) NSArray *_btnHearts;
-  IBOutlet UIButton *_btnHeartPotion;
+  IBOutlet UIButton *_btnHealthPotion;
   IBOutlet UIImageView *_imgAntProgressIndicator;
   IBOutletCollection(UIButton) NSArray *_btnProgressSegments;
   
@@ -41,8 +41,12 @@
 }
 
 - (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata;
+- (id)initWithQuestions:(NSArray *)questions
+         maxHeartsCount:(NSInteger)maxHeartsCount
+         availableItems:(NSDictionary *)availableItems
+            andMetadata:(NSDictionary *)metadata;
 - (IBAction)btnClosePressed:(UIButton *)sender;
-- (IBAction)btnHeartPotionPressed:(UIButton *)sender;
+- (IBAction)btnHealthPotionPressed:(UIButton *)sender;
 - (IBAction)btnCheckPressed:(UIButton *)sender;
 - (void)questionContentViewGestureLayerDidTap;
 

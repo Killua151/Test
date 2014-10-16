@@ -48,7 +48,7 @@
     _btnPrice.backgroundColor = UIColorFromRGB(153, 153, 153);
   
   if (_itemData.consumable || _itemData.can_buy)
-    [_btnPrice setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld MemoCoin"), _itemData.price]
+    [_btnPrice setTitle:[NSString stringWithFormat:MMLocalizedString(@"%d MemoCoin"), _itemData.price]
                forState:UIControlStateNormal];
   else
     [_btnPrice setTitle:_itemData.can_not_buy_message forState:UIControlStateNormal];

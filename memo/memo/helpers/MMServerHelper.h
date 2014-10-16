@@ -61,18 +61,33 @@
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
-         completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+         completion:(void(^)(NSString *examToken,
+                             NSInteger maxHeartsCount,
+                             NSDictionary *availableItems,
+                             NSArray *questions, NSError *error))handler;
 
 - (void)startShortcutTest:(NSString *)skillId
-               completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+               completion:(void(^)(NSString *examToken,
+                                   NSInteger maxHeartsCount,
+                                   NSDictionary *availableItems,
+                                   NSArray *questions, NSError *error))handler;
 
 - (void)startCheckpointTestAtPosition:(NSInteger)checkpointPosition
-                           completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+                           completion:(void(^)(NSString *examToken,
+                                               NSInteger maxHeartsCount,
+                                               NSDictionary *availableItems,
+                                               NSArray *questions, NSError *error))handler;
 
 - (void)startStrengthenSkill:(NSString *)skillId
-                  completion:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+                  completion:(void(^)(NSString *examToken,
+                                      NSInteger maxHeartsCount,
+                                      NSDictionary *availableItems,
+                                      NSArray *questions, NSError *error))handler;
 
-- (void)startStrengthenAll:(void(^)(NSString *examToken, NSArray *questions, NSError *error))handler;
+- (void)startStrengthenAll:(void(^)(NSString *examToken,
+                                    NSInteger maxHeartsCount,
+                                    NSDictionary *availableItems,
+                                    NSArray *questions, NSError *error))handler;
 
 - (void)finishExamWithMetadata:(NSDictionary *)metadata
                     andResults:(NSDictionary *)answerResults
@@ -88,6 +103,7 @@
 
 - (void)getShopItems:(void(^)(NSInteger virtualMoney, NSArray *items, NSError *error))handler;
 - (void)buyItem:(NSString *)itemId completion:(void(^)(NSError *error))handler;
+- (void)useItem:(NSString *)itemId completion:(void(^)(NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 

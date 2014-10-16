@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMExamViewController">
             <connections>
                 <outlet property="_btnCheck" destination="cXU-uU-Qfx" id="oON-lB-GG0"/>
-                <outlet property="_btnHeartPotion" destination="Ysq-QO-8qW" id="K7a-GW-fqs"/>
+                <outlet property="_btnHealthPotion" destination="Ysq-QO-8qW" id="3vh-Zw-eXv"/>
                 <outlet property="_imgAntProgressIndicator" destination="m5z-uA-XU4" id="Qcg-WY-Jk8"/>
                 <outlet property="_lblLessonsCount" destination="xhz-cp-bQP" id="NjE-Gg-SNK"/>
                 <outlet property="_lblResultCorrectAnswer" destination="3Tn-wL-Hbn" id="5UK-7l-ZQZ"/>
@@ -131,7 +131,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="btnHeartPotionPressed:" destination="-1" eventType="touchUpInside" id="oPA-tY-3HA"/>
+                                <action selector="btnHealthPotionPressed:" destination="-1" eventType="touchUpInside" id="ths-pG-mcj"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-ant-lessons_learning_progress.png" id="m5z-uA-XU4">

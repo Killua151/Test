@@ -100,7 +100,7 @@ return; \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 true
 #define kTestPushNotification                   true
-#define kTestQuickExam                          true
+#define kTestQuickExam                          false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 //#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
@@ -123,6 +123,7 @@ return; \
 #define kParamAnswers                           @"answers"
 #define kParamAnswerResult                      @"answer_result"
 #define kParamAuthToken                         @"auth_token"
+#define kParamAvailableItems                    @"available_items"
 #define kParamBaseCourseId                      @"base_course_id"
 #define kParamBaseItemId                        @"base_item_id"
 #define kParamBonusMoney                        @"bonus_money"
@@ -151,6 +152,7 @@ return; \
 #define kParamLessonNumber                      @"lesson_number"
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamLocalize                          @"localize"
+#define kParamMaxHeartsCount                    @"max_hearts_count"
 #define kParamName                              @"name"
 #define kParamNumAffectedSkills                 @"num_affected_skills"
 #define kParamQuestionId                        @"question_id"
@@ -175,5 +177,7 @@ return; \
 #define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
 #define kValueSupportEmail                      @"support@memo.edu.vn"
+
+#define kItemHealthPotionId                     @"health_potion"
 
 #define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"

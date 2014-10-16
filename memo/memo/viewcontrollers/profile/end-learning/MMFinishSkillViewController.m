@@ -66,7 +66,7 @@
   
   if (numAffectedSkills != nil &&
       [numAffectedSkills isKindOfClass:[NSNumber class]] &&
-      [numAffectedSkills integerValue] > 0) {
+      [numAffectedSkills integerValue] > 1) {
     message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@ and %d other skills!"),
                styledString, [numAffectedSkills integerValue]-1];
     _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:13];

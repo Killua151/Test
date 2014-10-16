@@ -98,12 +98,18 @@
   ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
-   startStrengthenAll:^(NSString *examToken, NSArray *questions, NSError *error) {
+   startStrengthenAll:^(NSString *examToken,
+                        NSInteger maxHeartsCount,
+                        NSDictionary *availableItems,
+                        NSArray *questions,
+                        NSError *error) {
      HideHudForCurrentView();
      ShowAlertWithError(error);
      
      MMExamViewController *examVC =
      [[MMExamViewController alloc] initWithQuestions:questions
+                                      maxHeartsCount:maxHeartsCount
+                                      availableItems:availableItems
                                          andMetadata:@{
                                                        kParamType : kValueExamTypeStrengthenAll,
                                                        kParamExamToken : [NSString normalizedString:examToken]
@@ -174,12 +180,18 @@
   
   [[MMServerHelper sharedHelper]
    startCheckpointTestAtPosition:checkpointPosition
-   completion:^(NSString *examToken, NSArray *questions, NSError *error) {
+   completion:^(NSString *examToken,
+                NSInteger maxHeartsCount,
+                NSDictionary *availableItems,
+                NSArray *questions,
+                NSError *error) {
      HideHudForCurrentView();
      ShowAlertWithError(error);
      
      MMExamViewController *examVC =
      [[MMExamViewController alloc] initWithQuestions:questions
+                                      maxHeartsCount:maxHeartsCount
+                                      availableItems:availableItems
                                          andMetadata:@{
                                                        kParamType : kValueExamTypeCheckpoint,
                                                        kParamExamToken : [NSString normalizedString:examToken],

@@ -30,7 +30,7 @@
   MSkill *affectedSkill = receivedBonuses[kParamAffectedSkill];
   NSInteger bonusMoney = [receivedBonuses[kParamBonusMoney] integerValue];
   
-  NSString *styledString = [NSString stringWithFormat:MMLocalizedString(@"%ld MemoCoin"), (long)bonusMoney];
+  NSString *styledString = [NSString stringWithFormat:MMLocalizedString(@"%d MemoCoin"), (long)bonusMoney];
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You are bonused %@"), styledString];
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
