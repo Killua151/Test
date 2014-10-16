@@ -42,7 +42,7 @@
 "Forgot password" = "Quên mật khẩu";
 "Full name (optional)" = "Tên đầy đủ (tùy chọn)";
 "Hard" = "Khó";
-"Heart bonus %@" = "Thưởng trái tim %@";
+"Health bonus %@" = "Thưởng máu %@";
 "Hi Memo team!" = "Xin chào Memo team!";
 "I can’t use microphone right now" = "Tôi không thể dùng microphone bây giờ";
 "If you’re serious about learning a language, you should set a goal to keep you on track." = "Nếu nghiêm túc trong việc học một ngôn ngữ, bạn nên cân nhắc đặt mục tiêu để giữ việc học đúng nhịp";
@@ -126,7 +126,7 @@
 "You have %@!" = "Bạn có %@!";
 "You have finished skill %@!" = "Bạn đã hoàn thành kỹ năng %@!";
 "You have finished skill %@ and %d other skills!" = "Bạn đã hoàn thành kỹ năng %@ và %d kỹ năng khác!";
-"You have no hearts remained!" = "Bạn đã dùng hết trái tim!";
+"You have no healths remained!" = "Bạn đã dùng hết máu!";
 "You have typos in your answer" = "Bạn có một vài lỗi nhỏ";
 "You now need a Memo profile to save your progress. Register now!" = "Giờ bạn cần một tài khoản Memo để lưu lại quá trình học tập của mình. Mời bạn đăng ký!";
 "You still have %d health remaining" = "Bạn vẫn còn %d máu";
