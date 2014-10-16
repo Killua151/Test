@@ -26,6 +26,7 @@
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index;
+- (void)toggleSpeakingLessons;
 - (void)linkFacebook;
 - (void)unlinkFacebook;
 - (void)linkGoogle;
@@ -73,6 +74,8 @@
   _txtUsername.text = [NSString normalizedString:_userData.username];
   _txtPassword.text = @"";
 
+  BOOL speakEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kParamSpeakEnabled];
+  [_swtSpeakingLessons setOn:speakEnabled animated:YES shouldCallback:NO];
   [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES shouldCallback:NO];
   [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES shouldCallback:NO];
 }
@@ -361,7 +364,7 @@
   [_btnLogOut setTitle:MMLocalizedString(@"Log out") forState:UIControlStateNormal];
   
   _swtSoundEffects = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
-  _swtListeningLessons = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
+  _swtSpeakingLessons = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
   _swtFacebook = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
   _swtGooglePlus = [[MMSwitch alloc] initWithFrame:kSwitchFrame];
   
@@ -374,7 +377,7 @@
        },
      @{
        @"cell" : _celListeningLessons,
-       @"switch" : _swtListeningLessons,
+       @"switch" : _swtSpeakingLessons,
        },
      @{
        @"cell" : _celFacebook,
@@ -444,6 +447,7 @@
       break;
       
     case 1:
+      [self toggleSpeakingLessons];
       break;
       
     case 2:
@@ -457,6 +461,15 @@
     default:
       break;
   }
+}
+
+- (void)toggleSpeakingLessons {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  
+  BOOL speakEnabled = [userDefaults boolForKey:kParamSpeakEnabled];
+  [userDefaults setBool:!speakEnabled forKey:kParamSpeakEnabled];
+  
+  [userDefaults synchronize];
 }
 
 - (void)linkFacebook {

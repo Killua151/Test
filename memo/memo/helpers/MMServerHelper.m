@@ -14,6 +14,7 @@
 #import "MFriend.h"
 #import "MCourse.h"
 #import "MCheckpoint.h"
+#import "MItem.h"
 
 @interface MMServerHelper ()
 
@@ -428,6 +429,49 @@
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(nil, nil, NO, error);
+     }];
+   }];
+}
+
+- (void)getShopItems:(void (^)(NSInteger, NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : @"ios",
+                           kParamLocalize : PreferedAppLanguage()
+                           };
+  
+  [self
+   GET:@"plaza"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *responseDict = [responseObject objectFromJSONData];
+     NSInteger virtualMoney = [responseDict[kParamVirtualMoney] integerValue];
+     NSArray *items = [MItem modelsFromArr:responseDict[kParamItems]];
+     handler(virtualMoney, items, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(0, nil, nil);
+     }];
+   }];
+}
+
+- (void)buyItem:(NSString *)itemId completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : @"ios",
+                           kParamBaseItemId : [NSString normalizedString:itemId],
+                           };
+  
+  [self
+   POST:@"plaza/buy_item"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
      }];
    }];
 }

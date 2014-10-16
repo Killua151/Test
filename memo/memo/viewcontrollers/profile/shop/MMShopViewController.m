@@ -10,6 +10,7 @@
 #import "MMShopItemCell.h"
 #import "MMShopItemsGroupHeaderCell.h"
 #import "MItem.h"
+#import "MUser.h"
 
 @interface MMShopViewController () {
   NSMutableArray *_itemsData;
@@ -48,18 +49,25 @@
   if (_itemsData == nil)
     _itemsData = [NSMutableArray new];
   
-  [_itemsData removeAllObjects];
-  [_itemsData addObjectsFromArray:
-   @[
-     [@"Lorem ipsum dolor sit amet, consectetur adipiscing elit" uppercaseString],
-     [MItem new], [MItem new], [MItem new],
-     @"PRACTICE",
-     [MItem new], [MItem new], [MItem new], [MItem new],
-     @"TEST",
-     [MItem new]]];
-  
-  [self styleMoneyBalanceLabel];
-  [_tblItems reloadData];
+  ShowHudForCurrentView();
+  [[MMServerHelper sharedHelper] getShopItems:^(NSInteger virtualMoney, NSArray *items, NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [MUser currentUser].virtual_money = virtualMoney;
+    [self styleMoneyBalanceLabel];
+    
+    [_itemsData removeAllObjects];
+    
+    for (MItem *item in items) {
+      if (![_itemsData containsObject:item.section])
+        [_itemsData addObject:item.section];
+      
+      [_itemsData addObject:item];
+    }
+    
+    [_tblItems reloadData];
+  }];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -78,8 +86,12 @@
   
   BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellKlass)];
   
-  if (cell == nil)
+  if (cell == nil) {
     cell = [cellKlass new];
+    
+    if ([cell isKindOfClass:[MMShopItemCell class]])
+      ((MMShopItemCell *)cell).delegate = self;
+  }
   
   [cell updateCellWithData:data];
   
@@ -104,6 +116,17 @@
   return _vHeader.frame.size.height;
 }
 
+#pragma mark - MMShopDelegate methods
+- (void)shopDidBuyItem:(NSString *)itemId {
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] buyItem:itemId completion:^(NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    [self reloadContents];
+  }];
+}
+
 #pragma mark - Private methods
 - (void)setupViews {
   _tblItems.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
@@ -111,20 +134,12 @@
 }
 
 - (void)styleMoneyBalanceLabel {
-  if (_lblMoneyBalanceInfo.text == nil)
-    return;
+  NSString *styledString = [NSString stringWithFormat:@"%d", [MUser currentUser].virtual_money];
+  NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have %@ MemoCoin"), styledString];
   
-  NSRange moneyBalanceRange = [_lblMoneyBalanceInfo.text rangeOfString:@"25"];
-  
-  if (moneyBalanceRange.location == NSNotFound)
-    return;
-  
-  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:_lblMoneyBalanceInfo.text];
-  [attributedText addAttribute:NSFontAttributeName
-                         value:[UIFont fontWithName:@"ClearSans-Bold" size:17]
-                         range:moneyBalanceRange];
-  
-  _lblMoneyBalanceInfo.attributedText = attributedText;
+  [_lblMoneyBalanceInfo applyAttributedText:message
+                                   onString:styledString
+                             withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
 }
 
 @end

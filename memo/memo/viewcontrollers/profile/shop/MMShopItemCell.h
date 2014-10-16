@@ -15,6 +15,8 @@
   IBOutlet UIButton *_btnPrice;
 }
 
+@property (nonatomic, assign) id<MMShopDelegate> delegate;
+
 - (IBAction)btnPricePressed:(UIButton *)sender;
 
 @end

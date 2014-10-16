@@ -86,7 +86,8 @@
                                            BOOL isFinished,
                                            NSError *error))handler;
 
-//- (void)getPlazaItems:(
+- (void)getShopItems:(void(^)(NSInteger virtualMoney, NSArray *items, NSError *error))handler;
+- (void)buyItem:(NSString *)itemId completion:(void(^)(NSError *error))handler;
 
 - (void)registerDeviceTokenForAPNS;
 

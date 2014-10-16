@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MMShopViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface MMShopViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, MMShopDelegate> {
   IBOutlet UITableView *_tblItems;
   IBOutlet UIView *_vHeader;
   IBOutlet UILabel *_lblMoneyBalanceInfo;

@@ -68,18 +68,6 @@ if (error != nil) { \
 return; \
 }
 
-#define ShowLoadingHud() \
-if ([self respondsToSelector:@selector(navigationController)]) \
-[Utils showHUDForView:self.navigationController.view withText:nil]; \
-else if ([self respondsToSelector:@selector(view)]) \
-[Utils showHUDForView:self.view withText:nil];
-
-#define HideLoadingHud() \
-if ([self respondsToSelector:@selector(navigationController)]) \
-[Utils hideAllHUDsForView:self.navigationController.view]; \
-else if ([self respondsToSelector:@selector(view)]) \
-[Utils hideAllHUDsForView:self.view];
-
 #define ARC4RANDOM_MAX                          0x100000000
 
 //#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
@@ -135,6 +123,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamAnswerResult                      @"answer_result"
 #define kParamAuthToken                         @"auth_token"
 #define kParamBaseCourseId                      @"base_course_id"
+#define kParamBaseItemId                        @"base_item_id"
 #define kParamBonusMoney                        @"bonus_money"
 #define kParamCheckpoints                       @"checkpoints"
 #define kParamCheckpointPosition                @"checkpoint_position"
@@ -156,9 +145,11 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
+#define kParamItems                             @"items"
 #define kParamKeywords                          @"keywords"
 #define kParamLessonNumber                      @"lesson_number"
 #define kParamLeveledUp                         @"leveled_up"
+#define kParamLocalize                          @"localize"
 #define kParamName                              @"name"
 #define kParamNumAffectedSkills                 @"num_affected_skills"
 #define kParamQuestionId                        @"question_id"
@@ -175,6 +166,7 @@ else if ([self respondsToSelector:@selector(view)]) \
 #define kParamUnderlineRanges                   @"underline_ranges"
 #define kParamUserInfo                          @"user_info"
 #define kParamUsername                          @"username"
+#define kParamVirtualMoney                      @"virtual_money"
 
 #define kValueExamTypeLesson                    @"lesson"
 #define kValueExamTypeCheckpoint                @"checkpoint"

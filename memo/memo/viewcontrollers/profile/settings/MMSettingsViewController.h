@@ -32,7 +32,7 @@
   MMSwitch *_swtSoundEffects;
   
   IBOutlet UITableViewCell *_celListeningLessons;
-  MMSwitch *_swtListeningLessons;
+  MMSwitch *_swtSpeakingLessons;
   
   IBOutlet UITableViewCell *_celFacebook;
   MMSwitch *_swtFacebook;

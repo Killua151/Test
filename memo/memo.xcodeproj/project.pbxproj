@@ -29,6 +29,26 @@
 		CA452E5E19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */; };
 		CA452E5F19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */; };
 		CA452E6019EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */; };
+		CA452E6C19EFFDB900A5F5CB /* img-item_icon-combo_protect.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6219EFFDB900A5F5CB /* img-item_icon-combo_protect.png */; };
+		CA452E6D19EFFDB900A5F5CB /* img-item_icon-combo_protect.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6219EFFDB900A5F5CB /* img-item_icon-combo_protect.png */; };
+		CA452E6E19EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6319EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png */; };
+		CA452E6F19EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6319EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png */; };
+		CA452E7019EFFDB900A5F5CB /* img-item_icon-countdown_practice.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6419EFFDB900A5F5CB /* img-item_icon-countdown_practice.png */; };
+		CA452E7119EFFDB900A5F5CB /* img-item_icon-countdown_practice.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6419EFFDB900A5F5CB /* img-item_icon-countdown_practice.png */; };
+		CA452E7219EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6519EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png */; };
+		CA452E7319EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6519EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png */; };
+		CA452E7419EFFDB900A5F5CB /* img-item_icon-health_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6619EFFDB900A5F5CB /* img-item_icon-health_potion.png */; };
+		CA452E7519EFFDB900A5F5CB /* img-item_icon-health_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6619EFFDB900A5F5CB /* img-item_icon-health_potion.png */; };
+		CA452E7619EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png */; };
+		CA452E7719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png */; };
+		CA452E7819EFFDB900A5F5CB /* img-item_icon-lucky_star.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6819EFFDB900A5F5CB /* img-item_icon-lucky_star.png */; };
+		CA452E7919EFFDB900A5F5CB /* img-item_icon-lucky_star.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6819EFFDB900A5F5CB /* img-item_icon-lucky_star.png */; };
+		CA452E7A19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */; };
+		CA452E7B19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */; };
+		CA452E7C19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */; };
+		CA452E7D19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */; };
+		CA452E7E19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */; };
+		CA452E7F19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2419E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
@@ -1597,6 +1617,16 @@
 		CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCheckpoint.m; sourceTree = "<group>"; };
 		CA452E5B19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-checkpoint_test-bg_disabled.png"; sourceTree = "<group>"; };
 		CA452E5C19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-checkpoint_test-bg_disabled@2x.png"; sourceTree = "<group>"; };
+		CA452E6219EFFDB900A5F5CB /* img-item_icon-combo_protect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-combo_protect.png"; sourceTree = "<group>"; };
+		CA452E6319EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-combo_protect@2x.png"; sourceTree = "<group>"; };
+		CA452E6419EFFDB900A5F5CB /* img-item_icon-countdown_practice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-countdown_practice.png"; sourceTree = "<group>"; };
+		CA452E6519EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-countdown_practice@2x.png"; sourceTree = "<group>"; };
+		CA452E6619EFFDB900A5F5CB /* img-item_icon-health_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-health_potion.png"; sourceTree = "<group>"; };
+		CA452E6719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-health_potion@2x.png"; sourceTree = "<group>"; };
+		CA452E6819EFFDB900A5F5CB /* img-item_icon-lucky_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-lucky_star.png"; sourceTree = "<group>"; };
+		CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-lucky_star@2x.png"; sourceTree = "<group>"; };
+		CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-progress_quiz.png"; sourceTree = "<group>"; };
+		CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-progress_quiz@2x.png"; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2533,6 +2563,24 @@
 			path = l10n;
 			sourceTree = "<group>";
 		};
+		CA452E6119EFFDB900A5F5CB /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				CA452E6219EFFDB900A5F5CB /* img-item_icon-combo_protect.png */,
+				CA452E6319EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png */,
+				CA452E6419EFFDB900A5F5CB /* img-item_icon-countdown_practice.png */,
+				CA452E6519EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png */,
+				CA452E6619EFFDB900A5F5CB /* img-item_icon-health_potion.png */,
+				CA452E6719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png */,
+				CA452E6819EFFDB900A5F5CB /* img-item_icon-lucky_star.png */,
+				CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */,
+				CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */,
+				CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */,
+			);
+			name = Shop;
+			path = shop;
+			sourceTree = "<group>";
+		};
 		CAA91C8D19E780BC0076A9BC /* Find Friends */ = {
 			isa = PBXGroup;
 			children = (
@@ -2911,6 +2959,7 @@
 				CAF850D019E0F3D200A347CF /* Lessons List */,
 				CAF850DD19E0F3D200A347CF /* Settings */,
 				CAF850E619E0F3D200A347CF /* Shared */,
+				CA452E6119EFFDB900A5F5CB /* Shop */,
 				CAF850FD19E0F3D200A347CF /* Skill Icons */,
 				CAF851DA19E0F3D200A347CF /* Skills List */,
 				CAF8520119E0F3D200A347CF /* User Profile */,
@@ -4050,6 +4099,7 @@
 				CA452E5D19EFED1900A5F5CB /* img-hexagon-checkpoint_test-bg_disabled.png in Resources */,
 				CAF8563119E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked.png in Resources */,
 				CAF853E919E0F3D200A347CF /* img-skill_icon-en-vi_kinh_doanh-unlocked_big@2x.png in Resources */,
+				CA452E7019EFFDB900A5F5CB /* img-item_icon-countdown_practice.png in Resources */,
 				CAF8532219E0F3D200A347CF /* btn-lessons_learning-audio-normal.png in Resources */,
 				CAF8543219E0F3D200A347CF /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png in Resources */,
 				CAF8562319E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked.png in Resources */,
@@ -4183,6 +4233,7 @@
 				CAF8536319E0F3D200A347CF /* img-share-google_selected@2x.png in Resources */,
 				CAF8532B19E0F3D200A347CF /* btn-lessons_learning-record@2x.png in Resources */,
 				CAF853F919E0F3D200A347CF /* img-skill_icon-en-vi_ngay_va_gio-unlocked_big@2x.png in Resources */,
+				CA452E7219EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png in Resources */,
 				CAF854EC19E0F50D00A347CF /* AppIcon40x40@2x.png in Resources */,
 				CAF8531419E0F3D200A347CF /* img-sign_up-text_boxes-bg.png in Resources */,
 				CAF8543819E0F3D200A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png in Resources */,
@@ -4358,6 +4409,7 @@
 				CAF8531F19E0F3D200A347CF /* img-set_goal-radio-normal@2x.png in Resources */,
 				CAF8534819E0F3D200A347CF /* img-skills_list-laurea.png in Resources */,
 				CAF8545219E0F3D200A347CF /* img-hexagon_skill-strength-1.png in Resources */,
+				CA452E7819EFFDB900A5F5CB /* img-item_icon-lucky_star.png in Resources */,
 				CAF8532C19E0F3D200A347CF /* img-judge_question-radio.png in Resources */,
 				CAF854CA19E0F3D200A347CF /* MMHexagonSkillCell.xib in Resources */,
 				CAF853A019E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_2-unlocked_big.png in Resources */,
@@ -4374,6 +4426,7 @@
 				CAF8537F19E0F3D200A347CF /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png in Resources */,
 				CAF8545019E0F3D200A347CF /* img-hexagon_skill-bg_big.png in Resources */,
 				CAF8540019E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png in Resources */,
+				CA452E7619EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png in Resources */,
 				CAF8546619E0F3D200A347CF /* img-shield_skill-strength-2.png in Resources */,
 				CAF854AF19E0F3D200A347CF /* MMShieldLessonCell.xib in Resources */,
 				CAF8544F19E0F3D200A347CF /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
@@ -4418,6 +4471,7 @@
 				CAF8543619E0F3D200A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png in Resources */,
 				CAF853C019E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png in Resources */,
 				CAF8540E19E0F3D200A347CF /* img-skill_icon-en-vi_quan_ao-locked_big.png in Resources */,
+				CA452E7419EFFDB900A5F5CB /* img-item_icon-health_potion.png in Resources */,
 				CAF8543519E0F3D200A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png in Resources */,
 				CAF8541219E0F3D200A347CF /* img-skill_icon-en-vi_so-locked_big.png in Resources */,
 				CAF8532F19E0F3D200A347CF /* img-judge_question-radio_selected@2x.png in Resources */,
@@ -4438,6 +4492,7 @@
 				CAF853DA19E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-locked_big.png in Resources */,
 				CAF8537719E0F3D200A347CF /* img-skill_icon-en-vi_co_ban_1-locked_big@2x.png in Resources */,
 				CAF8569219E0F82700A347CF /* img-skill_icon-en-vi_tinh_tu_1-unlocked@2x.png in Resources */,
+				CA452E7A19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */,
 				CAF853B719E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png in Resources */,
 				CAF8549319E0F3D200A347CF /* MMSortQuestionAnswerTokenButton.xib in Resources */,
 				CAF8539319E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png in Resources */,
@@ -4450,6 +4505,7 @@
 				CAF852F819E0F3D200A347CF /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CAF8566819E0F82700A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked@2x.png in Resources */,
 				CAF859B819E0FE7B00A347CF /* memo-staging-Info.plist in Resources */,
+				CA452E6C19EFFDB900A5F5CB /* img-item_icon-combo_protect.png in Resources */,
 				CAF8535519E0F3D200A347CF /* img-count_badge-bg@2x.png in Resources */,
 				CAF8568C19E0F82700A347CF /* img-skill_icon-en-vi_thien_nhien-locked@2x.png in Resources */,
 				CAF8563619E0F82700A347CF /* img-skill_icon-en-vi_dong_vat-unlocked@2x.png in Resources */,
@@ -4471,6 +4527,7 @@
 				CAF8567219E0F82700A347CF /* img-skill_icon-en-vi_pho_tu-unlocked@2x.png in Resources */,
 				CAF852EF19E0F3D200A347CF /* img-ant-begin.png in Resources */,
 				CAF852FF19E0F3D200A347CF /* btn-navbar-back.png in Resources */,
+				CA452E7E19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */,
 				CAF8567619E0F82700A347CF /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png in Resources */,
 				CAF8566C19E0F82700A347CF /* img-skill_icon-en-vi_noi_chon-locked@2x.png in Resources */,
 				CAF8533519E0F3D200A347CF /* img-lessons_learning-correct@2x.png in Resources */,
@@ -4647,6 +4704,7 @@
 				CAF853F119E0F3D200A347CF /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png in Resources */,
 				CAF8533719E0F3D200A347CF /* img-lessons_learning-heart@2x.png in Resources */,
 				CAF8560219E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked@2x.png in Resources */,
+				CA452E6E19EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png in Resources */,
 				CAF8540119E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png in Resources */,
 				CAF8541F19E0F3D200A347CF /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png in Resources */,
 				CAF8538219E0F3D200A347CF /* img-skill_icon-en-vi_dac_tinh-locked_big.png in Resources */,
@@ -4671,6 +4729,7 @@
 				CAF8569E19E0F82700A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked@2x.png in Resources */,
 				CAF8537B19E0F3D200A347CF /* img-skill_icon-en-vi_co_ban_2-locked_big@2x.png in Resources */,
 				CAF853E119E0F3D200A347CF /* img-skill_icon-en-vi_gioi_tu-unlocked_big@2x.png in Resources */,
+				CA452E7C19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */,
 				CAF8544219E0F3D200A347CF /* img-skill_icon-en-vi_y_te-locked_big.png in Resources */,
 				CAF854BB19E0F3D200A347CF /* MMShopItemCell.xib in Resources */,
 				CAF8531819E0F3D200A347CF /* img-beginning_options-bg.png in Resources */,
@@ -4813,6 +4872,7 @@
 				CAF8578919E0FDF600A347CF /* AppIcon60x60@2x.png in Resources */,
 				CAF8578A19E0FDF600A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked_big@2x.png in Resources */,
 				CAF8578B19E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-unlocked.png in Resources */,
+				CA452E6D19EFFDB900A5F5CB /* img-item_icon-combo_protect.png in Resources */,
 				CAF8578C19E0FDF600A347CF /* img-share-twitter@2x.png in Resources */,
 				CAF8578D19E0FDF600A347CF /* btn-lessons_learning-form_tokens.png in Resources */,
 				CAF8578E19E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-locked_big.png in Resources */,
@@ -4920,6 +4980,7 @@
 				CAF857F219E0FDF600A347CF /* img-hexagon_skill-bg-unlocked.png in Resources */,
 				CAF857F319E0FDF600A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked@2x.png in Resources */,
 				CAF857F419E0FDF600A347CF /* img-skill_icon-en-vi_du_lich-unlocked.png in Resources */,
+				CA452E7319EFFDB900A5F5CB /* img-item_icon-countdown_practice@2x.png in Resources */,
 				CAA91C8C19E77F7B0076A9BC /* img-find_friends-search_bar-bg@2x.png in Resources */,
 				CAF857F519E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked_big@2x.png in Resources */,
 				CAF857F619E0FDF600A347CF /* img-skill_icon-en-vi_co_ban_2-unlocked.png in Resources */,
@@ -5016,6 +5077,7 @@
 				CAF8585119E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked_big@2x.png in Resources */,
 				CAF8585219E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big.png in Resources */,
 				CAF8585319E0FDF600A347CF /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png in Resources */,
+				CA452E7F19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */,
 				CAF8585419E0FDF600A347CF /* img-lessons_learning-result_view-bg.png in Resources */,
 				CAF8585519E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png in Resources */,
 				CAF8585619E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */,
@@ -5101,6 +5163,7 @@
 				CAF858A619E0FDF600A347CF /* img-skill_icon-en-vi_so-locked_big.png in Resources */,
 				CAF858A719E0FDF600A347CF /* img-judge_question-radio_selected@2x.png in Resources */,
 				CAF858A819E0FDF600A347CF /* MMShieldSkillCell.xib in Resources */,
+				CA452E7719EFFDB900A5F5CB /* img-item_icon-health_potion@2x.png in Resources */,
 				CAF858A919E0FDF600A347CF /* img-skill_icon-en-vi_thien_nhien-unlocked.png in Resources */,
 				CAF858AA19E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked.png in Resources */,
 				CAF858AB19E0FDF600A347CF /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */,
@@ -5108,6 +5171,7 @@
 				CAF858AD19E0FDF600A347CF /* img-share-google_selected.png in Resources */,
 				CA452E4D19EEA01B00A5F5CB /* vi.strings in Resources */,
 				CAF858AE19E0FDF600A347CF /* MMJudgeOptionCell.xib in Resources */,
+				CA452E7919EFFDB900A5F5CB /* img-item_icon-lucky_star.png in Resources */,
 				CAF858AF19E0FDF600A347CF /* img-skill_icon-en-vi_gia_dinh-unlocked.png in Resources */,
 				CAF858B019E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked.png in Resources */,
 				CAF858B119E0FDF600A347CF /* img-skill_icon-en-vi_co_ban_1-unlocked_big.png in Resources */,
@@ -5125,6 +5189,7 @@
 				CAF858BD19E0FDF600A347CF /* img-beginner-icon@2x.png in Resources */,
 				CAF858BE19E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png in Resources */,
 				CAF858BF19E0FDF600A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png in Resources */,
+				CA452E7B19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */,
 				CAF858C019E0FDF600A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked.png in Resources */,
 				CAF858C119E0FDF600A347CF /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CAF858C219E0FDF600A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked@2x.png in Resources */,
@@ -5253,6 +5318,7 @@
 				CAF8593C19E0FDF600A347CF /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png in Resources */,
 				CAF8593D19E0FDF600A347CF /* img-ant-placement_test@2x.png in Resources */,
 				CAF8593E19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big.png in Resources */,
+				CA452E7D19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */,
 				CAF8593F19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-unlocked.png in Resources */,
 				CAF8594019E0FDF600A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-locked@2x.png in Resources */,
 				CAF8594119E0FDF600A347CF /* img-settings-email_icon-disabled.png in Resources */,
@@ -5307,6 +5373,7 @@
 				CAF8597319E0FDF600A347CF /* img-sign_up-text_boxes-bg@2x.png in Resources */,
 				CAA91C8A19E77F7B0076A9BC /* img-find_friends-search_bar-bg.png in Resources */,
 				CAF8597419E0FDF600A347CF /* img-skill_icon-en-vi_du_lich-locked.png in Resources */,
+				CA452E7119EFFDB900A5F5CB /* img-item_icon-countdown_practice.png in Resources */,
 				CAF8597519E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png in Resources */,
 				CAF8597619E0FDF600A347CF /* MMSetGoalCell.xib in Resources */,
 				CAF8597719E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked.png in Resources */,
@@ -5320,6 +5387,7 @@
 				CAF8597F19E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-locked@2x.png in Resources */,
 				CAF8598019E0FDF600A347CF /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CAF8598119E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png in Resources */,
+				CA452E6F19EFFDB900A5F5CB /* img-item_icon-combo_protect@2x.png in Resources */,
 				CAF8598219E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png in Resources */,
 				CAF8598319E0FDF600A347CF /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png in Resources */,
 				CAF8598419E0FDF600A347CF /* img-lessons_learning-heart@2x.png in Resources */,
@@ -5357,6 +5425,7 @@
 				CAF859A419E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big.png in Resources */,
 				CAF859A519E0FDF600A347CF /* img-money-icon.png in Resources */,
 				CAF859A619E0FDF600A347CF /* img-skill_icon-en-vi_du_lich-locked@2x.png in Resources */,
+				CA452E7519EFFDB900A5F5CB /* img-item_icon-health_potion.png in Resources */,
 				CAF859A719E0FDF600A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked.png in Resources */,
 				CAF859A819E0FDF600A347CF /* img-skill_icon-en-vi_giao_duc-locked@2x.png in Resources */,
 				CAF859A919E0FDF600A347CF /* img-profile-level-bg.png in Resources */,

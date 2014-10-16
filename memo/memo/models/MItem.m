@@ -10,4 +10,19 @@
 
 @implementation MItem
 
++ (NSDictionary *)itemsBySectionsFromArr:(NSArray *)itemsArr {
+  NSMutableDictionary *sections = [NSMutableDictionary dictionary];
+  
+  NSArray *items = [MItem modelsFromArr:itemsArr];
+  
+  for (MItem *item in items) {
+    if (sections[item.section] == nil)
+      sections[item.section] = [NSMutableArray array];
+    
+    [sections[item.section] addObject:item];
+  }
+  
+  return sections;
+}
+
 @end

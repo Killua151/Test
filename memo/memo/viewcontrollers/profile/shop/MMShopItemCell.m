@@ -9,9 +9,9 @@
 #import "MMShopItemCell.h"
 #import "MItem.h"
 
-@interface MMShopItemCell ()
-
-- (void)applyEffectToPriceButton;
+@interface MMShopItemCell () {
+  MItem *_itemData;
+}
 
 @end
 
@@ -22,6 +22,7 @@
     _lblItemName.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
     _lblItemDescription.font = [UIFont fontWithName:@"ClearSans" size:14];
     _btnPrice.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:14];
+    _btnPrice.titleLabel.minimumScaleFactor = 11.0/_btnPrice.titleLabel.font.pointSize;
     _btnPrice.layer.cornerRadius = 4;
   }
   
@@ -29,10 +30,30 @@
 }
 
 - (void)updateCellWithData:(MItem *)data {
+  _itemData = data;
+  
+  _imgItemIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-item_icon-%@", _itemData._id]];
+  
+  _lblItemName.text = _itemData.name;
   [_lblItemName adjustToFitHeight];
+  
+  _lblItemDescription.text = _itemData.info;
   [_lblItemDescription adjustToFitHeightAndRelatedTo:_lblItemName withDistance:10];
   
-  [self applyEffectToPriceButton];
+  _btnPrice.enabled = _itemData.can_buy;
+  
+  if (_itemData.can_buy)
+    _btnPrice.backgroundColor = UIColorFromRGB(129, 12, 21);
+  else
+    _btnPrice.backgroundColor = UIColorFromRGB(153, 153, 153);
+  
+  if (_itemData.consumable || _itemData.can_buy)
+    [_btnPrice setTitle:[NSString stringWithFormat:MMLocalizedString(@"%ld MemoCoin"), _itemData.price]
+               forState:UIControlStateNormal];
+  else
+    [_btnPrice setTitle:_itemData.can_not_buy_message forState:UIControlStateNormal];
+  
+  [Utils adjustButtonToFitWidth:_btnPrice padding:16 constrainsToWidth:210];
 }
 
 - (CGFloat)heightToFit {
@@ -40,24 +61,13 @@
 }
 
 - (IBAction)btnPricePressed:(UIButton *)sender {
-}
-
-#pragma mark - Private methods
-- (void)applyEffectToPriceButton {
-  NSString *plainTitle = [_btnPrice titleForState:UIControlStateNormal];
-  
-  if (plainTitle == nil)
+  if (!_itemData.can_buy) {
+    [Utils showToastWithMessage:_itemData.can_not_buy_message];
     return;
+  }
   
-  NSRange unitRange = NSMakeRange(plainTitle.length - 6, 6);
-  NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:plainTitle];
-  [attributedTitle addAttribute:NSFontAttributeName
-                          value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]
-                          range:unitRange];
-  [attributedTitle addAttribute:NSForegroundColorAttributeName
-                          value:[UIColor whiteColor]
-                          range:NSMakeRange(0, plainTitle.length)];
-  [_btnPrice setAttributedTitle:attributedTitle forState:UIControlStateNormal];
+  if ([_delegate respondsToSelector:@selector(shopDidBuyItem:)])
+    [_delegate shopDidBuyItem:_itemData._id];
 }
 
 @end

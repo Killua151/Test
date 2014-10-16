@@ -211,7 +211,7 @@
   }
   
   if (indexPath.section == 1) {
-    CGFloat delta = isFriend ? 20 : 0;
+    CGFloat delta = _btnSetGoal.hidden ? 20 : 0;
     return _celGraphChart.frame.size.height - delta;
   }
   
@@ -289,7 +289,11 @@
   _btnInteraction.layer.cornerRadius = 4;
   
   _btnStreak.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
+  _btnStreak.titleLabel.adjustsFontSizeToFitWidth = YES;
+  _btnStreak.titleLabel.minimumScaleFactor = 13.0/_btnStreak.titleLabel.font.pointSize;
+  _btnMoney.titleLabel.adjustsFontSizeToFitWidth = YES;
   _btnMoney.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:18];
+  _btnMoney.titleLabel.minimumScaleFactor = 13.0/_btnMoney.titleLabel.font.pointSize;
   
   _lblCourseName.font = [UIFont fontWithName:@"ClearSans" size:18];
   
@@ -315,6 +319,8 @@
   
   _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;
   _btnInteraction.hidden = !isFriend;
+  
+  _btnSetGoal.hidden = YES;
   
   if (isFriend) {
     [self customTitleWithText:_userData.username color:[UIColor blackColor]];
@@ -367,12 +373,12 @@
 }
 
 - (void)adjustStreakAndMoneyLabels {
-  [_btnStreak sizeToFit];
+  return;
+  
   CGRect frame = _btnStreak.frame;
   frame.origin = CGPointMake(15, 22);
   _btnStreak.frame = frame;
   
-  [_btnMoney sizeToFit];
   frame = _btnMoney.frame;
   frame.origin = CGPointMake(_celStreakMoney.frame.size.width - 15 - frame.size.width, 22);
   _btnMoney.frame = frame;

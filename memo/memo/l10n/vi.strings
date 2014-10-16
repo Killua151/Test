@@ -42,7 +42,7 @@
 "Full name (optional)" = "Tên đầy đủ (tùy chọn)";
 "Hard" = "Khó";
 "Heart bonus %@" = "Thưởng trái tim %@";
-"Hi!" = "Xin chào";
+"Hi Memo team!" = "Xin chào Memo team!";
 "I can’t use microphone right now" = "Tôi không thể dùng microphone bây giờ";
 "If you’re serious about learning a language, you should set a goal to keep you on track." = "Nếu nghiêm túc trong việc học một ngôn ngữ, bạn nên cân nhắc đặt mục tiêu để giữ việc học đúng nhịp";
 "Invalid email" = "Email không hợp lệ";
@@ -119,6 +119,7 @@
 "We will send you instructions to recover your password via email" = "Chúng tôi sẽ gửi cho bạn hướng dẫn lấy lại mật khẩu qua email";
 "Write comment..." = "Bình luận của bạn...";
 "You are bonused %@" = "Bạn đã được thưởng %@";
+"You have %@ MemoCoin" = "Bạn đang có %@ MemoCoin";
 "You have %@!" = "Bạn có %@!";
 "You have finished skill %@!" = "Bạn đã hoàn thành kỹ năng %@!";
 "You have finished skill %@ and %d other skills!" = "Bạn đã hoàn thành kỹ năng %@ và %d kỹ năng khác!";

@@ -68,3 +68,10 @@ typedef enum ShareOptionEnum {
 - (void)interactFriend:(NSString *)userId toFollow:(BOOL)follow atIndex:(NSInteger)index;
 
 @end
+
+@protocol MMShopDelegate <NSObject>
+
+@optional
+- (void)shopDidBuyItem:(NSString *)itemId;
+
+@end
