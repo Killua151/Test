@@ -299,7 +299,10 @@
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:MMLocalizedString(@"Change language") forState:UIControlStateNormal];
+  
+#if kTempDisableForCloseBeta
   _btnSwitchCourse.hidden = YES;
+#endif
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];
@@ -320,7 +323,9 @@
   _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;
   _btnInteraction.hidden = !isFriend;
   
+#if kTempDisableForCloseBeta
   _btnSetGoal.hidden = YES;
+#endif
   
   if (isFriend) {
     [self customTitleWithText:_userData.username color:[UIColor blackColor]];

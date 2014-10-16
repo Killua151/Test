@@ -83,7 +83,7 @@
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
   NSString *toEmail = kValueSupportEmail;
   NSString *subject = MMLocalizedString(@"Memo app feedback");
-  NSString *messageBody = MMLocalizedString(@"Hi!");
+  NSString *messageBody = MMLocalizedString(@"Hi Memo team!");
   
   MFMailComposeViewController *controller = [MFMailComposeViewController new];
   controller.mailComposeDelegate = self;
