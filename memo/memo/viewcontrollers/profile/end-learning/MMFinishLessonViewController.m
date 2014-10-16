@@ -54,7 +54,7 @@
   [_lblFinishLessonMessage adjustToFitHeight];
   
   styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
-  message = [NSString stringWithFormat:MMLocalizedString(@"Heart bonus %@"), styledString];
+  message = [NSString stringWithFormat:MMLocalizedString(@"Health bonus %@"), styledString];
   
   _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   [_lblHeartBonusMessage applyAttributedText:message

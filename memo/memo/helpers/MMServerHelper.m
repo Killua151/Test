@@ -422,8 +422,10 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
      
-     if (responseDict[kParamFinished] != nil &&
-         [responseDict[kParamFinished] isKindOfClass:[NSNumber class]] && [responseDict[kParamFinished] boolValue]) {
+     BOOL finished = responseDict[kParamQuestion] == nil;
+     
+     if (finished) {
+       [MUser currentUser].lastReceivedBonuses = responseDict;
        handler(nil, nil, YES, nil);
        return;
      }

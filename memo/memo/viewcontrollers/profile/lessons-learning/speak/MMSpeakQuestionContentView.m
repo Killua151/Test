@@ -35,6 +35,8 @@
   NSString *styledString = MMLocalizedString(@"Tap");
   NSString *tooltipsMessage = [NSString stringWithFormat:MMLocalizedString(@"%@ to start recording"), styledString];
   _btnTooltips.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _btnTooltips.titleLabel.adjustsFontSizeToFitWidth = YES;
+  _btnTooltips.titleLabel.minimumScaleFactor = 13.0/_btnTooltips.titleLabel.font.pointSize;
   [_btnTooltips.titleLabel applyAttributedText:tooltipsMessage
                                       onString:styledString
                                 withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
@@ -43,6 +45,8 @@
   _btnSkipSpeakQuestion.layer.cornerRadius = 4;
   _btnSkipSpeakQuestion.layer.borderColor = [UIColorFromRGB(179, 179, 179) CGColor];
   _btnSkipSpeakQuestion.layer.borderWidth = 2;
+  _btnSkipSpeakQuestion.titleLabel.adjustsFontSizeToFitWidth = YES;
+  _btnSkipSpeakQuestion.titleLabel.minimumScaleFactor = 13.0/_btnSkipSpeakQuestion.titleLabel.font.pointSize;
   [_btnSkipSpeakQuestion setTitle:MMLocalizedString(@"I can’t use microphone right now") forState:UIControlStateNormal];
   
   if (!DeviceScreenIsRetina4Inch()) {

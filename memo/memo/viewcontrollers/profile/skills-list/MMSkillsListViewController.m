@@ -355,7 +355,9 @@
 
 - (void)handleLoadingError:(NSError *)error {
   if ([error errorCode] == 400) {
-    [self transitToViewController:[MMCoursesListViewController navigationController]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [self transitToViewController:[MMCoursesListViewController navigationController]];
+    });
     return;
   }
   

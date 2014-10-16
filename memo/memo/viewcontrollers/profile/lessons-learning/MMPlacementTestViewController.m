@@ -7,6 +7,7 @@
 //
 
 #import "MMPlacementTestViewController.h"
+#import "MMFinishLessonViewController.h"
 #import "MMQuestionContentView.h"
 #import "MBaseQuestion.h"
 
@@ -47,7 +48,7 @@
        return;
      }
      
-     DLog(@"invoke");
+     [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
    }];
 }
 
