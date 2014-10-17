@@ -53,14 +53,20 @@
                                 withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
   [_lblFinishLessonMessage adjustToFitHeight];
   
-  styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
-  message = [NSString stringWithFormat:MMLocalizedString(@"Health bonus %@"), styledString];
+  _lblHeartBonusMessage.hidden = receivedBonuses[kParamHeartBonusExp] == nil ||
+  ![receivedBonuses[kParamHeartBonusExp] isKindOfClass:[NSNumber class]] ||
+  [receivedBonuses[kParamHeartBonusExp] integerValue] <= 0;
   
-  _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  [_lblHeartBonusMessage applyAttributedText:message
-                                    onString:styledString
-                              withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
-  [_lblHeartBonusMessage adjustToFitHeightAndRelatedTo:_lblFinishLessonMessage withDistance:5];
+  if (!_lblHeartBonusMessage.hidden) {
+    styledString = [NSString stringWithFormat:@"+%@ EXP", receivedBonuses[kParamHeartBonusExp]];
+    message = [NSString stringWithFormat:MMLocalizedString(@"Health bonus %@"), styledString];
+    
+    _lblHeartBonusMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+    [_lblHeartBonusMessage applyAttributedText:message
+                                      onString:styledString
+                                withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans" size:17]}];
+    [_lblHeartBonusMessage adjustToFitHeightAndRelatedTo:_lblFinishLessonMessage withDistance:5];
+  }
   
   _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnShare.layer.cornerRadius = 4;

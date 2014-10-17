@@ -11,6 +11,7 @@
 @interface MMMoneyBonusViewController : MMEndLearningViewController {
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;
+  IBOutlet UIImageView *_imgMoneyIcon;
   IBOutlet UIView *_vCountBadge;
   IBOutlet UILabel *_lblCount;
   IBOutlet UIButton *_btnNext;

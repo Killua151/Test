@@ -37,7 +37,7 @@
   [super viewWillAppear:animated];
   [self customTitleWithText:_skillData.title color:[self navigationTextColor]];
   
-  if (![_skillData isFinished])
+  if (_skillData.unlocked && ![_skillData isFinished])
     [self customBarButtonWithImage:nil
                              title:MMLocalizedString(@"Shortcut")
                              color:[self navigationTextColor]

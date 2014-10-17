@@ -39,11 +39,20 @@
                     withAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"ClearSans-Bold" size:17]}];
   [_lblMessage adjustToFitHeight];
   
-  _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = [NSString stringWithFormat:MMLocalizedString(@"Finish skill %@"), affectedSkill.title];
+  CGRect frame = _lblMessage.frame;
+  frame.origin.y = _imgMoneyIcon.frame.origin.y - frame.size.height - 41;
+  _lblMessage.frame = frame;
   
   _lblCount.font = [UIFont fontWithName:@"ClearSans-Bold" size:35];
   _lblCount.text = [NSString stringWithFormat:@"%ld", (long)bonusMoney];
+  
+  _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
+  _lblSubMessage.text = [NSString stringWithFormat:MMLocalizedString(@"Finish skill %@"), affectedSkill.title];
+  [_lblSubMessage adjustToFitHeight];
+  
+  frame = _lblSubMessage.frame;
+  frame.origin.y = _imgMoneyIcon.frame.origin.y + _imgMoneyIcon.frame.size.height + 41;
+  _lblSubMessage.frame = frame;
   
   _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNext.layer.cornerRadius = 4;
