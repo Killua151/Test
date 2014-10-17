@@ -29,6 +29,7 @@
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
   [self setupViews];
+  [self test];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +76,10 @@
   _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNewUser.layer.cornerRadius = 4;
   [_btnNewUser setTitle:MMLocalizedString(@"New user") forState:UIControlStateNormal];
+}
+
+- (void)test {
+  
 }
 
 @end

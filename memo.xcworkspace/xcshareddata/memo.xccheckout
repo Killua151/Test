@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>17B1CDED-D42F-4FD7-B6CE-18DF28133934</string>
+	<string>464B4EE7-732C-4AB6-9F59-C608874345CA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>memo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>704E8491C387615CDA88BDD4DA532603D5CB8F03</key>
-		<string>ssh://git.topica.vn/fanto/ios.git</string>
+		<string>git.topica.vn:fanto/ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>memo.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://git.topica.vn/fanto/ios.git</string>
+	<string>git.topica.vn:fanto/ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

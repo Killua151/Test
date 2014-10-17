@@ -1599,7 +1599,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA452E3519ED592D00A5F5CB /* UIAlertView+AlertHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AlertHelpers.h"; sourceTree = "<group>"; };
 		CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AlertHelpers.m"; sourceTree = "<group>"; };
@@ -2601,7 +2602,7 @@
 				CABBEA8919E0E4C800EFED33 /* memo */,
 				CABBEA8219E0E4C800EFED33 /* Frameworks */,
 				CABBEA8119E0E4C800EFED33 /* Products */,
-				0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */,
+				E546E4CF7AFBB148D0315C27 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3984,6 +3985,15 @@
 			);
 			name = Shared;
 			path = shared;
+			sourceTree = "<group>";
+		};
+		E546E4CF7AFBB148D0315C27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */,
+				110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5453,7 +5463,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAF856AB19E0FCDA00A347CF /* ShellScript */ = {
@@ -5846,9 +5856,10 @@
 		};
 		CABBEAAD19E0E4C800EFED33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */;
+			baseConfigurationReference = 698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -5869,9 +5880,10 @@
 		};
 		CABBEAAE19E0E4C800EFED33 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */;
+			baseConfigurationReference = 110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -5892,7 +5904,6 @@
 		};
 		CAF859B319E0FDF600A347CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5915,7 +5926,6 @@
 		};
 		CAF859B419E0FDF600A347CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AACC57EEA7D4B0B9F19537A /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (

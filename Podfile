@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '6.0'
 xcodeproj 'memo/memo.xcodeproj'
 
@@ -13,3 +15,4 @@ pod 'google-plus-ios-sdk', '~> 1.7'
 pod 'SPChart', '~> 0.1'
 pod 'KLSwitch', '~> 1.5'
 pod 'Mixpanel', '~> 2.5'
+pod 'TTTAttributedLabel', '~> 1.10'
