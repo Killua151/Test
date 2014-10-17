@@ -94,7 +94,8 @@
   
   [_answersData removeAllObjects];
   _vGestureLayer.hidden = YES;
-  [self prepareNextQuestion];
+  _currentLessonIndex++;
+  [self removeCurrentQuestion];
 }
 
 @end
