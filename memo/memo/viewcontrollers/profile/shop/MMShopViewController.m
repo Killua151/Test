@@ -134,7 +134,7 @@
 }
 
 - (void)styleMoneyBalanceLabel {
-  NSString *styledString = [NSString stringWithFormat:@"%d", [MUser currentUser].virtual_money];
+  NSString *styledString = [NSString stringWithFormat:@"%ld", (long)[MUser currentUser].virtual_money];
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have %@ MemoCoin"), styledString];
   
   [_lblMoneyBalanceInfo applyAttributedText:message

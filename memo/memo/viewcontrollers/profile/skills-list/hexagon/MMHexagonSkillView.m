@@ -40,10 +40,10 @@
   
   if ([_skillData isFinished])
     _imgSkillStrength.image = [UIImage imageNamed:
-                               [NSString stringWithFormat:@"img-hexagon_skill-strength-%d", _skillData.strength]];
+                               [NSString stringWithFormat:@"img-hexagon_skill-strength-%ld", (long)_skillData.strength]];
   else
-    _lblLessonsProgress.text = [NSString stringWithFormat:@"%d/%d",
-                                _skillData.finished_lesson, [_skillData.lessons count]];
+    _lblLessonsProgress.text = [NSString stringWithFormat:@"%ld/%lu",
+                                (long)_skillData.finished_lesson, (unsigned long)[_skillData.lessons count]];
   
   NSString *suffix = skill.unlocked ? @"unlocked" : @"locked";
   _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-%@", _skillData._id, suffix]];
