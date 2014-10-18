@@ -69,3 +69,32 @@
 }
 
 @end
+
+@implementation TTTAttributedLabel (LabelHelpers)
+
+- (void)applyWordDefinitions:(NSArray *)words withSpecialWords:(NSArray *)specialWords {
+  self.linkAttributes = @{
+                           NSForegroundColorAttributeName : UIColorFromRGB(129, 12, 21),
+                           NSUnderlineStyleAttributeName : @(NSUnderlineStyleThick | NSUnderlinePatternDot),
+                           };
+  
+  NSMutableArray *allWords = [NSMutableArray arrayWithArray:words];
+  [allWords addObjectsFromArray:specialWords];
+  allWords = [allWords valueForKeyPath:@"@distinctUnionOfObjects.self"];
+  
+  for (NSString *word in allWords) {
+    NSRange wordRange = [self.text rangeOfString:word options:NSCaseInsensitiveSearch];
+    
+    if (wordRange.location == NSNotFound)
+      continue;
+    
+    [self addLinkToAddress:@{@"word" : word} withRange:wordRange];
+    
+    if ([specialWords containsObject:word])
+      [self applyAttributedText:self.text
+                        inRange:wordRange
+                 withAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(155, 155, 155)}];
+  }
+}
+
+@end

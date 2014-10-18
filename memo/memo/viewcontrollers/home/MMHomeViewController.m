@@ -29,7 +29,6 @@
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
   [self setupViews];
-  [self test];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +78,24 @@
 }
 
 - (void)test {
+  TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
+  label.font = [UIFont systemFontOfSize:14];
+  label.textColor = [UIColor blackColor];
+  label.lineBreakMode = NSLineBreakByWordWrapping;
+  label.numberOfLines = 0;
+//  label.delegate = self;
   
+  NSString *text = @"Lorem ipsum dolar sit amet";
+  label.text = text;
+  [label applyWordDefinitions:@[@"Lorem", @"ipsum"] withSpecialWords:@[@"dolar"]];
+  
+  [label sizeToFit];
+  label.center = self.view.center;
+  [self.view addSubview:label];
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithAddress:(NSDictionary *)addressComponents {
+  DLog(@"%@", addressComponents);
 }
 
 @end

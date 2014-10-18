@@ -162,6 +162,9 @@
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
   
+  NSArray *a = @[@"ONE", @"ONE", @"ONE", @"TWO", @"THREE", @"THREE"];
+  DLog(@"%@", [a valueForKeyPath:@"@distinctUnionOfObjects.self"]);
+  
 #if kTestCompactTranslation
   [NSString testCompactTranslations];
 #endif

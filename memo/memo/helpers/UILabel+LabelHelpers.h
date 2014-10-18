@@ -21,3 +21,9 @@
 - (void)applyAttributedText:(NSString *)fullText inRange:(NSRange)styledRange withAttributes:(NSDictionary *)attributes;
 
 @end
+
+@interface TTTAttributedLabel (LabelHelpers)
+
+- (void)applyWordDefinitions:(NSArray *)words withSpecialWords:(NSArray *)specialWords;
+
+@end
