@@ -137,6 +137,7 @@
 
 #pragma mark Private methods
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions {
+#ifdef __IPHONE_8_0
   // iOS 8 Notifications
   if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
     UIUserNotificationType notificationTypes =
@@ -145,11 +146,12 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
-  } else {
-    // iOS < 8 Notifications
-    [application registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
   }
+#else
+  // iOS < 8 Notifications
+  [application registerForRemoteNotificationTypes:
+   (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+#endif
   
 #if !TARGET_IPHONE_SIMULATOR
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
