@@ -21,7 +21,14 @@
 
 + (UINavigationController *)navigationController {
   BaseViewController *viewController = [[self class] new];
-  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+  return [viewController parentNavigationController];
+}
+
+- (UINavigationController *)parentNavigationController {
+  if (self.navigationController != nil)
+    return self.navigationController;
+  
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
   return navController;
 }
 
@@ -68,8 +75,7 @@
 
 - (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption {
   MMShareViewController *shareVC = [[MMShareViewController alloc] initWithDefaultOption:shareOption];
-  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:shareVC];
-  [[self mainViewController] presentViewController:navigation animated:YES completion:NULL];
+  [self presentViewController:[shareVC parentNavigationController] animated:YES completion:NULL];
 }
 
 - (UIViewController *)mainViewController {

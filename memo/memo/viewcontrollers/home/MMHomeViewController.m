@@ -11,6 +11,8 @@
 #import "MMSignUpViewController.h"
 #import "MMCoursesListViewController.h"
 
+#import "MMCongratsViewController.h"
+
 @interface MMHomeViewController () {
   MMLoginViewController *_loginVC;
   MMSignUpViewController *_signUpVC;
@@ -48,6 +50,19 @@
 }
 
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
+  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
+  
+  NSString *subMessage = [NSString stringWithFormat:
+                          MMLocalizedString(@"Giờ bạn đã đạt cấp %d của ngôn ngữ %@, tiếp tục rèn luyện thêm nhé!"),
+                          10, @"Tiếng Anh"];
+  congratsVC.displayingData = @{
+                                kParamMessage : MMLocalizedString(@"Chúc mừng bạn đã thăng cấp"),
+                                kParamSubMessage : subMessage
+                                };
+  
+  [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
+  return;
+  
 #if kTestSignUp
   if (_signUpVC == nil)
     _signUpVC = [MMSignUpViewController new];
@@ -56,7 +71,7 @@
   [_signUpVC reloadContents];
 #else
   if (_coursesListVC == nil)
-    _coursesListVC = [FTCoursesListViewController new];
+    _coursesListVC = [MMCoursesListViewController new];
   
   [self.navigationController pushViewController:_coursesListVC animated:YES];
   [_coursesListVC reloadContents];

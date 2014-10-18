@@ -227,8 +227,7 @@
   
   MLeaderboardData *following = _userData.followings_leaderboard_all_time[indexPath.row];
   MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:following.user_id];
-  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:friendProfileVC];
-  [[self mainViewController] presentViewController:navigation animated:YES completion:NULL];
+  [[self mainViewController] presentViewController:[friendProfileVC parentNavigationController] animated:YES completion:NULL];
 }
 
 #pragma mark - UIActionSheetDelegate methods

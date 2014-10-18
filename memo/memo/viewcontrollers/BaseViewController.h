@@ -13,6 +13,8 @@
 }
 
 + (UINavigationController *)navigationController;
+- (UINavigationController *)parentNavigationController;
+
 - (void)transitToViewController:(UIViewController *)viewController;
 - (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption;
 - (UIViewController *)mainViewController;

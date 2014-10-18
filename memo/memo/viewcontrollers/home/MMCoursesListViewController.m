@@ -47,6 +47,7 @@
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
+    [_coursesData removeAllObjects];
     [_coursesData addObjectsFromArray:courses];
     [_tblCourses reloadData];
   }];

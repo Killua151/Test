@@ -97,7 +97,7 @@ return; \
 #define kTempDisableForCloseBeta                true
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
-#define kTestSignUp                             true
+#define kTestSignUp                             false
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 false
 #define kTestPushNotification                   true
@@ -132,6 +132,7 @@ return; \
 #define kParamCheckpointPosition                @"checkpoint_position"
 #define kParamCheckpointPositions               @"checkpoint_positions"
 #define kParamCorrectAnswer                     @"correct_answer"
+#define kParamCurrentCourseName                 @"current_course_name"
 #define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
@@ -151,9 +152,12 @@ return; \
 #define kParamItems                             @"items"
 #define kParamKeywords                          @"keywords"
 #define kParamLessonNumber                      @"lesson_number"
+#define kParamLevel                             @"level"
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamLocalize                          @"localize"
 #define kParamMaxHeartsCount                    @"max_hearts_count"
+#define kParamMessage                           @"message"
+#define kParamSubMessage                        @"sub_message"
 #define kParamName                              @"name"
 #define kParamNumAffectedSkills                 @"num_affected_skills"
 #define kParamQuestionId                        @"question_id"

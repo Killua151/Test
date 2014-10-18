@@ -804,6 +804,18 @@
 		CA13F2B519F0FC1F0040A7A5 /* MMSkillsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF8529C19E0F3D200A347CF /* MMSkillsListViewController.xib */; };
 		CA13F2B619F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF8514319E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-locked_big@2x.png */; };
 		CA13F2BF19F0FC870040A7A5 /* memo-beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */; };
+		CA3F1D8B19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */; };
+		CA3F1D8C19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */; };
+		CA3F1D8D19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */; };
+		CA3F1D8E19F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */; };
+		CA3F1D8F19F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */; };
+		CA3F1D9019F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */; };
+		CA3F1D9319F27DC30088A6A5 /* img-level_up-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */; };
+		CA3F1D9419F27DC30088A6A5 /* img-level_up-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */; };
+		CA3F1D9519F27DC30088A6A5 /* img-level_up-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */; };
+		CA3F1D9619F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9219F27DC30088A6A5 /* img-level_up-bg@2x.png */; };
+		CA3F1D9719F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9219F27DC30088A6A5 /* img-level_up-bg@2x.png */; };
+		CA3F1D9819F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9219F27DC30088A6A5 /* img-level_up-bg@2x.png */; };
 		CA452E3419ED535700A5F5CB /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
 		CA452E3719ED592D00A5F5CB /* UIAlertView+AlertHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */; };
 		CA452E3A19ED595200A5F5CB /* NSError+ErrorHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */; };
@@ -2400,6 +2412,10 @@
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA13F2BC19F0FC1F0040A7A5 /* memo-beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "memo-beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "memo-beta-Info.plist"; sourceTree = "<group>"; };
+		CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_badge-bg.png"; sourceTree = "<group>"; };
+		CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_badge-bg@2x.png"; sourceTree = "<group>"; };
+		CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_up-bg.png"; sourceTree = "<group>"; };
+		CA3F1D9219F27DC30088A6A5 /* img-level_up-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_up-bg@2x.png"; sourceTree = "<group>"; };
 		CA452E3519ED592D00A5F5CB /* UIAlertView+AlertHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AlertHelpers.h"; sourceTree = "<group>"; };
 		CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AlertHelpers.m"; sourceTree = "<group>"; };
 		CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ErrorHelpers.h"; sourceTree = "<group>"; };
@@ -3801,6 +3817,10 @@
 			children = (
 				CAF850AB19E0F3D100A347CF /* img-finish_lesson-set_goal-bg.png */,
 				CAF850AC19E0F3D100A347CF /* img-finish_lesson-set_goal-bg@2x.png */,
+				CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */,
+				CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */,
+				CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */,
+				CA3F1D9219F27DC30088A6A5 /* img-level_up-bg@2x.png */,
 				CAF850AD19E0F3D100A347CF /* img-set_goal-radio-normal.png */,
 				CAF850AE19E0F3D100A347CF /* img-set_goal-radio-normal@2x.png */,
 				CAF850AF19E0F3D100A347CF /* img-set_goal-radio-selected.png */,
@@ -4960,6 +4980,7 @@
 				CA13F03919F0FC1F0040A7A5 /* img-skill_icon-en-vi_mon_an-locked.png in Resources */,
 				CA13F03A19F0FC1F0040A7A5 /* img-skill_icon-en-vi_y_te-unlocked_big@2x.png in Resources */,
 				CA13F03B19F0FC1F0040A7A5 /* img-skill_icon-en-vi_pho_tu-locked@2x.png in Resources */,
+				CA3F1D8F19F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */,
 				CA13F03C19F0FC1F0040A7A5 /* img-skill_icon-en-vi_pho_tu-unlocked_big@2x.png in Resources */,
 				CA13F03D19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big@2x.png in Resources */,
 				CA13F03E19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dac_tinh-locked.png in Resources */,
@@ -5243,6 +5264,7 @@
 				CA13F15419F0FC1F0040A7A5 /* MMSuggestGoalViewController.xib in Resources */,
 				CA13F15519F0FC1F0040A7A5 /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */,
 				CA13F15619F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */,
+				CA3F1D8C19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */,
 				CA13F15719F0FC1F0040A7A5 /* img-skill_icon-en-vi_lien_tu-unlocked.png in Resources */,
 				CA13F15819F0FC1F0040A7A5 /* ClearSans-Regular.ttf in Resources */,
 				CA13F15919F0FC1F0040A7A5 /* MMSelectQuestionContentView.xib in Resources */,
@@ -5317,6 +5339,7 @@
 				CA13F19E19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_vat-unlocked_big.png in Resources */,
 				CA13F19F19F0FC1F0040A7A5 /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big.png in Resources */,
 				CA13F1A019F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked_big.png in Resources */,
+				CA3F1D9719F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */,
 				CA13F1A119F0FC1F0040A7A5 /* img-skill_icon-en-vi_quan_ao-locked_big.png in Resources */,
 				CA13F1A219F0FC1F0040A7A5 /* img-item_icon-health_potion.png in Resources */,
 				CA13F1A319F0FC1F0040A7A5 /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big@2x.png in Resources */,
@@ -5378,6 +5401,7 @@
 				CA13F1DB19F0FC1F0040A7A5 /* img-skill_icon-en-vi_quan_ao-unlocked@2x.png in Resources */,
 				CA13F1DC19F0FC1F0040A7A5 /* img-skill_icon-en-vi_noi_chon-locked@2x.png in Resources */,
 				CA13F1DD19F0FC1F0040A7A5 /* img-lessons_learning-correct@2x.png in Resources */,
+				CA3F1D9419F27DC30088A6A5 /* img-level_up-bg.png in Resources */,
 				CA13F1DE19F0FC1F0040A7A5 /* MMFinishSkillViewController.xib in Resources */,
 				CA13F1DF19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_vat-locked.png in Resources */,
 				CA13F1E019F0FC1F0040A7A5 /* AppIcon57x57@2x.png in Resources */,
@@ -5774,6 +5798,7 @@
 				CAF8531419E0F3D200A347CF /* img-sign_up-text_boxes-bg.png in Resources */,
 				CAF8543819E0F3D200A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-unlocked_big.png in Resources */,
 				CAF8564819E0F82700A347CF /* img-skill_icon-en-vi_khoa_hoc-locked@2x.png in Resources */,
+				CA3F1D8E19F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */,
 				CAF8535A19E0F3D200A347CF /* img-popup-bg.png in Resources */,
 				CAF8531E19E0F3D200A347CF /* img-set_goal-radio-normal.png in Resources */,
 				CAF853DC19E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big.png in Resources */,
@@ -5892,6 +5917,7 @@
 				CAF8549719E0F3D200A347CF /* MMExamViewController.xib in Resources */,
 				CAF8540219E0F3D200A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked_big.png in Resources */,
 				CAA91C9319E780BC0076A9BC /* MMFindFriendsViewController.xib in Resources */,
+				CA3F1D9319F27DC30088A6A5 /* img-level_up-bg.png in Resources */,
 				CAF853CF19E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
 				CAF8544A19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CAF8535119E0F3D200A347CF /* img-settings-phone_icon-disabled@2x.png in Resources */,
@@ -6120,6 +6146,7 @@
 				CAF8536919E0F3D200A347CF /* img-streak-icon@2x.png in Resources */,
 				CAF853BA19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big.png in Resources */,
 				CAF853D519E0F3D200A347CF /* img-skill_icon-en-vi_du_lich-unlocked_big@2x.png in Resources */,
+				CA3F1D8B19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */,
 				CAF8532419E0F3D200A347CF /* btn-lessons_learning-audio-slow.png in Resources */,
 				CAF855F619E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked@2x.png in Resources */,
 				CAF853D919E0F3D200A347CF /* img-skill_icon-en-vi_gia_dinh-unlocked_big@2x.png in Resources */,
@@ -6222,6 +6249,7 @@
 				CAF856A519E0F82700A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked.png in Resources */,
 				CAF854D619E0F3D200A347CF /* MMProfileViewController.xib in Resources */,
 				CAF8531519E0F3D200A347CF /* img-sign_up-text_boxes-bg@2x.png in Resources */,
+				CA3F1D9619F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */,
 				CAF8563719E0F82700A347CF /* img-skill_icon-en-vi_du_lich-locked.png in Resources */,
 				CAF8539A19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-locked_big.png in Resources */,
 				CAF854B319E0F3D200A347CF /* MMSetGoalCell.xib in Resources */,
@@ -6351,6 +6379,7 @@
 				CAF8575019E0FDF600A347CF /* img-skill_icon-en-vi_thien_nhien-unlocked_big@2x.png in Resources */,
 				CAF8575119E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-unlocked.png in Resources */,
 				CAF8575219E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big.png in Resources */,
+				CA3F1D9519F27DC30088A6A5 /* img-level_up-bg.png in Resources */,
 				CAF8575319E0FDF600A347CF /* img-lessons_learning-checkbox-checked.png in Resources */,
 				CAF8575419E0FDF600A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked_big@2x.png in Resources */,
 				CAF8575519E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked.png in Resources */,
@@ -6673,6 +6702,7 @@
 				CAF8588C19E0FDF600A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked.png in Resources */,
 				CAF8588D19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-locked_big@2x.png in Resources */,
 				CAF8588E19E0FDF600A347CF /* img-skill_icon-en-vi_dong_vat-locked_big.png in Resources */,
+				CA3F1D9019F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */,
 				CAF8588F19E0FDF600A347CF /* img-skill_icon-en-vi_the_thao-unlocked@2x.png in Resources */,
 				CAF8589019E0FDF600A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png in Resources */,
 				CAF8589119E0FDF600A347CF /* img-ant-congrats@2x.png in Resources */,
@@ -6860,6 +6890,7 @@
 				CAF8594119E0FDF600A347CF /* img-settings-email_icon-disabled.png in Resources */,
 				CAF8594219E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-locked_big.png in Resources */,
 				CAF8594319E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked_big@2x.png in Resources */,
+				CA3F1D9819F27DC30088A6A5 /* img-level_up-bg@2x.png in Resources */,
 				CAF8594419E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-locked@2x.png in Resources */,
 				CAF8594519E0FDF600A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png in Resources */,
 				CAF8594619E0FDF600A347CF /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png in Resources */,
@@ -6930,6 +6961,7 @@
 				CAF8598519E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked@2x.png in Resources */,
 				CAF8598619E0FDF600A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png in Resources */,
 				CAF8598719E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png in Resources */,
+				CA3F1D8D19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */,
 				CAF8598819E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-locked_big.png in Resources */,
 				CAF8598919E0FDF600A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-locked.png in Resources */,
 				CAF8598A19E0FDF600A347CF /* img-skill_icon-en-vi_tu_han_dinh-locked.png in Resources */,

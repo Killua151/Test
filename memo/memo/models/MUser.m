@@ -76,7 +76,7 @@ static MUser *_currentUser = nil;
     receivedBonus[kParamAffectedSkill] = affectedSkill;
   
   for (NSString *key in @[kParamBonusMoney, kParamFinishExamBonusExp, kParamHeartBonusExp,
-                          kParamLeveledUp, kParamNumAffectedSkills])
+                          kParamLeveledUp, kParamLevel, kParamCurrentCourseName, kParamNumAffectedSkills])
     if (lastReceivedBonuses[key] != nil && ![lastReceivedBonuses[key] isKindOfClass:[NSNull class]])
       receivedBonus[key] = lastReceivedBonuses[key];
   
