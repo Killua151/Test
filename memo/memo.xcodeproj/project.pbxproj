@@ -2398,7 +2398,7 @@
 		110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA13F2BC19F0FC1F0040A7A5 /* memo copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "memo copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA13F2BC19F0FC1F0040A7A5 /* memo-beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "memo-beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "memo-beta-Info.plist"; sourceTree = "<group>"; };
 		CA452E3519ED592D00A5F5CB /* UIAlertView+AlertHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AlertHelpers.h"; sourceTree = "<group>"; };
 		CA452E3619ED592D00A5F5CB /* UIAlertView+AlertHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AlertHelpers.m"; sourceTree = "<group>"; };
@@ -3422,7 +3422,7 @@
 			children = (
 				CABBEA8019E0E4C800EFED33 /* memo.app */,
 				CAF859B519E0FDF600A347CF /* memo-staging.app */,
-				CA13F2BC19F0FC1F0040A7A5 /* memo copy.app */,
+				CA13F2BC19F0FC1F0040A7A5 /* memo-beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4829,7 +4829,7 @@
 			);
 			name = "memo-beta";
 			productName = memo;
-			productReference = CA13F2BC19F0FC1F0040A7A5 /* memo copy.app */;
+			productReference = CA13F2BC19F0FC1F0040A7A5 /* memo-beta.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CABBEA7F19E0E4C800EFED33 /* memo */ = {
@@ -4882,6 +4882,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Topica;
 				TargetAttributes = {
+					CA13EF9719F0FC1F0040A7A5 = {
+						DevelopmentTeam = XPSYFYS4PU;
+					};
 					CABBEA7F19E0E4C800EFED33 = {
 						DevelopmentTeam = XPSYFYS4PU;
 					};
@@ -7483,8 +7486,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
 				);
-				PRODUCT_NAME = "memo copy";
-				PROVISIONING_PROFILE = "c86aa773-1791-4e41-b621-019d3bed9384";
+				PRODUCT_NAME = "memo-beta";
+				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -7507,8 +7510,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
 				);
-				PRODUCT_NAME = "memo copy";
-				PROVISIONING_PROFILE = "c86aa773-1791-4e41-b621-019d3bed9384";
+				PRODUCT_NAME = "memo-beta";
+				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

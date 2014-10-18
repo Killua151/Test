@@ -18,7 +18,7 @@
 
 @interface MMAppDelegate () <UIAlertViewDelegate>
 
-- (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions;
+- (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
 - (void)test;
 
@@ -27,7 +27,7 @@
 @implementation MMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [self preSettingsWithLaunchingWithOptions:launchOptions];
+  [self preSettingsForApp:application withLaunchingWithOptions:launchOptions];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
@@ -64,6 +64,11 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   NSString *token = [UIDevice trimmedDeviceToken:deviceToken];
+  
+#if kTestPushNotification
+  DLog(@"%@", token);
+#endif
+  
   [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefDeviceToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
   [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];
@@ -131,11 +136,20 @@
 }
 
 #pragma mark Private methods
-- (void)preSettingsWithLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [[UIApplication sharedApplication]
-   registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                       UIRemoteNotificationTypeAlert |
-                                       UIRemoteNotificationTypeSound)];
+- (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // iOS 8 Notifications
+  if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
+    UIUserNotificationType notificationTypes =
+    (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+  } else {
+    // iOS < 8 Notifications
+    [application registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+  }
   
 #if !TARGET_IPHONE_SIMULATOR
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
@@ -162,30 +176,9 @@
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
   
-  NSArray *a = @[@"ONE", @"ONE", @"ONE", @"TWO", @"THREE", @"THREE"];
-  DLog(@"%@", [a valueForKeyPath:@"@distinctUnionOfObjects.self"]);
-  
 #if kTestCompactTranslation
   [NSString testCompactTranslations];
 #endif
-  
-//  NSArray *strCouples = @[
-//                          @[@"Hoàng tử", @"Hoảng tụ"],
-//                          @[@"Bạn có những kế hoạch cho tối nay chưa?", @"Ban co nhung ke hoach cho toi này chua"],
-//                          @[@"Thống đốc mới có những ý tưởng khác", @"Thốn đốc mói cos những ý tưởn khác"],
-//                          @[@"Bạn có kế hoạch cho tối nay chưa?", @"Bạn cí kế hoạch cho tối nai chưa"],
-//                          @[@"Độ sâu", @"do sau"]
-//                          ];
-//  
-//  for (NSArray *couple in strCouples) {
-//    [Utils
-//     benchmarkOperationInBackground:^{
-//       DLog(@"%@", [[couple firstObject] checkTyposOnString:[couple lastObject]]);
-//     }
-//     completion:^(NSTimeInterval elapsedTime) {
-//       DLog(@"%f", elapsedTime);
-//     }];
-//  }
 }
 
 @end
