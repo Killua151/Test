@@ -162,6 +162,81 @@ static MUser *_currentUser = nil;
   return [_checkpointsMapper[@(checkpointRow)] row];
 }
 
+- (MSkill *)finishExamAffectedSkill {
+  MSkill *affectedSkill = _lastReceivedBonuses[kParamAffectedSkill];
+  
+  if (affectedSkill == nil || ![affectedSkill isKindOfClass:[MSkill class]])
+    return 0;
+  
+  return affectedSkill;
+}
+
+- (NSInteger)finishExamBonusMoney {
+  NSNumber *bonusMoney = _lastReceivedBonuses[kParamBonusMoney];
+  
+  if (bonusMoney == nil || ![bonusMoney isKindOfClass:[NSNumber class]])
+    return 0;
+  
+  return [bonusMoney integerValue];
+}
+
+- (NSInteger)finishExamBonusExp {
+  NSNumber *bonusExp = _lastReceivedBonuses[kParamFinishExamBonusExp];
+  
+  if (bonusExp == nil || ![bonusExp isKindOfClass:[NSNumber class]])
+    return 0;
+  
+  return [bonusExp integerValue];
+}
+
+- (NSInteger)finishExamHeartBonusExp {
+  NSNumber *bonusExp = _lastReceivedBonuses[kParamHeartBonusExp];
+  
+  if (bonusExp == nil || ![bonusExp isKindOfClass:[NSNumber class]])
+    return 0;
+  
+  return [bonusExp integerValue];
+}
+
+- (BOOL)finishExamLeveledUp {
+  NSNumber *leveledUp = _lastReceivedBonuses[kParamLeveledUp];
+  
+  if (leveledUp == nil || ![leveledUp isKindOfClass:[NSNumber class]])
+    return NO;
+  
+  return [leveledUp boolValue];
+}
+
+- (NSInteger)finishExamLevel {
+  if (![self finishExamLeveledUp])
+    return -1;
+  
+  NSNumber *level = [MUser currentUser].lastReceivedBonuses[kParamLevel];
+  
+  if (level == nil || ![level isKindOfClass:[NSNumber class]])
+    return -1;
+  
+  return [level integerValue];
+}
+
+- (NSString *)finishExamCurrentCourseName {
+  NSString *currentCourseName = _lastReceivedBonuses[kParamCurrentCourseName];
+  
+  if (currentCourseName == nil || ![currentCourseName isKindOfClass:[NSString class]])
+    return @"";
+  
+  return currentCourseName;
+}
+
+- (NSInteger)finishExamNumAffectedSkills {
+  NSNumber *numAffectedSkills = _lastReceivedBonuses[kParamNumAffectedSkills];
+  
+  if (numAffectedSkills == nil || ![numAffectedSkills isKindOfClass:[NSNumber class]])
+    return 0;
+  
+  return [numAffectedSkills integerValue];
+}
+
 #pragma mark - Private methods
 - (void)mapSkillsById {
   if (_skillsById == nil)

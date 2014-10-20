@@ -8,8 +8,10 @@
 
 #import "MMPlacementTestViewController.h"
 #import "MMFinishLessonViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MMQuestionContentView.h"
 #import "MBaseQuestion.h"
+#import "MUser.h"
 
 @interface MMPlacementTestViewController ()
 
@@ -48,7 +50,10 @@
        return;
      }
      
-     [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
+     if ([[MUser currentUser] finishExamBonusExp] > 0)
+       [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
+     else
+       [self transitToViewController:[MMSkillsListViewController navigationController]];
    }];
 }
 

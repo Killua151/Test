@@ -49,4 +49,13 @@
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
 - (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow;
 
+- (MSkill *)finishExamAffectedSkill;
+- (NSInteger)finishExamBonusExp;
+- (NSInteger)finishExamBonusMoney;
+- (NSString *)finishExamCurrentCourseName;
+- (NSInteger)finishExamHeartBonusExp;
+- (NSInteger)finishExamLevel;
+- (BOOL)finishExamLeveledUp;
+- (NSInteger)finishExamNumAffectedSkills;
+
 @end

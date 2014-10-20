@@ -26,9 +26,9 @@
 }
 
 - (void)setupViews {
-  NSDictionary *receivedBonuses = [MUser currentUser].lastReceivedBonuses;
-  MSkill *affectedSkill = receivedBonuses[kParamAffectedSkill];
-  NSInteger bonusMoney = [receivedBonuses[kParamBonusMoney] integerValue];
+  MUser *currentUser = [MUser currentUser];
+  MSkill *affectedSkill = [currentUser finishExamAffectedSkill];
+  NSInteger bonusMoney = [currentUser finishExamBonusMoney];
   
   NSString *styledString = [NSString stringWithFormat:MMLocalizedString(@"%d MemoCoin"), (long)bonusMoney];
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You are bonused %@"), styledString];

@@ -45,7 +45,7 @@
     _lblSubMessage.frame = frame;
   }
   
-  MSkill *affectedSkill = [MUser currentUser].lastReceivedBonuses[kParamAffectedSkill];
+  MSkill *affectedSkill = [[MUser currentUser] finishExamAffectedSkill];
   
   UIImage *maskingImage = [UIImage imageNamed:@"img-hexagon_skill-bg_big.png"];
   CALayer *maskingLayer = [CALayer layer];
@@ -53,7 +53,7 @@
   [maskingLayer setContents:(id)[maskingImage CGImage]];
   [_vSkill.layer setMask:maskingLayer];
   
-  _vSkill.backgroundColor = [UIColor colorWithHexString:affectedSkill.theme_color];
+  _vSkill.backgroundColor = UIColorFromRGB(255, 187, 51);
   _lblSkillName.text = affectedSkill.slug;
   _imgSkillIcon.image = [UIImage imageNamed:
                          [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill._id]];
@@ -104,10 +104,6 @@
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
   [self.view bringSubviewToFront:_vShare];
-  
-#if kTempDisableForCloseBeta
-  _btnShare.hidden = YES;
-#endif
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

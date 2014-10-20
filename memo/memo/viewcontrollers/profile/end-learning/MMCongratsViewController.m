@@ -82,10 +82,6 @@
   [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
-  
-#if kTempDisableForCloseBeta
-  _btnShare.hidden = YES;
-#endif
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

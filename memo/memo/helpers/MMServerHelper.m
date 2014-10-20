@@ -434,6 +434,8 @@
      handler(responseDict[kParamExamToken], question, NO, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", operation.responseString);
+     
      [self handleFailedOperation:operation withError:error fallback:^{
        handler(nil, nil, NO, error);
      }];

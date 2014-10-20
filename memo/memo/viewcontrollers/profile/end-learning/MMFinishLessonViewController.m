@@ -90,7 +90,7 @@
 #if kTempDisableForCloseBeta
   _lblStreaksCount.center = CGPointMake(_lblStreaksCount.superview.frame.size.width/2,
                                         _lblStreaksCount.superview.frame.size.height/2-3);
-  _btnSetGoal.hidden = _btnShare.hidden = YES;
+  _btnSetGoal.hidden = YES;
 #endif
 }
 
@@ -99,7 +99,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  if ([MUser currentUser].lastReceivedBonuses[kParamAffectedSkill] != nil)
+  if ([[MUser currentUser] finishExamAffectedSkill] == nil)
     [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
   else
     [self transitToViewController:[MMSkillsListViewController navigationController]];

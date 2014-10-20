@@ -44,6 +44,10 @@
 }
 
 - (void)show {
+#if kTempDisableForCloseBeta
+  DLog(@"invoke");
+#endif
+  
   [self animateShowsShareViewUp:YES];
 }
 
