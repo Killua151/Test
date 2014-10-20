@@ -56,6 +56,8 @@
 }
 
 - (void)gestureLayerDidTap {
+  [super gestureLayerDidTap];
+  
   [_txtAnswerField resignFirstResponder];
   [self animateAnswerFieldSlideUp:NO];
 }
@@ -78,8 +80,8 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView {
   _txtAnswerPlaceholder.hidden = YES;
   
-  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode)])
-    [self.delegate questionContentViewDidEnterEditingMode];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode:)])
+    [self.delegate questionContentViewDidEnterEditingMode:YES];
   
   [self animateAnswerFieldSlideUp:YES];
 }

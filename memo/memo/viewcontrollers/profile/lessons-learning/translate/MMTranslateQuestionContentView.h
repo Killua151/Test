@@ -10,8 +10,10 @@
 
 @interface MMTranslateQuestionContentView : MMQuestionContentView <UITextViewDelegate> {
   IBOutlet UILabel *_lblQuestionTitle;
+  IBOutlet UIView *_vQuestion;
   IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
+  TTTAttributedLabel *_lblStyledQuestion;
   IBOutlet UIView *_vAnswerField;
   IBOutlet UIImageView *_imgAnswerFieldBg;
   IBOutlet UITextField *_txtAnswerPlaceholder;

@@ -19,6 +19,8 @@
 
 - (void)applyAttributedText:(NSString *)fullText onString:(NSString *)styledString withAttributes:(NSDictionary *)attributes;
 - (void)applyAttributedText:(NSString *)fullText inRange:(NSRange)styledRange withAttributes:(NSDictionary *)attributes;
+- (CGRect)boundingRectForCharacterRange:(NSRange)range;
+- (CGRect)rectForLetterAtIndex:(NSUInteger)index;
 
 @end
 

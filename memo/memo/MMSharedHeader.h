@@ -47,7 +47,7 @@ typedef enum ShareOptionEnum {
 @protocol MMLessonLearningDelegate <NSObject>
 
 @optional
-- (void)questionContentViewDidEnterEditingMode;
+- (void)questionContentViewDidEnterEditingMode:(BOOL)allowsTouchUnerneath;
 - (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer withValue:(id)answerValue;
 - (void)questionContentViewDidSkipAnswer;
 - (void)userDidRetryLesson;

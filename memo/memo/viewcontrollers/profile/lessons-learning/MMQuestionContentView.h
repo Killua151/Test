@@ -10,7 +10,7 @@
 
 @class MBaseQuestion;
 
-@interface MMQuestionContentView : UIView
+@interface MMQuestionContentView : UIView <TTTAttributedLabelDelegate>
 
 @property (nonatomic, assign) id<MMLessonLearningDelegate> delegate;
 @property (nonatomic, strong) MBaseQuestion *questionData;
@@ -19,5 +19,6 @@
 
 - (void)setupViews;
 - (void)gestureLayerDidTap;
+- (TTTAttributedLabel *)cloneStyledQuestionLabelAs:(UILabel *)originalQuestionLabel;
 
 @end

@@ -76,6 +76,7 @@
                 <outlet property="_txtAnswerField" destination="Vyb-uS-QYs" id="RW6-CB-A9N"/>
                 <outlet property="_txtAnswerPlaceholder" destination="ZNe-rJ-y1M" id="JJF-u9-JTL"/>
                 <outlet property="_vAnswerField" destination="b3T-rK-fYk" id="OgO-Np-WkC"/>
+                <outlet property="_vQuestion" destination="jAu-mp-Nhz" id="hOB-XB-ZsI"/>
             </connections>
         </view>
     </objects>

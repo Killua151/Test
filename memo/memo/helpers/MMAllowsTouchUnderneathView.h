@@ -12,4 +12,6 @@
 
 @interface MMAllowsTouchUnderneathView : UIView
 
+@property (nonatomic, assign) BOOL touchUnderneathEnabled;
+
 @end

@@ -73,14 +73,16 @@
 }
 
 - (void)gestureLayerDidTap {
+  [super gestureLayerDidTap];
+  
   [_txtAnswerField resignFirstResponder];
   [self animateAnswerFieldSlideUp:NO];
 }
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode)])
-    [self.delegate questionContentViewDidEnterEditingMode];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode:)])
+    [self.delegate questionContentViewDidEnterEditingMode:YES];
   
   [self animateAnswerFieldSlideUp:YES];
 }

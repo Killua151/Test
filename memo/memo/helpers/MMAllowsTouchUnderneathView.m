@@ -17,6 +17,9 @@
 @implementation MMAllowsTouchUnderneathView
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+  if (!_touchUnderneathEnabled)
+    return [super hitTest:point withEvent:event];
+  
   if (self.hidden || !self.userInteractionEnabled)
     return nil;
   

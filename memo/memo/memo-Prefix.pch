@@ -183,6 +183,8 @@ return; \
 #define kParamUsername                          @"username"
 #define kParamVersion                           @"version"
 #define kParamVirtualMoney                      @"virtual_money"
+#define kParamWord                              @"word"
+#define kParamWordRange                         @"word_range"
 #define kParamWords                             @"words"
 
 #define kValueExamTypeLesson                    @"lesson"

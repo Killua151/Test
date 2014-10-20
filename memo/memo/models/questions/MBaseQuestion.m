@@ -10,6 +10,7 @@
 #import "MListenQuestion.h"
 #import "MTranslateQuestion.h"
 #import "MSortQuestion.h"
+#import "MWord.h"
 
 @interface MBaseQuestion ()
 

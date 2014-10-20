@@ -871,6 +871,19 @@
 		CA8C975319F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
 		CA8C975419F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
 		CA8C975519F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
+		CA8C975719F55F0C00E639E9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C975619F55F0C00E639E9 /* CoreText.framework */; };
+		CA8C975A19F5742600E639E9 /* img-word_definitions-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975819F5742600E639E9 /* img-word_definitions-bg.png */; };
+		CA8C975B19F5742600E639E9 /* img-word_definitions-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975819F5742600E639E9 /* img-word_definitions-bg.png */; };
+		CA8C975C19F5742600E639E9 /* img-word_definitions-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975819F5742600E639E9 /* img-word_definitions-bg.png */; };
+		CA8C975D19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975919F5742600E639E9 /* img-word_definitions-bg@2x.png */; };
+		CA8C975E19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975919F5742600E639E9 /* img-word_definitions-bg@2x.png */; };
+		CA8C975F19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C975919F5742600E639E9 /* img-word_definitions-bg@2x.png */; };
+		CA8C976219F574C400E639E9 /* MMWordDefinitionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C976119F574C400E639E9 /* MMWordDefinitionsView.m */; };
+		CA8C976319F574C400E639E9 /* MMWordDefinitionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C976119F574C400E639E9 /* MMWordDefinitionsView.m */; };
+		CA8C976419F574C400E639E9 /* MMWordDefinitionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C976119F574C400E639E9 /* MMWordDefinitionsView.m */; };
+		CA8C976619F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C976519F574E400E639E9 /* MMWordDefinitionsView.xib */; };
+		CA8C976719F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C976519F574E400E639E9 /* MMWordDefinitionsView.xib */; };
+		CA8C976819F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C976519F574E400E639E9 /* MMWordDefinitionsView.xib */; };
 		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
@@ -2459,6 +2472,12 @@
 		CA8C974A19F502CA00E639E9 /* MWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWord.m; sourceTree = "<group>"; };
 		CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-lessons_learning-close_small.png"; sourceTree = "<group>"; };
 		CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-lessons_learning-close_small@2x.png"; sourceTree = "<group>"; };
+		CA8C975619F55F0C00E639E9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		CA8C975819F5742600E639E9 /* img-word_definitions-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-word_definitions-bg.png"; sourceTree = "<group>"; };
+		CA8C975919F5742600E639E9 /* img-word_definitions-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-word_definitions-bg@2x.png"; sourceTree = "<group>"; };
+		CA8C976019F574C400E639E9 /* MMWordDefinitionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWordDefinitionsView.h; sourceTree = "<group>"; };
+		CA8C976119F574C400E639E9 /* MMWordDefinitionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWordDefinitionsView.m; sourceTree = "<group>"; };
+		CA8C976519F574E400E639E9 /* MMWordDefinitionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMWordDefinitionsView.xib; sourceTree = "<group>"; };
 		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
 		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
 		CAA91C7C19E694EC0076A9BC /* MMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSwitch.h; sourceTree = "<group>"; };
@@ -3358,6 +3377,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8C975719F55F0C00E639E9 /* CoreText.framework in Frameworks */,
 				CA13F00719F0FC1F0040A7A5 /* CoreGraphics.framework in Frameworks */,
 				CA13F00819F0FC1F0040A7A5 /* UIKit.framework in Frameworks */,
 				CA13F00919F0FC1F0040A7A5 /* Foundation.framework in Frameworks */,
@@ -3459,6 +3479,7 @@
 		CABBEA8219E0E4C800EFED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA8C975619F55F0C00E639E9 /* CoreText.framework */,
 				CAF856AC19E0FD0400A347CF /* Crashlytics.framework */,
 				CABBEA8319E0E4C800EFED33 /* Foundation.framework */,
 				CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */,
@@ -3880,6 +3901,8 @@
 				CAF850CD19E0F3D200A347CF /* img-lessons_learning-popover-bg@2x.png */,
 				CAF850CE19E0F3D200A347CF /* img-lessons_learning-result_view-bg.png */,
 				CAF850CF19E0F3D200A347CF /* img-lessons_learning-result_view-bg@2x.png */,
+				CA8C975819F5742600E639E9 /* img-word_definitions-bg.png */,
+				CA8C975919F5742600E639E9 /* img-word_definitions-bg@2x.png */,
 			);
 			name = "Lessons Learning";
 			path = "lessons-learning";
@@ -4576,6 +4599,9 @@
 				CAF8525A19E0F3D200A347CF /* Select */,
 				CAF8526119E0F3D200A347CF /* Speak */,
 				CAF8526519E0F3D200A347CF /* Translate */,
+				CA8C976019F574C400E639E9 /* MMWordDefinitionsView.h */,
+				CA8C976119F574C400E639E9 /* MMWordDefinitionsView.m */,
+				CA8C976519F574E400E639E9 /* MMWordDefinitionsView.xib */,
 			);
 			name = "Lessons Learning";
 			path = "lessons-learning";
@@ -5276,6 +5302,7 @@
 				CA13F14E19F0FC1F0040A7A5 /* img-skill_icon-en-vi_quan_ao-locked_big@2x.png in Resources */,
 				CA13F14F19F0FC1F0040A7A5 /* img-lessons_learning-result_view-bg.png in Resources */,
 				CA13F15019F0FC1F0040A7A5 /* img-skill_icon-en-vi_so_nhieu-unlocked_big.png in Resources */,
+				CA8C975B19F5742600E639E9 /* img-word_definitions-bg.png in Resources */,
 				CA13F15119F0FC1F0040A7A5 /* img-skill_icon-en-vi_dai_tu_phan_than-locked_big.png in Resources */,
 				CA13F15219F0FC1F0040A7A5 /* img-share-google.png in Resources */,
 				CA13F15319F0FC1F0040A7A5 /* img-shield_skill-bg-unlocked.png in Resources */,
@@ -5517,6 +5544,7 @@
 				CA13F23C19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked@2x.png in Resources */,
 				CA13F23D19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png in Resources */,
 				CA13F23E19F0FC1F0040A7A5 /* img-skill_icon-en-vi_tinh_tu_1-locked@2x.png in Resources */,
+				CA8C975E19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */,
 				CA13F23F19F0FC1F0040A7A5 /* img-hexagon_skill-strength-2.png in Resources */,
 				CA13F24019F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-unlocked_big@2x.png in Resources */,
 				CA13F24119F0FC1F0040A7A5 /* img-skill_icon-en-vi_tu_han_dinh-locked_big@2x.png in Resources */,
@@ -5590,6 +5618,7 @@
 				CA13F28519F0FC1F0040A7A5 /* img-hexagon-checkpoint_test-bg@2x.png in Resources */,
 				CA13F28619F0FC1F0040A7A5 /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked_big@2x.png in Resources */,
 				CA13F28719F0FC1F0040A7A5 /* img-skill_icon-en-vi_dai_tu_quan_he-locked_big@2x.png in Resources */,
+				CA8C976719F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */,
 				CA13F28819F0FC1F0040A7A5 /* img-skill_icon-en-vi_mau_sac-unlocked_big@2x.png in Resources */,
 				CA13F28919F0FC1F0040A7A5 /* img-lessons_learning-heart@2x.png in Resources */,
 				CA13F28A19F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked@2x.png in Resources */,
@@ -5681,6 +5710,7 @@
 				CAF8532219E0F3D200A347CF /* btn-lessons_learning-audio-normal.png in Resources */,
 				CAF8543219E0F3D200A347CF /* img-skill_icon-en-vi_tu_han_dinh-locked_big.png in Resources */,
 				CAF8562319E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked.png in Resources */,
+				CA8C975D19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */,
 				CAF8542219E0F3D200A347CF /* img-skill_icon-en-vi_the_thao-locked_big.png in Resources */,
 				CAF854B519E0F3D200A347CF /* MMSetGoalViewController.xib in Resources */,
 				CAF8567119E0F82700A347CF /* img-skill_icon-en-vi_pho_tu-unlocked.png in Resources */,
@@ -6077,6 +6107,7 @@
 				CAF8569219E0F82700A347CF /* img-skill_icon-en-vi_tinh_tu_1-unlocked@2x.png in Resources */,
 				CA452E7A19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */,
 				CAF853B719E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked_big@2x.png in Resources */,
+				CA8C976619F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */,
 				CAF8549319E0F3D200A347CF /* MMSortQuestionAnswerTokenButton.xib in Resources */,
 				CAF8539319E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_so_huu-locked_big@2x.png in Resources */,
 				CAF8564919E0F82700A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked.png in Resources */,
@@ -6209,6 +6240,7 @@
 				CAF8536819E0F3D200A347CF /* img-streak-icon.png in Resources */,
 				CAF8537E19E0F3D200A347CF /* img-skill_icon-en-vi_con_nguoi-locked_big.png in Resources */,
 				CAF853E419E0F3D200A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked_big.png in Resources */,
+				CA8C975A19F5742600E639E9 /* img-word_definitions-bg.png in Resources */,
 				CAF8563019E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_tuong_lai_hoan_thanh-locked@2x.png in Resources */,
 				CAF853BB19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-locked_big@2x.png in Resources */,
 				CAF8569019E0F82700A347CF /* img-skill_icon-en-vi_tinh_tu_1-locked@2x.png in Resources */,
@@ -6393,6 +6425,7 @@
 				CAF8574919E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked.png in Resources */,
 				CAF8574A19E0FDF600A347CF /* img-hexagon_skill-strength-1@2x.png in Resources */,
 				CAF8574B19E0FDF600A347CF /* MMNameQuestionContentView.xib in Resources */,
+				CA8C975C19F5742600E639E9 /* img-word_definitions-bg.png in Resources */,
 				CAF8574C19E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked@2x.png in Resources */,
 				CAF8574D19E0FDF600A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked.png in Resources */,
 				CAF8574E19E0FDF600A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked@2x.png in Resources */,
@@ -6453,6 +6486,7 @@
 				CAF8578419E0FDF600A347CF /* img-skill_icon-en-vi_gioi_tu-unlocked@2x.png in Resources */,
 				CAF8578519E0FDF600A347CF /* btn-lessons_learning-audio-slow@2x.png in Resources */,
 				CAF8578619E0FDF600A347CF /* img-share-facebook_selected.png in Resources */,
+				CA8C975F19F5742600E639E9 /* img-word_definitions-bg@2x.png in Resources */,
 				CAF8578719E0FDF600A347CF /* img-profile-avatar_placeholder@2x.png in Resources */,
 				CAF8578819E0FDF600A347CF /* img-skill_icon-en-vi_quan_ao-locked.png in Resources */,
 				CAF8578919E0FDF600A347CF /* AppIcon60x60@2x.png in Resources */,
@@ -6777,6 +6811,7 @@
 				CAF858BD19E0FDF600A347CF /* img-beginner-icon@2x.png in Resources */,
 				CAF858BE19E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png in Resources */,
 				CAF858BF19E0FDF600A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png in Resources */,
+				CA8C976819F574E400E639E9 /* MMWordDefinitionsView.xib in Resources */,
 				CA452E7B19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */,
 				CAF858C019E0FDF600A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked.png in Resources */,
 				CAF858C119E0FDF600A347CF /* img-ant-lessons_learning_progress@2x.png in Resources */,
@@ -7213,6 +7248,7 @@
 				CA13EFC419F0FC1F0040A7A5 /* MMForgotPasswordViewController.m in Sources */,
 				CA13EFC519F0FC1F0040A7A5 /* DiffMatchPatch.m in Sources */,
 				CA13EFC619F0FC1F0040A7A5 /* MMHexagonLessonView.m in Sources */,
+				CA8C976319F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CA13EFC719F0FC1F0040A7A5 /* MSkill.m in Sources */,
 				CA13EFC819F0FC1F0040A7A5 /* MLeaderboardData.m in Sources */,
 				CA13EFC919F0FC1F0040A7A5 /* MSelectQuestion.m in Sources */,
@@ -7329,6 +7365,7 @@
 				CAF8547919E0F3D200A347CF /* MMForgotPasswordViewController.m in Sources */,
 				CAF852CF19E0F3D200A347CF /* DiffMatchPatch.m in Sources */,
 				CAF854AC19E0F3D200A347CF /* MMHexagonLessonView.m in Sources */,
+				CA8C976219F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CAF852DC19E0F3D200A347CF /* MSkill.m in Sources */,
 				CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */,
 				CAF852E319E0F3D200A347CF /* MSelectQuestion.m in Sources */,
@@ -7445,6 +7482,7 @@
 				CAF856D319E0FDF600A347CF /* NSString+UriCompatibility.m in Sources */,
 				CAF856D419E0FDF600A347CF /* MMLoginViewController.m in Sources */,
 				CAF856D519E0FDF600A347CF /* NSString+UnicharUtilities.m in Sources */,
+				CA8C976419F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CAF856D619E0FDF600A347CF /* MMForgotPasswordViewController.m in Sources */,
 				CAF856D719E0FDF600A347CF /* DiffMatchPatch.m in Sources */,
 				CAF856D819E0FDF600A347CF /* MMHexagonLessonView.m in Sources */,

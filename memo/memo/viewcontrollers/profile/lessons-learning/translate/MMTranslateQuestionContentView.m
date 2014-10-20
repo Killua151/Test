@@ -28,11 +28,21 @@
   
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
-  [_lblQuestion adjustToFitHeightAndConstrainsToHeight:_btnQuestionAudio.frame.size.height];
   
-  CGPoint center = _lblQuestion.center;
-  center.y = _btnQuestionAudio.center.y + kFontClearSansMarginTop;
-  _lblQuestion.center = center;
+  UILabel *styledQuestionLabel = [self cloneStyledQuestionLabelAs:_lblQuestion];
+  
+  if (styledQuestionLabel != nil) {
+    _lblQuestion.hidden = YES;
+    [_vQuestion addSubview:styledQuestionLabel];
+  } else
+    styledQuestionLabel = _lblQuestion;
+
+  CGRect frame = styledQuestionLabel.frame;
+  frame.origin = CGPointMake(_btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width,
+                             kFontClearSansMarginTop);
+  frame.size.width = _vQuestion.frame.size.width - frame.origin.x - _btnQuestionAudio.frame.origin.x;
+  frame.size.height = _vQuestion.frame.size.height;
+  styledQuestionLabel.frame = frame;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = MMLocalizedString(@"Your answer...");
@@ -55,8 +65,7 @@
 }
 
 - (void)gestureLayerDidTap {
-  if ([self.delegate respondsToSelector:@selector(questionContentViewGestureLayerDidTap)])
-    [self.delegate performSelector:@selector(questionContentViewGestureLayerDidTap)];
+  [super gestureLayerDidTap];
   
   [_txtAnswerField resignFirstResponder];
   
@@ -78,8 +87,8 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView {
   _txtAnswerPlaceholder.hidden = YES;
   
-  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode)])
-    [self.delegate questionContentViewDidEnterEditingMode];
+  if ([self.delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode:)])
+    [self.delegate questionContentViewDidEnterEditingMode:YES];
   
   if (!DeviceScreenIsRetina4Inch())
     [self animateAnswerFieldSlideUp:YES];

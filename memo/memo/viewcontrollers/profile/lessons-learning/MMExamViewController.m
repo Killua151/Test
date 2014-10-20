@@ -328,7 +328,8 @@
 }
 
 #pragma mark - MMLessonLearningDelegate methods
-- (void)questionContentViewDidEnterEditingMode {
+- (void)questionContentViewDidEnterEditingMode:(BOOL)allowsTouchUnerneath {
+  _vGestureLayer.touchUnderneathEnabled = allowsTouchUnerneath;
   [self gestureLayerDidEnterEditingMode];
 }
 
