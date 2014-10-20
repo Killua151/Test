@@ -12,13 +12,13 @@
 
 + (UIAlertView *)showWithError:(NSError *)error {
   return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
-                          andMessage:[error errorMessage]
+                          andMessage:MMLocalizedString([error errorMessage])
                             delegate:nil];
 }
 
 + (UIAlertView *)showWithError:(NSError *)error delegate:(id)delegate {
   return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
-                          andMessage:[error errorMessage]
+                          andMessage:MMLocalizedString([error errorMessage])
                             delegate:delegate];
 }
 

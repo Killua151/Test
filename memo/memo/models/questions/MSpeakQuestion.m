@@ -7,14 +7,35 @@
 //
 
 #import "MSpeakQuestion.h"
+#import "ISSpeechRecognitionResult.h"
 
 @implementation MSpeakQuestion
 
 - (id)checkAnswer:(id)answerValue {
-  DLog(@"%@ %@", answerValue, self.question);
+  ISSpeechRecognitionResult *answer = answerValue;
+  
+  if (answer.confidence < 0.2)
+    return @{
+             kParamAnswerResult : @(NO),
+             kParamCorrectAnswer : self.question
+             };
+  
+  DiffMatchPatch *dmp = [DiffMatchPatch new];
+  NSArray *diffs = [dmp diff_mainOfOldString:self.question andNewString:answer.text];
+  
+  CGFloat equalCharsCount = 0;
+  
+  for (Diff *diff in diffs) {
+    if (diff.operation != DIFF_EQUAL)
+      continue;
+    
+    equalCharsCount += diff.text.length;
+  }
+  
+  CGFloat rate = equalCharsCount / self.question.length;
   
   return @{
-           kParamAnswerResult : @(YES),
+           kParamAnswerResult : @(rate >= 0.3),
            kParamCorrectAnswer : self.question
            };
 }

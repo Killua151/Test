@@ -55,7 +55,7 @@
   
   if (!_vLevelUp.hidden) {
     _lblLevel.font = [UIFont fontWithName:@"ClearSans-Bold" size:30];
-    _lblLevel.text = [NSString stringWithFormat:@"%d", [[MUser currentUser] finishExamLevel]];
+    _lblLevel.text = [NSString stringWithFormat:@"%ld", (long)[[MUser currentUser] finishExamLevel]];
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
