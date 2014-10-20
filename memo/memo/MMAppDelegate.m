@@ -71,7 +71,9 @@
   
   [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
-  [[MMServerHelper sharedHelper] updateApnsToken];
+  
+  if ([MUser currentUser]._id != nil)
+    [[MMServerHelper sharedHelper] updateApnsToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

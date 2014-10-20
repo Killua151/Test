@@ -563,6 +563,7 @@
 }
 
 - (void)updateApnsToken {
+  DLog(@"invoke");
 }
 
 - (void)registerDeviceTokenForAPNS {
