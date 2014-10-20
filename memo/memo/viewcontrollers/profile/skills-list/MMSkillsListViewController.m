@@ -248,6 +248,8 @@
 }
 
 - (void)setupViews {
+  [MUser currentUser].lastReceivedBonuses = nil;
+  
   _btnHexagonStrengthen.hidden = _btnShieldStrengthen.hidden = YES;
   
   _currentStrengthenButton = kHexagonThemeDisplayMode ? _btnHexagonStrengthen : _btnShieldStrengthen;

@@ -7,6 +7,8 @@
 //
 
 #import "MMCongratsViewController.h"
+#import "MMFinishSkillViewController.h"
+#import "MMSkillsListViewController.h"
 #import "MMShareActionSheet.h"
 #import "MUser.h"
 
@@ -49,12 +51,11 @@
     _lblSubMessage.frame = frame;
   }
   
-  NSInteger level = [self displayingLevel];
-  _vLevelUp.hidden = level <= 0;
+  _vLevelUp.hidden = ![[MUser currentUser] finishExamLeveledUp];
   
   if (!_vLevelUp.hidden) {
     _lblLevel.font = [UIFont fontWithName:@"ClearSans-Bold" size:30];
-    _lblLevel.text = [NSString stringWithFormat:@"%d", level];
+    _lblLevel.text = [NSString stringWithFormat:@"%d", [[MUser currentUser] finishExamLevel]];
   }
   
   _lblMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
@@ -89,6 +90,10 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
+  if ([[MUser currentUser] finishExamAffectedSkill] != nil)
+    [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
+  else
+    [self transitToViewController:[MMSkillsListViewController navigationController]];
 }
 
 #pragma mark - MMActionSheetDelegate methods

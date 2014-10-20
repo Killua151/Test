@@ -26,6 +26,7 @@
 "Confirm item using" = "Xác nhận dùng vật phẩm";
 "Confirm password" = "Xác nhận mật khẩu";
 "Confirm username" = "Xác nhận tên đăng nhập";
+"Congratulation! You've leveled up!" = "Chúc mừng bạn đã thăng cấp!";
 "Connections" = "Kết nối";
 "Correct!" = "Chính xác!";
 "Correct answer" = "Câu trả lời đúng";
@@ -67,6 +68,7 @@
 "No leaderboards data" = "Không có dữ liệu bảng xếp hạng";
 "Not a beginner?" = "Không phải là người mới?";
 "Notifications" = "Thông báo";
+"Now you've reached level %d in %@ course, let's keep practice!" = "Giờ bạn đã đạt cấp %d của ngôn ngữ %@, tiếp tục rèn luyện thêm nhé!";
 "Password" = "Mật khẩu";
 "Password must be at least %d characters long" = "Mật khẩu phải dài ít nhất %d ký tự";
 "Passwords not match" = "Mật khẩu không khớp";

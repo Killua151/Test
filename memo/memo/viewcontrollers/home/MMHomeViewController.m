@@ -11,8 +11,6 @@
 #import "MMSignUpViewController.h"
 #import "MMCoursesListViewController.h"
 
-#import "MMCongratsViewController.h"
-
 @interface MMHomeViewController () {
   MMLoginViewController *_loginVC;
   MMSignUpViewController *_signUpVC;
@@ -80,19 +78,6 @@
 }
 
 - (void)test {
-  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
-  
-  NSString *subMessage = [NSString stringWithFormat:
-                          MMLocalizedString(@"Giờ bạn đã đạt cấp %d của ngôn ngữ %@, tiếp tục rèn luyện thêm nhé!"),
-                          10, @"Tiếng Anh"];
-  congratsVC.displayingData = @{
-                                kParamMessage : MMLocalizedString(@"Chúc mừng bạn đã thăng cấp"),
-                                kParamSubMessage : subMessage
-                                };
-  
-  [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
-  return;
-  
   TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
   label.font = [UIFont systemFontOfSize:14];
   label.textColor = [UIColor blackColor];

@@ -7,10 +7,11 @@
 //
 
 #import "MMFinishLessonViewController.h"
+#import "MMSkillsListViewController.h"
+#import "MMCongratsViewController.h"
 #import "MMFinishSkillViewController.h"
 #import "MMSetGoalViewController.h"
 #import "MMShareActionSheet.h"
-#import "MMSkillsListViewController.h"
 #import "MUser.h"
 
 @interface MMFinishLessonViewController () {
@@ -22,6 +23,7 @@
 - (void)addLineChart;
 - (void)setupSetGoalView;
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
+- (void)presentLevelUpCongratsVC;
 
 @end
 
@@ -99,7 +101,9 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  if ([[MUser currentUser] finishExamAffectedSkill] == nil)
+  if ([[MUser currentUser] finishExamLeveledUp] && [[MUser currentUser] finishExamLevel] > 0)
+    [self presentLevelUpCongratsVC];
+  else if ([[MUser currentUser] finishExamAffectedSkill] != nil)
     [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
   else
     [self transitToViewController:[MMSkillsListViewController navigationController]];
@@ -173,6 +177,23 @@
   frame.origin.y = outterLocation.y - _innerPanGestureYPos;
   frame.origin.y = MAX(44, MIN(superviewHeight - viewHeight, frame.origin.y));
   panGesture.view.frame = frame;
+}
+
+- (void)presentLevelUpCongratsVC {
+  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
+  
+  NSInteger level = [[MUser currentUser] finishExamLevel];
+  NSString *currentCourseName = [[MUser currentUser] finishExamCurrentCourseName];
+  
+  NSString *subMessage = [NSString stringWithFormat:
+                          MMLocalizedString(@"Now you've reached level %d in %@ course, let's keep practice!"),
+                          level, currentCourseName];
+  congratsVC.displayingData = @{
+                                kParamMessage : MMLocalizedString(@"Congratulation! You've leveled up!"),
+                                kParamSubMessage : subMessage
+                                };
+  
+  [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
 }
 
 @end
