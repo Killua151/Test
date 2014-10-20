@@ -313,7 +313,26 @@
 }
 
 - (void)inviteFriendByEmail:(NSString *)email completion:(void (^)(NSString *, NSError *))handler {
-  handler(MMLocalizedString(@"Invite email sent successfully"), nil);
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamEmail : [NSString normalizedString:email]
+                           };
+  
+  [self
+   POST:@"users/send_mail"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(MMLocalizedString(@"Invite email sent successfully"), nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
+}
+
+- (void)findFacebookFriends:(NSString *)fbAccessToken completion:(void (^)(NSArray *, NSError *))handler {
+  
 }
 
 - (void)startLesson:(NSInteger)lessonNumber

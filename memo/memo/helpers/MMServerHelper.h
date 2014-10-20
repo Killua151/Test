@@ -58,6 +58,7 @@
 - (void)searchFriends:(NSString *)keywords completion:(void(^)(NSArray *results, NSError *error))handler;
 - (void)interactFriend:(NSString *)friendId toFollow:(BOOL)follow completion:(void(^)(NSError *error))handler;
 - (void)inviteFriendByEmail:(NSString *)email completion:(void(^)(NSString *message, NSError *error))handler;
+- (void)findFacebookFriends:(NSString *)fbAccessToken completion:(void(^)(NSArray *results, NSError *error))handler;
 
 - (void)startLesson:(NSInteger)lessonNumber
             inSkill:(NSString *)skillId
