@@ -511,6 +511,7 @@
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamQuestionLogId : [NSString normalizedString:questionLogId],
+                           kParamContent : [NSString normalizedString:sentenceText],
                            kParamAutoFeedback : @(YES)
                            };
   
@@ -610,7 +611,7 @@
      handler(responseDict[kParamExamToken],
              [responseDict[kParamMaxHeartsCount] integerValue],
              responseDict[kParamAvailableItems],
-             [MBaseQuestion modelsFromArr:responseDict[@"questions"]],
+             [MBaseQuestion modelsFromArr:responseDict[kParamQuestions]],
              nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {

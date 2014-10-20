@@ -394,6 +394,9 @@
   CGFloat segmentWidth = [[_btnProgressSegments firstObject] frame].size.width;
   CGFloat segmentsGap = (self.view.frame.size.width - 30 - _totalLessonsCount * segmentWidth)/(_totalLessonsCount-1);
   
+  if (_totalLessonsCount == 1)
+    segmentsGap = 0;
+  
   __block CGRect buttonFrame;
   
   [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {

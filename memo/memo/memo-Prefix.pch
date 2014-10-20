@@ -102,7 +102,7 @@ return; \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 false
 #define kTestPushNotification                   false
-#define kTestQuickExam                          true
+#define kTestQuickExam                          false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
 //#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
@@ -133,6 +133,7 @@ return; \
 #define kParamCheckpoints                       @"checkpoints"
 #define kParamCheckpointPosition                @"checkpoint_position"
 #define kParamCheckpointPositions               @"checkpoint_positions"
+#define kParamContent                           @"content"
 #define kParamCorrectAnswer                     @"correct_answer"
 #define kParamCurrentCourseName                 @"current_course_name"
 #define kParamDevice                            @"device"
