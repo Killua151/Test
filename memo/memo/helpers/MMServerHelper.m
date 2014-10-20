@@ -15,6 +15,7 @@
 #import "MCourse.h"
 #import "MCheckpoint.h"
 #import "MItem.h"
+#import "MWord.h"
 
 @interface MMServerHelper ()
 
@@ -526,6 +527,27 @@
        handler(error);
      }];
    }];
+}
+
+- (void)getDictionary {
+  NSInteger dictionaryVersion = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefDictionaryVersion];
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamVersion : @(dictionaryVersion)
+                           };
+  
+  [self
+   GET:@"words"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *responseDict = [responseObject objectFromJSONData];
+     [[MWord sharedModel] setupDictionary:responseDict[kParamWords]];
+   }
+   failure:NULL];
+}
+
+- (void)submitViewedWords:(NSDictionary *)viewedWords {
+  
 }
 
 - (void)registerDeviceTokenForAPNS {

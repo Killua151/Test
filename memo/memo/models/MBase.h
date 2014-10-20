@@ -10,6 +10,7 @@
 
 @interface MBase : NSObject
 
++ (instancetype)sharedModel;
 + (instancetype)modelFromDict:(NSDictionary *)modelDict;
 + (NSArray *)modelsFromArr:(NSArray *)modelsArr;
 + (DCKeyValueObjectMapping *)modelMappingParser;

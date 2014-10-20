@@ -14,6 +14,22 @@
 
 @implementation MBase
 
++ (instancetype)sharedModel {
+  static NSMutableDictionary *_sharedModels = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedModels = [NSMutableDictionary new];
+  });
+  
+  NSString *klass = NSStringFromClass([self class]);
+  
+  if (_sharedModels[klass] == nil)
+    _sharedModels[klass] = [[self class] new];
+  
+  return _sharedModels[NSStringFromClass([self class])];
+}
+
 + (instancetype)modelFromDict:(NSDictionary *)modelDict {
   if (modelDict == nil || ![modelDict isKindOfClass:[NSDictionary class]])
     return nil;

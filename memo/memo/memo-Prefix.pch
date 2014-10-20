@@ -71,8 +71,8 @@ return; \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-//#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
+//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+#define kServerApiUrl                           @"http://localhost/memo/memo/index.php/api"
 //#define kServerApiUrl                           @"http://192.168.5.16/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.2"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
@@ -118,6 +118,7 @@ return; \
 #define kUserDefSavedUser                       @"saved_user"
 #define kUserDefDeviceToken                     @"ios_device_token"
 #define kUserDefSpeakEnabled                    @"speak_enabled"
+#define kUserDefDictionaryVersion               @"dictionary_version"
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
@@ -173,12 +174,15 @@ return; \
 #define kParamSkills                            @"skills"
 #define kParamSkillsTree                        @"skills_tree"
 #define kParamSpeakEnabled                      @"speak_enabled"
+#define kParamText                              @"text"
 #define kParamType                              @"type"
 #define kParamUnderlineRanges                   @"underline_ranges"
 #define kParamUserAnswer                        @"user_answer"
 #define kParamUserInfo                          @"user_info"
 #define kParamUsername                          @"username"
+#define kParamVersion                           @"version"
 #define kParamVirtualMoney                      @"virtual_money"
+#define kParamWords                             @"words"
 
 #define kValueExamTypeLesson                    @"lesson"
 #define kValueExamTypeCheckpoint                @"checkpoint"

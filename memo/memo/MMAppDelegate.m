@@ -173,11 +173,16 @@
 #endif
   [MUser loadCurrentUserFromUserDef];
   
+  [[MMServerHelper sharedHelper] getDictionary];
+  
   [self test];
 }
 
 - (void)test {
   DLog(@"%@ %@", [MUser currentUser]._id, [MUser currentUser].auth_token);
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentFilePath = paths[0];
+  DLog(@"%@", documentFilePath);
   
 #if kTestCompactTranslation
   [NSString testCompactTranslations];

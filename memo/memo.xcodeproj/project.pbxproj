@@ -862,6 +862,9 @@
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA798C2619E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
+		CA8C974B19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
+		CA8C974C19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
+		CA8C974D19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
 		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
@@ -2446,6 +2449,8 @@
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
 		CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHelpers.m"; sourceTree = "<group>"; };
+		CA8C974919F502CA00E639E9 /* MWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWord.h; sourceTree = "<group>"; };
+		CA8C974A19F502CA00E639E9 /* MWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWord.m; sourceTree = "<group>"; };
 		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
 		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
 		CAA91C7C19E694EC0076A9BC /* MMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSwitch.h; sourceTree = "<group>"; };
@@ -3623,6 +3628,8 @@
 			children = (
 				CAF8504F19E0F3D100A347CF /* MBase.h */,
 				CAF8505019E0F3D100A347CF /* MBase.m */,
+				CA452E5719EEBE9800A5F5CB /* MCheckpoint.h */,
+				CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */,
 				CA452E5319EEB88900A5F5CB /* MCourse.h */,
 				CA452E5419EEB88900A5F5CB /* MCourse.m */,
 				CAA91C9C19E783770076A9BC /* MFriend.h */,
@@ -3637,9 +3644,9 @@
 				CAF8505619E0F3D100A347CF /* MSkill.m */,
 				CAF8505719E0F3D100A347CF /* MUser.h */,
 				CAF8505819E0F3D100A347CF /* MUser.m */,
+				CA8C974919F502CA00E639E9 /* MWord.h */,
+				CA8C974A19F502CA00E639E9 /* MWord.m */,
 				CAF8505919E0F3D100A347CF /* Questions */,
-				CA452E5719EEBE9800A5F5CB /* MCheckpoint.h */,
-				CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */,
 			);
 			name = Models;
 			path = models;
@@ -7233,6 +7240,7 @@
 				CA13EFEF19F0FC1F0040A7A5 /* MSortQuestion.m in Sources */,
 				CA13EFF019F0FC1F0040A7A5 /* MMFinishSkillViewController.m in Sources */,
 				CA13EFF119F0FC1F0040A7A5 /* NSError+ErrorHelpers.m in Sources */,
+				CA8C974C19F502CA00E639E9 /* MWord.m in Sources */,
 				CA13EFF219F0FC1F0040A7A5 /* DiffMatchPatchCFUtilities.c in Sources */,
 				CA13EFF319F0FC1F0040A7A5 /* MMQuestionContentView.m in Sources */,
 				CA13EFF419F0FC1F0040A7A5 /* MMShieldLessonCell.m in Sources */,
@@ -7348,6 +7356,7 @@
 				CAF852DF19E0F3D200A347CF /* MSortQuestion.m in Sources */,
 				CAF8548A19E0F3D200A347CF /* MMFinishSkillViewController.m in Sources */,
 				CA452E3A19ED595200A5F5CB /* NSError+ErrorHelpers.m in Sources */,
+				CA8C974B19F502CA00E639E9 /* MWord.m in Sources */,
 				CAF852D019E0F3D200A347CF /* DiffMatchPatchCFUtilities.c in Sources */,
 				CAF8549819E0F3D200A347CF /* MMQuestionContentView.m in Sources */,
 				CAF854AE19E0F3D200A347CF /* MMShieldLessonCell.m in Sources */,
@@ -7463,6 +7472,7 @@
 				CAA91C9F19E783770076A9BC /* MFriend.m in Sources */,
 				CAF856FC19E0FDF600A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF856FD19E0FDF600A347CF /* MSortQuestion.m in Sources */,
+				CA8C974D19F502CA00E639E9 /* MWord.m in Sources */,
 				CAF856FE19E0FDF600A347CF /* MMFinishSkillViewController.m in Sources */,
 				CAF856FF19E0FDF600A347CF /* DiffMatchPatchCFUtilities.c in Sources */,
 				CAF8570019E0FDF600A347CF /* MMQuestionContentView.m in Sources */,

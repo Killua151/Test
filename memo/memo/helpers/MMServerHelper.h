@@ -109,6 +109,9 @@
                      forSentence:(NSString *)sentenceText
                       completion:(void(^)(NSError *error))handler;
 
+- (void)getDictionary;
+- (void)submitViewedWords:(NSDictionary *)viewedWords;
+
 - (void)registerDeviceTokenForAPNS;
 
 @end
