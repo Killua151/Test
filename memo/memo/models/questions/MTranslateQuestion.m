@@ -70,7 +70,8 @@
     if ([normalizedWrongAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
       return @{
                kParamAnswerResult : @(NO),
-               kParamCorrectAnswer : _translation
+               kParamCorrectAnswer : _translation,
+               kParamUserAnswer : answerValue
                };
   }
   

@@ -197,15 +197,13 @@
            withCorrectAnswer:correctAnswer
              underlineRanges:underlineRanges];
   
+  NSString *userAnswer = checkResult[kParamUserAnswer];
+  
   // Wrong answer, auto feedback
-  if (!answerResult) {
-    [[MMServerHelper sharedHelper]
-     submitFeedbackInQuestion:question.question_log_id
-     forSentence:@""
-     completion:^(NSError *error) {
-       
-     }];
-  }
+  if (!answerResult && userAnswer != nil)
+    [[MMServerHelper sharedHelper] submitFeedbackInQuestion:question.question_log_id
+                                                forSentence:userAnswer
+                                                 completion:^(NSError *error) {}];
   
   _answersData[question.question_log_id] = @(answerResult);
 }
@@ -230,6 +228,10 @@
   }
 
   if (_currentHeartsCount < 0) {
+    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
+                                               andResults:_answersData
+                                               completion:^(NSError *error) {}];
+    
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
     [self presentViewController:failLessonVC animated:YES completion:NULL];
@@ -242,7 +244,8 @@
     
     [[MMServerHelper sharedHelper]
      finishExamWithMetadata:_metadata
-     andResults:_answersData completion:^(NSError *error) {
+     andResults:_answersData
+     completion:^(NSError *error) {
        HideHudForCurrentView();
        ShowAlertWithError(error);
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
