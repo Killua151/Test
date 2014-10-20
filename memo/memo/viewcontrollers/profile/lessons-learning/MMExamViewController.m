@@ -518,7 +518,7 @@
          lblResultAnswer.frame = frame;
        } else {
          CGPoint center = lblResultMessage.center;
-         center.y = lblResultMessage.superview.frame.size.height/2 - 3;
+         center.y = lblResultMessage.superview.frame.size.height/2 + kFontClearSansMarginTop;
          lblResultMessage.center = center;
        }
        

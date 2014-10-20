@@ -563,7 +563,29 @@
 }
 
 - (void)updateApnsToken {
-  DLog(@"invoke");
+  NSString *apnsToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefApnsToken];
+  
+  if (apnsToken == nil || ![apnsToken isKindOfClass:[NSString class]])
+    return;
+  
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamApnsToken : apnsToken
+                           };
+  
+#if kTestPushNotification
+  DLog(@"%@", params);
+#endif
+  
+  [self
+   POST:@"notification/update"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+#if kTestPushNotification
+     DLog(@"%@", [responseObject objectFromJSONData]);
+#endif
+   }
+   failure:NULL];
 }
 
 - (void)registerDeviceTokenForAPNS {

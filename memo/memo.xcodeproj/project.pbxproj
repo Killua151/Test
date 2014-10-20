@@ -865,6 +865,12 @@
 		CA8C974B19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
 		CA8C974C19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
 		CA8C974D19F502CA00E639E9 /* MWord.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C974A19F502CA00E639E9 /* MWord.m */; };
+		CA8C975019F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */; };
+		CA8C975119F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */; };
+		CA8C975219F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */; };
+		CA8C975319F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
+		CA8C975419F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
+		CA8C975519F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */; };
 		CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7319E679510076A9BC /* MLeaderboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7119E679510076A9BC /* MLeaderboardData.m */; };
 		CAA91C7E19E694EC0076A9BC /* MMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C7D19E694EC0076A9BC /* MMSwitch.m */; };
@@ -2451,6 +2457,8 @@
 		CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHelpers.m"; sourceTree = "<group>"; };
 		CA8C974919F502CA00E639E9 /* MWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWord.h; sourceTree = "<group>"; };
 		CA8C974A19F502CA00E639E9 /* MWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWord.m; sourceTree = "<group>"; };
+		CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-lessons_learning-close_small.png"; sourceTree = "<group>"; };
+		CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-lessons_learning-close_small@2x.png"; sourceTree = "<group>"; };
 		CAA91C7019E679510076A9BC /* MLeaderboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderboardData.h; sourceTree = "<group>"; };
 		CAA91C7119E679510076A9BC /* MLeaderboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderboardData.m; sourceTree = "<group>"; };
 		CAA91C7C19E694EC0076A9BC /* MMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSwitch.h; sourceTree = "<group>"; };
@@ -3846,6 +3854,8 @@
 				CAF850B519E0F3D100A347CF /* btn-lessons_learning-audio-slow@2x.png */,
 				CAF850B619E0F3D100A347CF /* btn-lessons_learning-close.png */,
 				CAF850B719E0F3D100A347CF /* btn-lessons_learning-close@2x.png */,
+				CA8C974E19F51EA000E639E9 /* btn-lessons_learning-close_small.png */,
+				CA8C974F19F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png */,
 				CAF850B819E0F3D100A347CF /* btn-lessons_learning-form_tokens.png */,
 				CAF850B919E0F3D100A347CF /* btn-lessons_learning-form_tokens@2x.png */,
 				CAF850BA19E0F3D100A347CF /* btn-lessons_learning-record.png */,
@@ -5191,6 +5201,7 @@
 				CA13F10419F0FC1F0040A7A5 /* img-skill_icon-en-vi_so_nhieu-unlocked.png in Resources */,
 				CA13F10519F0FC1F0040A7A5 /* img-set_goal-radio-selected.png in Resources */,
 				CA13F10619F0FC1F0040A7A5 /* img-skill_icon-en-vi_y_te-locked_big@2x.png in Resources */,
+				CA8C975419F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */,
 				CA13F10719F0FC1F0040A7A5 /* img-finish_lesson-set_goal-bg@2x.png in Resources */,
 				CA13F10819F0FC1F0040A7A5 /* img-skill_icon-en-vi_danh_dong_tu_gerunds-locked.png in Resources */,
 				CA13F10919F0FC1F0040A7A5 /* img-skill_icon-en-vi_gioi_tu-unlocked.png in Resources */,
@@ -5620,6 +5631,7 @@
 				CA13F2AE19F0FC1F0040A7A5 /* img-skill_icon-en-vi_truyen_thong-unlocked.png in Resources */,
 				CA13F2AF19F0FC1F0040A7A5 /* img-skill_icon-en-vi_giao_duc-locked@2x.png in Resources */,
 				CA13F2B019F0FC1F0040A7A5 /* img-profile-level-bg.png in Resources */,
+				CA8C975119F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */,
 				CA13F2B119F0FC1F0040A7A5 /* AppIcon29x29@2x.png in Resources */,
 				CA13F2B219F0FC1F0040A7A5 /* img-skill_icon-en-vi_cau_hoi-unlocked_big.png in Resources */,
 				CA13F2B319F0FC1F0040A7A5 /* MMSaveProgressViewController.xib in Resources */,
@@ -5719,6 +5731,7 @@
 				CAF8563F19E0F82700A347CF /* img-skill_icon-en-vi_giao_duc-locked.png in Resources */,
 				CAF855F919E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_so_huu-unlocked.png in Resources */,
 				CAF853C819E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked_big.png in Resources */,
+				CA8C975319F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */,
 				CAF8561619E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_qua_khu_2-unlocked@2x.png in Resources */,
 				CAF8543419E0F3D200A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked_big.png in Resources */,
 				CAF8538819E0F3D200A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked_big.png in Resources */,
@@ -5992,6 +6005,7 @@
 				CAF853E819E0F3D200A347CF /* img-skill_icon-en-vi_kinh_doanh-unlocked_big.png in Resources */,
 				CAF8562C19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-locked@2x.png in Resources */,
 				CAF8547619E0F3D200A347CF /* MMCourseSelectionCell.xib in Resources */,
+				CA8C975019F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */,
 				CAF8537F19E0F3D200A347CF /* img-skill_icon-en-vi_con_nguoi-locked_big@2x.png in Resources */,
 				CAF8545019E0F3D200A347CF /* img-hexagon_skill-bg_big.png in Resources */,
 				CAF8540019E0F3D200A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big.png in Resources */,
@@ -6659,6 +6673,7 @@
 				CAF8585A19E0FDF600A347CF /* img-skill_icon-en-vi_so_nhieu-unlocked_big@2x.png in Resources */,
 				CAF8585B19E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-unlocked_big.png in Resources */,
 				CAF8585C19E0FDF600A347CF /* img-skill_icon-en-vi_lien_tu-unlocked.png in Resources */,
+				CA8C975219F51EA000E639E9 /* btn-lessons_learning-close_small.png in Resources */,
 				CAF8585D19E0FDF600A347CF /* ClearSans-Regular.ttf in Resources */,
 				CAF8585E19E0FDF600A347CF /* MMSelectQuestionContentView.xib in Resources */,
 				CAF8585F19E0FDF600A347CF /* img-skill_icon-en-vi_noi_chon-locked.png in Resources */,
@@ -6967,6 +6982,7 @@
 				CAF8598419E0FDF600A347CF /* img-lessons_learning-heart@2x.png in Resources */,
 				CAF8598519E0FDF600A347CF /* img-skill_icon-en-vi_dong_tu_hien_tai_1-unlocked@2x.png in Resources */,
 				CAF8598619E0FDF600A347CF /* img-skill_icon-en-vi_nghe_thuat-unlocked_big@2x.png in Resources */,
+				CA8C975519F51EA000E639E9 /* btn-lessons_learning-close_small@2x.png in Resources */,
 				CAF8598719E0FDF600A347CF /* img-skill_icon-en-vi_tan_ngu-locked_big@2x.png in Resources */,
 				CA3F1D8D19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */,
 				CAF8598819E0FDF600A347CF /* img-skill_icon-en-vi_dac_tinh-locked_big.png in Resources */,

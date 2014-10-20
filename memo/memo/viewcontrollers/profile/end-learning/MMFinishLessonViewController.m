@@ -91,7 +91,7 @@
   
 #if kTempDisableForCloseBeta
   _lblStreaksCount.center = CGPointMake(_lblStreaksCount.superview.frame.size.width/2,
-                                        _lblStreaksCount.superview.frame.size.height/2-3);
+                                        _lblStreaksCount.superview.frame.size.height/2 + kFontClearSansMarginTop);
   _btnSetGoal.hidden = YES;
 #endif
 }
