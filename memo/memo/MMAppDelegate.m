@@ -69,13 +69,13 @@
   DLog(@"%@", token);
 #endif
   
-  [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefDeviceToken];
+  [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
-  [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];
+  [[MMServerHelper sharedHelper] updateApnsToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-  [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefDeviceToken];
+  [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefApnsToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

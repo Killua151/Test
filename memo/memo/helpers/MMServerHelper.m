@@ -118,12 +118,18 @@
                   username:(NSString *)username
                   password:(NSString *)password
                 completion:(void (^)(NSDictionary *, NSError *))handler {
-  NSDictionary *params = @{
-                           kParamName : [NSString normalizedString:fullName],
-                           kParamEmail : [NSString normalizedString:email],
-                           kParamUsername : [NSString normalizedString:username],
-                           kParamPassword : [NSString normalizedString:password]
-                           };
+  NSMutableDictionary *params =
+  [NSMutableDictionary dictionaryWithDictionary:@{
+                                                  kParamName : [NSString normalizedString:fullName],
+                                                  kParamEmail : [NSString normalizedString:email],
+                                                  kParamUsername : [NSString normalizedString:username],
+                                                  kParamPassword : [NSString normalizedString:password]
+                                                  }];
+  
+  NSString *apnsToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefApnsToken];
+  
+  if (apnsToken != nil)
+    params[kParamApnsToken] = apnsToken;
   
   [self
    POST:@"users"
@@ -531,27 +537,36 @@
 
 - (void)getDictionary {
   NSInteger dictionaryVersion = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefDictionaryVersion];
-  NSDictionary *params = @{
-                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamVersion : @(dictionaryVersion)
-                           };
+  
+  NSDictionary *params = @{kParamVersion : @(dictionaryVersion)};
   
   [self
    GET:@"words"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
+     NSInteger newVersion = [responseDict[kParamVersion] integerValue];
+     [[NSUserDefaults standardUserDefaults] setInteger:newVersion forKey:kUserDefDictionaryVersion];
+     [[NSUserDefaults standardUserDefaults] synchronize];
      [[MWord sharedModel] setupDictionary:responseDict[kParamWords]];
    }
    failure:NULL];
 }
 
 - (void)submitViewedWords:(NSDictionary *)viewedWords {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamWords : viewedWords
+                           };
   
+  [self POST:@"words" parameters:params success:NULL failure:NULL];
+}
+
+- (void)updateApnsToken {
 }
 
 - (void)registerDeviceTokenForAPNS {
-  NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefDeviceToken];
+  NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefApnsToken];
   
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
                                   [NSURL URLWithString:@"https://api.parse.com/1/installations"]];
@@ -590,6 +605,13 @@
 
 #pragma mark - Private methods
 - (void)logInWithParam:(NSDictionary *)params completion:(void (^)(NSDictionary *, NSError *))handler {
+  NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
+  
+  NSString *apnsToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefApnsToken];
+  
+  if (apnsToken != nil)
+    paramsDict[kParamApnsToken] = apnsToken;
+  
   [self
    POST:@"users/login"
    parameters:params

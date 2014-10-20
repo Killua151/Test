@@ -116,7 +116,7 @@ return; \
 #define kUserDefUDID                            @"udid"
 #define kUserDefSettingsLocale                  @"settings_locale"
 #define kUserDefSavedUser                       @"saved_user"
-#define kUserDefDeviceToken                     @"ios_device_token"
+#define kUserDefApnsToken                       @"ios_apns_token"
 #define kUserDefSpeakEnabled                    @"speak_enabled"
 #define kUserDefDictionaryVersion               @"dictionary_version"
 
@@ -125,6 +125,7 @@ return; \
 #define kParamAnswer                            @"answer"
 #define kParamAnswers                           @"answers"
 #define kParamAnswerResult                      @"answer_result"
+#define kParamApnsToken                         @"apns_token"
 #define kParamAuthToken                         @"auth_token"
 #define kParamAutoFeedback                      @"auto_feedback"
 #define kParamAvailableItems                    @"available_items"
