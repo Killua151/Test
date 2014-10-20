@@ -10,7 +10,7 @@
 #import "MMLoginViewController.h"
 #import "MMSignUpViewController.h"
 #import "MMCoursesListViewController.h"
-#import "ISSpeechRecognitionResult.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface MMHomeViewController () {
   MMLoginViewController *_loginVC;
@@ -76,10 +76,6 @@
   _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNewUser.layer.cornerRadius = 4;
   [_btnNewUser setTitle:MMLocalizedString(@"New user") forState:UIControlStateNormal];
-}
-
-- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithAddress:(NSDictionary *)addressComponents {
-  DLog(@"%@", addressComponents);
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MMShareActionSheet.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface MMShareActionSheet ()
 
@@ -45,7 +46,33 @@
 
 - (void)show {
 #if kTempDisableForCloseBeta
-  DLog(@"invoke");
+  FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+  params.link = [NSURL URLWithString:kLandingPageUrl];
+  
+  if ([FBDialogs canPresentShareDialogWithParams:params]) {
+    [FBDialogs
+     presentShareDialogWithLink:params.link
+     handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+       ShowAlertWithError(error);
+     }];
+  } else {
+    // Put together the dialog parameters
+    NSDictionary *params = @{
+                             @"name" : @"Memo App",
+                             @"caption" : @"Học ngoại ngữ miễn phí trên di động",
+                             @"description" : @"Ứng dụng học ngoại ngữ miễn phí hàng đầu trên di động",
+                             @"link" : kLandingPageUrl
+                             };
+    
+    // Show the feed dialog
+    [FBWebDialogs
+     presentFeedDialogModallyWithSession:nil
+     parameters:params
+     handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+       ShowAlertWithError(error);
+     }];
+  }
+  
   return;
 #endif
   
