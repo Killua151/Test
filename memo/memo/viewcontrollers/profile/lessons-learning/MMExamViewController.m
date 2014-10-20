@@ -438,6 +438,7 @@
   _totalLessonsCount = [_questionsData count];
   _currentLessonIndex = -1;
   _currentHeartsCount = _totalHeartsCount;
+  [_answersData removeAllObjects];
 }
 
 - (void)resetResultViews {
