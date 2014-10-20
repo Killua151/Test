@@ -17,5 +17,6 @@
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender;
+- (void)updateWithFriends:(NSArray *)friends;
 
 @end

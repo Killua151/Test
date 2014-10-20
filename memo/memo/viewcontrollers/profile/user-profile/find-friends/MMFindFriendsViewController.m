@@ -44,6 +44,14 @@
   [self dismissViewController];
 }
 
+- (void)updateWithFriends:(NSArray *)friends {
+  [self reloadContents];
+  
+  [_friendsData removeAllObjects];
+  [_friendsData addObjectsFromArray:friends];
+  [_tblFriends reloadData];
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   _tblFriends.scrollEnabled = [_friendsData count] > 0;

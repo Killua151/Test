@@ -232,9 +232,6 @@
 
 #pragma mark - UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 2)
-    return;
-  
   if (buttonIndex == 0) {
     [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
     return;
@@ -244,6 +241,24 @@
     [self showEmailInviteDialog];
     return;
   }
+  
+  [Utils logInFacebookFromView:self.view completion:^(NSDictionary *userData, NSError *error) {
+    ShowAlertWithError(error);
+    
+    ShowHudForCurrentView();
+    
+    [[MMServerHelper sharedHelper]
+     findFacebookFriends:userData[kParamFbAccessToken]
+     completion:^(NSArray *results, NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+       
+       MMFindFriendsViewController *findFriendsVC = [MMFindFriendsViewController new];
+       [self presentViewController:findFriendsVC animated:YES completion:^{
+         [findFriendsVC updateWithFriends:results];
+       }];
+     }];
+  }];
 }
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet {

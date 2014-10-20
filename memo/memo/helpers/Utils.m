@@ -163,10 +163,8 @@ static UIView *_sharedToast = nil;
   MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
   
   if (FBSession.activeSession.state == FBSessionStateOpen ||
-      FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+      FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
     [FBSession.activeSession closeAndClearTokenInformation];
-    return;
-  }
   
   [FBSession
    openActiveSessionWithReadPermissions:@[@"public_profile"]

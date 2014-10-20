@@ -332,7 +332,23 @@
 }
 
 - (void)findFacebookFriends:(NSString *)fbAccessToken completion:(void (^)(NSArray *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamFbAccessToken : [NSString normalizedString:fbAccessToken]
+                           };
   
+  [self
+   POST:@"users/search_fb_friend"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSArray *searchResults = [MFriend modelsFromArr:[responseObject objectFromJSONData]];
+     handler(searchResults, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(nil, error);
+     }];
+   }];
 }
 
 - (void)startLesson:(NSInteger)lessonNumber
