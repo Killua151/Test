@@ -34,6 +34,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+//  [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//    BOOL reachable =
+//    status == AFNetworkReachabilityStatusReachableViaWWAN ||
+//    status == AFNetworkReachabilityStatusReachableViaWiFi;
+//  }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

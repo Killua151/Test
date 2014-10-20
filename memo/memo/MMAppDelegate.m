@@ -159,6 +159,7 @@
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
   [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
   [[LocalizationHelper sharedHelper] loadLocalizationForLanguage:PreferedAppLanguage()];
+  [[AFNetworkReachabilityManager sharedManager] startMonitoring];
   
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   

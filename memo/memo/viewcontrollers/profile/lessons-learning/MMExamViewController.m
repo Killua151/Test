@@ -197,6 +197,16 @@
            withCorrectAnswer:correctAnswer
              underlineRanges:underlineRanges];
   
+  // Wrong answer, auto feedback
+  if (!answerResult) {
+    [[MMServerHelper sharedHelper]
+     submitFeedbackInQuestion:question.question_log_id
+     forSentence:@""
+     completion:^(NSError *error) {
+       
+     }];
+  }
+  
   _answersData[question.question_log_id] = @(answerResult);
 }
 

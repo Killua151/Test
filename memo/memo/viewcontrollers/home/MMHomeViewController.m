@@ -41,11 +41,6 @@
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
-  [Utils recognizeWithCompletion:^(ISSpeechRecognitionResult *result, NSError *error) {
-    DLog(@"%@ %@ %f", error, result.text, result.confidence);
-  }];
-  return;
-  
   if (_loginVC == nil)
     _loginVC = [MMLoginViewController new];
   

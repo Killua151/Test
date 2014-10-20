@@ -35,6 +35,45 @@
 //  }
   
   // V1.1 - Better comparison: be able to check typos
+//  for (NSString *correctAnswer in correctAnswers) {
+//    if ([answerValue wordsCount] != [correctAnswer wordsCount])
+//      continue;
+//    
+//    NSArray *typos = [correctAnswer checkTyposOnString:answerValue];
+//    
+//    if (typos == nil)
+//      continue;
+//    
+//    return @{
+//             kParamAnswerResult : @(YES),
+//             kParamCorrectAnswer : correctAnswer,
+//             kParamUnderlineRanges : typos
+//             };
+//  }
+  
+  //  V1.2 - Crowdsourcing comparison: be able to check common errors
+  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+  
+  for (NSString *correctAnswer in correctAnswers) {
+    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+    
+    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+      return @{
+               kParamAnswerResult : @(YES),
+               kParamCorrectAnswer : _translation
+               };
+  }
+  
+  for (NSString *wrongAnswer in _common_errors) {
+    NSString *normalizedWrongAnswer = [wrongAnswer stringByRemovingAllNonLetterCharacters];
+    
+    if ([normalizedWrongAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+      return @{
+               kParamAnswerResult : @(NO),
+               kParamCorrectAnswer : _translation
+               };
+  }
+  
   for (NSString *correctAnswer in correctAnswers) {
     if ([answerValue wordsCount] != [correctAnswer wordsCount])
       continue;
@@ -53,7 +92,8 @@
   
   return @{
            kParamAnswerResult : @(NO),
-           kParamCorrectAnswer : _translation
+           kParamCorrectAnswer : _translation,
+           kParamUserAnswer : answerValue
            };
 }
 

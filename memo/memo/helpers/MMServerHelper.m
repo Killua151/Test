@@ -505,6 +505,28 @@
    }];
 }
 
+- (void)submitFeedbackInQuestion:(NSString *)questionLogId
+                     forSentence:(NSString *)sentenceText
+                      completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamQuestionLogId : [NSString normalizedString:questionLogId],
+                           kParamAutoFeedback : @(YES)
+                           };
+  
+  [self
+   POST:@"feedback/create"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)registerDeviceTokenForAPNS {
   NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefDeviceToken];
   
@@ -565,6 +587,17 @@
 
 - (void)startExamWithParam:(NSDictionary *)params
                 completion:(void (^)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *))handler {
+  if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    BOOL speakEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled];
+    
+    if (speakEnabled) {
+      [UIAlertView
+       showWithTitle:MMLocalizedString(@"No internet connection")
+       andMessage:MMLocalizedString(@"No internet connection available. Check your network connection and try again.")];
+      return;
+    }
+  }
+  
   NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
   paramsDict[kParamDevice] = @"ios";
   paramsDict[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);

@@ -20,7 +20,8 @@
   if ([answerValue wordsCount] != [_hint wordsCount])
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint
+             kParamCorrectAnswer : _hint,
+             kParamUserAnswer : answerValue
              };
   
   NSArray *typos = [_hint checkTyposOnString:answerValue];
@@ -28,13 +29,15 @@
   if (typos == nil)
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint
+             kParamCorrectAnswer : _hint,
+             kParamUserAnswer : answerValue
              };
   
   return @{
            kParamAnswerResult : @(YES),
            kParamCorrectAnswer : _hint,
-           kParamUnderlineRanges : typos
+           kParamUnderlineRanges : typos,
+           kParamUserAnswer : answerValue
            };
 }
 
