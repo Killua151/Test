@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMSignUpViewController">
             <connections>
+                <outlet property="_btnFacebook" destination="jOs-cU-N9d" id="S1j-wf-S1l"/>
+                <outlet property="_btnGoogle" destination="Rp7-3x-lMa" id="Qfk-ih-oI9"/>
                 <outlet property="_btnSignUp" destination="kj3-wK-HT7" id="gNi-mY-GkN"/>
                 <outlet property="_txtConfirmPassword" destination="pFS-Xf-TrH" id="pLQ-YM-ctc"/>
                 <outlet property="_txtEmail" destination="usE-xT-s0z" id="qTS-Oq-8JH"/>
@@ -23,6 +25,30 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jOs-cU-N9d">
+                    <rect key="frame" x="15" y="502" width="138" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Facebook">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFacebookPressed:" destination="-1" eventType="touchUpInside" id="jFc-3r-qzt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rp7-3x-lMa">
+                    <rect key="frame" x="167" y="502" width="138" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.82745098039999998" green="0.28235294119999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Google+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnGooglePressed:" destination="-1" eventType="touchUpInside" id="0mb-lV-Mbm"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" id="XpK-Hr-J4z" userLabel="Gesture Layer">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

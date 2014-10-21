@@ -212,7 +212,7 @@
   
   if (indexPath.section == 1) {
     CGFloat delta = _btnSetGoal.hidden ? 20 : 0;
-    return _celGraphChart.frame.size.height - delta;
+    return 293 - delta;
   }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)
@@ -227,7 +227,9 @@
   
   MLeaderboardData *following = _userData.followings_leaderboard_all_time[indexPath.row];
   MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:following.user_id];
-  [[self mainViewController] presentViewController:[friendProfileVC parentNavigationController] animated:YES completion:NULL];
+  [[self mainViewController] presentViewController:[friendProfileVC parentNavigationController]
+                                          animated:YES
+                                        completion:NULL];
 }
 
 #pragma mark - UIActionSheetDelegate methods

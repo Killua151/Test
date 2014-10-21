@@ -75,6 +75,54 @@
    }];
 }
 
+- (IBAction)btnFacebookPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login Facebook"];
+  
+  [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    ShowAlertWithError(error);
+    
+    ShowHudForCurrentView();
+    
+    [[MMServerHelper sharedHelper]
+     logInWithFacebookId:userData[kParamFbId]
+     facebookName:userData[kParamFbName]
+     accessToken:userData[kParamFbAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+       
+       [Utils updateSavedUserWithAttributes:userData];
+       [MUser loadCurrentUserFromUserDef];
+       [self transitToViewController:[MMSkillsListViewController navigationController]];
+     }];
+  }];
+}
+
+- (IBAction)btnGooglePressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login Google+"];
+  
+  ShowHudForCurrentView();
+  
+  [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+    if (error != nil)
+      HideHudForCurrentView();
+    
+    ShowAlertWithError(error);
+    
+    [[MMServerHelper sharedHelper]
+     logInWithGmail:userData[kParamGmail]
+     accessToken:userData[kParamGAccessToken]
+     completion:^(NSDictionary *userData, NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+       
+       [Utils updateSavedUserWithAttributes:userData];
+       [MUser loadCurrentUserFromUserDef];
+       [self transitToViewController:[MMSkillsListViewController navigationController]];
+     }];
+  }];
+}
+
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   _currentFirstResponder = textField;
@@ -123,6 +171,12 @@
   _btnSignUp.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnSignUp.layer.cornerRadius = 4;
   [_btnSignUp setTitle:MMLocalizedString(@"Sign up") forState:UIControlStateNormal];
+  
+  _btnFacebook.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnFacebook.layer.cornerRadius = 4;
+  
+  _btnGoogle.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _btnGoogle.layer.cornerRadius = 4;
 }
 
 - (BOOL)validateFields {

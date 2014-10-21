@@ -7,6 +7,7 @@
 //
 
 #import "MMFindFriendsViewController.h"
+#import "MMProfileViewController.h"
 #import "MMFindFriendCell.h"
 #import "MFriend.h"
 
@@ -87,6 +88,17 @@
   return [MMFindFriendCell heightToFitWithData:_friendsData[indexPath.row]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if ([_friendsData count] == 0)
+    return;
+  
+  MFriend *friend = _friendsData[indexPath.row];
+  MMProfileViewController *friendProfileVC = [[MMProfileViewController alloc] initWithUserId:friend.user_id];
+  [[self mainViewController] presentViewController:[friendProfileVC parentNavigationController]
+                                          animated:YES
+                                        completion:NULL];
+}
+
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   [self gestureLayerDidEnterEditingMode];
@@ -124,6 +136,7 @@
 - (void)setupViews {
   _txtSearchFriends.font = [UIFont fontWithName:@"ClearSans" size:17];
   _btnClose.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
+  [_btnClose setTitle:MMLocalizedString(@"Close") forState:UIControlStateNormal];
   _lblEmptySearchResults.font = [UIFont fontWithName:@"ClearSans" size:13];
   _tblFriends.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
   

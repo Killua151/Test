@@ -16,8 +16,12 @@
   IBOutlet UITextField *_txtPassword;
   IBOutlet UITextField *_txtConfirmPassword;
   IBOutlet UIButton *_btnSignUp;
+  IBOutlet UIButton *_btnFacebook;
+  IBOutlet UIButton *_btnGoogle;
 }
 
 - (IBAction)btnSignUpPressed:(UIButton *)sender;
+- (IBAction)btnFacebookPressed:(UIButton *)sender;
+- (IBAction)btnGooglePressed:(UIButton *)sender;
 
 @end
