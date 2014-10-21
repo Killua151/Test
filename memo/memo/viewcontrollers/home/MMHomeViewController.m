@@ -12,13 +12,18 @@
 #import "MMCoursesListViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+#define kSlideAnimationDelay          3
+
 @interface MMHomeViewController () {
   MMLoginViewController *_loginVC;
   MMSignUpViewController *_signUpVC;
   MMCoursesListViewController *_coursesListVC;
+  
+  BOOL _slideAnimationCancelled;
 }
 
 - (void)setupViews;
+- (void)animateSlideView;
 
 @end
 
@@ -32,6 +37,21 @@
   [Utils logAnalyticsForScreen:@"New install"];
   
   [self setupViews];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  _slideAnimationCancelled = NO;
+//  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSlideAnimationDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [self animateSlideView];
+//  });
+  [self performSelector:@selector(animateSlideView) withObject:nil afterDelay:kSlideAnimationDelay];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  _slideAnimationCancelled = YES;
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,10 +90,13 @@
 #endif
 }
 
+#pragma mark - UIScrollViewDelgate methods
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
+}
+
 #pragma mark - Private methods
 - (void)setupViews {
-//  if (DeviceScreenIsRetina4Inch())
-//    _imgBg.image = [UIImage imageNamed:@"Default-568h"];
   [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
                                                      positions:JMOHorizontalScrollIndicatorPositionBottom
                                                          color:UIColorFromRGB(129, 12, 21)];
@@ -113,6 +136,22 @@
   _btnNewUser.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnNewUser.layer.cornerRadius = 4;
   [_btnNewUser setTitle:MMLocalizedString(@"New user") forState:UIControlStateNormal];
+}
+
+- (void)animateSlideView {
+  CGPoint contentOffset = _vSlide.contentOffset;
+  NSInteger currentPage = contentOffset.x / _vSlide.frame.size.width;
+  currentPage = (currentPage + 1) % 4;
+  contentOffset.x = currentPage*_vSlide.frame.size.width;
+  [_vSlide setContentOffset:contentOffset animated:YES];
+  
+//  if (_slideAnimationCancelled)
+//    return;
+//  
+//  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSlideAnimationDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [self animateSlideView];
+//  });
+  [self performSelector:@selector(animateSlideView) withObject:nil afterDelay:kSlideAnimationDelay];
 }
 
 @end

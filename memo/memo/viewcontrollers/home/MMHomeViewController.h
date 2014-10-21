@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MMHomeViewController : BaseViewController {
+@interface MMHomeViewController : BaseViewController <UIScrollViewDelegate> {
   IBOutlet UIImageView *_imgBg;
   IBOutlet UIScrollView *_vSlide;
   IBOutlet UIButton *_btnLogIn;
