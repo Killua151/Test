@@ -166,8 +166,11 @@
   [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
   [GAI sharedInstance].trackUncaughtExceptions = YES;
   [GAI sharedInstance].dispatchInterval = 20;
-  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
   [[GAI sharedInstance] trackerWithTrackingId:kGAITrackingID];
+  
+  [FBSettings setDefaultAppID:kFacebookAppID];
+  [FBAppEvents activateApp];
   
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   

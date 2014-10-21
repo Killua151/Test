@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setupGestureLayer];
+  [Utils logAnalyticsForScreen:NSStringFromClass([self class])];
 }
 
 - (void)didReceiveMemoryWarning {
