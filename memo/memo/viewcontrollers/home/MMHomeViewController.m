@@ -74,6 +74,9 @@
 - (void)setupViews {
 //  if (DeviceScreenIsRetina4Inch())
 //    _imgBg.image = [UIImage imageNamed:@"Default-568h"];
+  [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
+                                                     positions:JMOHorizontalScrollIndicatorPositionBottom
+                                                         color:UIColorFromRGB(129, 12, 21)];
   
   _vSlide.contentSize = CGSizeMake(_vSlide.frame.size.width * 4, _vSlide.contentSize.height);
   

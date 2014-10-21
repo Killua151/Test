@@ -15,7 +15,7 @@
 #define JMOScrollIndicatorBottomSpace 2.0f
 #define JMOScrollIndicatorWidth 50.0f
 
-#define JMOScrollIndicatorPageControlNumberOfPages 5
+#define JMOScrollIndicatorPageControlNumberOfPages 4
 
 static char viewScrollIndicatorKeyH;
 static char viewScrollIndicatorKeyV;
