@@ -152,18 +152,15 @@
 //  if ([selfComponents count] != [inputComponents count])
 //    return @[[NSValue valueWithRange:NSMakeRange(0, self.length)]];
   
-  __block NSMutableArray *ranges = [NSMutableArray array];
+  __block NSMutableArray *typos = [NSMutableArray array];
   
   DiffMatchPatch *dmp = [DiffMatchPatch new];
-  __block NSInteger location = 0;
   
   [selfComponents enumerateObjectsUsingBlock:^(NSString *selfComponent, NSUInteger index, BOOL *stop) {
     NSString *inputComponent = inputComponents[index];
     
-    if ([selfComponent isEqualToString:inputComponent]) {
-      location += selfComponent.length+1;
+    if ([selfComponent isEqualToString:inputComponent])
       return;
-    }
     
     NSArray *diffs = [dmp diff_mainOfOldString:inputComponent andNewString:selfComponent];
     
@@ -174,14 +171,25 @@
     
     // Incorrect word
     if (equalCounts == 0) {// && selfComponent.length != inputComponent.length) {
-      ranges = nil;
+      typos = nil;
       *stop = YES;
       return;
     }
     
-    [ranges addObject:[NSValue valueWithRange:NSMakeRange(location, selfComponent.length)]];
-    location += selfComponent.length+1;
+    [typos addObject:selfComponent];
   }];
+  
+  if (typos == nil)
+    return nil;
+  
+  NSMutableArray *ranges = [NSMutableArray array];
+  
+  for (NSString *typo in typos) {
+    NSRange typoRange = [self rangeOfString:typo options:NSCaseInsensitiveSearch];
+    
+    if (typoRange.location != NSNotFound)
+      [ranges addObject:[NSValue valueWithRange:typoRange]];
+  }
   
   return ranges;
 }

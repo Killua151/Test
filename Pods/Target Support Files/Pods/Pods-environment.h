@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_Bolts 1
 #define COCOAPODS_VERSION_PATCH_Bolts 3
 
+// CustomScrollIndicator
+#define COCOAPODS_POD_AVAILABLE_CustomScrollIndicator
+#define COCOAPODS_VERSION_MAJOR_CustomScrollIndicator 0
+#define COCOAPODS_VERSION_MINOR_CustomScrollIndicator 1
+#define COCOAPODS_VERSION_PATCH_CustomScrollIndicator 1
+
 // DCKeyValueObjectMapping
 #define COCOAPODS_POD_AVAILABLE_DCKeyValueObjectMapping
 #define COCOAPODS_VERSION_MAJOR_DCKeyValueObjectMapping 1
