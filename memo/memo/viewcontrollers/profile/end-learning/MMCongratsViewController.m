@@ -16,7 +16,6 @@
   MMShareActionSheet *_vShare;
 }
 
-- (NSInteger)displayingLevel;
 - (NSString *)displayingMessage;
 - (NSString *)displayingSubMessage;
 
@@ -102,20 +101,6 @@
 }
 
 #pragma mark - Private methods
-- (NSInteger)displayingLevel {
-  NSNumber *leveledUp = [MUser currentUser].lastReceivedBonuses[kParamLeveledUp];
-  
-  if (leveledUp == nil || ![leveledUp isKindOfClass:[NSNumber class]] || ![leveledUp boolValue])
-    return -1;
-  
-  NSNumber *level = [MUser currentUser].lastReceivedBonuses[kParamLevel];
-  
-  if (level == nil || ![level isKindOfClass:[NSNumber class]])
-    return -1;
-  
-  return [level integerValue];
-}
-
 - (NSString *)displayingMessage {
   if (_displayingData == nil || ![_displayingData isKindOfClass:[NSDictionary class]] ||
       _displayingData[kParamMessage] == nil || ![_displayingData[kParamMessage] isKindOfClass:[NSString class]])

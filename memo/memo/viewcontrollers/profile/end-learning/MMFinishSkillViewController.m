@@ -62,13 +62,11 @@
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@!"), styledString];
   _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
   
-  NSNumber *numAffectedSkills = [MUser currentUser].lastReceivedBonuses[kParamNumAffectedSkills];
+  NSInteger numAffectedSkills = [[MUser currentUser] finishExamNumAffectedSkills];
   
-  if (numAffectedSkills != nil &&
-      [numAffectedSkills isKindOfClass:[NSNumber class]] &&
-      [numAffectedSkills integerValue] > 1) {
+  if (numAffectedSkills > 1) {
     message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@ and %d other skills!"),
-               styledString, [numAffectedSkills integerValue]-1];
+               styledString, numAffectedSkills-1];
     _lblMessage.font = [UIFont fontWithName:@"ClearSans" size:13];
   }
   
@@ -111,7 +109,7 @@
 }
 
 - (IBAction)btnNextPressed:(UIButton *)sender {
-  if ([MUser currentUser].lastReceivedBonuses[kParamBonusMoney] != nil)
+  if ([[MUser currentUser] finishExamBonusMoney] > 0)
     [self.navigationController pushViewController:[MMMoneyBonusViewController new] animated:YES];
   else
     [self transitToViewController:[MMSkillsListViewController navigationController]];
