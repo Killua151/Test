@@ -106,8 +106,8 @@
   // Determine which line the letter is on and the string on that line
   CGSize letterSize = [letter sizeWithFont:self.font];
   
-  int lineNo = 0;
-  int linesDisplayed = 1;
+  NSInteger lineNo = 0;
+  NSInteger linesDisplayed = 1;
   
   // Get the substring with the line on it
   NSUInteger lineStartsOn = 0;
@@ -117,7 +117,7 @@
   NSUInteger currentLineStartsOn = 0;
   NSUInteger currentCurrentLineLength = 1;
   
-  float currentWidth;
+  CGFloat currentWidth;
   
   // TODO: Add support for UILineBreakModeWordWrap, UILineBreakModeCharacterWrap to complete implementation
   // Get the line number of the current letter
@@ -180,9 +180,8 @@
   
   if (totalSize.height > self.frame.size.height) {
     // It has been clipped, calculate how many lines are actually shown
-    
     linesDisplayed = 0;
-    float lineHeight = 0;
+    CGFloat lineHeight = 0;
     
     while (lineHeight < self.frame.size.height) {
       lineHeight += self.font.lineHeight;

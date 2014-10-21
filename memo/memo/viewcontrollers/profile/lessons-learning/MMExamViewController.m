@@ -388,7 +388,7 @@
   _vHearts.frame = frame;
   
   frame = _btnHealthPotion.frame;
-  frame.origin.x = _vHearts.frame.origin.x - frame.size.width - 13;
+  frame.origin.x = _vHearts.frame.origin.x - frame.size.width - 7;
   _btnHealthPotion.frame = frame;
   _btnHealthPotion.hidden = ![MItem checkItemAvailability:kItemHealthPotionId inAvailableItems:_availableItems];
   

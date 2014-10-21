@@ -119,7 +119,7 @@
     vSlideImage.clipsToBounds = YES;
     
     UIImageView *imgSlide = [[UIImageView alloc] initWithImage:
-                             [UIImage imageNamed:[NSString stringWithFormat:@"img-home_slide-%d.png", i]]];
+                             [UIImage imageNamed:[NSString stringWithFormat:@"img-home_slide-%ld.png", (long)i]]];
     imgSlide.contentMode = UIViewContentModeScaleAspectFit;
     frame = imgSlide.frame;
     frame.size = vSlideImage.frame.size;

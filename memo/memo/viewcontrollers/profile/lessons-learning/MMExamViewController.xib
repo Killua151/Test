@@ -125,9 +125,9 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ysq-QO-8qW">
-                            <rect key="frame" x="156" y="23" width="21" height="22"/>
+                            <rect key="frame" x="169" y="24" width="13" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="img-lessons_learning-heart_potion.png">
+                            <state key="normal" backgroundImage="img-item_icon-health_potion.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -475,9 +475,9 @@
         <image name="btn-lessons_learning-close.png" width="32" height="32"/>
         <image name="btn-lessons_learning-close_small.png" width="20" height="20"/>
         <image name="img-ant-lessons_learning_progress.png" width="10" height="8"/>
+        <image name="img-item_icon-health_potion.png" width="38" height="60"/>
         <image name="img-lessons_learning-correct.png" width="40" height="30"/>
         <image name="img-lessons_learning-heart.png" width="25" height="23"/>
         <image name="img-lessons_learning-heart_disabled.png" width="25" height="23"/>
-        <image name="img-lessons_learning-heart_potion.png" width="21" height="21"/>
     </resources>
 </document>
