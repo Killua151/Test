@@ -29,6 +29,8 @@
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
+  [Utils logAnalyticsForScreen:@"New install"];
+  
   [self setupViews];
 }
 
@@ -70,8 +72,36 @@
 
 #pragma mark - Private methods
 - (void)setupViews {
-  if (DeviceScreenIsRetina4Inch())
-    _imgBg.image = [UIImage imageNamed:@"Default-568h"];
+//  if (DeviceScreenIsRetina4Inch())
+//    _imgBg.image = [UIImage imageNamed:@"Default-568h"];
+  
+  _vSlide.contentSize = CGSizeMake(_vSlide.frame.size.width * 4, _vSlide.contentSize.height);
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _vSlide.frame;
+    frame.origin.y += 77;
+    frame.size.height -= 88;
+    _vSlide.frame = frame;
+  }
+  
+  for (NSInteger i = 1; i <= 4; i++) {
+    CGRect frame = _vSlide.frame;
+    frame.origin.x = (i-1)*_vSlide.frame.size.width;
+    frame.origin.y = 0;
+    UIView *vSlideImage = [[UIView alloc] initWithFrame:frame];
+    vSlideImage.backgroundColor = [UIColor clearColor];
+    vSlideImage.clipsToBounds = YES;
+    
+    UIImageView *imgSlide = [[UIImageView alloc] initWithImage:
+                             [UIImage imageNamed:[NSString stringWithFormat:@"img-home_slide-%d.png", i]]];
+    imgSlide.contentMode = UIViewContentModeScaleAspectFit;
+    frame = imgSlide.frame;
+    frame.size = vSlideImage.frame.size;
+    imgSlide.frame = frame;
+    [vSlideImage addSubview:imgSlide];
+    
+    [_vSlide addSubview:vSlideImage];
+  }
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnLogIn.layer.cornerRadius = 4;

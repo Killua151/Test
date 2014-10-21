@@ -10,6 +10,7 @@
 
 @interface MMHomeViewController : BaseViewController {
   IBOutlet UIImageView *_imgBg;
+  IBOutlet UIScrollView *_vSlide;
   IBOutlet UIButton *_btnLogIn;
   IBOutlet UIButton *_btnNewUser;
 }

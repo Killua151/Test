@@ -54,7 +54,7 @@
 #pragma mark - Private methods
 - (void)setupViews {
   _lblLessonTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblLessonTitle.text = [NSString stringWithFormat:MMLocalizedString(@"Lesson %d/%d"),
+  _lblLessonTitle.text = [NSString stringWithFormat:MMLocalizedString(@"Lesson %d on %d"),
                           _lessonData.lesson_number, [_skillData.lessons count]];
   _imgPassed.hidden = _lessonData.lesson_number > _skillData.finished_lesson;
   
