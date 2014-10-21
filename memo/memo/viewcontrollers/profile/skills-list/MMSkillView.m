@@ -9,6 +9,7 @@
 #import "MMSkillView.h"
 #import "MMHexagonSkillView.h"
 #import "MMShieldSkillView.h"
+#import "MSkill.h"
 
 @implementation MMSkillView
 
@@ -35,6 +36,9 @@
 }
 
 - (IBAction)btnSkillPressed:(UIButton *)sender {
+  if (![_skillData unlocked])
+    return;
+  
   if ([_delegate respondsToSelector:@selector(skillViewDidSelectSkill:)])
     [_delegate skillViewDidSelectSkill:_skillData];
 }

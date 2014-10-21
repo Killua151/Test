@@ -14,7 +14,12 @@
 #import <GooglePlus/GooglePlus.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import "iSpeechSDK.h"
+#import <GAI.h>
+#import <GAIFields.h>
+#import <GAIDictionaryBuilder.h>
+#import <Mixpanel/Mixpanel.h>
 #import "MMAppDelegate.h"
+#import "MUser.h"
 
 static UIView *_sharedToast = nil;
 
@@ -89,20 +94,100 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForScreen:(NSString *)screenName {
-//  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//  [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"Screen %@", screenName]];
-//  [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+  NSString *eventName = [NSString stringWithFormat:@"iOS Screen %@", screenName];
+  
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker set:kGAIScreenName value:eventName];
+  [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+  
+  NSDictionary *userData = nil;
+  
+  if ([MUser currentUser]._id != nil)
+    userData = @{kParamUserId : [MUser currentUser]._id};
+  
+  [[Mixpanel sharedInstance] track:eventName properties:userData];
 }
 
-+ (void)logAnalyticsForSearchText:(NSString *)searchText {
-//  if (searchText == nil || ![searchText isKindOfClass:[NSString class]] || searchText.length == 0)
-//    return;
-//  
-//  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"all_articles"
-//                                                        action:@"search"
-//                                                         label:searchText
-//                                                         value:nil] build]];
++ (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName {
+  [[Mixpanel sharedInstance] timeEvent:[NSString stringWithFormat:@"iOS screen %@", screenName]];
+}
+
++ (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName {
+  NSDictionary *userData = nil;
+  
+  if ([MUser currentUser]._id != nil)
+    userData = @{kParamUserId : [MUser currentUser]._id};
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", screenName] properties:userData];
+}
+
++ (void)logAnalyticsForButton:(NSString *)buttonName {
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_button"
+                                                        action:@"click"
+                                                         label:buttonName
+                                                         value:nil] build]];
+  
+  NSDictionary *userData = nil;
+  
+  if ([MUser currentUser]._id != nil)
+    userData = @{kParamUserId : [MUser currentUser]._id};
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS button click %@", buttonName]
+                        properties:userData];
+}
+
++ (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset {
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_screen"
+                                                        action:@"scroll"
+                                                         label:screenName
+                                                         value:nil] build]];
+  
+  NSMutableDictionary *userData =
+  [NSMutableDictionary dictionaryWithDictionary:@{@"offset" : NSStringFromCGPoint(toOffset)}];
+  
+  if ([MUser currentUser]._id != nil)
+    userData[kParamUserId] = [MUser currentUser]._id;
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen scroll %@", screenName]
+                        properties:userData];
+}
+
++ (void)logAnalyticsForFocusTextField:(NSString *)textFieldName {
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_textfield"
+                                                        action:@"focus"
+                                                         label:textFieldName
+                                                         value:nil] build]];
+  
+  NSDictionary *userData = @{kParamUserId : @""};
+  
+  if ([MUser currentUser]._id != nil)
+    userData = @{kParamUserId : [MUser currentUser]._id};
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS textfield focus %@", textFieldName]
+                        properties:userData];
+}
+
++ (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText {
+  if (searchText == nil || ![searchText isKindOfClass:[NSString class]] || searchText.length == 0)
+    return;
+  
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_search"
+                                                        action:@"text_search"
+                                                         label:searchText
+                                                         value:nil] build]];
+  
+  NSMutableDictionary *userData =
+  [NSMutableDictionary dictionaryWithDictionary:@{@"text_search" : searchText}];
+  
+  if ([MUser currentUser]._id != nil)
+    userData[kParamUserId] = [MUser currentUser]._id;
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS textfield search %@", textFieldName]
+                        properties:userData];
 }
 
 + (NSTimeInterval)benchmarkOperation:(void (^)())operation {

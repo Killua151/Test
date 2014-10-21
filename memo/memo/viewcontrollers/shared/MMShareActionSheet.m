@@ -57,12 +57,7 @@
      }];
   } else {
     // Put together the dialog parameters
-    NSDictionary *params = @{
-                             @"name" : @"Memo App",
-                             @"caption" : @"Học ngoại ngữ miễn phí trên di động",
-                             @"description" : @"Ứng dụng học ngoại ngữ miễn phí hàng đầu trên di động",
-                             @"link" : kLandingPageUrl
-                             };
+    NSDictionary *params = @{@"link" : kLandingPageUrl};
     
     // Show the feed dialog
     [FBWebDialogs

@@ -28,7 +28,12 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
 
 + (void)logAnalyticsForScreen:(NSString *)screenName;
-+ (void)logAnalyticsForSearchText:(NSString *)searchText;
++ (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName;
++ (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName;
++ (void)logAnalyticsForButton:(NSString *)buttonName;
++ (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset;
++ (void)logAnalyticsForFocusTextField:(NSString *)textFieldName;
++ (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText;
 
 + (NSTimeInterval)benchmarkOperation:(void(^)())operation;
 + (void)benchmarkOperationInBackground:(void(^)())operation completion:(void(^)(NSTimeInterval elapsedTime))handler;

@@ -76,7 +76,7 @@ return; \
 //#define kServerApiUrl                           @"http://192.168.5.16/memo/memo/index.php/api"
 #define kServerApiVersion                       @"v1.2"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
-#define kLandingPageUrl                         @"http://landing.volcano.vn/"
+#define kLandingPageUrl                         @"http://memo.edu.vn/"
 
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
 #define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
@@ -106,11 +106,12 @@ return; \
 #define kTestQuickExam                          false
 
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
-//#define kGoogleSignInKey                        @"76466559980-irtmgnpo8mst1qo1uttuj9i4di8ni2ne.apps.googleusercontent.com"
-#define kGoogleSignInKey                        @"76466559980-e77rmjonj38929p9lnadvt6b1rlckbol.apps.googleusercontent.com"
+#define kGAITrackingID                          @"UA-49527418-2"
+#define kGoogleSignInKey                        @"968128090898-9i81a3te3em0t4f0s74ct4lluvj3tqnq.apps.googleusercontent.com"
+//#define kGoogleSignInKey                        @"76466559980-e77rmjonj38929p9lnadvt6b1rlckbol.apps.googleusercontent.com"
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kiSpeechApiKey                          @"3023d34c2451d4502a8c85f5d4cbabff"
-#define kMixPanelToken                          @"fb30a8d7fb9b98eda0f31970de871063"
+#define kMixPanelToken                          @"067076d37e3b2608d1c7668122fd4bcc"
 #define kParseApplicationId                     @"2DTkEScw7lE6qlIx9nnrIr9LSXmBOWLTxwJaQwi8"
 #define kParseRestApiKey                        @"kcejJNuS8jIXPZo8sJex2phhRuFYoSeuF6DT3wj0"
 
@@ -180,7 +181,8 @@ return; \
 #define kParamType                              @"type"
 #define kParamUnderlineRanges                   @"underline_ranges"
 #define kParamUserAnswer                        @"user_answer"
-#define kParamUserInfo                          @"user_info"
+#define kParamUserInfo                          @"user_id"
+#define kParamUserId                            @"user_info"
 #define kParamUsername                          @"username"
 #define kParamVersion                           @"version"
 #define kParamVirtualMoney                      @"virtual_money"

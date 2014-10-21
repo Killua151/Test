@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Volcano. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <GAITrackedViewController.h>
 
-@interface BaseViewController : UIViewController {
+@interface BaseViewController : GAITrackedViewController {
   IBOutlet MMAllowsTouchUnderneathView *_vGestureLayer;
 }
 

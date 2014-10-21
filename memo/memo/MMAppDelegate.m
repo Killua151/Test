@@ -13,6 +13,7 @@
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
 #import <Mixpanel/Mixpanel.h>
+#import <GAI.h>
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
@@ -159,9 +160,14 @@
   [iSpeechSDK sharedSDK].APIKey = kiSpeechApiKey;
 #endif
   [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
-  [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
   [[LocalizationHelper sharedHelper] loadLocalizationForLanguage:PreferedAppLanguage()];
   [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+  
+  [Mixpanel sharedInstanceWithToken:kMixPanelToken launchOptions:launchOptions];
+  [GAI sharedInstance].trackUncaughtExceptions = YES;
+  [GAI sharedInstance].dispatchInterval = 20;
+  [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+  [[GAI sharedInstance] trackerWithTrackingId:kGAITrackingID];
   
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   

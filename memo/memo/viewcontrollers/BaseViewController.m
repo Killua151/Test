@@ -41,6 +41,18 @@
   [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  self.screenName = [NSString stringWithFormat:@"iOS Screen %@", NSStringFromClass([self class])];
+  [Utils logAnalyticsForOnScreenStartTime:NSStringFromClass([self class])];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [Utils logAnalyticsForOnScreenEndTime:NSStringFromClass([self class])];
+}
+
 //- (void)viewDidLayoutSubviews {
 //  if ([self respondsToSelector:@selector(topLayoutGuide)]) {
 //    CGRect viewBounds = self.view.bounds;

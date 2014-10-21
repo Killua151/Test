@@ -45,6 +45,8 @@
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login"];
+  
   if (![self validateFields])
     return;
   
@@ -68,6 +70,8 @@
 }
 
 - (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Forgot password"];
+  
   if (_forgotPasswordVC == nil)
     _forgotPasswordVC = [MMForgotPasswordViewController new];
   
@@ -76,6 +80,8 @@
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login Facebook"];
+  
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
@@ -97,6 +103,8 @@
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login Google+"];
+  
   ShowHudForCurrentView();
   
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
@@ -121,6 +129,11 @@
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+  if ([textField isEqual:_txtUsername])
+    [Utils logAnalyticsForFocusTextField:@"Username"];
+  else
+    [Utils logAnalyticsForFocusTextField:@"Password"];
+  
   _currentFirstResponder = textField;
   [self gestureLayerDidEnterEditingMode];
 }
