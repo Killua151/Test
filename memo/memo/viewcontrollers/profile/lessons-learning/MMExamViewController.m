@@ -99,6 +99,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
   [Utils removePreDownloadedAudioWithOriginalUrls:[MBaseQuestion audioUrlsFromQuestions:_questionsData]];
+  [[MMServerHelper sharedHelper] submitViewedWords:_viewedWords];
 }
 
 - (void)reloadContents {
@@ -232,7 +233,6 @@
     [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
                                                andResults:_answersData
                                                completion:^(NSError *error) {}];
-    [[MMServerHelper sharedHelper] submitViewedWords:_viewedWords];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
@@ -252,8 +252,6 @@
        ShowAlertWithError(error);
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
-    
-    [[MMServerHelper sharedHelper] submitViewedWords:_viewedWords];
     
     return;
   }

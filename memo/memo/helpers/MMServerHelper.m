@@ -587,6 +587,9 @@
 }
 
 - (void)submitViewedWords:(NSDictionary *)viewedWords {
+  if (viewedWords == nil || ![viewedWords isKindOfClass:[NSDictionary class]] || [viewedWords count] == 0)
+    return;
+  
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamWords : [viewedWords JSONString]
