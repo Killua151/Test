@@ -89,9 +89,6 @@
 
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
-  if (![type isEqualToString:@"translate"])
-    return nil;
-  
   return NSClassFromString([NSString stringWithFormat:@"M%@Question", [type capitalizedString]]);
 }
 

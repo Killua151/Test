@@ -24,7 +24,8 @@
 
 - (void)setupLessonsScrollView;
 - (void)updateFocusedLesson;
-- (void)focusLesson:(MMHexagonLessonView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused;
+- (void)focusLesson:(MMHexagonLessonView *)lessonView focused:(BOOL)focused;
+- (void)focusLessonAtIndex:(NSInteger)index focused:(BOOL)focused;
 - (MMHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex;
 - (void)scaleLessonView:(MMHexagonLessonView *)lessonView withRatio:(CGFloat)scaleRatio;
 
@@ -34,12 +35,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-//  [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//    BOOL reachable =
-//    status == AFNetworkReachabilityStatusReachableViaWWAN ||
-//    status == AFNetworkReachabilityStatusReachableViaWiFi;
-//  }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -158,38 +153,45 @@
   
   _vLessonsScrollView.contentSize = CGSizeMake(lessonsCount * _vLessonsScrollView.frame.size.width,
                                                _vLessonsScrollView.frame.size.height);
-  _vLessonsScrollView.contentOffset = CGPointZero;
+  _currentFocusedLessonIndex = self.skillData.finished_lesson;
+
+  if (_currentFocusedLessonIndex >= [self.skillData.lessons count])
+    _currentFocusedLessonIndex = [self.skillData.lessons count]-1;
   
-  for (MMHexagonLessonView *lessonView in _vLessonsScrollView.subviews)
-    if (lessonView.index == 0) {
-      [self focusLesson:lessonView atIndex:0 focused:YES];
-      break;
-    }
+  [_vLessonsScrollView setContentOffset:CGPointMake(_currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width, 0)
+                               animated:YES];
+  
+  [self updateFocusedLesson];
 }
 
 - (void)updateFocusedLesson {
   NSInteger index = _vLessonsScrollView.contentOffset.x / _vLessonsScrollView.frame.size.width;
   
   for (MMHexagonLessonView *lessonView in _vLessonsScrollView.subviews)
-    [self focusLesson:lessonView atIndex:lessonView.index focused:lessonView.index == index];
+    [self focusLesson:lessonView focused:lessonView.index == index];
 }
 
-- (void)focusLesson:(MMHexagonLessonView *)lessonView atIndex:(NSInteger)index focused:(BOOL)focused {
+- (void)focusLesson:(MMHexagonLessonView *)lessonView focused:(BOOL)focused {
   CGRect frame = lessonView.frame;
   
   if (focused) {
     frame.size = CGSizeMake(kFocusedLessonWidth, kFocusedLessonHeight);
-    frame.origin.x = _vLessonsScrollView.frame.size.width * index +
+    frame.origin.x = _vLessonsScrollView.frame.size.width * lessonView.index +
     (_vLessonsScrollView.frame.size.width - frame.size.width)/2;
     frame.origin.y = _vLessonsScrollView.frame.size.height - frame.size.height;
     [_vLessonsScrollView bringSubviewToFront:lessonView];
   } else {
     frame.size = _vLessonsScrollView.frame.size;
-    frame.origin = CGPointMake(index * _vLessonsScrollView.frame.size.width, 0);
+    frame.origin = CGPointMake(lessonView.index * _vLessonsScrollView.frame.size.width, 0);
   }
   
   lessonView.frame = frame;
   [lessonView refreshView];
+}
+
+- (void)focusLessonAtIndex:(NSInteger)index focused:(BOOL)focused {
+  MMHexagonLessonView *lessonView = [self lessonViewAtIndex:index];
+  [self focusLesson:lessonView focused:focused];
 }
 
 - (MMHexagonLessonView *)lessonViewAtIndex:(NSInteger)lessonIndex {
