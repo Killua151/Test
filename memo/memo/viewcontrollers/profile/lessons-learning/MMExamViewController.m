@@ -30,6 +30,7 @@
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
   NSDictionary *_availableItems;
+  NSMutableDictionary *_viewedWords;
   BOOL _didAskUsingItem;
   
   CGFloat _innerPanGestureYPos;
@@ -231,6 +232,7 @@
     [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
                                                andResults:_answersData
                                                completion:^(NSError *error) {}];
+    [[MMServerHelper sharedHelper] submitViewedWords:_viewedWords];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
@@ -250,6 +252,8 @@
        ShowAlertWithError(error);
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      }];
+    
+    [[MMServerHelper sharedHelper] submitViewedWords:_viewedWords];
     
     return;
   }
@@ -349,6 +353,20 @@
 - (void)userDidRetryLesson {
   [self resetCounts];
   [self reloadContents];
+}
+
+- (void)userDidViewWord:(NSString *)wordId {
+  if (wordId == nil || ![wordId isKindOfClass:[NSString class]])
+    return;
+  
+  if (_viewedWords == nil)
+    _viewedWords = [NSMutableDictionary new];
+  
+  if (_viewedWords[wordId] == nil)
+    _viewedWords[wordId] = @0;
+  
+  NSInteger viewedTimes = [_viewedWords[wordId] integerValue];
+  _viewedWords[wordId] = @(viewedTimes+1);
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods

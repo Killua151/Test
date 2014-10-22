@@ -18,8 +18,6 @@
   MMLoginViewController *_loginVC;
   MMSignUpViewController *_signUpVC;
   MMCoursesListViewController *_coursesListVC;
-  
-  BOOL _slideAnimationCancelled;
 }
 
 - (void)setupViews;
@@ -39,18 +37,15 @@
   [self setupViews];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-  _slideAnimationCancelled = NO;
-//  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSlideAnimationDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//    [self animateSlideView];
-//  });
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [_vSlide refreshCustomScrollIndicators];
   [self performSelector:@selector(animateSlideView) withObject:nil afterDelay:kSlideAnimationDelay];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillAppear:animated];
-  _slideAnimationCancelled = YES;
+  [_vSlide disableCustomScrollIndicator];
   [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
@@ -97,18 +92,18 @@
 
 #pragma mark - Private methods
 - (void)setupViews {
-  [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
-                                                     positions:JMOHorizontalScrollIndicatorPositionBottom
-                                                         color:UIColorFromRGB(129, 12, 21)];
-  
-  _vSlide.contentSize = CGSizeMake(_vSlide.frame.size.width * 4, _vSlide.contentSize.height);
-  
   if (!DeviceScreenIsRetina4Inch()) {
     CGRect frame = _vSlide.frame;
     frame.origin.y += 77;
     frame.size.height -= 88;
     _vSlide.frame = frame;
   }
+  
+  _vSlide.contentSize = CGSizeMake(_vSlide.frame.size.width * 4, _vSlide.contentSize.height);
+  
+  [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
+                                                     positions:JMOHorizontalScrollIndicatorPositionBottom
+                                                         color:UIColorFromRGB(129, 12, 21)];
   
   for (NSInteger i = 1; i <= 4; i++) {
     CGRect frame = _vSlide.frame;
@@ -145,12 +140,6 @@
   contentOffset.x = currentPage*_vSlide.frame.size.width;
   [_vSlide setContentOffset:contentOffset animated:YES];
   
-//  if (_slideAnimationCancelled)
-//    return;
-//  
-//  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSlideAnimationDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//    [self animateSlideView];
-//  });
   [self performSelector:@selector(animateSlideView) withObject:nil afterDelay:kSlideAnimationDelay];
 }
 

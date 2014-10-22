@@ -55,7 +55,7 @@
     cell.textLabel.textColor = UIColorFromRGB(102, 102, 102);
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     cell.textLabel.minimumScaleFactor = 11.0/17;
-    cell.textLabel.numberOfLines = 2;
+    cell.textLabel.numberOfLines = 0;
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.backgroundColor = [UIColor clearColor];

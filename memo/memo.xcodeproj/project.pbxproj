@@ -2721,6 +2721,8 @@
 			isa = PBXGroup;
 			children = (
 				CAF8500F19E0F3D100A347CF /* LineChart */,
+				CA452E4E19EEA28B00A5F5CB /* LocalizationHelper.h */,
+				CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */,
 				CAF8501419E0F3D100A347CF /* MMAllowsTouchOutsideView.h */,
 				CAF8501519E0F3D100A347CF /* MMAllowsTouchOutsideView.m */,
 				CAF8501619E0F3D100A347CF /* MMAllowsTouchUnderneathView.h */,
@@ -2731,6 +2733,8 @@
 				CAA91C7D19E694EC0076A9BC /* MMSwitch.m */,
 				CAF8501A19E0F3D100A347CF /* NSArray+ArrayHelpers.h */,
 				CAF8501B19E0F3D100A347CF /* NSArray+ArrayHelpers.m */,
+				CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */,
+				CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */,
 				CAF8501C19E0F3D100A347CF /* NSMutableArray+MutableArrayHelpers.h */,
 				CAF8501D19E0F3D100A347CF /* NSMutableArray+MutableArrayHelpers.m */,
 				CAF8501E19E0F3D100A347CF /* NSObject+ObjectMapping.h */,
@@ -2753,10 +2757,6 @@
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
-				CA452E3819ED595200A5F5CB /* NSError+ErrorHelpers.h */,
-				CA452E3919ED595200A5F5CB /* NSError+ErrorHelpers.m */,
-				CA452E4E19EEA28B00A5F5CB /* LocalizationHelper.h */,
-				CA452E4F19EEA28B00A5F5CB /* LocalizationHelper.m */,
 			);
 			name = Helpers;
 			path = helpers;

@@ -51,6 +51,7 @@ typedef enum ShareOptionEnum {
 - (void)questionContentViewDidUpdateAnswer:(BOOL)validAnswer withValue:(id)answerValue;
 - (void)questionContentViewDidSkipAnswer;
 - (void)userDidRetryLesson;
+- (void)userDidViewWord:(NSString *)wordId;
 
 @end
 

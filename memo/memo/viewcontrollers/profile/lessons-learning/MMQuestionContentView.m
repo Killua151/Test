@@ -67,7 +67,11 @@
   NSRange wordRange = [addressComponents[kParamWordRange] rangeValue];
   
   MWord *word = [MWord sharedModel].dictionary[addressComponents[kParamWord]];
+  
   [Utils playAudioWithUrl:word.sound];
+  
+  if ([_delegate respondsToSelector:@selector(userDidViewWord:)])
+    [_delegate userDidViewWord:word._id];
 
   if ([_delegate respondsToSelector:@selector(questionContentViewDidEnterEditingMode:)])
     [_delegate questionContentViewDidEnterEditingMode:NO];
