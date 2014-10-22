@@ -145,7 +145,9 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
-  }
+  } else
+    [application registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
 #else
   // iOS < 8 Notifications
   [application registerForRemoteNotificationTypes:

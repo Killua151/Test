@@ -673,7 +673,7 @@
   
   [self
    POST:@"users/login"
-   parameters:params
+   parameters:paramsDict
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
      

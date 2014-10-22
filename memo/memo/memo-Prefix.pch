@@ -104,7 +104,7 @@ return; \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 false
 #define kTestQuickExam                          false
-#define kTestPushNotification                   false
+#define kTestPushNotification                   true
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
