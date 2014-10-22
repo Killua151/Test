@@ -26,6 +26,8 @@
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = MMLocalizedString(@"Translate this sentence:");
   
+  _btnQuestionAudio.hidden = questionData.normal_question_audio == nil;
+  
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
   
@@ -36,11 +38,18 @@
     [_vQuestion addSubview:styledQuestionLabel];
   } else
     styledQuestionLabel = _lblQuestion;
-
+  
   [styledQuestionLabel adjustToFitHeightAndConstrainsToHeight:80];
   CGRect frame = styledQuestionLabel.frame;
-  frame.size.width = _vQuestion.frame.size.width - frame.origin.x - _btnQuestionAudio.frame.origin.x;
-  frame.origin.x = _btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width;
+
+  if (!_btnQuestionAudio.hidden) {
+    frame.size.width = _vQuestion.frame.size.width - frame.origin.x - _btnQuestionAudio.frame.origin.x;
+    frame.origin.x = _btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width;
+  } else {
+    frame.origin.x = _btnQuestionAudio.frame.origin.x;
+    frame.size.width = self.frame.size.width - frame.origin.x/2;
+  }
+  
   frame.origin.y = (_vQuestion.frame.size.height - frame.size.height)/2 + kFontClearSansMarginTop;
   styledQuestionLabel.frame = frame;
   
