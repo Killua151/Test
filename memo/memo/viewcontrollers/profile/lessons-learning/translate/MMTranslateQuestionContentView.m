@@ -37,11 +37,11 @@
   } else
     styledQuestionLabel = _lblQuestion;
 
+  [styledQuestionLabel adjustToFitHeightAndConstrainsToHeight:80];
   CGRect frame = styledQuestionLabel.frame;
-  frame.origin = CGPointMake(_btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width,
-                             kFontClearSansMarginTop);
   frame.size.width = _vQuestion.frame.size.width - frame.origin.x - _btnQuestionAudio.frame.origin.x;
-  frame.size.height = _vQuestion.frame.size.height;
+  frame.origin.x = _btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width;
+  frame.origin.y = (_vQuestion.frame.size.height - frame.size.height)/2 + kFontClearSansMarginTop;
   styledQuestionLabel.frame = frame;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];

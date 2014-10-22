@@ -50,11 +50,13 @@
   if ([_questionData.objectives count] == 0 && [_questionData.special_objectives count] == 0)
     return nil;
   
-  TTTAttributedLabel *styledQuestionLabel = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
+  TTTAttributedLabel *styledQuestionLabel = [[TTTAttributedLabel alloc] initWithFrame:originalQuestionLabel.frame];
   styledQuestionLabel.font = originalQuestionLabel.font;
   styledQuestionLabel.textColor = originalQuestionLabel.textColor;
   styledQuestionLabel.lineBreakMode = originalQuestionLabel.lineBreakMode;
   styledQuestionLabel.numberOfLines = originalQuestionLabel.numberOfLines;
+  styledQuestionLabel.adjustsFontSizeToFitWidth = originalQuestionLabel.adjustsFontSizeToFitWidth;
+  styledQuestionLabel.minimumScaleFactor = originalQuestionLabel.minimumScaleFactor;
   styledQuestionLabel.delegate = self;
   styledQuestionLabel.text = _questionData.question;
   [styledQuestionLabel applyWordDefinitions:_questionData.objectives withSpecialWords:_questionData.special_objectives];
