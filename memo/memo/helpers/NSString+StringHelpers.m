@@ -164,13 +164,31 @@
     
     NSArray *diffs = [dmp diff_mainOfOldString:inputComponent andNewString:selfComponent];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"operation = %d", DIFF_EQUAL];
-    NSArray *filtered = [diffs filteredArrayUsingPredicate:predicate];
+    // V1.0: count EQUAL operations only
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"operation = %d", DIFF_EQUAL];
+//    NSArray *filtered = [diffs filteredArrayUsingPredicate:predicate];
+//    
+//    NSInteger equalCounts = [filtered count];
+//    
+//    // Incorrect word
+//    if (equalCounts == 0) {// && selfComponent.length != inputComponent.length) {
+//      typos = nil;
+//      *stop = YES;
+//      return;
+//    }
     
-    NSInteger equalCounts = [filtered count];
+    // V1.1: count most continuous EQUAL characters
+    NSInteger maxEqualCharsCount = 0;
     
-    // Incorrect word
-    if (equalCounts == 0) {// && selfComponent.length != inputComponent.length) {
+    for (Diff *diff in diffs) {
+      if (diff.operation != DIFF_EQUAL)
+        continue;
+      
+      if (maxEqualCharsCount < diff.text.length)
+        maxEqualCharsCount = diff.text.length;
+    }
+    
+    if (((CGFloat)maxEqualCharsCount)/selfComponent.length < 0.7) {
       typos = nil;
       *stop = YES;
       return;
