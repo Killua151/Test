@@ -45,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   
-  self.screenName = [NSString stringWithFormat:@"iOS Screen %@", NSStringFromClass([self class])];
+  self.screenName = [NSString stringWithFormat:@"iOS screen %@", NSStringFromClass([self class])];
   [Utils logAnalyticsForOnScreenStartTime:NSStringFromClass([self class])];
 }
 

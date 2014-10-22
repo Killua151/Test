@@ -94,7 +94,7 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForScreen:(NSString *)screenName {
-  NSString *eventName = [NSString stringWithFormat:@"iOS Screen %@", screenName];
+  NSString *eventName = [NSString stringWithFormat:@"iOS screen %@", screenName];
   
 //  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 //  [tracker set:kGAIScreenName value:eventName];
