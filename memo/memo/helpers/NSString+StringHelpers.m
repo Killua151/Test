@@ -185,7 +185,8 @@
   NSMutableArray *ranges = [NSMutableArray array];
   
   for (NSString *typo in typos) {
-    NSRange typoRange = [self rangeOfString:typo options:NSCaseInsensitiveSearch];
+    NSString *searchWord = [NSString stringWithFormat:@"\\b%@\\b", typo];
+    NSRange typoRange = [self rangeOfString:searchWord options:NSRegularExpressionSearch | NSCaseInsensitiveSearch];
     
     if (typoRange.location != NSNotFound)
       [ranges addObject:[NSValue valueWithRange:typoRange]];

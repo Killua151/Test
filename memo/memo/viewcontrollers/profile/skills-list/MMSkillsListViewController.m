@@ -78,10 +78,6 @@
   _vBeginningOptions.hidden = !currentUser.is_beginner;
   _vStrengthenButton.hidden = currentUser.is_beginner;
   
-#if kTempDisableForCloseBeta
-  _vStrengthenButton.hidden = YES;
-#endif
-  
   _skillsData = [currentUser skillsTree];
   [_tblSkills reloadData];
 }
@@ -282,6 +278,10 @@
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
+  
+#if kTempDisableForCloseBeta
+  _vStrengthenButton.hidden = YES;
+#endif
   
   [self animateSlideStrengthenButton:NO];
 }

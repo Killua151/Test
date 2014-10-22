@@ -36,7 +36,7 @@
   [_tblDefinitions reloadData];
   
   CGRect frame = self.frame;
-  frame.size.height = MIN(3, [definitions count]) * 44;
+  frame.size.height = MIN(3, [definitions count]) * 44 + _tblDefinitions.frame.origin.y;
   self.frame = frame;
 }
 

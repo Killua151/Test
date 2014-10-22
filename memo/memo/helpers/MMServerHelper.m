@@ -589,7 +589,7 @@
 - (void)submitViewedWords:(NSDictionary *)viewedWords {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamWords : viewedWords
+                           kParamWords : [viewedWords JSONString]
                            };
   
   [self POST:@"words" parameters:params success:NULL failure:NULL];

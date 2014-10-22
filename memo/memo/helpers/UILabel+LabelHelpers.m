@@ -231,7 +231,8 @@
   allWords = [allWords valueForKeyPath:@"@distinctUnionOfObjects.self"];
   
   for (NSString *word in allWords) {
-    NSRange wordRange = [self.text rangeOfString:word options:NSCaseInsensitiveSearch];
+    NSString *searchWord = [NSString stringWithFormat:@"\\b%@\\b", word];
+    NSRange wordRange = [self.text rangeOfString:searchWord options:NSRegularExpressionSearch | NSCaseInsensitiveSearch];
     
     if (wordRange.location == NSNotFound)
       continue;
