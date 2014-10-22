@@ -124,6 +124,9 @@
     [_vSlide addSubview:vSlideImage];
   }
   
+  _lblVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblVersion.text = [NSString stringWithFormat:@"Beta v%@", CurrentBuildVersion()];
+  
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnLogIn.layer.cornerRadius = 4;
   [_btnLogIn setTitle:MMLocalizedString(@"Log in") forState:UIControlStateNormal];

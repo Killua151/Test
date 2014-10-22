@@ -10,6 +10,7 @@
                 <outlet property="_btnLogIn" destination="vSy-Ps-4Ui" id="RdK-G5-8vE"/>
                 <outlet property="_btnNewUser" destination="QXq-DJ-7da" id="UJ4-Ur-uMe"/>
                 <outlet property="_imgBg" destination="hYI-uP-ciG" id="LG4-k5-SX3"/>
+                <outlet property="_lblVersion" destination="Pxy-iZ-sEI" id="wG6-iE-kH7"/>
                 <outlet property="_vSlide" destination="Pp8-b7-NVA" id="4Wx-Ts-9bD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,6 +24,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pxy-iZ-sEI">
+                    <rect key="frame" x="85" y="72" width="150" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" id="Pp8-b7-NVA">
                     <rect key="frame" x="0.0" y="75" width="320" height="358"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

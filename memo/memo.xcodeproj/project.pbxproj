@@ -5959,7 +5959,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5984,7 +5984,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -6063,7 +6063,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6079,7 +6079,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
+				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6088,7 +6088,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6104,7 +6104,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
+				PROVISIONING_PROFILE = "b9f5ab9e-ee0a-44a8-9f13-3abea1a7d295";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

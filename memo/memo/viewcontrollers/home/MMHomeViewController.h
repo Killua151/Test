@@ -10,6 +10,7 @@
 
 @interface MMHomeViewController : BaseViewController <UIScrollViewDelegate> {
   IBOutlet UIImageView *_imgBg;
+  IBOutlet UILabel *_lblVersion;
   IBOutlet UIScrollView *_vSlide;
   IBOutlet UIButton *_btnLogIn;
   IBOutlet UIButton *_btnNewUser;

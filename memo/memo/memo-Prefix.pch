@@ -84,8 +84,9 @@ return; \
 #define DeviceSystemIsOS7()                     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define ShowHudForCurrentView()                 [Utils showHUDForView:[self mainView] withText:nil];
 #define HideHudForCurrentView()                 [Utils hideAllHUDsForView:[self mainView]];
-
 #define PreferedAppLanguage()                   @"vi"
+#define CurrentBuildVersion()                   ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"])
+
 #define MMLocalizedString(string)               ([[LocalizationHelper sharedHelper] localizedStringForString:(string)])
 
 #define kHeightStatusBar                        20
@@ -114,7 +115,7 @@ return; \
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kiSpeechApiKey                          @"3023d34c2451d4502a8c85f5d4cbabff"
 #define kMixPanelToken                          @"067076d37e3b2608d1c7668122fd4bcc"
-#define kAppsFlyerAppID                         @"id932238745"
+#define kItunesStoreID                          @"932238745"
 #define kAppsFlyerDevKey                        @"taryfaZ99f6VQ2kt5x38xV"
 #define kParseApplicationId                     @"2DTkEScw7lE6qlIx9nnrIr9LSXmBOWLTxwJaQwi8"
 #define kParseRestApiKey                        @"kcejJNuS8jIXPZo8sJex2phhRuFYoSeuF6DT3wj0"
