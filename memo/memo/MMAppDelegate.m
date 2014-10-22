@@ -18,7 +18,7 @@
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
-@interface MMAppDelegate () <UIAlertViewDelegate>
+@interface MMAppDelegate ()
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
@@ -120,7 +120,7 @@
                    error.userInfo[@"com.facebook.sdk:ParsedJSONResponseKey"][@"body"][@"error"][@"message"]];
     }
     
-    [UIAlertView showWithTitle:@"Error" andMessage:message];
+    [UIAlertView showWithTitle:MMLocalizedString(@"Error") andMessage:message];
     [[FBSession activeSession] closeAndClearTokenInformation];
   }
   
@@ -132,12 +132,6 @@
     self.window.rootViewController = [MMHomeViewController navigationController];
   else
     self.window.rootViewController = [MMSkillsListViewController navigationController];
-}
-
-#pragma mark - UIAlertViewDelegate methods
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  [MUser logOutCurrentUser];
-  [self setupRootViewController];
 }
 
 #pragma mark Private methods

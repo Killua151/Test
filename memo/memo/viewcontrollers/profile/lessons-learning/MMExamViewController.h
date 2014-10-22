@@ -10,7 +10,7 @@
 
 @class MMQuestionContentView;
 
-@interface MMExamViewController : BaseViewController <UIAlertViewDelegate, MMLessonLearningDelegate, UIGestureRecognizerDelegate> {
+@interface MMExamViewController : BaseViewController <MMLessonLearningDelegate, UIGestureRecognizerDelegate> {
   IBOutlet UIView *_vHeader;
   IBOutlet UILabel *_lblLessonsCount;
   IBOutlet UIView *_vHearts;

@@ -120,15 +120,17 @@
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
-  UIAlertView *alertView =
-  [[UIAlertView alloc] initWithTitle:MMLocalizedString(@"Warning!")
-                             message:MMLocalizedString(@"Your progress will be lost. Are you sure to quit?")
-                            delegate:self
-                   cancelButtonTitle:MMLocalizedString(@"No")
-                   otherButtonTitles:MMLocalizedString(@"Quit"), nil];
-  
-  alertView.tag = kTagQuitAlertView;
-  [alertView show];
+  [UIAlertView
+   showWithTitle:MMLocalizedString(@"Warning!")
+   message:MMLocalizedString(@"Your progress will be lost. Are you sure to quit?")
+   cancelButtonTitle:MMLocalizedString(@"No")
+   otherButtonTitles:@[MMLocalizedString(@"Quit")]
+   callback:^(NSInteger buttonIndex) {
+     if (buttonIndex == 0)
+       return;
+     
+     [self dismissViewController];
+   }];
 }
 
 - (IBAction)btnHealthPotionPressed:(UIButton *)sender {
@@ -218,15 +220,21 @@
     NSInteger quantity = [_availableItems[kItemHealthPotionId] integerValue];
     NSString *message = [NSString stringWithFormat:
                          MMLocalizedString(@"You have %d Health Potion, do you want to use it?"), quantity];
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:MMLocalizedString(@"Confirm item using")
-                              message:message
-                              delegate:self
-                              cancelButtonTitle:MMLocalizedString(@"No")
-                              otherButtonTitles:MMLocalizedString(@"Yes, use it"), nil];
     
-    alertView.tag = kTagUseItemAlertView;
-    [alertView show];
+    [UIAlertView
+     showWithTitle:MMLocalizedString(@"Confirm item using")
+     message:message
+     cancelButtonTitle:MMLocalizedString(@"No")
+     otherButtonTitles:@[MMLocalizedString(@"Yes, use it")]
+     callback:^(NSInteger buttonIndex) {
+       if (buttonIndex == 0) {
+         _didAskUsingItem = YES;
+         [self reloadContents];
+         return;
+       }
+       
+       [self btnHealthPotionPressed:nil];
+     }];
     return;
   }
 
@@ -311,25 +319,6 @@
              forState:UIControlStateNormal];
 }
 
-#pragma mark - UIAlertViewDelegate methods
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (alertView.tag == kTagQuitAlertView) {
-    if (buttonIndex == 0)
-      return;
-    
-    [self dismissViewController];
-    return;
-  }
-  
-  if (buttonIndex == 0) {
-    _didAskUsingItem = YES;
-    [self reloadContents];
-    return;
-  }
-  
-  [self btnHealthPotionPressed:nil];
-}
-
 #pragma mark - MMLessonLearningDelegate methods
 - (void)questionContentViewDidEnterEditingMode:(BOOL)allowsTouchUnerneath {
   _vGestureLayer.touchUnderneathEnabled = allowsTouchUnerneath;
@@ -367,6 +356,7 @@
     _didAskUsingItem = NO;
     
     [self resetCounts];
+    [self updateHeaderViews];
     [self reloadContents];
   };
   

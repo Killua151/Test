@@ -11,8 +11,18 @@
 @interface UIAlertView (AlertHelpers)
 
 + (UIAlertView *)showWithError:(NSError *)error;
-+ (UIAlertView *)showWithError:(NSError *)error delegate:(id)delegate;
+
++ (UIAlertView *)showWithError:(NSError *)error
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                      callback:(void(^)(NSInteger buttonIndex))handler;
+
 + (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message;
-+ (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id)delegate;
+
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                      callback:(void(^)(NSInteger buttonIndex))handler;
 
 @end

@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
   [self customTitleWithText:[MUser currentUser].current_course_name color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
@@ -227,17 +228,6 @@
   [_lessonsListVC reloadContents];
 }
 
-#pragma mark - UIAlertViewDelegate methods
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 0) {
-    [MUser logOutCurrentUser];
-    [self transitToViewController:[MMHomeViewController navigationController]];
-    return;
-  }
-  
-  [self loadSkillsTree];
-}
-
 #pragma mark - Private methods
 - (void)gotoProfile {
   [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
@@ -367,14 +357,20 @@
     return;
   }
   
-  UIAlertView *alertView = [[UIAlertView alloc]
-                            initWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
-                            message:[error errorMessage]
-                            delegate:self
-                            cancelButtonTitle:MMLocalizedString(@"Log out")
-                            otherButtonTitles:MMLocalizedString(@"Retry"), nil];
-  
-  [alertView show];
+  [UIAlertView
+   showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
+   message:[error errorMessage]
+   cancelButtonTitle:MMLocalizedString(@"Log out")
+   otherButtonTitles:@[MMLocalizedString(@"Retry")]
+   callback:^(NSInteger buttonIndex) {
+     if (buttonIndex == 0) {
+       [MUser logOutCurrentUser];
+       [self transitToViewController:[MMHomeViewController navigationController]];
+       return;
+     }
+     
+     [self loadSkillsTree];
+   }];
 }
 
 @end

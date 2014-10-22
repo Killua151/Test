@@ -41,7 +41,21 @@
    withMetadata:_metadata
    completion:^(NSString *examToken, MBaseQuestion *question, BOOL isFinished, NSError *error) {
      HideHudForCurrentView();
-     ShowAlertWithError(error);
+     
+     if (error != nil) {
+       [UIAlertView
+        showWithError:error
+        cancelButtonTitle:MMLocalizedString(@"Quit")
+        otherButtonTitles:@[MMLocalizedString(@"Retry")]
+        callback:^(NSInteger buttonIndex) {
+          if (buttonIndex == 0)
+            [self dismissViewController];
+          else
+            [self prepareNextQuestion];
+        }];
+       
+       return;
+     }
      
      if (!isFinished) {
        _metadata[kParamExamToken] = examToken;
@@ -54,7 +68,6 @@
      if ([[MUser currentUser] finishExamBonusExp] > 0)
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
      else
-//       [self presentViewController:[MMFailLessonViewController navigationController] animated:YES completion:NULL];
        [self transitToViewController:[MMSkillsListViewController navigationController]];
    }];
 }

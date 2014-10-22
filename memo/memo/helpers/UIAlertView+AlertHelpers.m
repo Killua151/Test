@@ -8,30 +8,81 @@
 
 #import "UIAlertView+AlertHelpers.h"
 
+@interface UIAlertViewInstance : UIAlertView <UIAlertViewDelegate>
+
+@property (nonatomic, copy) void(^callbackHandler)(NSInteger buttonIndex);
+
++ (instancetype)sharedInstance;
+
+@end
+
+@implementation UIAlertViewInstance
+
++ (instancetype)sharedInstance {
+  static UIAlertViewInstance *_sharedInstance;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedInstance = [UIAlertViewInstance new];
+  });
+  
+  return _sharedInstance;
+}
+
+#pragma mark - UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (_callbackHandler != NULL)
+    _callbackHandler(buttonIndex);
+}
+
+@end
+
 @implementation UIAlertView (AlertHelpers)
 
 + (UIAlertView *)showWithError:(NSError *)error {
   return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
-                          andMessage:MMLocalizedString([error errorMessage])
-                            delegate:nil];
+                             message:MMLocalizedString([error errorMessage])
+                   cancelButtonTitle:MMLocalizedString(@"OK")
+                   otherButtonTitles:nil
+                            callback:NULL];
 }
 
-+ (UIAlertView *)showWithError:(NSError *)error delegate:(id)delegate {
++ (UIAlertView *)showWithError:(NSError *)error
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                      callback:(void (^)(NSInteger))handler {
   return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
-                          andMessage:MMLocalizedString([error errorMessage])
-                            delegate:delegate];
+                             message:MMLocalizedString([error errorMessage])
+                   cancelButtonTitle:cancelButtonTitle
+                   otherButtonTitles:otherButtonTitles
+                            callback:handler];
 }
 
 + (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message {
-  return [[self class] showWithTitle:title andMessage:message delegate:nil];
+  return [[self class] showWithTitle:title
+                             message:message
+                   cancelButtonTitle:nil
+                   otherButtonTitles:nil
+                            callback:NULL];
 }
 
-+ (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id)delegate {
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                      callback:(void (^)(NSInteger))handler {
+  UIAlertViewInstance *alertViewInstance = [UIAlertViewInstance sharedInstance];
+  
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                       message:message
-                                                     delegate:delegate
-                                            cancelButtonTitle:MMLocalizedString(@"OK")
+                                                     delegate:alertViewInstance
+                                            cancelButtonTitle:cancelButtonTitle
                                             otherButtonTitles:nil];
+  
+  for (NSString *otherButtonTitle in otherButtonTitles)
+    [alertView addButtonWithTitle:otherButtonTitle];
+  
+  alertViewInstance.callbackHandler = handler;
   [alertView show];
   
   return alertView;

@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MMSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, MMSkillViewDelegate, UIAlertViewDelegate> {
+@interface MMSkillsListViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, MMSkillViewDelegate> {
   IBOutlet UITableView *_tblSkills;
   IBOutlet UIView *_vBeginningOptions;
   IBOutletCollection(UIView) NSArray *_vIconsBg;
