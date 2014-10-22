@@ -4162,7 +4162,7 @@
 				ORGANIZATIONNAME = Topica;
 				TargetAttributes = {
 					CA13EF9719F0FC1F0040A7A5 = {
-						DevelopmentTeam = WS8VFQ6ZS7;
+						DevelopmentTeam = XPSYFYS4PU;
 					};
 					CABBEA7F19E0E4C800EFED33 = {
 						DevelopmentTeam = WS8VFQ6ZS7;
@@ -6063,8 +6063,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -6079,7 +6079,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b923e202-c522-4dfd-b079-13af6e5ee65a";
+				PROVISIONING_PROFILE = "071b0fa5-fcd3-4cee-925b-53faafd3dd72";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6088,8 +6088,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -6104,7 +6104,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b923e202-c522-4dfd-b079-13af6e5ee65a";
+				PROVISIONING_PROFILE = "071b0fa5-fcd3-4cee-925b-53faafd3dd72";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

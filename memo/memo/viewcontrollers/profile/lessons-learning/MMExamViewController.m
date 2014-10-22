@@ -104,14 +104,14 @@
 
 - (void)reloadContents {
   [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRanges:nil];
-  _currentLessonIndex++;
   [self removeCurrentQuestion];
 }
 
 - (void)gestureLayerDidTap {
-  if (_currentShowingResultView != nil)
+  if (_currentShowingResultView != nil) {
+    _currentLessonIndex++;
     [self reloadContents];
-  else
+  } else
     [_vQuestionContent gestureLayerDidTap];
 }
 
@@ -150,7 +150,7 @@
     _availableItems = [MItem useItem:kItemHealthPotionId inAvailableItems:_availableItems];
     _btnHealthPotion.enabled = NO;
     _currentHeartsCount++;
-    [self updateHeaderViews];
+    [self reloadContents];
   }];
 }
 
@@ -159,6 +159,7 @@
     [self checkCurrentQuestion];
   else {
     _vGestureLayer.hidden = YES;
+    _currentLessonIndex++;
     [self reloadContents];
   }
 }
@@ -322,7 +323,7 @@
   
   if (buttonIndex == 0) {
     _didAskUsingItem = YES;
-    [self btnCheckPressed:nil];
+    [self reloadContents];
     return;
   }
   
@@ -345,6 +346,7 @@
   [[NSUserDefaults standardUserDefaults] synchronize];
   
   _vGestureLayer.hidden = YES;
+  _currentLessonIndex++;
   [self reloadContents];
 }
 
@@ -485,7 +487,7 @@
 
 - (void)resetCounts {
   _totalLessonsCount = [_questionsData count];
-  _currentLessonIndex = -1;
+  _currentLessonIndex = 0;
   _currentHeartsCount = _totalHeartsCount;
   [_answersData removeAllObjects];
 }

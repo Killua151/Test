@@ -82,7 +82,7 @@
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
   [Utils logAnalyticsForButton:@"Login Facebook"];
   
-  [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+  [Utils logInFacebookFromView:[self mainView] completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
     ShowHudForCurrentView();
@@ -107,7 +107,7 @@
   
   ShowHudForCurrentView();
   
-  [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
+  [Utils logInGoogleFromView:[self mainView] completion:^(NSDictionary *userData, NSError *error) {
     if (error != nil)
       HideHudForCurrentView();
     
