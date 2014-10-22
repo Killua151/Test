@@ -121,7 +121,7 @@
     imgSlide.frame = frame;
     [vSlideImage addSubview:imgSlide];
     
-    [_vSlide addSubview:imgSlide];
+    [_vSlide addSubview:vSlideImage];
   }
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];

@@ -230,9 +230,9 @@
   }
 
   if (_currentHeartsCount < 0) {
-    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
-                                               andResults:_answersData
-                                               completion:^(NSError *error) {}];
+//    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
+//                                               andResults:_answersData
+//                                               completion:^(NSError *error) {}];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
