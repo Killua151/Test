@@ -35,10 +35,10 @@ static const char *getPropertyType(objc_property_t property);
       continue;
     }
     
-    NSString *attributesString = [NSString stringWithUTF8String: property_getAttributes(property)];
+    NSString *attributesString = [NSString stringWithUTF8String:property_getAttributes(property)];
     NSString *typeString = [[attributesString componentsSeparatedByString:@","][0] substringFromIndex:1];
     
-    if ([typeString length] == 1 && [@"cdifls" rangeOfString:[typeString lowercaseString]].location != NSNotFound) {
+    if ([typeString length] == 1 && [@"cdiflsb" rangeOfString:[typeString lowercaseString]].location != NSNotFound) {
       if ([value isKindOfClass:[NSNumber class]])
         [self setValue:value forKey:name];
 #ifdef DEBUG

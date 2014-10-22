@@ -279,9 +279,9 @@
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
-#if kTempDisableForCloseBeta
-  _vStrengthenButton.hidden = YES;
-#endif
+//#if kTempDisableForCloseBeta
+//  _vStrengthenButton.hidden = YES;
+//#endif
   
   [self animateSlideStrengthenButton:NO];
 }

@@ -6052,7 +6052,7 @@
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "b7218b66-0200-42c0-a426-cf4e5c2566dc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6076,7 +6076,7 @@
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "b7218b66-0200-42c0-a426-cf4e5c2566dc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
