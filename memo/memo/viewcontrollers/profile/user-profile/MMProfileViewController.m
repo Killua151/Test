@@ -304,7 +304,7 @@
 - (void)setupViews {
   _imgAvatar.superview.layer.cornerRadius = _imgAvatar.frame.size.width/2;
   
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   _btnEditAvatar.hidden = YES;
 #endif
   
@@ -325,7 +325,7 @@
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:MMLocalizedString(@"Change language") forState:UIControlStateNormal];
   
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   _btnSwitchCourse.hidden = YES;
 #endif
   
@@ -348,7 +348,7 @@
   _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;
   _btnInteraction.hidden = !isFriend;
   
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   _btnSetGoal.hidden = YES;
 #endif
   

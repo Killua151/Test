@@ -89,7 +89,7 @@
   _btnSetGoal.layer.cornerRadius = 4;
   [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];
   
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   _lblStreaksCount.center = CGPointMake(_lblStreaksCount.superview.frame.size.width/2,
                                         _lblStreaksCount.superview.frame.size.height/2 + kFontClearSansMarginTop);
   _btnSetGoal.hidden = YES;

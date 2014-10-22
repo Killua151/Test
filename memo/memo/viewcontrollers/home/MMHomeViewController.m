@@ -70,7 +70,7 @@
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
   [Utils logAnalyticsForButton:@"New user"];
   
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   if (_signUpVC == nil)
     _signUpVC = [MMSignUpViewController new];
 

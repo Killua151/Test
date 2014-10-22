@@ -45,7 +45,7 @@
 }
 
 - (void)show {
-#if kTempDisableForCloseBeta
+#if kTempDisableForClosedBeta
   FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
   params.link = [NSURL URLWithString:kLandingPageUrl];
   

@@ -349,8 +349,40 @@
 }
 
 - (void)userDidRetryLesson {
-  [self resetCounts];
-  [self reloadContents];
+  void(^completionHandler)(NSString *, NSInteger, NSDictionary *, NSArray *, NSError *) =
+  ^(NSString *examToken, NSInteger maxHeartsCount, NSDictionary *availableItems, NSArray *questions, NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    _metadata[kParamExamToken] = [NSString normalizedString:examToken];
+    [_questionsData removeAllObjects];
+    [_questionsData addObjectsFromArray:questions];
+    
+    [_answersData removeAllObjects];
+    _totalHeartsCount = maxHeartsCount;
+    _availableItems = availableItems;
+    
+    _didAskUsingItem = NO;
+    
+    [self resetCounts];
+    [self reloadContents];
+  };
+  
+  ShowHudForCurrentView();
+  
+  if ([_metadata[kParamType] isEqualToString:kValueExamTypeLesson])
+    [[MMServerHelper sharedHelper] startLesson:[_metadata[kParamLessonNumber] integerValue]
+                                       inSkill:_metadata[kParamSkillId]
+                                    completion:completionHandler];
+  else if ([_metadata[kParamType] isEqualToString:kValueExamTypeShortcut])
+    [[MMServerHelper sharedHelper] startShortcutTest:_metadata[kParamSkillId] completion:completionHandler];
+  else if ([_metadata[kParamType] isEqualToString:kValueExamTypeStrengthenSkill])
+    [[MMServerHelper sharedHelper] startStrengthenSkill:_metadata[kParamSkillId] completion:completionHandler];
+  else if ([_metadata[kParamType] isEqualToString:kValueExamTypeCheckpoint])
+    [[MMServerHelper sharedHelper] startCheckpointTestAtPosition:[_metadata[kParamCheckpointPosition] integerValue]
+                                                      completion:completionHandler];
+  else if ([_metadata[kParamType] isEqualToString:kValueExamTypeStrengthenAll])
+    [[MMServerHelper sharedHelper] startStrengthenAll:completionHandler];
 }
 
 - (void)userDidViewWord:(NSString *)wordId {
