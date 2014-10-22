@@ -6079,7 +6079,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "b923e202-c522-4dfd-b079-13af6e5ee65a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6104,7 +6104,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
+				PROVISIONING_PROFILE = "b923e202-c522-4dfd-b079-13af6e5ee65a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
