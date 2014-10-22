@@ -876,6 +876,10 @@
 		CAB1247119F75264007DF067 /* img-home_slide-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C976E19F676DB00E639E9 /* img-home_slide-3@2x.png */; };
 		CAB1247219F75264007DF067 /* img-home_slide-4.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C976F19F676DB00E639E9 /* img-home_slide-4.png */; };
 		CAB1247319F75264007DF067 /* img-home_slide-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8C977019F676DB00E639E9 /* img-home_slide-4@2x.png */; };
+		CAB1247719F78A98007DF067 /* libAppsFlyerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */; };
+		CAB1247819F78A98007DF067 /* libAppsFlyerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */; };
+		CAB1247A19F78ACF007DF067 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247919F78ACF007DF067 /* AdSupport.framework */; };
+		CAB1247C19F78AD8007DF067 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247B19F78AD8007DF067 /* iAd.framework */; };
 		CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8319E0E4C800EFED33 /* Foundation.framework */; };
 		CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */; };
 		CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABBEA8719E0E4C800EFED33 /* UIKit.framework */; };
@@ -1713,6 +1717,10 @@
 		CAA91C9D19E783770076A9BC /* MFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFriend.m; sourceTree = "<group>"; };
 		CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceHelpers.h"; sourceTree = "<group>"; };
 		CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceHelpers.m"; sourceTree = "<group>"; };
+		CAB1247519F78A98007DF067 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
+		CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppsFlyerLib.a; sourceTree = "<group>"; };
+		CAB1247919F78ACF007DF067 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CAB1247B19F78AD8007DF067 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		CABBEA8019E0E4C800EFED33 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABBEA8319E0E4C800EFED33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CABBEA8519E0E4C800EFED33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2599,6 +2607,7 @@
 				CA13F00719F0FC1F0040A7A5 /* CoreGraphics.framework in Frameworks */,
 				CA13F00819F0FC1F0040A7A5 /* UIKit.framework in Frameworks */,
 				CA13F00919F0FC1F0040A7A5 /* Foundation.framework in Frameworks */,
+				CAB1247819F78A98007DF067 /* libAppsFlyerLib.a in Frameworks */,
 				CA13F00A19F0FC1F0040A7A5 /* libiSpeechSDK.a in Frameworks */,
 				CA13F00B19F0FC1F0040A7A5 /* Crashlytics.framework in Frameworks */,
 				CA13F00C19F0FC1F0040A7A5 /* libPods.a in Frameworks */,
@@ -2609,8 +2618,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB1247C19F78AD8007DF067 /* iAd.framework in Frameworks */,
+				CAB1247A19F78ACF007DF067 /* AdSupport.framework in Frameworks */,
 				CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */,
 				CABBEA8819E0E4C800EFED33 /* UIKit.framework in Frameworks */,
+				CAB1247719F78A98007DF067 /* libAppsFlyerLib.a in Frameworks */,
 				CABBEA8419E0E4C800EFED33 /* Foundation.framework in Frameworks */,
 				CAF852D719E0F3D200A347CF /* libiSpeechSDK.a in Frameworks */,
 				CAF856AD19E0FD0400A347CF /* Crashlytics.framework in Frameworks */,
@@ -2661,6 +2673,15 @@
 			path = "find-friends";
 			sourceTree = "<group>";
 		};
+		CAB1247419F78A98007DF067 /* AppsFlyer-iOS-SDK-v2.5.3.10 */ = {
+			isa = PBXGroup;
+			children = (
+				CAB1247519F78A98007DF067 /* AppsFlyerTracker.h */,
+				CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */,
+			);
+			path = "AppsFlyer-iOS-SDK-v2.5.3.10";
+			sourceTree = "<group>";
+		};
 		CABBEA7719E0E4C800EFED33 = {
 			isa = PBXGroup;
 			children = (
@@ -2683,6 +2704,8 @@
 		CABBEA8219E0E4C800EFED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAB1247B19F78AD8007DF067 /* iAd.framework */,
+				CAB1247919F78ACF007DF067 /* AdSupport.framework */,
 				CA8C975619F55F0C00E639E9 /* CoreText.framework */,
 				CAF856AC19E0FD0400A347CF /* Crashlytics.framework */,
 				CABBEA8319E0E4C800EFED33 /* Foundation.framework */,
@@ -2784,6 +2807,7 @@
 		CAF8502C19E0F3D100A347CF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CAB1247419F78A98007DF067 /* AppsFlyer-iOS-SDK-v2.5.3.10 */,
 				CAF8502D19E0F3D100A347CF /* google-diff-match-patch */,
 				CAF8503B19E0F3D100A347CF /* iSpeech-1.0.6 */,
 				CAF8504A19E0F3D100A347CF /* RegExCategories */,
@@ -4138,10 +4162,10 @@
 				ORGANIZATIONNAME = Topica;
 				TargetAttributes = {
 					CA13EF9719F0FC1F0040A7A5 = {
-						DevelopmentTeam = XPSYFYS4PU;
+						DevelopmentTeam = WS8VFQ6ZS7;
 					};
 					CABBEA7F19E0E4C800EFED33 = {
-						DevelopmentTeam = XPSYFYS4PU;
+						DevelopmentTeam = WS8VFQ6ZS7;
 					};
 				};
 			};
@@ -5932,9 +5956,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
+					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
+				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5956,9 +5981,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
+					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "8ba3c624-6505-451a-a826-f037fce8a32f";
+				PROVISIONING_PROFILE = "38be881b-85e6-4566-a564-d4ab9e3c6620";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -6037,7 +6063,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6050,9 +6076,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
+					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7218b66-0200-42c0-a426-cf4e5c2566dc";
+				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6061,7 +6088,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6074,9 +6101,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/memo/libs/iSpeech-1.0.6",
+					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7218b66-0200-42c0-a426-cf4e5c2566dc";
+				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

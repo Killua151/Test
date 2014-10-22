@@ -14,6 +14,7 @@
 #import "iSpeechSDK.h"
 #import <Mixpanel/Mixpanel.h>
 #import <GAI.h>
+#import "AppsFlyerTracker.h"
 #import "MUser.h"
 #import "MBaseQuestion.h"
 
@@ -58,6 +59,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+  [[AppsFlyerTracker sharedTracker] trackAppLaunch];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -169,6 +171,10 @@
   [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
   [[GAI sharedInstance] trackerWithTrackingId:kGAITrackingID];
   
+  [AppsFlyerTracker sharedTracker].appleAppID = kAppsFlyerDevKey;
+  [AppsFlyerTracker sharedTracker].appsFlyerDevKey = kAppsFlyerDevKey;
+  [AppsFlyerTracker sharedTracker].isHTTPS = YES;
+  
   [FBSettings setDefaultAppID:kFacebookAppID];
   [FBAppEvents activateApp];
   
@@ -183,6 +189,9 @@
   [MUser logOutCurrentUser];
 #endif
   [MUser loadCurrentUserFromUserDef];
+  
+  if ([MUser currentUser]._id != nil)
+    [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
   
   [[MMServerHelper sharedHelper] getDictionary];
   

@@ -104,7 +104,7 @@ return; \
 #define kTestPassAllAPIs                        false
 #define kTestTranslateQuestions                 false
 #define kTestQuickExam                          false
-#define kTestPushNotification                   false
+#define kTestPushNotification                   true
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
@@ -114,6 +114,8 @@ return; \
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kiSpeechApiKey                          @"3023d34c2451d4502a8c85f5d4cbabff"
 #define kMixPanelToken                          @"067076d37e3b2608d1c7668122fd4bcc"
+#define kAppsFlyerAppID                         @"id932238745"
+#define kAppsFlyerDevKey                        @"taryfaZ99f6VQ2kt5x38xV"
 #define kParseApplicationId                     @"2DTkEScw7lE6qlIx9nnrIr9LSXmBOWLTxwJaQwi8"
 #define kParseRestApiKey                        @"kcejJNuS8jIXPZo8sJex2phhRuFYoSeuF6DT3wj0"
 
