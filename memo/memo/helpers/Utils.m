@@ -252,7 +252,7 @@ static UIView *_sharedToast = nil;
     [FBSession.activeSession closeAndClearTokenInformation];
   
   [FBSession
-   openActiveSessionWithReadPermissions:@[@"public_profile"]
+   openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
    allowLoginUI:YES
    completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
      BOOL sectionStateChangedResult = [appDelegate sessionStateChanged:session state:state error:error];

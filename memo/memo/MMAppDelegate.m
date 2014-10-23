@@ -39,7 +39,7 @@
   // Whenever a person opens the app, check for a cached session
   if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
     [FBSession
-     openActiveSessionWithReadPermissions:@[@"public_profile"]
+     openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"]
      allowLoginUI:NO
      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
        [self sessionStateChanged:session state:state error:error];
