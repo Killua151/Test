@@ -29,7 +29,7 @@
 }
 
 - (void)prepareNextQuestion {
-  if (_currentLessonIndex == 0) {
+  if (_currentQuestionIndex == 0) {
     [super prepareNextQuestion];
     return;
   }
@@ -104,7 +104,7 @@
 }
 
 - (void)updateHeaderViews {
-  _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld", MMLocalizedString(@"Question"), (long)_currentLessonIndex+1];
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld", MMLocalizedString(@"Question"), (long)_currentQuestionIndex+1];
 }
 
 #pragma mark - MMLessonLearningDelegate methods
@@ -114,7 +114,7 @@
   
   [_answersData removeAllObjects];
   _vGestureLayer.hidden = YES;
-  _currentLessonIndex++;
+  _currentQuestionIndex++;
   [self removeCurrentQuestion];
 }
 

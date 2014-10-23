@@ -34,7 +34,7 @@
   
   MMQuestionContentView *_vQuestionContent;
   
-  NSInteger _currentLessonIndex;
+  NSInteger _currentQuestionIndex;
   NSMutableDictionary *_metadata;
   NSMutableArray *_questionsData;
   NSMutableDictionary *_answersData;

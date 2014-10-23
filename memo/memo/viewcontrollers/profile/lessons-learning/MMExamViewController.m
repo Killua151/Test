@@ -109,7 +109,7 @@
 
 - (void)gestureLayerDidTap {
   if (_currentShowingResultView != nil) {
-    _currentLessonIndex++;
+    _currentQuestionIndex++;
     [self reloadContents];
   } else
     [_vQuestionContent gestureLayerDidTap];
@@ -161,13 +161,13 @@
     [self checkCurrentQuestion];
   else {
     _vGestureLayer.hidden = YES;
-    _currentLessonIndex++;
+    _currentQuestionIndex++;
     [self reloadContents];
   }
 }
 
 - (void)prepareNextQuestion {  
-  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  MBaseQuestion *question = _questionsData[_currentQuestionIndex];
   Class questionContentViewKlass = [self questionContentViewKlassForQuestionType:question.type];
   _vQuestionContent = [[questionContentViewKlass alloc] initWithQuestion:question];
   
@@ -190,7 +190,10 @@
 }
 
 - (void)checkCurrentQuestion {
-  MBaseQuestion *question = _questionsData[_currentLessonIndex];
+  UIButton *btnProgressSegment = _btnProgressSegments[_currentQuestionIndex];
+  btnProgressSegment.selected = YES;
+  
+  MBaseQuestion *question = _questionsData[_currentQuestionIndex];
   NSDictionary *checkResult = [question checkAnswer:_answerValue];
   
   BOOL answerResult = [checkResult[kParamAnswerResult] boolValue];
@@ -250,7 +253,7 @@
   }
 
   // Finish all questions
-  if (_currentLessonIndex >= _totalLessonsCount) {
+  if (_currentQuestionIndex >= _totalLessonsCount) {
     ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
@@ -291,21 +294,21 @@
 }
 
 - (void)updateHeaderViews {
-  if (_currentLessonIndex >= _totalLessonsCount)
+  if (_currentQuestionIndex >= _totalLessonsCount)
     return;
   
-  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentLessonIndex+1, (long)_totalLessonsCount];
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentQuestionIndex+1, (long)_totalLessonsCount];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
     button.selected = index >= (_totalHeartsCount - _currentHeartsCount);
   }];
   
-  _imgAntProgressIndicator.hidden = _currentLessonIndex < 0;
+  _imgAntProgressIndicator.hidden = _currentQuestionIndex < 0;
   
   [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
-    button.selected = index <= _currentLessonIndex;
+    button.selected = index < _currentQuestionIndex;
     
-    if (index == _currentLessonIndex) {
+    if (index == _currentQuestionIndex) {
       CGPoint center = button.center;
       center.y -= 7;
       _imgAntProgressIndicator.center = center;
@@ -335,7 +338,7 @@
   [[NSUserDefaults standardUserDefaults] synchronize];
   
   _vGestureLayer.hidden = YES;
-  _currentLessonIndex++;
+  _currentQuestionIndex++;
   [self reloadContents];
 }
 
@@ -477,7 +480,7 @@
 
 - (void)resetCounts {
   _totalLessonsCount = [_questionsData count];
-  _currentLessonIndex = 0;
+  _currentQuestionIndex = 0;
   _currentHeartsCount = _totalHeartsCount;
   [_answersData removeAllObjects];
 }

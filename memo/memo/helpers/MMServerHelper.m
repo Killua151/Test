@@ -319,7 +319,7 @@
                            };
   
   [self
-   POST:@"users/send_mail"
+   POST:@"users/invite_by_email"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      handler(MMLocalizedString(@"Invite email sent successfully"), nil);

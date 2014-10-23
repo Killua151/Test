@@ -61,7 +61,7 @@
 + (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message {
   return [[self class] showWithTitle:title
                              message:message
-                   cancelButtonTitle:nil
+                   cancelButtonTitle:MMLocalizedString(@"OK")
                    otherButtonTitles:nil
                             callback:NULL];
 }
