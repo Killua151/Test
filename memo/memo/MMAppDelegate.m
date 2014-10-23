@@ -170,7 +170,6 @@
   [AppsFlyerTracker sharedTracker].appleAppID = kItunesStoreID;
   [AppsFlyerTracker sharedTracker].appsFlyerDevKey = kAppsFlyerDevKey;
   [AppsFlyerTracker sharedTracker].isHTTPS = YES;
-  [[AppsFlyerTracker sharedTracker] setIsDebug:NO];
   
   [FBSettings setDefaultAppID:kFacebookAppID];
   [FBAppEvents activateApp];

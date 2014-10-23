@@ -31,9 +31,7 @@
   [super viewDidLoad];
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"" color:[UIColor clearColor]];
-  
   [Utils logAnalyticsForScreen:@"New install"];
-  
   [self setupViews];
 }
 
