@@ -124,6 +124,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta.png" id="c1q-JS-acC">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <view contentMode="scaleToFill" id="Jyp-qc-wTD">
                     <rect key="frame" x="15" y="465" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -160,6 +164,7 @@
         </view>
     </objects>
     <resources>
+        <image name="beta.png" width="60" height="60"/>
         <image name="btn-hexagon-strengthen-bg.png" width="290" height="44"/>
         <image name="img-ant-begin.png" width="151" height="182"/>
         <image name="img-beginning_options-bg.png" width="320" height="230"/>

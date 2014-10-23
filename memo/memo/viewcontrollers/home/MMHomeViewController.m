@@ -12,7 +12,7 @@
 #import "MMCoursesListViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-#define kSlideAnimationDelay          3
+#define kSlideAnimationDelay          5
 
 @interface MMHomeViewController () {
   MMLoginViewController *_loginVC;
@@ -31,7 +31,12 @@
   [super viewDidLoad];
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"" color:[UIColor clearColor]];
-  [Utils logAnalyticsForScreen:@"New install"];
+  
+#if kBuildForApple
+  [Utils logAnalyticsForScreen:kValueNewInstallApple];
+#else
+  [Utils logAnalyticsForScreen:kValueNewInstallAppota];
+#endif
   [self setupViews];
 }
 

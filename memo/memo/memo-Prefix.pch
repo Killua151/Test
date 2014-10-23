@@ -202,6 +202,10 @@ return; \
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
 #define kValueSupportEmail                      @"support@memo.edu.vn"
 
+#define kBuildForApple                          false
+#define kValueNewInstallApple                   @"New install Apple"
+#define kValueNewInstallAppota                  @"New install Appota"
+
 #define kItemHealthPotionId                     @"health_potion"
 
 #define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"
