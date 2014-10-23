@@ -81,6 +81,7 @@ return; \
 #define NSStringFromBOOL(val)                   ((val) ? @"true" : @"false")
 #define DeviceScreenIsRetina4Inch()             ([[UIScreen mainScreen] bounds].size.height == 568)
 #define DeviceSystemIsOS7()                     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define DeviceSystemIsOS8()                     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define ShowHudForCurrentView()                 [Utils showHUDForView:[self mainView] withText:nil];
 #define HideHudForCurrentView()                 [Utils hideAllHUDsForView:[self mainView]];
 #define PreferedAppLanguage()                   @"vi"

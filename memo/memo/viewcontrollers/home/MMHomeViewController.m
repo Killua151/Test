@@ -101,9 +101,10 @@
   
   _vSlide.contentSize = CGSizeMake(_vSlide.frame.size.width * 4, _vSlide.contentSize.height);
   
-  [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
-                                                     positions:JMOHorizontalScrollIndicatorPositionBottom
-                                                         color:UIColorFromRGB(129, 12, 21)];
+  if (!DeviceSystemIsOS8())
+    [_vSlide enableCustomScrollIndicatorsWithScrollIndicatorType:JMOScrollIndicatorTypePageControl
+                                                       positions:JMOHorizontalScrollIndicatorPositionBottom
+                                                           color:UIColorFromRGB(129, 12, 21)];
   
   for (NSInteger i = 1; i <= 4; i++) {
     CGRect frame = _vSlide.frame;
