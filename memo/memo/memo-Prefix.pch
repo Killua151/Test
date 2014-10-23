@@ -129,10 +129,12 @@ return; \
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
+#define kParamAlert                             @"alert"
 #define kParamAnswer                            @"answer"
 #define kParamAnswers                           @"answers"
 #define kParamAnswerResult                      @"answer_result"
 #define kParamApnsToken                         @"apns_token"
+#define kParamAps                               @"aps"
 #define kParamAuthToken                         @"auth_token"
 #define kParamAutoFeedback                      @"auto_feedback"
 #define kParamAvailableItems                    @"available_items"

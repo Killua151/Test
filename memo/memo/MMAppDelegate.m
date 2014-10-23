@@ -56,6 +56,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+  application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -82,6 +83,15 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
   [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefApnsToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  if (userInfo == nil || ![userInfo isKindOfClass:[NSDictionary class]] ||
+      userInfo[kParamAps] == nil || ![userInfo[kParamAps] isKindOfClass:[NSDictionary class]] ||
+      userInfo[kParamAps][kParamAlert] == nil || ![userInfo[kParamAps][kParamAlert] isKindOfClass:[NSString class]])
+    return;
+  
+  [UIAlertView showWithTitle:MMLocalizedString(@"Notification") andMessage:userInfo[kParamAps][kParamAlert]];
 }
 
 - (BOOL)application:(UIApplication *)application

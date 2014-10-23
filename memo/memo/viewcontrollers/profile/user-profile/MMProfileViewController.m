@@ -420,7 +420,7 @@
     _lineChart = nil;    
   }
   
-  _lineChart = [_userData graphLineChartInFrame:CGRectMake(0, 41, 320, 215)];
+  _lineChart = [_userData graphLineChartInFrame:CGRectMake(20, 41, 320, 215)];
   [_celGraphChart.contentView addSubview:_lineChart];
   [_lineChart drawChart];
 }

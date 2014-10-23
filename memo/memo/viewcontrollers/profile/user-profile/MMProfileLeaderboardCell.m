@@ -8,6 +8,7 @@
 
 #import "MMProfileLeaderboardCell.h"
 #import "MLeaderboardData.h"
+#import "MUser.h"
 
 @implementation MMProfileLeaderboardCell
 
@@ -22,6 +23,11 @@
 }
 
 - (void)updateCellWithData:(MLeaderboardData *)data {
+  if ([data.user_id isEqualToString:[MUser currentUser]._id])
+    _lblUsername.textColor = _lblUserExp.textColor = UIColorFromRGB(129, 12, 21);
+  else
+    _lblUsername.textColor = _lblUserExp.textColor = UIColorFromRGB(102, 102, 102);
+  
   _lblUsername.text = data.username;
   _lblUserExp.text = [NSString stringWithFormat:@"%ld EXP", (long)data.earned_exp];
 }
