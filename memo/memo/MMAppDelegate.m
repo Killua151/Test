@@ -195,9 +195,7 @@
   [MUser logOutCurrentUser];
 #endif
   [MUser loadCurrentUserFromUserDef];
-  
-  if ([MUser currentUser]._id != nil)
-    [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
+  [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
   
   [[MMServerHelper sharedHelper] getDictionary];
   

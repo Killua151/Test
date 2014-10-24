@@ -687,7 +687,7 @@
      if (userData != nil && [userData isKindOfClass:[NSDictionary class]])
        handler(userData, nil);
      else
-       handler(nil, [NSError errorWithDomain:@"Unknown error" code:-1 userInfo:nil]);
+       handler(nil, [NSError errorWithDomain:MMLocalizedString(@"Unknown error") code:-1 userInfo:nil]);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{

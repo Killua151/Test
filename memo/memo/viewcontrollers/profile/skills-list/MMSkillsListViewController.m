@@ -14,9 +14,9 @@
 #import "MMProfileViewController.h"
 #import "MMCoursesListViewController.h"
 #import "MMHomeViewController.h"
-
 #import "MMBeginPlacementTestViewController.h"
 #import "MMExamViewController.h"
+#import "AppsFlyerTracker.h"
 
 #import "MUser.h"
 #import "MSkill.h"
@@ -59,8 +59,6 @@
                           action:@selector(gotoShop)
                         distance:-8];
   
-  [Utils logAnalyticsForCurrentUser];
-  
   [self setupViews];
   [self loadSkillsTree];
 }
@@ -76,6 +74,7 @@
 }
 
 - (void)reloadContents {
+  [Utils logAnalyticsForCurrentUser];
   MUser *currentUser = [MUser currentUser];
   
   [self customTitleWithText:currentUser.current_course_name color:[UIColor blackColor]];
