@@ -6034,7 +6034,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -6092,8 +6092,8 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f23d2f06-12c2-4e02-bf8a-d32fd19971cb";
-				SDKROOT = iphoneos7.1;
+				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6118,8 +6118,8 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f23d2f06-12c2-4e02-bf8a-d32fd19971cb";
-				SDKROOT = iphoneos7.1;
+				PROVISIONING_PROFILE = "5b3adfcc-c1e0-4c0f-a5b5-0b266fb3fe35";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

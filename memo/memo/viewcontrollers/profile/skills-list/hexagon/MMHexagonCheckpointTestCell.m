@@ -8,6 +8,7 @@
 
 #import "MMHexagonCheckpointTestCell.h"
 #import "MUser.h"
+#import "MCheckpoint.h"
 
 @implementation MMHexagonCheckpointTestCell
 
@@ -21,11 +22,17 @@
 
 - (void)updateCellWithData:(NSNumber *)data {
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:[data integerValue]];
+  MCheckpoint *checkpoint = [[MUser currentUser] checkpointForPosition:[data integerValue]];
   
-  _btnCheckpointTest.enabled = numberOfLockedSkills > 0;
+  _btnCheckpointTest.enabled = numberOfLockedSkills > 0 && checkpoint.remaining_test_times > 0;
   
   if (numberOfLockedSkills <= 0) {
     [_btnCheckpointTest setTitle:MMLocalizedString(@"Checkpoint passed") forState:UIControlStateNormal];
+    return;
+  }
+  
+  if (checkpoint.remaining_test_times <= 0) {
+    [_btnCheckpointTest setTitle:MMLocalizedString(@"Hết lượt làm checkpoint") forState:UIControlStateNormal];
     return;
   }
   

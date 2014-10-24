@@ -162,6 +162,10 @@ static MUser *_currentUser = nil;
   return [_checkpointsMapper[@(checkpointRow)] row];
 }
 
+- (MCheckpoint *)checkpointForPosition:(NSInteger)checkpointRow {
+  return _checkpointsMapper[@(checkpointRow)];
+}
+
 - (MSkill *)finishExamAffectedSkill {
   MSkill *affectedSkill = _lastReceivedBonuses[kParamAffectedSkill];
   

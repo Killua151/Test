@@ -126,6 +126,7 @@ return; \
 #define kUserDefApnsToken                       @"ios_apns_token"
 #define kUserDefSpeakEnabled                    @"speak_enabled"
 #define kUserDefDictionaryVersion               @"dictionary_version"
+#define kUserDefWordsDictionary                 @"words_dictionary"
 
 #define kParamDatabaseId                        @"_id"
 #define kParamAffectedSkill                     @"affected_skill"
@@ -204,7 +205,7 @@ return; \
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
 #define kValueSupportEmail                      @"support@memo.edu.vn"
 
-#define kBuildForApple                          false
+#define kBuildForApple                          true
 #define kValueNewInstallApple                   @"New install Apple"
 #define kValueNewInstallAppota                  @"New install Appota"
 

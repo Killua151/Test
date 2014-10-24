@@ -8,7 +8,7 @@
 
 #import "MBase.h"
 
-@class MMLineChart;
+@class MMLineChart, MCheckpoint;
 
 @interface MUser : MBase
 
@@ -48,6 +48,7 @@
 - (NSArray *)skillsTree;
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
 - (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow;
+- (MCheckpoint *)checkpointForPosition:(NSInteger)checkpointRow;
 
 - (MSkill *)finishExamAffectedSkill;
 - (NSInteger)finishExamBonusExp;

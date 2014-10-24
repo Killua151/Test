@@ -20,6 +20,7 @@
 
 #import "MUser.h"
 #import "MSkill.h"
+#import "MCheckpoint.h"
 
 @interface MMSkillsListViewController () {
   NSArray *_skillsData;
@@ -170,17 +171,17 @@
   if ([skills isKindOfClass:[NSArray class]])
     return;
   
+  MCheckpoint *checkpoint = [[MUser currentUser] checkpointForPosition:indexPath.row];
+  
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:indexPath.row];
   
-  if (numberOfLockedSkills <= 0)
+  if (numberOfLockedSkills <= 0 || checkpoint.remaining_test_times <= 0)
     return;
-  
-  NSInteger checkpointPosition = [[MUser currentUser] checkpointPositionForCheckpoint:indexPath.row];
   
   ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
-   startCheckpointTestAtPosition:checkpointPosition
+   startCheckpointTestAtPosition:checkpoint.row
    completion:^(NSString *examToken,
                 NSInteger maxHeartsCount,
                 NSDictionary *availableItems,
@@ -196,7 +197,7 @@
                                          andMetadata:@{
                                                        kParamType : kValueExamTypeCheckpoint,
                                                        kParamExamToken : [NSString normalizedString:examToken],
-                                                       kParamCheckpointPosition : @(checkpointPosition)
+                                                       kParamCheckpointPosition : @(checkpoint.row)
                                                        }];
      
      [self presentViewController:examVC animated:YES completion:NULL];
