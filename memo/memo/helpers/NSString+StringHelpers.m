@@ -8,6 +8,18 @@
 
 #import "NSString+StringHelpers.h"
 
+typedef enum TyposCheckingResultEnum {
+  kTyposCheckingEqualString = -1,
+  kTyposCheckingIsTypo = 0,
+  kTyposCheckingDifferent
+} TyposCheckingResult;
+
+@interface NSString (StringHelpers_Private)
+
+- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord withDiffMatchPatch:(DiffMatchPatch *)dmp;
+
+@end
+
 @implementation NSString (StringHelpers)
 
 + (BOOL)floatValueIsInteger:(CGFloat)value {
@@ -145,8 +157,8 @@
 }
 
 - (NSArray *)checkTyposOnString:(NSString *)inputString {
-  NSArray *selfComponents = [[self lowercaseString] componentsSeperatedByNonLetterCharacters];
-  NSArray *inputComponents = [[inputString lowercaseString] componentsSeperatedByNonLetterCharacters];
+  NSArray *selfWords = [[self lowercaseString] componentsSeperatedByNonLetterCharacters];
+  NSArray *inputWords = [[inputString lowercaseString] componentsSeperatedByNonLetterCharacters];
 
   // Reduce cost of check typos operation, inputs should be at the same amount of words
 //  if ([selfComponents count] != [inputComponents count])
@@ -156,45 +168,20 @@
   
   DiffMatchPatch *dmp = [DiffMatchPatch new];
   
-  [selfComponents enumerateObjectsUsingBlock:^(NSString *selfComponent, NSUInteger index, BOOL *stop) {
-    NSString *inputComponent = inputComponents[index];
+  [selfWords enumerateObjectsUsingBlock:^(NSString *selfWord, NSUInteger index, BOOL *stop) {
+    NSString *inputWord = inputWords[index];
+    TyposCheckingResult checkingResult = [selfWord checkTypoOnWord:inputWord withDiffMatchPatch:dmp];
     
-    if ([selfComponent isEqualToString:inputComponent])
+    if (checkingResult == kTyposCheckingEqualString)
       return;
     
-    NSArray *diffs = [dmp diff_mainOfOldString:inputComponent andNewString:selfComponent];
-    
-    // V1.0: count EQUAL operations only
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"operation = %d", DIFF_EQUAL];
-//    NSArray *filtered = [diffs filteredArrayUsingPredicate:predicate];
-//    
-//    NSInteger equalCounts = [filtered count];
-//    
-//    // Incorrect word
-//    if (equalCounts == 0) {// && selfComponent.length != inputComponent.length) {
-//      typos = nil;
-//      *stop = YES;
-//      return;
-//    }
-    
-    // V1.1: count most continuous EQUAL characters
-    NSInteger maxEqualCharsCount = 0;
-    
-    for (Diff *diff in diffs) {
-      if (diff.operation != DIFF_EQUAL)
-        continue;
-      
-      if (maxEqualCharsCount < diff.text.length)
-        maxEqualCharsCount = diff.text.length;
-    }
-    
-    if (((CGFloat)maxEqualCharsCount)/selfComponent.length < 0.7) {
+    if (checkingResult == kTyposCheckingDifferent) {
       typos = nil;
       *stop = YES;
       return;
     }
     
-    [typos addObject:selfComponent];
+    [typos addObject:selfWord];
   }];
   
   if (typos == nil)
@@ -211,6 +198,60 @@
   }
   
   return ranges;
+}
+
+#pragma mark - StringHelpers_Private methods
+- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord withDiffMatchPatch:(DiffMatchPatch *)dmp {
+  if ([self isEqualToString:inputWord])
+    return kTyposCheckingEqualString;
+  
+  // V1.0: count EQUAL operations only
+//  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"operation = %d", DIFF_EQUAL];
+//  NSArray *filtered = [diffs filteredArrayUsingPredicate:predicate];
+//
+//  NSInteger equalCounts = [filtered count];
+//
+//  // Incorrect word
+//  if (equalCounts == 0) // && selfComponent.length != inputComponent.length)
+//    return kTyposCheckingDifferent;
+  
+  // V1.1: count most continuous EQUAL characters
+//  NSInteger maxEqualCharsCount = 0;
+//  
+//  for (Diff *diff in diffs) {
+//    if (diff.operation != DIFF_EQUAL)
+//      continue;
+//    
+//    if (maxEqualCharsCount < diff.text.length)
+//      maxEqualCharsCount = diff.text.length;
+//  }
+//  
+//  if (((CGFloat)maxEqualCharsCount)/self.length < 0.7)
+//    return kTyposCheckingDifferent;
+  
+  // V1.2: check different characters by self word's length
+  
+  // Compare ascii-converted words
+  if ([[self asciiNormalizedString] isEqualToString:[inputWord asciiNormalizedString]])
+    return kTyposCheckingIsTypo;
+  
+  // If word is single-character: input word is a different word -> incorrect
+  if (self.length <= 1)
+    return kTyposCheckingDifferent;
+  
+  NSArray *diffs = [dmp diff_mainOfOldString:inputWord andNewString:self];
+  
+  NSInteger totalDifferentCharsCount = self.length;
+  
+  for (Diff *diff in diffs)
+    if (diff.operation == DIFF_EQUAL)
+      totalDifferentCharsCount -= diff.text.length;
+  
+  if ((self.length >= 2 && self.length <= 4 && totalDifferentCharsCount > 1) ||
+      (self.length > 4 && totalDifferentCharsCount > 2))
+    return kTyposCheckingDifferent;
+  
+  return kTyposCheckingIsTypo;
 }
 
 @end
