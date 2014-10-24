@@ -34,7 +34,6 @@
 - (void)animateSlideStrengthenButton:(BOOL)show;
 - (void)fadeOutBeginningOptions:(void(^)())completion;
 - (void)loadSkillsTree;
-- (void)logAnalytics;
 - (void)handleLoadingError:(NSError *)error;
 
 @end
