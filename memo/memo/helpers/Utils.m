@@ -93,19 +93,21 @@ static UIView *_sharedToast = nil;
   return nonKeyboardViewHeight / actualContentViewsHeight;
 }
 
++ (void)logAnalyticsForCurrentUser {
+  if ([MUser currentUser]._id == nil)
+    return;
+  
+  [[Mixpanel sharedInstance] identify:[MUser currentUser]._id];
+  [[Mixpanel sharedInstance].people set:[[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+}
+
 + (void)logAnalyticsForScreen:(NSString *)screenName {
-  NSString *eventName = [NSString stringWithFormat:@"iOS screen %@", screenName];
-  
-//  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-//  [tracker set:kGAIScreenName value:eventName];
-//  [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-  
   NSDictionary *userData = nil;
   
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:eventName properties:userData];
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", screenName] properties:userData];
 }
 
 + (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName {

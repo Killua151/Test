@@ -27,6 +27,7 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
 
++ (void)logAnalyticsForCurrentUser;
 + (void)logAnalyticsForScreen:(NSString *)screenName;
 + (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName;
 + (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName;
