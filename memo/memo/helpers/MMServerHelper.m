@@ -569,8 +569,10 @@
 }
 
 - (void)getDictionary {
-  NSInteger dictionaryVersion = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefDictionaryVersion];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [[MWord sharedModel] setupDictionary:[userDefaults dictionaryForKey:kUserDefWordsDictionary]];
   
+  NSInteger dictionaryVersion = [userDefaults integerForKey:kUserDefDictionaryVersion];
   NSDictionary *params = @{kParamVersion : @(dictionaryVersion)};
   
   [self
@@ -579,9 +581,14 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
      NSInteger newVersion = [responseDict[kParamVersion] integerValue];
-     [[NSUserDefaults standardUserDefaults] setInteger:newVersion forKey:kUserDefDictionaryVersion];
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     [[MWord sharedModel] setupDictionary:responseDict[kParamWords]];
+     
+     if (newVersion < dictionaryVersion)
+       return;
+     
+     [userDefaults setInteger:newVersion forKey:kUserDefDictionaryVersion];
+     [userDefaults setObject:responseDict[kParamWords] forKey:kUserDefWordsDictionary];
+     [userDefaults synchronize];
+     [[MWord sharedModel] setupDictionary:[userDefaults dictionaryForKey:kUserDefWordsDictionary]];
    }
    failure:NULL];
 }
