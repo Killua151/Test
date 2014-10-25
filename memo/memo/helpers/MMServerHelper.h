@@ -53,6 +53,7 @@
 - (void)getUserProfile:(void(^)(NSDictionary *userData, NSError *error))handler;
 - (void)getProfileDetails:(NSString *)friendId completion:(void(^)(MUser *user, NSError *error))handler;
 - (void)updateProfile:(NSDictionary *)fields completion:(void(^)(NSError *error))handler;
+- (void)updateBeginnerStatus;
 
 - (void)listFriends:(void(^)(NSArray *followings, NSArray *followers, NSError *error))handler;
 - (void)searchFriends:(NSString *)keywords completion:(void(^)(NSArray *results, NSError *error))handler;

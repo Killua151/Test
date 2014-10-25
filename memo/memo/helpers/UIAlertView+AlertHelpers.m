@@ -10,6 +10,7 @@
 
 @interface UIAlertViewInstance : UIAlertView <UIAlertViewDelegate>
 
+@property (nonatomic, strong) UIAlertView *alertView;
 @property (nonatomic, copy) void(^callbackHandler)(UIAlertView *alertView, NSInteger buttonIndex);
 
 + (instancetype)sharedInstance;
@@ -32,7 +33,7 @@
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (_callbackHandler != NULL)
-    _callbackHandler(self, buttonIndex);
+    _callbackHandler(_alertView, buttonIndex);
 }
 
 @end
@@ -98,6 +99,7 @@
   for (NSString *otherButtonTitle in otherButtonTitles)
     [alertView addButtonWithTitle:otherButtonTitle];
   
+  alertViewInstance.alertView = alertView;
   alertViewInstance.callbackHandler = handler;
   [alertView show];
   

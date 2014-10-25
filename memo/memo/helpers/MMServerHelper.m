@@ -259,6 +259,14 @@
    }];
 }
 
+- (void)updateBeginnerStatus {
+  if (![MUser currentUser].is_beginner)
+    return;
+  
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  [self POST:@"users/update_is_beginner" parameters:params success:NULL failure:NULL];
+}
+
 - (void)listFriends:(void (^)(NSArray *, NSArray *, NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
@@ -614,7 +622,7 @@
                            };
   
   [self
-   POST:@"bug_report/post"
+   POST:@"bug_report"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      handler(nil);

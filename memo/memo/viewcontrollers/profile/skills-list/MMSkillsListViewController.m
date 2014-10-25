@@ -35,6 +35,7 @@
 - (void)fadeOutBeginningOptions:(void(^)())completion;
 - (void)loadSkillsTree;
 - (void)handleLoadingError:(NSError *)error;
+- (void)reportBugs;
 
 @end
 
@@ -93,6 +94,7 @@
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {
+  [[MMServerHelper sharedHelper] updateBeginnerStatus];
   [self fadeOutBeginningOptions:NULL];
 }
 
@@ -102,23 +104,7 @@
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
 #if kClosedBetaErrorFeedbackMode
-  [UIAlertView
-   showWithTitle:@"Báo lỗi Memo"
-   message:@"Hãy giúp Memo tốt hơn nữa nhé :)"
-   cancelButtonTitle:@"Thôi"
-   otherButtonTitles:@[@"Gửi"]
-   style:UIAlertViewStylePlainTextInput
-   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
-     if (buttonIndex == 0)
-       return;
-     
-     ShowHudForCurrentView();
-     [[MMServerHelper sharedHelper] reportBug:@"" completion:^(NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-     }];
-   }];
-  
+  [self reportBugs];
   return;
 #endif
   
@@ -409,6 +395,33 @@
      }
      
      [self loadSkillsTree];
+   }];
+}
+
+- (void)reportBugs {
+  [UIAlertView
+   showWithTitle:@"Báo lỗi Memo"
+   message:@"Hãy giúp Memo tốt hơn nữa nhé :)"
+   cancelButtonTitle:@"Thôi"
+   otherButtonTitles:@[@"Gửi"]
+   style:UIAlertViewStylePlainTextInput
+   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+     if (buttonIndex == 0)
+       return;
+     
+     UITextField *textField = [alertView textFieldAtIndex:0];
+     
+     if (textField.text == nil || ![textField.text validateBlank]) {
+       [self reportBugs];
+       return;
+     }
+     
+     ShowHudForCurrentView();
+     [[MMServerHelper sharedHelper] reportBug:textField.text completion:^(NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+       [UIAlertView showWithTitle:nil andMessage:@"Gửi thành công"];
+     }];
    }];
 }
 

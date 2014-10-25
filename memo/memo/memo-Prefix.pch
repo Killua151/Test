@@ -206,7 +206,7 @@ return; \
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
 #define kValueSupportEmail                      @"support@memo.edu.vn"
 
-#define kBuildForApple                          true
+#define kBuildForApple                          false
 #define kValueNewInstallApple                   @"New install Apple"
 #define kValueNewInstallAppota                  @"New install Appota"
 
