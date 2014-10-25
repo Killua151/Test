@@ -15,7 +15,7 @@
 + (UIAlertView *)showWithError:(NSError *)error
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
-                      callback:(void(^)(NSInteger buttonIndex))handler;
+                      callback:(void(^)(UIAlertView *alertView, NSInteger buttonIndex))handler;
 
 + (UIAlertView *)showWithTitle:(NSString *)title andMessage:(NSString *)message;
 
@@ -23,6 +23,13 @@
                        message:(NSString *)message
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
-                      callback:(void(^)(NSInteger buttonIndex))handler;
+                      callback:(void(^)(UIAlertView *alertView, NSInteger buttonIndex))handler;
+
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                         style:(UIAlertViewStyle)alertStyle
+                      callback:(void(^)(UIAlertView *alertView, NSInteger buttonIndex))handler;
 
 @end

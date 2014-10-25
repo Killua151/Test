@@ -398,6 +398,9 @@
        
        [cell.contentView addSubview:swt];
      }];
+  
+  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
 }
 
 - (void)submitChanges {

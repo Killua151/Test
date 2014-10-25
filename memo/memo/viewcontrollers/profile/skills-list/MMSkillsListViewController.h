@@ -20,6 +20,8 @@
   IBOutlet UIView *_vStrengthenButton;
   IBOutlet UIButton *_btnHexagonStrengthen;
   IBOutlet UIButton *_btnShieldStrengthen;
+  
+  IBOutlet UILabel *_lblAppVersion;
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender;

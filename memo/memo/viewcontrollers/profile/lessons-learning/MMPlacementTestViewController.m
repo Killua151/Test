@@ -47,7 +47,7 @@
         showWithError:error
         cancelButtonTitle:MMLocalizedString(@"Quit")
         otherButtonTitles:@[MMLocalizedString(@"Retry")]
-        callback:^(NSInteger buttonIndex) {
+        callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
           if (buttonIndex == 0)
             [self dismissViewController];
           else

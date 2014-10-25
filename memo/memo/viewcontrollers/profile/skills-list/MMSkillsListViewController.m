@@ -79,9 +79,12 @@
   
   [self customTitleWithText:currentUser.current_course_name color:[UIColor blackColor]];
   _vBeginningOptions.hidden = !currentUser.is_beginner;
-  _vStrengthenButton.hidden = currentUser.is_beginner;
   
-#if kTempDisableForClosedBeta
+#if !kClosedBetaErrorFeedbackMode
+  _vStrengthenButton.hidden = currentUser.is_beginner;
+#endif
+
+#if kTempDisableForClosedBeta && !kClosedBetaErrorFeedbackMode
   _vStrengthenButton.hidden = YES;
 #endif
   
@@ -98,6 +101,27 @@
 }
 
 - (IBAction)btnStrengthenPressed:(UIButton *)sender {
+#if kClosedBetaErrorFeedbackMode
+  [UIAlertView
+   showWithTitle:@"Báo lỗi Memo"
+   message:@"Hãy giúp Memo tốt hơn nữa nhé :)"
+   cancelButtonTitle:@"Thôi"
+   otherButtonTitles:@[@"Gửi"]
+   style:UIAlertViewStylePlainTextInput
+   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+     if (buttonIndex == 0)
+       return;
+     
+     ShowHudForCurrentView();
+     [[MMServerHelper sharedHelper] reportBug:@"" completion:^(NSError *error) {
+       HideHudForCurrentView();
+       ShowAlertWithError(error);
+     }];
+   }];
+  
+  return;
+#endif
+  
   ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper]
@@ -249,6 +273,10 @@
   _currentStrengthenButton.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:14];
   [_currentStrengthenButton setTitle:MMLocalizedString(@"Strengthen skills") forState:UIControlStateNormal];
   
+#if kClosedBetaErrorFeedbackMode
+  [_currentStrengthenButton setTitle:@"BÁO LỖI - GÓP Ý" forState:UIControlStateNormal];
+#endif
+  
   UIImage *maskingImage = [UIImage imageNamed:@"img-placement_test-icon.png"];
   
   for (UIView *iconBg in _vIconsBg) {
@@ -275,16 +303,25 @@
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
   
+  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
+  
+#if kTempDisableForClosedBeta && !kClosedBetaErrorFeedbackMode
   _vStrengthenButton.hidden = YES;
+#else
+  [self animateSlideStrengthenButton:NO];
+#endif
 }
 
 - (void)animateSlideStrengthenButton:(BOOL)show {
-#if kTempDisableForClosedBeta
+#if kTempDisableForClosedBeta && !kClosedBetaErrorFeedbackMode
   return;
 #endif
   
+#if !kClosedBetaErrorFeedbackMode
   if ([MUser currentUser].is_beginner)
     return;
+#endif
   
   if (show) {
     [UIView
@@ -364,7 +401,7 @@
    message:[error errorMessage]
    cancelButtonTitle:MMLocalizedString(@"Log out")
    otherButtonTitles:@[MMLocalizedString(@"Retry")]
-   callback:^(NSInteger buttonIndex) {
+   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
      if (buttonIndex == 0) {
        [MUser logOutCurrentUser];
        [self transitToViewController:[MMHomeViewController navigationController]];

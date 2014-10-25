@@ -18,6 +18,7 @@
                 <outlet property="_celGraphChart" destination="zVO-UA-6PU" id="bgy-w6-Lqa"/>
                 <outlet property="_celStreakMoney" destination="bcW-KD-7Pi" id="QYl-kC-x11"/>
                 <outlet property="_imgAvatar" destination="uTi-vK-IbM" id="Dkk-67-HIT"/>
+                <outlet property="_lblAppVersion" destination="DDK-12-aVx" id="97i-Xz-btI"/>
                 <outlet property="_lblCourseName" destination="zZM-VC-C13" id="Wce-g8-ObT"/>
                 <outlet property="_lblEmptyLeaderboards" destination="ehL-Sj-B2e" id="ds0-oQ-k2b"/>
                 <outlet property="_lblLeaderboardsHeader" destination="18b-QM-M78" id="kpc-6x-oQt"/>
@@ -42,10 +43,27 @@
                         <outlet property="delegate" destination="-1" id="KAe-d3-Kab"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" id="3aF-Y4-7zu" userLabel="App Version">
+                    <rect key="frame" x="-2" y="10" width="60" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta.png" id="jAv-2c-3SC">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DDK-12-aVx">
+                            <rect key="frame" x="0.0" y="20" width="60" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="0.96862745100000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Q6U-c5-FVt" userLabel="Avatar - name - level">
             <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
@@ -250,6 +268,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="beta.png" width="60" height="44"/>
         <image name="btn-profile-edit_avatar.png" width="32" height="32"/>
         <image name="img-money-icon.png" width="23" height="27"/>
         <image name="img-profile-avatar_placeholder.png" width="100" height="100"/>

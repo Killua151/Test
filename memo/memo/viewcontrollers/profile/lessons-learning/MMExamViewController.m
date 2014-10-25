@@ -125,7 +125,7 @@
    message:MMLocalizedString(@"Your progress will be lost. Are you sure to quit?")
    cancelButtonTitle:MMLocalizedString(@"No")
    otherButtonTitles:@[MMLocalizedString(@"Quit")]
-   callback:^(NSInteger buttonIndex) {
+   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
      if (buttonIndex == 0)
        return;
      
@@ -229,7 +229,7 @@
      message:message
      cancelButtonTitle:MMLocalizedString(@"No")
      otherButtonTitles:@[MMLocalizedString(@"Yes, use it")]
-     callback:^(NSInteger buttonIndex) {
+     callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
        if (buttonIndex == 0) {
          _didAskUsingItem = YES;
          [self reloadContents];

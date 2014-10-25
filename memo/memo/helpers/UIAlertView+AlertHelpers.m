@@ -10,7 +10,7 @@
 
 @interface UIAlertViewInstance : UIAlertView <UIAlertViewDelegate>
 
-@property (nonatomic, copy) void(^callbackHandler)(NSInteger buttonIndex);
+@property (nonatomic, copy) void(^callbackHandler)(UIAlertView *alertView, NSInteger buttonIndex);
 
 + (instancetype)sharedInstance;
 
@@ -32,7 +32,7 @@
 #pragma mark - UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (_callbackHandler != NULL)
-    _callbackHandler(buttonIndex);
+    _callbackHandler(self, buttonIndex);
 }
 
 @end
@@ -50,7 +50,7 @@
 + (UIAlertView *)showWithError:(NSError *)error
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
-                      callback:(void (^)(NSInteger))handler {
+                      callback:(void (^)(UIAlertView *, NSInteger))handler {
   return [[self class] showWithTitle:[NSString stringWithFormat:MMLocalizedString(@"Error %d"), [error errorCode]]
                              message:MMLocalizedString([error errorMessage])
                    cancelButtonTitle:cancelButtonTitle
@@ -70,7 +70,21 @@
                        message:(NSString *)message
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
-                      callback:(void (^)(NSInteger))handler {
+                      callback:(void (^)(UIAlertView *, NSInteger))handler {
+  return [[self class] showWithTitle:title
+                             message:message
+                   cancelButtonTitle:cancelButtonTitle
+                   otherButtonTitles:otherButtonTitles
+                               style:UIAlertViewStyleDefault
+                            callback:handler];
+}
+
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+             otherButtonTitles:(NSArray *)otherButtonTitles
+                         style:(UIAlertViewStyle)alertStyle
+                      callback:(void (^)(UIAlertView *, NSInteger))handler {
   UIAlertViewInstance *alertViewInstance = [UIAlertViewInstance sharedInstance];
   
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
@@ -78,6 +92,8 @@
                                                      delegate:alertViewInstance
                                             cancelButtonTitle:cancelButtonTitle
                                             otherButtonTitles:nil];
+  
+  alertView.alertViewStyle = alertStyle;
   
   for (NSString *otherButtonTitle in otherButtonTitles)
     [alertView addButtonWithTitle:otherButtonTitle];

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMSkillsListViewController">
             <connections>
                 <outlet property="_btnHexagonStrengthen" destination="Uo9-ia-1NQ" id="bvC-zC-RPb"/>
                 <outlet property="_btnShieldStrengthen" destination="i36-ig-4GK" id="sTI-dY-Jyk"/>
+                <outlet property="_lblAppVersion" destination="Hyl-Fh-XLo" id="gXi-Dl-t5f"/>
                 <outlet property="_lblBeginnerSubTitle" destination="CYC-yO-Lne" id="6vH-hr-Sjf"/>
                 <outlet property="_lblBeginnerTitle" destination="yPr-Hf-JJg" id="tm2-1z-gW2"/>
                 <outlet property="_lblPlacementTestSubTitle" destination="ZWf-Ru-r8z" id="CNJ-OV-5Wu"/>
@@ -124,10 +124,24 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta.png" id="c1q-JS-acC">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <view contentMode="scaleToFill" id="wdw-oz-Nra" userLabel="App Version">
+                    <rect key="frame" x="-3" y="10" width="60" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beta.png" id="c1q-JS-acC">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hyl-Fh-XLo">
+                            <rect key="frame" x="0.0" y="20" width="60" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="0.96862745098039216" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" id="Jyp-qc-wTD">
                     <rect key="frame" x="15" y="465" width="290" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -148,7 +162,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                            <state key="normal" title="Kiểm tra kỹ năng yếu">
+                            <state key="normal" title="Luyện tập kỹ năng">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -160,15 +174,21 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>
     </objects>
     <resources>
-        <image name="beta.png" width="60" height="60"/>
+        <image name="beta.png" width="60" height="44"/>
         <image name="btn-hexagon-strengthen-bg.png" width="290" height="44"/>
         <image name="img-ant-begin.png" width="151" height="182"/>
         <image name="img-beginning_options-bg.png" width="320" height="230"/>
         <image name="img-skill_icon-en-vi_chinh_tri-unlocked.png" width="100" height="100"/>
         <image name="img-skill_icon-en-vi_co_ban_1-unlocked.png" width="100" height="100"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

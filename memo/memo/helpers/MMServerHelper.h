@@ -113,6 +113,8 @@
 - (void)getDictionary;
 - (void)submitViewedWords:(NSDictionary *)viewedWords;
 
+- (void)reportBug:(NSString *)content completion:(void(^)(NSError *error))handler;
+
 - (void)updateApnsToken;
 - (void)registerDeviceTokenForAPNS;
 

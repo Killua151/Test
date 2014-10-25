@@ -605,6 +605,27 @@
   [self POST:@"words" parameters:params success:NULL failure:NULL];
 }
 
+- (void)reportBug:(NSString *)content completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamContent : [NSString normalizedString:content],
+                           kParamDevice : @"ios",
+                           kParamVersion : CurrentBuildVersion()
+                           };
+  
+  [self
+   POST:@"bug_report/post"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)updateApnsToken {
   NSString *apnsToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserDefApnsToken];
   
