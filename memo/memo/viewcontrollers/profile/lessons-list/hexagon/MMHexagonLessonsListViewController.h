@@ -12,6 +12,7 @@
   IBOutlet UIImageView *_imgBgLaurea;
   IBOutlet UIImageView *_imgSkillIcon;
   IBOutlet UIScrollView *_vLessonsScrollView;
+  IBOutlet UILabel *_lblAppVersion;
 }
 
 @end
