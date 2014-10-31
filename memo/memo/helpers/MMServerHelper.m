@@ -259,6 +259,30 @@
    }];
 }
 
+- (void)updateNotificationSettings:(NSString *)settingsId
+                           withKey:(NSString *)settingsKey
+                          andValue:(BOOL)settingsValue completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamSetting : [@{
+                                              kParamId : [NSString normalizedString:settingsId],
+                                              [NSString normalizedString:settingsKey] : @(settingsValue)
+                                              } JSONString]
+                           };
+  
+  [self
+   POST:@"users/edit_setting"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)updateBeginnerStatus {
   if (![MUser currentUser].is_beginner)
     return;
