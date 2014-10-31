@@ -34,7 +34,6 @@
   BOOL _didAskUsingItem;
   
   CGFloat _innerPanGestureYPos;
-  UIView *_currentShowingResultView;
   
   id _answerValue;
 }
@@ -108,7 +107,7 @@
 }
 
 - (void)gestureLayerDidTap {
-  if (_currentShowingResultView != nil) {
+  if (!_vResultPopup.hidden) {
     _currentQuestionIndex++;
     [self reloadContents];
   } else
@@ -456,24 +455,16 @@
 }
 
 - (void)setupResultViews {
-  _vResultCorrectBg.layer.cornerRadius = 5;
-  _lblResultCorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblResultCorrectMessage.text = MMLocalizedString(@"Correct!");
+  _vResultPopupBg.layer.cornerRadius = 5;
+  _lblResultPopupMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+  _lblResultPopupMessage.text = @"";
   
-  _vResultIncorrectBg.layer.cornerRadius = 5;
-  _lblResultIncorrectMessage.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _lblResultIncorrectMessage.text = MMLocalizedString(@"Correct answer");
-  
-  _lblResultIncorrectAnswer.font = [UIFont fontWithName:@"ClearSans" size:17];
-  
-  for (UIView *resultView in @[_vResultCorrect, _vResultIncorrect]) {
-    UIPanGestureRecognizer *panGesture =
-    [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
-    panGesture.minimumNumberOfTouches = 1;
-    panGesture.maximumNumberOfTouches = 1;
-    panGesture.delegate = self;
-    [resultView addGestureRecognizer:panGesture];
-  }
+  UIPanGestureRecognizer *panGesture =
+  [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+  panGesture.minimumNumberOfTouches = 1;
+  panGesture.maximumNumberOfTouches = 1;
+  panGesture.delegate = self;
+  [_vResultPopup addGestureRecognizer:panGesture];
   
   [self resetResultViews];
 }
@@ -486,12 +477,11 @@
 }
 
 - (void)resetResultViews {
-  CGRect frame = _vResultCorrect.frame;
+  CGRect frame = _vResultPopup.frame;
   frame.origin.y = _btnCheck.superview.frame.origin.y - 30 - frame.size.height;
-  _vResultCorrect.frame = _vResultIncorrect.frame = frame;
+  _vResultPopup.frame = frame;
   
-  _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
-  _currentShowingResultView = nil;
+  _vResultPopup.alpha = 0;
 }
 
 - (void)setResultViewVisible:(BOOL)show
@@ -503,72 +493,17 @@
     [self updateHeaderViews];
   }
   
-  if (show)
+  if (show) {
     [self switchCheckButtonMode:NO];
+    [self updateResultViewWithResult:answerResult withCorrectAnswer:correctAnswer underlineRanges:underlineRanges];
+  }
   
   [UIView
    animateWithDuration:kDefaultAnimationDuration
    delay:0
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
-     if (show) {
-       _currentShowingResultView = answerResult ? _vResultCorrect : _vResultIncorrect;
-       
-       UILabel *lblResultMessage = nil;
-       UILabel *lblResultAnswer = nil;
-       BOOL shouldShowAnswerLabel = YES;
-       
-       // Incorrect answer, always show answer label
-       if (!answerResult) {
-         lblResultMessage = _lblResultIncorrectMessage;
-         lblResultAnswer = _lblResultIncorrectAnswer;
-       } else { // Correct
-         // Correct with typos
-         shouldShowAnswerLabel = [underlineRanges count] > 0;
-         
-         lblResultMessage = _lblResultCorrectMessage;
-         lblResultAnswer = _lblResultCorrectAnswer;
-         
-         if (shouldShowAnswerLabel)
-           lblResultMessage.text = MMLocalizedString(@"You have typos in your answer");
-         else
-           lblResultMessage.text = MMLocalizedString(@"Correct!");
-       }
-       
-       lblResultAnswer.hidden = !shouldShowAnswerLabel;
-       
-       if (shouldShowAnswerLabel) {
-         if ([underlineRanges count] == 0)
-           lblResultAnswer.text = correctAnswer;
-         else
-           for (NSValue *underlineRange in underlineRanges)
-             [lblResultAnswer applyAttributedText:correctAnswer
-                                          inRange:[underlineRange rangeValue]
-                                   withAttributes:@{
-                                                    NSUnderlineColorAttributeName : lblResultAnswer.textColor,
-                                                    NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)
-                                                    }];
-         
-         [lblResultAnswer adjustToFitHeightAndConstrainsToHeight:46 relatedTo:lblResultMessage withDistance:5];
-         
-         BOOL answerInTwoLines = lblResultAnswer.frame.size.height > 23;
-         
-         CGRect frame = lblResultMessage.frame;
-         frame.origin.y = answerInTwoLines ? 8 : 17;
-         lblResultMessage.frame = frame;
-         
-         frame = lblResultAnswer.frame;
-         frame.origin.y = lblResultMessage.frame.origin.y + lblResultMessage.frame.size.height + 5;
-         lblResultAnswer.frame = frame;
-       } else {
-         CGPoint center = lblResultMessage.center;
-         center.y = lblResultMessage.superview.frame.size.height/2 + kFontClearSansMarginTop;
-         lblResultMessage.center = center;
-       }
-       
-       _currentShowingResultView.alpha = 1;
-     } else
-       _vResultCorrect.alpha = _vResultIncorrect.alpha = 0;
+     _vResultPopup.alpha = show;
    }
    completion:^(BOOL finished) {
      if (show)
@@ -576,6 +511,56 @@
      else
        [self resetResultViews];
    }];
+}
+
+- (void)updateResultViewWithResult:(BOOL)answerResult
+                 withCorrectAnswer:(NSString *)correctAnswer
+                   underlineRanges:(NSArray *)underlineRanges {
+  _vResultPopupBg.backgroundColor = answerResult ? UIColorFromRGB(235, 255, 170) : UIColorFromRGB(255, 200, 200);
+  
+  NSString *suffix = answerResult ? @"correct" : @"close";
+  _imgResultPopupIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"btn-lessons_learning-%@.png", suffix]];
+  
+  // Incorrect or Correct with typos
+  BOOL shouldShowAnswerLabel = !answerResult || [underlineRanges count] > 0;
+  
+  if (answerResult)
+    _lblResultPopupMessage.text = MMLocalizedString(@"Incorrect");
+  else if (shouldShowAnswerLabel)
+    _lblResultPopupMessage.text = MMLocalizedString(@"You have typos in your answer");
+  else
+    _lblResultPopupMessage.text = MMLocalizedString(@"Correct!");
+  
+  _lblResultPopupAnswer.hidden = !shouldShowAnswerLabel;
+  
+  if (shouldShowAnswerLabel) {
+    if ([underlineRanges count] == 0)
+      _lblResultPopupAnswer.text = correctAnswer;
+    else
+      for (NSValue *underlineRange in underlineRanges)
+        [_lblResultPopupAnswer applyAttributedText:correctAnswer
+                                           inRange:[underlineRange rangeValue]
+                                    withAttributes:@{
+                                                     NSUnderlineColorAttributeName : _lblResultPopupAnswer.textColor,
+                                                     NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)
+                                                     }];
+    
+    [_lblResultPopupAnswer adjustToFitHeightAndConstrainsToHeight:46 relatedTo:_lblResultPopupMessage withDistance:5];
+    
+    BOOL answerInTwoLines = _lblResultPopupAnswer.frame.size.height > 23;
+    
+    CGRect frame = _lblResultPopupMessage.frame;
+    frame.origin.y = answerInTwoLines ? 8 : 17;
+    _lblResultPopupMessage.frame = frame;
+    
+    frame = _lblResultPopupAnswer.frame;
+    frame.origin.y = _lblResultPopupMessage.frame.origin.y + _lblResultPopupMessage.frame.size.height + 5;
+    _lblResultPopupAnswer.frame = frame;
+  } else {
+    CGPoint center = _lblResultPopupMessage.center;
+    center.y = _lblResultPopupMessage.superview.frame.size.height/2 + kFontClearSansMarginTop;
+    _lblResultPopupMessage.center = center;
+  }
 }
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture {

@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMPlacementTestViewController">
             <connections>
                 <outlet property="_btnCheck" destination="30I-Yi-rE9" id="yxq-vo-rHg"/>
                 <outlet property="_lblLessonsCount" destination="gqk-SJ-dAL" id="gdL-h9-FE9"/>
-                <outlet property="_lblResultCorrectAnswer" destination="bzm-z2-Ckg" id="OO5-qD-XXj"/>
-                <outlet property="_lblResultCorrectMessage" destination="wWq-xN-bcT" id="kYJ-C1-c4V"/>
                 <outlet property="_lblResultIncorrectAnswer" destination="Cy3-Bz-s9N" id="7j4-bW-hXi"/>
                 <outlet property="_lblResultIncorrectMessage" destination="iI8-Lk-L62" id="ZjD-RW-adY"/>
+                <outlet property="_lblResultPopupAnswer" destination="bzm-z2-Ckg" id="dh3-YZ-hcn"/>
+                <outlet property="_lblResultPopupMessage" destination="wWq-xN-bcT" id="ao0-G9-MsA"/>
                 <outlet property="_vContentView" destination="dGy-oO-zHK" id="aNm-Uf-UNk"/>
                 <outlet property="_vGestureLayer" destination="3qW-wm-ag5" id="hFy-kD-15q"/>
-                <outlet property="_vResultCorrect" destination="SWh-4c-ZiZ" id="gwd-dp-B3I"/>
-                <outlet property="_vResultCorrectBg" destination="UHq-9S-nTc" id="n5Z-Do-bSZ"/>
                 <outlet property="_vResultIncorrect" destination="c59-Pt-pT5" id="dP6-Vs-Thk"/>
                 <outlet property="_vResultIncorrectBg" destination="RVc-wz-k5N" id="oX3-BY-mak"/>
+                <outlet property="_vResultPopup" destination="SWh-4c-ZiZ" id="PUw-US-QVZ"/>
+                <outlet property="_vResultPopupBg" destination="UHq-9S-nTc" id="v6C-tZ-Efs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -147,11 +146,16 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <resources>
         <image name="btn-lessons_learning-close.png" width="32" height="32"/>
         <image name="img-lessons_learning-correct.png" width="40" height="30"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

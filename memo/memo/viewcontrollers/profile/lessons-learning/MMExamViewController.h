@@ -22,10 +22,11 @@
   IBOutlet UIView *_vContentView;
   IBOutlet UIButton *_btnCheck;
   
-  IBOutlet UIView *_vResultCorrect;
-  IBOutlet UIView *_vResultCorrectBg;
-  IBOutlet UILabel *_lblResultCorrectMessage;
-  IBOutlet UILabel *_lblResultCorrectAnswer;
+  IBOutlet UIView *_vResultPopup;
+  IBOutlet UIView *_vResultPopupBg;
+  IBOutlet UIImageView *_imgResultPopupIcon;
+  IBOutlet UILabel *_lblResultPopupMessage;
+  IBOutlet UILabel *_lblResultPopupAnswer;
   
   IBOutlet UIView *_vResultIncorrect;
   IBOutlet UIView *_vResultIncorrectBg;
