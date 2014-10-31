@@ -10,15 +10,12 @@
 #import "MMAppDelegate.h"
 #import "MMForgotPasswordViewController.h"
 #import "MMSkillsListViewController.h"
+#import "MMCoursesListViewController.h"
 #import "MUser.h"
 
 @interface MMLoginViewController () {
-  UIView *_currentFirstResponder;
   MMForgotPasswordViewController *_forgotPasswordVC;
 }
-
-- (void)setupViews;
-- (BOOL)validateFields;
 
 @end
 
@@ -44,110 +41,6 @@
   [_currentFirstResponder resignFirstResponder];
 }
 
-- (IBAction)btnLoginPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Login"];
-  
-  if (![self validateFields])
-    return;
-  
-  [self gestureLayerDidTap];
-  
-  ShowHudForCurrentView();
-  
-  [[MMServerHelper sharedHelper]
-   logInWithUsername:_txtUsername.text
-   password:_txtPassword.text
-   completion:^(NSDictionary *userData, NSError *error) {
-     HideHudForCurrentView();
-     ShowAlertWithError(error);
-     
-     [Utils updateSavedUserWithAttributes:userData];
-     [MUser loadCurrentUserFromUserDef];
-     [self transitToViewController:[MMSkillsListViewController navigationController]];
-   }];
-  
-  return;
-}
-
-- (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Forgot password"];
-  
-  if (_forgotPasswordVC == nil)
-    _forgotPasswordVC = [MMForgotPasswordViewController new];
-  
-  [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
-  [_forgotPasswordVC reloadContents];
-}
-
-- (IBAction)btnFacebookPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Login Facebook"];
-  
-  [Utils logInFacebookFromView:[self mainView] completion:^(NSDictionary *userData, NSError *error) {
-    ShowAlertWithError(error);
-    
-    ShowHudForCurrentView();
-    
-    [[MMServerHelper sharedHelper]
-     logInWithFacebookId:userData[kParamFbId]
-     facebookName:userData[kParamFbName]
-     accessToken:userData[kParamFbAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-       
-       [Utils updateSavedUserWithAttributes:userData];
-       [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[MMSkillsListViewController navigationController]];
-     }];
-  }];
-}
-
-- (IBAction)btnGooglePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Login Google+"];
-  
-  ShowHudForCurrentView();
-  
-  [Utils logInGoogleFromView:[self mainView] completion:^(NSDictionary *userData, NSError *error) {
-    if (error != nil)
-      HideHudForCurrentView();
-    
-    ShowAlertWithError(error);
-    
-    [[MMServerHelper sharedHelper]
-     logInWithGmail:userData[kParamGmail]
-     accessToken:userData[kParamGAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-       
-       [Utils updateSavedUserWithAttributes:userData];
-       [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[MMSkillsListViewController navigationController]];
-     }];
-  }];
-}
-
-#pragma mark - UITextFieldDelegate methods
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-  if ([textField isEqual:_txtUsername])
-    [Utils logAnalyticsForFocusTextField:@"Username"];
-  else
-    [Utils logAnalyticsForFocusTextField:@"Password"];
-  
-  _currentFirstResponder = textField;
-  [self gestureLayerDidEnterEditingMode];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  if (textField == _txtUsername)
-    [_txtPassword becomeFirstResponder];
-  else if (textField == _txtPassword)
-    [self btnLoginPressed:nil];
-  
-  return YES;
-}
-
-#pragma mark - Private methods
 - (void)setupViews {
   _vTextFields.layer.cornerRadius = 4;
   _vTextFields.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
@@ -191,6 +84,64 @@
     [Utils showToastWithMessage:MMLocalizedString(@"Please enter your password")];
     return NO;
   }
+  
+  return YES;
+}
+
+- (IBAction)btnLoginPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Login"];
+  
+  if (![self validateFields])
+    return;
+  
+  [self gestureLayerDidTap];
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   logInWithUsername:_txtUsername.text
+   password:_txtPassword.text
+   completion:^(NSDictionary *userData, NSError *error) {
+     [self handleLoginResponseWithUserData:userData orError:error];
+   }];
+  
+  return;
+}
+
+- (IBAction)btnForgotPasswordPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"Forgot password"];
+  
+  if (_forgotPasswordVC == nil)
+    _forgotPasswordVC = [MMForgotPasswordViewController new];
+  
+  [self.navigationController pushViewController:_forgotPasswordVC animated:YES];
+  [_forgotPasswordVC reloadContents];
+}
+
+- (IBAction)btnFacebookPressed:(UIButton *)sender {
+  [self loginWithFacebook];
+}
+
+- (IBAction)btnGooglePressed:(UIButton *)sender {
+  [self loginWithGoogle];
+}
+
+#pragma mark - UITextFieldDelegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+  if ([textField isEqual:_txtUsername])
+    [Utils logAnalyticsForFocusTextField:@"Username"];
+  else
+    [Utils logAnalyticsForFocusTextField:@"Password"];
+  
+  _currentFirstResponder = textField;
+  [self gestureLayerDidEnterEditingMode];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if (textField == _txtUsername)
+    [_txtPassword becomeFirstResponder];
+  else if (textField == _txtPassword)
+    [self btnLoginPressed:nil];
   
   return YES;
 }

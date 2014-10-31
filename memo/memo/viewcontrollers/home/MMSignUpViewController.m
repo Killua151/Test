@@ -10,12 +10,7 @@
 #import "MMSkillsListViewController.h"
 #import "MUser.h"
 
-@interface MMSignUpViewController () {
-  UIView *_currentFirstResponder;
-}
-
-- (void)setupViews;
-- (BOOL)validateFields;
+@interface MMSignUpViewController ()
 
 @end
 
@@ -52,102 +47,6 @@
   [_currentFirstResponder resignFirstResponder];
 }
 
-- (IBAction)btnSignUpPressed:(UIButton *)sender {
-  if (![self validateFields])
-    return;
-  
-  [self gestureLayerDidTap];
-  
-  ShowHudForCurrentView();
-  
-  [[MMServerHelper sharedHelper]
-   signUpWithFullName:_txtFullName.text
-   email:_txtEmail.text
-   username:_txtUsername.text
-   password:_txtPassword.text
-   completion:^(NSDictionary *userData, NSError *error) {
-     HideHudForCurrentView();
-     ShowAlertWithError(error);
-     
-     [Utils updateSavedUserWithAttributes:userData];
-     [MUser loadCurrentUserFromUserDef];
-     [self transitToViewController:[MMSkillsListViewController navigationController]];
-   }];
-}
-
-- (IBAction)btnFacebookPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Login Facebook"];
-  
-  [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
-    ShowAlertWithError(error);
-    
-    ShowHudForCurrentView();
-    
-    [[MMServerHelper sharedHelper]
-     logInWithFacebookId:userData[kParamFbId]
-     facebookName:userData[kParamFbName]
-     accessToken:userData[kParamFbAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-       
-       [Utils updateSavedUserWithAttributes:userData];
-       [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[MMSkillsListViewController navigationController]];
-     }];
-  }];
-}
-
-- (IBAction)btnGooglePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"Login Google+"];
-  
-  ShowHudForCurrentView();
-  
-  [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
-    if (error != nil)
-      HideHudForCurrentView();
-    
-    ShowAlertWithError(error);
-    
-    [[MMServerHelper sharedHelper]
-     logInWithGmail:userData[kParamGmail]
-     accessToken:userData[kParamGAccessToken]
-     completion:^(NSDictionary *userData, NSError *error) {
-       HideHudForCurrentView();
-       ShowAlertWithError(error);
-       
-       [Utils updateSavedUserWithAttributes:userData];
-       [MUser loadCurrentUserFromUserDef];
-       [self transitToViewController:[MMSkillsListViewController navigationController]];
-     }];
-  }];
-}
-
-#pragma mark - UITextFieldDelegate methods
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-  _currentFirstResponder = textField;
-  [self gestureLayerDidEnterEditingMode];
-  
-  if (!DeviceScreenIsRetina4Inch())
-    [self animateSlideViewUp:YES withDistance:20];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  if (textField == _txtFullName)
-    [_txtEmail becomeFirstResponder];
-  else if (textField == _txtEmail)
-    [_txtUsername becomeFirstResponder];
-  else if (textField == _txtUsername)
-    [_txtPassword becomeFirstResponder];
-  else if (textField == _txtPassword)
-    [_txtConfirmPassword becomeFirstResponder];
-  else
-    [self btnSignUpPressed:nil];
-  
-  return YES;
-}
-
-#pragma mark - Private methods
 - (void)setupViews {
   _vTextFields.layer.cornerRadius = 4;
   _vTextFields.layer.borderColor = [UIColorFromRGB(204, 204, 204) CGColor];
@@ -224,6 +123,56 @@
     [Utils showToastWithMessage:MMLocalizedString(@"Passwords not match")];
     return NO;
   }
+  
+  return YES;
+}
+
+- (IBAction)btnSignUpPressed:(UIButton *)sender {
+  if (![self validateFields])
+    return;
+  
+  [self gestureLayerDidTap];
+  
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper]
+   signUpWithFullName:_txtFullName.text
+   email:_txtEmail.text
+   username:_txtUsername.text
+   password:_txtPassword.text
+   completion:^(NSDictionary *userData, NSError *error) {
+     [self handleLoginResponseWithUserData:userData orError:error];
+   }];
+}
+
+- (IBAction)btnFacebookPressed:(UIButton *)sender {
+  [self loginWithFacebook];
+}
+
+- (IBAction)btnGooglePressed:(UIButton *)sender {
+  [self loginWithGoogle];
+}
+
+#pragma mark - UITextFieldDelegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+  _currentFirstResponder = textField;
+  [self gestureLayerDidEnterEditingMode];
+  
+  if (!DeviceScreenIsRetina4Inch())
+    [self animateSlideViewUp:YES withDistance:20];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if (textField == _txtFullName)
+    [_txtEmail becomeFirstResponder];
+  else if (textField == _txtEmail)
+    [_txtUsername becomeFirstResponder];
+  else if (textField == _txtUsername)
+    [_txtPassword becomeFirstResponder];
+  else if (textField == _txtPassword)
+    [_txtConfirmPassword becomeFirstResponder];
+  else
+    [self btnSignUpPressed:nil];
   
   return YES;
 }

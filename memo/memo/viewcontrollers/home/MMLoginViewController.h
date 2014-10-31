@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ethan Nguyen. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "MMBaseAuthenticationViewController.h"
 
-@interface MMLoginViewController : BaseViewController <UITextFieldDelegate> {
+@interface MMLoginViewController : MMBaseAuthenticationViewController <UITextFieldDelegate> {
   IBOutlet UIView *_vTextFields;
   IBOutlet UITextField *_txtUsername;
   IBOutlet UITextField *_txtPassword;

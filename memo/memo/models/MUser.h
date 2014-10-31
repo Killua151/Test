@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *auth_token;
 @property (nonatomic, strong) NSArray *checkpoints;
 @property (nonatomic, assign) NSInteger combo_days;
+@property (nonatomic, strong) NSString *current_course_id;
 @property (nonatomic, strong) NSString *current_course_name;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSDictionary *exp_chart;

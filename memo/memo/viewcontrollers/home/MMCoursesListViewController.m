@@ -10,6 +10,7 @@
 #import "MMSkillsListViewController.h"
 #import "MMCourseSelectionCell.h"
 #import "MCourse.h"
+#import "MUser.h"
 
 @interface MMCoursesListViewController () {
   NSMutableArray *_coursesData;
@@ -35,6 +36,10 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
+}
+
+- (void)beforeGoBack {
+  [MUser logOutCurrentUser];
 }
 
 - (void)reloadContents {

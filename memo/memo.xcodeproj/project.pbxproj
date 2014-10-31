@@ -33,6 +33,7 @@
 		CA452E7A19EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */; };
 		CA452E7C19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */; };
 		CA452E7E19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */; };
+		CA622A4D1A039468000ACE21 /* MMBaseAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -867,6 +868,8 @@
 		CA452E6919EFFDB900A5F5CB /* img-item_icon-lucky_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-lucky_star@2x.png"; sourceTree = "<group>"; };
 		CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-progress_quiz.png"; sourceTree = "<group>"; };
 		CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-progress_quiz@2x.png"; sourceTree = "<group>"; };
+		CA622A4B1A039468000ACE21 /* MMBaseAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseAuthenticationViewController.h; sourceTree = "<group>"; };
+		CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseAuthenticationViewController.m; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2927,6 +2930,8 @@
 		CAF8520F19E0F3D200A347CF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CA622A4B1A039468000ACE21 /* MMBaseAuthenticationViewController.h */,
+				CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */,
 				CAF8521019E0F3D200A347CF /* MMCourseSelectionCell.h */,
 				CAF8521119E0F3D200A347CF /* MMCourseSelectionCell.m */,
 				CAF8521219E0F3D200A347CF /* MMCourseSelectionCell.xib */,
@@ -4219,6 +4224,7 @@
 				CAF8549619E0F3D200A347CF /* MMExamViewController.m in Sources */,
 				CA452E5919EEBE9800A5F5CB /* MCheckpoint.m in Sources */,
 				CAF852C619E0F3D200A347CF /* NSArray+ArrayHelpers.m in Sources */,
+				CA622A4D1A039468000ACE21 /* MMBaseAuthenticationViewController.m in Sources */,
 				CAF852D919E0F3D200A347CF /* MBase.m in Sources */,
 				CAF854CF19E0F3D200A347CF /* MMShieldSkillCell.m in Sources */,
 				CABBEA9019E0E4C800EFED33 /* main.m in Sources */,
