@@ -189,6 +189,9 @@
   if ([userDefaults objectForKey:kUserDefSpeakEnabled] == nil)
     [userDefaults setBool:YES forKey:kUserDefSpeakEnabled];
   
+  if ([userDefaults objectForKey:kUserDefSoundEffectsEnabled] == nil)
+    [userDefaults setBool:YES forKey:kUserDefSoundEffectsEnabled];
+  
   [userDefaults synchronize];
   
 #if kTestLogin

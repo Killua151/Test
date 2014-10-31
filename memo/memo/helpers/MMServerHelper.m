@@ -231,7 +231,7 @@
      
      if (isFriend)
        user = [MUser new];
-
+     
      [user assignProperties:userData];
      handler(user, nil);
    }

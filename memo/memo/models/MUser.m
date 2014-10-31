@@ -12,6 +12,7 @@
 #import "MSkill.h"
 #import "MLeaderboardData.h"
 #import "MCheckpoint.h"
+#import "MSettings.h"
 
 @interface MUser () {
   NSMutableDictionary *_skillsById;
@@ -81,6 +82,13 @@ static MUser *_currentUser = nil;
       receivedBonus[key] = lastReceivedBonuses[key];
   
   _lastReceivedBonuses = [NSDictionary dictionaryWithDictionary:receivedBonus];
+}
+
+- (void)assignProperties:(NSDictionary *)dict {
+  [super assignProperties:dict];
+  
+  if (dict[kParamSettings] != nil && [dict[kParamSettings] isKindOfClass:[NSArray class]])
+    _settings = [MSettings modelsFromArr:dict[kParamSettings]];
 }
 
 - (void)updateAttributesFromProfileData:(NSDictionary *)userData {

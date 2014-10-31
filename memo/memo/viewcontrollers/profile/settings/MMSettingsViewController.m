@@ -9,6 +9,7 @@
 #import "MMSettingsViewController.h"
 #import "MMSettingsHeaderView.h"
 #import "MMHomeViewController.h"
+#import "MMNotificationSettingsCell.h"
 #import "MUser.h"
 
 #define kTextFieldTypes           @[kParamUsername, kParamPassword, kParamEmail]
@@ -26,7 +27,7 @@
 - (void)submitChanges;
 - (void)confirmTextField:(UITextField *)textField withType:(NSString *)type;
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index;
-- (void)toggleSpeakingLessons;
+- (void)toggleLocalSavedSettings:(NSString *)settingsKey;
 - (void)linkFacebook;
 - (void)unlinkFacebook;
 - (void)linkGoogle;
@@ -78,6 +79,8 @@
   [_swtSpeakingLessons setOn:speakEnabled animated:YES shouldCallback:NO];
   [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES shouldCallback:NO];
   [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES shouldCallback:NO];
+  
+  [_tblSettings reloadData];
 }
 
 - (IBAction)btnSendFeedbackPressed:(UIButton *)sender {
@@ -106,7 +109,8 @@
 
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return [_sectionsData count];
+  BOOL noNotificationSettings = [[MUser currentUser].settings count] == 0;
+  return [_sectionsData count] - noNotificationSettings;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -120,7 +124,7 @@
     return 2;
   
   if (section == 4)
-    return 3;
+    return [[MUser currentUser].settings count];
   
   return 0;
 }
@@ -163,13 +167,14 @@
   }
   
   if (indexPath.section == 4) {
-    if (indexPath.row == 0)
-      return _celPracticeReminder;
+    MMNotificationSettingsCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                                        NSStringFromClass([MMNotificationSettingsCell class])];
     
-    if (indexPath.row == 1)
-      return _celFriendAdded;
+    if (cell == nil)
+      cell = [MMNotificationSettingsCell new];
     
-    return _celFriendPassed;
+    [cell updateCellWithData:[MUser currentUser].settings[indexPath.row]];
+    return cell;
   }
   
   return nil;
@@ -228,15 +233,8 @@
     return _celGooglePlus.frame.size.height;
   }
   
-  if (indexPath.section == 4) {
-    if (indexPath.row == 0)
-      return _celPracticeReminder.frame.size.height;
-    
-    if (indexPath.row == 1)
-      return _celFriendAdded.frame.size.height;
-    
-    return _celFriendPassed.frame.size.height;
-  }
+  if (indexPath.section == 4)
+    return [MMNotificationSettingsCell heightToFitWithData:[MUser currentUser].settings[indexPath.row]];
   
   return 0;
 }
@@ -335,10 +333,7 @@
                                MMLocalizedString(@"Sound effects"),
                                MMLocalizedString(@"Speaking lessons"),
                                MMLocalizedString(@"Facebook"),
-                               MMLocalizedString(@"Google+"),
-                               MMLocalizedString(@"Practice reminder"),
-                               MMLocalizedString(@"Someone add as friend"),
-                               MMLocalizedString(@"Someone passed you")
+                               MMLocalizedString(@"Google+")
                                ];
   
   [_lblTitles enumerateObjectsUsingBlock:^(UILabel *titleLabel, NSUInteger index, BOOL *stop) {
@@ -447,10 +442,11 @@
 - (void)switchDidChanged:(BOOL)isOn atIndex:(NSInteger)index {
   switch (index) {
     case 0:
+      [self toggleLocalSavedSettings:kUserDefSoundEffectsEnabled];
       break;
       
     case 1:
-      [self toggleSpeakingLessons];
+      [self toggleLocalSavedSettings:kUserDefSpeakEnabled];
       break;
       
     case 2:
@@ -466,11 +462,14 @@
   }
 }
 
-- (void)toggleSpeakingLessons {
+- (void)toggleLocalSavedSettings:(NSString *)settingsKey {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
-  BOOL speakEnabled = [userDefaults boolForKey:kParamSpeakEnabled];
-  [userDefaults setBool:!speakEnabled forKey:kParamSpeakEnabled];
+  if ([userDefaults objectForKey:settingsKey] == nil)
+    return;
+  
+  BOOL savedSettings = [userDefaults boolForKey:settingsKey];
+  [userDefaults setBool:!savedSettings forKey:settingsKey];
   
   [userDefaults synchronize];
 }

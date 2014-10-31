@@ -126,6 +126,7 @@ return; \
 #define kUserDefSavedUser                       @"saved_user"
 #define kUserDefApnsToken                       @"ios_apns_token"
 #define kUserDefSpeakEnabled                    @"speak_enabled"
+#define kUserDefSoundEffectsEnabled             @"sound_effects_enabled"
 #define kUserDefDictionaryVersion               @"dictionary_version"
 #define kUserDefWordsDictionary                 @"words_dictionary"
 
@@ -182,6 +183,7 @@ return; \
 #define kParamPassword                          @"password"
 #define kParamResponseCode                      @"response_code"
 #define kParamResult                            @"result"
+#define kParamSettings                          @"settings"
 #define kParamSkillId                           @"skill_id"
 #define kParamSkills                            @"skills"
 #define kParamSkillsTree                        @"skills_tree"

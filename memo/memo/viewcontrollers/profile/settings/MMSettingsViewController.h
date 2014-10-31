@@ -40,18 +40,6 @@
   IBOutlet UITableViewCell *_celGooglePlus;
   MMSwitch *_swtGooglePlus;
   
-  IBOutlet UITableViewCell *_celPracticeReminder;
-  IBOutlet UIButton *_btnPracticeReminderPhone;
-  IBOutlet UIButton *_btnPracticeReminderEmail;
-  
-  IBOutlet UITableViewCell *_celFriendAdded;
-  IBOutlet UIButton *_btnFriendAddedPhone;
-  IBOutlet UIButton *_btnFriendAddedEmail;
-  
-  IBOutlet UITableViewCell *_celFriendPassed;
-  IBOutlet UIButton *_btnFriendPassedPhone;
-  IBOutlet UIButton *_btnFriendPassedEmail;
-  
   IBOutletCollection(UILabel) NSArray *_lblTitles;
   IBOutlet UILabel *_lblAppVersion;
 }

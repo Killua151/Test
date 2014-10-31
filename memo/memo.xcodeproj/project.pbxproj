@@ -891,6 +891,12 @@
 		CAC80AF719F8C14C00C6EF14 /* beta.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF419F8C14C00C6EF14 /* beta.png */; };
 		CAC80AF819F8C14C00C6EF14 /* beta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF519F8C14C00C6EF14 /* beta@2x.png */; };
 		CAC80AF919F8C14C00C6EF14 /* beta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF519F8C14C00C6EF14 /* beta@2x.png */; };
+		CADDB99F1A034D6000642B6E /* MSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB99E1A034D6000642B6E /* MSettings.m */; };
+		CADDB9A01A034D6000642B6E /* MSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB99E1A034D6000642B6E /* MSettings.m */; };
+		CADDB9A41A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */; };
+		CADDB9A51A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */; };
+		CADDB9A61A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */; };
+		CADDB9A71A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */; };
 		CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501119E0F3D100A347CF /* MMLineChart.m */; };
 		CAF852C219E0F3D200A347CF /* MMLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501319E0F3D100A347CF /* MMLineChartData.m */; };
 		CAF852C319E0F3D200A347CF /* MMAllowsTouchOutsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF8501519E0F3D100A347CF /* MMAllowsTouchOutsideView.m */; };
@@ -1739,6 +1745,11 @@
 		CABBEA9C19E0E4C800EFED33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CAC80AF419F8C14C00C6EF14 /* beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beta.png; sourceTree = "<group>"; };
 		CAC80AF519F8C14C00C6EF14 /* beta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta@2x.png"; sourceTree = "<group>"; };
+		CADDB99D1A034D6000642B6E /* MSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSettings.h; sourceTree = "<group>"; };
+		CADDB99E1A034D6000642B6E /* MSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSettings.m; sourceTree = "<group>"; };
+		CADDB9A11A034DFD00642B6E /* MMNotificationSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNotificationSettingsCell.h; sourceTree = "<group>"; };
+		CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNotificationSettingsCell.m; sourceTree = "<group>"; };
+		CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMNotificationSettingsCell.xib; sourceTree = "<group>"; };
 		CAF8501019E0F3D100A347CF /* MMLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLineChart.h; sourceTree = "<group>"; };
 		CAF8501119E0F3D100A347CF /* MMLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLineChart.m; sourceTree = "<group>"; };
 		CAF8501219E0F3D100A347CF /* MMLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLineChartData.h; sourceTree = "<group>"; };
@@ -2910,6 +2921,8 @@
 				CA8C974919F502CA00E639E9 /* MWord.h */,
 				CA8C974A19F502CA00E639E9 /* MWord.m */,
 				CAF8505919E0F3D100A347CF /* Questions */,
+				CADDB99D1A034D6000642B6E /* MSettings.h */,
+				CADDB99E1A034D6000642B6E /* MSettings.m */,
 			);
 			name = Models;
 			path = models;
@@ -3994,6 +4007,9 @@
 		CAF8528119E0F3D200A347CF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CADDB9A11A034DFD00642B6E /* MMNotificationSettingsCell.h */,
+				CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */,
+				CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */,
 				CAF8528219E0F3D200A347CF /* MMSettingsHeaderView.h */,
 				CAF8528319E0F3D200A347CF /* MMSettingsHeaderView.m */,
 				CAF8528419E0F3D200A347CF /* MMSettingsHeaderView.xib */,
@@ -4765,6 +4781,7 @@
 				CA13F23019F0FC1F0040A7A5 /* img-skill_icon-en-vi_pho_tu-locked.png in Resources */,
 				CA13F23119F0FC1F0040A7A5 /* img-skill_icon-en-vi_dai_tu_khach_quan-locked_big.png in Resources */,
 				CA13F23219F0FC1F0040A7A5 /* img-skill_icon-en-vi_du_lich-unlocked@2x.png in Resources */,
+				CADDB9A71A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */,
 				CA13F23319F0FC1F0040A7A5 /* img-ant-save@2x.png in Resources */,
 				CA13F23419F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked_big@2x.png in Resources */,
 				CA13F23519F0FC1F0040A7A5 /* img-skill_icon-en-vi_dong_tu_thi_qua_khu-unlocked_big@2x.png in Resources */,
@@ -5288,6 +5305,7 @@
 				CAF8544C19E0F3D200A347CF /* img-hexagon_skill-bg-locked.png in Resources */,
 				CAF8536F19E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */,
 				CAF855ED19E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png in Resources */,
+				CADDB9A61A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */,
 				CAF8535B19E0F3D200A347CF /* img-popup-bg@2x.png in Resources */,
 				CAF855EE19E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked@2x.png in Resources */,
 				CAF852F319E0F3D200A347CF /* img-ant-fail.png in Resources */,
@@ -5732,6 +5750,7 @@
 				CA13EFB019F0FC1F0040A7A5 /* MMSkillView.m in Sources */,
 				CA13EFB119F0FC1F0040A7A5 /* MMSelectQuestionContentView.m in Sources */,
 				CA13EFB219F0FC1F0040A7A5 /* MSpeakQuestion.m in Sources */,
+				CADDB9A51A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */,
 				CA13EFB319F0FC1F0040A7A5 /* MMBeginPlacementTestViewController.m in Sources */,
 				CA13EFB419F0FC1F0040A7A5 /* MNameQuestion.m in Sources */,
 				CA13EFB519F0FC1F0040A7A5 /* MBaseQuestion.m in Sources */,
@@ -5751,6 +5770,7 @@
 				CA13EFC319F0FC1F0040A7A5 /* NSString+UnicharUtilities.m in Sources */,
 				CA13EFC419F0FC1F0040A7A5 /* MMForgotPasswordViewController.m in Sources */,
 				CA13EFC519F0FC1F0040A7A5 /* DiffMatchPatch.m in Sources */,
+				CADDB9A01A034D6000642B6E /* MSettings.m in Sources */,
 				CA13EFC619F0FC1F0040A7A5 /* MMHexagonLessonView.m in Sources */,
 				CA8C976319F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CA13EFC719F0FC1F0040A7A5 /* MSkill.m in Sources */,
@@ -5849,6 +5869,7 @@
 				CAF854C619E0F3D200A347CF /* MMSkillView.m in Sources */,
 				CAF854A319E0F3D200A347CF /* MMSelectQuestionContentView.m in Sources */,
 				CAF852E519E0F3D200A347CF /* MSpeakQuestion.m in Sources */,
+				CADDB9A41A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */,
 				CAF8548119E0F3D200A347CF /* MMBeginPlacementTestViewController.m in Sources */,
 				CAF852E219E0F3D200A347CF /* MNameQuestion.m in Sources */,
 				CAF852DE19E0F3D200A347CF /* MBaseQuestion.m in Sources */,
@@ -5868,6 +5889,7 @@
 				CAF852D319E0F3D200A347CF /* NSString+UnicharUtilities.m in Sources */,
 				CAF8547919E0F3D200A347CF /* MMForgotPasswordViewController.m in Sources */,
 				CAF852CF19E0F3D200A347CF /* DiffMatchPatch.m in Sources */,
+				CADDB99F1A034D6000642B6E /* MSettings.m in Sources */,
 				CAF854AC19E0F3D200A347CF /* MMHexagonLessonView.m in Sources */,
 				CA8C976219F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CAF852DC19E0F3D200A347CF /* MSkill.m in Sources */,
@@ -5956,7 +5978,7 @@
 			baseConfigurationReference = 698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -5971,7 +5993,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "f23d2f06-12c2-4e02-bf8a-d32fd19971cb";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5981,7 +6003,7 @@
 			baseConfigurationReference = 110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -5996,7 +6018,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "memo-beta";
-				PROVISIONING_PROFILE = "f23d2f06-12c2-4e02-bf8a-d32fd19971cb";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
