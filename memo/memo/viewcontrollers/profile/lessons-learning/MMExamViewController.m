@@ -44,10 +44,10 @@
 - (void)resetCounts;
 
 - (void)resetResultViews;
-- (void)setResultViewVisible:(BOOL)show
-             forAnswerResult:(BOOL)answerResult
-           withCorrectAnswer:(NSString *)correctAnswer
-             underlineRanges:(NSArray *)underlineRanges;
+- (void)showResultView:(BOOL)show
+       forAnswerResult:(BOOL)answerResult
+     withCorrectAnswer:(NSString *)correctAnswer
+       underlineRanges:(NSArray *)underlineRanges;
 
 - (void)panGestureHandler:(UIPanGestureRecognizer *)panGesture;
 - (Class)questionContentViewKlassForQuestionType:(NSString *)questionType;
@@ -102,7 +102,7 @@
 }
 
 - (void)reloadContents {
-  [self setResultViewVisible:NO forAnswerResult:YES withCorrectAnswer:nil underlineRanges:nil];
+  [self showResultView:NO forAnswerResult:YES withCorrectAnswer:nil underlineRanges:nil];
   [self removeCurrentQuestion];
 }
 
@@ -199,7 +199,7 @@
   NSString *correctAnswer = checkResult[kParamCorrectAnswer];
   NSArray *underlineRanges = checkResult[kParamUnderlineRanges];
   
-  [self setResultViewVisible:YES
+  [self showResultView:YES
              forAnswerResult:answerResult
            withCorrectAnswer:correctAnswer
              underlineRanges:underlineRanges];
@@ -481,19 +481,21 @@
   frame.origin.y = _btnCheck.superview.frame.origin.y - 30 - frame.size.height;
   _vResultPopup.frame = frame;
   
-  _vResultPopup.alpha = 0;
+  _vResultPopup.hidden = YES;
 }
 
-- (void)setResultViewVisible:(BOOL)show
-             forAnswerResult:(BOOL)answerResult
-           withCorrectAnswer:(NSString *)correctAnswer
-             underlineRanges:(NSArray *)underlineRanges {
+- (void)showResultView:(BOOL)show
+       forAnswerResult:(BOOL)answerResult
+     withCorrectAnswer:(NSString *)correctAnswer
+       underlineRanges:(NSArray *)underlineRanges {
   if (!answerResult) {
     _currentHeartsCount--;
     [self updateHeaderViews];
   }
   
   if (show) {
+    _vResultPopup.alpha = 0;
+    _vResultPopup.hidden = NO;
     [self switchCheckButtonMode:NO];
     [self updateResultViewWithResult:answerResult withCorrectAnswer:correctAnswer underlineRanges:underlineRanges];
   }
@@ -508,8 +510,10 @@
    completion:^(BOOL finished) {
      if (show)
        [self gestureLayerDidEnterEditingMode];
-     else
+     else {
        [self resetResultViews];
+       _vResultPopup.hidden = YES;
+     }
    }];
 }
 
@@ -518,14 +522,17 @@
                    underlineRanges:(NSArray *)underlineRanges {
   _vResultPopupBg.backgroundColor = answerResult ? UIColorFromRGB(235, 255, 170) : UIColorFromRGB(255, 200, 200);
   
-  NSString *suffix = answerResult ? @"correct" : @"close";
-  _imgResultPopupIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"btn-lessons_learning-%@.png", suffix]];
+  NSString *iconName = answerResult ? @"img-lessons_learning-correct.png" : @"btn-lessons_learning-close.png";
+  _imgResultPopupIcon.image = [UIImage imageNamed:iconName];
+  
+  _lblResultPopupMessage.textColor = _lblResultPopupAnswer.textColor =
+  answerResult ? UIColorFromRGB(102, 153, 0) : UIColorFromRGB(129, 12, 21);
   
   // Incorrect or Correct with typos
   BOOL shouldShowAnswerLabel = !answerResult || [underlineRanges count] > 0;
   
-  if (answerResult)
-    _lblResultPopupMessage.text = MMLocalizedString(@"Incorrect");
+  if (!answerResult)
+    _lblResultPopupMessage.text = MMLocalizedString(@"Correct answer");
   else if (shouldShowAnswerLabel)
     _lblResultPopupMessage.text = MMLocalizedString(@"You have typos in your answer");
   else

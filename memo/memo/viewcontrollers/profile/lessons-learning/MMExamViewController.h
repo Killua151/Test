@@ -28,11 +28,6 @@
   IBOutlet UILabel *_lblResultPopupMessage;
   IBOutlet UILabel *_lblResultPopupAnswer;
   
-  IBOutlet UIView *_vResultIncorrect;
-  IBOutlet UIView *_vResultIncorrectBg;
-  IBOutlet UILabel *_lblResultIncorrectMessage;
-  IBOutlet UILabel *_lblResultIncorrectAnswer;
-  
   MMQuestionContentView *_vQuestionContent;
   
   NSInteger _currentQuestionIndex;

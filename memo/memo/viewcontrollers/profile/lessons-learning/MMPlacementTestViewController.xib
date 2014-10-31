@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMPlacementTestViewController">
             <connections>
                 <outlet property="_btnCheck" destination="30I-Yi-rE9" id="yxq-vo-rHg"/>
+                <outlet property="_imgResultPopupIcon" destination="l1W-Vz-uO2" id="dvP-B9-Fnz"/>
                 <outlet property="_lblLessonsCount" destination="gqk-SJ-dAL" id="gdL-h9-FE9"/>
-                <outlet property="_lblResultIncorrectAnswer" destination="Cy3-Bz-s9N" id="7j4-bW-hXi"/>
-                <outlet property="_lblResultIncorrectMessage" destination="iI8-Lk-L62" id="ZjD-RW-adY"/>
                 <outlet property="_lblResultPopupAnswer" destination="bzm-z2-Ckg" id="dh3-YZ-hcn"/>
                 <outlet property="_lblResultPopupMessage" destination="wWq-xN-bcT" id="ao0-G9-MsA"/>
                 <outlet property="_vContentView" destination="dGy-oO-zHK" id="aNm-Uf-UNk"/>
                 <outlet property="_vGestureLayer" destination="3qW-wm-ag5" id="hFy-kD-15q"/>
-                <outlet property="_vResultIncorrect" destination="c59-Pt-pT5" id="dP6-Vs-Thk"/>
-                <outlet property="_vResultIncorrectBg" destination="RVc-wz-k5N" id="oX3-BY-mak"/>
                 <outlet property="_vResultPopup" destination="SWh-4c-ZiZ" id="PUw-US-QVZ"/>
                 <outlet property="_vResultPopupBg" destination="UHq-9S-nTc" id="v6C-tZ-Efs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -84,63 +82,36 @@
                     <rect key="frame" x="15" y="200" width="290" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" id="UHq-9S-nTc">
+                        <view contentMode="scaleToFill" id="UHq-9S-nTc" userLabel="Background">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-correct.png" id="l1W-Vz-uO2">
-                                    <rect key="frame" x="18" y="27" width="40" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chính xác!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="wWq-xN-bcT">
-                                    <rect key="frame" x="68" y="31" width="200" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="bzm-z2-Ckg">
-                                    <rect key="frame" x="68" y="43" width="200" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
                             <color key="backgroundColor" red="0.92156862750000001" green="1" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" id="c59-Pt-pT5" userLabel="Incorrect result">
-                    <rect key="frame" x="15" y="300" width="290" height="85"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" id="RVc-wz-k5N">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="85"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <view contentMode="scaleToFill" id="V9T-AH-7jL">
+                            <rect key="frame" x="15" y="23" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn-lessons_learning-close.png" id="ZgG-BD-w61">
-                                    <rect key="frame" x="15" y="26" width="32" height="32"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lessons_learning-correct.png" id="l1W-Vz-uO2">
+                                    <rect key="frame" x="0.0" y="5" width="40" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iI8-Lk-L62">
-                                    <rect key="frame" x="68" y="17" width="200" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.50588235290000005" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="Cy3-Bz-s9N">
-                                    <rect key="frame" x="68" y="43" width="200" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.50588235290000005" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chính xác!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" id="wWq-xN-bcT">
+                            <rect key="frame" x="68" y="31" width="200" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a man" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" id="bzm-z2-Ckg">
+                            <rect key="frame" x="68" y="43" width="200" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
