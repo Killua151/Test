@@ -27,6 +27,9 @@ static UIView *_sharedToast = nil;
   AVAudioPlayer *audioPlayer;
 }
 
+@property (nonatomic, strong) UIView *vAntLoading;
+@property (nonatomic, strong) UIImageView *imgAntLoading;
+
 @property (nonatomic, strong) SocialLogInCallback googleLogInCallback;
 @property (nonatomic, strong) SocialLogOutCallback googleLogOutCallback;
 @property (nonatomic, strong) SpeechRecognitionCallback speechRecognitionCallback;
@@ -39,6 +42,9 @@ static UIView *_sharedToast = nil;
 + (NSString *)saveTempAudioWithUrl:(NSString *)audioUrl;
 + (void)removePreDownloadedAudio:(NSString *)audioUrl;
 - (void)playAudioWithPath:(NSString *)audioPath;
+- (void)setupAntLoadingView;
+- (void)showAntLoadingInView:(UIView *)view;
+- (void)hideAntLoading;
 
 @end
 
@@ -69,6 +75,29 @@ static UIView *_sharedToast = nil;
 
 + (void)hideAllHUDsForView:(UIView *)view {
   [MBProgressHUD hideAllHUDsForView:view animated:YES];
+}
+
++ (UIView *)showAntLoadingForView:(UIView *)view {
+  Utils *sharedUtils = [Utils sharedUtils];
+  
+  if (sharedUtils.vAntLoading == nil)
+    [sharedUtils setupAntLoadingView];
+  
+  if (sharedUtils.vAntLoading.superview != nil)
+    [[self class] hideCurrentShowingAntLoading];
+  
+  [sharedUtils showAntLoadingInView:view];
+  
+  return sharedUtils.vAntLoading;
+}
+
++ (void)hideCurrentShowingAntLoading {
+  Utils *sharedUtils = [Utils sharedUtils];
+  
+  if (sharedUtils.vAntLoading.superview == nil)
+    return;
+  
+  [sharedUtils hideAntLoading];
 }
 
 + (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth {
@@ -503,6 +532,77 @@ static UIView *_sharedToast = nil;
   audioPlayer.delegate = self;
   [audioPlayer prepareToPlay];
   [audioPlayer play];
+}
+
+- (void)setupAntLoadingView {
+  CGRect bounds = [UIScreen mainScreen].bounds;
+  
+  _vAntLoading = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, bounds.size}];
+  
+  _vAntLoading.backgroundColor = [UIColor clearColor];
+  _vAntLoading.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
+  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
+  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  
+  UIView *vLoadingBg = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, bounds.size}];
+  vLoadingBg.backgroundColor = [UIColor blackColor];
+  vLoadingBg.alpha = 0.7;
+  vLoadingBg.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
+  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
+  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  [_vAntLoading addSubview:vLoadingBg];
+  
+  _imgAntLoading = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img-ant_loading-1.png"]];
+  
+  NSMutableArray *loadingImages = [NSMutableArray array];
+  
+  for (NSInteger i = 1; i <= 5; i++) {
+    NSString *imageName = [NSString stringWithFormat:@"img-ant_loading-%ld.png", (long)i];
+    [loadingImages addObject:[UIImage imageNamed:imageName]];
+  }
+  
+  for (NSInteger i = 4; i >= 2; i--) {
+    NSString *imageName = [NSString stringWithFormat:@"img-ant_loading-%ld.png", (long)i];
+    [loadingImages addObject:[UIImage imageNamed:imageName]];
+  }
+  
+  _imgAntLoading.animationImages = loadingImages;
+  _imgAntLoading.animationDuration = [loadingImages count] * 0.1;
+  _imgAntLoading.center = _vAntLoading.center;
+  _imgAntLoading.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
+  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;;
+  [_vAntLoading addSubview:_imgAntLoading];
+}
+
+- (void)showAntLoadingInView:(UIView *)view {
+  _vAntLoading.frame = (CGRect){CGPointZero, view.frame.size};
+  _vAntLoading.alpha = 0;
+  [view addSubview:_vAntLoading];
+  [_imgAntLoading startAnimating];
+  
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vAntLoading.alpha = 1;
+   }
+   completion:NULL];
+}
+
+- (void)hideAntLoading {
+  [_imgAntLoading stopAnimating];
+  
+  [UIView
+   animateWithDuration:kDefaultAnimationDuration
+   delay:0
+   options:UIViewAnimationOptionCurveEaseInOut
+   animations:^{
+     _vAntLoading.alpha = 0;
+   }
+   completion:^(BOOL finished) {
+     [_vAntLoading removeFromSuperview];
+   }];
 }
 
 @end

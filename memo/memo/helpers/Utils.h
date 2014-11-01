@@ -23,6 +23,9 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (MBProgressHUD *)showHUDForView:(UIView *)view withText:(NSString *)text;
 + (void)hideAllHUDsForView:(UIView *)view;
 
++ (UIView *)showAntLoadingForView:(UIView *)view;
++ (void)hideCurrentShowingAntLoading;
+
 + (void)adjustButtonToFitWidth:(UIButton *)button padding:(CGFloat)padding constrainsToWidth:(CGFloat)maxWidth;
 
 + (CGFloat)keyboardShrinkRatioForView:(UIView *)view;
