@@ -302,16 +302,18 @@
     button.selected = index >= (_totalHeartsCount - _currentHeartsCount);
   }];
   
-  _imgAntProgressIndicator.hidden = _currentQuestionIndex < 0;
-  
   [_btnProgressSegments enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
     button.selected = index < _currentQuestionIndex;
-    
-    if (index == _currentQuestionIndex) {
-      CGPoint center = button.center;
-      center.y -= 7;
-      _imgAntProgressIndicator.center = center;
-    }
+  }];
+  
+  _imgAntProgressIndicator.hidden = _currentQuestionIndex < 0;
+  
+  UIButton *btnProgressSegment = _btnProgressSegments[_currentQuestionIndex];
+  
+  [UIView animateWithDuration:kDefaultAnimationDuration animations:^{
+    CGPoint center = btnProgressSegment.center;
+    center.y -= 7;
+    _imgAntProgressIndicator.center = center;
   }];
 }
 

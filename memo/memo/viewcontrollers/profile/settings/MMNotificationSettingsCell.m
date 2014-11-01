@@ -52,14 +52,14 @@
 #pragma mark - Private methods
 - (void)updateNotificationSettingsWithKey:(NSString *)settingsKey forButton:(UIButton *)button {
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
-  [Utils showHUDForView:topWindow withText:nil];
+  [Utils showAntLoadingForView:topWindow];
   
   [[MMServerHelper sharedHelper]
    updateNotificationSettings:_settingsData._id
    withKey:settingsKey
    andValue:button.selected
    completion:^(NSError *error) {
-     [Utils hideAllHUDsForView:topWindow];
+     [Utils hideCurrentShowingAntLoading];
      
      if (error != nil) {
        button.selected = !button.selected;
