@@ -123,6 +123,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForCurrentUser {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   if ([MUser currentUser]._id == nil)
     return;
   
@@ -131,6 +135,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForScreen:(NSString *)screenName {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   NSDictionary *userData = nil;
   
   if ([MUser currentUser]._id != nil)
@@ -140,10 +148,18 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   [[Mixpanel sharedInstance] timeEvent:[NSString stringWithFormat:@"iOS screen %@", screenName]];
 }
 
 + (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   NSDictionary *userData = nil;
   
   if ([MUser currentUser]._id != nil)
@@ -153,6 +169,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForButton:(NSString *)buttonName {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_button"
                                                         action:@"click"
@@ -169,6 +189,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_screen"
                                                         action:@"scroll"
@@ -186,6 +210,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForFocusTextField:(NSString *)textFieldName {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_textfield"
                                                         action:@"focus"
@@ -202,6 +230,10 @@ static UIView *_sharedToast = nil;
 }
 
 + (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
   if (searchText == nil || ![searchText isKindOfClass:[NSString class]] || searchText.length == 0)
     return;
   
