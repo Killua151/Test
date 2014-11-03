@@ -323,15 +323,11 @@ static UIView *_sharedToast = nil;
      if (!sectionStateChangedResult)
        return;
      
-     [Utils showAntLoadingForView:view];
-     
      [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
        if (error != nil) {
-         [Utils hideCurrentShowingAntLoading];
+         callback(nil, error);
          return;
        }
-       
-       [Utils hideCurrentShowingAntLoading];
        
        NSDictionary *userData = @{
                                   kParamFbName : [NSString normalizedString:result[kParamName]],
