@@ -9,6 +9,9 @@
 * Thêm thông tin phiên bản trên các màn hình
 * Thêm chức năng Báo lỗi - Góp ý
 * Sửa lỗi không ẩn popup lựa chọn Beginner / Placement Test sau khi người dùng đã chọn Beginner
+* Thêm loading animation con kiến
+* Thêm settings
+* Sửa các bug nhỏ
 
 ###v1.0.1
 
@@ -20,17 +23,17 @@
 
 ##Android
 
-###v1.0.2
+###v1.0.1
 * Update thuật toán check lỗi typos v1.2
 * Thêm thông tin phiên bản trên các màn hình
 * Thêm chức năng Báo lỗi - Góp ý
 * Sửa lỗi không ẩn popup lựa chọn Beginner / Placement Test sau khi người dùng đã chọn Beginner
+* Sửa hiệu ứng khi click vào button
+* Hoàn thiện các layout: lesson, setting, forum
+* Thêm settings
 * Thêm Mixpanel people tracking
 * Sửa lại các thuật ngữ
-* Sửa các lỗi UI & logic
-
-###v1.0.1
-* Sửa các lỗi UI & logic nhỏ
+* Sửa các lỗi crash & UI
 
 ###v1.0.0 (Closed beta 1)
 * Closed beta 1 release
