@@ -10,7 +10,8 @@
 
 @interface MMSortQuestionContentView : MMQuestionContentView <MMQuestionContentDelegate> {
   IBOutlet UILabel *_lblQuestionTitle;
-  IBOutlet UIButton *_btnAnswerAudio;
+  IBOutlet UIView *_vQuestion;
+  IBOutlet UIButton *_btnQuestionAudio;
   IBOutlet UILabel *_lblQuestion;
   IBOutlet UIView *_vAnsweredTokens;
   IBOutlet UIImageView *_imgAnswerFieldBg;

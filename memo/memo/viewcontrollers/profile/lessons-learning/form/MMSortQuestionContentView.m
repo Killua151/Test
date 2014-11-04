@@ -35,13 +35,37 @@
   _lblQuestionTitle.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _lblQuestionTitle.text = MMLocalizedString(@"Translate this sentence:");
   
+  _btnQuestionAudio.hidden = questionData.normal_question_audio == nil;
+  
   _lblQuestion.font = [UIFont fontWithName:@"ClearSans" size:17];
   _lblQuestion.text = questionData.question;
-  [_lblQuestion adjustToFitHeightAndConstrainsToHeight:_btnAnswerAudio.frame.size.height];
   
-  CGPoint center = _lblQuestion.center;
-  center.y = _btnAnswerAudio.center.y + kFontClearSansMarginTop;
-  _lblQuestion.center = center;
+  UILabel *styledQuestionLabel = [self cloneStyledQuestionLabelAs:_lblQuestion];
+  
+  if (styledQuestionLabel != nil) {
+    _lblQuestion.hidden = YES;
+    [_vQuestion addSubview:styledQuestionLabel];
+  } else
+    styledQuestionLabel = _lblQuestion;
+  
+  [styledQuestionLabel adjustToFitHeightAndConstrainsToHeight:80];
+  CGRect frame = styledQuestionLabel.frame;
+  
+  if (!_btnQuestionAudio.hidden) {
+    frame.size.width = _vQuestion.frame.size.width - frame.origin.x - _btnQuestionAudio.frame.origin.x;
+    frame.origin.x = _btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width;
+  } else {
+    frame.origin.x = _btnQuestionAudio.frame.origin.x;
+    frame.size.width = self.frame.size.width - frame.origin.x/2;
+  }
+  
+  frame.origin.y = (_vQuestion.frame.size.height - frame.size.height)/2 + kFontClearSansMarginTop;
+  
+  // Additional negative margin. Don't know why!!!
+  if (styledQuestionLabel != _lblQuestion)
+    frame.origin.y -= 13;
+  
+  styledQuestionLabel.frame = frame;
   
   _txtAnswerPlaceholder.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtAnswerPlaceholder.placeholder = MMLocalizedString(@"Your answer...");
@@ -55,9 +79,9 @@
     frame.origin.y -= DeviceSystemIsOS7() ? 10 : 10;
     _lblQuestionTitle.frame = frame;
     
-    frame = _btnAnswerAudio.frame;
+    frame = _btnQuestionAudio.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
-    _btnAnswerAudio.frame = frame;
+    _btnQuestionAudio.frame = frame;
     
     frame = _lblQuestion.frame;
     frame.origin.y -= DeviceSystemIsOS7() ? 15 : 25;
@@ -95,7 +119,7 @@
   [Utils showToastWithMessage:[questionData.tokens componentsJoinedByString:@" "]];
 #endif
   
-  [Utils playAudioWithUrl:questionData.normal_answer_audio];
+  [Utils playAudioWithUrl:questionData.normal_question_audio];
 }
 
 #pragma mark - MMQuestionContentDelegate methods

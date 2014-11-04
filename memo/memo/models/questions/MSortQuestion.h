@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSArray *tokens;
 @property (nonatomic, strong) NSArray *wrong_tokens;
-@property (nonatomic, strong) NSString *normal_answer_audio;
+@property (nonatomic, strong) NSString *normal_question_audio;
 
 @end

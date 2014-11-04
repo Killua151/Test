@@ -204,13 +204,12 @@
            withCorrectAnswer:correctAnswer
              underlineRanges:underlineRanges];
   
-  NSString *userAnswer = checkResult[kParamUserAnswer];
-  
   // Wrong answer, auto feedback
-  if (!answerResult && userAnswer != nil)
-    [[MMServerHelper sharedHelper] submitFeedbackInQuestion:question.question_log_id
-                                                forSentence:userAnswer
-                                                 completion:^(NSError *error) {}];
+//  NSString *userAnswer = checkResult[kParamUserAnswer];
+//  if (!answerResult && userAnswer != nil)
+//    [[MMServerHelper sharedHelper] submitFeedbackInQuestion:question.question_log_id
+//                                                forSentence:userAnswer
+//                                                 completion:^(NSError *error) {}];
   
   _answersData[question.question_log_id] = @(answerResult);
 }

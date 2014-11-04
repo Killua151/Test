@@ -58,24 +58,37 @@
   NSMutableArray *audioUrls = [NSMutableArray array];
   
   for (MBaseQuestion *question in questions) {
-    if (![question isKindOfClass:[MBaseQuestion class]])
+    if (![question isKindOfClass:[MBaseQuestion class]] ||
+        ![question respondsToSelector:@selector(normal_question_audio)])
       continue;
     
-    if ([question isKindOfClass:[MListenQuestion class]]) {
-      if ([(MListenQuestion *)question normal_question_audio] != nil)
-        [audioUrls addObject:[(MListenQuestion *)question normal_question_audio]];
+    NSString *audioUrl = [question performSelector:@selector(normal_question_audio)];
+    
+    if (audioUrl != nil && [audioUrl isKindOfClass:[NSString class]])
+      [audioUrls addObject:audioUrl];
+
+    if ([question respondsToSelector:@selector(slow_question_audio)]) {
+      audioUrl = [question performSelector:@selector(slow_question_audio)];
       
-      if ([(MListenQuestion *)question slow_question_audio])
-        [audioUrls addObject:[(MListenQuestion *)question slow_question_audio]];
+      if (audioUrl != nil && [audioUrl isKindOfClass:[NSString class]])
+        [audioUrls addObject:audioUrl];
     }
     
-    if ([question isKindOfClass:[MTranslateQuestion class]])
-      if ([(MTranslateQuestion *)question normal_question_audio] != nil)
-        [audioUrls addObject:[(MTranslateQuestion *)question normal_question_audio]];
-    
-    if ([question isKindOfClass:[MSortQuestion class]])
-      if ([(MSortQuestion *)question normal_answer_audio] != nil)
-        [audioUrls addObject:[(MSortQuestion *)question normal_answer_audio]];
+//    if ([question isKindOfClass:[MListenQuestion class]]) {
+//      if ([(MListenQuestion *)question normal_question_audio] != nil)
+//        [audioUrls addObject:[(MListenQuestion *)question normal_question_audio]];
+//      
+//      if ([(MListenQuestion *)question slow_question_audio])
+//        [audioUrls addObject:[(MListenQuestion *)question slow_question_audio]];
+//    }
+//    
+//    if ([question isKindOfClass:[MTranslateQuestion class]])
+//      if ([(MTranslateQuestion *)question normal_question_audio] != nil)
+//        [audioUrls addObject:[(MTranslateQuestion *)question normal_question_audio]];
+//    
+//    if ([question isKindOfClass:[MSortQuestion class]])
+//      if ([(MSortQuestion *)question normal_question_audio] != nil)
+//        [audioUrls addObject:[(MSortQuestion *)question normal_question_audio]];
   }
   
   return audioUrls;

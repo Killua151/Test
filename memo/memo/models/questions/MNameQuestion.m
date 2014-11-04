@@ -17,27 +17,42 @@
              kParamCorrectAnswer : _hint
              };
   
-  if ([answerValue wordsCount] != [_hint wordsCount])
-    return @{
-             kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint,
-             kParamUserAnswer : answerValue
-             };
+  NSMutableArray *correctAnswers = [NSMutableArray arrayWithObject:_hint];
   
-  NSArray *typos = [_hint checkTyposOnString:answerValue];
+  if (_definitions != nil && [_definitions isKindOfClass:[NSArray class]])
+    [correctAnswers addObjectsFromArray:_definitions];
   
-  if (typos == nil)
+  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+  
+  for (NSString *correctAnswer in correctAnswers) {
+    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+    
+    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+      return @{
+               kParamAnswerResult : @(YES),
+               kParamCorrectAnswer : _hint
+               };
+  }
+  
+  for (NSString *correctAnswer in correctAnswers) {
+    if ([answerValue wordsCount] != [correctAnswer wordsCount])
+      continue;
+    
+    NSArray *typos = [correctAnswer checkTyposOnString:answerValue];
+    
+    if (typos == nil)
+      continue;
+    
     return @{
-             kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : _hint,
-             kParamUserAnswer : answerValue
+             kParamAnswerResult : @(YES),
+             kParamCorrectAnswer : correctAnswer,
+             kParamUnderlineRanges : typos
              };
+  }
   
   return @{
-           kParamAnswerResult : @(YES),
-           kParamCorrectAnswer : _hint,
-           kParamUnderlineRanges : typos,
-           kParamUserAnswer : answerValue
+           kParamAnswerResult : @(NO),
+           kParamCorrectAnswer : _hint
            };
 }
 

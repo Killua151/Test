@@ -52,6 +52,7 @@
   //  V1.2 - Crowdsourcing comparison: be able to check common errors
   NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
   
+  // Group 1 & 2 - check case insensitively
   for (NSString *correctAnswer in correctAnswers) {
     NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
     
@@ -62,17 +63,18 @@
                };
   }
   
+  // Group 3 - check case insensitively
   for (NSString *wrongAnswer in _common_errors) {
     NSString *normalizedWrongAnswer = [wrongAnswer stringByRemovingAllNonLetterCharacters];
     
     if ([normalizedWrongAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
       return @{
                kParamAnswerResult : @(NO),
-               kParamCorrectAnswer : _translation,
-               kParamUserAnswer : answerValue
+               kParamCorrectAnswer : _translation
                };
   }
   
+  // Group 2 - check typos
   for (NSString *correctAnswer in correctAnswers) {
     if ([answerValue wordsCount] != [correctAnswer wordsCount])
       continue;
@@ -91,8 +93,7 @@
   
   return @{
            kParamAnswerResult : @(NO),
-           kParamCorrectAnswer : _translation,
-           kParamUserAnswer : answerValue
+           kParamCorrectAnswer : _translation
            };
 }
 
