@@ -72,9 +72,9 @@ return; \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
-//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-#define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
-#define kServerApiVersion                       @"v1.4"
+#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+//#define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
+#define kServerApiVersion                       @"v1.3"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
 
