@@ -47,7 +47,7 @@
     frame.origin.x = _btnQuestionAudio.frame.origin.x*2 + _btnQuestionAudio.frame.size.width;
   } else {
     frame.origin.x = _btnQuestionAudio.frame.origin.x;
-    frame.size.width = self.frame.size.width - frame.origin.x/2;
+    frame.size.width = _btnQuestionAudio.superview.frame.size.width - frame.origin.x/2;
   }
   
   frame.origin.y = (_vQuestion.frame.size.height - frame.size.height)/2 + kFontClearSansMarginTop;

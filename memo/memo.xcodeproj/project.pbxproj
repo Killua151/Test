@@ -72,6 +72,12 @@
 		CAA91C9A19E780E10076A9BC /* MMFindFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA91C9719E780E10076A9BC /* MMFindFriendCell.xib */; };
 		CAA91C9E19E783770076A9BC /* MFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91C9D19E783770076A9BC /* MFriend.m */; };
 		CAA91CA219E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */; };
+		CAAAA0031A091F2C00198BFA /* sound-fx-correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAAA9FFF1A091F2C00198BFA /* sound-fx-correct.mp3 */; };
+		CAAAA0041A091F2C00198BFA /* sound-fx-fail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAAAA0001A091F2C00198BFA /* sound-fx-fail.mp3 */; };
+		CAAAA0051A091F2C00198BFA /* sound-fx-finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAAAA0011A091F2C00198BFA /* sound-fx-finish.mp3 */; };
+		CAAAA0061A091F2C00198BFA /* sound-fx-heart_lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAAAA0021A091F2C00198BFA /* sound-fx-heart_lost.mp3 */; };
+		CAAAA0081A091FF700198BFA /* sound-fx-lost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAAAA0071A091FF700198BFA /* sound-fx-lost.mp3 */; };
+		CAAAA00A1A09206D00198BFA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAAA0091A09206D00198BFA /* AudioToolbox.framework */; };
 		CAB1247719F78A98007DF067 /* libAppsFlyerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */; };
 		CAB1247A19F78ACF007DF067 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247919F78ACF007DF067 /* AdSupport.framework */; };
 		CAB1247C19F78AD8007DF067 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB1247B19F78AD8007DF067 /* iAd.framework */; };
@@ -928,6 +934,12 @@
 		CAA91C9D19E783770076A9BC /* MFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFriend.m; sourceTree = "<group>"; };
 		CAA91CA019E7CD700076A9BC /* UIDevice+DeviceHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceHelpers.h"; sourceTree = "<group>"; };
 		CAA91CA119E7CD700076A9BC /* UIDevice+DeviceHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceHelpers.m"; sourceTree = "<group>"; };
+		CAAA9FFF1A091F2C00198BFA /* sound-fx-correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-fx-correct.mp3"; sourceTree = "<group>"; };
+		CAAAA0001A091F2C00198BFA /* sound-fx-fail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-fx-fail.mp3"; sourceTree = "<group>"; };
+		CAAAA0011A091F2C00198BFA /* sound-fx-finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-fx-finish.mp3"; sourceTree = "<group>"; };
+		CAAAA0021A091F2C00198BFA /* sound-fx-heart_lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-fx-heart_lost.mp3"; sourceTree = "<group>"; };
+		CAAAA0071A091FF700198BFA /* sound-fx-lost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-fx-lost.mp3"; sourceTree = "<group>"; };
+		CAAAA0091A09206D00198BFA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CAB1247519F78A98007DF067 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
 		CAB1247619F78A98007DF067 /* libAppsFlyerLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppsFlyerLib.a; sourceTree = "<group>"; };
 		CAB1247919F78ACF007DF067 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -1821,6 +1833,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAAA00A1A09206D00198BFA /* AudioToolbox.framework in Frameworks */,
 				CAB1247C19F78AD8007DF067 /* iAd.framework in Frameworks */,
 				CAB1247A19F78ACF007DF067 /* AdSupport.framework in Frameworks */,
 				CABBEA8619E0E4C800EFED33 /* CoreGraphics.framework in Frameworks */,
@@ -1893,6 +1906,19 @@
 			path = "find-friends";
 			sourceTree = "<group>";
 		};
+		CAAA9FFE1A091F2C00198BFA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA9FFF1A091F2C00198BFA /* sound-fx-correct.mp3 */,
+				CAAAA0001A091F2C00198BFA /* sound-fx-fail.mp3 */,
+				CAAAA0011A091F2C00198BFA /* sound-fx-finish.mp3 */,
+				CAAAA0021A091F2C00198BFA /* sound-fx-heart_lost.mp3 */,
+				CAAAA0071A091FF700198BFA /* sound-fx-lost.mp3 */,
+			);
+			name = Sounds;
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		CAB1247419F78A98007DF067 /* AppsFlyer-iOS-SDK-v2.5.3.10 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1923,6 +1949,7 @@
 		CABBEA8219E0E4C800EFED33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAAAA0091A09206D00198BFA /* AudioToolbox.framework */,
 				CAB1247B19F78AD8007DF067 /* iAd.framework */,
 				CAB1247919F78ACF007DF067 /* AdSupport.framework */,
 				CA8C975619F55F0C00E639E9 /* CoreText.framework */,
@@ -2170,6 +2197,7 @@
 				CAF854E919E0F50D00A347CF /* Default@2x.png */,
 				CAF8507319E0F3D100A347CF /* Fonts */,
 				CAF8507719E0F3D100A347CF /* Images */,
+				CAAA9FFE1A091F2C00198BFA /* Sounds */,
 			);
 			name = Resources;
 			path = resources;
@@ -3455,6 +3483,7 @@
 				CAF8545319E0F3D200A347CF /* img-hexagon_skill-strength-1@2x.png in Resources */,
 				CAF854A019E0F3D200A347CF /* MMNameQuestionContentView.xib in Resources */,
 				CAF8568619E0F82700A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked@2x.png in Resources */,
+				CAAAA0051A091F2C00198BFA /* sound-fx-finish.mp3 in Resources */,
 				CAF8565B19E0F82700A347CF /* img-skill_icon-en-vi_ngay_va_gio-locked.png in Resources */,
 				CAF855F419E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_quan_he-locked@2x.png in Resources */,
 				CAF8567819E0F82700A347CF /* img-skill_icon-en-vi_so_nhieu-locked@2x.png in Resources */,
@@ -3583,6 +3612,7 @@
 				CAF8531E19E0F3D200A347CF /* img-set_goal-radio-normal.png in Resources */,
 				CAF853DC19E0F3D200A347CF /* img-skill_icon-en-vi_giao_duc-unlocked_big.png in Resources */,
 				CAF8542D19E0F3D200A347CF /* img-skill_icon-en-vi_tinh_tu_1-unlocked_big@2x.png in Resources */,
+				CAAAA0061A091F2C00198BFA /* sound-fx-heart_lost.mp3 in Resources */,
 				CAF8568719E0F82700A347CF /* img-skill_icon-en-vi_the_thao-locked.png in Resources */,
 				CAF8565819E0F82700A347CF /* img-skill_icon-en-vi_mon_an-locked@2x.png in Resources */,
 				CAF854CE19E0F3D200A347CF /* MMShieldCheckpointTestCell.xib in Resources */,
@@ -3829,6 +3859,7 @@
 				CAF854D019E0F3D200A347CF /* MMShieldSkillCell.xib in Resources */,
 				CAF8568D19E0F82700A347CF /* img-skill_icon-en-vi_thien_nhien-unlocked.png in Resources */,
 				CAF855EF19E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked.png in Resources */,
+				CAAAA0041A091F2C00198BFA /* sound-fx-fail.mp3 in Resources */,
 				CAF8544419E0F3D200A347CF /* img-skill_icon-en-vi_y_te-unlocked_big.png in Resources */,
 				CAF8530619E0F3D200A347CF /* img-beginner-icon.png in Resources */,
 				CAF8536219E0F3D200A347CF /* img-share-google_selected.png in Resources */,
@@ -3851,6 +3882,7 @@
 				CAF8564919E0F82700A347CF /* img-skill_icon-en-vi_khoa_hoc-unlocked.png in Resources */,
 				CAF855F019E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_phan_than-locked@2x.png in Resources */,
 				CAF8531719E0F3D200A347CF /* img-beginner-icon@2x.png in Resources */,
+				CAAAA0081A091FF700198BFA /* sound-fx-lost.mp3 in Resources */,
 				CAF8540919E0F3D200A347CF /* img-skill_icon-en-vi_noi_chon-unlocked_big@2x.png in Resources */,
 				CAF8543119E0F3D200A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked_big@2x.png in Resources */,
 				CAF855E519E0F82700A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked.png in Resources */,
@@ -3903,6 +3935,7 @@
 				CAF8566119E0F82700A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked.png in Resources */,
 				CAF855D619E0F82700A347CF /* img-skill_icon-en-vi_cau_hoi-unlocked@2x.png in Resources */,
 				CAF8560C19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked@2x.png in Resources */,
+				CAAAA0031A091F2C00198BFA /* sound-fx-correct.mp3 in Resources */,
 				CAF8545B19E0F3D200A347CF /* img-hexagon_skill-strength-3@2x.png in Resources */,
 				CAF853D319E0F3D200A347CF /* img-skill_icon-en-vi_du_lich-locked_big@2x.png in Resources */,
 				CAF8536C19E0F3D200A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big.png in Resources */,

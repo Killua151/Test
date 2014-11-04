@@ -54,6 +54,7 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)playAudioWithUrl:(NSString *)audioUrl;
 + (void)preDownloadAudioFromUrls:(NSArray *)audioUrls;
 + (void)removePreDownloadedAudioWithOriginalUrls:(NSArray *)audioUrls;
++ (void)playSoundEffect:(NSString *)effectName;
 
 @end
 

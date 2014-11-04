@@ -240,9 +240,11 @@
   }
 
   if (_currentHeartsCount < 0) {
-//    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
-//                                               andResults:_answersData
-//                                               completion:^(NSError *error) {}];
+    [Utils playSoundEffect:kValueSoundEffectFail];
+    
+    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
+                                               andResults:_answersData
+                                               completion:^(NSError *error) {}];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
@@ -252,6 +254,8 @@
 
   // Finish all questions
   if (_currentQuestionIndex >= _totalLessonsCount) {
+    [Utils playSoundEffect:kValueSoundEffectFinish];
+    
     ShowHudForCurrentView();
     
     [[MMServerHelper sharedHelper]
@@ -495,6 +499,8 @@
   }
   
   if (show) {
+    [Utils playSoundEffect:answerResult ? kValueSoundEffectCorrect : kValueSoundEffectHeartLost];
+    
     _vResultPopup.alpha = 0;
     _vResultPopup.hidden = NO;
     [self switchCheckButtonMode:NO];

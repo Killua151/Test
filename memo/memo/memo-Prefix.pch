@@ -213,6 +213,13 @@ return; \
 #define kValueExamTypeShortcut                  @"shortcut"
 #define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
+
+#define kValueSoundEffectCorrect                @"correct"
+#define kValueSoundEffectFail                   @"fail"
+#define kValueSoundEffectFinish                 @"finish"
+#define kValueSoundEffectHeartLost              @"heart_lost"
+#define kValueSoundEffectLost                   @"lost"
+
 #define kValueSupportEmail                      @"memoapp.topica@gmail.com"
 
 #define kBuildForApple                          false

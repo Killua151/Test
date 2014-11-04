@@ -13,6 +13,7 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import <AVFoundation/AVAudioPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "iSpeechSDK.h"
 #import <GAI.h>
 #import <GAIFields.h>
@@ -24,7 +25,8 @@
 static UIView *_sharedToast = nil;
 
 @interface Utils () <GPPSignInDelegate, ISSpeechRecognitionDelegate, AVAudioPlayerDelegate> {
-  AVAudioPlayer *audioPlayer;
+  AVAudioPlayer *_audioPlayer;
+  SystemSoundID _soundEffectId;
 }
 
 @property (nonatomic, strong) UIView *vAntLoading;
@@ -45,6 +47,7 @@ static UIView *_sharedToast = nil;
 - (void)setupAntLoadingView;
 - (void)showAntLoadingInView:(UIView *)view;
 - (void)hideAntLoading;
+- (void)playSoundEffectWithName:(NSString *)effectName;
 
 @end
 
@@ -429,6 +432,13 @@ static UIView *_sharedToast = nil;
     [[self class] removePreDownloadedAudio:audioUrl];
 }
 
++ (void)playSoundEffect:(NSString *)effectName {
+  if (![[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSoundEffectsEnabled])
+    return;
+  
+  [[Utils sharedUtils] playSoundEffectWithName:effectName];
+}
+
 #pragma mark - GPPSignInDelegate methods
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
   if (_googleLogInCallback == NULL)
@@ -556,10 +566,10 @@ static UIView *_sharedToast = nil;
 
 - (void)playAudioWithPath:(NSString *)audioPath {
   NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
-  audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:NULL];
-  audioPlayer.delegate = self;
-  [audioPlayer prepareToPlay];
-  [audioPlayer play];
+  _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:NULL];
+  _audioPlayer.delegate = self;
+  [_audioPlayer prepareToPlay];
+  [_audioPlayer play];
 }
 
 - (void)setupAntLoadingView {
@@ -631,6 +641,15 @@ static UIView *_sharedToast = nil;
    completion:^(BOOL finished) {
      [_vAntLoading removeFromSuperview];
    }];
+}
+
+- (void)playSoundEffectWithName:(NSString *)effectName {
+  NSURL *soundEffectUrl = [NSURL fileURLWithPath:
+                           [NSString stringWithFormat:@"%@/sound-fx-%@.mp3",
+                            [[NSBundle mainBundle] resourcePath], effectName]];
+  
+  AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundEffectUrl, &_soundEffectId);
+  AudioServicesPlaySystemSound(_soundEffectId);
 }
 
 @end
