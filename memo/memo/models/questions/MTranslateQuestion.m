@@ -12,9 +12,7 @@
 
 - (id)checkAnswer:(NSString *)answerValue {
   NSMutableArray *correctAnswers = [NSMutableArray arrayWithObject:_translation];
-  
-  for (NSArray *tokensGroup in _compact_translations)
-    [correctAnswers addObjectsFromArray:[NSString fullSentencesFromTokensGroup:tokensGroup]];
+  [correctAnswers addObjectsFromArray:_alternative_answers];
 
   // Default - Worst comparison
 //  for (NSString *correctAnswer in correctAnswers)

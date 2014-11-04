@@ -11,7 +11,7 @@
 @interface MTranslateQuestion : MBaseQuestion
 
 @property (nonatomic, strong) NSString *translation;
-@property (nonatomic, strong) NSArray *compact_translations;
+@property (nonatomic, strong) NSArray *alternative_answers;
 @property (nonatomic, strong) NSArray *common_errors;
 @property (nonatomic, strong) NSString *normal_question_audio;
 
