@@ -160,7 +160,8 @@ typedef enum TyposCheckingResultEnum {
   NSArray *selfWords = [[self lowercaseString] componentsSeperatedByNonLetterCharacters];
   NSArray *inputWords = [[inputString lowercaseString] componentsSeperatedByNonLetterCharacters];
 
-  // Reduce cost of check typos operation, inputs should be at the same amount of words
+  // Reduce cost of typos checking operation,
+  // Ideal condition: the inputs should be at the same amount of words
 //  if ([selfComponents count] != [inputComponents count])
 //    return @[[NSValue valueWithRange:NSMakeRange(0, self.length)]];
   

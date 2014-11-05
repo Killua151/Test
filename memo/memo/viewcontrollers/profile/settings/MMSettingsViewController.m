@@ -75,8 +75,12 @@
   _txtUsername.text = [NSString normalizedString:_userData.username];
   _txtPassword.text = @"";
 
-  BOOL speakEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kParamSpeakEnabled];
+  BOOL soundEffectsEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSoundEffectsEnabled];
+  [_swtSoundEffects setOn:soundEffectsEnabled animated:YES shouldCallback:NO];
+  
+  BOOL speakEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled];
   [_swtSpeakingLessons setOn:speakEnabled animated:YES shouldCallback:NO];
+  
   [_swtFacebook setOn:(_userData.fb_Id != nil && _userData.fb_Id.length > 0) animated:YES shouldCallback:NO];
   [_swtGooglePlus setOn:(_userData.gmail != nil && _userData.gmail.length > 0) animated:YES shouldCallback:NO];
   

@@ -2,6 +2,12 @@
 
 ##iOS
 
+###v1.0.3
+* Update API v1.4 (database mới & cải thiện performance)
+* Thêm gamification sound effects
+* Sửa lại câu hỏi dạng sort (có & không có âm thanh)
+* Sửa một vài lỗi nhỏ
+
 ###v1.0.2
 
 * Update thuật toán check lỗi typos v1.2
