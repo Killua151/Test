@@ -110,6 +110,8 @@
 - (void)buyItem:(NSString *)itemId completion:(void(^)(NSError *error))handler;
 - (void)useItem:(NSString *)itemId completion:(void(^)(NSError *error))handler;
 
+- (void)getAppSettings:(void(^)(NSError *error))handler;
+
 - (void)submitFeedbackInQuestion:(NSString *)questionLogId
                      forSentence:(NSString *)sentenceText
                       completion:(void(^)(NSError *error))handler;

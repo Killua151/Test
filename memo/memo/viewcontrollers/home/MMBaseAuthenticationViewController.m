@@ -76,9 +76,6 @@
   HideHudForCurrentView();
   ShowAlertWithError(error);
   
-  [Utils updateSavedUserWithAttributes:userData];
-  [MUser loadCurrentUserFromUserDef];
-  
   if ([MUser currentUser].current_course_id == nil ||
       [[MUser currentUser].current_course_id isEqualToString:@"null"]) {
     if (_coursesListVC == nil)

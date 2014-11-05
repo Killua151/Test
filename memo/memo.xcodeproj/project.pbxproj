@@ -34,6 +34,7 @@
 		CA452E7C19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6A19EFFDB900A5F5CB /* img-item_icon-progress_quiz.png */; };
 		CA452E7E19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */; };
 		CA622A4D1A039468000ACE21 /* MMBaseAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */; };
+		CA6AE9DC1A0A59D600CF0BA9 /* MAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -886,6 +887,8 @@
 		CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-item_icon-progress_quiz@2x.png"; sourceTree = "<group>"; };
 		CA622A4B1A039468000ACE21 /* MMBaseAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseAuthenticationViewController.h; sourceTree = "<group>"; };
 		CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseAuthenticationViewController.m; sourceTree = "<group>"; };
+		CA6AE9DA1A0A59D600CF0BA9 /* MAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAppSettings.h; sourceTree = "<group>"; };
+		CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAppSettings.m; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2129,6 +2132,8 @@
 		CAF8504E19E0F3D100A347CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CA6AE9DA1A0A59D600CF0BA9 /* MAppSettings.h */,
+				CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */,
 				CAF8504F19E0F3D100A347CF /* MBase.h */,
 				CAF8505019E0F3D100A347CF /* MBase.m */,
 				CA452E5719EEBE9800A5F5CB /* MCheckpoint.h */,
@@ -2143,6 +2148,8 @@
 				CAA91C7119E679510076A9BC /* MLeaderboardData.m */,
 				CAF8505319E0F3D100A347CF /* MLesson.h */,
 				CAF8505419E0F3D100A347CF /* MLesson.m */,
+				CADDB99D1A034D6000642B6E /* MSettings.h */,
+				CADDB99E1A034D6000642B6E /* MSettings.m */,
 				CAF8505519E0F3D100A347CF /* MSkill.h */,
 				CAF8505619E0F3D100A347CF /* MSkill.m */,
 				CAF8505719E0F3D100A347CF /* MUser.h */,
@@ -2150,8 +2157,6 @@
 				CA8C974919F502CA00E639E9 /* MWord.h */,
 				CA8C974A19F502CA00E639E9 /* MWord.m */,
 				CAF8505919E0F3D100A347CF /* Questions */,
-				CADDB99D1A034D6000642B6E /* MSettings.h */,
-				CADDB99E1A034D6000642B6E /* MSettings.m */,
 			);
 			name = Models;
 			path = models;
@@ -4268,6 +4273,7 @@
 				CAF8548E19E0F3D200A347CF /* MMSaveProgressViewController.m in Sources */,
 				CAF852C919E0F3D200A347CF /* NSString+CompactTranslation.m in Sources */,
 				CAF8549B19E0F3D200A347CF /* MMJudgeQuestionContentView.m in Sources */,
+				CA6AE9DC1A0A59D600CF0BA9 /* MAppSettings.m in Sources */,
 				CAA91C9119E780BC0076A9BC /* MMFindFriendsViewController.m in Sources */,
 				CAF852DB19E0F3D200A347CF /* MLesson.m in Sources */,
 				CAF854C019E0F3D200A347CF /* MMShopViewController.m in Sources */,

@@ -16,6 +16,7 @@
 #import "MCheckpoint.h"
 #import "MItem.h"
 #import "MWord.h"
+#import "MAppSettings.h"
 
 @interface MMServerHelper ()
 
@@ -203,7 +204,13 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
      [[MUser currentUser] updateAttributesFromProfileData:userData];
-     handler(userData, nil);
+     
+     [self getAppSettings:^(NSError *error) {
+       if (error != nil)
+         handler(nil, error);
+       else
+         handler(userData, nil);
+     }];
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
@@ -577,6 +584,27 @@
    }];
 }
 
+- (void)getAppSettings:(void (^)(NSError *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : @"ios"
+                           };
+  
+  [self
+   GET:@"appsettings"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSDictionary *responseDict = [responseObject objectFromJSONData];
+     [MAppSettings loadAppSettings:responseDict];
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)submitFeedbackInQuestion:(NSString *)questionLogId
                      forSentence:(NSString *)sentenceText
                       completion:(void (^)(NSError *))handler {
@@ -737,10 +765,20 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
      
-     if (userData != nil && [userData isKindOfClass:[NSDictionary class]])
-       handler(userData, nil);
-     else
-       handler(nil, [NSError errorWithDomain:MMLocalizedString(@"Unknown error") code:-1 userInfo:nil]);
+     [Utils updateSavedUserWithAttributes:userData];
+     [MUser loadCurrentUserFromUserDef];
+     
+     [self getAppSettings:^(NSError *error) {
+       if (error != nil) {
+         handler(nil, error);
+         return;
+       }
+       
+       if (userData != nil && [userData isKindOfClass:[NSDictionary class]])
+         handler(userData, nil);
+       else
+         handler(nil, [NSError errorWithDomain:MMLocalizedString(@"Unknown error") code:-1 userInfo:nil]);
+     }];
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
