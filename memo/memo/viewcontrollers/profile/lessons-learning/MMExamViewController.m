@@ -414,6 +414,9 @@
   [_btnCheck setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(102, 102, 102)] forState:UIControlStateDisabled];
   [_btnCheck setTitle:MMLocalizedString(@"Check") forState:UIControlStateNormal];
   _btnCheck.superview.layer.cornerRadius = 4;
+  
+  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
 }
 
 - (void)setupHeaderViews {
