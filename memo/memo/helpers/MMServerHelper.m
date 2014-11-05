@@ -605,26 +605,19 @@
    }];
 }
 
-- (void)submitFeedbackInQuestion:(NSString *)questionLogId
-                     forSentence:(NSString *)sentenceText
-                      completion:(void (^)(NSError *))handler {
+- (void)submitFeedbacks:(NSArray *)feedbacks {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamQuestionLogId : [NSString normalizedString:questionLogId],
-                           kParamContent : [NSString normalizedString:sentenceText],
-                           kParamAutoFeedback : @(YES)
+                           kParamFeedbacks : [feedbacks JSONString]
                            };
   
   [self
    POST:@"feedback/create"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler(nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(error);
-     }];
+     [self handleFailedOperation:operation withError:error fallback:NULL];
    }];
 }
 

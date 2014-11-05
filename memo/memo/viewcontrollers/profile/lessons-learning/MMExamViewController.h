@@ -36,6 +36,7 @@
   NSMutableDictionary *_metadata;
   NSMutableArray *_questionsData;
   NSMutableDictionary *_answersData;
+  NSMutableArray *_userFeedbacks;
 }
 
 - (id)initWithQuestions:(NSArray *)questions andMetadata:(NSDictionary *)metadata;

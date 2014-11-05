@@ -21,6 +21,7 @@
 #import "MBaseQuestion.h"
 #import "MUser.h"
 #import "MItem.h"
+#import "MAppSettings.h"
 
 #define kTagQuitAlertView               0x01
 #define kTagUseItemAlertView            0x02
@@ -61,6 +62,7 @@
     _metadata = [NSMutableDictionary dictionaryWithDictionary:metadata];
     _questionsData = [NSMutableArray arrayWithArray:questions];
     _answersData = [NSMutableDictionary new];
+    _userFeedbacks = [NSMutableArray new];
   }
   
   return self;
@@ -204,14 +206,18 @@
            withCorrectAnswer:correctAnswer
              underlineRanges:underlineRanges];
   
-  // Wrong answer, auto feedback
-//  NSString *userAnswer = checkResult[kParamUserAnswer];
-//  if (!answerResult && userAnswer != nil)
-//    [[MMServerHelper sharedHelper] submitFeedbackInQuestion:question.question_log_id
-//                                                forSentence:userAnswer
-//                                                 completion:^(NSError *error) {}];
-  
   _answersData[question.question_log_id] = @(answerResult);
+  
+  MAppSettings *appSettings = [MAppSettings sharedSettings];
+  
+  if (![appSettings.auto_feedback_types containsObject:question.type])
+    return;
+  
+  [_userFeedbacks addObject:@{
+                              kParamQuestionLogId : question.question_log_id,
+                              kParamUserAnswer : _answerValue,
+                              kParamAutoFeedback : @(YES)
+                              }];
 }
 
 - (void)removeCurrentQuestion {
@@ -242,6 +248,8 @@
   if (_currentHeartsCount < 0) {
     [Utils playSoundEffect:kValueSoundEffectFail];
     
+    [[MMServerHelper sharedHelper] submitFeedbacks:_userFeedbacks];
+    
     [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
                                                andResults:_answersData
                                                completion:^(NSError *error) {}];
@@ -255,6 +263,8 @@
   // Finish all questions
   if (_currentQuestionIndex >= _totalLessonsCount) {
     [Utils playSoundEffect:kValueSoundEffectFinish];
+    
+    [[MMServerHelper sharedHelper] submitFeedbacks:_userFeedbacks];
     
     ShowHudForCurrentView();
     

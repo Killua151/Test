@@ -112,9 +112,7 @@
 
 - (void)getAppSettings:(void(^)(NSError *error))handler;
 
-- (void)submitFeedbackInQuestion:(NSString *)questionLogId
-                     forSentence:(NSString *)sentenceText
-                      completion:(void(^)(NSError *error))handler;
+- (void)submitFeedbacks:(NSArray *)feedbacks;
 
 - (void)getDictionary;
 - (void)submitViewedWords:(NSDictionary *)viewedWords;

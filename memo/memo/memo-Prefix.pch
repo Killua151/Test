@@ -162,6 +162,7 @@ return; \
 #define kParamFbAccessToken                     @"fb_access_token"
 #define kParamFbId                              @"fb_Id"
 #define kParamFbName                            @"fb_name"
+#define kParamFeedbacks                         @"feedbacks"
 #define kParamFinishExamBonusExp                @"finish_exam_bonus_exp"
 #define kParamFinished                          @"finished"
 #define kParamFriendId                          @"friend_id"
