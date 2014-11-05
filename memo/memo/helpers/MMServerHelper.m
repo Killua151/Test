@@ -615,8 +615,10 @@
    POST:@"feedback/create"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     DLog(@"%@", [responseObject objectFromJSONData]);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", error);
      [self handleFailedOperation:operation withError:error fallback:NULL];
    }];
 }
