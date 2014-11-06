@@ -148,14 +148,14 @@
   
   [buttonsArray removeAllObjects];
   
-  [tokensData enumerateObjectsUsingBlock:^(NSString *token, NSUInteger index, BOOL *stop) {
-    MMSortQuestionAnswerTokenButton *button = [[MMSortQuestionAnswerTokenButton alloc] initWithToken:token atIndex:index];
+  for (NSString *token in tokensData) {
+    MMSortQuestionAnswerTokenButton *button = [[MMSortQuestionAnswerTokenButton alloc] initWithToken:token];
     button.delegate = self;
     button.status = parentView == _vAvailableTokens ? FormAnswerTokenAvailable : FormAnswerTokenAnswered;
     
     [buttonsArray addObject:button];
     [parentView addSubview:button];
-  }];
+  }
   
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     [self animateSortButtons:buttonsArray inView:parentView];

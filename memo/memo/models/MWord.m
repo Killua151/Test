@@ -10,22 +10,40 @@
 
 @implementation MWord
 
-- (void)setupDictionary:(NSDictionary *)dictionary {
++ (instancetype)sharedWordsDictionary {
+  static MWord *_sharedWordsDictionary = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _sharedWordsDictionary = [MWord new];
+  });
+  
+  return _sharedWordsDictionary;
+}
+
+- (void)setupDictionary:(id)dictionaryData {
   if (_dictionary == nil)
     _dictionary = [NSMutableDictionary new];
   
   [_dictionary removeAllObjects];
   
-  if (dictionary == nil || ![dictionary isKindOfClass:[NSDictionary class]])
+  if (dictionaryData == nil)
     return;
   
   NSMutableArray *soundsArr = [NSMutableArray array];
   
-  [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *text, NSDictionary *wordData, BOOL *stop) {
-    MWord *word = [MWord modelFromDict:wordData];
-    _dictionary[text] = word;
-    [soundsArr addObject:word.sound];
-  }];
+  if ([dictionaryData isKindOfClass:[NSDictionary class]])
+    [dictionaryData enumerateKeysAndObjectsUsingBlock:^(NSString *text, NSDictionary *wordData, BOOL *stop) {
+      MWord *word = [MWord modelFromDict:wordData];
+      _dictionary[text] = word;
+      [soundsArr addObject:word.sound];
+    }];
+  else if ([dictionaryData isKindOfClass:[NSArray class]])
+    for (NSDictionary *wordData in dictionaryData) {
+      MWord *word = [MWord modelFromDict:wordData];
+      _dictionary[word.text] = word;
+      [soundsArr addObject:word.sound];
+    }
   
   [Utils preDownloadAudioFromUrls:soundsArr];
 }

@@ -7,10 +7,9 @@
 //
 
 #import "MMSortQuestionAnswerTokenButton.h"
+#import "MWord.h"
 
-@interface MMSortQuestionAnswerTokenButton () {
-  NSInteger _index;
-}
+@interface MMSortQuestionAnswerTokenButton ()
 
 - (void)setupViews;
 
@@ -18,12 +17,11 @@
 
 @implementation MMSortQuestionAnswerTokenButton
 
-- (id)initWithToken:(NSString *)token atIndex:(NSInteger)index {
+- (id)initWithToken:(NSString *)token {
   if (self = [super init]) {
     LoadXibWithSameClass();
     
     _token = token;
-    _index = index;
     [self setupViews];
   }
   
@@ -33,6 +31,16 @@
 - (IBAction)btnTokenPressed:(UIButton *)sender {
   if ([_delegate respondsToSelector:@selector(formTokenButtonDidSelect:)])
     [_delegate formTokenButtonDidSelect:self];
+  
+  NSDictionary *wordsDictionary = [MWord sharedWordsDictionary].dictionary;
+  
+  MWord *word = wordsDictionary[_token];
+  
+  if (word == nil)
+    word = wordsDictionary[[_token lowercaseString]];
+  
+  if (word != nil)
+    [Utils playAudioWithUrl:word.sound];
 }
 
 #pragma mark - Private methods

@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong, readonly) NSMutableDictionary *dictionary;
 
-- (void)setupDictionary:(NSDictionary *)dictionary;
++ (instancetype)sharedWordsDictionary;
+- (void)setupDictionary:(id)dictionaryData;
 
 @end

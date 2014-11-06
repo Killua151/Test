@@ -6,6 +6,7 @@
 * Update API v1.4 (database mới & cải thiện performance)
 * Thêm gamification sound effects
 * Sửa lại câu hỏi dạng sort (có & không có âm thanh)
+* Câu sort có kiểm tra cả đáp án tầng 2 & 3, ấn vào các từ có âm thanh
 * Sửa một vài lỗi nhỏ
 
 ###v1.0.2
@@ -28,6 +29,15 @@
 * Closed beta 1 release
 
 ##Android
+
+###V1.0.2
+* Cập nhật API v1.4: database mới, cải thiện performance
+* Sửa lỗi crash khi nhấn nhiều lần vào nút
+* Sửa lỗi khi vào xem bạn bè
+* Sửa lỗi ảnh bị méo trong câu hỏi dạng name và select
+* Sửa lại giao diện bài học, biểu đồ, câu hỏi dạng translate và sort
+* Sửa lại âm thanh câu hỏi dạng translate có lúc không ra tiếng
+* Thêm các hiệu ứng âm thanh
 
 ###v1.0.1
 * Update thuật toán check lỗi typos v1.2

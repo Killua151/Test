@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, assign) FormAnswerTokenStatus status;
 
-- (id)initWithToken:(NSString *)token atIndex:(NSInteger)index;
+- (id)initWithToken:(NSString *)token;
 - (IBAction)btnTokenPressed:(UIButton *)sender;
 
 @end
