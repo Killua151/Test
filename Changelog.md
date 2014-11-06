@@ -30,6 +30,15 @@
 
 ##Android
 
+###Tested devices
+* LG G F180
+* LG Google Nexus 7
+* Oppo Find R815
+* HKPhone Revo HD4
+* Samsung Galaxy S4
+* Samsung Galaxy Note 2
+* Asus Zenphone 4
+
 ###V1.0.2
 * Cập nhật API v1.4: database mới, cải thiện performance
 * Sửa lỗi crash khi nhấn nhiều lần vào nút
