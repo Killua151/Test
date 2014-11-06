@@ -16,6 +16,21 @@
 
 @implementation MMHexagonSkillCell
 
+//- (id)init {
+//  if (self = [super init]) {
+//    if (self.contentView.superview.clipsToBounds)
+//      [self.contentView.superview setClipsToBounds:NO];
+//    
+//    DLog(@"%@ %@ %@ %@",
+//         NSStringFromBOOL(self.clipsToBounds),
+//         NSStringFromBOOL(self.contentView.clipsToBounds),
+//         NSStringFromBOOL(self.contentView.superview.clipsToBounds),
+//         NSStringFromBOOL(self.layer.masksToBounds));
+//  }
+//  
+//  return self;
+//}
+
 - (CGFloat)yPosForSkillViews {
   return 8;
 }

@@ -163,6 +163,12 @@
   
   [cell updateCellWithSkills:skills];
   
+  // iOS 7.0.4 hacks
+  // the cell's content view's superview (UITableViewCellScrollView) implicitly set clipsToBounds to YES
+  if (NSClassFromString(@"UITableViewCellScrollView") != nil &&
+      [cell.contentView.superview isKindOfClass:[NSClassFromString(@"UITableViewCellScrollView") class]])
+    [cell.contentView.superview setClipsToBounds:NO];
+  
   return cell;
 }
 
