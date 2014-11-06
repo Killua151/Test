@@ -9,6 +9,7 @@
 #import "MMAppDelegate.h"
 #import "MMHomeViewController.h"
 #import "MMSkillsListViewController.h"
+#import "MMProfileViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <GooglePlus/GooglePlus.h>
 #import "iSpeechSDK.h"
@@ -22,6 +23,7 @@
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
+- (void)handlePushNotification:(NSDictionary *)notificationData;
 - (void)test;
 
 @end
@@ -91,7 +93,12 @@
       userInfo[kParamAps][kParamAlert] == nil || ![userInfo[kParamAps][kParamAlert] isKindOfClass:[NSString class]])
     return;
   
-  [UIAlertView showWithTitle:MMLocalizedString(@"Notification") andMessage:userInfo[kParamAps][kParamAlert]];
+  [UIAlertView
+   showWithTitle:MMLocalizedString(@"Notification")
+   message:userInfo[kParamAps][kParamAlert]
+   callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+     [self handlePushNotification:userInfo[kParamCustomData]];
+   }];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -202,7 +209,26 @@
   
   [[MMServerHelper sharedHelper] getDictionary];
   
+  NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+  [self handlePushNotification:notificationData];
+  
   [self test];
+}
+
+- (void)handlePushNotification:(NSDictionary *)notificationData {
+  if (notificationData == nil || ![notificationData isKindOfClass:[NSDictionary class]])
+    return;
+  
+  NSString *type = notificationData[kParamType];
+  
+  if ([type isEqualToString:kValuePushNotificationTypeFollow] &&
+      notificationData[kParamData] != nil && [notificationData[kParamData] isKindOfClass:[NSString class]]) {
+    BaseViewController *currentTopViewController = (BaseViewController *)_window.rootViewController;
+    NSString *userId = notificationData[kParamData];
+    MMProfileViewController *profileVC = [[MMProfileViewController alloc] initWithUserId:userId];
+    [currentTopViewController presentViewController:[profileVC parentNavigationController] animated:YES completion:NULL];
+    return;
+  }
 }
 
 - (void)test {

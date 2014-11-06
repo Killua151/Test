@@ -153,7 +153,9 @@ return; \
 #define kParamCheckpointPositions               @"checkpoint_positions"
 #define kParamContent                           @"content"
 #define kParamCorrectAnswer                     @"correct_answer"
+#define kParamCustomData                        @"custom_data"
 #define kParamCurrentCourseName                 @"current_course_name"
+#define kParamData                              @"data"
 #define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
@@ -209,11 +211,13 @@ return; \
 #define kParamWordRange                         @"word_range"
 #define kParamWords                             @"words"
 
-#define kValueExamTypeLesson                    @"lesson"
 #define kValueExamTypeCheckpoint                @"checkpoint"
+#define kValueExamTypeLesson                    @"lesson"
 #define kValueExamTypeShortcut                  @"shortcut"
-#define kValueExamTypeStrengthenSkill           @"strengthen_skill"
 #define kValueExamTypeStrengthenAll             @"strengthen_all"
+#define kValueExamTypeStrengthenSkill           @"strengthen_skill"
+
+#define kValuePushNotificationTypeFollow        @"follow"
 
 #define kValueSoundEffectCorrect                @"correct"
 #define kValueSoundEffectFail                   @"fail"

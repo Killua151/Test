@@ -65,5 +65,11 @@
 
 ##Web
 
+# v1.0.1
+
+* Test flow: Placement test; lesson, checkpoint
+* Check lỗi typo
+* Loading indicator
+
 ###v1.0.0 (Closed beta 1)
 * Closed beta 1 release

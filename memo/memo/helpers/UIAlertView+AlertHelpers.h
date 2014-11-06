@@ -21,6 +21,10 @@
 
 + (UIAlertView *)showWithTitle:(NSString *)title
                        message:(NSString *)message
+                      callback:(void(^)(UIAlertView *alertView, NSInteger buttonIndex))handler;
+
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
                       callback:(void(^)(UIAlertView *alertView, NSInteger buttonIndex))handler;

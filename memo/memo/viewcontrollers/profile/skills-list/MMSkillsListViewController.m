@@ -18,6 +18,8 @@
 #import "MMExamViewController.h"
 #import "AppsFlyerTracker.h"
 
+#import "MMAppDelegate.h"
+
 #import "MUser.h"
 #import "MSkill.h"
 #import "MCheckpoint.h"

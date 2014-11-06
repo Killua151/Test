@@ -69,6 +69,16 @@
 
 + (UIAlertView *)showWithTitle:(NSString *)title
                        message:(NSString *)message
+                      callback:(void (^)(UIAlertView *, NSInteger))handler {
+  return [[self class] showWithTitle:title
+                             message:message
+                   cancelButtonTitle:MMLocalizedString(@"OK")
+                   otherButtonTitles:nil
+                            callback:handler];
+}
+
++ (UIAlertView *)showWithTitle:(NSString *)title
+                       message:(NSString *)message
              cancelButtonTitle:(NSString *)cancelButtonTitle
              otherButtonTitles:(NSArray *)otherButtonTitles
                       callback:(void (^)(UIAlertView *, NSInteger))handler {
