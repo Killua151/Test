@@ -22,37 +22,50 @@
   if (_definitions != nil && [_definitions isKindOfClass:[NSArray class]])
     [correctAnswers addObjectsFromArray:_definitions];
   
-  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+  // V1.0 - Crowdsourcing comparison
+//  // Group 1 & 2 - case insensitively
+//  NSString *normalizedAnswerValue = [answerValue stringByRemovingAllNonLetterCharacters];
+//  
+//  for (NSString *correctAnswer in correctAnswers) {
+//    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+//    
+//    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+//      return @{
+//               kParamAnswerResult : @(YES),
+//               kParamCorrectAnswer : _hint
+//               };
+//  }
+//  
+//  // Group 1 & 2 - check typos
+//  for (NSString *correctAnswer in correctAnswers) {
+//    if ([answerValue wordsCount] != [correctAnswer wordsCount])
+//      continue;
+//    
+//    NSArray *typos = [correctAnswer checkTyposOnString:answerValue];
+//    
+//    if (typos == nil)
+//      continue;
+//    
+//    return @{
+//             kParamAnswerResult : @(YES),
+//             kParamCorrectAnswer : correctAnswer,
+//             kParamUnderlineRanges : typos
+//             };
+//  }
   
-  for (NSString *correctAnswer in correctAnswers) {
-    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
-    
-    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
-      return @{
-               kParamAnswerResult : @(YES),
-               kParamCorrectAnswer : _hint
-               };
-  }
+  // V1.1 - Crowdsourcing comparision: reuse code snippet
+  NSDictionary *result = [self checkUserAnswer:answerValue
+                            withCorrectAnswers:correctAnswers
+                               andCommonErrors:nil
+                              shouldCheckTypos:YES];
   
-  for (NSString *correctAnswer in correctAnswers) {
-    if ([answerValue wordsCount] != [correctAnswer wordsCount])
-      continue;
-    
-    NSArray *typos = [correctAnswer checkTyposOnString:answerValue];
-    
-    if (typos == nil)
-      continue;
-    
-    return @{
-             kParamAnswerResult : @(YES),
-             kParamCorrectAnswer : correctAnswer,
-             kParamUnderlineRanges : typos
-             };
-  }
+  if (result != nil)
+    return result;
   
   return @{
            kParamAnswerResult : @(NO),
-           kParamCorrectAnswer : _hint
+           kParamCorrectAnswer : _hint,
+           kParamUserAnswer : answerValue
            };
 }
 

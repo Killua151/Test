@@ -100,6 +100,62 @@
   return nil;
 }
 
+- (NSDictionary *)checkUserAnswer:(NSString *)userAnswer
+               withCorrectAnswers:(NSArray *)correctAnswers
+                  andCommonErrors:(NSArray *)commonErrors
+                 shouldCheckTypos:(BOOL)checkTypos {
+  //  V1.2 - Crowdsourcing comparison: be able to check common errors
+  NSString *normalizedAnswerValue = [userAnswer stringByRemovingAllNonLetterCharacters];
+  
+  // Group 1 & 2 - check case insensitively
+  for (NSString *correctAnswer in correctAnswers) {
+    NSString *normalizedCorrectAnswer = [correctAnswer stringByRemovingAllNonLetterCharacters];
+    
+    if ([normalizedCorrectAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+      return @{
+               kParamAnswerResult : @(YES),
+               kParamCorrectAnswer : correctAnswers[0],
+               kParamUserAnswer : userAnswer
+               };
+  }
+  
+  // Group 3 - check case insensitively
+  for (NSString *wrongAnswer in commonErrors) {
+    NSString *normalizedWrongAnswer = [wrongAnswer stringByRemovingAllNonLetterCharacters];
+    
+    if ([normalizedWrongAnswer compare:normalizedAnswerValue options:NSCaseInsensitiveSearch] == NSOrderedSame)
+      return @{
+               kParamAnswerResult : @(NO),
+               kParamCorrectAnswer : correctAnswers[0],
+               kParamUserAnswer : userAnswer
+               };
+  }
+  
+  // Not checking typos, nothing to do here
+  if (!checkTypos)
+    return nil;
+  
+  // Group 2 - check typos
+  for (NSString *correctAnswer in correctAnswers) {
+    if ([userAnswer wordsCount] != [correctAnswer wordsCount])
+      continue;
+    
+    NSArray *typos = [correctAnswer checkTyposOnString:userAnswer];
+    
+    if (typos == nil)
+      continue;
+    
+    return @{
+             kParamAnswerResult : @(YES),
+             kParamCorrectAnswer : correctAnswer,
+             kParamUnderlineRanges : typos,
+             kParamUserAnswer : userAnswer
+             };
+  }
+  
+  return nil;
+}
+
 #pragma mark - Private methods
 + (Class)questionKlassByType:(NSString *)type {
   if (kTestQuestionType != nil && ![type isEqualToString:kTestQuestionType])

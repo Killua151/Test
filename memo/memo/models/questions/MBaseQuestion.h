@@ -19,5 +19,9 @@
 + (Class)questionKlassByType:(NSString *)type;
 + (NSArray *)audioUrlsFromQuestions:(NSArray *)questions;
 - (NSDictionary *)checkAnswer:(id)answerValue;
+- (NSDictionary *)checkUserAnswer:(NSString *)userAnswer
+               withCorrectAnswers:(NSArray *)correctAnswers
+                  andCommonErrors:(NSArray *)commonErrors
+                 shouldCheckTypos:(BOOL)checkTypos;
 
 @end

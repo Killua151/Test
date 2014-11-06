@@ -207,6 +207,11 @@
              underlineRanges:underlineRanges];
   
   _answersData[question.question_log_id] = @(answerResult);
+
+  NSString *userAnswer = checkResult[kParamUserAnswer];
+  
+  if (userAnswer == nil || ![userAnswer isKindOfClass:[NSString class]])
+    return;
   
   MAppSettings *appSettings = [MAppSettings sharedSettings];
   
@@ -215,7 +220,7 @@
   
   [_userFeedbacks addObject:@{
                               kParamQuestionLogId : question.question_log_id,
-                              kParamUserAnswer : _answerValue,
+                              kParamUserAnswer : userAnswer,
                               kParamAutoFeedback : @(YES)
                               }];
 }

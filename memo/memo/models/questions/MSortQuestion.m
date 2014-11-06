@@ -16,16 +16,30 @@
   if (answerValue == nil || ![answerValue isKindOfClass:[NSArray class]])
     return @{
              kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : correctAnswer
+             kParamCorrectAnswer : correctAnswer,
              };
+  
+  NSMutableArray *correctAnswers = [NSMutableArray arrayWithObject:correctAnswer];
+  [correctAnswers addObjectsFromArray:_alternative_answers];
   
   NSString *usersAnswer = [answerValue componentsJoinedByString:@" "];
   
-  BOOL answerResult = [usersAnswer isEqualToString:correctAnswer];
+  // V1.0 - Compare case sensitively
+//  BOOL answerResult = [usersAnswer isEqualToString:correctAnswer];
+  
+  // V1.1 - Crowdsourcing comparision: reuse code snippet
+  NSDictionary *result = [self checkUserAnswer:usersAnswer
+                            withCorrectAnswers:correctAnswers
+                               andCommonErrors:_common_errors
+                              shouldCheckTypos:NO];
+  
+  if (result != nil)
+    return result;
   
   return @{
-           kParamAnswerResult : @(answerResult),
-           kParamCorrectAnswer : correctAnswer
+           kParamAnswerResult : @(NO),
+           kParamCorrectAnswer : correctAnswer,
+           kParamUserAnswer : answerValue
            };
 }
 

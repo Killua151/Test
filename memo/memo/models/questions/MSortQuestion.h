@@ -10,8 +10,10 @@
 
 @interface MSortQuestion : MBaseQuestion
 
+@property (nonatomic, strong) NSArray *alternative_answers;
+@property (nonatomic, strong) NSArray *common_errors;
+@property (nonatomic, strong) NSString *normal_question_audio;
 @property (nonatomic, strong) NSArray *tokens;
 @property (nonatomic, strong) NSArray *wrong_tokens;
-@property (nonatomic, strong) NSString *normal_question_audio;
 
 @end
