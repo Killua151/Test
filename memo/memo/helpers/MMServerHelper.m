@@ -70,6 +70,22 @@
             completion:handler];
 }
 
+- (void)logout:(void (^)(NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   POST:@"users/logout"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)linkFacebookWithFacebookId:(NSString *)facebookId
                        accessToken:(NSString *)accessToken
                         completion:(void (^)(NSError *))handler {

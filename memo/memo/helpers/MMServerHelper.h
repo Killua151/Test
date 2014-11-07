@@ -27,6 +27,8 @@
                        accessToken:(NSString *)accessToken
                         completion:(void(^)(NSError *error))handler;
 
+- (void)logout:(void(^)(NSError *error))handler;
+
 - (void)unlinkFacebook:(void(^)(NSError *error))handler;
 
 - (void)logInWithGmail:(NSString *)gmail

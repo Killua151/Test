@@ -103,8 +103,15 @@
 }
 
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
-  [MUser logOutCurrentUser];
-  [self transitToViewController:[MMHomeViewController navigationController]];
+  ShowHudForCurrentView();
+
+  [[MMServerHelper sharedHelper] logout:^(NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [MUser logOutCurrentUser];
+    [self transitToViewController:[MMHomeViewController navigationController]];
+  }];
 }
 
 - (IBAction)btnNotificationModesPressed:(UIButton *)sender {
