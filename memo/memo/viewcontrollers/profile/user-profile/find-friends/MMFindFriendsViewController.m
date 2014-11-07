@@ -138,6 +138,7 @@
   _btnClose.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnClose setTitle:MMLocalizedString(@"Close") forState:UIControlStateNormal];
   _lblEmptySearchResults.font = [UIFont fontWithName:@"ClearSans" size:13];
+  _lblEmptySearchResults.text = MMLocalizedString(@"Friends not found");
   _tblFriends.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
   
   if (!DeviceSystemIsOS7()) {
