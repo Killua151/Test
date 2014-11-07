@@ -23,7 +23,7 @@
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
-- (void)handlePushNotification:(NSDictionary *)notificationData;
+- (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert;
 - (void)test;
 
 @end
@@ -73,6 +73,7 @@
   
 #if kTestPushNotification
   DLog(@"%@", token);
+  [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];
 #endif
   
   [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
@@ -97,7 +98,7 @@
    showWithTitle:MMLocalizedString(@"Notification")
    message:userInfo[kParamAps][kParamAlert]
    callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
-     [self handlePushNotification:userInfo[kParamCustomData]];
+     [self handlePushNotification:userInfo shouldShowAlert:NO];
    }];
 }
 
@@ -210,21 +211,31 @@
   [[MMServerHelper sharedHelper] getDictionary];
   
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-  [self handlePushNotification:notificationData];
+  [self handlePushNotification:notificationData shouldShowAlert:YES];
   
   [self test];
 }
 
-- (void)handlePushNotification:(NSDictionary *)notificationData {
+- (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert {
+  if (shouldShowAlert) {
+    [self application:nil didReceiveRemoteNotification:notificationData];
+    return;
+  }
+  
   if (notificationData == nil || ![notificationData isKindOfClass:[NSDictionary class]])
     return;
   
-  NSString *type = notificationData[kParamType];
+  NSDictionary *customData = notificationData[kParamCustomData];
+  
+  if (customData == nil || ![customData isKindOfClass:[NSDictionary class]])
+    return;
+  
+  NSString *type = customData[kParamType];
   
   if ([type isEqualToString:kValuePushNotificationTypeFollow] &&
-      notificationData[kParamData] != nil && [notificationData[kParamData] isKindOfClass:[NSString class]]) {
+      customData[kParamData] != nil && [customData[kParamData] isKindOfClass:[NSString class]]) {
     BaseViewController *currentTopViewController = (BaseViewController *)_window.rootViewController;
-    NSString *userId = notificationData[kParamData];
+    NSString *userId = customData[kParamData];
     MMProfileViewController *profileVC = [[MMProfileViewController alloc] initWithUserId:userId];
     [currentTopViewController presentViewController:[profileVC parentNavigationController] animated:YES completion:NULL];
     return;
