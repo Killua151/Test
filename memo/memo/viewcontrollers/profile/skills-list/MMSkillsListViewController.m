@@ -46,6 +46,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [Utils logAnalyticsForUserLoggedIn];
+  
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
   [self customTitleWithText:[MUser currentUser].current_course_name color:[UIColor blackColor]];
   [self customBarButtonWithImage:nil
@@ -77,7 +79,6 @@
 }
 
 - (void)reloadContents {
-  [Utils logAnalyticsForCurrentUser];
   MUser *currentUser = [MUser currentUser];
   
   [self customTitleWithText:currentUser.current_course_name color:[UIColor blackColor]];

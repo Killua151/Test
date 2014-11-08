@@ -125,7 +125,7 @@ static UIView *_sharedToast = nil;
   return nonKeyboardViewHeight / actualContentViewsHeight;
 }
 
-+ (void)logAnalyticsForCurrentUser {
++ (void)setupAnalyticsForCurrentUser {
 #if kTestModeNoAnalytics
   return;
 #endif
@@ -135,6 +135,40 @@ static UIView *_sharedToast = nil;
   
   [[Mixpanel sharedInstance] identify:[MUser currentUser]._id];
   [[Mixpanel sharedInstance].people set:[[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+}
+
++ (void)logAnalyticsForAppLaunched {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_app"
+                                                        action:@"launched"
+                                                         label:@"app launched"
+                                                         value:nil] build]];
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS app launched %@", kValueCurrentMarket]];
+}
+
++ (void)logAnalyticsForUserLoggedIn {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_user"
+                                                        action:@"logged_in"
+                                                         label:@"user logged in"
+                                                         value:nil] build]];
+  
+  NSDictionary *userData = nil;
+  
+  if ([MUser currentUser]._id != nil)
+    userData = @{kParamUserId : [MUser currentUser]._id};
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS user logged in %@", kValueCurrentMarket]
+                        properties:userData];
 }
 
 + (void)logAnalyticsForScreen:(NSString *)screenName {
@@ -147,7 +181,9 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", screenName] properties:userData];
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@",
+                                    [screenName normalizedScreenNameString]]
+                        properties:userData];
 }
 
 + (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName {
@@ -155,7 +191,8 @@ static UIView *_sharedToast = nil;
   return;
 #endif
   
-  [[Mixpanel sharedInstance] timeEvent:[NSString stringWithFormat:@"iOS screen %@", screenName]];
+  [[Mixpanel sharedInstance] timeEvent:
+   [NSString stringWithFormat:@"iOS screen %@", [screenName normalizedScreenNameString]]];
 }
 
 + (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName {
@@ -168,7 +205,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", screenName] properties:userData];
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", [screenName normalizedScreenNameString]]
+                        properties:userData];
 }
 
 + (void)logAnalyticsForButton:(NSString *)buttonName {
@@ -199,7 +237,7 @@ static UIView *_sharedToast = nil;
   id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_screen"
                                                         action:@"scroll"
-                                                         label:screenName
+                                                         label:[screenName normalizedScreenNameString]
                                                          value:nil] build]];
   
   NSMutableDictionary *userData =
@@ -208,7 +246,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData[kParamUserId] = [MUser currentUser]._id;
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen scroll %@", screenName]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen scroll %@",
+                                    [screenName normalizedScreenNameString]]
                         properties:userData];
 }
 

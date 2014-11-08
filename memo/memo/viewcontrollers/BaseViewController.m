@@ -54,15 +54,6 @@
   [Utils logAnalyticsForOnScreenEndTime:NSStringFromClass([self class])];
 }
 
-//- (void)viewDidLayoutSubviews {
-//  if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-//    CGRect viewBounds = self.view.bounds;
-//    CGFloat topBarOffset = self.topLayoutGuide.length;
-//    viewBounds.origin.y = topBarOffset * -1;
-//    self.view.bounds = viewBounds;
-//  }
-//}
-
 - (void)presentViewController:(UIViewController *)viewController animated:(BOOL)flag completion:(void (^)(void))completion {
   if (self.navigationController != nil)
     [self.navigationController presentViewController:viewController animated:flag completion:completion];

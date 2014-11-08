@@ -109,6 +109,15 @@ typedef enum TyposCheckingResultEnum {
   return components;
 }
 
+- (NSString *)normalizedScreenNameString {
+  NSMutableString *normalized = [NSMutableString stringWithString:self];
+  
+  [normalized replaceOccurrencesOfString:@"MM" withString:@"" options:0 range:NSMakeRange(0, normalized.length)];
+  [normalized replaceOccurrencesOfString:@"ViewController" withString:@"" options:0 range:NSMakeRange(0, normalized.length)];
+  
+  return normalized;
+}
+
 - (NSString *)localizedStringForLanguage:(NSString *)language {  
   return NSLocalizedString(self, nil);
 }

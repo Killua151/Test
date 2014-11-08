@@ -206,6 +206,8 @@
   [MUser logOutCurrentUser];
 #endif
   [MUser loadCurrentUserFromUserDef];
+  [Utils setupAnalyticsForCurrentUser];
+  
   [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
   
   [[MMServerHelper sharedHelper] getDictionary];

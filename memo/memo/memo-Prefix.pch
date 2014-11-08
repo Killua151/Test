@@ -227,9 +227,9 @@ return; \
 
 #define kValueSupportEmail                      @"memoapp.topica@gmail.com"
 
-#define kBuildForApple                          false
-#define kValueNewInstallApple                   @"New install Apple"
-#define kValueNewInstallAppota                  @"New install Appota"
+#define kValueMarketApple                       @"Apple"
+#define kValueMarketAppota                      @"Appota"
+#define kValueCurrentMarket                     kValueMarketAppota
 
 #define kItemHealthPotionId                     @"health_potion"
 

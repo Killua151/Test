@@ -24,6 +24,7 @@
 - (NSArray *)componentsSeperatedByNonLetterCharacters;
 - (NSString *)stringByRemovingAllNonDigitCharacters;
 - (NSArray *)componentsSeperatedByNonDigitCharacters;
+- (NSString *)normalizedScreenNameString;
 
 - (NSString *)localizedStringForLanguage:(NSString *)language;
 

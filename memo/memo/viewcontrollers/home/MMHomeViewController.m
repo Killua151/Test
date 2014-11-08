@@ -29,14 +29,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [Utils logAnalyticsForAppLaunched];
+  
   [self customNavBarBgWithColor:nil];
   [self customTitleWithText:@"" color:[UIColor clearColor]];
   
-#if kBuildForApple
-  [Utils logAnalyticsForScreen:kValueNewInstallApple];
-#else
-  [Utils logAnalyticsForScreen:kValueNewInstallAppota];
-#endif
   [self setupViews];
 }
 
