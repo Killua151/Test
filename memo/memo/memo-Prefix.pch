@@ -76,8 +76,8 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildCurrentMarket                     kBuildMarketAppota
 
-//#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-#define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
+#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+//#define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
 #define kServerApiVersion                       @"v1.4"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
