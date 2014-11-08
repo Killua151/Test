@@ -148,7 +148,7 @@ static UIView *_sharedToast = nil;
                                                          label:@"app launched"
                                                          value:nil] build]];
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS app launched %@", kValueCurrentMarket]];
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS app launched %@", kBuildCurrentMarket]];
 }
 
 + (void)logAnalyticsForUserLoggedIn {
@@ -167,7 +167,7 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS user logged in %@", kValueCurrentMarket]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS user logged in %@", kBuildCurrentMarket]
                         properties:userData];
 }
 

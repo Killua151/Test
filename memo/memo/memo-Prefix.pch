@@ -72,6 +72,10 @@ return; \
 
 #define ARC4RANDOM_MAX                          0x100000000
 
+#define kBuildMarketApple                       @"Apple"
+#define kBuildMarketAppota                      @"Appota"
+#define kBuildCurrentMarket                     kBuildMarketAppota
+
 //#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
 #define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
 #define kServerApiVersion                       @"v1.4"
@@ -226,10 +230,6 @@ return; \
 #define kValueSoundEffectLost                   @"lost"
 
 #define kValueSupportEmail                      @"memoapp.topica@gmail.com"
-
-#define kValueMarketApple                       @"Apple"
-#define kValueMarketAppota                      @"Appota"
-#define kValueCurrentMarket                     kValueMarketAppota
 
 #define kItemHealthPotionId                     @"health_potion"
 
