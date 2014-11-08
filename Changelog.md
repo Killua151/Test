@@ -14,7 +14,7 @@
 * Câu sort có kiểm tra cả đáp án tầng 2 & 3
 * Sửa một vài lỗi nhỏ
 
-###v1.0.2
+###v1.0.2 (Closed beta 2)
 
 * Update thuật toán check lỗi typos v1.2
 * Lưu lại data từ điển của từ
@@ -53,7 +53,7 @@
 * Sửa lại âm thanh câu hỏi dạng translate có lúc không ra tiếng
 * Thêm các hiệu ứng âm thanh
 
-###v1.0.1
+###v1.0.1 (Closed beta 2)
 * Update thuật toán check lỗi typos v1.2
 * Thêm thông tin phiên bản trên các màn hình
 * Thêm chức năng Báo lỗi - Góp ý
@@ -70,11 +70,14 @@
 
 ##Web
 
-# v1.0.1
+###v1.0.1 (Closed beta 2)
 
-* Test flow: Placement test; lesson, checkpoint
-* Check lỗi typo
-* Loading indicator
+* Cập nhật API 1.4
+* Hoàn thiện các flows: placement test, lesson, shortcut, checkpoint
+* Check lỗi typos
+* Thêm hiệu ứng loading indicator
+* Feedback forms, auto feedback, integrate feedback APIs
+* Release Closed Beta 2
 
 ###v1.0.0 (Closed beta 1)
 * Closed beta 1 release
