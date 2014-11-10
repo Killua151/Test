@@ -17,24 +17,40 @@
              kParamCorrectAnswer : self.question
              };
   
-  if ([answerValue wordsCount] != [self.question wordsCount])
-    return @{
-             kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : self.question
-             };
+  // V1.0: Check typos
+//  if ([answerValue wordsCount] != [self.question wordsCount])
+//    return @{
+//             kParamAnswerResult : @(NO),
+//             kParamCorrectAnswer : self.question
+//             };
+//  
+//  NSArray *typos = [self.question checkTyposOnString:answerValue];
+//  
+//  if (typos == nil)
+//    return @{
+//             kParamAnswerResult : @(NO),
+//             kParamCorrectAnswer : self.question
+//             };
+//  
+//  return @{
+//           kParamAnswerResult : @(YES),
+//           kParamCorrectAnswer : self.question,
+//           kParamUnderlineRanges : typos
+//           };
+
+  // V1.1: Check typos with reused code
+  NSDictionary *result = [self checkUserAnswer:answerValue
+                            withCorrectAnswers:@[self.question]
+                               andCommonErrors:nil
+                              shouldCheckTypos:YES];
   
-  NSArray *typos = [self.question checkTyposOnString:answerValue];
-  
-  if (typos == nil)
-    return @{
-             kParamAnswerResult : @(NO),
-             kParamCorrectAnswer : self.question
-             };
+  if (result != nil)
+    return result;
   
   return @{
-           kParamAnswerResult : @(YES),
+           kParamAnswerResult : @(NO),
            kParamCorrectAnswer : self.question,
-           kParamUnderlineRanges : typos
+           kParamUserAnswer : answerValue
            };
 }
 

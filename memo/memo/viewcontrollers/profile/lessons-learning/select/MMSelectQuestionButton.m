@@ -8,6 +8,7 @@
 
 #import "MMSelectQuestionButton.h"
 #import "MSelectQuestionOption.h"
+#import "MWord.h"
 
 @interface MMSelectQuestionButton () {
   MSelectQuestionOption *_optionData;
@@ -48,6 +49,13 @@
 - (IBAction)btnGesturePressed:(UIButton *)sender {
   sender.selected = !sender.selected;
   [self highlightView:sender.selected];
+  
+  if (sender.selected) {
+    MWord *word = [[MWord sharedWordsDictionary] wordModelForText:_optionData.text];
+    
+    if (word != nil)
+      [Utils playAudioWithUrl:word.sound];
+  }
   
   if ([_delegate respondsToSelector:@selector(selectQuestionButtonDidChanged:atIndex:)])
     [_delegate selectQuestionButtonDidChanged:sender.selected atIndex:_index];

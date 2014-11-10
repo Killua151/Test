@@ -627,8 +627,6 @@
                            kParamFeedbacks : [feedbacks JSONString]
                            };
   
-  DLog(@"%@", params);
-  
   [self
    POST:@"feedback/create"
    parameters:params

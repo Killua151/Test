@@ -32,15 +32,12 @@
   if ([_delegate respondsToSelector:@selector(formTokenButtonDidSelect:)])
     [_delegate formTokenButtonDidSelect:self];
   
-  NSDictionary *wordsDictionary = [MWord sharedWordsDictionary].dictionary;
-  
-  MWord *word = wordsDictionary[_token];
-  
-  if (word == nil)
-    word = wordsDictionary[[_token lowercaseString]];
-  
-  if (word != nil)
-    [Utils playAudioWithUrl:word.sound];
+  if (_status == FormAnswerTokenAvailable) {
+    MWord *word = [[MWord sharedWordsDictionary] wordModelForText:_token];
+    
+    if (word != nil)
+      [Utils playAudioWithUrl:word.sound];    
+  }
 }
 
 #pragma mark - Private methods

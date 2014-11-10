@@ -48,4 +48,13 @@
   [Utils preDownloadAudioFromUrls:soundsArr];
 }
 
+- (MWord *)wordModelForText:(NSString *)text {
+  MWord *word = _dictionary[text];
+  
+  if (word == nil)
+    word = _dictionary[[text lowercaseString]];
+  
+  return word;
+}
+
 @end

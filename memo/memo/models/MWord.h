@@ -19,5 +19,6 @@
 
 + (instancetype)sharedWordsDictionary;
 - (void)setupDictionary:(id)dictionaryData;
+- (MWord *)wordModelForText:(NSString *)text;
 
 @end

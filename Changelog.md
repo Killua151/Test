@@ -3,9 +3,10 @@
 ##iOS
 
 ###v1.0.4
-* Câu sort khi ấn vào các từ có âm thanh
+* Phát âm thanh khi ấn vào các từ trong câu select & sort
 * Khi nhận được push notification có người theo dõi, mở trang profile người theo dõi mình
 * Tích hợp API log_out (clear notification tokens)
+* Sửa một số lỗi nhỏ
 
 ###v1.0.3
 * Update API v1.4 (database mới & cải thiện performance)
