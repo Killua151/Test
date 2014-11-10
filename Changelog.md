@@ -6,6 +6,7 @@
 * Phát âm thanh khi ấn vào các từ trong câu select & sort
 * Khi nhận được push notification có người theo dõi, mở trang profile người theo dõi mình
 * Tích hợp API log_out (clear notification tokens)
+* Update app icon 1.1
 * Sửa một số lỗi nhỏ
 
 ###v1.0.3
