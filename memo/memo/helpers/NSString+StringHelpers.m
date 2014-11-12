@@ -257,8 +257,11 @@ typedef enum TyposCheckingResultEnum {
     if (diff.operation == DIFF_EQUAL)
       totalDifferentCharsCount -= diff.text.length;
   
-  if ((self.length >= 2 && self.length <= 4 && totalDifferentCharsCount > 1) ||
-      (self.length > 4 && totalDifferentCharsCount > 2))
+//  if ((self.length >= 2 && self.length <= 4 && totalDifferentCharsCount > 1) ||
+//      (self.length > 4 && totalDifferentCharsCount > 2))
+//    return kTyposCheckingDifferent;
+  
+  if (totalDifferentCharsCount > 1)
     return kTyposCheckingDifferent;
   
   return kTyposCheckingIsTypo;

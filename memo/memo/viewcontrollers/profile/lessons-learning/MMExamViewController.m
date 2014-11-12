@@ -27,7 +27,6 @@
 #define kTagUseItemAlertView            0x02
 
 @interface MMExamViewController () {
-  NSInteger _totalLessonsCount;
   NSInteger _totalHeartsCount;
   NSInteger _currentHeartsCount;
   NSDictionary *_availableItems;
@@ -63,6 +62,9 @@
     _questionsData = [NSMutableArray arrayWithArray:questions];
     _answersData = [NSMutableDictionary new];
     _userFeedbacks = [NSMutableArray new];
+    
+    if (metadata[kParamTotalQuestions] != nil && [metadata[kParamTotalQuestions] isKindOfClass:[NSNumber class]])
+      _totalQuestionsCount = [metadata[kParamTotalQuestions] integerValue];
   }
   
   return self;
@@ -266,7 +268,7 @@
   }
 
   // Finish all questions
-  if (_currentQuestionIndex >= _totalLessonsCount) {
+  if (_currentQuestionIndex >= _totalQuestionsCount) {
     [Utils playSoundEffect:kValueSoundEffectFinish];
     
     [[MMServerHelper sharedHelper] submitFeedbacks:_userFeedbacks];
@@ -311,10 +313,10 @@
 }
 
 - (void)updateHeaderViews {
-  if (_currentQuestionIndex >= _totalLessonsCount)
+  if (_currentQuestionIndex >= _totalQuestionsCount)
     return;
   
-  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentQuestionIndex+1, (long)_totalLessonsCount];
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%ld/%ld", (long)_currentQuestionIndex+1, (long)_totalQuestionsCount];
   
   [_btnHearts enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
     button.selected = index >= (_totalHeartsCount - _currentHeartsCount);
@@ -458,9 +460,9 @@
   _btnHealthPotion.hidden = ![MItem checkItemAvailability:kItemHealthPotionId inAvailableItems:_availableItems];
   
   CGFloat segmentWidth = [[_btnProgressSegments firstObject] frame].size.width;
-  CGFloat segmentsGap = (self.view.frame.size.width - 30 - _totalLessonsCount * segmentWidth)/(_totalLessonsCount-1);
+  CGFloat segmentsGap = (self.view.frame.size.width - 30 - _totalQuestionsCount * segmentWidth)/(_totalQuestionsCount-1);
   
-  if (_totalLessonsCount == 1)
+  if (_totalQuestionsCount == 1)
     segmentsGap = 0;
   
   __block CGRect buttonFrame;
@@ -470,7 +472,7 @@
     [button setBackgroundImage:[UIImage imageFromColor:UIColorFromRGB(255, 187, 51)] forState:UIControlStateSelected];
     button.selected = NO;
     
-    button.hidden = index >= _totalLessonsCount;
+    button.hidden = index >= _totalQuestionsCount;
     buttonFrame = button.frame;
     buttonFrame.origin.x = 15 + index * (buttonFrame.size.width + segmentsGap);
     button.frame = buttonFrame;
@@ -493,7 +495,11 @@
 }
 
 - (void)resetCounts {
-  _totalLessonsCount = [_questionsData count];
+  // Reset count for normal exams only,
+  // placement test's total questions count is responded from server
+  if ([self isMemberOfClass:[MMExamViewController class]])
+    _totalQuestionsCount = [_questionsData count];
+  
   _currentQuestionIndex = 0;
   _currentHeartsCount = _totalHeartsCount;
   [_answersData removeAllObjects];

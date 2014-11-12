@@ -100,11 +100,17 @@
                     andResults:(NSDictionary *)answerResults
                     completion:(void(^)(NSError *error))handler;
 
-- (void)startPlacementTest:(void(^)(NSString *examToken, MBaseQuestion *question, NSError *error))handler;
+- (void)startPlacementTest:(void(^)(NSString *examToken,
+                                    MBaseQuestion *question,
+                                    NSInteger questionNumber,
+                                    NSInteger totalQuestions,
+                                    NSError *error))handler;
 - (void)submitPlacementTestAnswer:(NSDictionary *)answerResult
                      withMetadata:(NSDictionary *)metadata
                        completion:(void(^)(NSString *examToken,
                                            MBaseQuestion *question,
+                                           NSInteger questionNumber,
+                                           NSInteger totalQuestions,
                                            BOOL isFinished,
                                            NSError *error))handler;
 

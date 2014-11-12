@@ -482,7 +482,7 @@
    }];
 }
 
-- (void)startPlacementTest:(void (^)(NSString *, MBaseQuestion *, NSError *))handler {
+- (void)startPlacementTest:(void (^)(NSString *, MBaseQuestion *, NSInteger, NSInteger, NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamDevice : @"ios",
@@ -494,19 +494,21 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
+     NSInteger questionNumber = [responseDict[kParamNumQuestions] integerValue];
+     NSInteger totalQuestions = [responseDict[kParamTotalNumQuestions] integerValue];
      MBaseQuestion *question = [MBaseQuestion modelFromDict:responseDict[kParamQuestion]];
-     handler(responseDict[kParamExamToken], question, nil);
+     handler(responseDict[kParamExamToken], question, questionNumber, totalQuestions, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, nil, error);
+       handler(nil, nil, -1, -1, error);
      }];
    }];
 }
 
 - (void)submitPlacementTestAnswer:(NSDictionary *)answerResult
                      withMetadata:(NSDictionary *)metadata
-                       completion:(void (^)(NSString *, MBaseQuestion *, BOOL, NSError *))handler {
+                       completion:(void (^)(NSString *, MBaseQuestion *, NSInteger, NSInteger, BOOL, NSError *))handler {
   NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:metadata];
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswer] = [answerResult JSONString];
@@ -523,16 +525,18 @@
      
      if (finished) {
        [MUser currentUser].lastReceivedBonuses = responseDict;
-       handler(nil, nil, YES, nil);
+       handler(nil, nil, -1, -1, YES, nil);
        return;
      }
      
+     NSInteger questionNumber = [responseDict[kParamNumQuestions] integerValue];
+     NSInteger totalQuestions = [responseDict[kParamTotalNumQuestions] integerValue];
      MBaseQuestion *question = [MBaseQuestion modelFromDict:responseDict[kParamQuestion]];
-     handler(responseDict[kParamExamToken], question, NO, nil);
+     handler(responseDict[kParamExamToken], question, questionNumber, totalQuestions, NO, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(nil, nil, NO, error);
+       handler(nil, nil, -1, -1, NO, error);
      }];
    }];
 }

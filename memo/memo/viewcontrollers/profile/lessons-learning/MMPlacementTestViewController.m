@@ -39,7 +39,12 @@
   [[MMServerHelper sharedHelper]
    submitPlacementTestAnswer:_answersData
    withMetadata:_metadata
-   completion:^(NSString *examToken, MBaseQuestion *question, BOOL isFinished, NSError *error) {
+   completion:^(NSString *examToken,
+                MBaseQuestion *question,
+                NSInteger questionNumber,
+                NSInteger totalQuestions,
+                BOOL isFinished,
+                NSError *error) {
      HideHudForCurrentView();
      
      if (error != nil) {
@@ -56,6 +61,8 @@
        
        return;
      }
+     
+     _totalQuestionsCount = totalQuestions;
      
      if (!isFinished) {
        _metadata[kParamExamToken] = examToken;
@@ -104,7 +111,10 @@
 }
 
 - (void)updateHeaderViews {
-  _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld", MMLocalizedString(@"Question"), (long)_currentQuestionIndex+1];
+  _lblLessonsCount.text = [NSString stringWithFormat:@"%@ %ld/%ld",
+                           MMLocalizedString(@"Question"),
+                           (long)_currentQuestionIndex+1,
+                           (long)_totalQuestionsCount];
 }
 
 #pragma mark - MMLessonLearningDelegate methods

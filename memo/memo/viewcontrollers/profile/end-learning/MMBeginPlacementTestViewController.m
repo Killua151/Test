@@ -61,16 +61,24 @@
 - (IBAction)btnStartPressed:(UIButton *)sender {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] startPlacementTest:^(NSString *examToken, MBaseQuestion *question, NSError *error) {
-    HideHudForCurrentView();
-    ShowAlertWithError(error);
-    
-    MMPlacementTestViewController *placementTestVC =
-    [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
-                                                 andMetadata:@{kParamExamToken : [NSString normalizedString:examToken]}];
-    
-    [self presentViewController:placementTestVC animated:YES completion:NULL];
-  }];
+  [[MMServerHelper sharedHelper]
+   startPlacementTest:^(NSString *examToken,
+                        MBaseQuestion *question,
+                        NSInteger questionNumber,
+                        NSInteger totalQuestions,
+                        NSError *error) {
+     HideHudForCurrentView();
+     ShowAlertWithError(error);
+     
+     MMPlacementTestViewController *placementTestVC =
+     [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
+                                                  andMetadata:@{
+                                                                kParamExamToken : [NSString normalizedString:examToken],
+                                                                kParamTotalQuestions : @(totalQuestions)
+                                                                }];
+     
+     [self presentViewController:placementTestVC animated:YES completion:NULL];
+   }];
 }
 
 - (IBAction)btnBackPressed:(UIButton *)sender {
