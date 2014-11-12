@@ -245,23 +245,37 @@ typedef enum TyposCheckingResultEnum {
   if ([[self asciiNormalizedString] isEqualToString:[inputWord asciiNormalizedString]])
     return kTyposCheckingIsTypo;
   
-  // If word is single-character: input word is a different word -> incorrect
-  if (self.length <= 1)
-    return kTyposCheckingDifferent;
-  
-  NSArray *diffs = [dmp diff_mainOfOldString:inputWord andNewString:self];
-  
-  NSInteger totalDifferentCharsCount = self.length;
-  
-  for (Diff *diff in diffs)
-    if (diff.operation == DIFF_EQUAL)
-      totalDifferentCharsCount -= diff.text.length;
-  
-//  if ((self.length >= 2 && self.length <= 4 && totalDifferentCharsCount > 1) ||
-//      (self.length > 4 && totalDifferentCharsCount > 2))
+//  // If word is single-character: input word is a different word -> incorrect
+//  if (self.length <= 1)
+//    return kTyposCheckingDifferent;
+//  
+//  NSArray *diffs = [dmp diff_mainOfOldString:inputWord andNewString:self];
+//  
+//  NSInteger totalDifferentCharsCount = self.length;
+//  
+//  for (Diff *diff in diffs)
+//    if (diff.operation == DIFF_EQUAL)
+//      totalDifferentCharsCount -= diff.text.length;
+//  
+////  if ((self.length >= 2 && self.length <= 4 && totalDifferentCharsCount > 1) ||
+////      (self.length > 4 && totalDifferentCharsCount > 2))
+////    return kTyposCheckingDifferent;
+//  
+//  // V1.3: only allows 1 different character
+//  if (totalDifferentCharsCount > 1)
 //    return kTyposCheckingDifferent;
   
-  if (totalDifferentCharsCount > 1)
+  // V1.4: compare words case-by-case
+  if (self.length != inputWord.length)
+    return kTyposCheckingDifferent;
+  
+  NSInteger diffCharsCount = 0;
+  
+  for (NSInteger i = 0; i < self.length; i++)
+    if ([self characterAtIndex:i] != [inputWord characterAtIndex:i])
+      diffCharsCount++;
+  
+  if (diffCharsCount > 1)
     return kTyposCheckingDifferent;
   
   return kTyposCheckingIsTypo;
