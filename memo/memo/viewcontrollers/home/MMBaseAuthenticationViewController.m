@@ -78,13 +78,20 @@
   
   if ([MUser currentUser].current_course_id == nil ||
       [[MUser currentUser].current_course_id isEqualToString:@"null"]) {
-    if (_coursesListVC == nil)
+    if (_coursesListVC == nil) {
       _coursesListVC = [MMCoursesListViewController new];
+      _coursesListVC.delegate = self;
+    }
     
     [self.navigationController pushViewController:_coursesListVC animated:YES];
     [_coursesListVC reloadContents];
   } else
     [self transitToViewController:[MMSkillsListViewController navigationController]];
+}
+
+#pragma mark - MMCoursesListDelegate delegate
+- (void)coursesListDidGoBack {
+  [MUser logOutCurrentUser];
 }
 
 @end

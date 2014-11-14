@@ -79,7 +79,7 @@
 "Passwords not match" = "Mật khẩu không khớp";
 "Please enter your email" = "Hãy nhập email của bạn";
 "Please enter your password" = "Hãy nhập mật khẩu của bạn";
-"Please enter your username" = "Hãy nhập tên đăng nhập của bạn";
+"Please enter your username or email" = "Hãy nhập tên đăng nhập hoặc email của bạn";
 "Profile" = "Thông tin";
 "Plaza" = "Plaza";
 "Please confirm your email" = "Xin hãy nhập lại email của bạn";
@@ -122,6 +122,7 @@
 "UNFOLLOW" = "BỎ THEO DÕI";
 "Unknown error" = "Có lỗi xảy ra";
 "Username" = "Tên đăng nhập";
+"Username or email" = "Tên đăng nhập hoặc mật khẩu";
 "Username must contain alphanumeric only" = "Tên đăng nhập chỉ bao gồm chữ cái và số";
 "Very hard" = "Rất khó";
 "Warning!" = "Cẩn trọng!";

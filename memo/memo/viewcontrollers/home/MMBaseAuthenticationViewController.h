@@ -10,7 +10,7 @@
 
 @class MMCoursesListViewController;
 
-@interface MMBaseAuthenticationViewController : BaseViewController {
+@interface MMBaseAuthenticationViewController : BaseViewController <MMCoursesListDelegate> {
   UIView *_currentFirstResponder;
   MMCoursesListViewController *_coursesListVC;
 }

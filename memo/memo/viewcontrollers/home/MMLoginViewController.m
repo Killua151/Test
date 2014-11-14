@@ -10,7 +10,6 @@
 #import "MMAppDelegate.h"
 #import "MMForgotPasswordViewController.h"
 #import "MMSkillsListViewController.h"
-#import "MMCoursesListViewController.h"
 #import "MUser.h"
 
 @interface MMLoginViewController () {
@@ -47,7 +46,7 @@
   _vTextFields.layer.borderWidth = 1;
   
   _txtUsername.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _txtUsername.placeholder = MMLocalizedString(@"Username");
+  _txtUsername.placeholder = MMLocalizedString(@"Username or email");
   
   _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:17];
   _txtPassword.placeholder = MMLocalizedString(@"Password");
@@ -69,13 +68,7 @@
 - (BOOL)validateFields {
   if (![_txtUsername.text validateBlank]) {
     [_txtUsername becomeFirstResponder];
-    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your username")];
-    return NO;
-  }
-  
-  if (![_txtUsername.text validateAlphaNumeric]) {
-    [_txtUsername becomeFirstResponder];
-    [Utils showToastWithMessage:MMLocalizedString(@"Username must contain alphanumeric only")];
+    [Utils showToastWithMessage:MMLocalizedString(@"Please enter your username or email")];
     return NO;
   }
   
@@ -129,7 +122,7 @@
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   if ([textField isEqual:_txtUsername])
-    [Utils logAnalyticsForFocusTextField:@"Username"];
+    [Utils logAnalyticsForFocusTextField:@"Username or email"];
   else
     [Utils logAnalyticsForFocusTextField:@"Password"];
   

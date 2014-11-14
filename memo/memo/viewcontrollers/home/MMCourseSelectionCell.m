@@ -22,6 +22,7 @@
 
 - (void)updateCellWithData:(MCourse *)data {
   [_btnCourse setTitle:data.name forState:UIControlStateNormal];
+  [_btnCourse setBackgroundColor:(data.enabled ? UIColorFromRGB(129, 12, 21) : UIColorFromRGB(204, 204, 204))];
 }
 
 @end

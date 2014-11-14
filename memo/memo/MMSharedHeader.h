@@ -76,3 +76,10 @@ typedef enum ShareOptionEnum {
 - (void)shopDidBuyItem:(NSString *)itemId;
 
 @end
+
+@protocol MMCoursesListDelegate <NSObject>
+
+@optional
+- (void)coursesListDidGoBack;
+
+@end

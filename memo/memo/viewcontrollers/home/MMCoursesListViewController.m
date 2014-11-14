@@ -39,7 +39,8 @@
 }
 
 - (void)beforeGoBack {
-  [MUser logOutCurrentUser];
+  if ([_delegate respondsToSelector:@selector(coursesListDidGoBack)])
+    [_delegate coursesListDidGoBack];
 }
 
 - (void)reloadContents {
@@ -83,6 +84,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   MCourse *course = _coursesData[indexPath.row];
   
+  if (!course.enabled)
+    return;
+  
   ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] selectCourse:course._id completion:^(NSError *error) {
@@ -95,10 +99,21 @@
 
 #pragma mark - Private methods
 - (void)setupViews {
+  if (![self.navigationController.view.backgroundColor isEqual:[UIColor clearColor]]) {
+    _tblCourses.frame = (CGRect){
+      CGPointMake(0, 20),
+      CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-20)
+    };
+    return;
+  }
+  
   _tblCourses.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(320, 15)}];
   
   if (!DeviceSystemIsOS7())
-    _tblCourses.frame = (CGRect){CGPointMake(0, 44), CGSizeMake(320, self.view.frame.size.height-44)};
+    _tblCourses.frame = (CGRect){
+      CGPointMake(0, 44),
+      CGSizeMake(self.view.frame.size.width, self.view.frame.size.height-44)
+    };
   else
     _tblCourses.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
 }

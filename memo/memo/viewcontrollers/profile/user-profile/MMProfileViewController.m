@@ -11,6 +11,7 @@
 #import "MMProfileLeaderboardCell.h"
 #import "MMSetGoalViewController.h"
 #import "MMFindFriendsViewController.h"
+#import "MMCoursesListViewController.h"
 #import "MUser.h"
 #import "MLeaderboardData.h"
 
@@ -116,6 +117,11 @@
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender {
+  MMCoursesListViewController *coursesListVC = [MMCoursesListViewController new];
+  
+  [self.navigationController pushViewController:coursesListVC animated:YES];
+//  [self presentViewController:coursesListVC animated:YES completion:NULL];
+  [coursesListVC reloadContents];
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {
@@ -324,10 +330,6 @@
   
   _btnSwitchCourse.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSwitchCourse setTitle:MMLocalizedString(@"Change language") forState:UIControlStateNormal];
-  
-#if kTempDisableForClosedBeta
-  _btnSwitchCourse.hidden = YES;
-#endif
   
   _btnSetGoal.titleLabel.font = [UIFont fontWithName:@"ClearSans" size:17];
   [_btnSetGoal setTitle:MMLocalizedString(@"Set goal") forState:UIControlStateNormal];

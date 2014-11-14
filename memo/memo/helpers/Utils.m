@@ -148,7 +148,8 @@ static UIView *_sharedToast = nil;
                                                          label:@"app launched"
                                                          value:nil] build]];
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS app launched %@", kBuildCurrentMarket]];
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ app launched %@",
+                                    CurrentBuildVersion(), kBuildCurrentMarket]];
 }
 
 + (void)logAnalyticsForUserLoggedIn {
@@ -167,7 +168,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS user logged in %@", kBuildCurrentMarket]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ user logged in %@",
+                                    CurrentBuildVersion(), kBuildCurrentMarket]
                         properties:userData];
 }
 
@@ -181,8 +183,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@",
-                                    [screenName normalizedScreenNameString]]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ screen %@",
+                                    CurrentBuildVersion(), [screenName normalizedScreenNameString]]
                         properties:userData];
 }
 
@@ -192,7 +194,7 @@ static UIView *_sharedToast = nil;
 #endif
   
   [[Mixpanel sharedInstance] timeEvent:
-   [NSString stringWithFormat:@"iOS screen %@", [screenName normalizedScreenNameString]]];
+   [NSString stringWithFormat:@"iOS %@ screen %@", CurrentBuildVersion(), [screenName normalizedScreenNameString]]];
 }
 
 + (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName {
@@ -205,7 +207,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen %@", [screenName normalizedScreenNameString]]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ screen %@",
+                                    CurrentBuildVersion(), [screenName normalizedScreenNameString]]
                         properties:userData];
 }
 
@@ -225,7 +228,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS button click %@", buttonName]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ button click %@",
+                                    CurrentBuildVersion(), buttonName]
                         properties:userData];
 }
 
@@ -246,8 +250,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData[kParamUserId] = [MUser currentUser]._id;
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS screen scroll %@",
-                                    [screenName normalizedScreenNameString]]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ screen scroll %@",
+                                    CurrentBuildVersion(), [screenName normalizedScreenNameString]]
                         properties:userData];
 }
 
@@ -267,7 +271,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData = @{kParamUserId : [MUser currentUser]._id};
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS textfield focus %@", textFieldName]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ textfield focus %@",
+                                    CurrentBuildVersion(), textFieldName]
                         properties:userData];
 }
 
@@ -291,7 +296,8 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id != nil)
     userData[kParamUserId] = [MUser currentUser]._id;
   
-  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS textfield search %@", textFieldName]
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ textfield search %@",
+                                    CurrentBuildVersion(), textFieldName]
                         properties:userData];
 }
 

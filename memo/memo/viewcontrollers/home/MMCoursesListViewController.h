@@ -12,4 +12,6 @@
   IBOutlet UITableView *_tblCourses;
 }
 
+@property (nonatomic, assign) id<MMCoursesListDelegate> delegate;
+
 @end
