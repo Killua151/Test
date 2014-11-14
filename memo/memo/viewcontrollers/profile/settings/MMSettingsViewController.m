@@ -257,6 +257,10 @@
   return [MMSettingsHeaderView heightToFithWithData:_sectionsData[section]];
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
+}
+
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   if (textField == _txtUsername || textField == _txtPassword || textField == _txtEmail) {
@@ -474,6 +478,8 @@
 }
 
 - (void)toggleLocalSavedSettings:(NSString *)settingsKey {
+  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"settings toggle %@", settingsKey]];
+  
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
   if ([userDefaults objectForKey:settingsKey] == nil)
@@ -486,6 +492,8 @@
 }
 
 - (void)linkFacebook {
+  [Utils logAnalyticsForButton:@"settings link Facebook"];
+  
   [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
   
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
@@ -510,6 +518,8 @@
 }
 
 - (void)unlinkFacebook {
+  [Utils logAnalyticsForButton:@"settings unlink Facebook"];
+  
   [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
   
   [Utils logOutFacebookWithCompletion:^(NSError *error) {
@@ -531,6 +541,8 @@
 }
 
 - (void)linkGoogle {
+  [Utils logAnalyticsForButton:@"settings link Google+"];
+  
   [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
   
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
@@ -555,6 +567,8 @@
 }
 
 - (void)unlinkGoogle {
+  [Utils logAnalyticsForButton:@"settings unlink Google+"];
+  
   [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
   
   [Utils logOutGoogleWithCompletion:^(NSError *error) {

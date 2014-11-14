@@ -232,7 +232,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
   [self animateSlideStrengthenButton:YES];
-  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {

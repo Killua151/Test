@@ -113,6 +113,9 @@
 - (IBAction)btnInteractionPressed:(UIButton *)sender {
   [self toggleFriendInteractionButton];
   
+  [Utils logAnalyticsForButton:(sender.selected ? @"friend profile follow" : @"friend profile unfollow")
+                 andProperties:@{kParamFriendId : [NSString normalizedString:_userId]}];
+  
   ShowHudForCurrentView();
   [[MMServerHelper sharedHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
     HideHudForCurrentView();
@@ -247,19 +250,26 @@
                                         completion:NULL];
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
+}
+
 #pragma mark - UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 0) {
+    [Utils logAnalyticsForButton:@"find friends"];
     [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
     return;
   }
   
   if (buttonIndex == 1) {
+    [Utils logAnalyticsForButton:@"invite by email"];
     [self showEmailInviteDialog];
     return;
   }
   
   if (buttonIndex == 2) {
+    [Utils logAnalyticsForButton:@"find Facebook friends"];
     [Utils logInFacebookFromView:self.view completion:^(NSDictionary *userData, NSError *error) {
       ShowAlertWithError(error);
       

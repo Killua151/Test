@@ -87,8 +87,8 @@
 }
 
 #pragma mark - UIScrollViewDelgate methods
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView  {
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 #pragma mark - Private methods

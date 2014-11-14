@@ -116,6 +116,10 @@
   return _vHeader.frame.size.height;
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
+}
+
 #pragma mark - MMShopDelegate methods
 - (void)shopDidBuyItem:(NSString *)itemId {
   ShowHudForCurrentView();

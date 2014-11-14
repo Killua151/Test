@@ -88,8 +88,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
-  
   CGFloat delta = _vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width;
   CGFloat scaleRatio = ABS(delta) / kNormalLessonWidth;
   
@@ -170,6 +168,8 @@
 }
 
 - (void)updateFocusedLesson {
+  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:_vLessonsScrollView];
+  
   NSInteger index = _vLessonsScrollView.contentOffset.x / _vLessonsScrollView.frame.size.width;
   
   for (MMHexagonLessonView *lessonView in _vLessonsScrollView.subviews)

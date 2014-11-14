@@ -36,13 +36,22 @@
 }
 
 - (IBAction)btnPushNotifcationPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:
+   [NSString stringWithFormat:@"settings push notification %@ %@",
+    sender.selected ? @"disable" : @"enable", _settingsData.notification_title]];
+  
   sender.selected = !sender.selected;
+  
   _settingsData.push_notification_enabled = sender.selected;
   
   [self updateNotificationSettingsWithKey:kParamPushNotificationEnabled forButton:sender];
 }
 
 - (IBAction)btnEmailNotificationPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:
+   [NSString stringWithFormat:@"settings email notification %@ %@",
+    sender.selected ? @"disable" : @"enable", _settingsData.notification_title]];
+  
   sender.selected = !sender.selected;
   _settingsData.email_notification_enabled = sender.selected;
   

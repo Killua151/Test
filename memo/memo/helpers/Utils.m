@@ -254,10 +254,12 @@ static UIView *_sharedToast = nil;
                         properties:userData];
 }
 
-+ (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset {
++ (void)logAnalyticsForScrollingOnScreen:(id)screen withScrollView:(UIScrollView *)scrollView {
 #if kTestModeNoAnalytics
   return;
 #endif
+  
+  NSString *screenName = NSStringFromClass([screen class]);
   
   id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
   [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_screen"
@@ -266,7 +268,7 @@ static UIView *_sharedToast = nil;
                                                          value:nil] build]];
   
   NSMutableDictionary *userData =
-  [NSMutableDictionary dictionaryWithDictionary:@{@"offset" : NSStringFromCGPoint(toOffset)}];
+  [NSMutableDictionary dictionaryWithDictionary:@{@"offset" : NSStringFromCGPoint(scrollView.contentOffset)}];
   
   if ([MUser currentUser]._id != nil)
     userData[kParamUserId] = [MUser currentUser]._id;
