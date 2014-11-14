@@ -128,6 +128,8 @@
 }
 
 - (IBAction)btnSignUpPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"sign up"];
+  
   if (![self validateFields])
     return;
   
@@ -146,15 +148,28 @@
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"sign up with Facebook"];
   [self loginWithFacebook];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"sign up with Google+"];
   [self loginWithGoogle];
 }
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+  if (textField == _txtFullName)
+    [Utils logAnalyticsForFocusTextField:@"sign up full name"];
+  else if (textField == _txtEmail)
+    [Utils logAnalyticsForFocusTextField:@"sign up email"];
+  else if (textField == _txtUsername)
+    [Utils logAnalyticsForFocusTextField:@"sign up username"];
+  else if (textField == _txtPassword)
+    [Utils logAnalyticsForFocusTextField:@"sign up password"];
+  else
+    [Utils logAnalyticsForFocusTextField:@"sign up confirm password"];
+  
   _currentFirstResponder = textField;
   [self gestureLayerDidEnterEditingMode];
   

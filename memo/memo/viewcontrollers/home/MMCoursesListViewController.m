@@ -87,6 +87,8 @@
   if (!course.enabled)
     return;
   
+  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"course %@", course.name]];
+  
   ShowHudForCurrentView();
   
   [[MMServerHelper sharedHelper] selectCourse:course._id completion:^(NSError *error) {

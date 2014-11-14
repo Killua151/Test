@@ -37,6 +37,7 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName;
 + (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName;
 + (void)logAnalyticsForButton:(NSString *)buttonName;
++ (void)logAnalyticsForButton:(NSString *)buttonName andProperties:(NSDictionary *)properties;
 + (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset;
 + (void)logAnalyticsForFocusTextField:(NSString *)textFieldName;
 + (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText;

@@ -37,15 +37,25 @@
 }
 
 - (IBAction)btnSubmitPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"forgot password"];
+  
   if (![self validateFields])
     return;
   
-  [self gestureLayerDidTap];
-  [self.navigationController popViewControllerAnimated:YES];
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] forgetPasswordForEmail:_txtEmail.text completion:^(NSError *error) {
+    HideHudForCurrentView();
+    ShowAlertWithError(error);
+    
+    [self gestureLayerDidTap];
+    [self.navigationController popViewControllerAnimated:YES];
+  }];
 }
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+  [Utils logAnalyticsForFocusTextField:@"forgot password email"];
   [self gestureLayerDidEnterEditingMode];
 }
 

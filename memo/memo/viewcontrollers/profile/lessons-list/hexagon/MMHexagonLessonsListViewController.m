@@ -88,6 +88,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
+  
   CGFloat delta = _vLessonsScrollView.contentOffset.x - _currentFocusedLessonIndex * _vLessonsScrollView.frame.size.width;
   CGFloat scaleRatio = ABS(delta) / kNormalLessonWidth;
   

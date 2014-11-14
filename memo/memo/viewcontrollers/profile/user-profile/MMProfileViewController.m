@@ -17,6 +17,7 @@
 
 @interface MMProfileViewController () {
   MMSettingsViewController *_settingsVC;
+  MMCoursesListViewController *_coursesListVC;
   MMLineChart *_lineChart;
   NSString *_userId;
   MUser *_userData;
@@ -101,6 +102,14 @@
 - (IBAction)btnEditAvatarPressed:(UIButton *)sender {
 }
 
+- (IBAction)btnStreakPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"profile combo"];
+}
+
+- (IBAction)btnMoneyPressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"profile memo coin"];
+}
+
 - (IBAction)btnInteractionPressed:(UIButton *)sender {
   [self toggleFriendInteractionButton];
   
@@ -117,11 +126,11 @@
 }
 
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender {
-  MMCoursesListViewController *coursesListVC = [MMCoursesListViewController new];
+  if (_coursesListVC == nil)
+    _coursesListVC = [MMCoursesListViewController new];
   
-  [self.navigationController pushViewController:coursesListVC animated:YES];
-//  [self presentViewController:coursesListVC animated:YES completion:NULL];
-  [coursesListVC reloadContents];
+  [self.navigationController pushViewController:_coursesListVC animated:YES];
+  [_coursesListVC reloadContents];
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {

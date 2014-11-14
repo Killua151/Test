@@ -193,6 +193,8 @@
   
   MCheckpoint *checkpoint = [[MUser currentUser] checkpointForPosition:indexPath.row];
   
+  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"checkpoint %ld", (long)checkpoint.row]];
+  
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:indexPath.row];
   
   if (numberOfLockedSkills <= 0 || checkpoint.remaining_test_times <= 0)
@@ -230,6 +232,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
   [self animateSlideStrengthenButton:YES];
+  [Utils logAnalyticsForScrollingOnScreen:NSStringFromClass([self class]) toOffset:scrollView.contentOffset];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -251,10 +254,12 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
+  [Utils logAnalyticsForButton:@"profile"];
   [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
 }
 
 - (void)gotoShop {
+  [Utils logAnalyticsForButton:@"plaza"];
   [self presentViewController:[MMShopViewController navigationController] animated:YES completion:NULL];
 }
 

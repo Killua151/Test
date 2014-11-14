@@ -233,6 +233,27 @@ static UIView *_sharedToast = nil;
                         properties:userData];
 }
 
++ (void)logAnalyticsForButton:(NSString *)buttonName andProperties:(NSDictionary *)properties {
+#if kTestModeNoAnalytics
+  return;
+#endif
+  
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ios_button"
+                                                        action:@"click"
+                                                         label:buttonName
+                                                         value:nil] build]];
+  
+  NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithDictionary:properties];
+  
+  if ([MUser currentUser]._id != nil)
+    userData[kParamUserId] = [MUser currentUser]._id;
+  
+  [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"iOS %@ button click %@",
+                                    CurrentBuildVersion(), buttonName]
+                        properties:userData];
+}
+
 + (void)logAnalyticsForScrollingOnScreen:(NSString *)screenName toOffset:(CGPoint)toOffset {
 #if kTestModeNoAnalytics
   return;

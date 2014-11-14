@@ -59,7 +59,7 @@
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"New user"];
+  [Utils logAnalyticsForButton:@"new user"];
   
   if (_loginVC == nil)
     _loginVC = [MMLoginViewController new];
@@ -69,7 +69,7 @@
 }
 
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"New user"];
+  [Utils logAnalyticsForButton:@"new user"];
   
 #if kTempDisableForClosedBeta
   if (_signUpVC == nil)

@@ -161,6 +161,22 @@
    }];
 }
 
+- (void)forgetPasswordForEmail:(NSString *)email completion:(void (^)(NSError *))handler {
+  NSDictionary *params = @{kParamEmail : [NSString normalizedString:email]};
+  
+  [self
+   POST:@"users/forget_password"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(error);
+     }];
+   }];
+}
+
 - (void)extendAuthToken:(void (^)(NSError *))handler {
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   

@@ -46,6 +46,7 @@
                   username:(NSString *)username
                   password:(NSString *)password
                 completion:(void(^)(NSDictionary *userData, NSError *error))handler;
+- (void)forgetPasswordForEmail:(NSString *)email completion:(void(^)(NSError *error))handler;
 
 - (void)extendAuthToken:(void(^)(NSError *error))handler;
 

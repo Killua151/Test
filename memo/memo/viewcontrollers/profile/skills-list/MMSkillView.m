@@ -36,6 +36,11 @@
 }
 
 - (IBAction)btnSkillPressed:(UIButton *)sender {
+  NSString *event = [NSString stringWithFormat:@"skill %@locked %@",
+                     [_skillData unlocked] ? @"un" : @"", _skillData.title];
+  
+  [Utils logAnalyticsForButton:event];
+  
   if (![_skillData unlocked])
     return;
   

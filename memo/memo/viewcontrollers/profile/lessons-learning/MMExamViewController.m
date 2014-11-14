@@ -123,6 +123,20 @@
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
+  NSString *buttonEvent = @"placement test quit";
+  
+  if (_metadata[kParamType] != nil) {
+    buttonEvent = [NSString stringWithFormat:@"%@ quit", _metadata[kParamType]];
+    NSInteger questionNumber = 1;
+    
+    if (_metadata[kParamQuestionNumber] != nil)
+      questionNumber = [_metadata[kParamQuestionNumber] integerValue];
+      
+    [Utils logAnalyticsForButton:buttonEvent andProperties:@{kParamQuestionNumber : @(questionNumber)}];
+  } else
+    [Utils logAnalyticsForButton:buttonEvent andProperties:@{kParamQuestionNumber : @(_currentQuestionIndex)}];
+  
+  
   [UIAlertView
    showWithTitle:MMLocalizedString(@"Warning!")
    message:MMLocalizedString(@"Your progress will be lost. Are you sure to quit?")

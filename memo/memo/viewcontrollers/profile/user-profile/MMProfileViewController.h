@@ -40,6 +40,8 @@
 - (id)initWithUserId:(NSString *)userId;
 
 - (IBAction)btnEditAvatarPressed:(UIButton *)sender;
+- (IBAction)btnStreakPressed:(UIButton *)sender;
+- (IBAction)btnMoneyPressed:(UIButton *)sender;
 - (IBAction)btnInteractionPressed:(UIButton *)sender;
 - (IBAction)btnSwitchCoursePressed:(UIButton *)sender;
 - (IBAction)btnSetGoalPressed:(UIButton *)sender;

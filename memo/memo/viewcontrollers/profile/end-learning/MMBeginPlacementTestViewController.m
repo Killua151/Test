@@ -74,6 +74,7 @@
      [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
                                                   andMetadata:@{
                                                                 kParamExamToken : [NSString normalizedString:examToken],
+                                                                kParamQuestionNumber : @(questionNumber),
                                                                 kParamTotalQuestions : @(totalQuestions)
                                                                 }];
      
