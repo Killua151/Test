@@ -43,8 +43,8 @@
   _lblMessage.text = MMLocalizedString(@"Let's get started!");
   [_lblMessage adjustToFitHeight];
   
-  _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:17];
-  _lblSubMessage.text = MMLocalizedString(@"If you’re serious about learning a language, you should set a goal to keep you on track.");
+  _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblSubMessage.text = MMLocalizedString(@"It takes about 5 minutes, and adapts to your level by getting harder (or easier!) based on your answers.");
   [_lblSubMessage adjustToFitHeight];
   
   _btnStart.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];

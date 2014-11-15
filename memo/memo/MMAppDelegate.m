@@ -148,8 +148,12 @@
 - (void)setupRootViewController {
   if ([MUser currentUser] == nil)
     self.window.rootViewController = [MMHomeViewController navigationController];
-  else
-    self.window.rootViewController = [MMSkillsListViewController navigationController];
+  else {
+    UINavigationController *navigation = [MMSkillsListViewController navigationController];
+    MMSkillsListViewController *skillsListVC = navigation.viewControllers[0];
+    self.window.rootViewController = navigation;
+    [skillsListVC loadSkillsTree];
+  }
 }
 
 #pragma mark Private methods

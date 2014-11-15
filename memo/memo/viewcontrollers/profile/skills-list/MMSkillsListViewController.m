@@ -35,7 +35,6 @@
 - (void)setupViews;
 - (void)animateSlideStrengthenButton:(BOOL)show;
 - (void)fadeOutBeginningOptions:(void(^)())completion;
-- (void)loadSkillsTree;
 - (void)handleLoadingError:(NSError *)error;
 - (void)reportBugs;
 
@@ -65,7 +64,6 @@
                         distance:-8];
   
   [self setupViews];
-  [self loadSkillsTree];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -133,6 +131,21 @@
      
      [self presentViewController:examVC animated:YES completion:NULL];
    }];
+}
+
+- (void)loadSkillsTree {
+  ShowHudForCurrentView();
+  
+  [[MMServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
+    HideHudForCurrentView();
+    
+    if (error != nil) {
+      [self handleLoadingError:error];
+      return;
+    }
+    
+    [self reloadContents];
+  }];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -373,25 +386,10 @@
    }];
 }
 
-- (void)loadSkillsTree {
-  ShowHudForCurrentView();
-  
-  [[MMServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
-    HideHudForCurrentView();
-    
-    if (error != nil) {
-      [self handleLoadingError:error];
-      return;
-    }
-    
-    [self reloadContents];
-  }];
-}
-
 - (void)handleLoadingError:(NSError *)error {
   if ([error errorCode] == 400) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-      [self transitToViewController:[MMCoursesListViewController navigationController]];
+      [self transitToViewController:[MMCoursesListViewController navigationController] completion:NULL];
     });
     
     return;
@@ -405,7 +403,7 @@
    callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
      if (buttonIndex == 0) {
        [MUser logOutCurrentUser];
-       [self transitToViewController:[MMHomeViewController navigationController]];
+       [self transitToViewController:[MMHomeViewController navigationController] completion:NULL];
        return;
      }
      

@@ -47,7 +47,12 @@
 }
 
 - (IBAction)btnQuitPressed:(UIButton *)sender {
-  [self transitToViewController:[MMSkillsListViewController navigationController]];
+  [self
+   transitToViewController:[MMSkillsListViewController navigationController]
+   completion:^(UIViewController *viewController) {
+     MMSkillsListViewController *skillsListVC = ((UINavigationController *)viewController).viewControllers[0];
+     [skillsListVC loadSkillsTree];
+   }];
 }
 
 @end

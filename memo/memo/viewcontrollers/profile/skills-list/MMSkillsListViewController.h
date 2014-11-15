@@ -27,5 +27,6 @@
 - (IBAction)btnBeginnerPressed:(UIButton *)sender;
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender;
 - (IBAction)btnStrengthenPressed:(UIButton *)sender;
+- (void)loadSkillsTree;
 
 @end

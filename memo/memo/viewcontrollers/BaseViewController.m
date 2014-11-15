@@ -68,12 +68,15 @@
     [super dismissViewControllerAnimated:flag completion:completion];
 }
 
-- (void)transitToViewController:(UIViewController *)viewController {
+- (void)transitToViewController:(UIViewController *)viewController completion:(void (^)(UIViewController *))handler {
   viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   
   [[self mainViewController] presentViewController:viewController animated:YES completion:^{
     MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = viewController;
+    
+    if (handler != NULL)
+      handler(viewController);
   }];
 }
 

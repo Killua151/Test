@@ -15,7 +15,8 @@
 + (UINavigationController *)navigationController;
 - (UINavigationController *)parentNavigationController;
 
-- (void)transitToViewController:(UIViewController *)viewController;
+- (void)transitToViewController:(UIViewController *)viewController
+                     completion:(void(^)(UIViewController *viewController))handler;
 - (void)presentShareViewControllerWithDefaultOption:(ShareOption)shareOption;
 - (UIViewController *)mainViewController;
 - (UIView *)mainView;

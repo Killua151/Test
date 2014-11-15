@@ -106,7 +106,12 @@
   else if ([[MUser currentUser] finishExamAffectedSkill] != nil)
     [self.navigationController pushViewController:[MMFinishSkillViewController new] animated:YES];
   else
-    [self transitToViewController:[MMSkillsListViewController navigationController]];
+    [self
+     transitToViewController:[MMSkillsListViewController navigationController]
+     completion:^(UIViewController *viewController) {
+       MMSkillsListViewController *skillsListVC = ((UINavigationController *)viewController).viewControllers[0];
+       [skillsListVC loadSkillsTree];
+     }];
 }
 
 - (IBAction)btnSetGoalPressed:(UIButton *)sender {

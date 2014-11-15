@@ -110,7 +110,7 @@
     ShowAlertWithError(error);
     
     [MUser logOutCurrentUser];
-    [self transitToViewController:[MMHomeViewController navigationController]];
+    [self transitToViewController:[MMHomeViewController navigationController] completion:NULL];
   }];
 }
 
