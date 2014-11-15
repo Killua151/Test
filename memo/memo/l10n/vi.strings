@@ -53,11 +53,12 @@
 "Invite" = "Mời";
 "Invite by email" = "Mời bạn qua email";
 "Invite email sent successfully" = "Thư mời đã được gửi";
+"It takes about 5 minutes, and adapts to your level by getting harder (or easier!) based on your answers." = "Chỉ cần 5 phút, Kiến Memo sẽ lựa chọn bài học phù hợp nhất cho bạn!";
 "Keep those %@ full as words fade from your memory" = "Giữ các %@ luôn đầy để không quên từ vựng";
 "Leaderboards" = "Bảng xếp hạng";
 "Lesson %d on %d" = "Bài %d trên %d";
 "Lesson done! %@" = "Bài tập hoàn thành! %@";
-"Let's get started!" = "Bắt đầu nào!";
+"Let's get started!" = "Kiểm tra cấp độ!";
 "LOCKED" = "KHÓA";
 "Log in" = "Đăng nhập";
 "Log out" = "Đăng xuất";
