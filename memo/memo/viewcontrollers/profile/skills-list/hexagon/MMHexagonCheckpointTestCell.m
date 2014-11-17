@@ -7,8 +7,16 @@
 //
 
 #import "MMHexagonCheckpointTestCell.h"
+#import "MMAdsItemView.h"
 #import "MUser.h"
 #import "MCheckpoint.h"
+#import "MAdsConfig.h"
+
+@interface MMHexagonCheckpointTestCell () {
+  MMAdsItemView *_vAdsItem;
+}
+
+@end
 
 @implementation MMHexagonCheckpointTestCell
 
@@ -40,6 +48,24 @@
   NSString *checkpointTitle = [NSString stringWithFormat:
                                MMLocalizedString(@"Checkpoint test for %d %@"), numberOfLockedSkills, suffix];
   [_btnCheckpointTest setTitle:checkpointTitle forState:UIControlStateNormal];
+  
+  _vAdsItem.hidden = YES;
+}
+
+- (void)displayAds:(MAdsConfig *)adsConfig {
+  if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]] || !adsConfig.loaded)
+    return;
+  
+  if (_vAdsItem == nil) {
+    _vAdsItem = [[MMAdsItemView alloc] initWithAds:adsConfig];
+    CGRect frame = _vAdsItem.frame;
+    frame.origin.y = 32;
+    _vAdsItem.frame = frame;
+    [self.contentView addSubview:_vAdsItem];
+  }
+  
+  _vAdsItem.hidden = NO;
+  [_vAdsItem reloadAdsHtml];
 }
 
 @end

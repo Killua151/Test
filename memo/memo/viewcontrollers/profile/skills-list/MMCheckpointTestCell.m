@@ -20,4 +20,8 @@
 #endif
 }
 
+- (void)displayAds:(MAdsConfig *)adsConfig {
+  // Implement in child class
+}
+
 @end

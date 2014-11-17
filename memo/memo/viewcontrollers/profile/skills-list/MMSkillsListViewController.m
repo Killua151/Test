@@ -184,6 +184,9 @@
     
     [cell updateCellWithData:(MBase *)@(indexPath.row)];
     
+    if (indexPath.row == 5)
+      [cell displayAds:_adsConfigsData[kValueAdsPositionCheckpoint1]];
+    
     return cell;
   }
   
@@ -211,8 +214,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSArray *skills = _skillsData[indexPath.row];
   
-  if (![skills isKindOfClass:[NSArray class]])
-    return [[MMCheckpointTestCell currentCheckpointTestCellClass] heightToFitWithData:nil];
+  if (![skills isKindOfClass:[NSArray class]]) {
+    MAdsConfig *adsConfig = nil;
+    
+    if (indexPath.row == 5)
+      adsConfig = _adsConfigsData[kValueAdsPositionCheckpoint1];
+    
+    return [[MMCheckpointTestCell currentCheckpointTestCellClass] heightToFitWithData:nil] +
+    (adsConfig.loaded ? adsConfig.height : 0);
+  }
   
   return [[MMSkillCell currentSkillCellClass] heightToFitWithData:nil];
 }
@@ -505,6 +515,12 @@
     [[self mainView] addSubview:vAdsPopup];
     return;
   }
+  
+  if ([adsPosition isEqualToString:kValueAdsPositionCheckpoint1] ||
+      [adsPosition isEqualToString:kValueAdsPositionCheckpoint2] ||
+      [adsPosition isEqualToString:kValueAdsPositionCheckpoint3] ||
+      [adsPosition isEqualToString:kValueAdsPositionCheckpoint4])
+    [_tblSkills reloadData];
 }
 
 @end

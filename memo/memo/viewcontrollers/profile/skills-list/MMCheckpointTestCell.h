@@ -8,10 +8,13 @@
 
 #import "BaseTableViewCell.h"
 
+@class MAdsConfig;
+
 @interface MMCheckpointTestCell : BaseTableViewCell {
   IBOutlet UILabel *_lblCheckpointTestTitle;
 }
 
 + (Class)currentCheckpointTestCellClass;
+- (void)displayAds:(MAdsConfig *)adsConfig;
 
 @end
