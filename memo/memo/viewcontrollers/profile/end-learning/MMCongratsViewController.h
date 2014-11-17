@@ -14,12 +14,14 @@
   IBOutlet UILabel *_lblLevel;
   IBOutlet UILabel *_lblMessage;
   IBOutlet UILabel *_lblSubMessage;
+  IBOutlet UIButton *_btnGetVoucher;
   IBOutlet UIButton *_btnShare;
   IBOutlet UIButton *_btnNext;
 }
 
 @property (nonatomic, strong) NSDictionary *displayingData;
 
+- (IBAction)btnGetVoucherPressed:(UIButton *)sender;
 - (IBAction)btnSharePressed:(UIButton *)sender;
 - (IBAction)btnNextPressed:(UIButton *)sender;
 

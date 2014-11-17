@@ -27,6 +27,8 @@
 #import "MCrossSale.h"
 #import "MAdsConfig.h"
 
+#import "MMCongratsViewController.h"
+
 @interface MMSkillsListViewController () {
   NSArray *_skillsData;
   MMLessonsListViewController *_lessonsListVC;
@@ -296,6 +298,16 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
+  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
+
+  congratsVC.displayingData = @{
+                                kParamMessage : MMLocalizedString(@"Congratulation! You've leveled up!"),
+                                kParamSubMessage : @"Test"
+                                };
+  
+  [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
+  return;
+  
   [Utils logAnalyticsForButton:@"profile"];
   [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
 }

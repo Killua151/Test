@@ -11,6 +11,7 @@
 #import "MMSkillsListViewController.h"
 #import "MMShareActionSheet.h"
 #import "MUser.h"
+#import "MAdsConfig.h"
 
 @interface MMCongratsViewController () {
   MMShareActionSheet *_vShare;
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self checkToDisplayAds];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,15 +75,54 @@
                                                relatedTo:_lblMessage
                                             withDistance:10];
   
-  _btnShare.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnShare.layer.cornerRadius = 4;
-  [_btnShare setTitle:MMLocalizedString(@"Share") forState:UIControlStateNormal];
-  
-  _btnNext.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
-  _btnNext.layer.cornerRadius = 4;
-  [_btnNext setTitle:MMLocalizedString(@"Next") forState:UIControlStateNormal];
+  [@{
+     @"Get rewards" : _btnGetVoucher,
+     @"Next" : _btnNext,
+     @"Share" : _btnShare
+     } enumerateKeysAndObjectsUsingBlock:^(NSString *title, UIButton *button, BOOL *stop) {
+       button.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
+       button.layer.cornerRadius = 4;
+       [button setTitle:MMLocalizedString(title) forState:UIControlStateNormal];
+     }];
   
   _vShare = [[MMShareActionSheet alloc] initInViewController:self];
+}
+
+- (void)displayCrossSaleAds {
+  MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionYes];
+  
+  if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
+    return;
+  
+  _btnGetVoucher.hidden = NO;
+
+  CGRect frame = _btnNext.frame;
+  frame.origin.y += DeviceScreenIsRetina4Inch() ? 10 : 15;
+  _btnNext.frame = frame;
+  
+  frame = _btnShare.frame;
+  frame.origin.y += DeviceScreenIsRetina4Inch() ? 12 : 17;
+  _btnShare.frame = frame;
+  
+  frame = _btnGetVoucher.frame;
+  frame.origin.y += DeviceScreenIsRetina4Inch() ? 14 : 19;
+  _btnGetVoucher.frame = frame;
+  
+  if (!DeviceScreenIsRetina4Inch()) {
+    CGRect frame = _lblMessage.frame;
+    frame.origin.y -= 8;
+    _lblMessage.frame = frame;
+  }
+  
+  _lblSubMessage.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblSubMessage.text = adsConfig.instruction;
+  _lblSubMessage.adjustsFontSizeToFitWidth = YES;
+  [_lblSubMessage adjustToFitHeightAndRelatedTo:_lblMessage withDistance:5];
+}
+
+- (IBAction)btnGetVoucherPressed:(UIButton *)sender {
+  MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionYes];
+  DLog(@"%@", adsConfig.url);
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

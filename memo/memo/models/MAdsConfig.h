@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *_id;
 @property (nonatomic, strong) NSString *display_type;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *instruction;
 @property (nonatomic, strong) NSString *html;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;
