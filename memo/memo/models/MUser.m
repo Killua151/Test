@@ -166,8 +166,18 @@ static MUser *_currentUser = nil;
   return [_remainingSkillsMapper[@(checkpointRow)] integerValue];
 }
 
-- (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow {
-  return [_checkpointsMapper[@(checkpointRow)] row];
+- (NSInteger)checkpointOrderForCheckpoint:(NSInteger)checkpointRow {
+  MCheckpoint *checkpoint = _checkpointsMapper[@(checkpointRow)];
+  __block NSInteger order = 0;
+  
+  [_checkpoints enumerateObjectsUsingBlock:^(MCheckpoint *chkpnt, NSUInteger index, BOOL *stop) {
+    if (checkpoint.row == chkpnt.row) {
+      order = index;
+      *stop = YES;
+    }
+  }];
+  
+  return order+1;
 }
 
 - (MCheckpoint *)checkpointForPosition:(NSInteger)checkpointRow {

@@ -184,8 +184,9 @@
     
     [cell updateCellWithData:(MBase *)@(indexPath.row)];
     
-    if (indexPath.row == 5)
-      [cell displayAds:_adsConfigsData[kValueAdsPositionCheckpoint1]];
+    NSInteger order = [[MUser currentUser] checkpointOrderForCheckpoint:indexPath.row];
+    NSString *checkpointPosition = [NSString stringWithFormat:@"ios_checkpoint_%ld", (long)order];
+    [cell displayAds:_adsConfigsData[checkpointPosition]];
     
     return cell;
   }
@@ -215,10 +216,9 @@
   NSArray *skills = _skillsData[indexPath.row];
   
   if (![skills isKindOfClass:[NSArray class]]) {
-    MAdsConfig *adsConfig = nil;
-    
-    if (indexPath.row == 5)
-      adsConfig = _adsConfigsData[kValueAdsPositionCheckpoint1];
+    NSInteger order = [[MUser currentUser] checkpointOrderForCheckpoint:indexPath.row];
+    NSString *checkpointPosition = [NSString stringWithFormat:@"ios_checkpoint_%ld", (long)order];
+    MAdsConfig *adsConfig = _adsConfigsData[checkpointPosition];
     
     return [[MMCheckpointTestCell currentCheckpointTestCellClass] heightToFitWithData:nil] +
     (adsConfig.loaded ? adsConfig.height : 0);

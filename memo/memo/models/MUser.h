@@ -49,7 +49,7 @@
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame;
 - (NSArray *)skillsTree;
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
-- (NSInteger)checkpointPositionForCheckpoint:(NSInteger)checkpointRow;
+- (NSInteger)checkpointOrderForCheckpoint:(NSInteger)checkpointRow;
 - (MCheckpoint *)checkpointForPosition:(NSInteger)checkpointRow;
 
 - (MSkill *)finishExamAffectedSkill;
