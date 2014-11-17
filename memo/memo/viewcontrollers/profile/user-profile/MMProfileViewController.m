@@ -180,19 +180,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (section == 0) {
     MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
-    
-    if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
-      return 2;
-    
     return 2 + adsConfig.loaded;
   }
   
   if (section == 1) {
     MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionExpChart];
-    
-    if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
-      return 1;
-    
     return 1 + adsConfig.loaded;
   }
   
@@ -214,14 +206,14 @@
       return _celStreakMoney;
     }
     
-    return [self adsBannerCellForPosition:kValueAdsDisplayTypeBanner inTableView:tableView];
+    return [self adsBannerCellForConfig:_adsConfigsData[kValueAdsPositionAvatar] inTableView:tableView];
   }
   
   if (indexPath.section == 1) {
     if (indexPath.row == 0)
       return _celGraphChart;
     
-    return [self adsBannerCellForPosition:kValueAdsPositionExpChart inTableView:tableView];
+    return [self adsBannerCellForConfig:_adsConfigsData[kValueAdsPositionExpChart] inTableView:tableView];
   }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)
@@ -266,13 +258,17 @@
     }
     
     MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
-//    return adsConfig.loaded ? adsConfig.height : 0;
     return adsConfig.height;
   }
   
   if (indexPath.section == 1) {
-    CGFloat delta = _btnSetGoal.hidden ? 20 : 0;
-    return 293 - delta;
+    if (indexPath.row == 0) {
+      CGFloat delta = _btnSetGoal.hidden ? 20 : 0;
+      return 293 - delta;
+    }
+    
+    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionExpChart];
+    return adsConfig.height;
   }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)

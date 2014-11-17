@@ -304,9 +304,7 @@
   // Implement in child class
 }
 
-- (UITableViewCell *)adsBannerCellForPosition:(NSString *)position inTableView:(UITableView *)tableView {
-  MAdsConfig *adsConfig = _adsConfigsData[position];
-  
+- (UITableViewCell *)adsBannerCellForConfig:(id)adsConfig inTableView:(UITableView *)tableView {
   if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
     return nil;
   

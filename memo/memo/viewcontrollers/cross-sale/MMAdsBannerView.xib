@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView clipsSubviews="YES" contentMode="scaleToFill" id="mq9-Yx-bEK">
+                <webView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="mq9-Yx-bEK">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -23,7 +23,7 @@
             <connections>
                 <outlet property="_webAdsContent" destination="mq9-Yx-bEK" id="aSC-l1-lIW"/>
             </connections>
-            <point key="canvasLocation" x="375" y="-6"/>
+            <point key="canvasLocation" x="136" y="39"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
