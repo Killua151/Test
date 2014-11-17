@@ -137,7 +137,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    signUpWithFullName:_txtFullName.text
    email:_txtEmail.text
    username:_txtUsername.text

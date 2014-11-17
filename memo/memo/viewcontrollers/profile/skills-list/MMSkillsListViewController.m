@@ -95,7 +95,7 @@
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {
-  [[MMServerHelper sharedHelper] updateBeginnerStatus];
+  [[MMServerHelper defaultHelper] updateBeginnerStatus];
   [self fadeOutBeginningOptions:NULL];
 }
 
@@ -111,7 +111,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    startStrengthenAll:^(NSString *examToken,
                         NSInteger maxHeartsCount,
                         NSDictionary *availableItems,
@@ -136,7 +136,7 @@
 - (void)loadSkillsTree {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
+  [[MMServerHelper defaultHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil) {
@@ -215,7 +215,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    startCheckpointTestAtPosition:checkpoint.row
    completion:^(NSString *examToken,
                 NSInteger maxHeartsCount,
@@ -430,7 +430,7 @@
      }
      
      ShowHudForCurrentView();
-     [[MMServerHelper sharedHelper] reportBug:textField.text completion:^(NSError *error) {
+     [[MMServerHelper defaultHelper] reportBug:textField.text completion:^(NSError *error) {
        HideHudForCurrentView();
        ShowAlertWithError(error);
        [UIAlertView showWithTitle:nil andMessage:@"Gửi thành công"];

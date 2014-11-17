@@ -44,7 +44,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] forgetPasswordForEmail:_txtEmail.text completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] forgetPasswordForEmail:_txtEmail.text completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     

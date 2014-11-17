@@ -42,7 +42,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper sharedHelper]
+    [[MMServerHelper defaultHelper]
      logInWithFacebookId:userData[kParamFbId]
      facebookName:userData[kParamFbName]
      accessToken:userData[kParamFbAccessToken]
@@ -63,7 +63,7 @@
     
     ShowAlertWithError(error);
     
-    [[MMServerHelper sharedHelper]
+    [[MMServerHelper defaultHelper]
      logInWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSDictionary *userData, NSError *error) {

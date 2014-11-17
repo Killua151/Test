@@ -49,7 +49,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] getCourses:^(NSArray *courses, NSError *error) {
+  [[MMServerHelper defaultHelper] getCourses:^(NSArray *courses, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -91,7 +91,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] selectCourse:course._id completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] selectCourse:course._id completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     

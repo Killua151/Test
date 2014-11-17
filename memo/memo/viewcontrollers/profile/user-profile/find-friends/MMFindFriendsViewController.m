@@ -124,7 +124,7 @@
 
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] interactFriend:friend.user_id toFollow:follow completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] interactFriend:friend.user_id toFollow:follow completion:^(NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil) {
@@ -156,7 +156,7 @@
 - (void)searchFriends {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
+  [[MMServerHelper defaultHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     

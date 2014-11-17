@@ -12,8 +12,13 @@
 
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
-+ (instancetype)sharedHelper;
++ (instancetype)crossSaleHelper;
++ (instancetype)defaultHelper;
 
+#pragma mark - Cross sale methods
+- (void)getRunningAds:(void(^)(NSArray *ads))handler;
+
+#pragma mark - Default methods
 - (void)logInWithUsername:(NSString *)username
                  password:(NSString *)password
                completion:(void(^)(NSDictionary *userData, NSError *error))handler;

@@ -105,7 +105,7 @@
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
   ShowHudForCurrentView();
 
-  [[MMServerHelper sharedHelper] logout:^(NSError *error) {
+  [[MMServerHelper defaultHelper] logout:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -419,7 +419,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] updateProfile:_userInfo completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] updateProfile:_userInfo completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -501,7 +501,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper sharedHelper]
+    [[MMServerHelper defaultHelper]
      linkFacebookWithFacebookId:userData[kParamFbId]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSError *error) {
@@ -527,7 +527,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper sharedHelper] unlinkFacebook:^(NSError *error) {
+    [[MMServerHelper defaultHelper] unlinkFacebook:^(NSError *error) {
       HideHudForCurrentView();
       
       if (error != nil)
@@ -550,7 +550,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper sharedHelper]
+    [[MMServerHelper defaultHelper]
      linkGoogleWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSError *error) {
@@ -576,7 +576,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper sharedHelper] unlinkGoogle:^(NSError *error) {
+    [[MMServerHelper defaultHelper] unlinkGoogle:^(NSError *error) {
       HideHudForCurrentView();
       
       if (error != nil)

@@ -107,7 +107,7 @@
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
    completion:^(NSString *examToken,

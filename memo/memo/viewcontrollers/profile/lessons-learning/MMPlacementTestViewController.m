@@ -36,7 +36,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    submitPlacementTestAnswer:_answersData
    withMetadata:_metadata
    completion:^(NSString *examToken,

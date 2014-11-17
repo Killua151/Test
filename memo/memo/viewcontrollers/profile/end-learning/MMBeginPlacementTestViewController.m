@@ -61,7 +61,7 @@
 - (IBAction)btnStartPressed:(UIButton *)sender {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    startPlacementTest:^(NSString *examToken,
                         MBaseQuestion *question,
                         NSInteger questionNumber,

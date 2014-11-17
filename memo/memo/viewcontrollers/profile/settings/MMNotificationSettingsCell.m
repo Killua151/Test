@@ -63,7 +63,7 @@
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
   [Utils showAntLoadingForView:topWindow];
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    updateNotificationSettings:_settingsData._id
    withKey:settingsKey
    andValue:button.selected

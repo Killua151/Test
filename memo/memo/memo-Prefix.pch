@@ -76,8 +76,10 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildCurrentMarket                     kBuildMarketAppota
 
-#define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-//#define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
+#define kServerDefaultUrl                       @"http://api.memo.edu.vn/api"
+//#define kServerDefaultUrl                       @"http://localhost:8888/memo/memo/api"
+//#define kServerCrossSaleUrl                     @"http://admin.api.memo.edu.vn/cross_sale/ads"
+#define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale/"
 #define kServerApiVersion                       @"v1.4"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
@@ -139,6 +141,7 @@ return; \
 #define kUserDefWordsDictionary                 @"words_dictionary"
 
 #define kParamDatabaseId                        @"_id"
+#define kParamAds                               @"ads"
 #define kParamAffectedSkill                     @"affected_skill"
 #define kParamAlert                             @"alert"
 #define kParamAnswer                            @"answer"
@@ -218,6 +221,8 @@ return; \
 #define kParamWord                              @"word"
 #define kParamWordRange                         @"word_range"
 #define kParamWords                             @"words"
+
+#define kValueCurrentDevice                     @"ios"
 
 #define kValueExamTypeCheckpoint                @"checkpoint"
 #define kValueExamTypeLesson                    @"lesson"

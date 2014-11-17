@@ -90,7 +90,7 @@
 - (void)reloadContents {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] getProfileDetails:_userId completion:^(MUser *user, NSError *error) {
+  [[MMServerHelper defaultHelper] getProfileDetails:_userId completion:^(MUser *user, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -117,7 +117,7 @@
                  andProperties:@{kParamFriendId : [NSString normalizedString:_userId]}];
   
   ShowHudForCurrentView();
-  [[MMServerHelper sharedHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil)
@@ -275,7 +275,7 @@
       
       ShowHudForCurrentView();
       
-      [[MMServerHelper sharedHelper]
+      [[MMServerHelper defaultHelper]
        findFacebookFriends:userData[kParamFbAccessToken]
        completion:^(NSArray *results, NSError *error) {
          HideHudForCurrentView();
@@ -318,7 +318,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
+  [[MMServerHelper defaultHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     [UIAlertView showWithTitle:nil andMessage:message];

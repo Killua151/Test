@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		92F7FF9E436F43B5BEDCCED0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2B8D9B1D0490BA0D689EC /* libPods.a */; };
 		CA13F2BF19F0FC870040A7A5 /* memo-beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */; };
+		CA1AD1F81A1758A90050C88D /* MAds.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1F71A1758A90050C88D /* MAds.m */; };
+		CA1AD1FB1A17593A0050C88D /* MAdsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1FA1A17593A0050C88D /* MAdsConfig.m */; };
+		CA1AD1FE1A175EBF0050C88D /* MCrossSale.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1FD1A175EBF0050C88D /* MCrossSale.m */; };
 		CA3F1D8B19F27CBE0088A6A5 /* img-level_badge-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */; };
 		CA3F1D8E19F27CBE0088A6A5 /* img-level_badge-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */; };
 		CA3F1D9319F27DC30088A6A5 /* img-level_up-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */; };
@@ -855,6 +858,12 @@
 		698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "memo-beta-Info.plist"; sourceTree = "<group>"; };
+		CA1AD1F61A1758A90050C88D /* MAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAds.h; sourceTree = "<group>"; };
+		CA1AD1F71A1758A90050C88D /* MAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAds.m; sourceTree = "<group>"; };
+		CA1AD1F91A17593A0050C88D /* MAdsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAdsConfig.h; sourceTree = "<group>"; };
+		CA1AD1FA1A17593A0050C88D /* MAdsConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAdsConfig.m; sourceTree = "<group>"; };
+		CA1AD1FC1A175EBF0050C88D /* MCrossSale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCrossSale.h; sourceTree = "<group>"; };
+		CA1AD1FD1A175EBF0050C88D /* MCrossSale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCrossSale.m; sourceTree = "<group>"; };
 		CA3F1D8919F27CBE0088A6A5 /* img-level_badge-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_badge-bg.png"; sourceTree = "<group>"; };
 		CA3F1D8A19F27CBE0088A6A5 /* img-level_badge-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_badge-bg@2x.png"; sourceTree = "<group>"; };
 		CA3F1D9119F27DC30088A6A5 /* img-level_up-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-level_up-bg.png"; sourceTree = "<group>"; };
@@ -2132,6 +2141,10 @@
 		CAF8504E19E0F3D100A347CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CA1AD1F61A1758A90050C88D /* MAds.h */,
+				CA1AD1F71A1758A90050C88D /* MAds.m */,
+				CA1AD1F91A17593A0050C88D /* MAdsConfig.h */,
+				CA1AD1FA1A17593A0050C88D /* MAdsConfig.m */,
 				CA6AE9DA1A0A59D600CF0BA9 /* MAppSettings.h */,
 				CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */,
 				CAF8504F19E0F3D100A347CF /* MBase.h */,
@@ -2140,6 +2153,8 @@
 				CA452E5819EEBE9800A5F5CB /* MCheckpoint.m */,
 				CA452E5319EEB88900A5F5CB /* MCourse.h */,
 				CA452E5419EEB88900A5F5CB /* MCourse.m */,
+				CA1AD1FC1A175EBF0050C88D /* MCrossSale.h */,
+				CA1AD1FD1A175EBF0050C88D /* MCrossSale.m */,
 				CAA91C9C19E783770076A9BC /* MFriend.h */,
 				CAA91C9D19E783770076A9BC /* MFriend.m */,
 				CAF8505119E0F3D100A347CF /* MItem.h */,
@@ -4218,8 +4233,10 @@
 				CAF8549D19E0F3D200A347CF /* MMListenQuestionContentView.m in Sources */,
 				CAF852C119E0F3D200A347CF /* MMLineChart.m in Sources */,
 				CAA91CA219E7CD700076A9BC /* UIDevice+DeviceHelpers.m in Sources */,
+				CA1AD1F81A1758A90050C88D /* MAds.m in Sources */,
 				CAF8548619E0F3D200A347CF /* MMFailLessonViewController.m in Sources */,
 				CAF8547719E0F3D200A347CF /* MMCoursesListViewController.m in Sources */,
+				CA1AD1FB1A17593A0050C88D /* MAdsConfig.m in Sources */,
 				CAF854C419E0F3D200A347CF /* MMSkillsListViewController.m in Sources */,
 				CAF854D519E0F3D200A347CF /* MMProfileViewController.m in Sources */,
 				CAF854D319E0F3D200A347CF /* MMProfileLeaderboardCell.m in Sources */,
@@ -4290,6 +4307,7 @@
 				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
 				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,
+				CA1AD1FE1A175EBF0050C88D /* MCrossSale.m in Sources */,
 				CAA91C9E19E783770076A9BC /* MFriend.m in Sources */,
 				CAF852C419E0F3D200A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF852DF19E0F3D200A347CF /* MSortQuestion.m in Sources */,

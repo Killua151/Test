@@ -60,7 +60,7 @@
 - (void)shortcutTest {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper]
+  [[MMServerHelper defaultHelper]
    startShortcutTest:_skillData._id
    completion:^(NSString *examToken,
                 NSInteger maxHeartsCount,

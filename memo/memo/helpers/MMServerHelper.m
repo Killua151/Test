@@ -17,6 +17,7 @@
 #import "MItem.h"
 #import "MWord.h"
 #import "MAppSettings.h"
+#import "MAds.h"
 
 @interface MMServerHelper ()
 
@@ -35,19 +36,50 @@
 
 @implementation MMServerHelper
 
-+ (instancetype)sharedHelper {
-  static MMServerHelper *_sharedHelper = nil;
++ (instancetype)crossSaleHelper {
+  static MMServerHelper *_crossSaleHelper = nil;
   
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
-    _sharedHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
-    _sharedHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/", kServerCrossSaleUrl];
+    _crossSaleHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _crossSaleHelper.responseSerializer = [AFJSONResponseSerializer serializer];
   });
   
-  return _sharedHelper;
+  return _crossSaleHelper;
 }
 
++ (instancetype)defaultHelper {
+  static MMServerHelper *_defaultHelper = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerDefaultUrl, kServerApiVersion];
+    _defaultHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _defaultHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
+  });
+  
+  return _defaultHelper;
+}
+
+#pragma mark - Cross sale methods
+- (void)getRunningAds:(void (^)(NSArray *))handler {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : kValueCurrentDevice
+                           };
+  
+  [self
+   GET:@"ads"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSArray *arr = [MAds modelsFromArr:responseObject[kParamAds]];
+     handler(arr);
+   }
+   failure:NULL];
+}
+
+#pragma mark - Default methods
 - (void)logInWithUsername:(NSString *)username
                  password:(NSString *)password
                completion:(void (^)(NSDictionary *, NSError *))handler {
@@ -501,7 +533,7 @@
 - (void)startPlacementTest:(void (^)(NSString *, MBaseQuestion *, NSInteger, NSInteger, NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : @"ios",
+                           kParamDevice : kValueCurrentDevice,
                            kParamSpeakEnabled : @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled])
                            };
   
@@ -528,7 +560,7 @@
   NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:metadata];
   params[kParamAuthToken] = [NSString normalizedString:[MUser currentUser].auth_token];
   params[kParamAnswer] = [answerResult JSONString];
-  params[kParamDevice] = @"ios";
+  params[kParamDevice] = kValueCurrentDevice;
   params[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);
   
   [self
@@ -560,7 +592,7 @@
 - (void)getShopItems:(void (^)(NSInteger, NSArray *, NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : @"ios",
+                           kParamDevice : kValueCurrentDevice,
                            kParamLocalize : PreferedAppLanguage()
                            };
   
@@ -583,7 +615,7 @@
 - (void)buyItem:(NSString *)itemId completion:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : @"ios",
+                           kParamDevice : kValueCurrentDevice,
                            kParamBaseItemId : [NSString normalizedString:itemId],
                            };
   
@@ -603,7 +635,7 @@
 - (void)useItem:(NSString *)itemId completion:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : @"ios",
+                           kParamDevice : kValueCurrentDevice,
                            kParamBaseItemId : [NSString normalizedString:itemId],
                            };
   
@@ -623,7 +655,7 @@
 - (void)getAppSettings:(void (^)(NSError *))handler {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : @"ios"
+                           kParamDevice : kValueCurrentDevice
                            };
   
   [self
@@ -704,7 +736,7 @@
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamContent : [NSString normalizedString:content],
-                           kParamDevice : @"ios",
+                           kParamDevice : kValueCurrentDevice,
                            kParamVersion : CurrentBuildVersion()
                            };
   
@@ -758,7 +790,7 @@
   [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
   
   NSDictionary *params = @{
-                           @"deviceType" : @"ios",
+                           @"deviceType" : kValueCurrentDevice,
                            @"deviceToken" : [NSString normalizedString:deviceToken],
 #if kTestPushNotification
                            @"channels": @[@"test_apns"]
@@ -836,7 +868,7 @@
   }
   
   NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
-  paramsDict[kParamDevice] = @"ios";
+  paramsDict[kParamDevice] = kValueCurrentDevice;
   paramsDict[kParamSpeakEnabled] = @([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefSpeakEnabled]);
   
   [self

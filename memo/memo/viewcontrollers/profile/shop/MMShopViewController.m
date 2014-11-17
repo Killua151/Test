@@ -50,7 +50,7 @@
     _itemsData = [NSMutableArray new];
   
   ShowHudForCurrentView();
-  [[MMServerHelper sharedHelper] getShopItems:^(NSInteger virtualMoney, NSArray *items, NSError *error) {
+  [[MMServerHelper defaultHelper] getShopItems:^(NSInteger virtualMoney, NSArray *items, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -124,7 +124,7 @@
 - (void)shopDidBuyItem:(NSString *)itemId {
   ShowHudForCurrentView();
   
-  [[MMServerHelper sharedHelper] buyItem:itemId completion:^(NSError *error) {
+  [[MMServerHelper defaultHelper] buyItem:itemId completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     [self reloadContents];

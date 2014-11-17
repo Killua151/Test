@@ -17,6 +17,7 @@
 #import <GAI.h>
 #import "AppsFlyerTracker.h"
 #import "MUser.h"
+#import "MCrossSale.h"
 #import "MBaseQuestion.h"
 
 @interface MMAppDelegate ()
@@ -80,7 +81,7 @@
   [[NSUserDefaults standardUserDefaults] synchronize];
   
   if ([MUser currentUser]._id != nil)
-    [[MMServerHelper sharedHelper] updateApnsToken];
+    [[MMServerHelper defaultHelper] updateApnsToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -214,7 +215,7 @@
   
   [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
   
-  [[MMServerHelper sharedHelper] getDictionary];
+  [[MMServerHelper defaultHelper] getDictionary];
   
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
   [self handlePushNotification:notificationData shouldShowAlert:YES];
@@ -253,6 +254,10 @@
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *documentFilePath = paths[0];
   DLog(@"%@", documentFilePath);
+  
+  [[MMServerHelper crossSaleHelper] getRunningAds:^(NSArray *ads) {
+    [MCrossSale sharedCrossSale].runningAds = ads;
+  }];
   
 #if kTestCompactTranslation
   [NSString testCompactTranslations];
