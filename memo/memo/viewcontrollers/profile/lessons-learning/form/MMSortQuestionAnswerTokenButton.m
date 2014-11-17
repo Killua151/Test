@@ -33,7 +33,7 @@
     [_delegate formTokenButtonDidSelect:self];
   
   if (_status == FormAnswerTokenAvailable) {
-    MWord *word = [[MWord sharedWordsDictionary] wordModelForText:_token];
+    MWord *word = [[MWord sharedModel] wordModelForText:_token];
     
     if (word != nil)
       [Utils playAudioWithUrl:word.sound];    

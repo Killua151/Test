@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MMProfileViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
+@interface MMProfileViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, MMCrossSaleAdsDelegate> {
   IBOutlet UITableView *_tblProfileInfo;
   
   IBOutlet UITableViewCell *_celAvatarNameLevel;

@@ -94,6 +94,10 @@
 		CABBEA9619E0E4C800EFED33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABBEA9519E0E4C800EFED33 /* Images.xcassets */; };
 		CAC80AF619F8C14C00C6EF14 /* beta.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF419F8C14C00C6EF14 /* beta.png */; };
 		CAC80AF819F8C14C00C6EF14 /* beta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF519F8C14C00C6EF14 /* beta@2x.png */; };
+		CAD6DDD01A19DAC80034070C /* MMAdsBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */; };
+		CAD6DDD21A19E6CB0034070C /* MMAdsBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */; };
+		CAD6DDD61A19EE1B0034070C /* MMAdsBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */; };
+		CAD6DDD71A19EE1B0034070C /* MMAdsBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */; };
 		CADDB99F1A034D6000642B6E /* MSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB99E1A034D6000642B6E /* MSettings.m */; };
 		CADDB9A41A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */; };
 		CADDB9A61A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */; };
@@ -970,6 +974,12 @@
 		CABBEA9C19E0E4C800EFED33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CAC80AF419F8C14C00C6EF14 /* beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beta.png; sourceTree = "<group>"; };
 		CAC80AF519F8C14C00C6EF14 /* beta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta@2x.png"; sourceTree = "<group>"; };
+		CAD6DDCE1A19DAC80034070C /* MMAdsBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsBannerView.h; sourceTree = "<group>"; };
+		CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsBannerView.m; sourceTree = "<group>"; };
+		CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsBannerView.xib; sourceTree = "<group>"; };
+		CAD6DDD31A19EE1B0034070C /* MMAdsBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsBannerCell.h; sourceTree = "<group>"; };
+		CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsBannerCell.m; sourceTree = "<group>"; };
+		CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsBannerCell.xib; sourceTree = "<group>"; };
 		CADDB99D1A034D6000642B6E /* MSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSettings.h; sourceTree = "<group>"; };
 		CADDB99E1A034D6000642B6E /* MSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSettings.m; sourceTree = "<group>"; };
 		CADDB9A11A034DFD00642B6E /* MMNotificationSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNotificationSettingsCell.h; sourceTree = "<group>"; };
@@ -2006,6 +2016,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CAD6DDCD1A19DA860034070C /* CrossSale */ = {
+			isa = PBXGroup;
+			children = (
+				CAD6DDD31A19EE1B0034070C /* MMAdsBannerCell.h */,
+				CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */,
+				CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */,
+				CAD6DDCE1A19DAC80034070C /* MMAdsBannerView.h */,
+				CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */,
+				CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */,
+			);
+			name = CrossSale;
+			path = "cross-sale";
+			sourceTree = "<group>";
+		};
 		CAF8500E19E0F3D100A347CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -3005,6 +3029,7 @@
 				CAF8520C19E0F3D200A347CF /* BaseTableViewCell.m */,
 				CAF8520D19E0F3D200A347CF /* BaseViewController.h */,
 				CAF8520E19E0F3D200A347CF /* BaseViewController.m */,
+				CAD6DDCD1A19DA860034070C /* CrossSale */,
 				CAF8520F19E0F3D200A347CF /* Home */,
 				CAF8522219E0F3D200A347CF /* Profile */,
 				CAF852BA19E0F3D200A347CF /* Shared */,
@@ -3756,6 +3781,7 @@
 				CAA91C9319E780BC0076A9BC /* MMFindFriendsViewController.xib in Resources */,
 				CA3F1D9319F27DC30088A6A5 /* img-level_up-bg.png in Resources */,
 				CAF853CF19E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
+				CAD6DDD21A19E6CB0034070C /* MMAdsBannerView.xib in Resources */,
 				CAF8544A19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CAF8535119E0F3D200A347CF /* img-settings-phone_icon-disabled@2x.png in Resources */,
 				CAF853AA19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png in Resources */,
@@ -4052,6 +4078,7 @@
 				CAF8536D19E0F3D200A347CF /* img-skill_icon-en-vi_bien_to_tinh_tu-unlocked_big@2x.png in Resources */,
 				CAF853EF19E0F3D200A347CF /* img-skill_icon-en-vi_mau_sac-locked_big@2x.png in Resources */,
 				CAF8540A19E0F3D200A347CF /* img-skill_icon-en-vi_pho_tu-locked_big.png in Resources */,
+				CAD6DDD71A19EE1B0034070C /* MMAdsBannerCell.xib in Resources */,
 				CAF8560E19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-unlocked@2x.png in Resources */,
 				CAF8563419E0F82700A347CF /* img-skill_icon-en-vi_dong_vat-locked@2x.png in Resources */,
 				CAF8566E19E0F82700A347CF /* img-skill_icon-en-vi_noi_chon-unlocked@2x.png in Resources */,
@@ -4259,6 +4286,7 @@
 				CAF852CD19E0F3D200A347CF /* UIView+ExtendedToast.m in Sources */,
 				CAF854D119E0F3D200A347CF /* MMShieldSkillView.m in Sources */,
 				CA452E4619ED643500A5F5CB /* MMPlacementTestViewController.m in Sources */,
+				CAD6DDD01A19DAC80034070C /* MMAdsBannerView.m in Sources */,
 				CAF854A719E0F3D200A347CF /* MMTranslateQuestionContentView.m in Sources */,
 				CAF852D419E0F3D200A347CF /* NSString+UriCompatibility.m in Sources */,
 				CAF8547D19E0F3D200A347CF /* MMLoginViewController.m in Sources */,
@@ -4304,6 +4332,7 @@
 				CAF854C219E0F3D200A347CF /* MMCheckpointTestCell.m in Sources */,
 				CAF854BA19E0F3D200A347CF /* MMShopItemCell.m in Sources */,
 				CA452E3719ED592D00A5F5CB /* UIAlertView+AlertHelpers.m in Sources */,
+				CAD6DDD61A19EE1B0034070C /* MMAdsBannerCell.m in Sources */,
 				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
 				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,

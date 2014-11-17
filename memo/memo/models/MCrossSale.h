@@ -8,10 +8,13 @@
 
 #import "MBase.h"
 
-@interface MCrossSale : MBase
+@class MAdsConfig;
 
-@property (nonatomic, strong) NSArray *runningAds;
+@interface MCrossSale : MBase <UIWebViewDelegate>
 
-+ (instancetype)sharedCrossSale;
+@property (nonatomic, strong) NSDictionary *runningAds;
+
+- (void)loadRunningAds:(NSDictionary *)runningAdsData;
+- (void)tryToLoadHtmlForAds:(MAdsConfig *)adsConfig withCompletion:(void(^)(BOOL success))handler;
 
 @end

@@ -12,8 +12,11 @@
 #import "MMSetGoalViewController.h"
 #import "MMFindFriendsViewController.h"
 #import "MMCoursesListViewController.h"
+#import "MMAdsBannerCell.h"
 #import "MUser.h"
 #import "MLeaderboardData.h"
+#import "MCrossSale.h"
+#import "MAdsConfig.h"
 
 @interface MMProfileViewController () {
   MMSettingsViewController *_settingsVC;
@@ -99,6 +102,15 @@
   }];
 }
 
+- (void)displayCrossSaleAds {
+  [_adsConfigsData enumerateKeysAndObjectsUsingBlock:^(NSString *position, MAdsConfig *adsConfig, BOOL *stop) {
+    [[MCrossSale sharedModel] tryToLoadHtmlForAds:adsConfig withCompletion:^(BOOL success) {
+      adsConfig.loaded = success;
+      [_tblProfileInfo reloadData];
+    }];
+  }];
+}
+
 - (IBAction)btnEditAvatarPressed:(UIButton *)sender {
 }
 
@@ -162,8 +174,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (section == 0)
-    return 2;
+  if (section == 0) {
+    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
+    return 2 + adsConfig.loaded;
+  }
   
   if (section == 1)
     return 1;
@@ -181,8 +195,23 @@
       return _celAvatarNameLevel;
     }
     
-    [self adjustStreakAndMoneyLabels];
-    return _celStreakMoney;
+    if (indexPath.row == 1) {
+      [self adjustStreakAndMoneyLabels];
+      return _celStreakMoney;
+    }
+    
+    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
+    
+    MMAdsBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MMAdsBannerCell class])];
+    
+    if (cell == nil) {
+      cell = [MMAdsBannerCell new];
+      cell.delegate = self;
+    }
+    
+    [cell updateCellWithData:adsConfig];
+    
+    return cell;
   }
   
   if (indexPath.section == 1)
@@ -191,7 +220,7 @@
   if ([_userData.followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards;
   
-  MMProfileLeaderboardCell *cell = [_tblProfileInfo dequeueReusableCellWithIdentifier:
+  MMProfileLeaderboardCell *cell = [tableView dequeueReusableCellWithIdentifier:
                                     NSStringFromClass([MMProfileLeaderboardCell class])];
   
   if (cell == nil)
@@ -224,8 +253,14 @@
     if (indexPath.row == 0)
       return _celAvatarNameLevel.frame.size.height;
 
-    _celStreakMoney.hidden = isFriend;
-    return isFriend ? 0 : _celStreakMoney.frame.size.height;
+    if (indexPath.row == 1) {
+      _celStreakMoney.hidden = isFriend;
+      return isFriend ? 0 : _celStreakMoney.frame.size.height;
+    }
+    
+    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
+//    return adsConfig.loaded ? adsConfig.height : 0;
+    return adsConfig.height;
   }
   
   if (indexPath.section == 1) {
@@ -323,6 +358,10 @@
     ShowAlertWithError(error);
     [UIAlertView showWithTitle:nil andMessage:message];
   }];
+}
+
+#pragma mark - MMCrossSaleAdsDelegate methods
+- (void)adsWithId:(NSString *)adsId didLoad:(BOOL)success {
 }
 
 #pragma mark - Private methods

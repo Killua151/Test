@@ -8,12 +8,6 @@
 
 #import "MBase.h"
 
-@class MAdsConfig;
-
 @interface MAds : MBase
-
-@property (nonatomic, strong) MAdsConfig *config;
-@property (nonatomic, strong) NSString *screen;
-@property (nonatomic, strong) NSString *position;
 
 @end

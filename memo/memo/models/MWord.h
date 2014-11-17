@@ -17,7 +17,6 @@
 
 @property (nonatomic, strong, readonly) NSMutableDictionary *dictionary;
 
-+ (instancetype)sharedWordsDictionary;
 - (void)setupDictionary:(id)dictionaryData;
 - (MWord *)wordModelForText:(NSString *)text;
 

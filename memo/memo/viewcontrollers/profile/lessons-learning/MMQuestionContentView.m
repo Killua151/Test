@@ -68,7 +68,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithAddress:(NSDictionary *)addressComponents {
   NSRange wordRange = [addressComponents[kParamWordRange] rangeValue];
   
-  MWord *word = [MWord sharedWordsDictionary].dictionary[addressComponents[kParamWord]];
+  MWord *word = [MWord sharedModel].dictionary[addressComponents[kParamWord]];
   
   [Utils playAudioWithUrl:word.sound];
   

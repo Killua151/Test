@@ -7,7 +7,6 @@
 //
 
 #import "MAds.h"
-#import "MAdsConfig.h"
 
 @implementation MAds
 

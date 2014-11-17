@@ -10,6 +10,7 @@
 
 @interface BaseViewController : GAITrackedViewController {
   IBOutlet MMAllowsTouchUnderneathView *_vGestureLayer;
+  NSDictionary *_adsConfigsData;
 }
 
 + (UINavigationController *)navigationController;
@@ -43,5 +44,7 @@
                                        target:(id)target
                                        action:(SEL)action
                                      distance:(CGFloat)distance;
+
+- (void)displayCrossSaleAds;
 
 @end

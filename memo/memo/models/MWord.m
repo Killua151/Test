@@ -10,17 +10,6 @@
 
 @implementation MWord
 
-+ (instancetype)sharedWordsDictionary {
-  static MWord *_sharedWordsDictionary = nil;
-  
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    _sharedWordsDictionary = [MWord new];
-  });
-  
-  return _sharedWordsDictionary;
-}
-
 - (void)setupDictionary:(id)dictionaryData {
   if (_dictionary == nil)
     _dictionary = [NSMutableDictionary new];

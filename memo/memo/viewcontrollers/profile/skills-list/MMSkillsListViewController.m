@@ -63,6 +63,7 @@
                           action:@selector(gotoShop)
                         distance:-8];
   
+  [[MMServerHelper crossSaleHelper] getRunningAds];
   [self setupViews];
 }
 

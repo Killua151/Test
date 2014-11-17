@@ -51,7 +51,7 @@
   [self highlightView:sender.selected];
   
   if (sender.selected) {
-    MWord *word = [[MWord sharedWordsDictionary] wordModelForText:_optionData.text];
+    MWord *word = [[MWord sharedModel] wordModelForText:_optionData.text];
     
     if (word != nil)
       [Utils playAudioWithUrl:word.sound];

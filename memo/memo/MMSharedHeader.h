@@ -83,3 +83,10 @@ typedef enum ShareOptionEnum {
 - (void)coursesListDidGoBack;
 
 @end
+
+@protocol MMCrossSaleAdsDelegate <NSObject>
+
+@optional
+- (void)adsWithId:(NSString *)adsId didLoad:(BOOL)success;
+
+@end

@@ -18,6 +18,7 @@
 #import "MWord.h"
 #import "MAppSettings.h"
 #import "MAds.h"
+#import "MCrossSale.h"
 
 @interface MMServerHelper ()
 
@@ -63,7 +64,22 @@
 }
 
 #pragma mark - Cross sale methods
-- (void)getRunningAds:(void (^)(NSArray *))handler {
+- (void)getAllAdsConfigs {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : kValueCurrentDevice
+                           };
+  
+  [self
+   GET:@"ads/all_configs"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     DLog(@"%@", responseObject);
+   }
+   failure:NULL];
+}
+
+- (void)getRunningAds {
   NSDictionary *params = @{
                            kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
                            kParamDevice : kValueCurrentDevice
@@ -73,8 +89,7 @@
    GET:@"ads"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSArray *arr = [MAds modelsFromArr:responseObject[kParamAds]];
-     handler(arr);
+     [[MCrossSale sharedModel] loadRunningAds:responseObject];
    }
    failure:NULL];
 }
@@ -695,7 +710,7 @@
   NSInteger dictionaryVersion = [userDefaults integerForKey:kUserDefDictionaryVersion];
   
   if ([savedDictionaryData count] > 0)
-    [[MWord sharedWordsDictionary] setupDictionary:savedDictionaryData];
+    [[MWord sharedModel] setupDictionary:savedDictionaryData];
   else
     dictionaryVersion = 0;
   
@@ -715,7 +730,7 @@
      [userDefaults setObject:responseDict[kParamWords] forKey:kUserDefWordsDictionary];
      [userDefaults synchronize];
      
-     [[MWord sharedWordsDictionary] setupDictionary:responseDict[kParamWords]];
+     [[MWord sharedModel] setupDictionary:responseDict[kParamWords]];
    }
    failure:NULL];
 }

@@ -78,8 +78,8 @@ return; \
 
 #define kServerDefaultUrl                       @"http://api.memo.edu.vn/api"
 //#define kServerDefaultUrl                       @"http://localhost:8888/memo/memo/api"
-#define kServerCrossSaleUrl                     @"http://admin.api.memo.edu.vn/cross_sale/ads"
-//#define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale/"
+//#define kServerCrossSaleUrl                     @"http://admin.api.memo.edu.vn/cross_sale/ads"
+#define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale/"
 #define kServerApiVersion                       @"v1.4"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
@@ -221,6 +221,23 @@ return; \
 #define kParamWord                              @"word"
 #define kParamWordRange                         @"word_range"
 #define kParamWords                             @"words"
+
+// Cross sale ads v1.0
+#define kValueAdsDisplayTypeBanner              @"banner"
+#define kValueAdsDisplayTypeFullScreen          @"full_screen"
+#define kValueAdsDisplayTypeHalfScreen          @"half_screen"
+#define kValueAdsDisplayTypeVoucher             @"voucher"
+
+#define kValueAdsPositionYes                    @"yes"
+#define kValueAdsPositionAvatar                 @"ios_avatar"
+#define kValueAdsPositionExpChart               @"ios_exp_chart"
+#define kValueAdsPositionCenter                 @"ios_center"
+#define kValueAdsPositionBottom                 @"ios_bottom"
+#define kValueAdsPositionTop                    @"ios_top"
+#define kValueAdsPositionCheckpoint1            @"ios_checkpoint_1"
+#define kValueAdsPositionCheckpoint2            @"ios_checkpoint_2"
+#define kValueAdsPositionCheckpoint3            @"ios_checkpoint_3"
+#define kValueAdsPositionCheckpoint4            @"ios_checkpoint_4"
 
 #define kValueCurrentDevice                     @"ios"
 

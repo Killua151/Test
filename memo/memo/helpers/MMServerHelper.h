@@ -16,7 +16,8 @@
 + (instancetype)defaultHelper;
 
 #pragma mark - Cross sale methods
-- (void)getRunningAds:(void(^)(NSArray *ads))handler;
+- (void)getAllAdsConfigs;
+- (void)getRunningAds;
 
 #pragma mark - Default methods
 - (void)logInWithUsername:(NSString *)username

@@ -255,10 +255,6 @@
   NSString *documentFilePath = paths[0];
   DLog(@"%@", documentFilePath);
   
-  [[MMServerHelper crossSaleHelper] getRunningAds:^(NSArray *ads) {
-    [MCrossSale sharedCrossSale].runningAds = ads;
-  }];
-  
 #if kTestCompactTranslation
   [NSString testCompactTranslations];
 #endif
