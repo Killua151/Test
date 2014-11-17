@@ -105,6 +105,7 @@
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
+  [Utils logAnalyticsForButton:@"share Facebook finish skill"];
   [_vShare show];
 }
 
