@@ -10,9 +10,7 @@
 
 @class MAdsConfig;
 
-@interface MMAdsBannerView : UIView <UIWebViewDelegate> {
-  IBOutlet UIWebView *_webAdsContent;
-}
+@interface MMAdsItemView : UIView <UIWebViewDelegate>
 
 @property (nonatomic, assign) id<MMCrossSaleAdsDelegate> delegate;
 

@@ -50,10 +50,6 @@
   
   self.screenName = [NSString stringWithFormat:@"iOS screen %@", NSStringFromClass([self class])];
   [Utils logAnalyticsForOnScreenStartTime:NSStringFromClass([self class])];
-  
-  _adsConfigsData = [MCrossSale sharedModel].runningAds[NSStringFromClass([self class])];
-  if (_adsConfigsData != nil && [_adsConfigsData isKindOfClass:[NSDictionary class]])
-    [self displayCrossSaleAds];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -298,6 +294,13 @@
   [imgLogoView addSubview:imgLogo];
   
   self.navigationItem.titleView = imgLogoView;
+}
+
+- (void)checkToDisplayAds {
+  _adsConfigsData = [MCrossSale sharedModel].runningAds[NSStringFromClass([self class])];
+  
+  if (_adsConfigsData != nil && [_adsConfigsData isKindOfClass:[NSDictionary class]])
+    [self displayCrossSaleAds];
 }
 
 - (void)displayCrossSaleAds {

@@ -7,14 +7,20 @@
 //
 
 #import "MMAdsBannerCell.h"
-#import "MMAdsBannerView.h"
+#import "MMAdsItemView.h"
 #import "MAdsConfig.h"
+
+@interface MMAdsBannerCell () {
+  MMAdsItemView *_vAdsBanner;
+}
+
+@end
 
 @implementation MMAdsBannerCell
 
 - (void)updateCellWithData:(MAdsConfig *)data {
   if (_vAdsBanner == nil) {
-    _vAdsBanner = [[MMAdsBannerView alloc] initWithAdsConfig:data];
+    _vAdsBanner = [[MMAdsItemView alloc] initWithAdsConfig:data];
     _vAdsBanner.delegate = _delegate;
     [self.contentView addSubview:_vAdsBanner];
   }

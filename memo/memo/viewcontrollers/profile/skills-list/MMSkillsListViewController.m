@@ -16,13 +16,15 @@
 #import "MMHomeViewController.h"
 #import "MMBeginPlacementTestViewController.h"
 #import "MMExamViewController.h"
+#import "MMAdsPopupView.h"
 #import "AppsFlyerTracker.h"
-
 #import "MMAppDelegate.h"
 
 #import "MUser.h"
 #import "MSkill.h"
 #import "MCheckpoint.h"
+#import "MCrossSale.h"
+#import "MAdsConfig.h"
 
 @interface MMSkillsListViewController () {
   NSArray *_skillsData;
@@ -37,6 +39,7 @@
 - (void)fadeOutBeginningOptions:(void(^)())completion;
 - (void)handleLoadingError:(NSError *)error;
 - (void)reportBugs;
+- (void)reloadAds;
 
 @end
 
@@ -95,6 +98,19 @@
   [_tblSkills reloadData];
 }
 
+- (void)displayCrossSaleAds {
+  [_adsConfigsData enumerateKeysAndObjectsUsingBlock:^(NSString *position, MAdsConfig *adsConfig, BOOL *stop) {
+    [[MCrossSale sharedModel]
+     tryToLoadHtmlForAds:adsConfig
+     forKey:position
+     withCompletion:^(NSString *key, BOOL success) {
+       MAdsConfig *aAdsConfig = _adsConfigsData[key];
+       aAdsConfig.loaded = success;
+       [self reloadAds];
+     }];
+  }];
+}
+
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {
   [[MMServerHelper defaultHelper] updateBeginnerStatus];
   [self fadeOutBeginningOptions:NULL];
@@ -146,6 +162,7 @@
     }
     
     [self reloadContents];
+    [self checkToDisplayAds];
   }];
 }
 
@@ -437,6 +454,15 @@
        [UIAlertView showWithTitle:nil andMessage:@"Gửi thành công"];
      }];
    }];
+}
+
+- (void)reloadAds {
+  MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionCenter];
+  
+  if (adsConfig != nil && [adsConfig isKindOfClass:[MAdsConfig class]]) {
+    MMAdsPopupView *vAdsPopup = [[MMAdsPopupView alloc] initWithAds:adsConfig];
+    [[self mainView] addSubview:vAdsPopup];
+  }
 }
 
 @end

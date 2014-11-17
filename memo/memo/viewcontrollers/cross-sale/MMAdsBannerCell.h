@@ -8,11 +8,7 @@
 
 #import "BaseTableViewCell.h"
 
-@class MAdsConfig, MMAdsBannerView;
-
-@interface MMAdsBannerCell : BaseTableViewCell <MMCrossSaleAdsDelegate> {
-  MMAdsBannerView *_vAdsBanner;
-}
+@interface MMAdsBannerCell : BaseTableViewCell <MMCrossSaleAdsDelegate>
 
 @property (nonatomic, assign) id<MMCrossSaleAdsDelegate> delegate;
 

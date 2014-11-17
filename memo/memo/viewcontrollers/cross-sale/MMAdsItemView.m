@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Topica. All rights reserved.
 //
 
-#import "MMAdsBannerView.h"
+#import "MMAdsItemView.h"
 #import "MAdsConfig.h"
 
-@interface MMAdsBannerView () {
+@interface MMAdsItemView () {
+  IBOutlet UIWebView *_webAdsContent;
   MAdsConfig *_adsConfigData;
 }
 
@@ -17,7 +18,7 @@
 
 @end
 
-@implementation MMAdsBannerView
+@implementation MMAdsItemView
 
 - (id)initWithAdsConfig:(MAdsConfig *)adsConfig {
   if (self = [super init]) {

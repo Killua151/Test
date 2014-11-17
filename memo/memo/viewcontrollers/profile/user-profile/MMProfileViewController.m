@@ -409,6 +409,8 @@
 }
 
 - (void)updateViews {
+  [self checkToDisplayAds];
+  
   BOOL isFriend = ![_userId isEqualToString:[MUser currentUser]._id];
   
   _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;

@@ -38,6 +38,7 @@
 		CA452E7E19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA452E6B19EFFDB900A5F5CB /* img-item_icon-progress_quiz@2x.png */; };
 		CA622A4D1A039468000ACE21 /* MMBaseAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */; };
 		CA6AE9DC1A0A59D600CF0BA9 /* MAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */; };
+		CA6B87161A1A0CAA00763BE0 /* MMAdsPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -94,10 +95,11 @@
 		CABBEA9619E0E4C800EFED33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABBEA9519E0E4C800EFED33 /* Images.xcassets */; };
 		CAC80AF619F8C14C00C6EF14 /* beta.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF419F8C14C00C6EF14 /* beta.png */; };
 		CAC80AF819F8C14C00C6EF14 /* beta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC80AF519F8C14C00C6EF14 /* beta@2x.png */; };
-		CAD6DDD01A19DAC80034070C /* MMAdsBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */; };
-		CAD6DDD21A19E6CB0034070C /* MMAdsBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */; };
+		CAD6DDD01A19DAC80034070C /* MMAdsItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDCF1A19DAC80034070C /* MMAdsItemView.m */; };
+		CAD6DDD21A19E6CB0034070C /* MMAdsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD6DDD11A19E6CB0034070C /* MMAdsItemView.xib */; };
 		CAD6DDD61A19EE1B0034070C /* MMAdsBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */; };
 		CAD6DDD71A19EE1B0034070C /* MMAdsBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */; };
+		CAD6DDDA1A1A0AD40034070C /* MMAdsPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6DDD91A1A0AD40034070C /* MMAdsPopupView.m */; };
 		CADDB99F1A034D6000642B6E /* MSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB99E1A034D6000642B6E /* MSettings.m */; };
 		CADDB9A41A034DFD00642B6E /* MMNotificationSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CADDB9A21A034DFD00642B6E /* MMNotificationSettingsCell.m */; };
 		CADDB9A61A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADDB9A31A034DFD00642B6E /* MMNotificationSettingsCell.xib */; };
@@ -902,6 +904,7 @@
 		CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseAuthenticationViewController.m; sourceTree = "<group>"; };
 		CA6AE9DA1A0A59D600CF0BA9 /* MAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAppSettings.h; sourceTree = "<group>"; };
 		CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAppSettings.m; sourceTree = "<group>"; };
+		CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsPopupView.xib; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -974,12 +977,14 @@
 		CABBEA9C19E0E4C800EFED33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CAC80AF419F8C14C00C6EF14 /* beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beta.png; sourceTree = "<group>"; };
 		CAC80AF519F8C14C00C6EF14 /* beta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beta@2x.png"; sourceTree = "<group>"; };
-		CAD6DDCE1A19DAC80034070C /* MMAdsBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsBannerView.h; sourceTree = "<group>"; };
-		CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsBannerView.m; sourceTree = "<group>"; };
-		CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsBannerView.xib; sourceTree = "<group>"; };
+		CAD6DDCE1A19DAC80034070C /* MMAdsItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsItemView.h; sourceTree = "<group>"; };
+		CAD6DDCF1A19DAC80034070C /* MMAdsItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsItemView.m; sourceTree = "<group>"; };
+		CAD6DDD11A19E6CB0034070C /* MMAdsItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsItemView.xib; sourceTree = "<group>"; };
 		CAD6DDD31A19EE1B0034070C /* MMAdsBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsBannerCell.h; sourceTree = "<group>"; };
 		CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsBannerCell.m; sourceTree = "<group>"; };
 		CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsBannerCell.xib; sourceTree = "<group>"; };
+		CAD6DDD81A1A0AD40034070C /* MMAdsPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdsPopupView.h; sourceTree = "<group>"; };
+		CAD6DDD91A1A0AD40034070C /* MMAdsPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAdsPopupView.m; sourceTree = "<group>"; };
 		CADDB99D1A034D6000642B6E /* MSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSettings.h; sourceTree = "<group>"; };
 		CADDB99E1A034D6000642B6E /* MSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSettings.m; sourceTree = "<group>"; };
 		CADDB9A11A034DFD00642B6E /* MMNotificationSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNotificationSettingsCell.h; sourceTree = "<group>"; };
@@ -2022,9 +2027,12 @@
 				CAD6DDD31A19EE1B0034070C /* MMAdsBannerCell.h */,
 				CAD6DDD41A19EE1B0034070C /* MMAdsBannerCell.m */,
 				CAD6DDD51A19EE1B0034070C /* MMAdsBannerCell.xib */,
-				CAD6DDCE1A19DAC80034070C /* MMAdsBannerView.h */,
-				CAD6DDCF1A19DAC80034070C /* MMAdsBannerView.m */,
-				CAD6DDD11A19E6CB0034070C /* MMAdsBannerView.xib */,
+				CAD6DDCE1A19DAC80034070C /* MMAdsItemView.h */,
+				CAD6DDCF1A19DAC80034070C /* MMAdsItemView.m */,
+				CAD6DDD11A19E6CB0034070C /* MMAdsItemView.xib */,
+				CAD6DDD81A1A0AD40034070C /* MMAdsPopupView.h */,
+				CAD6DDD91A1A0AD40034070C /* MMAdsPopupView.m */,
+				CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */,
 			);
 			name = CrossSale;
 			path = "cross-sale";
@@ -3634,6 +3642,7 @@
 				CAF853D219E0F3D200A347CF /* img-skill_icon-en-vi_du_lich-locked_big.png in Resources */,
 				CAF8568919E0F82700A347CF /* img-skill_icon-en-vi_the_thao-unlocked.png in Resources */,
 				CAF8541419E0F3D200A347CF /* img-skill_icon-en-vi_so-unlocked_big.png in Resources */,
+				CA6B87161A1A0CAA00763BE0 /* MMAdsPopupView.xib in Resources */,
 				CAF856A019E0F82700A347CF /* img-skill_icon-en-vi_tu_vung_dieu_kien_hoan_thanh-locked@2x.png in Resources */,
 				CAF8545519E0F3D200A347CF /* img-hexagon_skill-strength-1_big@2x.png in Resources */,
 				CAF8568419E0F82700A347CF /* img-skill_icon-en-vi_tan_ngu-locked@2x.png in Resources */,
@@ -3781,7 +3790,7 @@
 				CAA91C9319E780BC0076A9BC /* MMFindFriendsViewController.xib in Resources */,
 				CA3F1D9319F27DC30088A6A5 /* img-level_up-bg.png in Resources */,
 				CAF853CF19E0F3D200A347CF /* img-skill_icon-en-vi_dong_vat-locked_big@2x.png in Resources */,
-				CAD6DDD21A19E6CB0034070C /* MMAdsBannerView.xib in Resources */,
+				CAD6DDD21A19E6CB0034070C /* MMAdsItemView.xib in Resources */,
 				CAF8544A19E0F3D200A347CF /* img-hexagon-checkpoint_test-bg.png in Resources */,
 				CAF8535119E0F3D200A347CF /* img-settings-phone_icon-disabled@2x.png in Resources */,
 				CAF853AA19E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked_big.png in Resources */,
@@ -4286,7 +4295,7 @@
 				CAF852CD19E0F3D200A347CF /* UIView+ExtendedToast.m in Sources */,
 				CAF854D119E0F3D200A347CF /* MMShieldSkillView.m in Sources */,
 				CA452E4619ED643500A5F5CB /* MMPlacementTestViewController.m in Sources */,
-				CAD6DDD01A19DAC80034070C /* MMAdsBannerView.m in Sources */,
+				CAD6DDD01A19DAC80034070C /* MMAdsItemView.m in Sources */,
 				CAF854A719E0F3D200A347CF /* MMTranslateQuestionContentView.m in Sources */,
 				CAF852D419E0F3D200A347CF /* NSString+UriCompatibility.m in Sources */,
 				CAF8547D19E0F3D200A347CF /* MMLoginViewController.m in Sources */,
@@ -4353,6 +4362,7 @@
 				CAF854B419E0F3D200A347CF /* MMSetGoalViewController.m in Sources */,
 				CAF852D519E0F3D200A347CF /* ISpeechSDK+Compatibility.m in Sources */,
 				CAF854D919E0F3D200A347CF /* MMShareViewController.m in Sources */,
+				CAD6DDDA1A1A0AD40034070C /* MMAdsPopupView.m in Sources */,
 				CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */,
 				CAA91C9819E780E10076A9BC /* MMFindFriendCell.m in Sources */,
 				CAF8549619E0F3D200A347CF /* MMExamViewController.m in Sources */,

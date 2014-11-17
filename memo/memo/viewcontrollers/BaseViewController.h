@@ -47,6 +47,7 @@
                                        action:(SEL)action
                                      distance:(CGFloat)distance;
 
+- (void)checkToDisplayAds;
 - (void)displayCrossSaleAds;
 - (UITableViewCell *)adsBannerCellForConfig:(MAdsConfig *)adsConfig inTableView:(UITableView *)tableView;
 
