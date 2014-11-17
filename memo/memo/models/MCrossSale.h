@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSDictionary *runningAds;
 
 - (void)loadRunningAds:(NSDictionary *)runningAdsData;
-- (void)tryToLoadHtmlForAds:(MAdsConfig *)adsConfig withCompletion:(void(^)(BOOL success))handler;
+- (void)tryToLoadHtmlForAds:(MAdsConfig *)adsConfig
+                     forKey:(NSString *)key
+             withCompletion:(void(^)(NSString *key, BOOL success))handler;
 
 @end

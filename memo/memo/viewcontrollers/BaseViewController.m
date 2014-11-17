@@ -9,7 +9,9 @@
 #import "BaseViewController.h"
 #import "MMAppDelegate.h"
 #import "MMShareViewController.h"
+#import "MMAdsBannerCell.h"
 #import "MCrossSale.h"
+#import "MAdsConfig.h"
 
 @interface BaseViewController ()
 
@@ -300,6 +302,24 @@
 
 - (void)displayCrossSaleAds {
   // Implement in child class
+}
+
+- (UITableViewCell *)adsBannerCellForPosition:(NSString *)position inTableView:(UITableView *)tableView {
+  MAdsConfig *adsConfig = _adsConfigsData[position];
+  
+  if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
+    return nil;
+  
+  MMAdsBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MMAdsBannerCell class])];
+  
+  if (cell == nil) {
+    cell = [MMAdsBannerCell new];
+    cell.delegate = self;
+  }
+  
+  [cell updateCellWithData:adsConfig];
+  
+  return cell;
 }
 
 #pragma mark - Private methods

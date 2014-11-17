@@ -367,6 +367,9 @@ static UIView *_sharedToast = nil;
   NSMutableDictionary *savedUser = [NSMutableDictionary dictionaryWithDictionary:
                                     [userDefaults dictionaryForKey:kUserDefSavedUser]];
   
+  if (savedUser[kParamName] == nil)
+    savedUser[kParamName] = savedUser[kParamUsername];
+  
   [attributes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
     if ([[self class] isObjectValidForSaveToUserDefaults:obj])
       savedUser[key] = obj;

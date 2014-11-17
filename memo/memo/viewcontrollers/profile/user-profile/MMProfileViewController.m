@@ -104,10 +104,14 @@
 
 - (void)displayCrossSaleAds {
   [_adsConfigsData enumerateKeysAndObjectsUsingBlock:^(NSString *position, MAdsConfig *adsConfig, BOOL *stop) {
-    [[MCrossSale sharedModel] tryToLoadHtmlForAds:adsConfig withCompletion:^(BOOL success) {
-      adsConfig.loaded = success;
-      [_tblProfileInfo reloadData];
-    }];
+    [[MCrossSale sharedModel]
+     tryToLoadHtmlForAds:adsConfig
+     forKey:position
+     withCompletion:^(NSString *key, BOOL success) {
+       MAdsConfig *aAdsConfig = _adsConfigsData[key];
+       aAdsConfig.loaded = success;
+       [_tblProfileInfo reloadData];
+     }];
   }];
 }
 
@@ -176,11 +180,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (section == 0) {
     MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
+    
+    if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
+      return 2;
+    
     return 2 + adsConfig.loaded;
   }
   
-  if (section == 1)
-    return 1;
+  if (section == 1) {
+    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionExpChart];
+    
+    if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
+      return 1;
+    
+    return 1 + adsConfig.loaded;
+  }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)
     return 1;
@@ -200,22 +214,15 @@
       return _celStreakMoney;
     }
     
-    MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionAvatar];
-    
-    MMAdsBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MMAdsBannerCell class])];
-    
-    if (cell == nil) {
-      cell = [MMAdsBannerCell new];
-      cell.delegate = self;
-    }
-    
-    [cell updateCellWithData:adsConfig];
-    
-    return cell;
+    return [self adsBannerCellForPosition:kValueAdsDisplayTypeBanner inTableView:tableView];
   }
   
-  if (indexPath.section == 1)
-    return _celGraphChart;
+  if (indexPath.section == 1) {
+    if (indexPath.row == 0)
+      return _celGraphChart;
+    
+    return [self adsBannerCellForPosition:kValueAdsPositionExpChart inTableView:tableView];
+  }
   
   if ([_userData.followings_leaderboard_all_time count] == 0)
     return _celEmptyLeaderboards;

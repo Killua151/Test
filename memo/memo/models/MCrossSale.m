@@ -10,7 +10,8 @@
 #import "MAdsConfig.h"
 
 @interface MCrossSale () {
-  void(^_htmlLoadingHandler)(BOOL success);
+  NSMutableDictionary *_preloadWebViewsData;
+  void(^_htmlLoadingHandler)(NSString *key, BOOL success);
 }
 
 @end
@@ -39,30 +40,44 @@
   _runningAds = runningAds;
 }
 
-- (void)tryToLoadHtmlForAds:(MAdsConfig *)adsConfig withCompletion:(void (^)(BOOL))handler {
+- (void)tryToLoadHtmlForAds:(MAdsConfig *)adsConfig
+                     forKey:(NSString *)key
+             withCompletion:(void (^)(NSString*, BOOL))handler {
   _htmlLoadingHandler = handler;
   
   adsConfig.loaded = NO;
   
+  if (_preloadWebViewsData == nil)
+    _preloadWebViewsData = [NSMutableDictionary new];
+  
   UIWebView *webView = [[UIWebView alloc] init];
   webView.delegate = self;
   [webView loadHTMLString:adsConfig.html baseURL:nil];
-  [webView setNeedsDisplay];
+  _preloadWebViewsData[[NSString stringWithFormat:@"%p", webView]] = @{
+                                                                       @"key" : [NSString normalizedString:key],
+                                                                       @"webview" : webView
+                                                                       };
 }
 
 #pragma mark - UIWebViewDelegate methods
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  DLog("invoke");
+  NSString *key = [NSString stringWithFormat:@"%p", webView];
+  NSDictionary *data = _preloadWebViewsData[key];
   
   if (_htmlLoadingHandler != NULL)
-    _htmlLoadingHandler(NO);
+    _htmlLoadingHandler(data[@"key"], NO);
+  
+  [_preloadWebViewsData removeObjectForKey:key];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  DLog("invoke");
+  NSString *key = [NSString stringWithFormat:@"%p", webView];
+  NSDictionary *data = _preloadWebViewsData[key];
   
   if (_htmlLoadingHandler != NULL)
-    _htmlLoadingHandler(YES);
+    _htmlLoadingHandler(data[@"key"], YES);
+  
+  [_preloadWebViewsData removeObjectForKey:key];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <GAITrackedViewController.h>
 
-@interface BaseViewController : GAITrackedViewController {
+@interface BaseViewController : GAITrackedViewController <MMCrossSaleAdsDelegate> {
   IBOutlet MMAllowsTouchUnderneathView *_vGestureLayer;
   NSDictionary *_adsConfigsData;
 }
@@ -46,5 +46,6 @@
                                      distance:(CGFloat)distance;
 
 - (void)displayCrossSaleAds;
+- (UITableViewCell *)adsBannerCellForPosition:(NSString *)position inTableView:(UITableView *)tableView;
 
 @end
