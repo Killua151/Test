@@ -20,7 +20,7 @@
 
 - (void)updateCellWithData:(MAdsConfig *)data {
   if (_vAdsBanner == nil) {
-    _vAdsBanner = [[MMAdsItemView alloc] initWithAdsConfig:data];
+    _vAdsBanner = [[MMAdsItemView alloc] initWithAds:data];
     _vAdsBanner.delegate = _delegate;
     [self.contentView addSubview:_vAdsBanner];
   }

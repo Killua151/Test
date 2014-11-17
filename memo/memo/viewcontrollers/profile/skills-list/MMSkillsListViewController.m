@@ -17,6 +17,7 @@
 #import "MMBeginPlacementTestViewController.h"
 #import "MMExamViewController.h"
 #import "MMAdsPopupView.h"
+#import "MMAdsItemView.h"
 #import "AppsFlyerTracker.h"
 #import "MMAppDelegate.h"
 
@@ -39,7 +40,7 @@
 - (void)fadeOutBeginningOptions:(void(^)())completion;
 - (void)handleLoadingError:(NSError *)error;
 - (void)reportBugs;
-- (void)reloadAds;
+- (void)reloadAds:(NSString *)adsPosition;
 
 @end
 
@@ -106,7 +107,7 @@
      withCompletion:^(NSString *key, BOOL success) {
        MAdsConfig *aAdsConfig = _adsConfigsData[key];
        aAdsConfig.loaded = success;
-       [self reloadAds];
+       [self reloadAds:key];
      }];
   }];
 }
@@ -361,7 +362,7 @@
      options:UIViewAnimationOptionCurveEaseInOut
      animations:^{
        CGRect frame = _vStrengthenButton.frame;
-       frame.origin.y = self.view.frame.size.height - _vStrengthenButton.frame.size.height - 15;
+       frame.origin.y = _tblSkills.frame.origin.y + _tblSkills.frame.size.height - _vStrengthenButton.frame.size.height - 15;
        _vStrengthenButton.frame = frame;
      }
      completion:^(BOOL finished) {
@@ -379,7 +380,7 @@
    options:UIViewAnimationOptionCurveEaseInOut
    animations:^{
      CGRect frame = _vStrengthenButton.frame;
-     frame.origin.y = self.view.frame.size.height + 15;
+     frame.origin.y = _tblSkills.frame.origin.y + _tblSkills.frame.size.height + 15;
      _vStrengthenButton.frame = frame;
    }
    completion:^(BOOL finished) {
@@ -456,12 +457,53 @@
    }];
 }
 
-- (void)reloadAds {
-  MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionCenter];
+- (void)reloadAds:(NSString *)adsPosition {
+  MAdsConfig *adsConfig = _adsConfigsData[adsPosition];
   
-  if (adsConfig != nil && [adsConfig isKindOfClass:[MAdsConfig class]]) {
+  if (adsConfig == nil || ![adsConfig isKindOfClass:[MAdsConfig class]])
+    return;
+  
+  if ([adsPosition isEqualToString:kValueAdsPositionTop]) {
+    MMAdsItemView *vAdsPopup = [[MMAdsItemView alloc] initWithAds:adsConfig];
+    
+    CGRect frame = vAdsPopup.frame;
+    frame.origin = CGPointZero;
+    vAdsPopup.frame = frame;
+    
+    frame = _tblSkills.frame;
+    frame.origin.y = vAdsPopup.frame.size.height;
+    frame.size.height -= vAdsPopup.frame.size.height;
+    _tblSkills.frame = frame;
+    
+    [_tblSkills.superview addSubview:vAdsPopup];
+    
+    frame = _lblAppVersion.superview.frame;
+    frame.origin.y += vAdsPopup.frame.size.height;
+    _lblAppVersion.superview.frame = frame;
+    
+    return;
+  }
+  
+  if ([adsPosition isEqualToString:kValueAdsPositionBottom]) {
+    MMAdsItemView *vAdsPopup = [[MMAdsItemView alloc] initWithAds:adsConfig];
+    
+    CGRect frame = _tblSkills.frame;
+    frame.size.height -= vAdsPopup.frame.size.height;
+    _tblSkills.frame = frame;
+    
+    frame = vAdsPopup.frame;
+    frame.origin.y = _tblSkills.frame.origin.y + _tblSkills.frame.size.height;
+    vAdsPopup.frame = frame;
+    
+    [_tblSkills.superview addSubview:vAdsPopup];
+    
+    return;
+  }
+  
+  if ([adsPosition isEqualToString:kValueAdsPositionCenter]) {
     MMAdsPopupView *vAdsPopup = [[MMAdsPopupView alloc] initWithAds:adsConfig];
     [[self mainView] addSubview:vAdsPopup];
+    return;
   }
 }
 

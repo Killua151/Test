@@ -36,7 +36,7 @@
 #pragma mark - Private methods
 - (void)setupAds:(MAdsConfig *)ads {
   if (_vAdsItem == nil)
-    _vAdsItem = [[MMAdsItemView alloc] initWithAdsConfig:ads];
+    _vAdsItem = [[MMAdsItemView alloc] initWithAds:ads];
   
   self.frame = [UIScreen mainScreen].bounds;
   
@@ -56,6 +56,10 @@
   frame = _btnClose.frame;
   frame.origin.x = _vAdsItem.frame.origin.x + _vAdsItem.frame.size.width - 10 - frame.size.width;
   frame.origin.y = _vAdsItem.frame.origin.y + 10;
+  
+  if ([ads.display_type isEqualToString:kValueAdsDisplayTypeFullScreen])
+    frame.origin.y += 20;
+  
   _btnClose.frame = frame;
   
   [self bringSubviewToFront:_btnClose];

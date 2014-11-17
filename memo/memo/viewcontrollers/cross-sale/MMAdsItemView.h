@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) id<MMCrossSaleAdsDelegate> delegate;
 
-- (id)initWithAdsConfig:(MAdsConfig *)adsConfig;
+- (id)initWithAds:(MAdsConfig *)adsConfig;
 - (void)reloadAdsHtml;
 
 @end

@@ -20,7 +20,7 @@
 
 @implementation MMAdsItemView
 
-- (id)initWithAdsConfig:(MAdsConfig *)adsConfig {
+- (id)initWithAds:(MAdsConfig *)adsConfig {
   if (self = [super init]) {
     LoadXibWithSameClass();
     _adsConfigData = adsConfig;
