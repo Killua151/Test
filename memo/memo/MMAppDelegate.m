@@ -165,7 +165,7 @@
   else if ([url isKindOfClass:[NSURL class]])
     urlObj = url;
   
-  if (urlObj == nil || ![urlObj isKindOfClass:[NSURL class]])
+  if (urlObj == nil || ![urlObj isKindOfClass:[NSURL class]] || [urlObj isEqual:[NSURL URLWithString:@"about:blank"]])
     return;
   
   KAWModalWebViewController *webVC = [KAWModalWebViewController new];

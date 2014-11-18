@@ -53,16 +53,15 @@
   _vAdsItem.frame = frame;
   [self addSubview:_vAdsItem];
   
-  frame = _btnClose.frame;
-  frame.origin.x = _vAdsItem.frame.origin.x + _vAdsItem.frame.size.width - 10 - frame.size.width;
-  frame.origin.y = _vAdsItem.frame.origin.y + 10;
+  frame = _btnClose.superview.frame;
+  frame.origin = _vAdsItem.frame.origin;
   
   if ([ads.display_type isEqualToString:kValueAdsDisplayTypeFullScreen])
     frame.origin.y += 20;
   
-  _btnClose.frame = frame;
+  _btnClose.superview.frame = frame;
   
-  [self bringSubviewToFront:_btnClose];
+  [self bringSubviewToFront:_btnClose.superview];
 }
 
 @end
