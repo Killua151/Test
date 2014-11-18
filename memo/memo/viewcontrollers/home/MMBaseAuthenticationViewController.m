@@ -35,8 +35,6 @@
 }
 
 - (void)loginWithFacebook {
-  [Utils logAnalyticsForButton:@"login Facebook"];
-  
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
     ShowAlertWithError(error);
     
@@ -53,8 +51,6 @@
 }
 
 - (void)loginWithGoogle {
-  [Utils logAnalyticsForButton:@"login Google+"];
-  
   ShowHudForCurrentView();
   
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
