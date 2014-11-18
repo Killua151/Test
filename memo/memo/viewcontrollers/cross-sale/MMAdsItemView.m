@@ -8,6 +8,7 @@
 
 #import "MMAdsItemView.h"
 #import "MAdsConfig.h"
+#import "MMAppDelegate.h"
 
 @interface MMAdsItemView () {
   IBOutlet UIWebView *_webAdsContent;
@@ -50,7 +51,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType {
   if (navigationType == UIWebViewNavigationTypeOther)
     return YES;
-  [[UIApplication sharedApplication] openURL:request.URL];
+  
+  MMAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+  [appDelegate openURL:request.URL];
   return NO;
 }
 

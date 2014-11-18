@@ -52,6 +52,10 @@
 		CA6B87381A1B2D1300763BE0 /* UANoisyGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B872B1A1B2D1300763BE0 /* UANoisyGradientBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA6B87391A1B2D1300763BE0 /* UARoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B872D1A1B2D1300763BE0 /* UARoundedRectView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA6B873C1A1B370600763BE0 /* MMVoucherPagePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B873B1A1B370600763BE0 /* MMVoucherPagePopup.m */; };
+		CA6D93981A1B4744005E6A92 /* KAWBack.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D93941A1B4744005E6A92 /* KAWBack.png */; };
+		CA6D93991A1B4744005E6A92 /* KAWBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D93951A1B4744005E6A92 /* KAWBack@2x.png */; };
+		CA6D939C1A1B4798005E6A92 /* KAWForward.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D939A1A1B4798005E6A92 /* KAWForward.png */; };
+		CA6D939D1A1B4798005E6A92 /* KAWForward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D939B1A1B4798005E6A92 /* KAWForward@2x.png */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -938,6 +942,10 @@
 		CA6B872D1A1B2D1300763BE0 /* UARoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UARoundedRectView.m; sourceTree = "<group>"; };
 		CA6B873A1A1B370600763BE0 /* MMVoucherPagePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVoucherPagePopup.h; sourceTree = "<group>"; };
 		CA6B873B1A1B370600763BE0 /* MMVoucherPagePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVoucherPagePopup.m; sourceTree = "<group>"; };
+		CA6D93941A1B4744005E6A92 /* KAWBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KAWBack.png; sourceTree = "<group>"; };
+		CA6D93951A1B4744005E6A92 /* KAWBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KAWBack@2x.png"; sourceTree = "<group>"; };
+		CA6D939A1A1B4798005E6A92 /* KAWForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KAWForward.png; sourceTree = "<group>"; };
+		CA6D939B1A1B4798005E6A92 /* KAWForward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KAWForward@2x.png"; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -1992,6 +2000,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CA6D93911A1B4744005E6A92 /* KAWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA6D93941A1B4744005E6A92 /* KAWBack.png */,
+				CA6D93951A1B4744005E6A92 /* KAWBack@2x.png */,
+				CA6D939A1A1B4798005E6A92 /* KAWForward.png */,
+				CA6D939B1A1B4798005E6A92 /* KAWForward@2x.png */,
+			);
+			path = KAWebViewController;
+			sourceTree = "<group>";
+		};
 		CAA508221A049F030097CD13 /* loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -2192,6 +2211,7 @@
 				CAB1247419F78A98007DF067 /* AppsFlyer-iOS-SDK-v2.5.3.10 */,
 				CAF8502D19E0F3D100A347CF /* google-diff-match-patch */,
 				CAF8503B19E0F3D100A347CF /* iSpeech-1.0.6 */,
+				CA6D93911A1B4744005E6A92 /* KAWebViewController */,
 				CAF8504A19E0F3D100A347CF /* RegExCategories */,
 				CA6B87171A1B2D1300763BE0 /* UIModalPanel */,
 			);
@@ -3627,6 +3647,7 @@
 				CAF854B919E0F3D200A347CF /* MMSettingsViewController.xib in Resources */,
 				CAF8560B19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau_2-locked.png in Resources */,
 				CAF8545319E0F3D200A347CF /* img-hexagon_skill-strength-1@2x.png in Resources */,
+				CA6D939C1A1B4798005E6A92 /* KAWForward.png in Resources */,
 				CAF854A019E0F3D200A347CF /* MMNameQuestionContentView.xib in Resources */,
 				CAF8568619E0F82700A347CF /* img-skill_icon-en-vi_tan_ngu-unlocked@2x.png in Resources */,
 				CAAAA0051A091F2C00198BFA /* sound-fx-finish.mp3 in Resources */,
@@ -3986,6 +4007,7 @@
 				CAF8543E19E0F3D200A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked_big.png in Resources */,
 				CAF852F219E0F3D200A347CF /* img-ant-congrats@2x.png in Resources */,
 				CAF852F419E0F3D200A347CF /* img-ant-fail@2x.png in Resources */,
+				CA6D93981A1B4744005E6A92 /* KAWBack.png in Resources */,
 				CAF8567D19E0F82700A347CF /* img-skill_icon-en-vi_so-unlocked.png in Resources */,
 				CAF8534919E0F3D200A347CF /* img-skills_list-laurea@2x.png in Resources */,
 				CAF8531919E0F3D200A347CF /* img-beginning_options-bg@2x.png in Resources */,
@@ -4135,6 +4157,7 @@
 				CAF8534A19E0F3D200A347CF /* img-skills_list-laurea_small.png in Resources */,
 				CAF856A619E0F82700A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-unlocked@2x.png in Resources */,
 				CAF854C819E0F3D200A347CF /* MMHexagonCheckpointTestCell.xib in Resources */,
+				CA6D93991A1B4744005E6A92 /* KAWBack@2x.png in Resources */,
 				CAF8561019E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_nguyen_mau-locked@2x.png in Resources */,
 				CAA508341A049F030097CD13 /* img-ant_loading-4@2x.png in Resources */,
 				CAF8562D19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai-unlocked.png in Resources */,
@@ -4206,6 +4229,7 @@
 				CAF8535319E0F3D200A347CF /* img-settings-phone_icon-enabled@2x.png in Resources */,
 				CAF8560819E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-locked@2x.png in Resources */,
 				CAF8532A19E0F3D200A347CF /* btn-lessons_learning-record.png in Resources */,
+				CA6D939D1A1B4798005E6A92 /* KAWForward@2x.png in Resources */,
 				CAF8543719E0F3D200A347CF /* img-skill_icon-en-vi_tu_truu_tuong_1-locked_big@2x.png in Resources */,
 				CAF8567F19E0F82700A347CF /* img-skill_icon-en-vi_su_kien-locked.png in Resources */,
 				CAF853FD19E0F3D200A347CF /* img-skill_icon-en-vi_nghe_nghiep-unlocked_big@2x.png in Resources */,

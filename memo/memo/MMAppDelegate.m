@@ -157,6 +157,22 @@
   }
 }
 
+- (void)openURL:(id)url {
+  NSURL *urlObj = nil;
+  
+  if ([url isKindOfClass:[NSString class]])
+    urlObj = [NSURL URLWithString:url];
+  else if ([url isKindOfClass:[NSURL class]])
+    urlObj = url;
+  
+  if (urlObj == nil || ![urlObj isKindOfClass:[NSURL class]])
+    return;
+  
+  KAWModalWebViewController *webVC = [KAWModalWebViewController new];
+  webVC.url = urlObj;
+  [_window.rootViewController presentViewController:webVC animated:YES completion:NULL];
+}
+
 #pragma mark Private methods
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions {
 #ifdef __IPHONE_8_0

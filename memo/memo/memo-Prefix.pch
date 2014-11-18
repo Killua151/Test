@@ -36,6 +36,7 @@
   #import "UILabel+LabelHelpers.h"
   #import "UIView+ExtendedToast.h"
   #import "UAModalPanel.h"
+  #import <KAWebViewController/KAWebViewController.h>
 
   #import "LocalizationHelper.h"
   #import "MMAllowsTouchOutsideView.h"

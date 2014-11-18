@@ -298,8 +298,13 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
+  [Utils logAnalyticsForButton:@"profile"];
+  [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
+}
 
+- (void)gotoShop {
+  MMCongratsViewController *congratsVC = [MMCongratsViewController new];
+  
   congratsVC.displayingData = @{
                                 kParamMessage : MMLocalizedString(@"Congratulation! You've leveled up!"),
                                 kParamSubMessage : @"Test"
@@ -308,11 +313,6 @@
   [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
   return;
   
-  [Utils logAnalyticsForButton:@"profile"];
-  [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
-}
-
-- (void)gotoShop {
   [Utils logAnalyticsForButton:@"plaza"];
   [self presentViewController:[MMShopViewController navigationController] animated:YES completion:NULL];
 }

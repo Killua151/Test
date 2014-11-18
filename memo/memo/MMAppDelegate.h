@@ -15,5 +15,6 @@
 
 - (BOOL)sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error;
 - (void)setupRootViewController;
+- (void)openURL:(id)url;
 
 @end

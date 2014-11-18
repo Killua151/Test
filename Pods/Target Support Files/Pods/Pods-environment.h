@@ -84,6 +84,12 @@
 #define COCOAPODS_VERSION_MINOR_JSONKit_NoWarning 2
 #define COCOAPODS_VERSION_PATCH_JSONKit_NoWarning 0
 
+// KAWebViewController
+#define COCOAPODS_POD_AVAILABLE_KAWebViewController
+#define COCOAPODS_VERSION_MAJOR_KAWebViewController 0
+#define COCOAPODS_VERSION_MINOR_KAWebViewController 2
+#define COCOAPODS_VERSION_PATCH_KAWebViewController 1
+
 // KLSwitch
 #define COCOAPODS_POD_AVAILABLE_KLSwitch
 #define COCOAPODS_VERSION_MAJOR_KLSwitch 1
@@ -137,10 +143,4 @@
 #define COCOAPODS_VERSION_MAJOR_google_plus_ios_sdk 1
 #define COCOAPODS_VERSION_MINOR_google_plus_ios_sdk 7
 #define COCOAPODS_VERSION_PATCH_google_plus_ios_sdk 1
-
-// uservoice-iphone-sdk
-#define COCOAPODS_POD_AVAILABLE_uservoice_iphone_sdk
-#define COCOAPODS_VERSION_MAJOR_uservoice_iphone_sdk 3
-#define COCOAPODS_VERSION_MINOR_uservoice_iphone_sdk 2
-#define COCOAPODS_VERSION_PATCH_uservoice_iphone_sdk 1
 
