@@ -115,8 +115,12 @@
 }
 
 - (IBAction)btnBeginnerPressed:(UIButton *)sender {
-  [[MMServerHelper defaultHelper] updateBeginnerStatus];
+  [_tblSkills scrollRectToVisible:(CGRect){CGPointZero, _tblSkills.bounds.size} animated:YES];
   [self fadeOutBeginningOptions:NULL];
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kDefaultAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self skillViewDidSelectSkill:[[MUser currentUser] firstSkill]];
+  });
 }
 
 - (IBAction)btnPlacementTestPressed:(UIButton *)sender {
@@ -303,6 +307,7 @@
 }
 
 - (void)gotoShop {
+#if kTestVoucherAds
   MMCongratsViewController *congratsVC = [MMCongratsViewController new];
   
   congratsVC.displayingData = @{
@@ -312,6 +317,7 @@
   
   [self presentViewController:[congratsVC parentNavigationController] animated:YES completion:NULL];
   return;
+#endif
   
   [Utils logAnalyticsForButton:@"plaza"];
   [self presentViewController:[MMShopViewController navigationController] animated:YES completion:NULL];

@@ -50,7 +50,7 @@
   
   self.margin = UIEdgeInsetsMake(30, 10, 5, 10);
   
-  CGRect frame = CGRectInset(self.roundedRectFrame, self.cornerRadius, self.cornerRadius);
+  CGRect frame = CGRectInset(self.roundedRectFrame, self.cornerRadius, self.cornerRadius);  
   UIView *webViewContainer = [[UIView alloc] initWithFrame:frame];
   webViewContainer.backgroundColor = [UIColor clearColor];
   webViewContainer.clipsToBounds = YES;

@@ -162,6 +162,14 @@ static MUser *_currentUser = nil;
   return fullTree;
 }
 
+- (MSkill *)firstSkill {
+  for (MSkill *skill in _skills)
+    if (skill.order == 0)
+      return skill;
+  
+  return [_skills firstObject];
+}
+
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow {
   return [_remainingSkillsMapper[@(checkpointRow)] integerValue];
 }

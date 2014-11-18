@@ -48,6 +48,7 @@
 - (void)updateAttributesFromProfileData:(NSDictionary *)userData;
 - (MMLineChart *)graphLineChartInFrame:(CGRect)frame;
 - (NSArray *)skillsTree;
+- (MSkill *)firstSkill;
 - (NSInteger)numberOfLockedSkillsForCheckpoint:(NSInteger)checkpointRow;
 - (NSInteger)checkpointOrderForCheckpoint:(NSInteger)checkpointRow;
 - (MCheckpoint *)checkpointForPosition:(NSInteger)checkpointRow;

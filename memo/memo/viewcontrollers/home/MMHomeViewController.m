@@ -59,7 +59,7 @@
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"new user"];
+  [Utils logAnalyticsForButton:@"log in"];
   
   if (_loginVC == nil)
     _loginVC = [MMLoginViewController new];
