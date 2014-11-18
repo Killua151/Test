@@ -56,6 +56,7 @@
 		CA6D93991A1B4744005E6A92 /* KAWBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D93951A1B4744005E6A92 /* KAWBack@2x.png */; };
 		CA6D939C1A1B4798005E6A92 /* KAWForward.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D939A1A1B4798005E6A92 /* KAWForward.png */; };
 		CA6D939D1A1B4798005E6A92 /* KAWForward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D939B1A1B4798005E6A92 /* KAWForward@2x.png */; };
+		CA6D93A01A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6D939F1A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -946,6 +947,8 @@
 		CA6D93951A1B4744005E6A92 /* KAWBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KAWBack@2x.png"; sourceTree = "<group>"; };
 		CA6D939A1A1B4798005E6A92 /* KAWForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KAWForward.png; sourceTree = "<group>"; };
 		CA6D939B1A1B4798005E6A92 /* KAWForward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KAWForward@2x.png"; sourceTree = "<group>"; };
+		CA6D939E1A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ViewControllerHelpers.h"; sourceTree = "<group>"; };
+		CA6D939F1A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ViewControllerHelpers.m"; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -2187,6 +2190,8 @@
 				CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */,
 				CAF8502819E0F3D100A347CF /* UIView+ExtendedToast.h */,
 				CAF8502919E0F3D100A347CF /* UIView+ExtendedToast.m */,
+				CA6D939E1A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.h */,
+				CA6D939F1A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.m */,
 				CAF8502A19E0F3D100A347CF /* Utils.h */,
 				CAF8502B19E0F3D100A347CF /* Utils.m */,
 			);
@@ -4470,6 +4475,7 @@
 				CAD6DDD61A19EE1B0034070C /* MMAdsBannerCell.m in Sources */,
 				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
 				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
+				CA6D93A01A1B4AF5005E6A92 /* UIViewController+ViewControllerHelpers.m in Sources */,
 				CA6B872E1A1B2D1300763BE0 /* UIView+JMNoise.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,
 				CA1AD1FE1A175EBF0050C88D /* MCrossSale.m in Sources */,

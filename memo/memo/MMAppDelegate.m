@@ -170,7 +170,7 @@
   
   KAWModalWebViewController *webVC = [KAWModalWebViewController new];
   webVC.url = urlObj;
-  [_window.rootViewController presentViewController:webVC animated:YES completion:NULL];
+  [[UIViewController currentActiveViewController] presentViewController:webVC animated:YES completion:NULL];
 }
 
 #pragma mark Private methods
