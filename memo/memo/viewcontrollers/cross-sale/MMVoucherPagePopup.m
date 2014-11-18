@@ -43,31 +43,14 @@
    }];
 }
 
-//- (BOOL)webView:(UIWebView *)webView
-//shouldStartLoadWithRequest:(NSURLRequest *)request
-// navigationType:(UIWebViewNavigationType)navigationType {
-//  if (navigationType == UIWebViewNavigationTypeOther)
-//    return YES;
-//  
-//  return NO;
-//}
-
 #pragma mark - Private methods
 - (void)setupWebView {
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
   [topWindow addSubview:self];
   
-  CGRect frame = self.contentContainer.frame;
-  frame.origin.y += 10;
-  frame.size.height -= 20;
-  self.contentContainer.frame = frame;
+  self.margin = UIEdgeInsetsMake(30, 10, 5, 10);
   
-  frame = self.roundedRectFrame;
-  frame.origin = CGPointMake(self.closeButton.center.x + self.cornerRadius,
-                             self.closeButton.center.y + self.cornerRadius);
-  frame.size.width -= self.cornerRadius*3;
-  frame.size.height -= self.cornerRadius*3;
-  
+  CGRect frame = CGRectInset(self.roundedRectFrame, self.cornerRadius, self.cornerRadius);
   UIView *webViewContainer = [[UIView alloc] initWithFrame:frame];
   webViewContainer.backgroundColor = [UIColor clearColor];
   webViewContainer.clipsToBounds = YES;

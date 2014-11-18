@@ -169,6 +169,7 @@
     return;
   
   KAWModalWebViewController *webVC = [KAWModalWebViewController new];
+  webVC.view.backgroundColor = [UIColor whiteColor];
   webVC.url = urlObj;
   [[UIViewController currentActiveViewController] presentViewController:webVC animated:YES completion:NULL];
 }
