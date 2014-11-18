@@ -74,9 +74,9 @@
    GET:@"ads/all_configs"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     DLog(@"%@", responseObject);
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)getRunningAds {
@@ -91,7 +91,9 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [[MCrossSale sharedModel] loadRunningAds:responseObject];
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     DLog(@"%@", error);
+   }];
 }
 
 #pragma mark - Default methods
