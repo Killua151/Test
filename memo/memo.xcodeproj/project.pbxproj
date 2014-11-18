@@ -39,6 +39,19 @@
 		CA622A4D1A039468000ACE21 /* MMBaseAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA622A4C1A039468000ACE21 /* MMBaseAuthenticationViewController.m */; };
 		CA6AE9DC1A0A59D600CF0BA9 /* MAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */; };
 		CA6B87161A1A0CAA00763BE0 /* MMAdsPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */; };
+		CA6B872E1A1B2D1300763BE0 /* UIView+JMNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B871A1A1B2D1300763BE0 /* UIView+JMNoise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B872F1A1B2D1300763BE0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B871C1A1B2D1300763BE0 /* close.png */; };
+		CA6B87301A1B2D1300763BE0 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B871D1A1B2D1300763BE0 /* close@2x.png */; };
+		CA6B87311A1B2D1300763BE0 /* modalButton-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B871E1A1B2D1300763BE0 /* modalButton-selected.png */; };
+		CA6B87321A1B2D1300763BE0 /* modalButton-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B871F1A1B2D1300763BE0 /* modalButton-selected@2x.png */; };
+		CA6B87331A1B2D1300763BE0 /* modalButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B87201A1B2D1300763BE0 /* modalButton.png */; };
+		CA6B87341A1B2D1300763BE0 /* modalButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B87211A1B2D1300763BE0 /* modalButton@2x.png */; };
+		CA6B87351A1B2D1300763BE0 /* UAModalPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B87241A1B2D1300763BE0 /* UAModalPanel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B87361A1B2D1300763BE0 /* UATitledModalPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B87261A1B2D1300763BE0 /* UATitledModalPanel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B87371A1B2D1300763BE0 /* UAGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B87291A1B2D1300763BE0 /* UAGradientBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B87381A1B2D1300763BE0 /* UANoisyGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B872B1A1B2D1300763BE0 /* UANoisyGradientBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B87391A1B2D1300763BE0 /* UARoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B872D1A1B2D1300763BE0 /* UARoundedRectView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA6B873C1A1B370600763BE0 /* MMVoucherPagePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B873B1A1B370600763BE0 /* MMVoucherPagePopup.m */; };
 		CA798C2319E2D79A00908F84 /* img-hexagon-lock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */; };
 		CA798C2519E2D79A00908F84 /* img-hexagon-lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */; };
 		CA7BD52019ED4E2C003F6282 /* UILabel+LabelHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7BD51F19ED4E2C003F6282 /* UILabel+LabelHelpers.m */; };
@@ -905,6 +918,26 @@
 		CA6AE9DA1A0A59D600CF0BA9 /* MAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAppSettings.h; sourceTree = "<group>"; };
 		CA6AE9DB1A0A59D600CF0BA9 /* MAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAppSettings.m; sourceTree = "<group>"; };
 		CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMAdsPopupView.xib; sourceTree = "<group>"; };
+		CA6B87191A1B2D1300763BE0 /* UIView+JMNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMNoise.h"; sourceTree = "<group>"; };
+		CA6B871A1A1B2D1300763BE0 /* UIView+JMNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMNoise.m"; sourceTree = "<group>"; };
+		CA6B871C1A1B2D1300763BE0 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		CA6B871D1A1B2D1300763BE0 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		CA6B871E1A1B2D1300763BE0 /* modalButton-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modalButton-selected.png"; sourceTree = "<group>"; };
+		CA6B871F1A1B2D1300763BE0 /* modalButton-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modalButton-selected@2x.png"; sourceTree = "<group>"; };
+		CA6B87201A1B2D1300763BE0 /* modalButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalButton.png; sourceTree = "<group>"; };
+		CA6B87211A1B2D1300763BE0 /* modalButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modalButton@2x.png"; sourceTree = "<group>"; };
+		CA6B87231A1B2D1300763BE0 /* UAModalPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAModalPanel.h; sourceTree = "<group>"; };
+		CA6B87241A1B2D1300763BE0 /* UAModalPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAModalPanel.m; sourceTree = "<group>"; };
+		CA6B87251A1B2D1300763BE0 /* UATitledModalPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UATitledModalPanel.h; sourceTree = "<group>"; };
+		CA6B87261A1B2D1300763BE0 /* UATitledModalPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UATitledModalPanel.m; sourceTree = "<group>"; };
+		CA6B87281A1B2D1300763BE0 /* UAGradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAGradientBackground.h; sourceTree = "<group>"; };
+		CA6B87291A1B2D1300763BE0 /* UAGradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAGradientBackground.m; sourceTree = "<group>"; };
+		CA6B872A1A1B2D1300763BE0 /* UANoisyGradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UANoisyGradientBackground.h; sourceTree = "<group>"; };
+		CA6B872B1A1B2D1300763BE0 /* UANoisyGradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UANoisyGradientBackground.m; sourceTree = "<group>"; };
+		CA6B872C1A1B2D1300763BE0 /* UARoundedRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UARoundedRectView.h; sourceTree = "<group>"; };
+		CA6B872D1A1B2D1300763BE0 /* UARoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UARoundedRectView.m; sourceTree = "<group>"; };
+		CA6B873A1A1B370600763BE0 /* MMVoucherPagePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVoucherPagePopup.h; sourceTree = "<group>"; };
+		CA6B873B1A1B370600763BE0 /* MMVoucherPagePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVoucherPagePopup.m; sourceTree = "<group>"; };
 		CA798C2119E2D79A00908F84 /* img-hexagon-lock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon.png"; sourceTree = "<group>"; };
 		CA798C2219E2D79A00908F84 /* img-hexagon-lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-hexagon-lock-icon@2x.png"; sourceTree = "<group>"; };
 		CA7BD51E19ED4E2C003F6282 /* UILabel+LabelHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHelpers.h"; sourceTree = "<group>"; };
@@ -1902,6 +1935,63 @@
 			path = shop;
 			sourceTree = "<group>";
 		};
+		CA6B87171A1B2D1300763BE0 /* UIModalPanel */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B87181A1B2D1300763BE0 /* Categories */,
+				CA6B871B1A1B2D1300763BE0 /* Images */,
+				CA6B87221A1B2D1300763BE0 /* Panels */,
+				CA6B87271A1B2D1300763BE0 /* Views */,
+			);
+			path = UIModalPanel;
+			sourceTree = "<group>";
+		};
+		CA6B87181A1B2D1300763BE0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B87191A1B2D1300763BE0 /* UIView+JMNoise.h */,
+				CA6B871A1A1B2D1300763BE0 /* UIView+JMNoise.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CA6B871B1A1B2D1300763BE0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B871C1A1B2D1300763BE0 /* close.png */,
+				CA6B871D1A1B2D1300763BE0 /* close@2x.png */,
+				CA6B871E1A1B2D1300763BE0 /* modalButton-selected.png */,
+				CA6B871F1A1B2D1300763BE0 /* modalButton-selected@2x.png */,
+				CA6B87201A1B2D1300763BE0 /* modalButton.png */,
+				CA6B87211A1B2D1300763BE0 /* modalButton@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		CA6B87221A1B2D1300763BE0 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B87231A1B2D1300763BE0 /* UAModalPanel.h */,
+				CA6B87241A1B2D1300763BE0 /* UAModalPanel.m */,
+				CA6B87251A1B2D1300763BE0 /* UATitledModalPanel.h */,
+				CA6B87261A1B2D1300763BE0 /* UATitledModalPanel.m */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		CA6B87271A1B2D1300763BE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B87281A1B2D1300763BE0 /* UAGradientBackground.h */,
+				CA6B87291A1B2D1300763BE0 /* UAGradientBackground.m */,
+				CA6B872A1A1B2D1300763BE0 /* UANoisyGradientBackground.h */,
+				CA6B872B1A1B2D1300763BE0 /* UANoisyGradientBackground.m */,
+				CA6B872C1A1B2D1300763BE0 /* UARoundedRectView.h */,
+				CA6B872D1A1B2D1300763BE0 /* UARoundedRectView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CAA508221A049F030097CD13 /* loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -2033,6 +2123,8 @@
 				CAD6DDD81A1A0AD40034070C /* MMAdsPopupView.h */,
 				CAD6DDD91A1A0AD40034070C /* MMAdsPopupView.m */,
 				CA6B87151A1A0CAA00763BE0 /* MMAdsPopupView.xib */,
+				CA6B873A1A1B370600763BE0 /* MMVoucherPagePopup.h */,
+				CA6B873B1A1B370600763BE0 /* MMVoucherPagePopup.m */,
 			);
 			name = CrossSale;
 			path = "cross-sale";
@@ -2101,6 +2193,7 @@
 				CAF8502D19E0F3D100A347CF /* google-diff-match-patch */,
 				CAF8503B19E0F3D100A347CF /* iSpeech-1.0.6 */,
 				CAF8504A19E0F3D100A347CF /* RegExCategories */,
+				CA6B87171A1B2D1300763BE0 /* UIModalPanel */,
 			);
 			name = Libraries;
 			path = libs;
@@ -3601,6 +3694,7 @@
 				CAF8560A19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_khiem_khuyet_modal_auxiliaries-unlocked@2x.png in Resources */,
 				CAF8564619E0F82700A347CF /* img-skill_icon-en-vi_gioi_tu-unlocked@2x.png in Resources */,
 				CAF8532519E0F3D200A347CF /* btn-lessons_learning-audio-slow@2x.png in Resources */,
+				CA6B87331A1B2D1300763BE0 /* modalButton.png in Resources */,
 				CAF8535E19E0F3D200A347CF /* img-share-facebook_selected.png in Resources */,
 				CAF8546F19E0F3D200A347CF /* img-profile-avatar_placeholder@2x.png in Resources */,
 				CAF8567319E0F82700A347CF /* img-skill_icon-en-vi_quan_ao-locked.png in Resources */,
@@ -3629,6 +3723,7 @@
 				CAF8537419E0F3D200A347CF /* img-skill_icon-en-vi_chinh_tri-unlocked_big.png in Resources */,
 				CAF855FE19E0F82700A347CF /* img-skill_icon-en-vi_danh_dong_tu_gerunds-unlocked@2x.png in Resources */,
 				CAF8565219E0F82700A347CF /* img-skill_icon-en-vi_lien_tu-unlocked@2x.png in Resources */,
+				CA6B87321A1B2D1300763BE0 /* modalButton-selected@2x.png in Resources */,
 				CAF855E419E0F82700A347CF /* img-skill_icon-en-vi_con_nguoi-locked@2x.png in Resources */,
 				CAF8545D19E0F3D200A347CF /* img-hexagon_skill-strength-3_big@2x.png in Resources */,
 				CAF8546419E0F3D200A347CF /* img-shield_skill-strength-1.png in Resources */,
@@ -3811,6 +3906,7 @@
 				CAF853D419E0F3D200A347CF /* img-skill_icon-en-vi_du_lich-unlocked_big.png in Resources */,
 				CA452E4719ED643500A5F5CB /* MMPlacementTestViewController.xib in Resources */,
 				CAF8533319E0F3D200A347CF /* img-lessons_learning-checkbox-empty@2x.png in Resources */,
+				CA6B872F1A1B2D1300763BE0 /* close.png in Resources */,
 				CAF8569619E0F82700A347CF /* img-skill_icon-en-vi_truyen_thong-unlocked@2x.png in Resources */,
 				CAF8546B19E0F3D200A347CF /* img-shield_skill-strength-4@2x.png in Resources */,
 				CAF854F219E0F50D00A347CF /* Default@2x.png in Resources */,
@@ -3866,6 +3962,7 @@
 				CAF854AF19E0F3D200A347CF /* MMShieldLessonCell.xib in Resources */,
 				CAF8544F19E0F3D200A347CF /* img-hexagon_skill-bg-unlocked@2x.png in Resources */,
 				CAF8544C19E0F3D200A347CF /* img-hexagon_skill-bg-locked.png in Resources */,
+				CA6B87301A1B2D1300763BE0 /* close@2x.png in Resources */,
 				CAF8536F19E0F3D200A347CF /* img-skill_icon-en-vi_cau_hoi-locked_big@2x.png in Resources */,
 				CAF855ED19E0F82700A347CF /* img-skill_icon-en-vi_dai_tu_khach_quan-unlocked.png in Resources */,
 				CADDB9A61A034DFD00642B6E /* MMNotificationSettingsCell.xib in Resources */,
@@ -4163,6 +4260,7 @@
 				CAA5082D1A049F030097CD13 /* img-ant_loading-1.png in Resources */,
 				CAF856A319E0F82700A347CF /* img-skill_icon-en-vi_tu_vung_truu_tuong_2-locked.png in Resources */,
 				CAF8569919E0F82700A347CF /* img-skill_icon-en-vi_tu_han_dinh-unlocked.png in Resources */,
+				CA6B87311A1B2D1300763BE0 /* modalButton-selected.png in Resources */,
 				CAF853D819E0F3D200A347CF /* img-skill_icon-en-vi_gia_dinh-unlocked_big.png in Resources */,
 				CAF8531019E0F3D200A347CF /* img-home-buttons-bg.png in Resources */,
 				CAF855DE19E0F82700A347CF /* img-skill_icon-en-vi_co_ban_1-unlocked@2x.png in Resources */,
@@ -4183,6 +4281,7 @@
 				CAF8544219E0F3D200A347CF /* img-skill_icon-en-vi_y_te-locked_big.png in Resources */,
 				CAF854BB19E0F3D200A347CF /* MMShopItemCell.xib in Resources */,
 				CAF8531819E0F3D200A347CF /* img-beginning_options-bg.png in Resources */,
+				CA6B87341A1B2D1300763BE0 /* modalButton@2x.png in Resources */,
 				CAF8538019E0F3D200A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked_big.png in Resources */,
 				CAF8562219E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_qua_khu_hoan_thanh-unlocked@2x.png in Resources */,
 				CAF8562A19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_tuong_lai_don-unlocked@2x.png in Resources */,
@@ -4277,6 +4376,7 @@
 				CAF854D519E0F3D200A347CF /* MMProfileViewController.m in Sources */,
 				CAF854D319E0F3D200A347CF /* MMProfileLeaderboardCell.m in Sources */,
 				CAF854A919E0F3D200A347CF /* MMLessonsListViewController.m in Sources */,
+				CA6B873C1A1B370600763BE0 /* MMVoucherPagePopup.m in Sources */,
 				CAF8548319E0F3D200A347CF /* MMCongratsViewController.m in Sources */,
 				CAF854C619E0F3D200A347CF /* MMSkillView.m in Sources */,
 				CAF854A319E0F3D200A347CF /* MMSelectQuestionContentView.m in Sources */,
@@ -4285,6 +4385,7 @@
 				CAF8548119E0F3D200A347CF /* MMBeginPlacementTestViewController.m in Sources */,
 				CAF852E219E0F3D200A347CF /* MNameQuestion.m in Sources */,
 				CAF852DE19E0F3D200A347CF /* MBaseQuestion.m in Sources */,
+				CA6B87361A1B2D1300763BE0 /* UATitledModalPanel.m in Sources */,
 				CAF8547519E0F3D200A347CF /* MMCourseSelectionCell.m in Sources */,
 				CAF8547B19E0F3D200A347CF /* MMHomeViewController.m in Sources */,
 				CAF8549219E0F3D200A347CF /* MMSortQuestionAnswerTokenButton.m in Sources */,
@@ -4306,6 +4407,7 @@
 				CAF854AC19E0F3D200A347CF /* MMHexagonLessonView.m in Sources */,
 				CA8C976219F574C400E639E9 /* MMWordDefinitionsView.m in Sources */,
 				CAF852DC19E0F3D200A347CF /* MSkill.m in Sources */,
+				CA6B87371A1B2D1300763BE0 /* UAGradientBackground.m in Sources */,
 				CAA91C7219E679510076A9BC /* MLeaderboardData.m in Sources */,
 				CAF852E319E0F3D200A347CF /* MSelectQuestion.m in Sources */,
 				CAF852C819E0F3D200A347CF /* NSObject+ObjectMapping.m in Sources */,
@@ -4344,11 +4446,14 @@
 				CAD6DDD61A19EE1B0034070C /* MMAdsBannerCell.m in Sources */,
 				CAF8548C19E0F3D200A347CF /* MMMoneyBonusViewController.m in Sources */,
 				CAF8548819E0F3D200A347CF /* MMFinishLessonViewController.m in Sources */,
+				CA6B872E1A1B2D1300763BE0 /* UIView+JMNoise.m in Sources */,
 				CAF852CA19E0F3D200A347CF /* NSString+StringHelpers.m in Sources */,
 				CA1AD1FE1A175EBF0050C88D /* MCrossSale.m in Sources */,
 				CAA91C9E19E783770076A9BC /* MFriend.m in Sources */,
 				CAF852C419E0F3D200A347CF /* MMAllowsTouchUnderneathView.m in Sources */,
 				CAF852DF19E0F3D200A347CF /* MSortQuestion.m in Sources */,
+				CA6B87381A1B2D1300763BE0 /* UANoisyGradientBackground.m in Sources */,
+				CA6B87351A1B2D1300763BE0 /* UAModalPanel.m in Sources */,
 				CAF8548A19E0F3D200A347CF /* MMFinishSkillViewController.m in Sources */,
 				CA452E3A19ED595200A5F5CB /* NSError+ErrorHelpers.m in Sources */,
 				CA8C974B19F502CA00E639E9 /* MWord.m in Sources */,
@@ -4359,6 +4464,7 @@
 				CAF854CB19E0F3D200A347CF /* MMHexagonSkillView.m in Sources */,
 				CAF852D219E0F3D200A347CF /* NSString+JavaSubstring.m in Sources */,
 				CAF854C319E0F3D200A347CF /* MMSkillCell.m in Sources */,
+				CA6B87391A1B2D1300763BE0 /* UARoundedRectView.m in Sources */,
 				CAF854B419E0F3D200A347CF /* MMSetGoalViewController.m in Sources */,
 				CAF852D519E0F3D200A347CF /* ISpeechSDK+Compatibility.m in Sources */,
 				CAF854D919E0F3D200A347CF /* MMShareViewController.m in Sources */,

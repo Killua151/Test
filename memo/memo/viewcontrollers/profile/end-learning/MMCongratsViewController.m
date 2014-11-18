@@ -10,6 +10,7 @@
 #import "MMFinishSkillViewController.h"
 #import "MMSkillsListViewController.h"
 #import "MMShareActionSheet.h"
+#import "MMVoucherPagePopup.h"
 #import "MUser.h"
 #import "MAdsConfig.h"
 
@@ -122,7 +123,8 @@
 
 - (IBAction)btnGetVoucherPressed:(UIButton *)sender {
   MAdsConfig *adsConfig = _adsConfigsData[kValueAdsPositionYes];
-  DLog(@"%@", adsConfig.url);
+  MMVoucherPagePopup *modalPanel = [[MMVoucherPagePopup alloc] initWithAds:adsConfig];
+  [modalPanel showFromPoint:[sender center]];
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {

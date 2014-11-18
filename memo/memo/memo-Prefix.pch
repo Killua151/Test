@@ -35,6 +35,7 @@
   #import "UIImage+ImageHelpers.h"
   #import "UILabel+LabelHelpers.h"
   #import "UIView+ExtendedToast.h"
+  #import "UAModalPanel.h"
 
   #import "LocalizationHelper.h"
   #import "MMAllowsTouchOutsideView.h"
