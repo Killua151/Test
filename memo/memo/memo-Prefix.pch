@@ -119,7 +119,7 @@ return; \
 #define kTestQuickExam                          false
 #define kTestPushNotification                   false
 #define kTestModeNoAnalytics                    true
-#define kTestVoucherAds                         true
+#define kTestVoucherAds                         false
 #define kTestQuestionType                       nil
 
 #define kFacebookAppID                          @"856714854352716"

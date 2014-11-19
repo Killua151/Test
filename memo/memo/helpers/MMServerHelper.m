@@ -201,7 +201,10 @@
    POST:@"users"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     handler([responseObject objectFromJSONData], nil);
+     NSDictionary *userData = [responseObject objectFromJSONData];
+     [Utils updateSavedUserWithAttributes:userData];
+     [MUser loadCurrentUserFromUserDef];
+     handler(userData, nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
