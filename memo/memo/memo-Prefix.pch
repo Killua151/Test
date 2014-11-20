@@ -77,7 +77,7 @@ return; \
 
 #define kBuildMarketApple                       @"Apple"
 #define kBuildMarketAppota                      @"Appota"
-#define kBuildCurrentMarket                     kBuildMarketAppota
+#define kBuildCurrentMarket                     kBuildMarketApple
 
 #define kServerDefaultUrl                       @"http://api.memo.edu.vn/api"
 //#define kServerDefaultUrl                       @"http://localhost:8888/memo/memo/api"
@@ -118,8 +118,8 @@ return; \
 #define kTestTranslateQuestions                 false
 #define kTestQuickExam                          false
 #define kTestPushNotification                   false
-#define kTestModeNoAnalytics                    true
-#define kTestNotCrossSaleAds                    true
+#define kTestModeNoAnalytics                    false
+#define kTestNotCrossSaleAds                    false
 #define kTestVoucherAds                         false
 #define kTestQuestionType                       nil
 
