@@ -143,6 +143,9 @@
    username:_txtUsername.text
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
+     if (error == nil && userData[kParamEmail] != nil && [userData[kParamEmail] isKindOfClass:[NSString class]])
+       [[MMServerHelper defaultHelper] sendWelcomeEmail:userData[kParamEmail]];
+     
      [self handleLoginResponseWithUserData:userData orError:error];
    }];
 }

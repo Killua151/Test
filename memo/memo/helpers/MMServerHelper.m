@@ -89,10 +89,12 @@
    GET:@"ads"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+#if !kTestNotCrossSaleAds
      [[MCrossSale sharedModel] loadRunningAds:responseObject];
+#endif
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     DLog(@"%@", error);
+//     DLog(@"%@", error);
    }];
 }
 
@@ -211,6 +213,11 @@
        handler(nil, error);
      }];
    }];
+}
+
+- (void)sendWelcomeEmail:(NSString *)email {
+  NSDictionary *params = @{kParamEmail : [NSString normalizedString:email]};
+  [self POST:@"users/welcome_email" parameters:params success:NULL failure:NULL];
 }
 
 - (void)forgetPasswordForEmail:(NSString *)email completion:(void (^)(NSError *))handler {

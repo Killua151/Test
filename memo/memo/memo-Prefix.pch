@@ -119,6 +119,7 @@ return; \
 #define kTestQuickExam                          false
 #define kTestPushNotification                   false
 #define kTestModeNoAnalytics                    true
+#define kTestNotCrossSaleAds                    true
 #define kTestVoucherAds                         false
 #define kTestQuestionType                       nil
 
