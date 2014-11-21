@@ -111,6 +111,7 @@ return; \
 #define kHexagonThemeDisplayMode                true
 #define kTempDisableForClosedBeta               true
 #define kClosedBetaErrorFeedbackMode            true
+#define kTestModeNoAnalytics                    false
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             false
@@ -118,10 +119,10 @@ return; \
 #define kTestTranslateQuestions                 false
 #define kTestQuickExam                          false
 #define kTestPushNotification                   false
-#define kTestModeNoAnalytics                    false
+#define kTestQuestionType                       nil
+
 #define kTestNotCrossSaleAds                    false
 #define kTestVoucherAds                         false
-#define kTestQuestionType                       nil
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
