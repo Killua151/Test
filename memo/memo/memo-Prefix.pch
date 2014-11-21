@@ -77,7 +77,7 @@ return; \
 
 #define kBuildMarketApple                       @"Apple"
 #define kBuildMarketAppota                      @"Appota"
-#define kBuildCurrentMarket                     kBuildMarketApple
+#define kBuildCurrentMarket                     kBuildMarketAppota
 
 #define kServerDefaultUrl                       @"http://api.memo.edu.vn/api"
 //#define kServerDefaultUrl                       @"http://localhost:8888/memo/memo/api"
