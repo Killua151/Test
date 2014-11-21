@@ -51,6 +51,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [Utils setupAnalyticsForCurrentUser];
   [Utils logAnalyticsForUserLoggedIn];
   
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];

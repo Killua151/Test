@@ -133,8 +133,10 @@ static UIView *_sharedToast = nil;
   if ([MUser currentUser]._id == nil)
     return;
   
-  [[Mixpanel sharedInstance] identify:[MUser currentUser]._id];
-  [[Mixpanel sharedInstance].people set:[[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+  Mixpanel *mixpanel = [Mixpanel sharedInstance];
+  [mixpanel identify:[MUser currentUser]._id];
+  [mixpanel createAlias:[MUser currentUser]._id forDistinctID:mixpanel.distinctId];
+  [mixpanel.people set:[[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
 }
 
 + (void)logAnalyticsForAppLaunched {
@@ -372,7 +374,7 @@ static UIView *_sharedToast = nil;
       savedUser[key] = obj;
   }];
   
-  if (savedUser[kParamName] == nil && savedUser[kParamUsername] != nil)
+  if ((savedUser[kParamName] == nil || [savedUser[kParamName] isEqualToString:@""]) && savedUser[kParamUsername] != nil)
     savedUser[kParamName] = savedUser[kParamUsername];
   
   [userDefaults setObject:[NSDictionary dictionaryWithDictionary:savedUser] forKey:kUserDefSavedUser];
