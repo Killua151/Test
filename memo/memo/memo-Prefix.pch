@@ -125,7 +125,8 @@ return; \
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
-#define kGAITrackingID                          @"UA-49527418-2"
+//#define kGAITrackingID                          @"UA-49527418-2"
+#define kGAITrackingID                          @"UA-49527418-3"
 #define kGoogleSignInKey                        @"968128090898-9i81a3te3em0t4f0s74ct4lluvj3tqnq.apps.googleusercontent.com"
 //#define kGoogleSignInKey                        @"76466559980-e77rmjonj38929p9lnadvt6b1rlckbol.apps.googleusercontent.com"
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
