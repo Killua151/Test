@@ -89,9 +89,7 @@
    GET:@"ads"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-#if !kTestNotCrossSaleAds
      [[MCrossSale sharedModel] loadRunningAds:responseObject];
-#endif
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //     DLog(@"%@", error);
@@ -712,7 +710,8 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:NULL];
+     [self handleFailedOperation:operation withError:error fallback:^{
+     }];
    }];
 }
 

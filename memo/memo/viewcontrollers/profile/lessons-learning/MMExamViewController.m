@@ -237,7 +237,9 @@
   [_userFeedbacks addObject:@{
                               kParamQuestionLogId : question.question_log_id,
                               kParamUserAnswer : userAnswer,
-                              kParamAutoFeedback : @(YES)
+                              kParamAutoFeedback : @(YES),
+                              kParamUserNote : @"",
+                              kParamFeedbackTypeIds : @[]
                               }];
 }
 
@@ -270,10 +272,6 @@
     [Utils playSoundEffect:kValueSoundEffectFail];
     
     [[MMServerHelper defaultHelper] submitFeedbacks:_userFeedbacks];
-    
-//    [[MMServerHelper sharedHelper] finishExamWithMetadata:_metadata
-//                                               andResults:_answersData
-//                                               completion:^(NSError *error) {}];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;

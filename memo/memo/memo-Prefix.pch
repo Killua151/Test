@@ -111,7 +111,7 @@ return; \
 #define kHexagonThemeDisplayMode                true
 #define kTempDisableForClosedBeta               true
 #define kClosedBetaErrorFeedbackMode            true
-#define kTestModeNoAnalytics                    false
+#define kTestModeNoAnalytics                    true
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             false
@@ -121,8 +121,7 @@ return; \
 #define kTestPushNotification                   false
 #define kTestQuestionType                       nil
 
-#define kTestNotCrossSaleAds                    false
-#define kTestVoucherAds                         false
+#define kTestVoucherAds                         true
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
@@ -178,6 +177,7 @@ return; \
 #define kParamFbId                              @"fb_Id"
 #define kParamFbName                            @"fb_name"
 #define kParamFeedbacks                         @"feedbacks"
+#define kParamFeedbackTypeIds                   @"feedback_type_ids"
 #define kParamFinishExamBonusExp                @"finish_exam_bonus_exp"
 #define kParamFinished                          @"finished"
 #define kParamFriendId                          @"friend_id"
@@ -222,6 +222,7 @@ return; \
 #define kParamUserInfo                          @"user_info"
 #define kParamUserId                            @"user_id"
 #define kParamUsername                          @"username"
+#define kParamUserNote                          @"user_note"
 #define kParamVersion                           @"version"
 #define kParamVirtualMoney                      @"virtual_money"
 #define kParamWord                              @"word"
