@@ -93,7 +93,7 @@
 - (void)reloadContents {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] getProfileDetails:_userId completion:^(MUser *user, NSError *error) {
+  [[MMServerHelper apiHelper] getProfileDetails:_userId completion:^(MUser *user, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -119,21 +119,16 @@
 }
 
 - (IBAction)btnStreakPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"profile combo"];
 }
 
 - (IBAction)btnMoneyPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"profile memo coin"];
 }
 
 - (IBAction)btnInteractionPressed:(UIButton *)sender {
   [self toggleFriendInteractionButton];
   
-  [Utils logAnalyticsForButton:(sender.selected ? @"friend profile follow" : @"friend profile unfollow")
-                 andProperties:@{kParamFriendId : [NSString normalizedString:_userId]}];
-  
   ShowHudForCurrentView();
-  [[MMServerHelper defaultHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] interactFriend:_userId toFollow:sender.selected completion:^(NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil)
@@ -289,31 +284,27 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 #pragma mark - UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 0) {
-    [Utils logAnalyticsForButton:@"find friends"];
     [self presentViewController:[MMFindFriendsViewController new] animated:YES completion:NULL];
     return;
   }
   
   if (buttonIndex == 1) {
-    [Utils logAnalyticsForButton:@"invite by email"];
     [self showEmailInviteDialog];
     return;
   }
   
   if (buttonIndex == 2) {
-    [Utils logAnalyticsForButton:@"find Facebook friends"];
     [Utils logInFacebookFromView:self.view completion:^(NSDictionary *userData, NSError *error) {
       ShowAlertWithError(error);
       
       ShowHudForCurrentView();
       
-      [[MMServerHelper defaultHelper]
+      [[MMServerHelper apiHelper]
        findFacebookFriends:userData[kParamFbAccessToken]
        completion:^(NSArray *results, NSError *error) {
          HideHudForCurrentView();
@@ -356,7 +347,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
+  [[MMServerHelper apiHelper] inviteFriendByEmail:emailField.text completion:^(NSString *message, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     [UIAlertView showWithTitle:nil andMessage:message];

@@ -37,14 +37,12 @@
 }
 
 - (IBAction)btnSubmitPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"forgot password"];
-  
   if (![self validateFields])
     return;
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] forgetPasswordForEmail:_txtEmail.text completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] forgetPasswordForEmail:_txtEmail.text completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -55,7 +53,6 @@
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  [Utils logAnalyticsForFocusTextField:@"forgot password email"];
   [self gestureLayerDidEnterEditingMode];
 }
 

@@ -49,7 +49,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] getCourses:^(NSArray *courses, NSError *error) {
+  [[MMServerHelper apiHelper] getCourses:^(NSArray *courses, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -87,11 +87,9 @@
   if (!course.enabled)
     return;
   
-  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"course %@", course.name]];
-  
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] selectCourse:course._id completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] selectCourse:course._id completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     

@@ -77,12 +77,21 @@ return; \
 
 #define kBuildMarketApple                       @"Apple"
 #define kBuildMarketAppota                      @"Appota"
-#define kBuildCurrentMarket                     kBuildMarketAppota
+#define kBuildMarketAppsync                     @"Appsync"
+#define kBuildCurrentMarket                     kBuildMarketAppsync
 
-#define kServerDefaultUrl                       @"http://api.memo.edu.vn/api"
-//#define kServerDefaultUrl                       @"http://localhost:8888/memo/memo/api"
-#define kServerCrossSaleUrl                     @"http://admin.memo.edu.vn/cross_sale"
-//#define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale/"
+#define kProductionEnvironment                  true
+
+#if kProductionEnvironment
+  #define kServerApiUrl                           @"http://api.memo.edu.vn/api"
+  #define kServerCrossSaleUrl                     @"http://admin.memo.edu.vn/cross_sale"
+  #define kServerTrackingsUrl                     @"http://admin.memo.edu.vn/trackings"
+#else
+  #define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
+  #define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale"
+  #define kServerTrackingsUrl                     @"http://localhost:3000/trackings"
+#endif
+
 #define kServerApiVersion                       @"v1.4"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
@@ -111,7 +120,7 @@ return; \
 #define kHexagonThemeDisplayMode                true
 #define kTempDisableForClosedBeta               true
 #define kClosedBetaErrorFeedbackMode            true
-#define kTestModeNoAnalytics                    true
+#define kTestModeNoAnalytics                    false
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             false
@@ -128,10 +137,10 @@ return; \
 //#define kGAITrackingID                          @"UA-49527418-2"
 #define kGAITrackingID                          @"UA-49527418-3"
 #define kGoogleSignInKey                        @"968128090898-9i81a3te3em0t4f0s74ct4lluvj3tqnq.apps.googleusercontent.com"
-//#define kGoogleSignInKey                        @"76466559980-e77rmjonj38929p9lnadvt6b1rlckbol.apps.googleusercontent.com"
 //#define kiSpeechApiKey                          @"5e9b1cbb369c8167f5723f22dafdf594"
 #define kiSpeechApiKey                          @"3023d34c2451d4502a8c85f5d4cbabff"
 #define kMixPanelToken                          @"067076d37e3b2608d1c7668122fd4bcc"
+//#define kMixPanelToken                          @"5a538e7b842c86d185dbdabed037fce7"
 #define kItunesStoreID                          @"932238745"
 #define kAppsFlyerDevKey                        @"taryfaZ99f6VQ2kt5x38xV"
 #define kParseApplicationId                     @"2DTkEScw7lE6qlIx9nnrIr9LSXmBOWLTxwJaQwi8"
@@ -172,6 +181,7 @@ return; \
 #define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
 #define kParamError                             @"error"
+#define kParamEventName                         @"event_name"
 #define kParamExamToken                         @"exam_token"
 #define kParamExpChart                          @"exp_chart"
 #define kParamFbAccessToken                     @"fb_access_token"
@@ -187,6 +197,7 @@ return; \
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
 #define kParamIsTrial                           @"is_trial"
+#define kParamIsNewlySignUp                     @"is_newly_sign_up"
 #define kParamItems                             @"items"
 #define kParamKeywords                          @"keywords"
 #define kParamLessonNumber                      @"lesson_number"
@@ -219,6 +230,7 @@ return; \
 #define kParamTotalNumQuestions                 @"total_num_questions"
 #define kParamType                              @"type"
 #define kParamUnderlineRanges                   @"underline_ranges"
+#define kParamUniqueId                          @"unique_id"
 #define kParamUserAnswer                        @"user_answer"
 #define kParamUserInfo                          @"user_info"
 #define kParamUserId                            @"user_id"
@@ -229,6 +241,29 @@ return; \
 #define kParamWord                              @"word"
 #define kParamWordRange                         @"word_range"
 #define kParamWords                             @"words"
+
+#define kValueCurrentDevice                     @"ios"
+
+#define kValueExamTypeCheckpoint                @"checkpoint"
+#define kValueExamTypeLesson                    @"lesson"
+#define kValueExamTypeShortcut                  @"shortcut"
+#define kValueExamTypeStrengthenAll             @"strengthen_all"
+#define kValueExamTypeStrengthenSkill           @"strengthen_skill"
+#define kValueExamTypePlacementTest             @"placement_test"
+
+#define kValuePushNotificationTypeFollow        @"follow"
+
+#define kValueSoundEffectCorrect                @"correct"
+#define kValueSoundEffectFail                   @"fail"
+#define kValueSoundEffectFinish                 @"finish"
+#define kValueSoundEffectHeartLost              @"heart_lost"
+#define kValueSoundEffectLost                   @"lost"
+
+#define kValueSupportEmail                      @"memoapp.topica@gmail.com"
+
+#define kItemHealthPotionId                     @"health_potion"
+
+#define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"
 
 // Cross sale ads v1.0
 #define kValueAdsDisplayTypeBanner              @"banner"
@@ -247,24 +282,12 @@ return; \
 #define kValueAdsPositionCheckpoint3            @"ios_checkpoint_3"
 #define kValueAdsPositionCheckpoint4            @"ios_checkpoint_4"
 
-#define kValueCurrentDevice                     @"ios"
-
-#define kValueExamTypeCheckpoint                @"checkpoint"
-#define kValueExamTypeLesson                    @"lesson"
-#define kValueExamTypeShortcut                  @"shortcut"
-#define kValueExamTypeStrengthenAll             @"strengthen_all"
-#define kValueExamTypeStrengthenSkill           @"strengthen_skill"
-
-#define kValuePushNotificationTypeFollow        @"follow"
-
-#define kValueSoundEffectCorrect                @"correct"
-#define kValueSoundEffectFail                   @"fail"
-#define kValueSoundEffectFinish                 @"finish"
-#define kValueSoundEffectHeartLost              @"heart_lost"
-#define kValueSoundEffectLost                   @"lost"
-
-#define kValueSupportEmail                      @"memoapp.topica@gmail.com"
-
-#define kItemHealthPotionId                     @"health_potion"
-
-#define kNotificationReloadProfile              @"vn.topica.memo:ReloadProfileNotification"
+// Trackings
+#define kValueTrackingsEventSignUp              @"sign up"
+#define kValueTrackingsEventLogin               @"login"
+#define kValueTrackingsEventSkillsTree          @"skills tree"
+#define kValueTrackingsEventLessonsList         @"lessons list"
+#define kValueTrackingsEventStartExam           @"start exam "
+#define kValueTrackingsEventFinishExam          @"finish exam "
+#define kValueTrackingsEventFailExam            @"fail exam "
+#define kValueTrackingsEventQuitExam            @"quit exam "

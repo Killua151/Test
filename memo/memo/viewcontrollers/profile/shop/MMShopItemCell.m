@@ -61,8 +61,6 @@
 }
 
 - (IBAction)btnPricePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"plaza buy %@", _itemData.name]];
-  
   if (!_itemData.can_buy) {
     [Utils showToastWithMessage:_itemData.can_not_buy_message];
     return;

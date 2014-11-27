@@ -42,7 +42,6 @@
 }
 
 - (IBAction)btnClosePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"quit find friends"];
   [self dismissViewController];
 }
 
@@ -102,7 +101,6 @@
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  [Utils logAnalyticsForFocusTextField:@"find friends"];
   [self gestureLayerDidEnterEditingMode];
 }
 
@@ -118,13 +116,10 @@
   MFriend *friend = _friendsData[index];
   friend.is_following = !friend.is_following;
   [_tblFriends reloadData];
-  
-  [Utils logAnalyticsForButton:(follow ? @"follow friend" : @"unfollow friend")
-                 andProperties:@{kParamFriendId : [NSString normalizedString:userId]}];
 
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] interactFriend:friend.user_id toFollow:follow completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] interactFriend:friend.user_id toFollow:follow completion:^(NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil) {
@@ -156,7 +151,7 @@
 - (void)searchFriends {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
+  [[MMServerHelper apiHelper] searchFriends:_txtSearchFriends.text completion:^(NSArray *results, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     

@@ -61,7 +61,7 @@
 - (IBAction)btnStartPressed:(UIButton *)sender {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    startPlacementTest:^(NSString *examToken,
                         MBaseQuestion *question,
                         NSInteger questionNumber,
@@ -73,6 +73,7 @@
      MMPlacementTestViewController *placementTestVC =
      [[MMPlacementTestViewController alloc] initWithQuestions:@[question]
                                                   andMetadata:@{
+                                                                kParamType : kValueExamTypePlacementTest,
                                                                 kParamExamToken : [NSString normalizedString:examToken],
                                                                 kParamQuestionNumber : @(questionNumber),
                                                                 kParamTotalQuestions : @(totalQuestions)

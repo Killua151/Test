@@ -12,14 +12,11 @@
 
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
++ (instancetype)apiHelper;
 + (instancetype)crossSaleHelper;
-+ (instancetype)defaultHelper;
++ (instancetype)trackingsHelper;
 
-#pragma mark - Cross sale methods
-- (void)getAllAdsConfigs;
-- (void)getRunningAds;
-
-#pragma mark - Default methods
+#pragma mark - API methods
 - (void)logInWithUsername:(NSString *)username
                  password:(NSString *)password
                completion:(void(^)(NSDictionary *userData, NSError *error))handler;
@@ -137,5 +134,12 @@
 
 - (void)updateApnsToken;
 - (void)registerDeviceTokenForAPNS;
+
+#pragma mark - Cross sale methods
+- (void)getAllAdsConfigs;
+- (void)getRunningAds;
+
+#pragma mark - Trackings methods
+- (void)trackEvent:(NSString *)eventName;
 
 @end

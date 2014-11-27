@@ -85,6 +85,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [Utils logAnalyticsForEvent:kValueTrackingsEventStartExam onExamType:_metadata[kParamType]];
+  
   [self resetCounts];
   [self setupViews];
   [self reloadContents];
@@ -102,7 +104,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
   [Utils removePreDownloadedAudioWithOriginalUrls:[MBaseQuestion audioUrlsFromQuestions:_questionsData]];
-  [[MMServerHelper defaultHelper] submitViewedWords:_viewedWords];
+  [[MMServerHelper apiHelper] submitViewedWords:_viewedWords];
 }
 
 - (void)reloadContents {
@@ -131,11 +133,7 @@
     
     if (_metadata[kParamQuestionNumber] != nil)
       questionNumber = [_metadata[kParamQuestionNumber] integerValue];
-      
-    [Utils logAnalyticsForButton:buttonEvent andProperties:@{kParamQuestionNumber : @(questionNumber)}];
-  } else
-    [Utils logAnalyticsForButton:buttonEvent andProperties:@{kParamQuestionNumber : @(_currentQuestionIndex)}];
-  
+  }
   
   [UIAlertView
    showWithTitle:MMLocalizedString(@"Warning!")
@@ -147,6 +145,7 @@
        return;
      
      [self dismissViewController];
+     [Utils logAnalyticsForEvent:kValueTrackingsEventQuitExam onExamType:_metadata[kParamType]];
    }];
 }
 
@@ -162,7 +161,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] useItem:kItemHealthPotionId completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] useItem:kItemHealthPotionId completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -271,11 +270,12 @@
   if (_currentHeartsCount < 0) {
     [Utils playSoundEffect:kValueSoundEffectFail];
     
-    [[MMServerHelper defaultHelper] submitFeedbacks:_userFeedbacks];
+    [[MMServerHelper apiHelper] submitFeedbacks:_userFeedbacks];
     
     MMFailLessonViewController *failLessonVC = [MMFailLessonViewController new];
     failLessonVC.delegate = self;
     [self presentViewController:failLessonVC animated:YES completion:NULL];
+    [Utils logAnalyticsForEvent:kValueTrackingsEventFailExam onExamType:_metadata[kParamType]];
     return;
   }
 
@@ -283,17 +283,18 @@
   if (_currentQuestionIndex >= _totalQuestionsCount) {
     [Utils playSoundEffect:kValueSoundEffectFinish];
     
-    [[MMServerHelper defaultHelper] submitFeedbacks:_userFeedbacks];
+    [[MMServerHelper apiHelper] submitFeedbacks:_userFeedbacks];
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper defaultHelper]
+    [[MMServerHelper apiHelper]
      finishExamWithMetadata:_metadata
      andResults:_answersData
      completion:^(NSError *error) {
        HideHudForCurrentView();
        ShowAlertWithError(error);
        [self presentViewController:[MMFinishLessonViewController navigationController] animated:YES completion:NULL];
+       [Utils logAnalyticsForEvent:kValueTrackingsEventFinishExam onExamType:_metadata[kParamType]];
      }];
     
     return;
@@ -399,18 +400,18 @@
   ShowHudForCurrentView();
   
   if ([_metadata[kParamType] isEqualToString:kValueExamTypeLesson])
-    [[MMServerHelper defaultHelper] startLesson:[_metadata[kParamLessonNumber] integerValue]
+    [[MMServerHelper apiHelper] startLesson:[_metadata[kParamLessonNumber] integerValue]
                                        inSkill:_metadata[kParamSkillId]
                                     completion:completionHandler];
   else if ([_metadata[kParamType] isEqualToString:kValueExamTypeShortcut])
-    [[MMServerHelper defaultHelper] startShortcutTest:_metadata[kParamSkillId] completion:completionHandler];
+    [[MMServerHelper apiHelper] startShortcutTest:_metadata[kParamSkillId] completion:completionHandler];
   else if ([_metadata[kParamType] isEqualToString:kValueExamTypeStrengthenSkill])
-    [[MMServerHelper defaultHelper] startStrengthenSkill:_metadata[kParamSkillId] completion:completionHandler];
+    [[MMServerHelper apiHelper] startStrengthenSkill:_metadata[kParamSkillId] completion:completionHandler];
   else if ([_metadata[kParamType] isEqualToString:kValueExamTypeCheckpoint])
-    [[MMServerHelper defaultHelper] startCheckpointTestAtPosition:[_metadata[kParamCheckpointPosition] integerValue]
+    [[MMServerHelper apiHelper] startCheckpointTestAtPosition:[_metadata[kParamCheckpointPosition] integerValue]
                                                       completion:completionHandler];
   else if ([_metadata[kParamType] isEqualToString:kValueExamTypeStrengthenAll])
-    [[MMServerHelper defaultHelper] startStrengthenAll:completionHandler];
+    [[MMServerHelper apiHelper] startStrengthenAll:completionHandler];
 }
 
 - (void)userDidViewWord:(NSString *)wordId {

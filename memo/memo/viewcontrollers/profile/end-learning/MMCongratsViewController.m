@@ -128,7 +128,6 @@
 }
 
 - (IBAction)btnSharePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"share Facebook congrats screen"];
   [_vShare show];
 }
 

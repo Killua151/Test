@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setupGestureLayer];
-  [Utils logAnalyticsForScreen:NSStringFromClass([self class])];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,14 +46,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  
   self.screenName = [NSString stringWithFormat:@"iOS screen %@", NSStringFromClass([self class])];
-  [Utils logAnalyticsForOnScreenStartTime:NSStringFromClass([self class])];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-  [super viewWillDisappear:animated];
-  [Utils logAnalyticsForOnScreenEndTime:NSStringFromClass([self class])];
 }
 
 - (void)presentViewController:(UIViewController *)viewController animated:(BOOL)flag completion:(void (^)(void))completion {

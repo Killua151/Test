@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self reloadContents];
+  
+  [Utils logAnalyticsForEvent:kValueTrackingsEventLessonsList];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,7 +62,7 @@
 - (void)shortcutTest {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    startShortcutTest:_skillData._id
    completion:^(NSString *examToken,
                 NSInteger maxHeartsCount,

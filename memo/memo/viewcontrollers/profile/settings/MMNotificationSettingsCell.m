@@ -36,10 +36,6 @@
 }
 
 - (IBAction)btnPushNotifcationPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:
-   [NSString stringWithFormat:@"settings push notification %@ %@",
-    sender.selected ? @"disable" : @"enable", _settingsData.notification_title]];
-  
   sender.selected = !sender.selected;
   
   _settingsData.push_notification_enabled = sender.selected;
@@ -48,10 +44,6 @@
 }
 
 - (IBAction)btnEmailNotificationPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:
-   [NSString stringWithFormat:@"settings email notification %@ %@",
-    sender.selected ? @"disable" : @"enable", _settingsData.notification_title]];
-  
   sender.selected = !sender.selected;
   _settingsData.email_notification_enabled = sender.selected;
   
@@ -63,7 +55,7 @@
   UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
   [Utils showAntLoadingForView:topWindow];
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    updateNotificationSettings:_settingsData._id
    withKey:settingsKey
    andValue:button.selected

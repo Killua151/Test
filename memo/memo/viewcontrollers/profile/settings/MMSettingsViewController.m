@@ -105,7 +105,7 @@
 - (IBAction)btnLogoutPressed:(UIButton *)sender {
   ShowHudForCurrentView();
 
-  [[MMServerHelper defaultHelper] logout:^(NSError *error) {
+  [[MMServerHelper apiHelper] logout:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -255,10 +255,6 @@
     return 0;
   
   return [MMSettingsHeaderView heightToFithWithData:_sectionsData[section]];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 #pragma mark - UITextFieldDelegate methods
@@ -419,7 +415,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] updateProfile:_userInfo completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] updateProfile:_userInfo completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -478,8 +474,6 @@
 }
 
 - (void)toggleLocalSavedSettings:(NSString *)settingsKey {
-  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"settings toggle %@", settingsKey]];
-  
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
   if ([userDefaults objectForKey:settingsKey] == nil)
@@ -492,8 +486,6 @@
 }
 
 - (void)linkFacebook {
-  [Utils logAnalyticsForButton:@"settings link Facebook"];
-  
   [_swtFacebook setOn:YES animated:YES shouldCallback:NO];
   
   [Utils logInFacebookFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
@@ -501,7 +493,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper defaultHelper]
+    [[MMServerHelper apiHelper]
      linkFacebookWithFacebookId:userData[kParamFbId]
      accessToken:userData[kParamFbAccessToken]
      completion:^(NSError *error) {
@@ -518,8 +510,6 @@
 }
 
 - (void)unlinkFacebook {
-  [Utils logAnalyticsForButton:@"settings unlink Facebook"];
-  
   [_swtFacebook setOn:NO animated:YES shouldCallback:NO];
   
   [Utils logOutFacebookWithCompletion:^(NSError *error) {
@@ -527,7 +517,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper defaultHelper] unlinkFacebook:^(NSError *error) {
+    [[MMServerHelper apiHelper] unlinkFacebook:^(NSError *error) {
       HideHudForCurrentView();
       
       if (error != nil)
@@ -541,8 +531,6 @@
 }
 
 - (void)linkGoogle {
-  [Utils logAnalyticsForButton:@"settings link Google+"];
-  
   [_swtGooglePlus setOn:YES animated:YES shouldCallback:NO];
   
   [Utils logInGoogleFromView:self.navigationController.view completion:^(NSDictionary *userData, NSError *error) {
@@ -550,7 +538,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper defaultHelper]
+    [[MMServerHelper apiHelper]
      linkGoogleWithGmail:userData[kParamGmail]
      accessToken:userData[kParamGAccessToken]
      completion:^(NSError *error) {
@@ -567,8 +555,6 @@
 }
 
 - (void)unlinkGoogle {
-  [Utils logAnalyticsForButton:@"settings unlink Google+"];
-  
   [_swtGooglePlus setOn:NO animated:YES shouldCallback:NO];
   
   [Utils logOutGoogleWithCompletion:^(NSError *error) {
@@ -576,7 +562,7 @@
     
     ShowHudForCurrentView();
     
-    [[MMServerHelper defaultHelper] unlinkGoogle:^(NSError *error) {
+    [[MMServerHelper apiHelper] unlinkGoogle:^(NSError *error) {
       HideHudForCurrentView();
       
       if (error != nil)

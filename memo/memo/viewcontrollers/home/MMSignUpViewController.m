@@ -128,8 +128,6 @@
 }
 
 - (IBAction)btnSignUpPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"sign up"];
-  
   if (![self validateFields])
     return;
   
@@ -137,42 +135,29 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    signUpWithFullName:_txtFullName.text
    email:_txtEmail.text
    username:_txtUsername.text
    password:_txtPassword.text
    completion:^(NSDictionary *userData, NSError *error) {
      if (error == nil && userData[kParamEmail] != nil && [userData[kParamEmail] isKindOfClass:[NSString class]])
-       [[MMServerHelper defaultHelper] sendWelcomeEmail:userData[kParamEmail]];
+       [[MMServerHelper apiHelper] sendWelcomeEmail:userData[kParamEmail]];
      
      [self handleLoginResponseWithUserData:userData orError:error];
    }];
 }
 
 - (IBAction)btnFacebookPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"sign up with Facebook"];
   [self loginWithFacebook];
 }
 
 - (IBAction)btnGooglePressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"sign up with Google+"];
   [self loginWithGoogle];
 }
 
 #pragma mark - UITextFieldDelegate methods
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  if (textField == _txtFullName)
-    [Utils logAnalyticsForFocusTextField:@"sign up full name"];
-  else if (textField == _txtEmail)
-    [Utils logAnalyticsForFocusTextField:@"sign up email"];
-  else if (textField == _txtUsername)
-    [Utils logAnalyticsForFocusTextField:@"sign up username"];
-  else if (textField == _txtPassword)
-    [Utils logAnalyticsForFocusTextField:@"sign up password"];
-  else
-    [Utils logAnalyticsForFocusTextField:@"sign up confirm password"];
-  
   _currentFirstResponder = textField;
   [self gestureLayerDidEnterEditingMode];
   

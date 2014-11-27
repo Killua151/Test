@@ -50,7 +50,7 @@
     _itemsData = [NSMutableArray new];
   
   ShowHudForCurrentView();
-  [[MMServerHelper defaultHelper] getShopItems:^(NSInteger virtualMoney, NSArray *items, NSError *error) {
+  [[MMServerHelper apiHelper] getShopItems:^(NSInteger virtualMoney, NSArray *items, NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     
@@ -116,15 +116,11 @@
   return _vHeader.frame.size.height;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
-}
-
 #pragma mark - MMShopDelegate methods
 - (void)shopDidBuyItem:(NSString *)itemId {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] buyItem:itemId completion:^(NSError *error) {
+  [[MMServerHelper apiHelper] buyItem:itemId completion:^(NSError *error) {
     HideHudForCurrentView();
     ShowAlertWithError(error);
     [self reloadContents];

@@ -53,6 +53,7 @@
   
   [Utils setupAnalyticsForCurrentUser];
   [Utils logAnalyticsForUserLoggedIn];
+  [Utils logAnalyticsForEvent:kValueTrackingsEventSkillsTree];
   
   [self customNavBarBgWithColor:UIColorFromRGB(238, 238, 238)];
   [self customTitleWithText:[MUser currentUser].current_course_name color:[UIColor blackColor]];
@@ -136,7 +137,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    startStrengthenAll:^(NSString *examToken,
                         NSInteger maxHeartsCount,
                         NSDictionary *availableItems,
@@ -161,7 +162,7 @@
 - (void)loadSkillsTree {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
+  [[MMServerHelper apiHelper] getUserProfile:^(NSDictionary *userData, NSError *error) {
     HideHudForCurrentView();
     
     if (error != nil) {
@@ -242,8 +243,6 @@
   
   MCheckpoint *checkpoint = [[MUser currentUser] checkpointForPosition:indexPath.row];
   
-  [Utils logAnalyticsForButton:[NSString stringWithFormat:@"checkpoint %ld", (long)checkpoint.row]];
-  
   NSInteger numberOfLockedSkills = [[MUser currentUser] numberOfLockedSkillsForCheckpoint:indexPath.row];
   
   if (numberOfLockedSkills <= 0 || checkpoint.remaining_test_times <= 0)
@@ -251,7 +250,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    startCheckpointTestAtPosition:checkpoint.row
    completion:^(NSString *examToken,
                 NSInteger maxHeartsCount,
@@ -281,7 +280,6 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
   [self animateSlideStrengthenButton:YES];
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -303,7 +301,6 @@
 
 #pragma mark - Private methods
 - (void)gotoProfile {
-  [Utils logAnalyticsForButton:@"profile"];
   [self presentViewController:[MMProfileViewController navigationController] animated:YES completion:NULL];
 }
 
@@ -320,7 +317,6 @@
   return;
 #endif
   
-  [Utils logAnalyticsForButton:@"plaza"];
   [self presentViewController:[MMShopViewController navigationController] animated:YES completion:NULL];
 }
 
@@ -478,7 +474,7 @@
      }
      
      ShowHudForCurrentView();
-     [[MMServerHelper defaultHelper] reportBug:textField.text completion:^(NSError *error) {
+     [[MMServerHelper apiHelper] reportBug:textField.text completion:^(NSError *error) {
        HideHudForCurrentView();
        ShowAlertWithError(error);
        [UIAlertView showWithTitle:nil andMessage:@"Gửi thành công"];

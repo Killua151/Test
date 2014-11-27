@@ -33,14 +33,16 @@ typedef void(^SpeechRecognitionCallback)(ISSpeechRecognitionResult *result, NSEr
 + (void)setupAnalyticsForCurrentUser;
 + (void)logAnalyticsForAppLaunched;
 + (void)logAnalyticsForUserLoggedIn;
-+ (void)logAnalyticsForScreen:(NSString *)screenName;
-+ (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName;
-+ (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName;
-+ (void)logAnalyticsForButton:(NSString *)buttonName;
-+ (void)logAnalyticsForButton:(NSString *)buttonName andProperties:(NSDictionary *)properties;
-+ (void)logAnalyticsForScrollingOnScreen:(id)screen withScrollView:(UIScrollView *)scrollView;
-+ (void)logAnalyticsForFocusTextField:(NSString *)textFieldName;
-+ (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText;
++ (void)logAnalyticsForEvent:(NSString *)event;
++ (void)logAnalyticsForEvent:(NSString *)event onExamType:(NSString *)examType;
+//+ (void)logAnalyticsForScreen:(NSString *)screenName;
+//+ (void)logAnalyticsForOnScreenStartTime:(NSString *)screenName;
+//+ (void)logAnalyticsForOnScreenEndTime:(NSString *)screenName;
+//+ (void)logAnalyticsForButton:(NSString *)buttonName;
+//+ (void)logAnalyticsForButton:(NSString *)buttonName andProperties:(NSDictionary *)properties;
+//+ (void)logAnalyticsForScrollingOnScreen:(id)screen withScrollView:(UIScrollView *)scrollView;
+//+ (void)logAnalyticsForFocusTextField:(NSString *)textFieldName;
+//+ (void)logAnalyticsForSearchTextField:(NSString *)textFieldName withSearchText:(NSString *)searchText;
 
 + (NSTimeInterval)benchmarkOperation:(void(^)())operation;
 + (void)benchmarkOperationInBackground:(void(^)())operation completion:(void(^)(NSTimeInterval elapsedTime))handler;

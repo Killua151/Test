@@ -37,6 +37,19 @@
 
 @implementation MMServerHelper
 
++ (instancetype)apiHelper {
+  static MMServerHelper *_apiHelper = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
+    _apiHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _apiHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
+  });
+  
+  return _apiHelper;
+}
+
 + (instancetype)crossSaleHelper {
   static MMServerHelper *_crossSaleHelper = nil;
   
@@ -50,53 +63,20 @@
   return _crossSaleHelper;
 }
 
-+ (instancetype)defaultHelper {
-  static MMServerHelper *_defaultHelper = nil;
++ (instancetype)trackingsHelper {
+  static MMServerHelper *_trackingsHelper = nil;
   
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerDefaultUrl, kServerApiVersion];
-    _defaultHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
-    _defaultHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/", kServerTrackingsUrl];
+    _trackingsHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _trackingsHelper.responseSerializer = [AFJSONResponseSerializer serializer];
   });
   
-  return _defaultHelper;
+  return _trackingsHelper;
 }
 
-#pragma mark - Cross sale methods
-- (void)getAllAdsConfigs {
-  NSDictionary *params = @{
-                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : kValueCurrentDevice
-                           };
-  
-  [self
-   GET:@"ads/all_configs"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-   }];
-}
-
-- (void)getRunningAds {
-  NSDictionary *params = @{
-                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
-                           kParamDevice : kValueCurrentDevice
-                           };
-  
-  [self
-   GET:@"ads"
-   parameters:params
-   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     [[MCrossSale sharedModel] loadRunningAds:responseObject];
-   }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//     DLog(@"%@", error);
-   }];
-}
-
-#pragma mark - Default methods
+#pragma mark - API methods
 - (void)logInWithUsername:(NSString *)username
                  password:(NSString *)password
                completion:(void (^)(NSDictionary *, NSError *))handler {
@@ -843,6 +823,57 @@
   [operation start];
 }
 
+#pragma mark - Cross sale methods
+- (void)getAllAdsConfigs {
+  return;
+  
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : kValueCurrentDevice
+                           };
+  
+  [self
+   GET:@"ads/all_configs"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
+}
+
+- (void)getRunningAds {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamDevice : kValueCurrentDevice
+                           };
+  
+  [self
+   GET:@"ads"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     [[MCrossSale sharedModel] loadRunningAds:responseObject];
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:NULL];
+   }];
+}
+
+#pragma mark - Trackings methods
+- (void)trackEvent:(NSString *)eventName {
+  NSDictionary *params = @{
+                           kParamEventName : [NSString normalizedString:eventName],
+                           kParamUserId : [NSString normalizedString:[MUser currentUser]._id],
+                           kParamUniqueId : [NSString normalizedString:[[UIDevice currentDevice] uniqueDeviceIdentifier]]
+                           };
+  [self
+   POST:@"track"
+   parameters:params
+   success:NULL
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:NULL];
+   }];
+}
+
 #pragma mark - Private methods
 - (void)logInWithParam:(NSDictionary *)params completion:(void (^)(NSDictionary *, NSError *))handler {
   NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithDictionary:params];
@@ -857,6 +888,11 @@
    parameters:paramsDict
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *userData = [responseObject objectFromJSONData];
+     
+     id isNewlySignUp = userData[kParamIsNewlySignUp];
+     
+     if (isNewlySignUp != nil && [isNewlySignUp isKindOfClass:[NSNumber class]] && [isNewlySignUp boolValue])
+       [Utils logAnalyticsForEvent:@""];
      
      [Utils updateSavedUserWithAttributes:userData];
      [MUser loadCurrentUserFromUserDef];

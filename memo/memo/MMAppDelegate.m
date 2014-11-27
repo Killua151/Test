@@ -81,7 +81,7 @@
   [[NSUserDefaults standardUserDefaults] synchronize];
   
   if ([MUser currentUser]._id != nil)
-    [[MMServerHelper defaultHelper] updateApnsToken];
+    [[MMServerHelper apiHelper] updateApnsToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -231,7 +231,7 @@
   
   [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
   
-  [[MMServerHelper defaultHelper] getDictionary];
+  [[MMServerHelper apiHelper] getDictionary];
   
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
   [self handlePushNotification:notificationData shouldShowAlert:YES];

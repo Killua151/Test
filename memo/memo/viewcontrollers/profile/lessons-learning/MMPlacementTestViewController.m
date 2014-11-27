@@ -36,7 +36,7 @@
   
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    submitPlacementTestAnswer:_answersData
    withMetadata:_metadata
    completion:^(NSString *examToken,
@@ -68,6 +68,7 @@
        _metadata[kParamExamToken] = examToken;
        [_questionsData addObject:question];
        [Utils preDownloadAudioFromUrls:[MBaseQuestion audioUrlsFromQuestions:@[question]]];
+       [Utils logAnalyticsForEvent:kValueTrackingsEventFinishExam onExamType:_metadata[kParamType]];
        [super prepareNextQuestion];
        return;
      }

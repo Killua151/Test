@@ -107,7 +107,7 @@
 - (void)lessonViewDidSelectLesson:(MLesson *)lesson {
   ShowHudForCurrentView();
   
-  [[MMServerHelper defaultHelper]
+  [[MMServerHelper apiHelper]
    startLesson:lesson.lesson_number
    inSkill:self.skillData._id
    completion:^(NSString *examToken,
@@ -168,8 +168,6 @@
 }
 
 - (void)updateFocusedLesson {
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:_vLessonsScrollView];
-  
   NSInteger index = _vLessonsScrollView.contentOffset.x / _vLessonsScrollView.frame.size.width;
   
   for (MMHexagonLessonView *lessonView in _vLessonsScrollView.subviews)

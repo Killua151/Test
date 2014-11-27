@@ -59,8 +59,6 @@
 }
 
 - (IBAction)btnLoginPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"log in"];
-  
   if (_loginVC == nil)
     _loginVC = [MMLoginViewController new];
   
@@ -69,8 +67,6 @@
 }
 
 - (IBAction)btnNewUserPressed:(UIButton *)sender {
-  [Utils logAnalyticsForButton:@"new user"];
-  
 #if kTempDisableForClosedBeta
   if (_signUpVC == nil)
     _signUpVC = [MMSignUpViewController new];
@@ -84,11 +80,6 @@
   [self.navigationController pushViewController:_coursesListVC animated:YES];
   [_coursesListVC reloadContents];
 #endif
-}
-
-#pragma mark - UIScrollViewDelgate methods
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView  {
-  [Utils logAnalyticsForScrollingOnScreen:self withScrollView:scrollView];
 }
 
 #pragma mark - Private methods
