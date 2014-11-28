@@ -76,19 +76,26 @@ return; \
 #define ARC4RANDOM_MAX                          0x100000000
 
 #define kBuildMarketApple                       @"Apple"
+#define kBuildMarketUrlApple                    @"http://memo.edu.vn"
 #define kBuildMarketAppota                      @"Appota"
+#define kBuildMarketUrlAppota                   @"http://appvn.com/ios/tai-game-iphone/topica-memo-hoc-ngoai-ngu-mien-phi/30762"
 #define kBuildMarketAppsync                     @"Appsync"
-#define kBuildCurrentMarket                     kBuildMarketAppsync
+#define kBuildMarketUrlAppsync                  @"http://memo.edu.vn"
 
-#define kProductionEnvironment                  false
+#define kBuildCurrentMarket                     kBuildMarketAppota
+#define kBuildCurrentMarketUrl                  kBuildMarketUrlAppota
+
+#define kProductionEnvironment                  true
 
 #if kProductionEnvironment
-  #define kServerApiUrl                           @"http://api.memo.edu.vn/api"
-  #define kServerCrossSaleUrl                     @"http://admin.memo.edu.vn/cross_sale"
-  #define kServerTrackingsUrl                     @"http://admin.memo.edu.vn/trackings"
+  #define kServerYiiApiUrl                        @"http://api.memo.edu.vn/api"
+  #define kServerRailsApiUrl                      @"http://services.memo.edu.vn/api"
+  #define kServerCrossSaleUrl                     @"http://services.memo.edu.vn/cross_sale"
+  #define kServerTrackingsUrl                     @"http://services.memo.edu.vn/trackings"
   #define kServerApiVersion                       @"v1.4"
 #else
-  #define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
+  #define kServerYiiApiUrl                        @"http://localhost:8888/memo/memo/api"
+  #define kServerRailsApiUrl                      @"http://localhost:3000/api"
   #define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale"
   #define kServerTrackingsUrl                     @"http://localhost:3000/trackings"
   #define kServerApiVersion                       @"v1.4"
@@ -160,6 +167,7 @@ return; \
 #define kParamAds                               @"ads"
 #define kParamAffectedSkill                     @"affected_skill"
 #define kParamAlert                             @"alert"
+#define kParamAllowed                           @"allowed"
 #define kParamAnswer                            @"answer"
 #define kParamAnswers                           @"answers"
 #define kParamAnswerResult                      @"answer_result"
@@ -178,6 +186,7 @@ return; \
 #define kParamCorrectAnswer                     @"correct_answer"
 #define kParamCustomData                        @"custom_data"
 #define kParamCurrentCourseName                 @"current_course_name"
+#define kParamCurrentVersion                    @"current_version"
 #define kParamData                              @"data"
 #define kParamDevice                            @"device"
 #define kParamEmail                             @"email"
@@ -197,8 +206,9 @@ return; \
 #define kParamGmail                             @"gmail"
 #define kParamGAccessToken                      @"g_access_token"
 #define kParamId                                @"id"
-#define kParamIsTrial                           @"is_trial"
+#define kParamIsLatest                          @"is_latest"
 #define kParamIsNewlySignUp                     @"is_newly_sign_up"
+#define kParamIsTrial                           @"is_trial"
 #define kParamItems                             @"items"
 #define kParamKeywords                          @"keywords"
 #define kParamLessonNumber                      @"lesson_number"
@@ -208,6 +218,7 @@ return; \
 #define kParamMaxHeartsCount                    @"max_hearts_count"
 #define kParamMessage                           @"message"
 #define kParamSubMessage                        @"sub_message"
+#define kParamMarket                            @"market"
 #define kParamName                              @"name"
 #define kParamNumAffectedSkills                 @"num_affected_skills"
 #define kParamNumQuestions                      @"num_questions"
@@ -218,6 +229,7 @@ return; \
 #define kParamQuestionNumber                    @"question_number"
 #define kParamQuestions                         @"questions"
 #define kParamPassword                          @"password"
+#define kParamPlatform                          @"platform"
 #define kParamResponseCode                      @"response_code"
 #define kParamResult                            @"result"
 #define kParamSetting                           @"setting"

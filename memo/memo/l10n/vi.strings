@@ -69,6 +69,7 @@
 "Memo Plaza" = "Memo Plaza";
 "Next" = "Tiếp tục";
 "New user" = "Người dùng mới";
+"New version available" = "Đã có bản cập nhật mới";
 "No" = "Không";
 "No internet connection" = "Không có kết nối mạng";
 "No internet connection available. Check your network connection and try again." = "Không có kết nối internet. Hãy kết nối internet để thực hiện bài tập này";
@@ -124,6 +125,7 @@
 "Type what you listen" = "Gõ những gì bạn nghe";
 "UNFOLLOW" = "BỎ THEO DÕI";
 "Unknown error" = "Có lỗi xảy ra";
+"Update" = "Cập nhật";
 "Username" = "Tên đăng nhập";
 "Username or email" = "Tên đăng nhập hoặc email";
 "Username must contain alphanumeric only" = "Tên đăng nhập chỉ bao gồm chữ cái và số";

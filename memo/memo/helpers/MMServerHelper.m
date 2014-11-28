@@ -42,9 +42,22 @@
   
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerApiUrl, kServerApiVersion];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@/", kServerYiiApiUrl, kServerApiVersion];
     _apiHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
     _apiHelper.responseSerializer = [AFHTTPResponseSerializer serializer];
+  });
+  
+  return _apiHelper;
+}
+
++ (instancetype)railsApiHelper {
+  static MMServerHelper *_apiHelper = nil;
+  
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/", kServerRailsApiUrl];
+    _apiHelper = [[MMServerHelper alloc] initWithBaseURL:[NSURL URLWithString:baseUrl]];
+    _apiHelper.responseSerializer = [AFJSONResponseSerializer serializer];
   });
   
   return _apiHelper;
@@ -76,7 +89,7 @@
   return _trackingsHelper;
 }
 
-#pragma mark - API methods
+#pragma mark - Yii API methods
 - (void)logInWithUsername:(NSString *)username
                  password:(NSString *)password
                completion:(void (^)(NSDictionary *, NSError *))handler {
@@ -821,6 +834,36 @@
    }];
   
   [operation start];
+}
+
+#pragma mark - Rails API methods
+- (void)getLatestVersion:(void (^)(BOOL, BOOL, NSString *, NSError *))handler {
+  NSDictionary *params = @{
+                           kParamPlatform : kValueCurrentDevice,
+                           kParamMarket : kBuildCurrentMarket,
+                           kParamCurrentVersion : CurrentBuildVersion()
+                           };
+  
+  [self
+   GET:@"latest_version"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     if (responseObject[kParamIsLatest] != nil &&
+         [responseObject[kParamIsLatest] isKindOfClass:[NSNumber class]] &&
+         [responseObject[kParamIsLatest] boolValue]) {
+       handler(YES, NO, nil, nil);
+       return;
+     }
+     
+     BOOL allowed = [responseObject[kParamAllowed] boolValue];
+     NSString *message = responseObject[kParamMessage];
+     handler(NO, allowed, message, nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     [self handleFailedOperation:operation withError:error fallback:^{
+       handler(NO, NO, nil, error);
+     }];
+   }];
 }
 
 #pragma mark - Cross sale methods

@@ -24,6 +24,7 @@
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
+- (void)checkLatestVersion;
 - (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert;
 - (void)test;
 
@@ -157,6 +158,40 @@
   }
 }
 
+- (void)checkLatestVersion {
+  [[MMServerHelper railsApiHelper] getLatestVersion:^(BOOL isLatest, BOOL allowed, NSString *message, NSError *error) {
+    ShowAlertWithError(error);
+    
+    if (isLatest)
+      return;
+    
+    if (allowed) {
+      [UIAlertView
+       showWithTitle:MMLocalizedString(@"New version available")
+       message:message
+       cancelButtonTitle:MMLocalizedString(@"Cancel")
+       otherButtonTitles:@[MMLocalizedString(@"Update")]
+       callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+         if (buttonIndex == 0)
+           return;
+         
+         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kBuildCurrentMarketUrl]];
+       }];
+      return;
+    }
+    
+    [UIAlertView
+     showWithTitle:MMLocalizedString(@"New version available")
+     message:message
+     cancelButtonTitle:nil
+     otherButtonTitles:@[MMLocalizedString(@"Update")]
+     callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kBuildCurrentMarketUrl]];
+       exit(0);
+     }];
+  }];
+}
+
 - (void)openURL:(id)url {
   NSURL *urlObj = nil;
   
@@ -235,6 +270,8 @@
   
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
   [self handlePushNotification:notificationData shouldShowAlert:YES];
+  
+  [self checkLatestVersion];
   
   [self test];
 }
