@@ -19,6 +19,7 @@
 #import <GAIFields.h>
 #import <GAIDictionaryBuilder.h>
 #import <Mixpanel/Mixpanel.h>
+#import <Crashlytics/Crashlytics.h>
 #import "MMAppDelegate.h"
 #import "MUser.h"
 
@@ -135,9 +136,14 @@ static UIView *_sharedToast = nil;
     return;
   
   Mixpanel *mixpanel = [Mixpanel sharedInstance];
-  [mixpanel identify:[MUser currentUser]._id];
+  MUser *currentUser = [MUser currentUser];
+  
+  [mixpanel identify:currentUser._id];
   [mixpanel createAlias:[MUser currentUser]._id forDistinctID:mixpanel.distinctId];
   [mixpanel.people set:[[NSUserDefaults standardUserDefaults] dictionaryForKey:kUserDefSavedUser]];
+  
+  [Crashlytics setUserIdentifier:currentUser._id];
+  [Crashlytics setUserName:currentUser.username];
 }
 
 + (void)logAnalyticsForAppLaunched {

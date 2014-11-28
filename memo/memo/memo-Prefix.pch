@@ -120,7 +120,7 @@ return; \
 #define kHexagonThemeDisplayMode                true
 #define kTempDisableForClosedBeta               true
 #define kClosedBetaErrorFeedbackMode            true
-#define kTestModeNoAnalytics                    false
+#define kTestModeNoAnalytics                    true
 #define kTestLogin                              false
 #define kTestCompactTranslation                 false
 #define kTestSignUp                             false
