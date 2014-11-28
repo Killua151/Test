@@ -229,11 +229,11 @@
 }
 
 - (void)getCourses:(void (^)(NSArray *, NSError *))handler {
-  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+//  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
   
   [self
    GET:@"courses"
-   parameters:params
+   parameters:nil
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSArray *courses = [MCourse modelsFromArr:[responseObject objectFromJSONData]];
      handler(courses, nil);
@@ -837,8 +837,7 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
    }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-   }];
+   failure:NULL];
 }
 
 - (void)getRunningAds {
@@ -853,9 +852,7 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [[MCrossSale sharedModel] loadRunningAds:responseObject];
    }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:NULL];
-   }];
+   failure:NULL];
 }
 
 #pragma mark - Trackings methods
@@ -865,13 +862,7 @@
                            kParamUserId : [NSString normalizedString:[MUser currentUser]._id],
                            kParamUniqueId : [NSString normalizedString:[[UIDevice currentDevice] uniqueDeviceIdentifier]]
                            };
-  [self
-   POST:@"track"
-   parameters:params
-   success:NULL
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:NULL];
-   }];
+  [self POST:@"track" parameters:params success:NULL failure:NULL];
 }
 
 #pragma mark - Private methods
@@ -935,7 +926,7 @@
   
   [self
    POST:@"exam/start"
-   parameters:params
+   parameters:paramsDict
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      NSDictionary *responseDict = [responseObject objectFromJSONData];
      handler(responseDict[kParamExamToken],

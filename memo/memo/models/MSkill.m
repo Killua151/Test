@@ -36,7 +36,7 @@
 }
 
 - (UIColor *)themeColor {
-  if (_theme_color == nil || !self.unlocked)
+  if (_theme_color == nil || !self.unlocked || !_enabled)
     return UIColorFromRGB(221, 221, 221);
   
   if ([self isFinished])

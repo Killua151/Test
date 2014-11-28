@@ -23,6 +23,8 @@
 @property (nonatomic, assign) BOOL unlocked;
 @property (nonatomic, strong) NSString *theme_color;
 @property (nonatomic, assign) NSInteger strength;
+@property (nonatomic, assign) BOOL allow_shortcut;
+@property (nonatomic, assign) BOOL enabled;
 
 - (UIColor *)themeColor;
 - (BOOL)isFinished;

@@ -80,19 +80,20 @@ return; \
 #define kBuildMarketAppsync                     @"Appsync"
 #define kBuildCurrentMarket                     kBuildMarketAppsync
 
-#define kProductionEnvironment                  true
+#define kProductionEnvironment                  false
 
 #if kProductionEnvironment
   #define kServerApiUrl                           @"http://api.memo.edu.vn/api"
   #define kServerCrossSaleUrl                     @"http://admin.memo.edu.vn/cross_sale"
   #define kServerTrackingsUrl                     @"http://admin.memo.edu.vn/trackings"
+  #define kServerApiVersion                       @"v1.4"
 #else
   #define kServerApiUrl                           @"http://localhost:8888/memo/memo/api"
   #define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale"
   #define kServerTrackingsUrl                     @"http://localhost:3000/trackings"
+  #define kServerApiVersion                       @"v1.4"
 #endif
 
-#define kServerApiVersion                       @"v1.4"
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
 #define kLandingPageUrl                         @"http://memo.edu.vn/"
 
@@ -130,7 +131,7 @@ return; \
 #define kTestPushNotification                   false
 #define kTestQuestionType                       nil
 
-#define kTestVoucherAds                         true
+#define kTestVoucherAds                         false
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
