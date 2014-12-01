@@ -76,14 +76,10 @@ return; \
 #define ARC4RANDOM_MAX                          0x100000000
 
 #define kBuildMarketApple                       @"Apple"
-#define kBuildMarketUrlApple                    @"http://memo.edu.vn"
 #define kBuildMarketAppota                      @"Appota"
-#define kBuildMarketUrlAppota                   @"http://appvn.com/ios/tai-game-iphone/topica-memo-hoc-ngoai-ngu-mien-phi/30762"
 #define kBuildMarketAppsync                     @"Appsync"
-#define kBuildMarketUrlAppsync                  @"http://memo.edu.vn"
 
-#define kBuildCurrentMarket                     kBuildMarketAppota
-#define kBuildCurrentMarketUrl                  kBuildMarketUrlAppota
+#define kBuildCurrentMarket                     kBuildMarketApple
 
 #define kProductionEnvironment                  true
 
@@ -215,6 +211,7 @@ return; \
 #define kParamLevel                             @"level"
 #define kParamLeveledUp                         @"leveled_up"
 #define kParamLocalize                          @"localize"
+#define kParamMarketUrl                         @"market_url"
 #define kParamMaxHeartsCount                    @"max_hearts_count"
 #define kParamMessage                           @"message"
 #define kParamSubMessage                        @"sub_message"

@@ -16,7 +16,7 @@ typedef enum TyposCheckingResultEnum {
 
 @interface NSString (StringHelpers_Private)
 
-- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord withDiffMatchPatch:(DiffMatchPatch *)dmp;
+- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord;
 
 @end
 
@@ -176,11 +176,9 @@ typedef enum TyposCheckingResultEnum {
   
   __block NSMutableArray *typos = [NSMutableArray array];
   
-  DiffMatchPatch *dmp = [DiffMatchPatch new];
-  
   [selfWords enumerateObjectsUsingBlock:^(NSString *selfWord, NSUInteger index, BOOL *stop) {
     NSString *inputWord = inputWords[index];
-    TyposCheckingResult checkingResult = [selfWord checkTypoOnWord:inputWord withDiffMatchPatch:dmp];
+    TyposCheckingResult checkingResult = [selfWord checkTypoOnWord:inputWord];
     
     if (checkingResult == kTyposCheckingEqualString)
       return;
@@ -211,7 +209,7 @@ typedef enum TyposCheckingResultEnum {
 }
 
 #pragma mark - StringHelpers_Private methods
-- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord withDiffMatchPatch:(DiffMatchPatch *)dmp {
+- (TyposCheckingResult)checkTypoOnWord:(NSString *)inputWord {
   if ([self isEqualToString:inputWord])
     return kTyposCheckingEqualString;
   

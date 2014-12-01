@@ -837,11 +837,11 @@
 }
 
 #pragma mark - Rails API methods
-- (void)getLatestVersion:(void (^)(BOOL, BOOL, NSString *, NSError *))handler {
+- (void)getLatestVersion:(void (^)(BOOL, BOOL, NSString *, NSString *, NSError *))handler {
   NSDictionary *params = @{
                            kParamPlatform : kValueCurrentDevice,
                            kParamMarket : kBuildCurrentMarket,
-                           kParamCurrentVersion : CurrentBuildVersion()
+                           kParamCurrentVersion : @"1.0"//CurrentBuildVersion()
                            };
   
   [self
@@ -851,17 +851,20 @@
      if (responseObject[kParamIsLatest] != nil &&
          [responseObject[kParamIsLatest] isKindOfClass:[NSNumber class]] &&
          [responseObject[kParamIsLatest] boolValue]) {
-       handler(YES, NO, nil, nil);
+       handler(YES, NO, nil, nil, nil);
        return;
      }
      
-     BOOL allowed = [responseObject[kParamAllowed] boolValue];
-     NSString *message = responseObject[kParamMessage];
-     handler(NO, allowed, message, nil);
+     handler(
+             NO,
+             [responseObject[kParamAllowed] boolValue],
+             responseObject[kParamMessage],
+             responseObject[kParamMarketUrl],
+             nil);
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
      [self handleFailedOperation:operation withError:error fallback:^{
-       handler(NO, NO, nil, error);
+       handler(NO, NO, nil, nil, error);
      }];
    }];
 }
