@@ -31,7 +31,8 @@
     self.layer.cornerRadius = 3;
     _lblOptionTitle.font = [UIFont fontWithName:@"ClearSans" size:17];
     _lblOptionTitle.text = _optionData.text;
-    [_imgOptionImage sd_setImageWithURL:[NSURL URLWithString:_optionData.image_file]];
+    [_imgOptionImage sd_setImageWithURL:[NSURL URLWithString:_optionData.image_file]
+                       placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
   }
   
   return self;

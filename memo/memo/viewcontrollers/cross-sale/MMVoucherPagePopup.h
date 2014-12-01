@@ -13,5 +13,6 @@
 @interface MMVoucherPagePopup : UAModalPanel <UIWebViewDelegate>
 
 - (id)initWithAds:(MAdsConfig *)adsConfig;
+- (id)initWithHtml:(NSString *)html;
 
 @end

@@ -208,7 +208,13 @@
 
 - (void)sendWelcomeEmail:(NSString *)email {
   NSDictionary *params = @{kParamEmail : [NSString normalizedString:email]};
-  [self POST:@"users/welcome_email" parameters:params success:NULL failure:NULL];
+  [self
+   POST:@"users/welcome_email"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)forgetPasswordForEmail:(NSString *)email completion:(void (^)(NSError *))handler {
@@ -377,7 +383,13 @@
     return;
   
   NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
-  [self POST:@"users/update_is_beginner" parameters:params success:NULL failure:NULL];
+  [self
+   POST:@"users/update_is_beginner"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)listFriends:(void (^)(NSArray *, NSArray *, NSError *))handler {
@@ -736,7 +748,8 @@
      
      [[MWord sharedModel] setupDictionary:responseDict[kParamWords]];
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)submitViewedWords:(NSDictionary *)viewedWords {
@@ -748,7 +761,13 @@
                            kParamWords : [viewedWords JSONString]
                            };
   
-  [self POST:@"words" parameters:params success:NULL failure:NULL];
+  [self
+   POST:@"words"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)reportBug:(NSString *)content completion:(void (^)(NSError *))handler {
@@ -795,7 +814,8 @@
      DLog(@"%@", [responseObject objectFromJSONData]);
 #endif
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)registerDeviceTokenForAPNS {
@@ -841,7 +861,7 @@
   NSDictionary *params = @{
                            kParamPlatform : kValueCurrentDevice,
                            kParamMarket : kBuildCurrentMarket,
-                           kParamCurrentVersion : @"1.0"//CurrentBuildVersion()
+                           kParamCurrentVersion : CurrentBuildVersion()
                            };
   
   [self
@@ -869,6 +889,35 @@
    }];
 }
 
+- (void)getInAppMessage:(void (^)(NSArray *, NSString *, NSError *))handler {
+  NSDictionary *params = @{kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token]};
+  
+  [self
+   GET:@"messages"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     handler(responseObject[kParamMessageIds], responseObject[kParamMessageHtml], nil);
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     handler(nil, nil, error);
+   }];
+}
+
+- (void)markInAppMessagesAsRead:(NSArray *)messageIds {
+  NSDictionary *params = @{
+                           kParamAuthToken : [NSString normalizedString:[MUser currentUser].auth_token],
+                           kParamMessageIds : [messageIds JSONString]
+                           };
+  
+  [self
+   POST:@"messages/open_messages"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
+}
+
 #pragma mark - Cross sale methods
 - (void)getAllAdsConfigs {
   return;
@@ -883,7 +932,8 @@
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 - (void)getRunningAds {
@@ -898,7 +948,8 @@
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
      [[MCrossSale sharedModel] loadRunningAds:responseObject];
    }
-   failure:NULL];
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 #pragma mark - Trackings methods
@@ -908,7 +959,13 @@
                            kParamUserId : [NSString normalizedString:[MUser currentUser]._id],
                            kParamUniqueId : [NSString normalizedString:[[UIDevice currentDevice] uniqueDeviceIdentifier]]
                            };
-  [self POST:@"track" parameters:params success:NULL failure:NULL];
+  [self
+   POST:@"track"
+   parameters:params
+   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+   }];
 }
 
 #pragma mark - Private methods

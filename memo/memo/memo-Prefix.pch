@@ -79,7 +79,7 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildMarketAppsync                     @"Appsync"
 
-#define kBuildCurrentMarket                     kBuildMarketApple
+#define kBuildCurrentMarket                     kBuildMarketAppota
 
 #define kProductionEnvironment                  true
 
@@ -88,13 +88,13 @@ return; \
   #define kServerRailsApiUrl                      @"http://services.memo.edu.vn/api"
   #define kServerCrossSaleUrl                     @"http://services.memo.edu.vn/cross_sale"
   #define kServerTrackingsUrl                     @"http://services.memo.edu.vn/trackings"
-  #define kServerApiVersion                       @"v1.4"
+  #define kServerApiVersion                       @"v1.5"
 #else
   #define kServerYiiApiUrl                        @"http://localhost:8888/memo/memo/api"
   #define kServerRailsApiUrl                      @"http://localhost:3000/api"
   #define kServerCrossSaleUrl                     @"http://localhost:3000/cross_sale"
   #define kServerTrackingsUrl                     @"http://localhost:3000/trackings"
-  #define kServerApiVersion                       @"v1.4"
+  #define kServerApiVersion                       @"v1.5"
 #endif
 
 #define kServerResponseDataKey                  @"com.alamofire.serialization.response.error.data"
@@ -214,6 +214,8 @@ return; \
 #define kParamMarketUrl                         @"market_url"
 #define kParamMaxHeartsCount                    @"max_hearts_count"
 #define kParamMessage                           @"message"
+#define kParamMessageIds                        @"message_ids"
+#define kParamMessageHtml                       @"message_html"
 #define kParamSubMessage                        @"sub_message"
 #define kParamMarket                            @"market"
 #define kParamName                              @"name"

@@ -404,6 +404,8 @@
   
   BOOL isFriend = ![_userId isEqualToString:[MUser currentUser]._id];
   
+  [_imgAvatar sd_setImageWithURL:[NSURL URLWithString:_userData.url_avatar]
+                placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
   _lblUsername.hidden = _btnSetGoal.hidden = _btnAddFriend.hidden = isFriend;
   _btnInteraction.hidden = !isFriend;
   

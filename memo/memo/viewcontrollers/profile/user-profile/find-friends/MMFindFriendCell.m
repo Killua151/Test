@@ -31,6 +31,9 @@
 - (void)updateCellWithData:(MFriend *)data {
   _friendData = data;
   
+  [_imgAvatar sd_setImageWithURL:[NSURL URLWithString:_friendData.url_avatar]
+                placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
+  
   NSString *interactionTitle = _friendData.is_following ? @"UNFOLLOW" : @"FOLLOW";
   [_btnInteraction setTitle:MMLocalizedString(interactionTitle) forState:UIControlStateNormal];
   [Utils adjustButtonToFitWidth:_btnInteraction padding:16 constrainsToWidth:110];

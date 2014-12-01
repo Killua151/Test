@@ -11,6 +11,7 @@
 
 @interface MMVoucherPagePopup () {
   MAdsConfig *_adsConfigData;
+  NSString *_htmlData;
   UIWebView *_webView;
 }
 
@@ -24,6 +25,17 @@
   if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
     _adsConfigData = adsConfig;
     [self setupWebView];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_adsConfigData.url]]];
+  }
+  
+  return self;
+}
+
+- (id)initWithHtml:(NSString *)html {
+  if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
+    _htmlData = html;
+    [self setupWebView];
+    [_webView loadHTMLString:_htmlData baseURL:nil];
   }
   
   return self;
@@ -60,9 +72,8 @@
   _webView = [[UIWebView alloc] initWithFrame:frame];
   _webView.delegate = self;
   _webView.clipsToBounds = YES;
+  _webView.backgroundColor = [UIColor clearColor];
   [webViewContainer addSubview:_webView];
-  
-  [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_adsConfigData.url]]];
 }
 
 @end

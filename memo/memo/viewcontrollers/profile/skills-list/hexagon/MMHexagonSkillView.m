@@ -35,13 +35,6 @@
   
   self.backgroundColor = [_skillData themeColor];
   
-  if (!_skillData.enabled) {
-    _lblSkillName.text = MMLocalizedString(@"Coming soon");
-    _imgLaurea.hidden = _imgSkillStrength.hidden = YES;
-    _lblLessonsProgress.text = @"";
-    return;
-  }
-  
   _lblSkillName.text = _skillData.slug;
   _imgLaurea.hidden = _imgSkillStrength.hidden = ![_skillData isFinished];
   _lblLessonsProgress.hidden = [_skillData isFinished];
@@ -54,7 +47,8 @@
                                 (long)_skillData.finished_lesson, (unsigned long)[_skillData.lessons count]];
   
   NSString *suffix = skill.unlocked ? @"unlocked" : @"locked";
-  _imgSkillIcon.image = [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-%@", _skillData._id, suffix]];
+  _imgSkillIcon.image =
+  [UIImage imageNamed:[NSString stringWithFormat:@"img-skill_icon-%@-%@", _skillData.icon_name, suffix]];
 }
 
 @end

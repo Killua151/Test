@@ -37,7 +37,8 @@
     vQuestionImage.layer.cornerRadius = 8;
   
   [_imgQuestionImages enumerateObjectsUsingBlock:^(UIImageView *imgQuestionImage, NSUInteger index, BOOL *stop) {
-    [imgQuestionImage sd_setImageWithURL:[NSURL URLWithString:questionData.question_images[index]]];
+    [imgQuestionImage sd_setImageWithURL:[NSURL URLWithString:questionData.question_images[index]]
+                        placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
   }];
   
   if (!DeviceScreenIsRetina4Inch()) {

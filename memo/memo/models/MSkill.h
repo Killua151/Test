@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSArray *coordinate;
 @property (nonatomic, strong) NSString *course_id;
 @property (nonatomic, assign) NSInteger finished_lesson;
+@property (nonatomic, strong) NSString *icon_name;
 @property (nonatomic, strong) NSArray *lessons;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *objectives;

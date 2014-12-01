@@ -56,7 +56,7 @@
   _vSkill.backgroundColor = UIColorFromRGB(255, 187, 51);
   _lblSkillName.text = affectedSkill.slug;
   _imgSkillIcon.image = [UIImage imageNamed:
-                         [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill._id]];
+                         [NSString stringWithFormat:@"img-skill_icon-%@-unlocked_big", affectedSkill.icon_name]];
   
   NSString *styledString = affectedSkill.title;
   NSString *message = [NSString stringWithFormat:MMLocalizedString(@"You have finished skill %@!"), styledString];

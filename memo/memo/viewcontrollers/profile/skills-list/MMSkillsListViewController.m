@@ -19,6 +19,7 @@
 #import "MMAdsPopupView.h"
 #import "MMAdsItemView.h"
 #import "AppsFlyerTracker.h"
+#import "MMVoucherPagePopup.h"
 #import "MMAppDelegate.h"
 
 #import "MUser.h"
@@ -43,6 +44,7 @@
 - (void)handleLoadingError:(NSError *)error;
 - (void)reportBugs;
 - (void)reloadAds:(NSString *)adsPosition;
+- (void)getInAppMessages;
 
 @end
 
@@ -78,6 +80,11 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self customNavBarBgWithColor:UIColorFromRGB(223, 223, 223)];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self getInAppMessages];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -536,6 +543,21 @@
       [adsPosition isEqualToString:kValueAdsPositionCheckpoint3] ||
       [adsPosition isEqualToString:kValueAdsPositionCheckpoint4])
     [_tblSkills reloadData];
+}
+
+- (void)getInAppMessages {
+  [[MMServerHelper railsApiHelper] getInAppMessage:^(NSArray *messageIds, NSString *messageHtml, NSError *error) {
+    if (error != nil || messageHtml == nil)
+      return;
+    
+    MMVoucherPagePopup *popup = [[MMVoucherPagePopup alloc] initWithHtml:messageHtml];
+    [popup showFromPoint:self.view.center];
+    
+    [popup setOnClosePressed:^(UAModalPanel* panel) {
+      [[MMServerHelper railsApiHelper] markInAppMessagesAsRead:messageIds];
+      [panel hide];
+    }];
+  }];
 }
 
 @end

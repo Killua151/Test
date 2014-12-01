@@ -23,6 +23,9 @@
 }
 
 - (void)updateCellWithData:(MLeaderboardData *)data {
+  [_imgAvatar sd_setImageWithURL:[NSURL URLWithString:data.url_avatar]
+                placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
+  
   if ([data.user_id isEqualToString:[MUser currentUser]._id])
     _lblUsername.textColor = _lblUserExp.textColor = UIColorFromRGB(129, 12, 21);
   else

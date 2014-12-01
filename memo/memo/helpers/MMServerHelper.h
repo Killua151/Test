@@ -137,7 +137,13 @@
 - (void)registerDeviceTokenForAPNS;
 
 #pragma mark - Rails API methods
-- (void)getLatestVersion:(void(^)(BOOL isLatest, BOOL allowed, NSString *message, NSString *marketUrl, NSError *error))handler;
+- (void)getLatestVersion:(void(^)(BOOL isLatest,
+                                  BOOL allowed,
+                                  NSString *message,
+                                  NSString *marketUrl,
+                                  NSError *error))handler;
+- (void)getInAppMessage:(void(^)(NSArray *messageIds, NSString *messageHtml, NSError *error))handler;
+- (void)markInAppMessagesAsRead:(NSArray *)messageIds;
 
 #pragma mark - Cross sale methods
 - (void)getAllAdsConfigs;
