@@ -353,7 +353,10 @@
     titleLabel.text = localizedTitles[index];
   }];
   
-  _btnAvatar.layer.cornerRadius = _btnAvatar.frame.size.width/2;
+  _btnAvatar.superview.layer.cornerRadius = _btnAvatar.superview.frame.size.width/2;
+  [_btnAvatar sd_setBackgroundImageWithURL:[NSURL URLWithString:_userData.url_avatar]
+                                  forState:UIControlStateNormal
+                          placeholderImage:[UIImage imageNamed:@"img-profile-avatar_placeholder.png"]];
   
   _txtEmail.font = [UIFont fontWithName:@"ClearSans" size:14];
   _txtPassword.font = [UIFont fontWithName:@"ClearSans" size:14];
