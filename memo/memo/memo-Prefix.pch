@@ -80,7 +80,7 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildMarketAppsync                     @"Appsync"
 
-#define kBuildCurrentMarket                     kBuildMarketAppota
+#define kBuildCurrentMarket                     kBuildMarketApple
 
 #define kProductionEnvironment                  true
 
