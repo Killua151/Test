@@ -74,6 +74,7 @@
   NSString *token = [UIDevice trimmedDeviceToken:deviceToken];
   
 #if kTestPushNotification
+  [UIAlertView showWithTitle:nil andMessage:token];
   DLog(@"%@", token);
   [[MMServerHelper railsApiHelper] registerDeviceTokenForAPNS];
 #endif
@@ -88,6 +89,10 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
   [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefApnsToken];
   [[NSUserDefaults standardUserDefaults] synchronize];
+  
+#if kTestPushNotification
+  [UIAlertView showWithError:error];
+#endif
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

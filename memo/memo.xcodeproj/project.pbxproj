@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		92F7FF9E436F43B5BEDCCED0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2B8D9B1D0490BA0D689EC /* libPods.a */; };
-		CA13F2BF19F0FC870040A7A5 /* memo-beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */; };
 		CA1AD1F81A1758A90050C88D /* MAds.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1F71A1758A90050C88D /* MAds.m */; };
 		CA1AD1FB1A17593A0050C88D /* MAdsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1FA1A17593A0050C88D /* MAdsConfig.m */; };
 		CA1AD1FE1A175EBF0050C88D /* MCrossSale.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1AD1FD1A175EBF0050C88D /* MCrossSale.m */; };
@@ -875,14 +874,12 @@
 		CAF856A919E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF855CD19E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked.png */; };
 		CAF856AA19E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF855CE19E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked@2x.png */; };
 		CAF856AD19E0FD0400A347CF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF856AC19E0FD0400A347CF /* Crashlytics.framework */; };
-		CAF859B819E0FE7B00A347CF /* memo-staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAF859B719E0FE7B00A347CF /* memo-staging-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		110EAA055EB28CB06E941B03 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		698E297B2AA0DD11254B20F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A2B8D9B1D0490BA0D689EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "memo-beta-Info.plist"; sourceTree = "<group>"; };
 		CA1AD1F61A1758A90050C88D /* MAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAds.h; sourceTree = "<group>"; };
 		CA1AD1F71A1758A90050C88D /* MAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAds.m; sourceTree = "<group>"; };
 		CA1AD1F91A17593A0050C88D /* MAdsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAdsConfig.h; sourceTree = "<group>"; };
@@ -1899,7 +1896,6 @@
 		CAF855CD19E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked.png"; sourceTree = "<group>"; };
 		CAF855CE19E0F82700A347CF /* img-skill_icon-en-vi_y_te-unlocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-skill_icon-en-vi_y_te-unlocked@2x.png"; sourceTree = "<group>"; };
 		CAF856AC19E0FD0400A347CF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		CAF859B719E0FE7B00A347CF /* memo-staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "memo-staging-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2128,10 +2124,8 @@
 				CA452E4A19EEA00500A5F5CB /* l10n */,
 				CABBEA8C19E0E4C800EFED33 /* InfoPlist.strings */,
 				CABBEA8F19E0E4C800EFED33 /* main.m */,
-				CA13F2BE19F0FC870040A7A5 /* memo-beta-Info.plist */,
 				CABBEA8B19E0E4C800EFED33 /* memo-Info.plist */,
 				CABBEA9119E0E4C800EFED33 /* memo-Prefix.pch */,
-				CAF859B719E0FE7B00A347CF /* memo-staging-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -3711,7 +3705,6 @@
 				CA8C977719F676DB00E639E9 /* img-home_slide-4.png in Resources */,
 				CAF8547819E0F3D200A347CF /* MMCoursesListViewController.xib in Resources */,
 				CAF8561B19E0F82700A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_hoan_thanh-locked.png in Resources */,
-				CA13F2BF19F0FC870040A7A5 /* memo-beta-Info.plist in Resources */,
 				CAF853B219E0F3D200A347CF /* img-skill_icon-en-vi_dong_tu_thi_hien_tai_3-locked_big.png in Resources */,
 				CAF8534019E0F3D200A347CF /* btn-hexagon_lesson-retake.png in Resources */,
 				CAF8538319E0F3D200A347CF /* img-skill_icon-en-vi_dac_tinh-locked_big@2x.png in Resources */,
@@ -4072,7 +4065,6 @@
 				CAF855E519E0F82700A347CF /* img-skill_icon-en-vi_con_nguoi-unlocked.png in Resources */,
 				CAF852F819E0F3D200A347CF /* img-ant-lessons_learning_progress@2x.png in Resources */,
 				CAF8566819E0F82700A347CF /* img-skill_icon-en-vi_nhung_nhom_tu_thong_dung-locked@2x.png in Resources */,
-				CAF859B819E0FE7B00A347CF /* memo-staging-Info.plist in Resources */,
 				CA452E6C19EFFDB900A5F5CB /* img-item_icon-combo_protect.png in Resources */,
 				CAF8535519E0F3D200A347CF /* img-count_badge-bg@2x.png in Resources */,
 				CAF8568C19E0F82700A347CF /* img-skill_icon-en-vi_thien_nhien-locked@2x.png in Resources */,
@@ -4624,7 +4616,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d295ee86-2863-44d6-b75f-e2f0fb2c6f85";
+				PROVISIONING_PROFILE = "c93eaae2-f8ca-4b37-aff5-fc4b3688e10a";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -4650,7 +4642,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d295ee86-2863-44d6-b75f-e2f0fb2c6f85";
+				PROVISIONING_PROFILE = "c93eaae2-f8ca-4b37-aff5-fc4b3688e10a";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
