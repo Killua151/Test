@@ -25,7 +25,6 @@
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
-- (void)checkLatestVersion;
 - (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert;
 - (void)test;
 
@@ -76,7 +75,7 @@
   
 #if kTestPushNotification
   DLog(@"%@", token);
-  [[MMServerHelper sharedHelper] registerDeviceTokenForAPNS];
+  [[MMServerHelper railsApiHelper] registerDeviceTokenForAPNS];
 #endif
   
   [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
@@ -258,7 +257,8 @@
   NSString *type = customData[kParamType];
   
   if ([type isEqualToString:kValuePushNotificationTypeFollow] &&
-      customData[kParamData] != nil && [customData[kParamData] isKindOfClass:[NSString class]]) {
+      customData[kParamData] != nil && [customData[kParamData] isKindOfClass:[NSString class]] &&
+      [MUser currentUser].auth_token != nil) {
     BaseViewController *currentTopViewController = (BaseViewController *)_window.rootViewController;
     NSString *userId = customData[kParamData];
     MMProfileViewController *profileVC = [[MMProfileViewController alloc] initWithUserId:userId];
