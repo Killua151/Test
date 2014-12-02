@@ -8,7 +8,7 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
-@class MUser, MBaseQuestion;
+@class MUser, MBaseQuestion, MLatestVersion;
 
 @interface MMServerHelper : AFHTTPRequestOperationManager
 
@@ -137,11 +137,7 @@
 - (void)registerDeviceTokenForAPNS;
 
 #pragma mark - Rails API methods
-- (void)getLatestVersion:(void(^)(BOOL isLatest,
-                                  BOOL allowed,
-                                  NSString *message,
-                                  NSString *marketUrl,
-                                  NSError *error))handler;
+- (void)getLatestVersion:(void(^)())handler;
 - (void)getInAppMessage:(void(^)(NSArray *messageIds, NSString *messageHtml, NSError *error))handler;
 - (void)markInAppMessagesAsRead:(NSArray *)messageIds;
 

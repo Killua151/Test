@@ -82,7 +82,7 @@ return; \
 
 #define kBuildCurrentMarket                     kBuildMarketAppota
 
-#define kProductionEnvironment                  true
+#define kProductionEnvironment                  false
 
 #if kProductionEnvironment
   #define kServerYiiApiUrl                        @"http://api.memo.edu.vn/api"

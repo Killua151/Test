@@ -12,6 +12,8 @@
 
 @interface BaseViewController : GAITrackedViewController <MMCrossSaleAdsDelegate> {
   IBOutlet MMAllowsTouchUnderneathView *_vGestureLayer;
+  IBOutlet UILabel *_lblAppVersion;
+  
   NSDictionary *_adsConfigsData;
 }
 
@@ -46,6 +48,9 @@
                                        target:(id)target
                                        action:(SEL)action
                                      distance:(CGFloat)distance;
+
+- (void)checkLatestVersion;
+- (void)setupAppVersion;
 
 - (void)checkToDisplayAds;
 - (void)displayCrossSaleAds;

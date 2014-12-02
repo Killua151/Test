@@ -33,8 +33,6 @@
   
   IBOutlet UITableViewCell *_celEmptyLeaderboards;
   IBOutlet UILabel *_lblEmptyLeaderboards;
-  
-  IBOutlet UILabel *_lblAppVersion;
 }
 
 - (id)initWithUserId:(NSString *)userId;

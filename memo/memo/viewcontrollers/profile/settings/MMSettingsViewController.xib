@@ -49,7 +49,7 @@
                         <outlet property="delegate" destination="-1" id="Ac0-uc-EEm"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" id="ouf-tN-Hoz" userLabel="App Version">
+                <view hidden="YES" contentMode="scaleToFill" id="ouf-tN-Hoz" userLabel="App Version">
                     <rect key="frame" x="262" y="3" width="60" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

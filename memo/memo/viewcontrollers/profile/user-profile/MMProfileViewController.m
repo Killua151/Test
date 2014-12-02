@@ -395,8 +395,7 @@
   _lblEmptyLeaderboards.font = [UIFont fontWithName:@"ClearSans" size:13];
   _lblEmptyLeaderboards.text = MMLocalizedString(@"No leaderboards data");
   
-  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
-  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
+  [self setupAppVersion];
 }
 
 - (void)updateViews {

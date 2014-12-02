@@ -35,9 +35,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
-  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
+  [self setupAppVersion];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

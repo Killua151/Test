@@ -19,6 +19,7 @@
 #import "MAppSettings.h"
 #import "MAds.h"
 #import "MCrossSale.h"
+#import "MLatestVersion.h"
 
 @interface MMServerHelper ()
 
@@ -857,7 +858,7 @@
 }
 
 #pragma mark - Rails API methods
-- (void)getLatestVersion:(void (^)(BOOL, BOOL, NSString *, NSString *, NSError *))handler {
+- (void)getLatestVersion:(void (^)())handler {
   NSDictionary *params = @{
                            kParamPlatform : kValueCurrentDevice,
                            kParamMarket : kBuildCurrentMarket,
@@ -868,24 +869,10 @@
    GET:@"latest_version"
    parameters:params
    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     if (responseObject[kParamIsLatest] != nil &&
-         [responseObject[kParamIsLatest] isKindOfClass:[NSNumber class]] &&
-         [responseObject[kParamIsLatest] boolValue]) {
-       handler(YES, NO, nil, nil, nil);
-       return;
-     }
-     
-     handler(
-             NO,
-             [responseObject[kParamAllowed] boolValue],
-             responseObject[kParamMessage],
-             responseObject[kParamMarketUrl],
-             nil);
+     [MLatestVersion loadVersionData:responseObject];
+     handler();
    }
    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     [self handleFailedOperation:operation withError:error fallback:^{
-       handler(NO, NO, nil, nil, error);
-     }];
    }];
 }
 

@@ -125,7 +125,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="wdw-oz-Nra" userLabel="App Version">
+                <view hidden="YES" contentMode="scaleToFill" id="wdw-oz-Nra" userLabel="App Version">
                     <rect key="frame" x="-3" y="10" width="60" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

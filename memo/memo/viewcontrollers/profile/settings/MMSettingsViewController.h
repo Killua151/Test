@@ -41,7 +41,6 @@
   MMSwitch *_swtGooglePlus;
   
   IBOutletCollection(UILabel) NSArray *_lblTitles;
-  IBOutlet UILabel *_lblAppVersion;
 }
 
 @property (nonatomic, strong) MUser *userData;

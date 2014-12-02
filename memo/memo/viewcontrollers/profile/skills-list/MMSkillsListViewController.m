@@ -85,6 +85,7 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [self getInAppMessages];
+  [self checkLatestVersion];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -366,9 +367,6 @@
   _tblSkills.tableFooterView =
   [[UIView alloc] initWithFrame:
    (CGRect){CGPointZero, (CGSize){_tblSkills.frame.size.width, _vStrengthenButton.frame.size.height + footerViewDelta}}];
-  
-  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
-  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
   
 #if kTempDisableForClosedBeta && !kClosedBetaErrorFeedbackMode
   _vStrengthenButton.hidden = YES;

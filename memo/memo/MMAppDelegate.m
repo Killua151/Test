@@ -19,6 +19,7 @@
 #import "MUser.h"
 #import "MCrossSale.h"
 #import "MBaseQuestion.h"
+#import "MLatestVersion.h"
 
 @interface MMAppDelegate ()
 
@@ -158,41 +159,6 @@
   }
 }
 
-- (void)checkLatestVersion {
-  [[MMServerHelper railsApiHelper]
-   getLatestVersion:^(BOOL isLatest, BOOL allowed, NSString *message, NSString *marketUrl, NSError *error) {
-     ShowAlertWithError(error);
-     
-     if (isLatest)
-       return;
-     
-     if (allowed) {
-       [UIAlertView
-        showWithTitle:MMLocalizedString(@"New version available")
-        message:message
-        cancelButtonTitle:MMLocalizedString(@"Cancel")
-        otherButtonTitles:@[MMLocalizedString(@"Update")]
-        callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
-          if (buttonIndex == 0)
-            return;
-          
-          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:marketUrl]];
-        }];
-       return;
-     }
-     
-     [UIAlertView
-      showWithTitle:MMLocalizedString(@"New version available")
-      message:message
-      cancelButtonTitle:nil
-      otherButtonTitles:@[MMLocalizedString(@"Update")]
-      callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:marketUrl]];
-        exit(0);
-      }];
-   }];
-}
-
 - (void)openURL:(id)url {
   NSURL *urlObj = nil;
   
@@ -271,8 +237,6 @@
   
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
   [self handlePushNotification:notificationData shouldShowAlert:YES];
-  
-  [self checkLatestVersion];
   
   [self test];
 }

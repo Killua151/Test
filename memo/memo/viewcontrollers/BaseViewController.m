@@ -12,6 +12,7 @@
 #import "MMAdsBannerCell.h"
 #import "MCrossSale.h"
 #import "MAdsConfig.h"
+#import "MLatestVersion.h"
 
 @interface BaseViewController ()
 
@@ -286,6 +287,49 @@
   [imgLogoView addSubview:imgLogo];
   
   self.navigationItem.titleView = imgLogoView;
+}
+
+- (void)checkLatestVersion {
+  [[MMServerHelper railsApiHelper]
+   getLatestVersion:^{
+     MLatestVersion *latestVersion = [MLatestVersion version];
+     
+     [self setupAppVersion];
+     
+     if (latestVersion == nil || latestVersion.is_latest)
+       return;
+     
+     if (latestVersion.allowed) {
+       [UIAlertView
+        showWithTitle:MMLocalizedString(@"New version available")
+        message:latestVersion.message
+        cancelButtonTitle:MMLocalizedString(@"Cancel")
+        otherButtonTitles:@[MMLocalizedString(@"Update")]
+        callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+          if (buttonIndex == 0)
+            return;
+          
+          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:latestVersion.market_url]];
+        }];
+       return;
+     }
+     
+     [UIAlertView
+      showWithTitle:MMLocalizedString(@"New version available")
+      message:latestVersion.message
+      cancelButtonTitle:nil
+      otherButtonTitles:@[MMLocalizedString(@"Update")]
+      callback:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:latestVersion.market_url]];
+        exit(0);
+      }];
+   }];
+}
+
+- (void)setupAppVersion {
+  _lblAppVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblAppVersion.text = [NSString stringWithFormat:@"v%@", CurrentBuildVersion()];
+  _lblAppVersion.superview.hidden = ![MLatestVersion version].is_beta;
 }
 
 - (void)checkToDisplayAds {

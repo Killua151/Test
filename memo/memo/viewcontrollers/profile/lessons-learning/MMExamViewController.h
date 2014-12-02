@@ -28,8 +28,6 @@
   IBOutlet UILabel *_lblResultPopupMessage;
   IBOutlet UILabel *_lblResultPopupAnswer;
   
-  IBOutlet UILabel *_lblAppVersion;
-  
   MMQuestionContentView *_vQuestionContent;
   
   NSInteger _currentQuestionIndex;

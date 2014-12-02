@@ -11,6 +11,7 @@
 #import "MMSignUpViewController.h"
 #import "MMCoursesListViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "MLatestVersion.h"
 
 #define kSlideAnimationDelay          5
 
@@ -42,6 +43,11 @@
   [super viewWillAppear:animated];
   [_vSlide refreshCustomScrollIndicators];
   [self performSelector:@selector(animateSlideView) withObject:nil afterDelay:kSlideAnimationDelay];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self checkLatestVersion];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -82,6 +88,12 @@
 #endif
 }
 
+- (void)setupAppVersion {
+  _lblVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
+  _lblVersion.text = [NSString stringWithFormat:@"%@v%@",
+                      [MLatestVersion version].is_beta ? @"Beta " : @"", CurrentBuildVersion()];
+}
+
 #pragma mark - Private methods
 - (void)setupViews {
   if (!DeviceScreenIsRetina4Inch()) {
@@ -116,9 +128,6 @@
     
     [_vSlide addSubview:vSlideImage];
   }
-  
-  _lblVersion.font = [UIFont fontWithName:@"ClearSans" size:14];
-  _lblVersion.text = [NSString stringWithFormat:@"Beta v%@", CurrentBuildVersion()];
   
   _btnLogIn.titleLabel.font = [UIFont fontWithName:@"ClearSans-Bold" size:17];
   _btnLogIn.layer.cornerRadius = 4;
