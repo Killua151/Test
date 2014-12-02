@@ -80,9 +80,9 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildMarketAppsync                     @"Appsync"
 
-#define kBuildCurrentMarket                     kBuildMarketAppota
+#define kBuildCurrentMarket                     kBuildMarketApple
 
-#define kProductionEnvironment                  false
+#define kProductionEnvironment                  true
 
 #if kProductionEnvironment
   #define kServerYiiApiUrl                        @"http://api.memo.edu.vn/api"
