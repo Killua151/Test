@@ -2,6 +2,21 @@
 
 ##iOS
 
+###v1.0.7
+* Thêm cơ chế check latest version
+* Bật/tắt logo Beta từ server
+* Thêm cơ chế hiển thị in-app messages
+* Hiển thị avatar người dùng (lấy từ Facebook, Google+)
+* Sửa lỗi khi follow bạn bè từ push notification
+* Ra mắt tiếng Pháp
+* Sửa cơ chế hiển thị icon cho skill (cùng với cập nhật tiếng Pháp)
+* Bật/tắt tính năng "Vượt rào" từ server
+* Sửa các lỗi nhỏ khác
+
+###v1.0.5
+* Thêm cơ chế hiển thị Cross-sale Ads
+* Sửa các lỗi nhỏ
+
 ###v1.0.4
 * Phát âm thanh khi ấn vào các từ trong câu select & sort
 * Khi nhận được push notification có người theo dõi, mở trang profile người theo dõi mình
@@ -49,7 +64,20 @@
 * Samsung Galaxy Note 2
 * Asus Zenphone 4
 
-###V1.0.2
+###v1.0.6
+* Thêm cơ chế check latest version
+* Thêm cơ chế hiển thị in-app messages
+* Hiển thị avatar người dùng (lấy từ Facebook, Google+)
+* Ra mắt tiếng Pháp
+* Sửa cơ chế hiển thị icon cho skill (cùng với cập nhật tiếng Pháp)
+* Bật/tắt tính năng "Vượt rào" từ server
+* Sửa các lỗi nhỏ khác
+
+###v1.0.4
+* Fix lỗi crash và mất âm thanh
+* Sửa các lỗi nhỏ
+
+###v1.0.2
 * Cập nhật API v1.4: database mới, cải thiện performance
 * Sửa lỗi crash khi nhấn nhiều lần vào nút
 * Sửa lỗi khi vào xem bạn bè
@@ -74,6 +102,8 @@
 * Closed beta 1 release
 
 ##Web
+
+###v1.0.2
 
 ###v1.0.1 (Closed beta 2)
 
