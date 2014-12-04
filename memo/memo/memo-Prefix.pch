@@ -135,7 +135,7 @@ return; \
 #define kTestPushNotification                   false
 #define kTestQuestionType                       nil
 
-#define kTestVoucherAds                         true
+#define kTestVoucherAds                         false
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
