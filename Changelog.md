@@ -11,6 +11,7 @@
 * Ra mắt tiếng Pháp
 * Sửa cơ chế hiển thị icon cho skill (cùng với cập nhật tiếng Pháp)
 * Bật/tắt tính năng "Vượt rào" từ server
+* Tích hợp Memo Tracking
 * Sửa các lỗi nhỏ khác
 
 ###v1.0.5
@@ -71,6 +72,21 @@
 * Ra mắt tiếng Pháp
 * Sửa cơ chế hiển thị icon cho skill (cùng với cập nhật tiếng Pháp)
 * Bật/tắt tính năng "Vượt rào" từ server
+* Refine giao diện:
+  * Shop
+  * Giới thiệu làm bài placement test
+  * Sesson
+  * Avatar
+  * Profile & friend profile
+  * Lesson câu hỏi sort
+* Fix lỗi search Facebook friends
+* Phát âm khi click token trong câu hỏi sort
+* Request API gửi mail welcome sau khi đăng kí
+* Follow back từ push notification
+* Sửa lại Forums
+* Sửa lỗi đẩy bàn phím khi bàn phím quá lớn
+* Tích hợp Memo Tracking
+* Tích hợp Android wear
 * Sửa các lỗi nhỏ khác
 
 ###v1.0.4
@@ -103,7 +119,15 @@
 
 ##Web
 
-###v1.0.2
+###v1.0.3
+* Sử dụng API v1.5
+* Ra mắt tiếng Pháp
+* In-app message
+* Fix lỗi Unicode, typo
+* Fix lỗi âm thanh
+* Fix lỗi đăng nhập xong chỉ thấy trang trắng
+* Tích hợp Memo Tracking
+* Sửa các lỗi nhỏ khác
 
 ###v1.0.1 (Closed beta 2)
 

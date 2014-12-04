@@ -80,7 +80,7 @@ return; \
 #define kBuildMarketAppota                      @"Appota"
 #define kBuildMarketAppsync                     @"Appsync"
 
-#define kBuildCurrentMarket                     kBuildMarketApple
+#define kBuildCurrentMarket                     kBuildMarketAppota
 
 #define kProductionEnvironment                  true
 
@@ -135,7 +135,7 @@ return; \
 #define kTestPushNotification                   false
 #define kTestQuestionType                       nil
 
-#define kTestVoucherAds                         false
+#define kTestVoucherAds                         true
 
 #define kFacebookAppID                          @"856714854352716"
 #define kCrashlyticsApiKey                      @"f7789dfd4870dc6934311171f2f51ce36e460f96"
