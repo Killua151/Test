@@ -4616,7 +4616,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0071b266-fe1b-4e5b-ae43-12f6e11ebc24";
+				PROVISIONING_PROFILE = "c29408c9-2ebf-4d0a-b75a-4badfed81d6c";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -4642,7 +4642,7 @@
 					"$(PROJECT_DIR)/memo/libs/AppsFlyer-iOS-SDK-v2.5.3.10",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0071b266-fe1b-4e5b-ae43-12f6e11ebc24";
+				PROVISIONING_PROFILE = "c29408c9-2ebf-4d0a-b75a-4badfed81d6c";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};

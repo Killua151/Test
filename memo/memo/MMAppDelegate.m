@@ -24,6 +24,7 @@
 @interface MMAppDelegate ()
 
 - (void)preSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
+- (void)postSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)setupRootViewController;
 - (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert;
 - (void)test;
@@ -50,6 +51,8 @@
      }];
   }
   
+  [self postSettingsForApp:application withLaunchingWithOptions:launchOptions];
+  
   return YES;
 }
 
@@ -73,14 +76,14 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   NSString *token = [UIDevice trimmedDeviceToken:deviceToken];
   
+  [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
 #if kTestPushNotification
   [UIAlertView showWithTitle:nil andMessage:token];
   DLog(@"%@", token);
   [[MMServerHelper railsApiHelper] registerDeviceTokenForAPNS];
 #endif
-  
-  [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserDefApnsToken];
-  [[NSUserDefaults standardUserDefaults] synchronize];
   
   if ([MUser currentUser]._id != nil)
     [[MMServerHelper apiHelper] updateApnsToken];
@@ -236,13 +239,14 @@
   [MUser loadCurrentUserFromUserDef];
   
   [AppsFlyerTracker sharedTracker].customerUserID = [MUser currentUser]._id;
-  
   [[MMServerHelper apiHelper] getDictionary];
   
+  [self test];
+}
+
+- (void)postSettingsForApp:(UIApplication *)application withLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSDictionary *notificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
   [self handlePushNotification:notificationData shouldShowAlert:YES];
-  
-  [self test];
 }
 
 - (void)handlePushNotification:(NSDictionary *)notificationData shouldShowAlert:(BOOL)shouldShowAlert {
